@@ -1,0 +1,15 @@
+
+
+<div id="slider" class="center">
+<ngb-carousel>
+    <ng-template *ngFor="let pelicula of peliculas" ngbSlide>     
+      <div class="picsum-img-wrapper">
+        <img src="{{pelicula.img}}">
+      </div>
+      <div class="carousel-caption">
+        <!-- <h3>{{pelicula.name}}</h3> -->
+        <!-- <p>{{pelicula.desc}}</p> -->
+      </div>
+    </ng-template>
+</ngb-carousel>
+</div>

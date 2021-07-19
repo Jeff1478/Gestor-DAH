@@ -1,0 +1,49 @@
+<div class="center">
+    <section id="content">
+
+           <h1 class="subheader">{{page_title}}</h1>
+
+           <form class="mid-form" #ceramicForm="ngForm" (ngSubmit)="OnSubmit()">
+                <div class="form-group">
+                    <label for="title">Titulo</label>
+                    <input type="text" name="title" #title="ngModel" [(ngModel)]="ceramic.title" required/>
+                </div>
+
+                <small *ngIf="!title.valid && title.touched"> El título no es válido</small>
+
+                <div class="form-group">
+                    <label for="content">Contenido</label>
+                    <input type="text" name="content" #content="ngModel" [(ngModel)]="ceramic.content" required/>
+                </div>
+
+                <small *ngIf="!content.valid && content.touched"> El Contenido no es válido</small>
+
+                
+
+                <div class="form-group">
+
+                    <div class="image-thumb" *ngIf="is_edit">
+                        
+                            <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
+                            <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
+                       
+                    </div>
+                    
+                    <angular-file-uploader
+                        [config]="afuConfig"
+                        (ApiResponse)="imageUpload($event)"
+                    >
+
+                    </angular-file-uploader>
+                </div>
+              
+
+                <div class="clearfix"></div>
+
+                <input type="submit" value="Guardar" class="btn btn-success" [disabled]="ceramicForm.invalid" />
+
+           </form>
+          
+    </section>
+   <app-sidebar></app-sidebar>
+</div>

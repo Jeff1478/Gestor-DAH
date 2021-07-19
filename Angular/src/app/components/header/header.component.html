@@ -1,0 +1,58 @@
+<header id="header">
+    <div class="center">
+        <!-- LOGO -->
+        <div id="logo">
+            <img src="assets/images/logoMNCR.svg" class="app-logo" alt="Logotipo" />
+        </div>
+        
+        <!-- MENU -->
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+              <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]= "['active']">Inicio</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/ceramica']" [routerLinkActive]= "['active']">Cerámica</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/ceramica']" [routerLinkActive]= "['active']">Contextos</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/ceramica']" [routerLinkActive]= "['active']">Litico</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/ceramica']" [routerLinkActive]= "['active']">Metálicos</a>
+                  </li>
+                  
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/pagina']" [routerLinkActive]= "['active']">Test</a>
+                </li>
+
+                </ul>
+                <form #searchForm="ngForm" (ngSubmit)= "goSearch()">
+                  <input type="text" name="search" [(ngModel)] ="searchString"/>
+                  <button class="btn btn-outline-success" type="submit">Búsqueda</button>
+                  <app-logout-button></app-logout-button> -->
+                </form>
+              </div>
+            </div>
+          </nav>
+       
+ 
+        <!--LIMPIAR FLOTADOS-->
+        <div class="clearfix"></div>
+    </div>
+</header>
+
+

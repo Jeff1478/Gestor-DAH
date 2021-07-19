@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Administrador de Colecciones</title>
+
+    <!--HOJA DE ESTILOS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+   
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="center">
+            <!-- LOGO -->
+            <div id="logo">
+                <img src="assets/images/logoMNCR.svg" class="app-logo" alt="Logotipo" />
+                <!-- <span id="brand">
+                        <strong>Curso</strong>Angular
+                    </span> -->
+            </div>
+
+            <!-- MENU -->
+            <nav id="menu">
+                <ul>
+                    <li>
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <!-- <li>
+                            <a href="blog.html">Blog</a>
+                        </li> -->
+                    <li>
+                        <a href="ceramica.html">Cerámica</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Pagina 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Pagina 3</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!--LIMPIAR FLOTADOS-->
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+    <div class="center">
+        <section id="content">
+
+            <h1 class="subheader">FICHA DE ANÁLISIS ARTEFACTUAL PARA CERÁMICA </h1>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Ubicacion del Artefacto
+                        </button>
+                    </h2>
+
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-3">
+                                        <label for="cod_mon">Cod Monumento</label>
+                                        <input type="text" class="form-control" id="cod_mon"
+                                            placeholder="Cod Monumento">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="num_artefacto">Num Artefacto</label>
+                                        <input type="number" class="form-control" id="num_artefacto"
+                                            placeholder="Num Artefacto">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="num_caja">Num Caja DPPC</label>
+                                        <input type="number" class="form-control" id="num_caja"
+                                            placeholder="Num Caja DPPC">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="proyecto">Proyecto</label>
+                                        <input type="text" class="form-control" id="proyecto" placeholder="Proyecto">
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-3">
+                                        <label for="investigador">Investigador</label>
+                                        <input type="text" class="form-control" id="investigador"
+                                            placeholder="Investigador">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="pro_year">Año Proyecto</label>
+                                        <input type="number" class="form-control" id="pro_year"
+                                            placeholder="Año proyecto">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="etiqueta">Datos Etiqueta</label>
+                                        <input type="text" class="form-control" id="etiqueta"
+                                            placeholder="Datos Etiqueta">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="fecha_exc">Fecha Excavación</label>
+                                        <input type="date" class="form-control" id="fecha_exc"
+                                            placeholder="Fecha Excavación">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Asociación Contextual
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="id_contexto">Id Contexto</label>
+                                <input type="text" class="form-control" id="id_contexto" placeholder="Id Contexto">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="contexto">Contexto</label>
+                                <input type="text" class="form-control" id="contexto" placeholder="Contexto">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="ubicacion">Ub Rel Artefacto</label>
+                                <input type="text" class="form-control" id="ubicacion" placeholder="Ubicacion">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="foto">Fotografia</label>
+                                <select class="form-select" id="foto">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Si</option>
+                                    <option value="2">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="num_foto">Num Foto</label>
+                                <input type="number" class="form-control" id="num_foto" placeholder="Num Foto">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="calidad_foto">Calidad</label>
+                                <select class="form-select" id="calidad_foto">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Buena</option>
+                                    <option value="2">Regular</option>
+                                    <option value="3">Mala</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="estado_foto">Estado Foto</label>
+                                <select class="form-select" id="estado_foto">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Buena</option>
+                                    <option value="2">Regular</option>
+                                    <option value="3">Mala</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="plano">Planimetría</label>
+                                <select class="form-select" id="plano">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Si</option>
+                                    <option value="2">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="num_lamina">Num Lamina</label>
+                                <input type="number" class="form-control" id="num_lamina" placeholder="Num Lamina">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="calidad_lamina">Calidad Lámina</label>
+                                <select class="form-select" id="calidad_lamina">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Buena</option>
+                                    <option value="2">Regular</option>
+                                    <option value="3">Mala</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="estado_Lamina">Estado Lamina</label>
+                                <select class="form-select" id="estado_Lamina">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Buena</option>
+                                    <option value="2">Regular</option>
+                                    <option value="3">Mala</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="diagnostico_contexto">Diagnóstico Contexto</label>
+                                <select class="form-select" id="diagnostico_contexto">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Definido</option>
+                                    <option value="2">Indefinido</option>
+                                    <option value="3">Divago</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="fechamiento">Fechamiento</label>
+                                <input type="text" class="form-control" id="fechamiento" placeholder="Fechamiento">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Descripción del Artefacto
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="tipo_pieza">Tipo de Pieza</label>
+                                <select class="form-select" id="tipo_pieza">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Olla</option>
+                                    <option value="2">Tecomate</option>
+                                    <option value="3">Taza</option>
+                                    <option value="3">Plato</option>
+                                    <option value="3">Vaso</option>
+                                    <option value="3">Jarrón</option>
+                                    <option value="3">Salvilla</option>
+                                    <option value="3">Botella</option>
+                                    <option value="3">Vasija Efigie</option>
+                                    <option value="3">Volante de Uso</option>
+                                    <option value="3">Sello</option>
+                                    <option value="3">Sonajero</option>
+                                    <option value="3">Maraca</option>
+                                    <option value="3">Orejera</option>
+                                    <option value="3">Figurilla</option>
+                                    <option value="3">Colgante</option>
+                                    <option value="3">Aro</option>
+                                    <option value="3">Rodela</option>
+                                    <option value="3">Aerófono</option>
+                                    <option value="3">Cuenta</option>
+                                    <option value="3">Apédice Modificado</option>
+                                    <option value="3">Máscara</option>
+                                    <option value="3">Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="desc_narrativa">Descripción Narrativa</label>
+                                <input type="text" class="form-control" id="desc_narrativa" placeholder="Descripción">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="apendices">Apéndices o Accesorios</label>
+                                <select class="form-select" id="apendices">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">No presenta</option>
+                                    <option value="2">Soportes</option>
+                                    <option value="3">Pedestal-Base Anular</option>
+                                    <option value="3">Asa</option>
+                                    <option value="3">Vertedero</option>
+                                    <option value="3">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="desc_apendice">Descripción Detallada Apéndice</label>
+                                <input type="text" class="form-control" id="desc_apendice" placeholder="Descripción Apendice">
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="acabado_superficie">Acabado de Superficie</label>
+                                <select class="form-select" id="acabado_superficie">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Completamente engobada y pulida</option>
+                                    <option value="2">Engobe y pulido en zonas</option>
+                                    <option value="3">Solo pulido</option>
+                                    <option value="3">Sin Engobe</option>
+                                    <option value="3">Ahumado Intencional</option>
+                                    <option value="3">Acabado muy Tosco</option>
+                                    <option value="3">Bruñido</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="estilo_decorativo">Estilo Decorativo</label>
+                                <select class="form-select" id="estilo_decorativo">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Bricroma</option>
+                                    <option value="2">Policroma</option>
+                                    <option value="3">Diseño Figurativo</option>
+                                    <option value="4">Diseño no Figurativo</option>
+                                    <option value="5">Color de la pintura</option>
+                                    <option value="6">Aplicación plástica</option>
+                                    <option value="7">Pastillajes</option>
+                                    <option value="8">Tira Aplicada</option>
+                                    <option value="9">Pastilla o pelotilla</option>
+                                    <option value="10">Zonas de pintura sobre superficie natural</option>
+                                    <option value="11">Ranurado</option>
+                                    <option value="12">Acanalados</option>
+                                    <option value="13">Hendidos o Pellizcado</option>
+                                    <option value="14">Punteado</option>
+                                    <option value="15">Diseño Figurativo</option>
+                                    <option value="16">Diseño no Figurativo</option>
+                                    <option value="17">Figuras Modeladas</option>
+                                    <option value="18">Figurativas</option>
+                                    <option value="19">No figurativas</option>
+                                    <option value="20">Indeterminados</option>
+                                    <option value="21">Inciso</option>
+                                    <option value="22">Pre-cocción</option>
+                                    <option value="23">Post-cocción</option>
+                                    <option value="24">Esgrafiados</option>
+                                    <option value="25">Punteados</option>
+                                    
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="dis_nofigurativo">Diseño no Figurativo</label>
+                                <select class="form-select" id="dis_nofigurativo">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Vertical</option>
+                                    <option value="2">Horizontal</option>
+                                    <option value="3">Diagonal</option>
+                                    <option value="3">Zig-Zag</option>
+                                    <option value="3">Panel</option>
+                                    <option value="3">Aislados</option>
+                                    <option value="3">Total o Saturación Completa</option>
+                                    <option value="3">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="dis_zoo">Diseño Figurativo Zoomorfo</label>
+                                <select class="form-select" id="dis_zoo">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Cabeza</option>
+                                    <option value="2">Saurio</option>
+                                    <option value="3">Felino</option>
+                                    <option value="3">Batracio</option>
+                                    <option value="3">Ave</option>
+                                    <option value="3">Mono</option>
+                                    <option value="3">Murciélago</option>
+                                    <option value="3">Mamífero</option>
+                                    <option value="3">Tortuga</option>
+                                    <option value="3">Reptil</option>
+                                    <option value="3">Pez</option>
+                                    <option value="3">No determinado</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                               
+                                    <label for="tax_exp">Taxonomía Explicita</label>
+                                    <input type="text" class="form-control" id="tax_exp" placeholder="Taxonomía">
+                            </div>
+                           
+
+                            <div class="col-md-3">
+                                <label for="inv_id">Investigador Identificador</label>
+                                <input type="text" class="form-control" id="inv_id" placeholder="Investigador">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="dis_antro">Diseños Figurativos Antropomorfos</label>
+                                <select class="form-select" id="dis_antro">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Cabeza</option>
+                                    <option value="2">Cara</option>
+                                    <option value="3">Cabeza o cara hocico pronuncionado</option>
+                                    <option value="3">Sedente</option>
+                                    <option value="3">Erguida</option>
+                                    <option value="3">Escena</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="dis_figu">Diseño Figurativo Indeterminado</label>
+                                <select class="form-select" id="dis_figu">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Cabeza</option>
+                                    <option value="2">Cara hocico pronunciado</option>
+                                    <option value="3">Garra</option>
+                                    <option value="3">Otro</option>
+                                   
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+   
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                       Asociación Funcional, Tipologica, Regional y Temporal
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="tipo_pieza">Tipo de Pieza</label>
+                                <select class="form-select" id="tipo_pieza">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Olla</option>
+                                    <option value="2">Tecomate</option>
+                                    <option value="3">Taza</option>
+                                    <option value="3">Plato</option>
+                                    <option value="3">Vaso</option>
+                                    <option value="3">Jarrón</option>
+                                    <option value="3">Salvilla</option>
+                                    <option value="3">Botella</option>
+                                    <option value="3">Vasija Efigie</option>
+                                    <option value="3">Volante de Uso</option>
+                                    <option value="3">Sello</option>
+                                    <option value="3">Sonajero</option>
+                                    <option value="3">Maraca</option>
+                                    <option value="3">Orejera</option>
+                                    <option value="3">Figurilla</option>
+                                    <option value="3">Colgante</option>
+                                    <option value="3">Aro</option>
+                                    <option value="3">Rodela</option>
+                                    <option value="3">Aerófono</option>
+                                    <option value="3">Cuenta</option>
+                                    <option value="3">Apédice Modificado</option>
+                                    <option value="3">Máscara</option>
+                                    <option value="3">Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="desc_narrativa">Descripción Narrativa</label>
+                                <input type="text" class="form-control" id="desc_narrativa" placeholder="Descripción">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                       Estado de Conservación
+                    </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="tipo_pieza">Tipo de Pieza</label>
+                                <select class="form-select" id="tipo_pieza">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Olla</option>
+                                    <option value="2">Tecomate</option>
+                                    <option value="3">Taza</option>
+                                    <option value="3">Plato</option>
+                                    <option value="3">Vaso</option>
+                                    <option value="3">Jarrón</option>
+                                    <option value="3">Salvilla</option>
+                                    <option value="3">Botella</option>
+                                    <option value="3">Vasija Efigie</option>
+                                    <option value="3">Volante de Uso</option>
+                                    <option value="3">Sello</option>
+                                    <option value="3">Sonajero</option>
+                                    <option value="3">Maraca</option>
+                                    <option value="3">Orejera</option>
+                                    <option value="3">Figurilla</option>
+                                    <option value="3">Colgante</option>
+                                    <option value="3">Aro</option>
+                                    <option value="3">Rodela</option>
+                                    <option value="3">Aerófono</option>
+                                    <option value="3">Cuenta</option>
+                                    <option value="3">Apédice Modificado</option>
+                                    <option value="3">Máscara</option>
+                                    <option value="3">Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="desc_narrativa">Descripción Narrativa</label>
+                                <input type="text" class="form-control" id="desc_narrativa" placeholder="Descripción">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                       Investigador y Registro
+                    </button>
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="tipo_pieza">Tipo de Pieza</label>
+                                <select class="form-select" id="tipo_pieza">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Olla</option>
+                                    <option value="2">Tecomate</option>
+                                    <option value="3">Taza</option>
+                                    <option value="3">Plato</option>
+                                    <option value="3">Vaso</option>
+                                    <option value="3">Jarrón</option>
+                                    <option value="3">Salvilla</option>
+                                    <option value="3">Botella</option>
+                                    <option value="3">Vasija Efigie</option>
+                                    <option value="3">Volante de Uso</option>
+                                    <option value="3">Sello</option>
+                                    <option value="3">Sonajero</option>
+                                    <option value="3">Maraca</option>
+                                    <option value="3">Orejera</option>
+                                    <option value="3">Figurilla</option>
+                                    <option value="3">Colgante</option>
+                                    <option value="3">Aro</option>
+                                    <option value="3">Rodela</option>
+                                    <option value="3">Aerófono</option>
+                                    <option value="3">Cuenta</option>
+                                    <option value="3">Apédice Modificado</option>
+                                    <option value="3">Máscara</option>
+                                    <option value="3">Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="desc_narrativa">Descripción Narrativa</label>
+                                <input type="text" class="form-control" id="desc_narrativa" placeholder="Descripción">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+           
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+        </section>
+
+       
+ 
+        <div class="clearfix"></div>
+    </div>
+
+    <footer id="footer">
+        <div class="center">
+            <p>
+                &copy; TI Museo Nacional Costa Rica
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

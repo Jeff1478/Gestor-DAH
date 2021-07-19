@@ -1,0 +1,833 @@
+<div class="center">
+    <section id="content.ceramic">
+
+        <h1 class="subheader">FICHA DE ANÁLISIS ARTEFACTUAL PARA CERÁMICA </h1>
+        <form class="mid-form" #ceramicForm="ngForm" (ngSubmit)="OnSubmit()">
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Ubicacion del Artefacto
+                        </button>
+                    </h2>
+
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <!-- <form> -->
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <label for="cod_mon">Cod Monumento</label>
+                                    <input type="text" class="form-control" name="cod_mon" #cod_mon="ngModel"
+                                        [(ngModel)]="ceramic.cod_mon">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="num_artefacto">Num Artefacto</label>
+                                    <input type="number" class="form-control" name="num_artefacto"
+                                        #num_artefacto="ngModel" [(ngModel)]="ceramic.num_artefacto">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="num_caja">Num Caja DPPC</label>
+                                    <input type="number" class="form-control" name="num_caja" #num_caja="ngModel"
+                                        [(ngModel)]="ceramic.num_caja">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="proyecto">Proyecto</label>
+                                    <input type="text" class="form-control" name="proyecto" #proyecto="ngModel"
+                                        [(ngModel)]="ceramic.proyecto">
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <label for="investigador">Investigador</label>
+                                    <input type="text" class="form-control" name="investigador" #investigador="ngModel"
+                                        [(ngModel)]="ceramic.investigador">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="pro_year">Año Proyecto</label>
+                                    <input type="number" class="form-control" name="pro_year" #pro_year="ngModel"
+                                        [(ngModel)]="ceramic.pro_year">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="etiqueta">Datos Etiqueta</label>
+                                    <input type="text" class="form-control" name="etiqueta" #etiqueta="ngModel"
+                                        [(ngModel)]="ceramic.etiqueta">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="fecha_exc">Fecha Excavación</label>
+                                    <input type="date" class="form-control" name="fecha_exc" #fecha_exc="ngModel"
+                                        [(ngModel)]="ceramic.fecha_exc">
+                                </div>
+                            </div>
+                            <!-- </form> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Asociación Contextual
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="id_contexto">Id Contexto</label>
+                                <input type="text" class="form-control" name="id_contexto" #id_contexto="ngModel"
+                                    [(ngModel)]="ceramic.id_contexto">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="contexto">Contexto</label>
+                                <input type="text" class="form-control" name="contexto" #contexto="ngModel"
+                                    [(ngModel)]="ceramic.contexto">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="ubicacion">Ub Rel Artefacto</label>
+                                <input type="text" class="form-control" name="ubicacion" #ubicacion="ngModel"
+                                    [(ngModel)]="ceramic.ubicacion">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="foto">Fotografia</label>
+                                <select class="form-select" name="foto" #foto="ngModel" [(ngModel)]="ceramic.foto">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="num_foto">Num Foto</label>
+                                <input type="number" class="form-control" name="num_foto" #num_foto="ngModel"
+                                    [(ngModel)]="ceramic.num_foto">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="calidad_foto">Calidad</label>
+                                <select class="form-select" name="calidad_foto" #calidad_foto="ngModel"
+                                    [(ngModel)]="ceramic.calidad_foto">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Buena">Buena</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Mala">Mala</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="estado_foto">Estado Foto</label>
+                                <select class="form-select" name="estado_foto" #estado_foto="ngModel"
+                                    [(ngModel)]="ceramic.estado_foto">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Buena">Buena</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Mala">Mala</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="plano">Planimetría</label>
+                                <select class="form-select" name="plano" #plano="ngModel" [(ngModel)]="ceramic.plano">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="num_lamina">Num Lamina</label>
+                                <input type="number" class="form-control" name="num_lamina" #num_lamina="ngModel"
+                                    [(ngModel)]="ceramic.num_lamina">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="calidad_lamina">Calidad Lámina</label>
+                                <select class="form-select" name="calidad_lamina" #calidad_lamina="ngModel"
+                                    [(ngModel)]="ceramic.calidad_lamina">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Buena">Buena</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Mala">Mala</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="estado_Lamina">Estado Lamina</label>
+                                <select class="form-select" name="estado_Lamina" #estado_Lamina="ngModel"
+                                    [(ngModel)]="ceramic.estado_Lamina">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Buena">Buena</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Mala">Mala</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="diagnostico_contexto">Diagnóstico Contexto</label>
+                                <select class="form-select" name="diagnostico_contexto" #diagnostico_contexto="ngModel"
+                                    [(ngModel)]="ceramic.diagnostico_contexto">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Definido">Definido</option>
+                                    <option value="Indefinido">Indefinido</option>
+                                    <option value="Divago">Divago</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="fechamiento">Fechamiento</label>
+                                <input type="text" class="form-control" name="fechamiento" #fechamiento="ngModel"
+                                    [(ngModel)]="ceramic.fechamiento">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Descripción del Artefacto
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="tipo_pieza">Tipo de Pieza</label>
+                                <select class="form-select" name="tipo_pieza" #tipo_pieza="ngModel"
+                                    [(ngModel)]="ceramic.tipo_pieza">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Olla">Olla</option>
+                                    <option value="Tecomate">Tecomate</option>
+                                    <option value="Taza">Taza</option>
+                                    <option value="Plato">Plato</option>
+                                    <option value="Vaso">Vaso</option>
+                                    <option value="Jarrón">Jarrón</option>
+                                    <option value="Salvilla">Salvilla</option>
+                                    <option value="Botella">Botella</option>
+                                    <option value="Vasija Efigie">Vasija Efigie</option>
+                                    <option value="Volante de Uso">Volante de Uso</option>
+                                    <option value="Sello">Sello</option>
+                                    <option value="Sonajero">Sonajero</option>
+                                    <option value="Maraca">Maraca</option>
+                                    <option value="Orejera">Orejera</option>
+                                    <option value="Figurilla">Figurilla</option>
+                                    <option value="Colgante">Colgante</option>
+                                    <option value="Aro">Aro</option>
+                                    <option value="Rodela">Rodela</option>
+                                    <option value="Aerófono">Aerófono</option>
+                                    <option value="Cuenta">Cuenta</option>
+                                    <option value="Apédice Modificado">Apédice Modificado</option>
+                                    <option value="Máscara">Máscara</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="desc_narrativa">Descripción Narrativa</label>
+                                <input type="text" class="form-control" name="desc_narrativa" #desc_narrativa="ngModel"
+                                    [(ngModel)]="ceramic.desc_narrativa">
+                            </div>
+
+                            <div class="row g-3">
+                                <label class="fw-bold">Apendices: </label>
+                                <div class="col-md-12">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="apendices"  #apendices [(ngModel)]="ceramic.apendices"
+                                            value="No presenta">
+                                        <label class="form-check-label" for="apendices">No presenta</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="soporte"  #soporte [(ngModel)]="ceramic.soporte"
+                                        value="Soportes">
+                                        <label class="form-check-label" for="soporte">Soportes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="ped_base"  #ped_base [(ngModel)]="ceramic.ped_base"
+                                            value="Pedestal-Base">
+                                        <label class="form-check-label" for="Pedestal-Base">Pedestal Base</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="asa"  #asa [(ngModel)]="ceramic.asa"
+                                        value="Asa">
+                                        <label class="form-check-label" for="asa">Asa</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="vtdero"  #vtdero [(ngModel)]="ceramic.vtdero"
+                                         value="Vertedero">
+                                        <label class="form-check-label" for="Vertedero">Vertedero</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="otro_soporte" #otro_spt [(ngModel)]="ceramic.otro_soporte"
+                                        value="Otro">
+                                        <label class="form-check-label" for="otro_soporte">Otro</label>
+                                    </div>
+    
+                                    <div class="col-md-4">
+                                        <label for="desc_apendice">Descripción Apéndice</label>
+                                        <input type="text" class="form-control" name="desc_apendice" #desc_apendice="ngModel"
+                                            [(ngModel)]="ceramic.desc_apendice">
+                                    </div>
+                                </div>
+                            </div>
+    
+
+                            
+
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="acabado_superficie">Acabado de Superficie</label>
+                                <select class="form-select" name="acabado_superficie" #acabado_superficie="ngModel"
+                                    [(ngModel)]="ceramic.acabado_superficie">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Completamente engobada y pulida">Completamente engobada y pulida</option>
+                                    <option value="Engobe y pulido en zonas">Engobe y pulido en zonas</option>
+                                    <option value="Solo pulido">Solo pulido</option>
+                                    <option value="Sin Engobe">Sin Engobe</option>
+                                    <option value="Ahumado Intencional">Ahumado Intencional</option>
+                                    <option value="Acabado muy Tosco">Acabado muy Tosco</option>
+                                    <option value="Bruñido">Bruñido</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="estilo_decorativo">Pintura</label>
+                                <select class="form-select" name="estilo_decorativo" #estilo_decorativo="ngModel"
+                                    [(ngModel)]="ceramic.estilo_decorativo">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Bricroma">Bricroma</option>
+                                    <option value="Policroma">Policroma</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="color_pintura">Color de la pintura</label>
+                                <input type="text" class="form-control" name="color_pintura" #color_pintura="ngModel"
+                                    [(ngModel)]="ceramic.color_pintura">
+                            </div>
+
+                        </div>
+
+                        
+                        <div class="row g-3">
+                            <label class="fw-bold">Incisos: </label>
+                            <div class="col-md-12">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="pre_coc" #pre_coc [(ngModel)]="ceramic.pre_coc"
+                                        value="Pre Cocción">
+                                    <label class="form-check-label" for="pre_coccion">Pre Cocción</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="post_coc" #post_coc [(ngModel)]="ceramic.post_coc"
+                                        value="Post Cocción">
+                                    <label class="form-check-label" for="post_cocción">Post Cocción</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="esgraf" #esgraf [(ngModel)]="ceramic.esgraf"
+                                        value="Esgrafiados">
+                                    <label class="form-check-label" for="esgrafiados">Esgrafiados</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="ptdo" #ptdo [(ngModel)]="ceramic.ptdo"
+                                    value="Punteado">
+                                    <label class="form-check-label" for="ptdo">Punteado</label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <label class="fw-bold">Aplicación Plástica </label>
+                            <label class="fw-bold">Pastillajes </label>
+
+                            <div class="col-md-12">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="tira_apl" #tira_apl [(ngModel)]="ceramic.tira_apl"
+                                        value="Tira Aplicada">
+                                    <label class="form-check-label" for="tira_aplicada">Tira Aplicada</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="ptll" #ptll [(ngModel)]="ceramic.ptll"
+                                    value="Pastilla">
+                                    <label class="form-check-label" for="pastilla">Pastilla o pelotilla</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="zna" #zna [(ngModel)]="ceramic.zna"
+                                     value="Zonas">
+                                    <label class="form-check-label" for="zonas">Pintura sobre superficie natural</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="rndo" #rndo [(ngModel)]="ceramic.rndo"
+                                    value="Ranurado">
+                                    <label class="form-check-label" for="ranurado">Ranurado</label>
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="acnlo" #acnlo [(ngModel)]="ceramic.acnlo"
+                                            value="Acanalado">
+                                        <label class="form-check-label" for="acanalado">Acanalado</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="hddo" #hddo [(ngModel)]="ceramic.hddo"
+                                            value="Hendidos">
+                                        <label class="form-check-label" for="hendidos">Hendidos o Pellizcado</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="ptdopt" #ptdo [(ngModel)]="ceramic.ptdopt"
+                                            value="Punteado">
+                                        <label class="form-check-label" for="ptdopt">Punteado</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="mdl" #mdl [(ngModel)]="ceramic.mdl"
+                                            value="Moldeadas">
+                                        <label class="form-check-label" for="moldeadas">Figuras Moldeadas</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <label class="fw-bold">Tipo de Diseño </label>
+                            <label class="fw-bold">Diseño No Figurativo </label>
+
+                            <div class="col-md-12">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="vertical" #vertical [(ngModel)]="ceramic.vertical"
+                                    value="Vertical">
+                                    <label class="form-check-label" for="vertical">Vertical</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="Horizontal" #horizontal [(ngModel)]="ceramic.horizontal"
+                                    value="Horizotal">
+                                    <label class="form-check-label" for="Horizotal">Horizotal</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="zig_zag" #zig_zag [(ngModel)]="ceramic.zig_zag"
+                                    value="Zig Zag">
+                                    <label class="form-check-label" for="zig_zag">Zig-Zag</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="panel" #panel [(ngModel)]="ceramic.panel"
+                                    value="Panel">
+                                    <label class="form-check-label" for="panel">Panel</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="aisld" #aisld [(ngModel)]="ceramic.aisld"
+                                    value="Aislados">
+                                    <label class="form-check-label" for="Aislados">Aislados</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="str" #str [(ngModel)]="ceramic.str"
+                                        value="Saturacion Completa">
+                                    <label class="form-check-label" for="saturacion">Saturación Completa</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="otro_nofig" #otro_nofig [(ngModel)]="ceramic.otro_nofig"
+                                    value="Otro">
+                                    <label class="form-check-label" for="otro_nofig">Otro</label>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <label for="figuras" class="fw-bold">Diseños Figurativos Zoomorfos</label>
+                                <div class="col-md-12">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="head" #head [(ngModel)]="ceramic.head"
+                                        value="Cabeza">
+                                        <label class="form-check-label" for="cabeza">Cabeza</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="suario" #saurio [(ngModel)]="ceramic.suario"
+                                         value="Saurio">
+                                        <label class="form-check-label" for="suario">Saurio</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="felino" #felino [(ngModel)]="ceramic.felino"
+                                        value="Felino">
+                                        <label class="form-check-label" for="felino">Felino</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="batracio" #batracio [(ngModel)]="ceramic.batracio"
+                                            value="Batracio">
+                                        <label class="form-check-label" for="batracio">Batracio</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="ave" #ave [(ngModel)]="ceramic.ave"
+                                         value="Ave">
+                                        <label class="form-check-label" for="ave">Ave</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="primate" #primate [(ngModel)]="ceramic.primate"
+                                        value="Primate">
+                                        <label class="form-check-label" for="primate">Primate</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="murcielago" #murcielago [(ngModel)]="ceramic.murcielago"
+                                            value="Murcielago">
+                                        <label class="form-check-label" for="murcielago">Murcielago</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="mamifero" #mamifero [(ngModel)]="ceramic.mamifero"
+                                            value="Mamifero">
+                                        <label class="form-check-label" for="mamifero">Mamifero</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="turtle" #turtle [(ngModel)]="ceramic.turtle"
+                                        value="Tortuga">
+                                        <label class="form-check-label" for="turtle">Tortuga</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="reptil" #reptil [(ngModel)]="ceramic.reptil"
+                                        value="Reptil">
+                                        <label class="form-check-label" for="reptil">Reptil</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="pez" #pez [(ngModel)]="ceramic.pez"
+                                            value="Pez">
+                                        <label class="form-check-label" for="pez">Pez</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="indt" #indt [(ngModel)]="ceramic.indt"
+                                            value="Indeterminado">
+                                        <label class="form-check-label" for="indt">Indeterminado</label>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="desc_narrativa">Taxonomia Explicita</label>
+                                    <input type="text" class="form-control" name="txn_expl" #txm_expl="ngModel"
+                                        [(ngModel)]="ceramic.txn_expl">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="desc_narrativa">Investigador</label>
+                                    <input type="text" class="form-control" name="investigador_zoo"
+                                        #investigador_zoo="ngModel" [(ngModel)]="ceramic.investigador_zoo">
+                                </div>
+
+
+                            </div>
+
+                            <div class="row g-3">
+                                <label for="figuras" class="fw-bold">Diseños Figurativos Antropomorfos</label>
+                                    <div class="col-md-12">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="cabeza_nofig" #cabeza_nofig [(ngModel)]="ceramic.cabeza_nofig"
+                                            value="Cabeza no Figurativo">
+                                            <label class="form-check-label" for="cabeza_nofig">Cabeza</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="sau_nofig" #sau_nofig [(ngModel)]="ceramic.sau_nofig"
+                                             value="Saurio">
+                                            <label class="form-check-label" for="sau_nofig">Cara</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="feli_nofig" #fel_nofig [(ngModel)]="ceramic.feli_nofig"
+                                             value="Felino">
+                                            <label class="form-check-label" for="feli_nofig">Cabeza Hocico</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="bat_nofig" #bat_nofig [(ngModel)]="ceramic.bat_nofig"
+                                            value="Batracio">
+                                            <label class="form-check-label" for="bat_nofig">Sedente</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="erguida_nofig" #eguida_nofig [(ngModel)]="ceramic.erguida_nofig"
+                                             value="Erguida">
+                                            <label class="form-check-label" for="erguida_nofig">Erguida</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="prim_nofig" #prim_nofig [(ngModel)]="ceramic.prim_nofig"
+                                            value="Escena">
+                                            <label class="form-check-label" for="prim_nofig">Escena</label>
+                                        </div>
+                            
+                                    </div>                          
+                            </div>
+
+                            <div class="row g-3">
+                                <label for="figuras" class="fw-bold">Diseños Figurativos Indeterminado</label>
+                                    <div class="col-md-12">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="cabfigint" #cabfigint [(ngModel)]="ceramic.cabfigint"
+                                             value="Cabeza no Figurativo">
+                                            <label class="form-check-label" for="cabfigint">Cabeza</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="cabhoc" #cabhoc [(ngModel)]="ceramic.cabhoc"
+                                             value="Cabeza Hocico">
+                                            <label class="form-check-label" for="saurio">Cabeza Hocico</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="garra" #garra [(ngModel)]="ceramic.garra"
+                                            value="Garra">
+                                            <label class="form-check-label" for="garra">Garra</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="desc_narrativa">Otra</label>
+                                            <input type="text" class="form-control" name="otfigind" #otfigind="ngModel"
+                                                [(ngModel)]="ceramic.otfigind">
+                                        </div>
+                            
+                                    </div>                          
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        Asociación Funcional, Tipologica, Regional y Temporal
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="forma_funcion">Forma-Función</label>
+                                <select class="form-select" name="forma_funcion" #forma_funcion="ngModel"
+                                    [(ngModel)]="ceramic.forma_funcion">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Cocción">Cocción</option>
+                                    <option value="Almacenaje">Almacenaje</option>
+                                    <option value="Servicio">Servicio</option>
+                                    <option value="Transporte">Transporte</option>
+                                    <option value="Utilitario en General">Utilitario en General</option>
+                                    <option value="Suntuario">Suntuario</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="marcas_uso">Marcas de Uso</label>
+                                <select class="form-select" name="marcas_uso" #marcas_uso="ngModel"
+                                    [(ngModel)]="ceramic.marcas_uso">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Huellas de Uso">Huellas de Uso</option>
+                                    <option value="Restos de Hollín">Restos de Hollín</option>
+                                    <option value="Restos de Alimentos">Restos de Alimentos</option>
+                                    <option value="Marcas de termoalteración">Marcas de termoalteración</option>
+                                    <option value="Ahumado">Ahumado</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="desc_marcas_uso">Descripción Marcas de Uso</label>
+                                <input type="text" class="form-control" name="desc_marcas_uso"
+                                    #desc_marcas_uso="ngModel" [(ngModel)]="ceramic.desc_marcas_uso">
+                            </div>
+
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="tipo_ceramico_grupo">Tipo Cerámico/Grupo</label>
+                                <input type="text" class="form-control" name="tipo_ceramico_grupo"
+                                    #tipo_ceramico_grupo="ngModel" [(ngModel)]="ceramic.tipo_ceramico_grupo">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="ceramico_refz">Refencias Bibliográfica</label>
+                                <input type="text" class="form-control" name="ceramico_refz" #ceramico_ref2="ngModel"
+                                    [(ngModel)]="ceramic.ceramico_refz">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="periodo_ceramica">Periodo</label>
+                                <input type="text" class="form-control" name="periodo_ceramica"
+                                    #periodo_ceramica="ngModel" [(ngModel)]="ceramic.periodo_ceramica">
+                            </div>
+
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="fase_ceramica">Fase</label>
+                                <input type="text" class="form-control" name="fase_ceramica" #fase_ceramica="ngModel"
+                                    [(ngModel)]="ceramic.fase_ceramica">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="temporalidad_ceramica">Temporalidad Estimada</label>
+                                <input type="text" class="form-control" name="temporalidad_ceramica"
+                                    #temporalidad_ceramica="ngModel" [(ngModel)]="ceramic.temporalidad_ceramica">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="procedencia_ceramica">Procedencia (Región/Subregión)</label>
+                                <input type="text" class="form-control" name="procedencia_ceramica"
+                                    #procedencia_ceramica="ngModel" [(ngModel)]="ceramic.procedencia_ceramica">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                        Estado de Conservación
+                    </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="estado_conservacion">Estado de Conservación</label>
+                                <select class="form-select" name="estado_conservacion" #estado_conservacion="ngModel"
+                                    [(ngModel)]="ceramic.estado_conservacion">
+                                    <option selected>Seleccione...</option>
+                                    <option value="1">Óptimo</option>
+                                    <option value="2">Bueno</option>
+                                    <option value="3">Regular</option>
+                                    <option value="3">Malo</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="potencial">Potencial de Exhibición</label>
+                                <select class="form-select" name="potencial" #potencial="ngModel"
+                                    [(ngModel)]="ceramic.potencial">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="potencial_exp">Explique</label>
+                                <input type="text" class="form-control" name="potencial_exp" #potencial_exp="ngModel"
+                                    [(ngModel)]="ceramic.potencial_exp">
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="largo">Vitrina Largo(cm)</label>
+                                <input type="text" class="form-control" name="largo" #largo="ngModel"
+                                    [(ngModel)]="ceramic.largo">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="Ancho">Vitrina Ancho(cm)</label>
+                                <input type="text" class="form-control" name="ancho" #ancho="ngModel"
+                                    [(ngModel)]="ceramic.ancho">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="alto">Vitrina Alto(cm)</label>
+                                <input type="text" class="form-control" name="alto" #alto="ngModel"
+                                    [(ngModel)]="ceramic.alto">
+                            </div>
+
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="peso">Vitrina Peso(gr)</label>
+                                <input type="text" class="form-control" name="peso" #peso="ngModel"
+                                    [(ngModel)]="ceramic.peso">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                        Investigador y Registro
+                    </button>
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="nombre_invest">Nombre</label>
+                                <input type="text" class="form-control" name="nombre_invest" #nombre_invest="ngModel"
+                                    [(ngModel)]="ceramic.nombre_invest">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="fecha_analisis">Fecha Análisis</label>
+                                <input type="date" class="form-control" name="fecha_analisis" #fecha_analisis="ngModel"
+                                    [(ngModel)]="ceramic.fecha_analisis">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="fotos_num">Numeración de las fotos</label>
+                                <input type="text" class="form-control" name="fotos_num" #fotos_num="ngModel"
+                                    [(ngModel)]="ceramic.fotos_num">
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+<!-- 
+            <input type="submit" value="enviar" class="btn btn-success"> -->
+            <input type="submit" value="Guardar" class="btn btn-success"/>
+
+        </form>
+
+        <div class="form-group">
+
+            <div class="image-thumb" *ngIf="is_edit">
+                
+                    <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
+                    <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
+               
+            </div>
+            
+            <angular-file-uploader
+                [config]="afuConfig"
+                (ApiResponse)="imageUpload($event)"
+            >
+
+            </angular-file-uploader>
+        </div>
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    </section>
+
+    <div class="clearfix"></div>
+
+</div>

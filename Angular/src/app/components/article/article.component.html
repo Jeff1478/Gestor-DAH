@@ -1,0 +1,35 @@
+
+
+<div class= "center">
+    <section id="content">
+        
+        <article class="article-item article-detail" *ngIf="ceramic">
+            <div class="image-wrap">
+                <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
+                <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
+            </div>
+            <div id="htmlData">
+            <h1 class="subheader">{{ceramic.title}}</h1>
+            <span class="date">
+                {{ceramic.date | amLocale: 'es' | amTimeAgo }}
+            </span>
+            <p>
+             {{ceramic.content}}
+            </p>
+            </div>
+
+            <div class="clearfix"></div>
+        </article>
+
+         <a [routerLink]="['/pagina/editar',ceramic._id]" class="btn btn-outline-success">Editar</a> 
+         <a (click)="delete(ceramic._id)" class = "btn btn-danger">Borrar</a>
+         <button (click)= "sendToPdf()" class="btn btn-outline-success">
+            <i class="material-icons">
+             
+            </i> <span>Open PDF</span></button>
+        
+    </section>
+   
+
+     <app-sidebar></app-sidebar>
+</div>

@@ -1,0 +1,75 @@
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">Aplicación Plástica</h5>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <!-- <span class="badge bg-secondary" aria-hidden="true">&times;</span> -->
+        </button>
+    </div>
+    <div class="modal-body">
+        <label for="pastillajes" class="fw-bold">Pastillajes</label>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Tira Aplicada
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Pastilla o pelotilla
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+             Zonas de pintura sobre superficie natural
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Ranurado
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Acanalados
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Hendidos o pellizcado
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Punteado
+            </label>
+          </div>
+
+          <label for="figuras" class="fw-bold">Figuras Modeladas</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Figuras Modeladas
+            </label>
+          </div>
+                         
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="modal.close()">OK</button>
+    </div>
+</ng-template>
+
+<button type="button" class="btn btn-link" (click)="plastica.open(contenido)">Aplicación Plástica</button>
+
