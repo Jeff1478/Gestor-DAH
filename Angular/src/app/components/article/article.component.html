@@ -4,18 +4,157 @@
     <section id="content">
         
         <article class="article-item article-detail" *ngIf="ceramic">
-            <div class="image-wrap">
+            <!-- <div class="image-wrap">
                 <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
                 <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
-            </div>
+            </div> -->
+            
             <div id="htmlData">
-            <h1 class="subheader">{{ceramic.title}}</h1>
-            <span class="date">
-                {{ceramic.date | amLocale: 'es' | amTimeAgo }}
-            </span>
-            <p>
-             {{ceramic.content}}
-            </p>
+                <h1 class="subheader">Ficha Registro Cerámica, Cód Monumento : {{ceramic.cod_mon}}</h1>
+                <span class="date">
+                   Digitado : {{ceramic.date | amLocale: 'es' | amTimeAgo }}
+                </span>
+                <div class="image-thumb">
+                        
+                    <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
+                    <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
+               
+                </div>
+                
+                
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th scope="col">Cod Monumento</th>
+                      <th scope="col">Num Artefacto</th>
+                      <th scope="col">Num Caja</th>
+                      <th scope="col">Proyecto</th>
+                      <th scope="col">Investigador</th>
+                      <th scope="col">Año Proyecto</th>
+                      <th scope="col">Datos Etiqueta</th>
+                      <th scope="col">Fecha Excavación</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <td> {{ceramic.cod_mon}} </td>
+                      <td> {{ceramic.num_artefacto}} </td>
+                      <td> {{ceramic.num_caja}} </td>
+                      <td> {{ceramic.proyecto}} </td>
+                      <td> {{ceramic.investigador}} </td>
+                      <td> {{ceramic.pro_year}} </td>
+                      <td> {{ceramic.etiqueta}} </td>
+                      <td> {{ceramic.fecha_exc | date: 'mediumDate'}} </td>
+                     
+                    </tbody>
+                  </table>
+
+                  <table class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th scope="col">Id Contexto</th>
+                      <th scope="col">Contexto</th>
+                      <th scope="col">Ubicación Relativa</th>
+                      <th scope="col">Fotografia</th>
+                      <th scope="col">N° Foto</th>
+                      <th scope="col">Calidad</th>
+                      <th scope="col">Estado</th>
+                      <th scope="col">Planimetría</th>
+                      
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <td> {{ceramic.id_contexto}} </td>
+                      <td> {{ceramic.contexto}} </td>
+                      <td> {{ceramic.ubicacion}} </td>
+                      <td> {{ceramic.foto}} </td>
+                      <td> {{ceramic.num_foto}} </td>
+                      <td> {{ceramic.calidad_foto}} </td>
+                      <td> {{ceramic.estado_foto}} </td>
+                      <td> {{ceramic.plano}} </td>       
+                    </tbody>
+                  </table>
+                    
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">N° Lámina</th>
+                            <th scope="col">Calidad</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Diagnóstico Contexto</th>
+                            <th scope="col">Fechamiento</th>
+                            <th scope="col">Tipo Pieza</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Apd No</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td> {{ceramic.num_lamina}} </td>
+                        <td> {{ceramic.calidad_lamina}} </td>
+                        <td> {{ceramic.estado_Lamina}} </td>
+                        <td> {{ceramic.diagnostico_contexto}} </td>
+                        <td> {{ceramic.fechamiento}} </td>
+                        <td> {{ceramic.tipo_pieza}} </td>
+                        <td> {{ceramic.desc_narrativa}} </td>
+                        <td> {{ceramic.apendices}} </td>
+                    </tbody>
+                </table>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Apd Soportes</th>
+                            <th scope="col">Apd Pedestal</th>
+                            <th scope="col">Apn Asa</th>
+                            <th scope="col">Apn Vertedero</th>
+                            <th scope="col">Apn Otro</th>
+                            <th scope="col">Descripción Apéndice</th>
+                            <th scope="col">Acabado Superficie</th>
+                            <th scope="col">Pintura</th>
+                            <th scope="col">Color Pintura</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td> {{ceramic.soporte}} </td>
+                        <td> {{ceramic.ped_base}} </td>
+                        <td> {{ceramic.asa}} </td>
+                        <td> {{ceramic.vtdero}} </td>
+                        <td> {{ceramic.otro_soporte}} </td>
+                        <td> {{ceramic.desc_apendice}} </td>
+                        <td> {{ceramic.acabado_superficie}} </td>
+                        <td> {{ceramic.estilo_decorativo}} </td>
+                        <td> {{ceramic.color_pintura}} </td>
+                    </tbody>
+                </table>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Pre Cocción</th>
+                            <th scope="col">Post Cocción</th>
+                            <th scope="col">Esgrafiados</th>
+                            <th scope="col">Punteado</th>
+                            <th scope="col">Tira Aplicada</th>
+                            <th scope="col">Pastilla</th>
+                            <th scope="col">Pint sobre superficie</th>
+                            <th scope="col">Ranurado</th>
+                            <th scope="col">Acanalado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td> {{ceramic.pre_coc}} </td>
+                        <td> {{ceramic.post_coc}} </td>
+                        <td> {{ceramic.esgraf}} </td>
+                        <td> {{ceramic.ptdo}} </td>
+                        <td> {{ceramic.tira_apl}} </td>
+                        <td> {{ceramic.ptll}} </td>
+                        <td> {{ceramic.zna}} </td>
+                        <td> {{ceramic.rndo}} </td>
+                        <td> {{ceramic.acnlo}} </td>
+                    </tbody>
+                </table>
+
+                
+                  
             </div>
 
             <div class="clearfix"></div>
@@ -23,10 +162,12 @@
 
          <a [routerLink]="['/pagina/editar',ceramic._id]" class="btn btn-outline-success">Editar</a> 
          <a (click)="delete(ceramic._id)" class = "btn btn-danger">Borrar</a>
-         <button (click)= "sendToPdf()" class="btn btn-outline-success">
+         <!-- <button (click)= "openPDF()" class="btn btn-outline-success">
             <i class="material-icons">
-             
-            </i> <span>Open PDF</span></button>
+               
+            </i> <span>Open PDF</span></button> -->
+
+            <button class="btn btn-success btn-block" (click)="exportPdf()">Download PDF</button>
         
     </section>
    

@@ -6,6 +6,10 @@ import { Global } from 'src/app/services/global';
 import Swal from 'sweetalert2';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import domtoimage from 'dom-to-image';
+
+
+
 
 //declare let pdfMake:any;
 
@@ -31,29 +35,69 @@ export class ArticleComponent implements OnInit {
 
    
   }
+
+  exportPdf() {
+    
+    const div : any = document.getElementById('htmlData');
+    const options = { background: 'white', height: 1024, width: 900 };
+    domtoimage.toPng(div, options).then((dataUrl: any) => {
+      //Initialize JSPDF
+      const doc = new jsPDF('p', 'pt', 'a4');
+      var width = doc.internal.pageSize.getWidth();
+      var height = doc.internal.pageSize.getHeight();
+        
+      //Add image Url to PDF
+      doc.addImage(dataUrl, 'PNG', 5, 0, width, height);
+      doc.save('pdfDocument.pdf');
+    })
+  }
    
 
   sendToPdf(){
-    const data = document.getElementById("htmlData") as HTMLCanvasElement;
-    console.log(data);
-    const doc = new jsPDF('p', 'pt', 'a4');
-    
-    html2canvas(data).then((canvas) => {
+    const data : any = document.getElementById("htmlData");
+    const options = { background: 'white', height: 845, width: 595 };
+    // console.log(data);
+    domtoimage.toPng(data, options).then((dataUrl: any) => {
+      const doc = new jsPDF('p', 'pt', 'a4');
 
-      const img = canvas.toDataURL('image/PNG');
 
-      // Add image Canvas to PDF
-      const bufferX = 15;
-      const bufferY = 15;
-      const imgProps = (doc as any).getImageProperties(img);
-      const pdfWidth = doc.internal.pageSize.getWidth() - 2 * bufferX;
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-      doc.addImage(img, 'PNG', bufferX, bufferY, pdfWidth, pdfHeight, undefined, 'FAST');
-      return doc;
-    }).then((docResult) => {
-      docResult.save(`${new Date().toISOString()}_tutorial.pdf`);
-    });
+      html2canvas(data, options).then((canvas) => {
+
+        const img = canvas.toDataURL('image/PNG');
+
+        // Add image Canvas to PDF
+        const bufferX = 15;
+        const bufferY = 15;
+        const imgProps = (doc as any).getImageProperties(img);
+        const pdfWidth = doc.internal.pageSize.getWidth() - 2 * bufferX;
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        doc.addImage(img, 'PNG', bufferX, bufferY, pdfWidth, pdfHeight, undefined, 'FAST');
+        return doc;
+      }).then((docResult) => {
+        docResult.save(`${new Date().toISOString()}_ceramica.pdf`);
+      });
+    }
+    )}
+
+  openPDF(){
+    const DATA : any = document.getElementById('htmlData');
+      
+
+    html2canvas(DATA).then(canvas => {
+        
+        let fileWidth = 208;
+        let fileHeight = canvas.height * fileWidth / canvas.width;
+        
+        const FILEURI = canvas.toDataURL('image/png')
+        let PDF = new jsPDF('p', 'mm', 'a4');
+        let position = 0;
+        PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
+        
+        PDF.save('angular-demo.pdf');
+    });     
   }
+ 
+
   
   
     
@@ -142,7 +186,6 @@ export class ArticleComponent implements OnInit {
   }
 
 }
-
 
 
 

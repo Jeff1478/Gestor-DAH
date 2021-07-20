@@ -257,7 +257,7 @@ var controller = {
         var params = req.body;
 
         // Validar datos
-        try{
+       /*  try{
             var validate_title = !validator.isEmpty(params.title);
             var validate_content = !validator.isEmpty(params.content);
         }catch(err){
@@ -265,9 +265,9 @@ var controller = {
                 status: 'error',
                 message: 'Faltan datos por enviar !!!'
             }); 
-        }
+        } */
 
-        if(validate_title && validate_content){
+        //  if(validate_title && validate_content){
              // Find and update
              Ceramic.findOneAndUpdate({_id: ceramicId}, params, {new:true}, (err, ceramicUpdated) => {
                 if(err){
@@ -289,13 +289,13 @@ var controller = {
                     ceramic: ceramicUpdated
                 });
              });
-        }else{
+        /* }else{
              // Devolver respuesta
             return res.status(200).send({
                 status: 'error',
                 message: 'La validación no es correcta !!!'
-            });
-        }
+            });  }*/
+       
        
     },
 

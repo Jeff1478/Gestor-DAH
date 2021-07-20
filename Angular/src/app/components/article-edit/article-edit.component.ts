@@ -7,7 +7,7 @@ import { Global } from 'src/app/services/global';
 
 @Component({
   selector: 'app-article-edit',
-  templateUrl: '../article-new/article-new.component.html',
+  templateUrl: '../ceramica/ceramica.component.html',
   styleUrls: ['./article-edit.component.css'],
   providers: [CeramicService]
 })
