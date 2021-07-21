@@ -14,10 +14,18 @@
                 <span class="date">
                    Digitado : {{ceramic.date | amLocale: 'es' | amTimeAgo }}
                 </span>
+
                 <div class="image-thumb">
                         
                     <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
                     <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
+               
+                </div>
+
+                <div class="image-thumb">
+                        
+                    
+                    <img src="assets/images/Bicentenario.png">
                
                 </div>
                 
@@ -129,15 +137,15 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Pre Cocción</th>
-                            <th scope="col">Post Cocción</th>
-                            <th scope="col">Esgrafiados</th>
-                            <th scope="col">Punteado</th>
-                            <th scope="col">Tira Aplicada</th>
-                            <th scope="col">Pastilla</th>
-                            <th scope="col">Pint sobre superficie</th>
-                            <th scope="col">Ranurado</th>
-                            <th scope="col">Acanalado</th>
+                            <th scope="col">Incisos :Pre Cocción</th>
+                            <th scope="col">Incisos :Post Cocción</th>
+                            <th scope="col">Incisos :Esgrafiados</th>
+                            <th scope="col">Incisos :Punteado</th>
+                            <th scope="col">Pastillajes :Tira Aplicada</th>
+                            <th scope="col">Pastillajes :Pastilla</th>
+                            <th scope="col">Pastillajes :Pint sobre superficie</th>
+                            <th scope="col">Pastillajes :Ranurado</th>
+                            <th scope="col">Pastillajes :Acanalado</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -153,7 +161,33 @@
                     </tbody>
                 </table>
 
-                
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Pastillajes: Hendido</th>
+                            <th scope="col">Pastillajes: Punteado</th>
+                            <th scope="col">Pastillajes: Figuras Moldeadas</th>
+                            <th scope="col">Dsñ No Figurativo: Vertical</th>
+                            <th scope="col">Dsñ No Figurativo: Horizontal</th>
+                            <th scope="col">Dsñ No Figurativo: Zig-Zag</th>
+                            <th scope="col">Dsñ No Figurativo: Panel</th>
+                            <th scope="col">Dsñ No Figurativo: Aislados</th>
+                            <th scope="col">Dsñ No Figurativo: Saturación Completa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td> {{ceramic.hddo}} </td>
+                        <td> {{ceramic.ptdopt}} </td>
+                        <td> {{ceramic.mdl}} </td>
+                        <td> {{ceramic.vertical}} </td>
+                        <td> {{ceramic.horizontal}} </td>
+                        <td> {{ceramic.zig_zag}} </td>
+                        <td> {{ceramic.panel}} </td>
+                        <td> {{ceramic.aisld}} </td>
+                        <td> {{ceramic.str}} </td>
+                    </tbody>
+                </table>
                   
             </div>
 

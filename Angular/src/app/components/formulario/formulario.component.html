@@ -1,1 +1,50 @@
-<p>formulario works!</p>
+<mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+  
+  <table mat-table [dataSource]="dataSource.data" class="mat-elevation-z8">
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="cod_mon">
+      <th mat-header-cell *matHeaderCellDef> Cod Monumento </th>
+      <td mat-cell *matCellDef="let element"> {{element.cod_mon}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="num_artefacto">
+      <th mat-header-cell *matHeaderCellDef> Num Artefacto </th>
+      <td mat-cell *matCellDef="let element"> {{element.num_artefacto}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="num_caja">
+      <th mat-header-cell *matHeaderCellDef> Num Caja </th>
+      <td mat-cell *matCellDef="let element"> {{element.num_caja}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="proyecto">
+      <th mat-header-cell *matHeaderCellDef> Proyecto </th>
+      <td mat-cell *matCellDef="let element"> {{element.proyecto}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+
+  <h3>Export como XLSX</h3>
+  <div class ="container">
+      <button mat-raised-button color="primary" (click)="exportAsXLSX()">Export
+          <mat-icon>trending_down</mat-icon>
+      </button>
+     &nbsp; 
+      <button mat-raised-button color="accent" (click)="exportAsXLSXFiltered()">Filtro
+        <mat-icon>find_in_page</mat-icon>
+      </button>
+  </div>

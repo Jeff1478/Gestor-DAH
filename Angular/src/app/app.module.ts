@@ -33,6 +33,15 @@ import { LoginButtonComponent } from './components/login-button/login-button.com
 import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
 import { AuthenticationButtonComponent } from './components/authentication-button/authentication-button.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+
+
+import { ExporterService } from './services/exporter';
 
 @NgModule({
   declarations: [
@@ -68,12 +77,19 @@ import { LandingComponent } from './pages/landing/landing.component';
     NgbModule,
     FormsModule,
     MomentModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+  
+    MatTableModule,
     AngularFileUploaderModule,
     AuthModule.forRoot({
       ...env.auth,
     }),
+    BrowserAnimationsModule,
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders, ExporterService],
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

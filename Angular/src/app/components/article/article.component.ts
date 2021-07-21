@@ -48,7 +48,7 @@ export class ArticleComponent implements OnInit {
         
       //Add image Url to PDF
       doc.addImage(dataUrl, 'PNG', 5, 0, width, height);
-      doc.save('pdfDocument.pdf');
+      doc.save(this.ceramic._id + '.pdf');
     })
   }
    
