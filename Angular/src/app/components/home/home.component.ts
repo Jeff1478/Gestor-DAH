@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private _ceramicService : CeramicService
   ) {
-    this.title = 'Últimos Artefactos';
+    this.title = 'Articulo del Mes';
    }
 
   ngOnInit() {
