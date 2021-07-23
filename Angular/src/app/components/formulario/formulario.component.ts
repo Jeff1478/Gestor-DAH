@@ -24,8 +24,8 @@ export class FormularioComponent implements OnInit {
   
   
   
-  displayedColumns: string[] = ['cod_mon', 'num_artefacto', 'num_caja', 'proyecto'];
-  dataSource = new MatTableDataSource<Element[]>();
+  displayedColumns: string[] = ['cod_mon','num_artefacto','proyecto','pro_year','etiqueta','contexto','ubicacion','investigador'];
+  dataSource!: MatTableDataSource<any>;
  
 
   
