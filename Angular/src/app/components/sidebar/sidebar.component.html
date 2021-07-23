@@ -2,18 +2,19 @@
     <div id="nav-blog" class="sidebar-item">
         <h3>Administrador</h3>
         <a [routerLink]="['/ceramica']" class="btn btn-success">Agregar Ficha</a>
+        <a [routerLink]="['/formulario']" class= "btn btn-info">Exportar Excel</a>
     </div>
 
     
 
-    <div id="search" class="sidebar-item">
+    <!-- <div id="search" class="sidebar-item">
             <h3>Buscador</h3>
             <p>Digite palabra(s) clave</p>
             <form #searchForm="ngForm" (ngSubmit)= "goSearch()">
                 <input type="text" name="search" [(ngModel)] ="searchString"/>
                   <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
-    </div>
+    </div> -->
 </aside>
 
 <div class="clearfix"></div>
