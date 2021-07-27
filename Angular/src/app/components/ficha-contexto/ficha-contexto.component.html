@@ -1,1 +1,144 @@
-<p>ficha-contexto works!</p>
+<div class="center">
+    <section id="content.contexto">
+
+        <h1 class="subheader">FICHA DE ANÁLISIS DOCUMENTAL</h1>
+        
+        <form class="mid-form" #contextoForm="ngForm" (ngSubmit)="OnSubmit()">
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+            
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            General
+                        </button>
+                    </h2>
+            
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+            
+            
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <label for="id_cont">Id Contexto</label>
+                                    <input type="text" class="form-control" name="id_cont" #cod_mon="ngModel"
+                                        [(ngModel)]="contexto.id_cont">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="year_inv">Año Investigación</label>
+                                    <input type="number" class="form-control" name="year_inv" #num_artefacto="ngModel"
+                                        [(ngModel)]="contexto.year_inv">
+                                </div>
+            
+                                <div class="col-md-3">
+                                    <label for="proyecto">Proyecto</label>
+                                    <input type="text" class="form-control" name="proyecto" #proyecto="ngModel"
+                                        [(ngModel)]="contexto.proyecto">
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <label for="investigador">Investigador</label>
+                                    <input type="text" class="form-control" name="investigador" #investigador="ngModel"
+                                        [(ngModel)]="contexto.investigador">
+                                </div>
+            
+                            </div>
+            
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+               
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Información Contextual
+                    </button>
+                    </h2>
+
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="sector">Sector</label>
+                                <select class="form-select" name="sector" #sector="ngModel" [(ngModel)]="contexto.sector">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Reserva">Reserva</option>
+                                    <option value="PlaySkool">PlaySkool</option>
+                                    <option value="Duarco">Duarco</option>
+                                    <option value="Cocorí">Cocorí</option>
+                                </select>    
+                            </div>
+                            <div class="col-md-3">
+                                <label for="ubicacion">Ubicación</label>
+                                <select class="form-select" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="contexto.ubicacion">
+                                    <option selected>Seleccione...</option>
+                                    <option value="Norte">Norte</option>
+                                    <option value="Sur">Sur</option>
+                                    <option value="Este">Este</option>
+                                    <option value="Oeste">Oeste</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="operacion">Operacion</label>
+                                <input type="text" class="form-control" name="operacion" #operacion="ngModel"
+                                    [(ngModel)]="contexto.operacion">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="suboperacion">Sub-Operacion</label>
+                                <input type="text" class="form-control" name="suboperacion" #suboperacion="ngModel"
+                                    [(ngModel)]="contexto.suboperacion">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>       
+            </div>                      
+          
+
+             <div class="form-group">
+
+                <div class="image-thumb" *ngIf="is_edit">
+                    
+                        <img src="{{url + 'get-image/' + contexto.image}}" alt="{{contexto.title}}" *ngIf="contexto.image"/>
+                        <img src="assets/images/default.png" alt="{{contexto.title}}" *ngIf="!contexto.image"/>
+                   
+                </div>
+                
+                <angular-file-uploader
+                    [config]="afuConfig"
+                    (ApiResponse)="imageUpload($event)"
+                >
+    
+                </angular-file-uploader>
+               
+             </div>
+
+            <input type="submit" value="Guardar" class="btn btn-success"/>
+
+        </form>
+
+       
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    </section>
+
+    <div class="clearfix"></div>
+
+</div>
