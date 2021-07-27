@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -9,6 +9,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class SidebarComponent implements OnInit {
 
   public searchString!: string;
+  @Input() titulo!: string;
 
   constructor(
 

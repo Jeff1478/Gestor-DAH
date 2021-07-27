@@ -23,7 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalOptionsComponent } from './components/modal-options/modal-options.component';
 import { TipoDisComponent } from './components/tipo-dis/tipo-dis.component';
 import { PlasticaComponent } from './components/plastica/plastica.component';
-import { IncisoComponent } from './components/inciso/inciso.component';
+import { ContextoComponent } from './components/contexto/contexto.component';
 import { CeramicsComponent } from './components/ceramics/ceramics.component';
 import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
@@ -42,6 +42,8 @@ import {MatTableModule} from '@angular/material/table';
 
 
 import { ExporterService } from './services/exporter';
+import { FichaContextoComponent } from './components/ficha-contexto/ficha-contexto.component';
+
 
 @NgModule({
   declarations: [
@@ -59,7 +61,7 @@ import { ExporterService } from './services/exporter';
     ModalOptionsComponent,
     TipoDisComponent,
     PlasticaComponent,
-    IncisoComponent,
+    ContextoComponent,
     CeramicsComponent,
     ArticleComponent,
     SearchComponent,
@@ -68,7 +70,9 @@ import { ExporterService } from './services/exporter';
     LoginButtonComponent,
     LogoutButtonComponent,
     AuthenticationButtonComponent,
-    LandingComponent
+    LandingComponent,
+    FichaContextoComponent
+    
   ],
   imports: [
     BrowserModule,

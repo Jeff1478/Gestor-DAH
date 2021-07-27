@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var app = express();
 // Cargar ficheros rutas
 var ceramic_routes = require('./routes/ceramic');
+var contexto_routes = require('./routes/contexto');
 
 // Middlewares
 app.use(bodyParser.urlencoded({extended:false}));
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 
 // Adañir prefijos a rutas 
 app.use('/api', ceramic_routes);
+app.use('/ap', contexto_routes);
 
 
 // Exportar Modulo (fichero actual)

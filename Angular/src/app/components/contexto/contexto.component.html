@@ -1,0 +1,26 @@
+<div class="loading" *ngIf="!contextos">
+    Cargando....
+</div>
+
+<div class="loading" *ngIf="contextos && contextos.length == 0">
+    No hay artefactos para mostrar
+</div>
+
+<div id="articles" *ngIf="contextos">
+    <article class= "article-item" *ngFor ="let contexto of contextos">
+        <div class="image-wrap">
+            <img src="{{url + 'get-image/' + contexto.image}}" alt="{{contexto.title}}" *ngIf="contexto.image"/>
+            <img src="assets/images/default.png" alt="{{contexto.title}}" *ngIf="!contexto.image"/>
+        </div>
+
+        <h2>{{contexto.id_cont}}</h2>
+        
+        
+        <span class="date">
+            {{contexto.date | amLocale: 'es' | amTimeAgo }}
+        </span>
+        <a [routerLink]="['/peliculas/contexto', contexto._id]">Leer más</a>
+        <div class="clearfix"></div>
+    </article>
+</div>
+

@@ -1,7 +1,14 @@
 <aside id="sidebar">
     <div id="nav-blog" class="sidebar-item">
         <h3>Administrador</h3>
-        <a [routerLink]="['/ceramica']" class="btn btn-success">Agregar Ficha</a>
+        
+        <div *ngIf= "titulo === 'ceramica'"> 
+            <a [routerLink]="['/ceramica']" class="btn btn-success">Agregar Ficha</a>
+        </div>
+        <div *ngIf= "titulo === 'contexto'"> 
+            <a [routerLink]="['/ficha-contexto']" class="btn btn-success">Agregar Ficha</a>
+        </div>
+        
         <a [routerLink]="['/formulario']" class= "btn btn-info">Exportar Excel</a>
     </div>
 
