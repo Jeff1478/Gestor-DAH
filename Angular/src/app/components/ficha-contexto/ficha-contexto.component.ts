@@ -18,7 +18,8 @@ export class FichaContextoComponent implements OnInit {
   public status!: String;
   public url: String;
   public is_edit: boolean;
-
+  values = [0, 1, 2, 3];
+  calc = "Cementerio";
   afuConfig = {
     uploadAPI: {
       url:GlobalC.url+'upload-image'
@@ -36,7 +37,7 @@ export class FichaContextoComponent implements OnInit {
       _id: '',
      date:'',
      
-     image: '',
+      image: '',
        title: '',
        content: '',
        id_cont: '',

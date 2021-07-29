@@ -3,7 +3,7 @@ export class Contexto{
     public _id:string,
     
     public date: any,
-    public image: String,
+    public image: any,
     public title: String,
     public content: String,
     public id_cont: String,

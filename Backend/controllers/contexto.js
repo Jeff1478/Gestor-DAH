@@ -377,7 +377,7 @@ var controller = {
  
      getImage: (req, res) => {
          var file = req.params.image;
-         var path_file = './upload/contextos/'+file;
+         var path_file = './upload/contexto/'+file;
  
          fs.exists(path_file, (exists) => {
              if(exists){

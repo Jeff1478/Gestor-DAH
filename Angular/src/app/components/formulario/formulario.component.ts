@@ -1,17 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { ExporterService } from 'src/app/services/exporter';
 import { Ceramic } from 'src/app/models/ceramic';
 import { CeramicService } from 'src/app/services/ceramic.service';
 
 
-export interface PeriodicElement {
- 
-  cod_mon : string;
-  num_artefacto : number;
-  num_caja : number;
-  proyecto : string;
-}
+
 
 
 @Component({
@@ -20,15 +15,17 @@ export interface PeriodicElement {
   styleUrls: ['./formulario.component.css'],
   providers: [CeramicService]
 })
+
+
+
 export class FormularioComponent implements OnInit {
-  
-  
   
   displayedColumns: string[] = ['cod_mon','num_artefacto','proyecto','pro_year','etiqueta','contexto','ubicacion','investigador'];
   dataSource!: MatTableDataSource<any>;
- 
-
   
+
+
+
 
   constructor( 
     private excelService: ExporterService, 
@@ -68,7 +65,7 @@ export class FormularioComponent implements OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    console.log(this.dataSource);
+    
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
