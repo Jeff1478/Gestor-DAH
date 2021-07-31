@@ -39,6 +39,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 import { ExporterService } from './services/exporter';
@@ -84,7 +85,7 @@ import { FichaContextoComponent } from './components/ficha-contexto/ficha-contex
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-  
+    MatPaginatorModule,
     MatTableModule,
     AngularFileUploaderModule,
     AuthModule.forRoot({
