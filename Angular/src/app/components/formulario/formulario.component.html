@@ -82,7 +82,87 @@
           <mat-button-toggle value="fechamiento">
             <span>Fechamiento</span>
           </mat-button-toggle>
-        
+
+          <h3>Descripción Artefacto</h3>
+
+          <mat-button-toggle value="tipo_pieza">
+            <span>Tipo de Pieza</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="desc_narrativa">
+            <span>Descripción Narrativa</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="acabado_superficie">
+            <span>Acabado Superficie</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="estilo_decorativo">
+            <span>Estilo Decorativo</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="color_pintura">
+            <span>Color Pintura</span>
+          </mat-button-toggle>
+
+          <h3>Asociación Funcional, Tipológica, Regional y Temporal</h3>
+
+          <mat-button-toggle value="forma_funcion">
+            <span>Forma Función</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="marcas_uso">
+            <span>Marcas de Uso</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="desc_marcas_uso">
+            <span>Descripción Mrcas Uso</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="tipo_ceramico_grupo">
+            <span>Grupo/Tipo Cerámico</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="ceramico_refz">
+            <span>Referencias Bibliográficas Cerámica</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="periodo_ceramica">
+            <span>Período Cerámico</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="fase_ceramica">
+            <span>Fase Cerámico</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="temporalidad_ceramica">
+            <span>Temporalidad Cerámico</span>
+          </mat-button-toggle>
+          
+          <mat-button-toggle value="procedencia_ceramica">
+            <span>Procedencia Cerámico</span>
+          </mat-button-toggle>
+
+          <h3>Estado Conservación</h3>
+
+          <mat-button-toggle value="potencial">
+            <span>Potencial Exhibición</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="potencial_exp">
+            <span>Explicación Potencial</span>
+          </mat-button-toggle>
+
+          <h3>Investigador y Registro</h3>
+
+          <mat-button-toggle value="fecha_analisis">
+            <span>Fecha Análisis</span>
+          </mat-button-toggle>
+
+          <mat-button-toggle value="fotos_num">
+            <span>Numeración Fotos</span>
+          </mat-button-toggle>
+
         </mat-button-toggle-group>
       </div>
       <div class="modal-footer">
@@ -182,6 +262,96 @@
     <ng-container matColumnDef="fechamiento">
       <th mat-header-cell *matHeaderCellDef> Fechamiento |</th>
       <td mat-cell *matCellDef="let element"> {{element.fechamiento}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo_pieza">
+      <th mat-header-cell *matHeaderCellDef> Tipo de Pieza |</th>
+      <td mat-cell *matCellDef="let element"> {{element.tipo_pieza}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="desc_narrativa">
+      <th mat-header-cell *matHeaderCellDef> Descripción |</th>
+      <td mat-cell *matCellDef="let element"> {{element.desc_narrativa}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acabado_superficie">
+      <th mat-header-cell *matHeaderCellDef> Acabado Superficie |</th>
+      <td mat-cell *matCellDef="let element"> {{element.acabado_superficie}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="estilo_decorativo">
+      <th mat-header-cell *matHeaderCellDef> Estilo Decorativo |</th>
+      <td mat-cell *matCellDef="let element"> {{element.estilo_decorativo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="color_pintura">
+      <th mat-header-cell *matHeaderCellDef> Color Pintura |</th>
+      <td mat-cell *matCellDef="let element"> {{element.color_pintura}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="forma_funcion">
+      <th mat-header-cell *matHeaderCellDef> Forma/Función |</th>
+      <td mat-cell *matCellDef="let element"> {{element.forma_funcion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="marcas_uso">
+      <th mat-header-cell *matHeaderCellDef> Marcas de uso |</th>
+      <td mat-cell *matCellDef="let element"> {{element.marcas_uso}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="desc_marcas_uso">
+      <th mat-header-cell *matHeaderCellDef> Descripción marcas de uso |</th>
+      <td mat-cell *matCellDef="let element"> {{element.desc_marcas_uso}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo_ceramico_grupo">
+      <th mat-header-cell *matHeaderCellDef> Tipo/Grupo Cerámico |</th>
+      <td mat-cell *matCellDef="let element"> {{element.tipo_ceramico_grupo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ceramico_refz">
+      <th mat-header-cell *matHeaderCellDef> Referencias Ceramico |</th>
+      <td mat-cell *matCellDef="let element"> {{element.ceramico_refz}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="periodo_ceramica">
+      <th mat-header-cell *matHeaderCellDef> Período Cerámica |</th>
+      <td mat-cell *matCellDef="let element"> {{element.periodo_ceramica}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fase_ceramica">
+      <th mat-header-cell *matHeaderCellDef> Fase Cerámica |</th>
+      <td mat-cell *matCellDef="let element"> {{element.fase_ceramica}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="temporalidad_ceramica">
+      <th mat-header-cell *matHeaderCellDef> Temporalidad Cerámica |</th>
+      <td mat-cell *matCellDef="let element"> {{element.temporalidad_ceramica}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="procedencia_ceramica">
+      <th mat-header-cell *matHeaderCellDef> Procedencia Cerámica |</th>
+      <td mat-cell *matCellDef="let element"> {{element.procedencia_ceramica}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="potencial">
+      <th mat-header-cell *matHeaderCellDef> Potencial Exhibición |</th>
+      <td mat-cell *matCellDef="let element"> {{element.potencial}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="potencial_exp">
+      <th mat-header-cell *matHeaderCellDef> Explicación Potencial |</th>
+      <td mat-cell *matCellDef="let element"> {{element.potencial_exp}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha_analisis">
+      <th mat-header-cell *matHeaderCellDef> Fecha Análisis |</th>
+      <td mat-cell *matCellDef="let element"> {{element.fecha_analisis}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fotos_num">
+      <th mat-header-cell *matHeaderCellDef> Numeración Fotos |</th>
+      <td mat-cell *matCellDef="let element"> {{element.fotos_num}} </td>
     </ng-container>
 
   <!--   <ng-container matColumnDef="index">
