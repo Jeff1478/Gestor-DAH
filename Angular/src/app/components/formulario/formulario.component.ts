@@ -4,6 +4,8 @@ import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { ExporterService } from 'src/app/services/exporter';
 import { Ceramic } from 'src/app/models/ceramic';
 import { CeramicService } from 'src/app/services/ceramic.service';
+import {FormControl} from '@angular/forms';
+import {MatButtonToggle} from '@angular/material/button-toggle';
 
 
 
@@ -17,11 +19,16 @@ import { CeramicService } from 'src/app/services/ceramic.service';
 
 
 export class FormularioComponent implements AfterViewInit {
+
+  toppings = new FormControl();
+  toppingList: string[] = ['cod_mon','num_artefacto','proyecto','pro_year','etiqueta','contexto','ubicacion','investigador'];
   
+
   displayedColumns: string[] = ['cod_mon','num_artefacto','proyecto','pro_year','etiqueta','contexto','ubicacion','investigador'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild('group') toggle!: MatButtonToggle;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -44,7 +51,6 @@ export class FormularioComponent implements AfterViewInit {
           
           this.dataSource = new MatTableDataSource(response.ceramics);
           this.dataSource.paginator = this.paginator;
-          
         }
       },
        error => {

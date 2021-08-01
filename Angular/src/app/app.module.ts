@@ -3,11 +3,11 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MomentModule } from 'angular2-moment';
 import { AngularFileUploaderModule } from "angular-file-uploader";
-
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { AppComponent } from './app.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -35,6 +35,7 @@ import { AuthenticationButtonComponent } from './components/authentication-butto
 import { LandingComponent } from './pages/landing/landing.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
@@ -81,7 +82,10 @@ import { FichaContextoComponent } from './components/ficha-contexto/ficha-contex
     routing,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
     MomentModule,
+    MatButtonToggleModule,
     MatButtonModule,
     MatIconModule,
     MatInputModule,
