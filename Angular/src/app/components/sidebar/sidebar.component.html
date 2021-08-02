@@ -4,12 +4,36 @@
         
         <div *ngIf= "titulo === 'ceramica'"> 
             <a [routerLink]="['/ceramica']" class="btn btn-success">Agregar Ficha</a>
+            <a [routerLink]="['/formulario']" class= "btn btn-info">Exportar Excel</a>
         </div>
         <div *ngIf= "titulo === 'contexto'"> 
             <a [routerLink]="['/ficha-contexto']" class="btn btn-success">Agregar Ficha</a>
         </div>
+
+        <div *ngIf= "titulo === 'ficha_ceramica'"> 
+
+            <a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a>
+
+            <a [routerLink]="['/pagina/ceramic', ceramic._id]">Leer más</a>
+            
+           <!--  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                
+              
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Reportes PDF
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <li>
+                        <a class="dropdown-item" [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a>
+                    </li>
+                 
+                    <li><a class="dropdown-item" href="#">Catálogo</a></li>
+                  </ul>
+                </div>
+              </div> -->
+        </div>
         
-        <a [routerLink]="['/formulario']" class= "btn btn-info">Exportar Excel</a>
     </div>
 
     

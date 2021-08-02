@@ -1,0 +1,63 @@
+
+
+<div class= "center">
+    <section id="content">
+        
+        <article class="article-item article-detail" *ngIf="ceramic">
+          
+            
+            <div id="htmlData">
+                <h1 class="subheader">Ficha Registro Cerámica, Cód Monumento : {{ceramic.cod_mon}}</h1>
+                <span class="date">
+                   Digitado : {{ceramic.date | amLocale: 'es' | amTimeAgo }}
+                </span>
+
+                <div class="image-thumb">
+                        
+                    <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
+                    <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
+               
+                </div>
+
+                <div class="image-thumb">
+                        
+                    
+                    <img src="assets/images/Bicentenario.png">
+               
+                </div>
+                
+                
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th scope="col">Cod Monumento</th>
+                      <th scope="col">Contexto</th>
+                      <th scope="col">Descripción Narrativa</th>
+                      <th scope="col">Temporalidad Estimada</th>
+                      <th scope="col">Procedencia</th>
+                      <th scope="col">Ancho</th>
+                      <th scope="col">Alto</th>
+                      <th scope="col">Peso</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <td> {{ceramic.cod_mon}} </td>
+                      <td> {{ceramic.contexto}} </td>
+                      <td> {{ceramic.desc_narrativa}} </td>
+                      <td> {{ceramic.temporalidad_ceramica}} </td>
+                      <td> {{ceramic.procedencia_ceramica}} </td>
+                      <td> {{ceramic.ancho}} </td>
+                      <td> {{ceramic.alto}} </td>
+                      <td> {{ceramic.peso}} </td>
+                    </tbody>
+                  </table>             
+            </div>
+
+            <div class="clearfix"></div>
+        </article>
+
+        
+            <button class="btn btn-success btn-block" (click)="exportPdf()">Descargar PDF</button>
+        
+    </section>
+ </div>

@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MomentModule } from 'angular2-moment';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatCardModule} from '@angular/material/card';
 import { AppComponent } from './app.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -45,6 +46,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { ExporterService } from './services/exporter';
 import { FichaContextoComponent } from './components/ficha-contexto/ficha-contexto.component';
+import { ReportePublicoComponent } from './components/reporte-publico/reporte-publico.component';
 
 
 @NgModule({
@@ -73,7 +75,8 @@ import { FichaContextoComponent } from './components/ficha-contexto/ficha-contex
     LogoutButtonComponent,
     AuthenticationButtonComponent,
     LandingComponent,
-    FichaContextoComponent
+    FichaContextoComponent,
+    ReportePublicoComponent
     
   ],
   imports: [
@@ -82,6 +85,7 @@ import { FichaContextoComponent } from './components/ficha-contexto/ficha-contex
     routing,
     NgbModule,
     FormsModule,
+    MatCardModule,
     ReactiveFormsModule,
     MatSelectModule,
     MomentModule,

@@ -332,10 +332,16 @@
                
             </i> <span>Open PDF</span></button> -->
 
-            <button class="btn btn-success btn-block" (click)="exportPdf()">Download PDF</button>
+            <button class="btn btn-success btn-block" (click)="exportPdf()">Reporte Completo</button>
+
+            <button class="btn btn-success btn-block"><a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a></button>
+
+            <!-- <a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a> -->
         
     </section>
    
 
-     <app-sidebar></app-sidebar>
+    <!--  <app-sidebar 
+     [titulo]="'ficha_ceramica'">
+    </app-sidebar>> -->
 </div>

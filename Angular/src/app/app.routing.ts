@@ -9,6 +9,7 @@ import { CeramicaComponent } from "./components/ceramica/ceramica.component";
 import { ContextoComponent } from "./components/contexto/contexto.component";
 import { FormularioComponent } from "./components/formulario/formulario.component";
 import { PaginaComponent } from "./components/pagina/pagina.component";
+import { ReportePublicoComponent } from "./components/reporte-publico/reporte-publico.component";
 import { PeliculasComponent } from "./components/peliculas/peliculas.component";
 import { ErrorComponent } from "./components/error/error.component";
 import { ArticleComponent } from "./components/article/article.component";
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
     {path: 'pagina', component : PaginaComponent},
     {path: 'ficha-contexto', component : FichaContextoComponent},
     {path: 'pagina/ceramic/:id', component: ArticleComponent},
+    {path: 'reporte-publico/ceramic/:id', component: ReportePublicoComponent},
     {path: 'pagina/crear', component: ArticleNewComponent},
     {path: 'pagina/editar/:id', component: ArticleEditComponent},
     {path: 'buscar/:search', component : SearchComponent},
