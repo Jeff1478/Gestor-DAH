@@ -35,7 +35,7 @@ import { LogoutButtonComponent } from './components/logout-button/logout-button.
 import { AuthenticationButtonComponent } from './components/authentication-button/authentication-button.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -84,6 +84,7 @@ import { ReportePublicoComponent } from './components/reporte-publico/reporte-pu
     HttpClientModule,
     routing,
     NgbModule,
+    FlexLayoutModule,
     FormsModule,
     MatCardModule,
     ReactiveFormsModule,

@@ -24,7 +24,9 @@ body {
     background-size: cover;
   }
 
-
+  .titulo {
+    display:inline;
+}
 
 #header {
     height: 120px;

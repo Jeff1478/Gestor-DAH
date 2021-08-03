@@ -1,13 +1,21 @@
+<a [routerLink]="['/pagina/editar',ceramic._id]" class="btn btn-outline-success">Editar</a> 
+<a (click)="delete(ceramic._id)" class = "btn btn-danger">Borrar</a>
+<!-- <button (click)= "openPDF()" class="btn btn-outline-success">
+   <i class="material-icons">
+      
+   </i> <span>Open PDF</span></button> -->
 
+   <button class="btn btn-success btn-block" (click)="exportPdf()">Reporte Completo</button>
 
-<div class= "center">
-    <section id="content">
+   <button class="btn btn-success btn-block"><a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a></button>
+
+   <!-- <a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a> -->
+
+<!-- <div class= "center">
+    <section id="content"> -->
         
-        <article class="article-item article-detail" *ngIf="ceramic">
-            <!-- <div class="image-wrap">
-                <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
-                <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
-            </div> -->
+      <!--   <article class="article-item article-detail" *ngIf="ceramic">
+           
             
             <div id="htmlData">
                 <h1 class="subheader">Ficha Registro Cerámica, Cód Monumento : {{ceramic.cod_mon}}</h1>
@@ -323,25 +331,161 @@
             </div>
 
             <div class="clearfix"></div>
-        </article>
-
-         <a [routerLink]="['/pagina/editar',ceramic._id]" class="btn btn-outline-success">Editar</a> 
-         <a (click)="delete(ceramic._id)" class = "btn btn-danger">Borrar</a>
-         <!-- <button (click)= "openPDF()" class="btn btn-outline-success">
-            <i class="material-icons">
-               
-            </i> <span>Open PDF</span></button> -->
-
-            <button class="btn btn-success btn-block" (click)="exportPdf()">Reporte Completo</button>
-
-            <button class="btn btn-success btn-block"><a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a></button>
-
-            <!-- <a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a> -->
+        </article> -->
         
-    </section>
+<!--     </section>
    
-
-    <!--  <app-sidebar 
+     <app-sidebar 
      [titulo]="'ficha_ceramica'">
-    </app-sidebar>> -->
+    </app-sidebar>>
+</div> -->
+
+<div id="htmlData">
+
+    <div class="titulo" >
+      
+
+            <mat-card>
+
+                <mat-card-title>MNCR, Depto DAH</mat-card-title>
+                <mat-card-subtitle>Ficha Cerámica, Reporte Completo</mat-card-subtitle>
+        
+                
+        
+                <mat-card-content>
+
+                <div class="image-thumb">
+                        
+                    <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
+                    <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
+            
+                </div>
+
+                </mat-card-content>
+            </mat-card>    
+     
+    </div>
+
+
+<div fxLayout="row">
+
+    <div fxLayoutAlign="space-around start">
+    
+        <mat-card>
+
+        <!-- <mat-card-title>MNCR, Depto DAH</mat-card-title> -->
+        <mat-card-subtitle>Datos Ubicación</mat-card-subtitle>
+
+        
+
+            <mat-card-content>
+            <div>
+                
+                <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
+                <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
+                <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc}}</p>
+            </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+  
+    <div fxLayoutAlign="space-around start">
+    
+    <mat-card>
+
+        <mat-card-subtitle>Asociación Contextual</mat-card-subtitle>
+
+            <mat-card-content>
+        <div>
+          
+            <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
+            <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
+            <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc}}</p>
+        </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div fxLayoutAlign="space-around start">
+    
+    <mat-card>
+
+        <mat-card-subtitle>Descripción Objeto</mat-card-subtitle>
+
+            <mat-card-content>
+        <div>
+          
+            <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
+            <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
+            <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc}}</p>
+        </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+</div>
+
+<!-- Otra Línea -->
+
+<div fxLayout="row">
+
+    <div fxLayoutAlign="space-around start">
+    
+        <mat-card>
+
+       
+        <mat-card-subtitle>Asociación Funcional, Tipológica, Regional y Temporal</mat-card-subtitle>
+
+       
+
+            <mat-card-content>
+            <div>
+              
+                <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
+                <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
+                <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc}}</p>
+            </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+  
+    <div fxLayoutAlign="space-around start">
+    
+    <mat-card>
+
+        <mat-card-subtitle>Estado Conservación</mat-card-subtitle>
+
+            <mat-card-content>
+        <div>
+      
+            <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
+            <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
+            <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc}}</p>
+        </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div fxLayoutAlign="space-around start">
+    
+    <mat-card>
+
+        <mat-card-subtitle>Investigador y Registro</mat-card-subtitle>
+
+            <mat-card-content>
+        <div>
+            
+            <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
+            <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
+            <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc}}</p>
+        </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+</div>
+
+
 </div>

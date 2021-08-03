@@ -39,7 +39,7 @@ export class ArticleComponent implements OnInit {
   exportPdf() {
     
     const div : any = document.getElementById('htmlData');
-    const options = { background: 'white', height: 1024, width: 900 };
+    const options = { background: 'white',  height: 2480, width: 1265 };
     domtoimage.toPng(div, options).then((dataUrl: any) => {
       //Initialize JSPDF
       const doc = new jsPDF('p', 'pt', 'a4');
