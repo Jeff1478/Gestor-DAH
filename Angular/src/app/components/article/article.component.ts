@@ -23,6 +23,7 @@ import domtoimage from 'dom-to-image';
 export class ArticleComponent implements OnInit {
 
   public url: string;
+  public selec : string;
   public ceramic!: Ceramic;
 
   constructor(
@@ -32,6 +33,7 @@ export class ArticleComponent implements OnInit {
     private _router:Router, )
   { 
     this.url = Global.url;
+    this.selec = '';
 
    
   }
@@ -97,12 +99,13 @@ export class ArticleComponent implements OnInit {
     });     
   }
  
+htmlEntities(str: any) {
+    return String(str).replace('true', 'X')           
+  }
 
   
+
   
-    
-
-
   ngOnInit() {
   
     this._route.params.subscribe(params => {
@@ -113,6 +116,7 @@ export class ArticleComponent implements OnInit {
           if(response.ceramic){
             
             this.ceramic = response.ceramic;
+
           }else{
             this._router.navigate(['/home']);
           }

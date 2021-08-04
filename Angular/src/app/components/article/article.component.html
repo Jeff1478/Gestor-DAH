@@ -6,8 +6,9 @@
    </i> <span>Open PDF</span></button> -->
 
    <button class="btn btn-success btn-block" (click)="exportPdf()">Reporte Completo</button>
-
    <button class="btn btn-success btn-block"><a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a></button>
+
+
 
    <!-- <a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a> -->
 
@@ -367,9 +368,9 @@
     </div>
 
 
-<div fxLayout="row">
+<div fxLayout="column">
 
-    <div fxLayoutAlign="space-around start">
+    <div fxLayout="row" fxLayoutAlign="space-evenly center">
     
         <mat-card>
 
@@ -383,14 +384,13 @@
                 
                 <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
                 <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
-                <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc}}</p>
+                <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc | date:'dd/MM/yyyy'}}</p>
             </div>
             </mat-card-content>
         </mat-card>
-    </div>
-
   
-    <div fxLayoutAlign="space-around start">
+  
+   
     
     <mat-card>
 
@@ -399,30 +399,45 @@
             <mat-card-content>
         <div>
           
-            <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
-            <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
-            <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc}}</p>
+            <p>Id Contexto: {{ceramic.id_contexto}} | Contexto: {{ceramic.contexto}} | Ubicación Relativa: {{ceramic.ubicacion}}</p>
+            <p>Fotografia: {{ceramic.foto}} | N° Foto: {{ceramic.num_foto}} | Calidad Foto: {{ceramic.calidad_foto}}</p>
+            <p>Estado Foto: {{ceramic.estado_foto}} | Planimetría: {{ceramic.plano}} | N° Lámina: {{ceramic.num_lamina}}</p>
+            <p>Calidad Plano: {{ceramic.calidad_lamina}} | Estado Plano: {{ceramic.estado_Lamina}}</p>
+            <p>Diagnóstico: {{ceramic.diagnostico_contexto}} | Fechamiento: {{ceramic.fechamiento}}</p>
         </div>
         </mat-card-content>
     </mat-card>
 </div>
+</div>
 
-<div fxLayoutAlign="space-around start">
+
+
+
+
+<div fxLayout="row">
+
+    <div fxLayoutAlign="space-around start">
     
-    <mat-card>
-
-        <mat-card-subtitle>Descripción Objeto</mat-card-subtitle>
-
-            <mat-card-content>
-        <div>
-          
-            <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
-            <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
-            <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc}}</p>
-        </div>
-        </mat-card-content>
-    </mat-card>
-</div>
+        <mat-card>
+    
+            <mat-card-subtitle>Descripción Objeto</mat-card-subtitle>
+    
+                <mat-card-content>
+            <div align="left">
+              
+                <p>Tipo Pieza: {{ceramic.tipo_pieza}} | Descripción: {{ceramic.desc_narrativa}}</p>
+                <p>Apendices: {{ceramic.apendices}} | Descripción: {{ceramic.desc_apendice}}</p>
+                <p>Acabado: {{ceramic.acabado_superficie}} | Pintura: {{ceramic.estilo_decorativo}} | Color: {{ceramic.color_pintura}} </p>
+                <p><b>Incisos:</b> Pre Cocción {{ceramic.pre_coc}} | Post Cocción {{ceramic.post_coc}} | Esgrafiados {{ceramic.esgraf}} | Punteado: {{ceramic.ptdo}}</p>
+                <p><b>Pastillajes:</b> Tira Aplicada {{ceramic.tira_apl}} | Pastilla {{ceramic.ptll}} | Pintura {{ceramic.zna}} | Ranurado {{ceramic.rndo}}</p>
+                <p>Acanalado {{ceramic.acnlo}} | Hendidos {{ceramic.hddo}} | Punteado  {{ceramic.ptll}} | Moldeadas {{ceramic.mdl}}</p>
+                <p><b>Dis No Figurativo:</b> Vertical {{ceramic.vertical}} | Horizontal {{ceramic.horizontal}} | Zig-Zag {{ceramic.zig_zag}} | Panel {{ceramic.panel}}</p>
+                <p>Aislados {{ceramic.aisld}} | Saturación {{ceramic.str}} | Otro {{ceramic.otro_nofig}}</p>
+                
+            </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
 
 </div>
 
