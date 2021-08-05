@@ -1,442 +1,99 @@
 <a [routerLink]="['/pagina/editar',ceramic._id]" class="btn btn-outline-success">Editar</a> 
 <a (click)="delete(ceramic._id)" class = "btn btn-danger">Borrar</a>
-<!-- <button (click)= "openPDF()" class="btn btn-outline-success">
-   <i class="material-icons">
-      
-   </i> <span>Open PDF</span></button> -->
 
    <button class="btn btn-success btn-block" (click)="exportPdf()">Reporte Completo</button>
    <button class="btn btn-success btn-block"><a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a></button>
 
 
 
-   <!-- <a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a> -->
-
-<!-- <div class= "center">
-    <section id="content"> -->
-        
-      <!--   <article class="article-item article-detail" *ngIf="ceramic">
-           
-            
-            <div id="htmlData">
-                <h1 class="subheader">Ficha Registro Cerámica, Cód Monumento : {{ceramic.cod_mon}}</h1>
-                <span class="date">
-                   Digitado : {{ceramic.date | amLocale: 'es' | amTimeAgo }}
-                </span>
-
-                <div class="image-thumb">
-                        
-                    <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
-                    <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
-               
-                </div>
-
-                <div class="image-thumb">
-                        
-                    
-                    <img src="assets/images/Bicentenario.png">
-               
-                </div>
-                
-                
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                      <th scope="col">Cod Monumento</th>
-                      <th scope="col">Num Artefacto</th>
-                      <th scope="col">Num Caja</th>
-                      <th scope="col">Proyecto</th>
-                      <th scope="col">Investigador</th>
-                      <th scope="col">Año Proyecto</th>
-                      <th scope="col">Datos Etiqueta</th>
-                      <th scope="col">Fecha Excavación</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                      <td> {{ceramic.cod_mon}} </td>
-                      <td> {{ceramic.num_artefacto}} </td>
-                      <td> {{ceramic.num_caja}} </td>
-                      <td> {{ceramic.proyecto}} </td>
-                      <td> {{ceramic.investigador}} </td>
-                      <td> {{ceramic.pro_year}} </td>
-                      <td> {{ceramic.etiqueta}} </td>
-                      <td> {{ceramic.fecha_exc | date: 'mediumDate'}} </td>
-                     
-                    </tbody>
-                  </table>
-
-                  <table class="table table-striped">
-                    <thead>
-                    <tr>
-                      <th scope="col">Id Contexto</th>
-                      <th scope="col">Contexto</th>
-                      <th scope="col">Ubicación Relativa</th>
-                      <th scope="col">Fotografia</th>
-                      <th scope="col">N° Foto</th>
-                      <th scope="col">Calidad</th>
-                      <th scope="col">Estado</th>
-                      <th scope="col">Planimetría</th>
-                      
-                    </tr>
-                    </thead>
-                    <tbody>
-                      <td> {{ceramic.id_contexto}} </td>
-                      <td> {{ceramic.contexto}} </td>
-                      <td> {{ceramic.ubicacion}} </td>
-                      <td> {{ceramic.foto}} </td>
-                      <td> {{ceramic.num_foto}} </td>
-                      <td> {{ceramic.calidad_foto}} </td>
-                      <td> {{ceramic.estado_foto}} </td>
-                      <td> {{ceramic.plano}} </td>       
-                    </tbody>
-                  </table>
-                    
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">N° Lámina</th>
-                            <th scope="col">Calidad</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Diagnóstico Contexto</th>
-                            <th scope="col">Fechamiento</th>
-                            <th scope="col">Tipo Pieza</th>
-                            <th scope="col">Descripción</th>
-                            <th scope="col">Apd No</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td> {{ceramic.num_lamina}} </td>
-                        <td> {{ceramic.calidad_lamina}} </td>
-                        <td> {{ceramic.estado_Lamina}} </td>
-                        <td> {{ceramic.diagnostico_contexto}} </td>
-                        <td> {{ceramic.fechamiento}} </td>
-                        <td> {{ceramic.tipo_pieza}} </td>
-                        <td> {{ceramic.desc_narrativa}} </td>
-                        <td> {{ceramic.apendices}} </td>
-                    </tbody>
-                </table>
-
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Apd Soportes</th>
-                            <th scope="col">Apd Pedestal</th>
-                            <th scope="col">Apn Asa</th>
-                            <th scope="col">Apn Vertedero</th>
-                            <th scope="col">Apn Otro</th>
-                            <th scope="col">Descripción Apéndice</th>
-                            <th scope="col">Acabado Superficie</th>
-                            <th scope="col">Pintura</th>
-                            <th scope="col">Color Pintura</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td> {{ceramic.soporte}} </td>
-                        <td> {{ceramic.ped_base}} </td>
-                        <td> {{ceramic.asa}} </td>
-                        <td> {{ceramic.vtdero}} </td>
-                        <td> {{ceramic.otro_soporte}} </td>
-                        <td> {{ceramic.desc_apendice}} </td>
-                        <td> {{ceramic.acabado_superficie}} </td>
-                        <td> {{ceramic.estilo_decorativo}} </td>
-                        <td> {{ceramic.color_pintura}} </td>
-                    </tbody>
-                </table>
-
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Incisos :Pre Cocción</th>
-                            <th scope="col">Incisos :Post Cocción</th>
-                            <th scope="col">Incisos :Esgrafiados</th>
-                            <th scope="col">Incisos :Punteado</th>
-                            <th scope="col">Pastillajes :Tira Aplicada</th>
-                            <th scope="col">Pastillajes :Pastilla</th>
-                            <th scope="col">Pastillajes :Pint sobre superficie</th>
-                            <th scope="col">Pastillajes :Ranurado</th>
-                            <th scope="col">Pastillajes :Acanalado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td> {{ceramic.pre_coc}} </td>
-                        <td> {{ceramic.post_coc}} </td>
-                        <td> {{ceramic.esgraf}} </td>
-                        <td> {{ceramic.ptdo}} </td>
-                        <td> {{ceramic.tira_apl}} </td>
-                        <td> {{ceramic.ptll}} </td>
-                        <td> {{ceramic.zna}} </td>
-                        <td> {{ceramic.rndo}} </td>
-                        <td> {{ceramic.acnlo}} </td>
-                    </tbody>
-                </table>
-
-
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Pastillajes: Hendido</th>
-                            <th scope="col">Pastillajes: Punteado</th>
-                            <th scope="col">Pastillajes: Figuras Moldeadas</th>
-                            <th scope="col">Dsñ No Figurativo: Vertical</th>
-                            <th scope="col">Dsñ No Figurativo: Horizontal</th>
-                            <th scope="col">Dsñ No Figurativo: Zig-Zag</th>
-                            <th scope="col">Dsñ No Figurativo: Panel</th>
-                            <th scope="col">Dsñ No Figurativo: Aislados</th>
-                            <th scope="col">Dsñ No Figurativo: Saturación Completa</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td> {{ceramic.hddo}} </td>
-                        <td> {{ceramic.ptdopt}} </td>
-                        <td> {{ceramic.mdl}} </td>
-                        <td> {{ceramic.vertical}} </td>
-                        <td> {{ceramic.horizontal}} </td>
-                        <td> {{ceramic.zig_zag}} </td>
-                        <td> {{ceramic.panel}} </td>
-                        <td> {{ceramic.aisld}} </td>
-                        <td> {{ceramic.str}} </td>
-                    </tbody>
-                </table>
-
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Dsñ No Figurativo: Otro</th>
-                            <th scope="col">Dsñ Fig Zoo: Cabeza</th>
-                            <th scope="col">Dsñ Fig Zoo: Saurio</th>
-                            <th scope="col">Dsñ Fig Zoo: Felino</th>
-                            <th scope="col">Dsñ Fig Zoo: Batracio</th>
-                            <th scope="col">Dsñ Fig Zoo: Ave</th>
-                            <th scope="col">Dsñ Fig Zoo: Mono</th>
-                            <th scope="col">Dsñ Fig Zoo: Murcielago</th>
-                            <th scope="col">Dsñ Fig Zoo: Mamífero</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td> {{ceramic.otro_nofig}} </td>
-                        <td> {{ceramic.head}} </td>
-                        <td> {{ceramic.suario}} </td>
-                        <td> {{ceramic.felino}} </td>
-                        <td> {{ceramic.batracio}} </td>
-                        <td> {{ceramic.ave}} </td>
-                        <td> {{ceramic.primate}} </td>
-                        <td> {{ceramic.murcielago}} </td>
-                        <td> {{ceramic.mamifero}} </td>
-                    </tbody>
-                </table>
-
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Dsñ Fig Zoo: Tortuga</th>
-                            <th scope="col">Dsñ Fig Zoo: Reptil</th>
-                            <th scope="col">Dsñ Fig Zoo: Pez</th>
-                            <th scope="col">Dsñ Fig Zoo: No Det</th>
-                            <th scope="col">Taxonomia Explicita</th>
-                            <th scope="col">Investigador</th>
-                            <th scope="col">Dsñ Fig Antro: Cabeza</th>
-                            <th scope="col">Dsñ Fig Antro: Sedente</th>
-                            <th scope="col">Dsñ Fig Antro: Erguida</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td> {{ceramic.turtle}} </td>
-                        <td> {{ceramic.reptil}} </td>
-                        <td> {{ceramic.pez}} </td>
-                        <td> {{ceramic.indt}} </td>
-                        <td> {{ceramic.txn_expl}} </td>
-                        <td> {{ceramic.investigador_zoo}} </td>
-                        <td> {{ceramic.cabeza_nofig}} </td>
-                        <td> {{ceramic.sau_nofig}} </td>
-                        <td> {{ceramic.erguida_nofig}} </td>
-                    </tbody>
-                </table>
-
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Dsñ Fig Antro: Escena</th>
-                            <th scope="col">Dsñ Fig IND: Cabeza</th>
-                            <th scope="col">Dsñ Fig IND: Cara</th>
-                            <th scope="col">Dsñ Fig IND: Garra</th>
-                            <th scope="col">Otra</th>
-                            <th scope="col">Forma-Función</th>
-                            <th scope="col">Marcas de Uso</th>
-                            <th scope="col">Descripción</th>
-                            <th scope="col">Tipo Ceramico Grupo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td> {{ceramic.prim_nofig}} </td>
-                        <td> {{ceramic.cabfigint}} </td>
-                        <td> {{ceramic.cabhoc}} </td>
-                        <td> {{ceramic.garra}} </td>
-                        <td> {{ceramic.otfigind}} </td>
-                        <td> {{ceramic.forma_funcion}} </td>
-                        <td> {{ceramic.marcas_uso}} </td>
-                        <td> {{ceramic.desc_marcas_uso}} </td>
-                        <td> {{ceramic.tipo_ceramico_grupo}} </td>
-                        
-                    </tbody>
-                </table>
-
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Referencias Biblio</th>
-                            <th scope="col">Periodo</th>
-                            <th scope="col">Fase</th>
-                            <th scope="col">Temporalidad Estimada</th>
-                            <th scope="col">Procedencia</th>
-                            <th scope="col">Estado Conservación</th>
-                            <th scope="col">Potencial Exhibición</th>
-                            <th scope="col">Explicación</th>
-                            <th scope="col">Largo Vitrina</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td> {{ceramic.ceramico_refz}} </td>
-                        <td> {{ceramic.periodo_ceramica}} </td>
-                        <td> {{ceramic.fase_ceramica}} </td>
-                        <td> {{ceramic.temporalidad_ceramica}} </td>
-                        <td> {{ceramic.procedencia_ceramica}} </td>
-                        <td> {{ceramic.estado_conservacion}} </td>
-                        <td> {{ceramic.potencial}} </td>
-                        <td> {{ceramic.potencial_exp}} </td>
-                        <td> {{ceramic.largo}} </td>
-                    </tbody>
-                </table>
-                
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">ancho</th>
-                            <th scope="col">alto</th>
-                            <th scope="col">peso</th>
-                            <th scope="col">Nombre Investigador</th>
-                            <th scope="col">Fecha Analisis</th>
-                            <th scope="col">Numeración Fotos</th>
-                           
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td> {{ceramic.ancho}} </td>
-                        <td> {{ceramic.alto}} </td>
-                        <td> {{ceramic.peso}} </td>
-                        <td> {{ceramic.nombre_invest}} </td>
-                        <td> {{ceramic.fecha_analisis}} </td>
-                        <td> {{ceramic.fotos_num}} </td>
-                       
-                </table>
-                  
-            </div>
-
-            <div class="clearfix"></div>
-        </article> -->
-        
-<!--     </section>
-   
-     <app-sidebar 
-     [titulo]="'ficha_ceramica'">
-    </app-sidebar>>
-</div> -->
-
 <div id="htmlData">
 
-    <div class="titulo" >
-      
+<div fxLayout="row">
 
-            <mat-card>
-
-                <mat-card-title>MNCR, Depto DAH</mat-card-title>
-                <mat-card-subtitle>Ficha Cerámica, Reporte Completo</mat-card-subtitle>
-        
-                
-        
-                <mat-card-content>
-
-                <div class="image-thumb">
-                        
-                    <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
-                    <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
-            
-                </div>
-
-                </mat-card-content>
-            </mat-card>    
-     
-    </div>
-
-
-<div fxLayout="column">
-
-    <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <div fxLayout="row" fxFlexAlign="stretch">
     
-        <mat-card>
+        <mat-card class = "rest-card"> 
 
-        <!-- <mat-card-title>MNCR, Depto DAH</mat-card-title> -->
         <mat-card-subtitle>Datos Ubicación</mat-card-subtitle>
 
-        
-
             <mat-card-content>
-            <div>
-                
-                <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
-                <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
-                <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc | date:'dd/MM/yyyy'}}</p>
+            <div>          
+                <p><b>Cod Monumento:</b> {{ceramic.cod_mon}} <b>Num Artefacto:</b> {{ceramic.num_artefacto}} <b>Num Caja:</b>{{ceramic.num_caja}}</p>
+                <p><b>Proyecto:</b> {{ceramic.proyecto}} </p>
+                <p><b>Investigador:</b> {{ceramic.investigador}} <b>Año Proyecto:</b> {{ceramic.pro_year}}</p>
+                <p><b>Datos Etiqueta:</b> {{ceramic.etiqueta}} </p>
+                <p><b>Fecha Excavación:</b>  {{ceramic.fecha_exc | date:'dd/MM/yyyy'}}</p>
             </div>
             </mat-card-content>
         </mat-card>
   
-  
-   
-    
-    <mat-card>
+
+        <mat-card class = "rest-card">
 
         <mat-card-subtitle>Asociación Contextual</mat-card-subtitle>
 
             <mat-card-content>
-        <div>
-          
-            <p>Id Contexto: {{ceramic.id_contexto}} | Contexto: {{ceramic.contexto}} | Ubicación Relativa: {{ceramic.ubicacion}}</p>
-            <p>Fotografia: {{ceramic.foto}} | N° Foto: {{ceramic.num_foto}} | Calidad Foto: {{ceramic.calidad_foto}}</p>
-            <p>Estado Foto: {{ceramic.estado_foto}} | Planimetría: {{ceramic.plano}} | N° Lámina: {{ceramic.num_lamina}}</p>
-            <p>Calidad Plano: {{ceramic.calidad_lamina}} | Estado Plano: {{ceramic.estado_Lamina}}</p>
-            <p>Diagnóstico: {{ceramic.diagnostico_contexto}} | Fechamiento: {{ceramic.fechamiento}}</p>
-        </div>
+            <div>  
+                <p><b>Id Contexto:</b> {{ceramic.id_contexto}} <b>Contexto:</b> {{ceramic.contexto}} <b>Ubicación Relativa:</b> {{ceramic.ubicacion}}</p>
+                <p><b>Fotografia:</b> {{ceramic.foto}} <b>N° Foto:</b>{{ceramic.num_foto}} <b>Calidad Foto:</b> {{ceramic.calidad_foto}}</p>
+                <p><b>Estado Foto:</b> {{ceramic.estado_foto}} <b>Planimetría:</b>  {{ceramic.plano}} <b>N° Lámina:</b> {{ceramic.num_lamina}}</p>
+                <p><b>Calidad Plano:</b> {{ceramic.calidad_lamina}} <b>Estado Plano:</b> {{ceramic.estado_Lamina}}</p>
+                <p><b>Diagnóstico:</b> {{ceramic.diagnostico_contexto}} <b>Fechamiento:</b>  {{ceramic.fechamiento}}</p>
+            </div>
         </mat-card-content>
-    </mat-card>
+
+        </mat-card>
+
+
+    <mat-card class = "rest-card">
+
+       
+        <mat-card-subtitle>Asociación Funcional, Tipológica, Regional y Temporal</mat-card-subtitle>
+            <mat-card-content>
+            <div>
+              
+                <p><b>Forma-Función:</b> {{ceramic.forma_funcion}}</p>
+                <p><b>Marcas uso:</b> {{ceramic.marcas_uso}} <b>Descripción</b>  {{ceramic.desc_marcas_uso}}</p>
+                <p><b>Tipo Cerámico:</b> Grupo {{ceramic.tipo_ceramico_grupo}} | Referencias {{ceramic.ceramico_refz}}</p>
+                <p> Período {{ceramic.periodo_ceramica}} | Fase {{ceramic.fase_ceramica}} | Temporalidad {{ceramic.temporalidad_ceramica}}</p>
+                <p>Procedencia {{ceramic.procedencia_ceramica}}</p>
+            </div>
+            </mat-card-content>
+        </mat-card>
 </div>
 </div>
-
-
-
 
 
 <div fxLayout="row">
 
-    <div fxLayoutAlign="space-around start">
+    <div fxLayout="row" fxLayoutAlign="space-evenly center">
     
-        <mat-card>
+        <mat-card class = "descrip-card"> 
     
             <mat-card-subtitle>Descripción Objeto</mat-card-subtitle>
     
                 <mat-card-content>
+
             <div align="left">
               
-                <p>Tipo Pieza: {{ceramic.tipo_pieza}} | Descripción: {{ceramic.desc_narrativa}}</p>
-                <p>Apendices: {{ceramic.apendices}} | Descripción: {{ceramic.desc_apendice}}</p>
-                <p>Acabado: {{ceramic.acabado_superficie}} | Pintura: {{ceramic.estilo_decorativo}} | Color: {{ceramic.color_pintura}} </p>
+                <p><b>Tipo Pieza:</b> {{ceramic.tipo_pieza}}</p>
+                <p><b>Descripción:</b> {{ceramic.desc_narrativa}}</p>
+                <p><b>Apendices:</b> {{ceramic.apendices}} | Descripción: {{ceramic.desc_apendice}}</p>
+                <p><b>Acabado:</b> {{ceramic.acabado_superficie}} | Pintura: {{ceramic.estilo_decorativo}} | Color: {{ceramic.color_pintura}} </p>
                 <p><b>Incisos:</b> Pre Cocción {{ceramic.pre_coc}} | Post Cocción {{ceramic.post_coc}} | Esgrafiados {{ceramic.esgraf}} | Punteado: {{ceramic.ptdo}}</p>
-                <p><b>Pastillajes:</b> Tira Aplicada {{ceramic.tira_apl}} | Pastilla {{ceramic.ptll}} | Pintura {{ceramic.zna}} | Ranurado {{ceramic.rndo}}</p>
-                <p>Acanalado {{ceramic.acnlo}} | Hendidos {{ceramic.hddo}} | Punteado  {{ceramic.ptll}} | Moldeadas {{ceramic.mdl}}</p>
-                <p><b>Dis No Figurativo:</b> Vertical {{ceramic.vertical}} | Horizontal {{ceramic.horizontal}} | Zig-Zag {{ceramic.zig_zag}} | Panel {{ceramic.panel}}</p>
-                <p>Aislados {{ceramic.aisld}} | Saturación {{ceramic.str}} | Otro {{ceramic.otro_nofig}}</p>
-                
+                <p><b>Pastillajes:</b> Tira Aplicada {{ceramic.tira_apl}} | Pastilla {{ceramic.ptll}} | Pintura {{ceramic.zna}} | Ranurado {{ceramic.rndo}} | Acanalado {{ceramic.acnlo}} | Hendidos {{ceramic.hddo}} | Punteado  {{ceramic.ptll}} | Moldeadas {{ceramic.mdl}}</p>  
+                <p><b>Dis No Figurativo:</b> Vertical {{ceramic.vertical}} | Horizontal {{ceramic.horizontal}} | Zig-Zag {{ceramic.zig_zag}} | Panel {{ceramic.panel}} | Aislados {{ceramic.aisld}} | Saturación {{ceramic.str}} | Otro {{ceramic.otro_nofig}}</p>             
+                <p><b>DisFigurativo Zoomorfo:</b> Cabeza {{ceramic.head}} | Saurio {{ceramic.suario}} | Felino {{ceramic.felino}} | Batracio {{ceramic.batracio}} | Ave {{ceramic.ave}} | Mono {{ceramic.primate}} | Murcielago {{ceramic.murcielago}} | Mamífero {{ceramic.mamifero}} | Tortuga {{ceramic.turtle}} | Reptil {{ceramic.reptil}} | Pez {{ceramic.pez}} | No determinado {{ceramic.indt}}</p>
+                <p><b>Taxonomía Explícita:</b> {{ceramic.txn_expl}}</p>
+                <p><b>Investigador que Identificó:</b> {{ceramic.investigador_zoo}}</p>
+                <p><b>DisFigurativo Antromorfo:</b> Cabeza {{ceramic.cabeza_nofig}} | Cara {{ceramic.sau_nofig}} | Hocico {{ceramic.cabhoc}} | Sedente {{ceramic.batracio}} | Ergida {{ceramic.erguida_nofig}} | Escena {{ceramic.reptil}}</p>
+                <p><b>DisFigurativo Indeterminado:</b> Cabeza {{ceramic.cabfigint}} | Cara {{ceramic.cabhoc}} | Garra {{ceramic.garra}} | Otro {{ceramic.otfigind}}</p>
             </div>
             </mat-card-content>
         </mat-card>
+
+        
+
     </div>
 
 </div>
@@ -445,62 +102,55 @@
 
 <div fxLayout="row">
 
-    <div fxLayoutAlign="space-around start">
+    <div fxLayout="row" fxLayoutAlign="space-between center" >
+
+        <mat-card class = "rest-card">
+
+            <mat-card-subtitle>Estado Conservación</mat-card-subtitle>
     
-        <mat-card>
-
-       
-        <mat-card-subtitle>Asociación Funcional, Tipológica, Regional y Temporal</mat-card-subtitle>
-
-       
-
-            <mat-card-content>
-            <div>
-              
-                <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
-                <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
-                <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc}}</p>
+                <mat-card-content>
+            <div>      
+                <p><b>Estado Conservación:</b> {{ceramic.estado_conservacion}} <b> Potencial Exhibición:</b> {{ceramic.potencial}}</p>
+                <p><b>Explicación:</b> {{ceramic.potencial_exp}}</p>
+                <p><b>Dimensiones Vitrina:</b> Largo {{ceramic.largo}} | Ancho: {{ceramic.ancho}}| Alto: {{ceramic.alto}} | Peso: {{ceramic.peso}}</p>
             </div>
             </mat-card-content>
         </mat-card>
-    </div>
 
-  
-    <div fxLayoutAlign="space-around start">
+        <mat-card class = "rest-card">
+
+            <mat-card-subtitle>Investigador y Registro</mat-card-subtitle>
     
-    <mat-card>
+                <mat-card-content>
+            <div>
+                <p><b>Nombre:</b> {{ceramic.nombre_invest}}</p>
+                <p><b>Fecha Análisis:</b> {{ceramic.fecha_analisis}}</p>
+                <p><b>Numeración de Fotos:</b> {{ceramic.fotos_num}}</p>
+            </div>
+            </mat-card-content>
+        </mat-card>
 
-        <mat-card-subtitle>Estado Conservación</mat-card-subtitle>
+        
+        <mat-card class = "rest-card">
 
-            <mat-card-content>
-        <div>
-      
-            <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
-            <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
-            <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc}}</p>
-        </div>
-        </mat-card-content>
-    </mat-card>
-</div>
-
-<div fxLayoutAlign="space-around start">
+            <mat-card-title>MNCR, Depto DAH</mat-card-title>
+            <mat-card-subtitle>Ficha Cerámica, Reporte Completo</mat-card-subtitle>
     
-    <mat-card>
-
-        <mat-card-subtitle>Investigador y Registro</mat-card-subtitle>
-
-            <mat-card-content>
-        <div>
             
-            <p>Cod Monumento: {{ceramic.cod_mon}} | Num Artefacto: {{ceramic.num_artefacto}} | Num Caja: {{ceramic.num_caja}}</p>
-            <p>Proyecto: {{ceramic.proyecto}} | Investigador: {{ceramic.investigador}} | Año Proyecto: {{ceramic.pro_year}}</p>
-            <p>Datos Etiqueta: {{ceramic.etiqueta}} | Fecha Excavación: {{ceramic.fecha_exc}}</p>
-        </div>
-        </mat-card-content>
-    </mat-card>
-</div>
+    
+            <mat-card-content>
 
-</div>
+            <div class="image-thumb">
+                    
+                <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
+                <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
+        
+            </div>
 
+            </mat-card-content>
+        </mat-card>    
+
+
+    </div>
 
 </div>

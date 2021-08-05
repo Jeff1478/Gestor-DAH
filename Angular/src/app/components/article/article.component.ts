@@ -41,15 +41,17 @@ export class ArticleComponent implements OnInit {
   exportPdf() {
     
     const div : any = document.getElementById('htmlData');
-    const options = { background: 'white',  height: 2480, width: 1265 };
+    const options = { background: 'white',  height: 2470, width: 1265 };
     domtoimage.toPng(div, options).then((dataUrl: any) => {
       //Initialize JSPDF
       const doc = new jsPDF('p', 'pt', 'a4');
-      var width = doc.internal.pageSize.getWidth();
-      var height = doc.internal.pageSize.getHeight();
-        
-      //Add image Url to PDF
-      doc.addImage(dataUrl, 'PNG', 5, 0, width, height);
+      const bufferX = 15;
+      const bufferY = 15;
+      var width = doc.internal.pageSize.getWidth()- 2 * bufferX;;
+     // var height = doc.internal.pageSize.getHeight();
+     var height = (doc.internal.pageSize.getHeight() * width) / width;
+      var height2 = height*2;
+      doc.addImage(dataUrl, 'PNG', 5, 0, width, height2);
       doc.save(this.ceramic._id + '.pdf');
     })
   }
