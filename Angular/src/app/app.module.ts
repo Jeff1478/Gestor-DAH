@@ -47,6 +47,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ExporterService } from './services/exporter';
 import { FichaContextoComponent } from './components/ficha-contexto/ficha-contexto.component';
 import { ReportePublicoComponent } from './components/reporte-publico/reporte-publico.component';
+import { TrueFalseValueDirective } from './TrueFalseValueDirective';
 
 
 @NgModule({
@@ -76,13 +77,16 @@ import { ReportePublicoComponent } from './components/reporte-publico/reporte-pu
     AuthenticationButtonComponent,
     LandingComponent,
     FichaContextoComponent,
-    ReportePublicoComponent
+    ReportePublicoComponent,
+    TrueFalseValueDirective
     
   ],
+  
   imports: [
     BrowserModule,
     HttpClientModule,
     routing,
+
     NgbModule,
     FlexLayoutModule,
     FormsModule,

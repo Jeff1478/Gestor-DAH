@@ -18,6 +18,7 @@ export class CeramicaComponent implements OnInit {
   public status!: string;
   public url: string;
   public is_edit: boolean;
+ 
 
   afuConfig = {
     uploadAPI: {
@@ -138,6 +139,9 @@ export class CeramicaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+
 
   OnSubmit(){
     this._ceramicService.create(this.ceramic).subscribe(

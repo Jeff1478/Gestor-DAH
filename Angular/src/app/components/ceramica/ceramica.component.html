@@ -1,3 +1,4 @@
+
 <div class="center">
     <section id="content.ceramic">
 
@@ -248,13 +249,13 @@
                                 <label class="fw-bold">Apendices: </label>
                                 <div class="col-md-12">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="apendices"  #apendices [(ngModel)]="ceramic.apendices"
-                                            value="No presenta">
+                                        <input class="form-check-input" type="checkbox" #apendices [(ngModel)]="ceramic.apendices"
+                                        ng-true-value="'YES'" ng-false-value="'NO'">
                                         <label class="form-check-label" for="apendices">No presenta</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="soporte"  #soporte [(ngModel)]="ceramic.soporte"
-                                        value="Soportes">
+                                        ng-true-value="'YES'" ng-false-value="'NO'">
                                         <label class="form-check-label" for="soporte">Soportes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -329,9 +330,13 @@
                         <div class="row g-3">
                             <label class="fw-bold">Incisos: </label>
                             <div class="col-md-12">
+                                
+
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="pre_coc" #pre_coc [(ngModel)]="ceramic.pre_coc"
-                                        value="Pre Cocción">
+                                    
+                                    <input class="form-check-input" type="checkbox" name="pre_coc" [(ngModel)]="ceramic.pre_coc"
+                                    (ngModelChange)="ceramic.pre_coc=$event?'X':''">
+
                                     <label class="form-check-label" for="pre_coccion">Pre Cocción</label>
                                 </div>
                                 <div class="form-check form-check-inline">
