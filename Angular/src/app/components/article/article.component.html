@@ -1,156 +1,359 @@
-<a [routerLink]="['/pagina/editar',ceramic._id]" class="btn btn-outline-success">Editar</a> 
+<!-- <a [routerLink]="['/pagina/editar',ceramic._id]" class="btn btn-outline-success">Editar</a> 
 <a (click)="delete(ceramic._id)" class = "btn btn-danger">Borrar</a>
 
    <button class="btn btn-success btn-block" (click)="exportPdf()">Reporte Completo</button>
-   <button class="btn btn-success btn-block"><a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a></button>
+   <button class="btn btn-success btn-block"><a [routerLink]="['/reporte-publico/ceramic', ceramic._id]">Público</a></button> -->
+   <mat-tab-group mat-align-tabs="start">
+
+        <mat-tab label="Reporte Completo">
+            <button data-toggle="tooltip" data-placement="top" title="Imprimir PDF" class="btn btn-success btn-block" (click)="exportPdf()">
+                <mat-icon>print</mat-icon>
+                
+            </button>
+            <a [routerLink]="['/pagina/editar',ceramic._id]" data-toggle="tooltip" data-placement="top" title="Editar Ficha" class="btn btn-outline-success">
+            <mat-icon>edit</mat-icon>
+            </a> 
+            <a (click)="delete(ceramic._id)" data-toggle="tooltip" data-placement="top" title="Borrar Registro" class = "btn btn-danger">
+                <mat-icon>delete</mat-icon>    
+            </a> 
+
+            <div id="htmlData">
+
+               
+
+                    <div fxLayout="row" fxLayoutAlign="center start stretch">
+
+                        <mat-card class = "rest-card"> 
+
+                            <mat-card-subtitle>Datos Ubicación</mat-card-subtitle>
+
+                            <mat-card-content>
+                                <div>          
+                                    <p><b>Cod Monumento:</b> {{ceramic.cod_mon}} <b>Num Artefacto:</b> {{ceramic.num_artefacto}} <b>Num Caja:</b>{{ceramic.num_caja}}</p>
+                                    <p><b>Proyecto:</b> {{ceramic.proyecto}} </p>
+                                    <p><b>Investigador:</b> {{ceramic.investigador}} <b>Año Proyecto:</b> {{ceramic.pro_year}}</p>
+                                    <p><b>Datos Etiqueta:</b> {{ceramic.etiqueta}} </p>
+                                    <p><b>Fecha Excavación:</b>  {{ceramic.fecha_exc | date:'dd/MM/yyyy'}}</p>
+                                </div>
+                            </mat-card-content>
+
+                        </mat-card>
 
 
+                        <mat-card class = "rest-card">
 
-<div id="htmlData">
+                            <mat-card-subtitle>Asociación Contextual</mat-card-subtitle>
 
-<div fxLayout="row">
+                                <mat-card-content>
+                                <div>  
+                                    <p><b>Id Contexto:</b> {{ceramic.id_contexto}} <b>Contexto:</b> {{ceramic.contexto}} <b>Ubicación Relativa:</b> {{ceramic.ubicacion}}</p>
+                                    <p><b>Fotografia:</b> {{ceramic.foto}} <b>N° Foto:</b>{{ceramic.num_foto}} <b>Calidad Foto:</b> {{ceramic.calidad_foto}}</p>
+                                    <p><b>Estado Foto:</b> {{ceramic.estado_foto}} <b>Planimetría:</b>  {{ceramic.plano}} <b>N° Lámina:</b> {{ceramic.num_lamina}}</p>
+                                    <p><b>Calidad Plano:</b> {{ceramic.calidad_lamina}} <b>Estado Plano:</b> {{ceramic.estado_Lamina}}</p>
+                                    <p><b>Diagnóstico:</b> {{ceramic.diagnostico_contexto}} <b>Fechamiento:</b>  {{ceramic.fechamiento}}</p>
+                                </div>
+                            </mat-card-content>
 
-    <div fxLayout="row" fxFlexAlign="stretch">
-    
-        <mat-card class = "rest-card"> 
+                        </mat-card>
 
-        <mat-card-subtitle>Datos Ubicación</mat-card-subtitle>
 
-            <mat-card-content>
-            <div>          
-                <p><b>Cod Monumento:</b> {{ceramic.cod_mon}} <b>Num Artefacto:</b> {{ceramic.num_artefacto}} <b>Num Caja:</b>{{ceramic.num_caja}}</p>
-                <p><b>Proyecto:</b> {{ceramic.proyecto}} </p>
-                <p><b>Investigador:</b> {{ceramic.investigador}} <b>Año Proyecto:</b> {{ceramic.pro_year}}</p>
-                <p><b>Datos Etiqueta:</b> {{ceramic.etiqueta}} </p>
-                <p><b>Fecha Excavación:</b>  {{ceramic.fecha_exc | date:'dd/MM/yyyy'}}</p>
+                        <mat-card class = "rest-card">
+
+            
+                            <mat-card-subtitle>Asociación Funcional, Tipológica, Regional y Temporal</mat-card-subtitle>
+                                <mat-card-content>
+                                <div>
+                                
+                                    <p><b>Forma-Función:</b> {{ceramic.forma_funcion}}</p>
+                                    <p><b>Marcas uso:</b> {{ceramic.marcas_uso}} <b>Descripción</b>  {{ceramic.desc_marcas_uso}}</p>
+                                    <p><b>Tipo Cerámico:</b> Grupo {{ceramic.tipo_ceramico_grupo}} | Referencias {{ceramic.ceramico_refz}}</p>
+                                    <p><b>Período :</b> {{ceramic.periodo_ceramica}} | Fase {{ceramic.fase_ceramica}} | Temporalidad {{ceramic.temporalidad_ceramica}}</p>
+                                    <p><b>Procedencia :</b> {{ceramic.procedencia_ceramica}}</p>
+                                </div>
+                                </mat-card-content>
+                        </mat-card>
+                    </div>
+               
+
+               
+
+                    <div fxLayout="row" fxLayoutAlign="center start">
+            
+                        <mat-card fxFlex ="60" class = "descrip-card"> 
+                    
+                            <mat-card-subtitle>Descripción Objeto</mat-card-subtitle>
+                    
+                                <mat-card-content>
+
+                            <div align="left">
+                            
+                                <p><b>Tipo Pieza:</b> {{ceramic.tipo_pieza}}</p>
+                                <p><b>Descripción:</b> {{ceramic.desc_narrativa}}</p>
+                                <p><b>Apendices:</b> {{ceramic.apendices}} | Descripción: {{ceramic.desc_apendice}}</p>
+                                <p><b>Acabado:</b> {{ceramic.acabado_superficie}} | Pintura: {{ceramic.estilo_decorativo}} | Color: {{ceramic.color_pintura}} </p>
+                                <p><b>Incisos:</b> Pre Cocción <b>{{ceramic.pre_coc}}</b> | Post Cocción {{ceramic.post_coc}} | Esgrafiados {{ceramic.esgraf}} | Punteado: {{ceramic.ptdo}}</p>
+                                <p><b>Pastillajes:</b> Tira Aplicada {{ceramic.tira_apl}} | Pastilla {{ceramic.ptll}} | Pintura {{ceramic.zna}} | Ranurado {{ceramic.rndo}} | Acanalado {{ceramic.acnlo}} | Hendidos {{ceramic.hddo}} | Punteado  {{ceramic.ptll}} | Moldeadas {{ceramic.mdl}}</p>  
+                                <p><b>Dis No Figurativo:</b> Vertical {{ceramic.vertical}} | Horizontal {{ceramic.horizontal}} | Zig-Zag {{ceramic.zig_zag}} | Panel {{ceramic.panel}} | Aislados {{ceramic.aisld}} | Saturación {{ceramic.str}} | Otro {{ceramic.otro_nofig}}</p>             
+                                <p><b>DisFigurativo Zoomorfo:</b> Cabeza {{ceramic.head}} | Saurio {{ceramic.suario}} | Felino {{ceramic.felino}} | Batracio {{ceramic.batracio}} | Ave {{ceramic.ave}} | Mono {{ceramic.primate}} | Murcielago {{ceramic.murcielago}} | Mamífero {{ceramic.mamifero}} | Tortuga {{ceramic.turtle}} | Reptil {{ceramic.reptil}} | Pez {{ceramic.pez}} | No determinado {{ceramic.indt}}</p>
+                                <p><b>Taxonomía Explícita:</b> {{ceramic.txn_expl}}</p>
+                                <p><b>Investigador que Identificó:</b> {{ceramic.investigador_zoo}}</p>
+                                <p><b>DisFigurativo Antromorfo:</b> Cabeza {{ceramic.cabeza_nofig}} | Cara {{ceramic.sau_nofig}} | Hocico {{ceramic.cabhoc}} | Sedente {{ceramic.batracio}} | Ergida {{ceramic.erguida_nofig}} | Escena {{ceramic.reptil}}</p>
+                                <p><b>DisFigurativo Indeterminado:</b> Cabeza {{ceramic.cabfigint}} | Cara {{ceramic.cabhoc}} | Garra {{ceramic.garra}} | Otro {{ceramic.otfigind}}</p>
+                            </div>
+                            </mat-card-content>
+                        </mat-card>
+
+                    </div>
+               
+
+                
+
+                    <div fxLayout="row" fxLayoutAlign="center start stretch">
+
+                        <mat-card class = "rest-card">
+
+                            <mat-card-subtitle>Estado Conservación</mat-card-subtitle>
+                    
+                                <mat-card-content>
+                                    <div>      
+                                        <p><b>Estado Conservación:</b> {{ceramic.estado_conservacion}} <b> Potencial Exhibición:</b> {{ceramic.potencial}}</p>
+                                        <p><b>Explicación:</b> {{ceramic.potencial_exp}}</p>
+                                        <p><b>Dimensiones Vitrina:</b> Largo {{ceramic.largo}} | Ancho: {{ceramic.ancho}}| Alto: {{ceramic.alto}} | Peso: {{ceramic.peso}}</p>
+                                    </div>
+                                </mat-card-content>
+                        </mat-card>
+
+                        <mat-card class = "rest-card">
+
+                            <mat-card-subtitle>Investigador y Registro</mat-card-subtitle>
+                    
+                                <mat-card-content>
+                                    <div>
+                                    <p><b>Nombre:</b> {{ceramic.nombre_invest}}</p>
+                                    <p><b>Fecha Análisis:</b> {{ceramic.fecha_analisis}}</p>
+                                    <p><b>Numeración de Fotos:</b> {{ceramic.fotos_num}}</p>
+                                    </div>
+                                </mat-card-content>
+                        </mat-card>
+
+                
+                        <mat-card class = "rest-card">
+
+                            <mat-card-title>MNCR, Depto DAH</mat-card-title>
+                            <mat-card-subtitle>Ficha Cerámica, Reporte Completo</mat-card-subtitle>
+            
+                        <mat-card-content>
+
+                            <div class="image-thumb">
+                                    
+                                <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
+                                <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
+                        
+                            </div>
+
+                        </mat-card-content>
+                        </mat-card>    
+                    </div>
+              
+
             </div>
-            </mat-card-content>
-        </mat-card>
-  
+        </mat-tab>
 
-        <mat-card class = "rest-card">
-
-        <mat-card-subtitle>Asociación Contextual</mat-card-subtitle>
-
-            <mat-card-content>
-            <div>  
-                <p><b>Id Contexto:</b> {{ceramic.id_contexto}} <b>Contexto:</b> {{ceramic.contexto}} <b>Ubicación Relativa:</b> {{ceramic.ubicacion}}</p>
-                <p><b>Fotografia:</b> {{ceramic.foto}} <b>N° Foto:</b>{{ceramic.num_foto}} <b>Calidad Foto:</b> {{ceramic.calidad_foto}}</p>
-                <p><b>Estado Foto:</b> {{ceramic.estado_foto}} <b>Planimetría:</b>  {{ceramic.plano}} <b>N° Lámina:</b> {{ceramic.num_lamina}}</p>
-                <p><b>Calidad Plano:</b> {{ceramic.calidad_lamina}} <b>Estado Plano:</b> {{ceramic.estado_Lamina}}</p>
-                <p><b>Diagnóstico:</b> {{ceramic.diagnostico_contexto}} <b>Fechamiento:</b>  {{ceramic.fechamiento}}</p>
+        <mat-tab label="Reporte Público">
+            <button class="btn btn-success btn-block" (click)="exportPdf()">
+                <mat-icon>print</mat-icon>
+                PDF
+            </button>
+            
+            <div id="htmlData" fxLayout="row" fxLayoutAlign="center start"> 
+            
+                        <mat-card fxFlex ="60">
+            
+                            <mat-card-title>MNCR, Depto DAH</mat-card-title>
+                            <mat-card-subtitle>Ficha Cerámica, Reporte Público</mat-card-subtitle>
+            
+                            <div class="image-thumb">
+                                    
+                                <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
+                                <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
+                        
+                            </div>
+            
+                            <mat-card-content>
+            
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Cod Monumento</th>
+                                        <th scope="col">Contexto</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <td> {{ceramic.cod_mon}} </td>
+                                        <td> {{ceramic.contexto}} </td>
+                                    </tbody>
+                                </table>
+            
+                                <div style="text-align:justify">
+                                    <h4><b>Descripción Narrativa</b></h4>
+                                    <p>{{ceramic.desc_narrativa}}</p>
+                                </div>
+            
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Temporalidad Estimada</th>
+                                        <th scope="col">Procedencia</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <td> {{ceramic.temporalidad_ceramica}} </td>
+                                        <td> {{ceramic.procedencia_ceramica}} </td>
+                                    </tbody>
+                                </table>
+                                
+                                
+                                <div>
+                                    <h4><b>Dimensiones</b></h4>
+                                    <p>Ancho: {{ceramic.ancho}}, Alto: {{ceramic.ancho}}, Peso: {{ceramic.ancho}}</p>
+                                
+                                </div>
+                                
+                            </mat-card-content>
+                        </mat-card>                
             </div>
-        </mat-card-content>
+        </mat-tab>
 
-        </mat-card>
+        <mat-tab label="Reporte Catálogo">
+
+            <button class="btn btn-success btn-block" (click)="exportPdf()">
+                <mat-icon>print</mat-icon>
+                PDF
+            </button>
+
+            <div id="htmlData">
+
+                
+
+                    <div fxLayout="row" fxLayoutAlign="center start">
+
+                        <mat-card class = "main-card">
+
+                            <mat-card-title>MNCR, Depto DAH</mat-card-title>
+                            <mat-card-subtitle>Ficha Cerámica, Reporte Catálogo</mat-card-subtitle>
+            
+                        <mat-card-content>
+
+                            <div class="image-thumb">
+                                    
+                                <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
+                                <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
+                        
+                            </div>
+
+                            <div>          
+                                <p><b>Id Artefacto:</b> {{ceramic.cod_mon}}</p>
+                                <p><b>Año Excavación:</b> {{ceramic.pro_year}} </p>  
+                            </div>
+
+                        </mat-card-content>
+                        </mat-card>
+
+                        <mat-card class = "rest-card"> 
+                    
+                            <mat-card-subtitle>Contexto</mat-card-subtitle>
+                    
+                            <mat-card-content>
+                                <div>      
+                                    <p><b>Id Contexto:</b> {{ceramic.id_contexto}}</p>
+                                    <p><b>Contexto:</b> {{ceramic.contexto}}</p>
+                                    <p><b>Fechamiento:</b> Largo {{ceramic.fechamiento}}</p>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+
+                        <mat-card class = "rest-card">
+
+                            <mat-card-subtitle>Temporalidad Estimada</mat-card-subtitle>
+                                <mat-card-content>
+                                    <div>      
+                                        <p><b>Temporalidad:</b> {{ceramic.temporalidad_ceramica}}</p>
+                                        <p><b>Procedencia:</b> {{ceramic.procedencia_ceramica}}</p>
+                                        <p><b>Dimensiones:</b> Largo {{ceramic.largo}} | Ancho: {{ceramic.ancho}}| Alto: {{ceramic.alto}} | Peso: {{ceramic.peso}}</p>
+                                    </div>
+                                </mat-card-content>
+                        </mat-card>
 
 
-    <mat-card class = "rest-card">
+                    </div>
+             
+
+
+              <!--   <div fxLayout="row">
+
+                    <div fxLayout="row" fxLayoutAlign="space-evenly center">
+            
+                        <mat-card class = "descrip-card"> 
+                    
+                            <mat-card-subtitle>Contexto</mat-card-subtitle>
+                    
+                            <mat-card-content>
+                                <div>      
+                                    <p><b>Id Contexto:</b> {{ceramic.id_contexto}}</p>
+                                    <p><b>Contexto:</b> {{ceramic.contexto}}</p>
+                                    <p><b>Fechamiento:</b> Largo {{ceramic.fechamiento}}</p>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+
+                    </div>
+                </div> -->
+
+                
+                    <div fxLayout="row" fxLayoutAlign="center start">
+
+                        <mat-card fxFlex ="60" class = "descrip-card">
+
+                            <mat-card-subtitle>Descripción Narrativa</mat-card-subtitle>
+                                <mat-card-content>
+                                    <div>      
+                                        <p><b>Descripción:</b> {{ceramic.desc_narrativa}}</p>
+                                        <p><b>Tipo Diseño:</b> {{ceramic.tipo_pieza}}</p>
+                                        <p><b>Tipo Cerámica:</b> {{ceramic.tipo_ceramico_grupo}}</p>
+                                        <p><b>Fase:</b> {{ceramic.fase_ceramica}}</p>
+                                    </div>
+                                </mat-card-content>
+                        </mat-card>
+
+                    
+                    </div>
+             
+
+                <!-- <div fxLayout="row">
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+
+                        <mat-card class = "rest-card">
+
+                            <mat-card-subtitle>Temporalidad Estimada</mat-card-subtitle>
+                                <mat-card-content>
+                                    <div>      
+                                        <p><b>Temporalidad:</b> {{ceramic.temporalidad_ceramica}}</p>
+                                        <p><b>Procedencia:</b> {{ceramic.procedencia_ceramica}}</p>
+                                        <p><b>Dimensiones:</b> Largo {{ceramic.largo}} | Ancho: {{ceramic.ancho}}| Alto: {{ceramic.alto}} | Peso: {{ceramic.peso}}</p>
+                                    </div>
+                                </mat-card-content>
+                        </mat-card>
+
+                    </div>
+                </div> -->
+
+            </div>
+            
+        </mat-tab>
+
+   </mat-tab-group>
+ 
+
+            
 
        
-        <mat-card-subtitle>Asociación Funcional, Tipológica, Regional y Temporal</mat-card-subtitle>
-            <mat-card-content>
-            <div>
-              
-                <p><b>Forma-Función:</b> {{ceramic.forma_funcion}}</p>
-                <p><b>Marcas uso:</b> {{ceramic.marcas_uso}} <b>Descripción</b>  {{ceramic.desc_marcas_uso}}</p>
-                <p><b>Tipo Cerámico:</b> Grupo {{ceramic.tipo_ceramico_grupo}} | Referencias {{ceramic.ceramico_refz}}</p>
-                <p> Período {{ceramic.periodo_ceramica}} | Fase {{ceramic.fase_ceramica}} | Temporalidad {{ceramic.temporalidad_ceramica}}</p>
-                <p>Procedencia {{ceramic.procedencia_ceramica}}</p>
-            </div>
-            </mat-card-content>
-        </mat-card>
-</div>
-</div>
-
-
-<div fxLayout="row">
-
-    <div fxLayout="row" fxLayoutAlign="space-evenly center">
-    
-        <mat-card class = "descrip-card"> 
-    
-            <mat-card-subtitle>Descripción Objeto</mat-card-subtitle>
-    
-                <mat-card-content>
-
-            <div align="left">
-              
-                <p><b>Tipo Pieza:</b> {{ceramic.tipo_pieza}}</p>
-                <p><b>Descripción:</b> {{ceramic.desc_narrativa}}</p>
-                <p><b>Apendices:</b> {{ceramic.apendices}} | Descripción: {{ceramic.desc_apendice}}</p>
-                <p><b>Acabado:</b> {{ceramic.acabado_superficie}} | Pintura: {{ceramic.estilo_decorativo}} | Color: {{ceramic.color_pintura}} </p>
-                <p><b>Incisos:</b> Pre Cocción {{ceramic.pre_coc}} | Post Cocción {{ceramic.post_coc}} | Esgrafiados {{ceramic.esgraf}} | Punteado: {{ceramic.ptdo}}</p>
-                <p><b>Pastillajes:</b> Tira Aplicada {{ceramic.tira_apl}} | Pastilla {{ceramic.ptll}} | Pintura {{ceramic.zna}} | Ranurado {{ceramic.rndo}} | Acanalado {{ceramic.acnlo}} | Hendidos {{ceramic.hddo}} | Punteado  {{ceramic.ptll}} | Moldeadas {{ceramic.mdl}}</p>  
-                <p><b>Dis No Figurativo:</b> Vertical {{ceramic.vertical}} | Horizontal {{ceramic.horizontal}} | Zig-Zag {{ceramic.zig_zag}} | Panel {{ceramic.panel}} | Aislados {{ceramic.aisld}} | Saturación {{ceramic.str}} | Otro {{ceramic.otro_nofig}}</p>             
-                <p><b>DisFigurativo Zoomorfo:</b> Cabeza {{ceramic.head}} | Saurio {{ceramic.suario}} | Felino {{ceramic.felino}} | Batracio {{ceramic.batracio}} | Ave {{ceramic.ave}} | Mono {{ceramic.primate}} | Murcielago {{ceramic.murcielago}} | Mamífero {{ceramic.mamifero}} | Tortuga {{ceramic.turtle}} | Reptil {{ceramic.reptil}} | Pez {{ceramic.pez}} | No determinado {{ceramic.indt}}</p>
-                <p><b>Taxonomía Explícita:</b> {{ceramic.txn_expl}}</p>
-                <p><b>Investigador que Identificó:</b> {{ceramic.investigador_zoo}}</p>
-                <p><b>DisFigurativo Antromorfo:</b> Cabeza {{ceramic.cabeza_nofig}} | Cara {{ceramic.sau_nofig}} | Hocico {{ceramic.cabhoc}} | Sedente {{ceramic.batracio}} | Ergida {{ceramic.erguida_nofig}} | Escena {{ceramic.reptil}}</p>
-                <p><b>DisFigurativo Indeterminado:</b> Cabeza {{ceramic.cabfigint}} | Cara {{ceramic.cabhoc}} | Garra {{ceramic.garra}} | Otro {{ceramic.otfigind}}</p>
-            </div>
-            </mat-card-content>
-        </mat-card>
-
-        
-
-    </div>
-
-</div>
-
-<!-- Otra Línea -->
-
-<div fxLayout="row">
-
-    <div fxLayout="row" fxLayoutAlign="space-between center" >
-
-        <mat-card class = "rest-card">
-
-            <mat-card-subtitle>Estado Conservación</mat-card-subtitle>
-    
-                <mat-card-content>
-            <div>      
-                <p><b>Estado Conservación:</b> {{ceramic.estado_conservacion}} <b> Potencial Exhibición:</b> {{ceramic.potencial}}</p>
-                <p><b>Explicación:</b> {{ceramic.potencial_exp}}</p>
-                <p><b>Dimensiones Vitrina:</b> Largo {{ceramic.largo}} | Ancho: {{ceramic.ancho}}| Alto: {{ceramic.alto}} | Peso: {{ceramic.peso}}</p>
-            </div>
-            </mat-card-content>
-        </mat-card>
-
-        <mat-card class = "rest-card">
-
-            <mat-card-subtitle>Investigador y Registro</mat-card-subtitle>
-    
-                <mat-card-content>
-            <div>
-                <p><b>Nombre:</b> {{ceramic.nombre_invest}}</p>
-                <p><b>Fecha Análisis:</b> {{ceramic.fecha_analisis}}</p>
-                <p><b>Numeración de Fotos:</b> {{ceramic.fotos_num}}</p>
-            </div>
-            </mat-card-content>
-        </mat-card>
-
-        
-        <mat-card class = "rest-card">
-
-            <mat-card-title>MNCR, Depto DAH</mat-card-title>
-            <mat-card-subtitle>Ficha Cerámica, Reporte Completo</mat-card-subtitle>
-    
-            
-    
-            <mat-card-content>
-
-            <div class="image-thumb">
-                    
-                <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
-                <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
-        
-            </div>
-
-            </mat-card-content>
-        </mat-card>    
-
-
-    </div>
-
-</div>

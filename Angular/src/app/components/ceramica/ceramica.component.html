@@ -250,32 +250,32 @@
                                 <div class="col-md-12">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" #apendices [(ngModel)]="ceramic.apendices"
-                                        ng-true-value="'YES'" ng-false-value="'NO'">
+                                        (ngModelChange)="ceramic.apendices=$event?'X':''">
                                         <label class="form-check-label" for="apendices">No presenta</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="soporte"  #soporte [(ngModel)]="ceramic.soporte"
-                                        ng-true-value="'YES'" ng-false-value="'NO'">
+                                        (ngModelChange)="ceramic.soporte=$event?'X':''">
                                         <label class="form-check-label" for="soporte">Soportes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="ped_base"  #ped_base [(ngModel)]="ceramic.ped_base"
-                                            value="Pedestal-Base">
+                                        (ngModelChange)="ceramic.ped_base=$event?'X':''">
                                         <label class="form-check-label" for="Pedestal-Base">Pedestal Base</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="asa"  #asa [(ngModel)]="ceramic.asa"
-                                        value="Asa">
+                                        (ngModelChange)="ceramic.asa=$event?'X':''">
                                         <label class="form-check-label" for="asa">Asa</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="vtdero"  #vtdero [(ngModel)]="ceramic.vtdero"
-                                         value="Vertedero">
+                                        (ngModelChange)="ceramic.vtdero=$event?'X':''">
                                         <label class="form-check-label" for="Vertedero">Vertedero</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="otro_soporte" #otro_spt [(ngModel)]="ceramic.otro_soporte"
-                                        value="Otro">
+                                        (ngModelChange)="ceramic.otro_soporte=$event?'X':''">
                                         <label class="form-check-label" for="otro_soporte">Otro</label>
                                     </div>
     
@@ -341,17 +341,17 @@
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="post_coc" #post_coc [(ngModel)]="ceramic.post_coc"
-                                        value="Post Cocción">
+                                    (ngModelChange)="ceramic.post_coc=$event?'X':''">
                                     <label class="form-check-label" for="post_cocción">Post Cocción</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="esgraf" #esgraf [(ngModel)]="ceramic.esgraf"
-                                        value="Esgrafiados">
+                                    (ngModelChange)="ceramic.esgraf=$event?'X':''">
                                     <label class="form-check-label" for="esgrafiados">Esgrafiados</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="ptdo" #ptdo [(ngModel)]="ceramic.ptdo"
-                                    value="Punteado">
+                                    (ngModelChange)="ceramic.ptdo=$event?'X':''">
                                     <label class="form-check-label" for="ptdo">Punteado</label>
                                 </div>
 
@@ -365,22 +365,22 @@
                             <div class="col-md-12">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="tira_apl" #tira_apl [(ngModel)]="ceramic.tira_apl"
-                                        value="Tira Aplicada">
+                                    (ngModelChange)="ceramic.tira_apl=$event?'X':''">
                                     <label class="form-check-label" for="tira_aplicada">Tira Aplicada</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="ptll" #ptll [(ngModel)]="ceramic.ptll"
-                                    value="Pastilla">
+                                    (ngModelChange)="ceramic.ptll=$event?'X':''">
                                     <label class="form-check-label" for="pastilla">Pastilla o pelotilla</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="zna" #zna [(ngModel)]="ceramic.zna"
-                                     value="Zonas">
+                                    (ngModelChange)="ceramic.zna=$event?'X':''">
                                     <label class="form-check-label" for="zonas">Pintura sobre superficie natural</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="rndo" #rndo [(ngModel)]="ceramic.rndo"
-                                    value="Ranurado">
+                                    (ngModelChange)="ceramic.rndo=$event?'X':''">
                                     <label class="form-check-label" for="ranurado">Ranurado</label>
                                 </div>
                             </div>
@@ -388,22 +388,22 @@
                                 <div class="col-md-12">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="acnlo" #acnlo [(ngModel)]="ceramic.acnlo"
-                                            value="Acanalado">
+                                        (ngModelChange)="ceramic.acnlo=$event?'X':''">
                                         <label class="form-check-label" for="acanalado">Acanalado</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="hddo" #hddo [(ngModel)]="ceramic.hddo"
-                                            value="Hendidos">
+                                        (ngModelChange)="ceramic.hddo=$event?'X':''">
                                         <label class="form-check-label" for="hendidos">Hendidos o Pellizcado</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="ptdopt" #ptdo [(ngModel)]="ceramic.ptdopt"
-                                            value="Punteado">
+                                        (ngModelChange)="ceramic.ptdopt=$event?'X':''">
                                         <label class="form-check-label" for="ptdopt">Punteado</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="mdl" #mdl [(ngModel)]="ceramic.mdl"
-                                            value="Moldeadas">
+                                        (ngModelChange)="ceramic.mdl=$event?'X':''">
                                         <label class="form-check-label" for="moldeadas">Figuras Moldeadas</label>
                                     </div>
                                 </div>
@@ -417,37 +417,37 @@
                             <div class="col-md-12">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="vertical" #vertical [(ngModel)]="ceramic.vertical"
-                                    value="Vertical">
+                                    (ngModelChange)="ceramic.vertical=$event?'X':''">
                                     <label class="form-check-label" for="vertical">Vertical</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="Horizontal" #horizontal [(ngModel)]="ceramic.horizontal"
-                                    value="Horizotal">
+                                    (ngModelChange)="ceramic.horizontal=$event?'X':''">
                                     <label class="form-check-label" for="Horizotal">Horizotal</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="zig_zag" #zig_zag [(ngModel)]="ceramic.zig_zag"
-                                    value="Zig Zag">
+                                    (ngModelChange)="ceramic.zig_zag=$event?'X':''">
                                     <label class="form-check-label" for="zig_zag">Zig-Zag</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="panel" #panel [(ngModel)]="ceramic.panel"
-                                    value="Panel">
+                                    (ngModelChange)="ceramic.panel=$event?'X':''">
                                     <label class="form-check-label" for="panel">Panel</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="aisld" #aisld [(ngModel)]="ceramic.aisld"
-                                    value="Aislados">
+                                    (ngModelChange)="ceramic.aisld=$event?'X':''">
                                     <label class="form-check-label" for="Aislados">Aislados</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="str" #str [(ngModel)]="ceramic.str"
-                                        value="Saturacion Completa">
+                                    (ngModelChange)="ceramic.str=$event?'X':''">
                                     <label class="form-check-label" for="saturacion">Saturación Completa</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="otro_nofig" #otro_nofig [(ngModel)]="ceramic.otro_nofig"
-                                    value="Otro">
+                                    (ngModelChange)="ceramic.otro_nofig=$event?'X':''">
                                     <label class="form-check-label" for="otro_nofig">Otro</label>
                                 </div>
                             </div>
@@ -457,62 +457,62 @@
                                 <div class="col-md-12">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="head" #head [(ngModel)]="ceramic.head"
-                                        value="Cabeza">
+                                        (ngModelChange)="ceramic.head=$event?'X':''">
                                         <label class="form-check-label" for="cabeza">Cabeza</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="suario" #saurio [(ngModel)]="ceramic.suario"
-                                         value="Saurio">
+                                        (ngModelChange)="ceramic.suario=$event?'X':''">
                                         <label class="form-check-label" for="suario">Saurio</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="felino" #felino [(ngModel)]="ceramic.felino"
-                                        value="Felino">
+                                        (ngModelChange)="ceramic.felino=$event?'X':''">
                                         <label class="form-check-label" for="felino">Felino</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="batracio" #batracio [(ngModel)]="ceramic.batracio"
-                                            value="Batracio">
+                                        (ngModelChange)="ceramic.batracio=$event?'X':''">
                                         <label class="form-check-label" for="batracio">Batracio</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="ave" #ave [(ngModel)]="ceramic.ave"
-                                         value="Ave">
+                                        (ngModelChange)="ceramic.ave=$event?'X':''">
                                         <label class="form-check-label" for="ave">Ave</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="primate" #primate [(ngModel)]="ceramic.primate"
-                                        value="Primate">
+                                        (ngModelChange)="ceramic.primate=$event?'X':''">
                                         <label class="form-check-label" for="primate">Primate</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="murcielago" #murcielago [(ngModel)]="ceramic.murcielago"
-                                            value="Murcielago">
+                                        (ngModelChange)="ceramic.murcielago=$event?'X':''">
                                         <label class="form-check-label" for="murcielago">Murcielago</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="mamifero" #mamifero [(ngModel)]="ceramic.mamifero"
-                                            value="Mamifero">
+                                        (ngModelChange)="ceramic.mamifero=$event?'X':''">
                                         <label class="form-check-label" for="mamifero">Mamifero</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="turtle" #turtle [(ngModel)]="ceramic.turtle"
-                                        value="Tortuga">
+                                        (ngModelChange)="ceramic.turtle=$event?'X':''">
                                         <label class="form-check-label" for="turtle">Tortuga</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="reptil" #reptil [(ngModel)]="ceramic.reptil"
-                                        value="Reptil">
+                                        (ngModelChange)="ceramic.reptil=$event?'X':''">
                                         <label class="form-check-label" for="reptil">Reptil</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="pez" #pez [(ngModel)]="ceramic.pez"
-                                            value="Pez">
+                                        (ngModelChange)="ceramic.pez=$event?'X':''">
                                         <label class="form-check-label" for="pez">Pez</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" name="indt" #indt [(ngModel)]="ceramic.indt"
-                                            value="Indeterminado">
+                                        (ngModelChange)="ceramic.indt=$event?'X':''">
                                         <label class="form-check-label" for="indt">Indeterminado</label>
                                     </div>
 
@@ -537,32 +537,32 @@
                                     <div class="col-md-12">
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" name="cabeza_nofig" #cabeza_nofig [(ngModel)]="ceramic.cabeza_nofig"
-                                            value="Cabeza no Figurativo">
+                                            (ngModelChange)="ceramic.cabeza_nofig=$event?'X':''">
                                             <label class="form-check-label" for="cabeza_nofig">Cabeza</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" name="sau_nofig" #sau_nofig [(ngModel)]="ceramic.sau_nofig"
-                                             value="Saurio">
+                                            (ngModelChange)="ceramic.sau_nofig=$event?'X':''">
                                             <label class="form-check-label" for="sau_nofig">Cara</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" name="feli_nofig" #fel_nofig [(ngModel)]="ceramic.feli_nofig"
-                                             value="Felino">
+                                            (ngModelChange)="ceramic.feli_nofig=$event?'X':''">
                                             <label class="form-check-label" for="feli_nofig">Cabeza Hocico</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" name="bat_nofig" #bat_nofig [(ngModel)]="ceramic.bat_nofig"
-                                            value="Batracio">
+                                            (ngModelChange)="ceramic.bat_nofig=$event?'X':''">
                                             <label class="form-check-label" for="bat_nofig">Sedente</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" name="erguida_nofig" #eguida_nofig [(ngModel)]="ceramic.erguida_nofig"
-                                             value="Erguida">
+                                            (ngModelChange)="ceramic.erguida_nofig=$event?'X':''">
                                             <label class="form-check-label" for="erguida_nofig">Erguida</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" name="prim_nofig" #prim_nofig [(ngModel)]="ceramic.prim_nofig"
-                                            value="Escena">
+                                            (ngModelChange)="ceramic.prim_nofig=$event?'X':''">
                                             <label class="form-check-label" for="prim_nofig">Escena</label>
                                         </div>
                             
@@ -574,17 +574,17 @@
                                     <div class="col-md-12">
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" name="cabfigint" #cabfigint [(ngModel)]="ceramic.cabfigint"
-                                             value="Cabeza no Figurativo">
+                                            (ngModelChange)="ceramic.cabfigint=$event?'X':''">
                                             <label class="form-check-label" for="cabfigint">Cabeza</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" name="cabhoc" #cabhoc [(ngModel)]="ceramic.cabhoc"
-                                             value="Cabeza Hocico">
+                                            (ngModelChange)="ceramic.cabhoc=$event?'X':''">
                                             <label class="form-check-label" for="saurio">Cabeza Hocico</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" name="garra" #garra [(ngModel)]="ceramic.garra"
-                                            value="Garra">
+                                            (ngModelChange)="ceramic.garra=$event?'X':''">
                                             <label class="form-check-label" for="garra">Garra</label>
                                         </div>
                                         <div class="col-md-6">
@@ -718,10 +718,10 @@
                                 <select class="form-select" name="estado_conservacion" #estado_conservacion="ngModel"
                                     [(ngModel)]="ceramic.estado_conservacion">
                                     <option selected>Seleccione...</option>
-                                    <option value="1">Óptimo</option>
-                                    <option value="2">Bueno</option>
-                                    <option value="3">Regular</option>
-                                    <option value="3">Malo</option>
+                                    <option value="Optimo">Óptimo</option>
+                                    <option value="Bueno">Bueno</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Malo">Malo</option>
                                 </select>
                             </div>
                             <div class="col-md-4">

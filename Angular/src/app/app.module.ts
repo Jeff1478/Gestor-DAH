@@ -42,12 +42,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
-
+import {MatTabsModule} from '@angular/material/tabs';
 import { ExporterService } from './services/exporter';
 import { FichaContextoComponent } from './components/ficha-contexto/ficha-contexto.component';
 import { ReportePublicoComponent } from './components/reporte-publico/reporte-publico.component';
-import { TrueFalseValueDirective } from './TrueFalseValueDirective';
+
 
 
 @NgModule({
@@ -78,7 +77,7 @@ import { TrueFalseValueDirective } from './TrueFalseValueDirective';
     LandingComponent,
     FichaContextoComponent,
     ReportePublicoComponent,
-    TrueFalseValueDirective
+   
     
   ],
   
@@ -86,7 +85,7 @@ import { TrueFalseValueDirective } from './TrueFalseValueDirective';
     BrowserModule,
     HttpClientModule,
     routing,
-
+    MatTabsModule,
     NgbModule,
     FlexLayoutModule,
     FormsModule,
