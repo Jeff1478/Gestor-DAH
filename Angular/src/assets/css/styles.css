@@ -220,7 +220,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', end
 }
 
 .sidebar-item .btn{
-    margin: 0px auto;
+    margin: 5px auto;
     /* margin-top: 10px; */
 }
 
@@ -356,6 +356,23 @@ textarea{
 
 .subheader{
     text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.subheader-ceramica{
+    text-align: center;
+    background-color: goldenrod;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.subheader-contexto{
+    text-align: center;
+    color: white;
+    background-color: rgb(139, 53, 82);
     font-size: 16px;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
