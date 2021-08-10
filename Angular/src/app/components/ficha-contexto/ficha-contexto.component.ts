@@ -135,7 +135,7 @@ export class FichaContextoComponent implements OnInit {
            Swal.fire('Artefacto Creado', 'Guardado Correctamente!', 'success')
        
         
-         this._router.navigate(['/formulario']);
+         this._router.navigate(['/peliculas']);
        }else{
          this.status = 'error'
        }

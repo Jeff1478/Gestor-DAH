@@ -51,138 +51,49 @@
                 </div> 
 
                 <div class="accordion accordion-flush" id="accordionFlushExample">         
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Información Contexto
-                        </button>
-                    </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <div class="row g-3">
-                                <div class="col-md-3">
-                                    <label for="sector">Sector</label>
-                                    <select class="form-select" name="sector" #sector="ngModel"
-                                        [(ngModel)]="contexto.sector">
-                                        <option selected>Seleccione...</option>
-                                        <option value="Reserva">Reserva</option>
-                                        <option value="PlaySkool">PlaySkool</option>
-                                        <option value="Duarco">Duarco</option>
-                                        <option value="Cocorí">Cocorí</option>
-                                        <option value="Otro">Otro</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="ubicacion">Ubicación</label>
-                                    <select class="form-select" name="ubicacion" #ubicacion="ngModel"
-                                        [(ngModel)]="contexto.ubicacion">
-                                        <option selected>Seleccione...</option>
-                                        <option value="Norte">Norte</option>
-                                        <option value="Sur">Sur</option>
-                                        <option value="Este">Este</option>
-                                        <option value="Oeste">Oeste</option>
-                                        <option value="Central">Central</option>
-                                    </select>
-                                </div>
-            
-                                <div class="col-md-3">
-                                    <label for="operacion">Operación</label>
-                                    <input type="text" class="form-control" name="operacion" #operacion="ngModel"
-                                        [(ngModel)]="contexto.operacion">
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="suboperacion">SubOperación</label>
-                                    <input type="text" class="form-control" name="suboperacion" #suboperacion="ngModel"
-                                        [(ngModel)]="contexto.suboperacion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Informacion Contextual
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div class="row g-3">
+                                    <div class="col-md-3">
+                                        <label for="sector">Sector</label>
+                                        <select class="form-select" name="sector" #sector="ngModel" [(ngModel)]="contexto.sector">
+                                            <option selected>Seleccione...</option>
+                                            <option value="Reserva">Reserva</option>
+                                            <option value="PlaySkool">PlaySkool</option>
+                                            <option value="Duarco">Duarco</option>
+                                            <option value="Cocorí">Cocorí</option>
+                                            <option value="Otro">Otro</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="ubicacion">Ubicación</label>
+                                        <select class="form-select" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="contexto.ubicacion">
+                                            <option selected>Seleccione...</option>
+                                            <option value="Norte">Norte</option>
+                                            <option value="Sur">Sur</option>
+                                            <option value="Este">Este</option>
+                                            <option value="Oeste">Oeste</option>
+                                            <option value="Central">Central</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="operacion">Operación</label>
+                                            <input type="text" class="form-control" name="operacion" #operacion="ngModel"
+                                                [(ngModel)]="contexto.operacion">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row g-3">
-                                <div class="col-md-12">
-                                    <label for="desc_operacion">Descripción Operación</label>
-                                    <input type="text" class="form-control" name="desc_operacion" #desc_operacion="ngModel"
-                                        [(ngModel)]="contexto.desc_operacion">
-                                </div>
-                            </div>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="cont">Contexto</label>
-                                    <input type="text" class="form-control" name="cont" #cont="ngModel"
-                                        [(ngModel)]="contexto.cont">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="diagnostico_contexto">Diagnóstico Contexto</label>
-                                    <input type="text" class="form-control" name="diagnostico_contexto" #diagnostico_contexto="ngModel"
-                                        [(ngModel)]="contexto.diagnostico_contexto">
-                                </div>
-                            </div>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="tipo_contexto">Tipo Contexto Excavado</label>
-                                    <input type="text" class="form-control" name="tipo_contexto" #tipo_contexto="ngModel"
-                                        [(ngModel)]="contexto.tipo_contexto">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="otro_contexto">Otro</label>
-                                    <input type="text" class="form-control" name="otro_contexto" #otro_contexto="ngModel"
-                                        [(ngModel)]="contexto.otro_contexto">
-                                </div>
-                            </div>
-                           <div class="row g-3"> 
-                                <div class="col-md-3">
-
-                                    <label for="num_cem">Cementerio</label>
-                                    <br>
-                                <ng-container>
-                                    
-                                        <input #chkcem [(ngModel)]="contexto.num_cem" type="checkbox" name="num_cem"  #num_cem/> 
-                                        <input type="text" placeholder="Num :" [disabled]="!chkcem.checked" />  
-                                    </ng-container>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="num_basa">Basamento</label>
-                                    <br>
-                                    <ng-container>
-                                        <input #chkbasa [(ngModel)]="contexto.num_basa" type="checkbox" name="num_basa"  #num_basa/>
-                                        <input type="text" placeholder="Num :" [disabled]="!chkbasa.checked" />
-                                    </ng-container>
-                                    
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="num_plaza">Plaza o Patio</label>
-                                    <br>
-                                    <ng-container>
-                                        <input #chkplaza [(ngModel)]="contexto.num_plaza" type="checkbox" name="num_plaza"  #num_plaza/>
-                                        <input type="text" placeholder="Num :" [disabled]="!chkplaza.checked" />
-                                    </ng-container>
-                                    
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="num_estruc">Estructura</label>
-                                    <br>
-                                    <ng-container>
-                                        <input #chkestruc [(ngModel)]="contexto.num_estruc" type="checkbox" name="num_estruc"  #num_estruc/>
-                                        <input type="text" placeholder="Num :" [disabled]="!chkestruc.checked" />
-                                    </ng-container>
-                                </div>
-                            </div> -->
-                             <div class="row g-3">
-                                <div class="col-md-3">
-                                    <label for="ind_conex">Indeterminado</label>
-                                    <br>
-                                    <ng-container>
-                                        <input #chkind [(ngModel)]="contexto.ind_conex" type="checkbox" name="ind_conex"  #ind_conex/>
-                                        <input type="text" placeholder="" [disabled]="!chkind.checked" />
-                                    </ng-container>
-                                </div>
-                            </div> 
                         </div>
                     </div>
                 </div>
-                </div> 
-
                 <div class="accordion accordion-flush" id="accordionFlushExample">         
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingThree">

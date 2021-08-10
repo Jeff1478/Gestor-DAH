@@ -100,9 +100,9 @@ import { ReportePublicoComponent } from './components/reporte-publico/reporte-pu
     MatPaginatorModule,
     MatTableModule,
     AngularFileUploaderModule,
-    AuthModule.forRoot({
+     AuthModule.forRoot({
       ...env.auth,
-    }),
+    }), 
     BrowserAnimationsModule,
   ],
   providers: [appRoutingProviders, ExporterService],
