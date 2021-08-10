@@ -3,11 +3,20 @@
         <h3>Administrador</h3>
         
         <div *ngIf= "titulo === 'ceramica'"> 
-            <a [routerLink]="['/ceramica']" class="btn btn-success">Agregar Ficha</a>
-            <a [routerLink]="['/formulario']" class= "btn btn-info">Exportar Excel</a>
+            <!-- <a [routerLink]="['/ceramica']" class="btn btn-success">Agregar Ficha</a> -->
+            <a [routerLink]="['/ceramica']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
+              <mat-icon>add_shopping_cart</mat-icon>    
+          </a> 
+            <!-- <a [routerLink]="['/formulario']" class= "btn btn-info">Exportar Excel</a> -->
+            <a [routerLink]="['/formulario']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">
+              <mat-icon>cloud_download</mat-icon>    
+          </a> 
         </div>
         <div *ngIf= "titulo === 'contexto'"> 
-            <a [routerLink]="['/ficha-contexto']" class="btn btn-success">Agregar Ficha</a>
+            <!-- <a [routerLink]="['/ficha-contexto']" class="btn btn-success">Agregar Ficha</a> -->
+            <a [routerLink]="['/ficha-contexto']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
+              <mat-icon>add_shopping_cart</mat-icon>    
+          </a> 
         </div>
 
         <div *ngIf= "titulo === 'ficha_ceramica'"> 

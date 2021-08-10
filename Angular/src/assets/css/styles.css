@@ -226,12 +226,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', end
 
 .btn{
    /* display: block; */
-   background: rgb(249, 157, 28);
+   /* background: rgb(249, 157, 28); */
    color: black;
    /* padding: 15px;  */
    /* font-weight: bold; */
    /* text-transform: uppercase; */
-   font-size: 14px;
+   font-size: 10px;
    text-decoration: none;
    /* max-width: 120px; */
    transition: 300ms all;

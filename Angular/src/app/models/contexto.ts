@@ -12,7 +12,7 @@ export class Contexto{
     public investigador: String,
     public sector: String,
     public ubicacion: String,
-    public operacion: any,
+    public operacion: String,
     public suboperacion: String,
     public desc_operacion: String,
     public contexto: String,

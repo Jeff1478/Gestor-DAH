@@ -44,14 +44,15 @@ export class ArticleComponent implements OnInit {
     const options = { background: 'white',  height: 2470, width: 1265 };
     domtoimage.toPng(div, options).then((dataUrl: any) => {
       //Initialize JSPDF
-      const doc = new jsPDF('p', 'pt', 'a4');
+      const doc = new jsPDF('p', 'pt', 'a4',true);
       const bufferX = 15;
       const bufferY = 15;
       var width = doc.internal.pageSize.getWidth()- 2 * bufferX;;
-     // var height = doc.internal.pageSize.getHeight();
+     
      var height = (doc.internal.pageSize.getHeight() * width) / width;
-      var height2 = height*2;
-      doc.addImage(dataUrl, 'PNG', 5, 0, width, height2);
+      var height2 = height*2-200;
+      
+      doc.addImage(dataUrl, 'PNG', 0, 0, width, height2,'FAST');
       doc.save(this.ceramic._id + '.pdf');
     })
   }
