@@ -319,12 +319,17 @@
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
                             <div class="row g-3">
+
+                                <div class="col-md-3">
+
                                 <label for="existe_antro">Existe</label>
                                     <select class="form-select" name="existe_antro" #existe_antro="ngModel" [(ngModel)]="contexto.existe_antro">
                                         <option selected>Seleccione...</option>
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>
                                     </select>
+
+                                </div>    
 
                                 <div class="col-md-3">
                                     
@@ -412,14 +417,346 @@
                                 </div>
 
                                 <div class="row g-3">
-                                <div class="col-md-3">
-                                    <label for="evidencia">Evidencia de otras prácticas culturales</label>
-                                   
-                                        <input type="text" class="form-control" name="evidencia" #evidencia="ngModel"
-                                            [(ngModel)]="contexto.evidencia">
+                                    <div class="col-md-6">
+                                        <label for="evidencia">Evidencia de otras prácticas culturales</label>
+                                    
+                                            <input type="text" class="form-control" name="evidencia" #evidencia="ngModel"
+                                                [(ngModel)]="contexto.evidencia">
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">         
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                            Fechamiento
+                        </button>
+                    </h2>
+                    <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="row g-3">
+
+                                <div class="col-md-3">
+
+                                <label for="fecha_existe">Existe</label>
+                                    <select class="form-select" name="fecha_existe" #fecha_existe="ngModel" [(ngModel)]="contexto.fecha_existe">
+                                        <option selected>Seleccione...</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+
+                                </div>    
+
+                                <div class="col-md-3">
+                                    
+                                    <label for="tecnica">Técnica</label>
+                                   
+                                        <input type="text" class="form-control" name="tecnica" #tecnica="ngModel"
+                                            [(ngModel)]="contexto.tecnica">
+                                </div>
+            
+                                <div class="col-md-3">
+                                    <label for="material_fechado">Material Fechado</label>
+                                   
+                                    <input type="text" class="form-control" name="material_fechado" #material_fechado="ngModel"
+                                        [(ngModel)]="contexto.material_fechado">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="asociacion_indv">Asociación directa a individuo</label>
+                                   
+                                    <input type="text" class="form-control" name="asociacion_indv" #asociacion_indv="ngModel"
+                                        [(ngModel)]="contexto.asociacion_indv">
+                                </div>
                             </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <label for="asociacion_art">Asociación directa a artefacto</label>
+                                   
+                                        <input type="text" class="form-control" name="asociacion_art" #asociacion_art="ngModel"
+                                            [(ngModel)]="contexto.asociacion_art">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="num_lab">No Laboratorio</label>
+                                   
+                                        <input type="text" class="form-control" name="num_lab" #num_lab="ngModel"
+                                            [(ngModel)]="contexto.num_lab">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="fecha_conv">Fecha Convencional</label>
+                                   
+                                        <input type="text" class="form-control" name="fecha_conv" #fecha_conv="ngModel"
+                                            [(ngModel)]="contexto.fecha_conv">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="fecha_calb">Fecha Calibrada</label>
+                                   
+                                        <input type="text" class="form-control" name="fecha_calb" #fecha_calb="ngModel"
+                                            [(ngModel)]="contexto.fecha_calb">
+                                </div>
+
+                                <div class="row g-3">
+
+                                    <div class="col-md-3">
+                                        <label for="valoracion_fecha">Valoración general de la fecha</label>
+                                    <select class="form-select" name="valoracion_fecha" #valoracion_fecha="ngModel"
+                                        [(ngModel)]="contexto.valoracion_fecha">
+                                        <option selected>Seleccione...</option>
+                                        <option value="Óptima">Óptima</option>
+                                        <option value="Aceptable">Aceptable</option>
+                                        <option value="Mínimamente aceptable">Mínimamente aceptable</option>
+                                        <option value="Dudosa">Dudosa</option>
+                                        <option value="Descartable">Descartable</option>
+                                    </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="explique_fecha">Explique</label>
+                                       
+                                            <input type="text" class="form-control" name="explique_fecha" #explique_fecha="ngModel"
+                                                [(ngModel)]="contexto.explique_fecha">
+                                    </div> 
+
+                                    <div class="col-md-3">
+                                        <label for="otras_muestras">Otras muestras potencial para fechamiento</label>
+                                    <select class="form-select" name="otras_muestras" #otras_muestras="ngModel"
+                                        [(ngModel)]="contexto.otras_muestras">
+                                        <option selected>Seleccione...</option>
+                                        <option value="Carbón dentro de artefactos">Carbón dentro de artefactos</option>
+                                        <option value="Cerámica diagnóstica">Cerámica diagnóstica</option>
+                                        <option value="Carbón adherido a tiesto o vasija">Carbón adherido a tiesto o vasija</option>
+                                        <option value="Restos óseos humanos o faunísticos">Restos óseos humanos o faunísticos</option>
+                                        <option value="Madera">Madera</option>
+                                        <option value="Concha">Concha</option>
+                                        <option value="Semillas">Semillas</option>
+                                    </select>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="estado_muestras">Estado de las muestras para fechamiento</label>
+                                    <select class="form-select" name="estado_muestras" #estado_muestras="ngModel"
+                                        [(ngModel)]="contexto.estado_muestras">
+                                        <option selected>Seleccione...</option>
+                                        <option value="Bueno">Bueno</option>
+                                        <option value="Regular">Regular</option>
+                                        <option value="Malo">Malo</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">         
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                            Artefactos
+                        </button>
+                    </h2>
+                    <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="row g-3">
+
+                                <div class="col-md-3">
+
+                                <label for="cera_existe">Cerámica</label>
+                                    <select class="form-select" name="cera_existe" #cera_existe="ngModel" [(ngModel)]="contexto.cera_existe">
+                                        <option selected>Seleccione...</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+
+                                </div>    
+
+                                <div class="col-md-3">
+                                    
+                                    <label for="cera_cant">Cantidad</label>
+                                   
+                                        <input type="text" class="form-control" name="cera_cant" #cera_cant="ngModel"
+                                            [(ngModel)]="contexto.cera_cant">
+                                </div>
+            
+                                <div class="col-md-3">
+                                    <label for="id_artef_cera">Id Artefacto(s)</label>
+                                   
+                                    <input type="text" class="form-control" name="id_artef_cera" #id_artef_cera="ngModel"
+                                        [(ngModel)]="contexto.id_artef_cera">
+                                </div>
+
+                                
+                            </div>
+
+                            <div class="row g-3">
+
+                                <div class="col-md-3">
+
+                                <label for="litica_existe">Lítica</label>
+                                    <select class="form-select" name="litica_existe" #litica_existe="ngModel" [(ngModel)]="contexto.litica_existe">
+                                        <option selected>Seleccione...</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+
+                                </div>    
+
+                                <div class="col-md-3">
+                                    
+                                    <label for="litica_cant">Cantidad</label>
+                                   
+                                        <input type="text" class="form-control" name="litica_cant" #litica_cant="ngModel"
+                                            [(ngModel)]="contexto.litica_cant">
+                                </div>
+            
+                                <div class="col-md-3">
+                                    <label for="id_litica">Id Artefacto(s)</label>
+                                   
+                                    <input type="text" class="form-control" name="id_litica" #id_litica="ngModel"
+                                        [(ngModel)]="contexto.id_litica">
+                                </div>
+
+                                
+                            </div>
+
+                            <div class="row g-3">
+
+                                <div class="col-md-3">
+
+                                <label for="metal_existe">Metal</label>
+                                    <select class="form-select" name="metal_existe" #metal_existe="ngModel" [(ngModel)]="contexto.metal_existe">
+                                        <option selected>Seleccione...</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+
+                                </div>    
+
+                                <div class="col-md-3">
+                                    
+                                    <label for="metal_cantidad">Cantidad</label>
+                                   
+                                        <input type="text" class="form-control" name="metal_cantidad" #metal_cantidad="ngModel"
+                                            [(ngModel)]="contexto.metal_cantidad">
+                                </div>
+            
+                                <div class="col-md-3">
+                                    <label for="metal_id">Id Artefacto(s)</label>
+                                   
+                                    <input type="text" class="form-control" name="metal_id" #metal_id="ngModel"
+                                        [(ngModel)]="contexto.metal_id">
+                                </div>
+
+                                
+                            </div>
+                            
+                            <div class="row g-3">
+
+                                <div class="col-md-3">
+
+                                <label for="madera_existe">Madera</label>
+                                    <select class="form-select" name="madera" #madera_existe="ngModel" [(ngModel)]="contexto.madera_existe">
+                                        <option selected>Seleccione...</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+
+                                </div>    
+
+                                <div class="col-md-3">
+                                    
+                                    <label for="madera_cantidad">Cantidad</label>
+                                   
+                                        <input type="text" class="form-control" name="madera_cantidad" #madera_cantidad="ngModel"
+                                            [(ngModel)]="contexto.madera_cantidad">
+                                </div>
+            
+                                <div class="col-md-3">
+                                    <label for="madera_id">Id Artefacto(s)</label>
+                                   
+                                    <input type="text" class="form-control" name="madera_id" #madera_id="ngModel"
+                                        [(ngModel)]="contexto.madera_id">
+                                </div>
+
+                                
+                            </div>
+
+                            <div class="row g-3">
+
+                                <div class="col-md-3">
+
+                                <label for="fauna_existe">Fauna</label>
+                                    <select class="form-select" name="fauna" #fauna_existe="ngModel" [(ngModel)]="contexto.fauna_existe">
+                                        <option selected>Seleccione...</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+
+                                </div>    
+
+                                <div class="col-md-3">
+                                    
+                                    <label for="fauna_cantidad">Cantidad</label>
+                                   
+                                        <input type="text" class="form-control" name="fauna_cantidad" #fauna_cantidad="ngModel"
+                                            [(ngModel)]="contexto.fauna_cantidad">
+                                </div>
+            
+                                <div class="col-md-3">
+                                    <label for="fauna_id">Id Artefacto(s)</label>
+                                   
+                                    <input type="text" class="form-control" name="fauna_id" #fauna_id="ngModel"
+                                        [(ngModel)]="contexto.fauna_id">
+                                </div>
+
+                                
+                            </div>
+
+                            <div class="row g-3">
+
+                                <div class="col-md-3">
+
+                                <label for="otros_existe">Otros</label>
+                                    <select class="form-select" name="otros" #otros_existe="ngModel" [(ngModel)]="contexto.otros_existe">
+                                        <option selected>Seleccione...</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+
+                                </div>    
+
+                                <div class="col-md-3">
+                                    
+                                    <label for="otros_cantidad">Cantidad</label>
+                                   
+                                        <input type="text" class="form-control" name="otros_cantidad" #otros_cantidad="ngModel"
+                                            [(ngModel)]="contexto.otros_cantidad">
+                                </div>
+            
+                                <div class="col-md-3">
+                                    <label for="otros_id">Id Artefacto(s)</label>
+                                   
+                                    <input type="text" class="form-control" name="otros_id" #otros_id="ngModel"
+                                        [(ngModel)]="contexto.otros_id">
+                                </div>
+
+                                
+                            </div>
+                              
+                            
                         </div>
                     </div>
                 </div>
