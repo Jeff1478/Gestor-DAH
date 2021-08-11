@@ -46,6 +46,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { ExporterService } from './services/exporter';
 import { FichaContextoComponent } from './components/ficha-contexto/ficha-contexto.component';
 import { ReportePublicoComponent } from './components/reporte-publico/reporte-publico.component';
+import { ContextoDetalleComponent } from './components/contexto-detalle/contexto-detalle.component';
 
 
 
@@ -77,6 +78,7 @@ import { ReportePublicoComponent } from './components/reporte-publico/reporte-pu
     LandingComponent,
     FichaContextoComponent,
     ReportePublicoComponent,
+    ContextoDetalleComponent,
    
     
   ],

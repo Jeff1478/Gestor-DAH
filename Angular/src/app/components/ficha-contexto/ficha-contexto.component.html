@@ -89,6 +89,69 @@
                                             <input type="text" class="form-control" name="operacion" #operacion="ngModel"
                                                 [(ngModel)]="contexto.operacion">
                                     </div>
+                                    <div class="col-md-3">
+                                        <label for="suboperacion">Sub Operación</label>
+                                            <input type="text" class="form-control" name="suboperacion" #suboperacion="ngModel"
+                                                [(ngModel)]="contexto.suboperacion">
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="desc_operacion">Descripción de la Operación</label>
+                                            <input type="text" class="form-control" name="desc_operacion" #desc_operacion="ngModel"
+                                                [(ngModel)]="contexto.desc_operacion">
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-3">
+                                        <label for="cont">Contexto</label>
+                                        <input type="text" class="form-control" name="cont" #cont="ngModel"
+                                                [(ngModel)]="contexto.cont">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="diagnostico_contexto">Diagnóstico del Contexto</label>
+                                        <select class="form-select" name="diagnostico_contexto" #diagnostico_contexto="ngModel" [(ngModel)]="contexto.diagnostico_contexto">
+                                            <option selected>Seleccione...</option>
+                                            <option value="Definitivo">Definido</option>
+                                            <option value="Indefinido">Indefinido</option>
+                                            <option value="Indeterminado">Indeterminado</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="tipo_contexto">Tipo de Contexto Excavado</label>
+                                        <select class="form-select" name="tipo_contexto" #tipo_contexto="ngModel" [(ngModel)]="contexto.tipo_contexto">
+                                            <option selected>Seleccione...</option>
+                                            <option value="Sepultura">Sepultura</option>
+                                            <option value="Fogón u Hornilla">Fogón u Hornilla</option>
+                                            <option value="Horno">Horno</option>
+                                            <option value="Intrusivo">Intrusivo</option>
+                                            <option value="Hoyo o molde de horcón">Hoyo o molde de horcón</option>
+                                            <option value="Piso de arcilla">Piso de arcilla</option>
+                                            <option value="Plataforma empedrada">Plataforma empedrada</option>
+                                            <option value="Empedrado">Empedrado</option>
+                                            <option value="Corredor de piedra">Corredor de piedra</option>
+                                            <option value="Calzada">Calzada</option>
+                                            <option value="Basamiento interior">Basamiento interior</option>
+                                            <option value="Basamiento perimetral">Basamiento perimetral</option>
+                                            <option value="Patio o plaza">Patio o plaza</option>
+                                            <option value="Otra Estructura">Otra Estructura</option>
+                                            <option value="Perímetro de piedra">Perímetro de piedra</option>
+                                            <option value="Depósito o concentración ubicuo">Depósito o concentración ubicuo</option>
+                                            <option value="Nivel cultural ubicuo">Nivel cultural ubicuo</option>
+                                            <option value="Otro">Otro</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="otro_contexto">Conexión del contexto</label>
+                                        <select class="form-select" name="otro_contexto" #otro_contexto="ngModel" [(ngModel)]="contexto.otro_contexto">
+                                            <option selected>Seleccione...</option>
+                                            <option value="Cementerio">Cementerio</option>
+                                            <option value="Basamiento">Basamiento</option>
+                                            <option value="Plaza o Patio">Plaza o Patio</option>
+                                            <option value="Estructura">Estructura</option>
+                                            <option value="Indeterminado">Indeterminado</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -17,6 +17,7 @@ import { ArticleNewComponent } from "./components/article-new/article-new.compon
 import { SearchComponent } from "./components/search/search.component";
 import { ArticleEditComponent } from "./components/article-edit/article-edit.component";
 import { FichaContextoComponent } from "./components/ficha-contexto/ficha-contexto.component";
+import { ContextoDetalleComponent } from "./components/contexto-detalle/contexto-detalle.component";
 
 //Array de rutas 
 const appRoutes: Routes = [
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
     {path: 'pagina', component : PaginaComponent},
     {path: 'ficha-contexto', component : FichaContextoComponent},
     {path: 'pagina/ceramic/:id', component: ArticleComponent},
+    {path: 'peliculas/contexto/:id', component: ContextoDetalleComponent},
     {path: 'reporte-publico/ceramic/:id', component: ReportePublicoComponent},
     {path: 'pagina/crear', component: ArticleNewComponent},
     {path: 'pagina/editar/:id', component: ArticleEditComponent},
