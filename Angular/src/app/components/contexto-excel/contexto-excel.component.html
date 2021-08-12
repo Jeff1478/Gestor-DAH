@@ -1,0 +1,215 @@
+
+<button mat-raised-button color="primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Elegir Columnas <mat-icon>settings</mat-icon>
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ficha Contexto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body">
+  
+          <h3>Información Contextual</h3>
+  
+          <mat-button-toggle-group [multiple]="true" #group="matButtonToggleGroup" appearance="legacy" vertical ="true">
+            <mat-button-toggle value="id_cont">
+              <span>Id Contexto</span>
+            </mat-button-toggle>
+  
+            <mat-button-toggle value="proyecto">
+              <span>Nombre Proyecto</span>
+            </mat-button-toggle>
+  
+            <mat-button-toggle value="investigador">
+              <span>Investigador</span>
+            </mat-button-toggle>
+  
+            <mat-button-toggle value="sector">
+              <span>Sector</span>
+            </mat-button-toggle>
+  
+            <mat-button-toggle value="subsector">
+              <span>Sub Sector</span>
+            </mat-button-toggle>
+  
+            <mat-button-toggle value="desc_operacion">
+              <span>Descripción de la Operación</span>
+            </mat-button-toggle>
+  
+            <mat-button-toggle value="cont">
+              <span>Contexto</span>
+            </mat-button-toggle>
+  
+            <mat-button-toggle value="tipo_contexto">
+              <span>Tipo de contexto excavado</span>
+            </mat-button-toggle> 
+            
+      
+          <h3>Información Antropoesquelética</h3>
+          
+            <mat-button-toggle value="tipo_enterramiento">
+              <span>Tipo de enterramiento</span>
+            </mat-button-toggle>
+  
+            <mat-button-toggle value="forma_enterramiento">
+              <span>Forma del Enterramiento</span>
+            </mat-button-toggle>
+  
+            <mat-button-toggle value="condicion">
+              <span>Condicion</span>
+            </mat-button-toggle>
+  
+            <mat-button-toggle value="patologias">
+              <span>Patologías</span>
+            </mat-button-toggle>
+  
+            <h3>Fechamiento</h3>
+  
+            <mat-button-toggle value="valoracion_fecha">
+              <span>Valoración de la fecha</span>
+            </mat-button-toggle>
+  
+            <mat-button-toggle value="otras_muestras">
+              <span>Otras Muestras</span>
+            </mat-button-toggle>
+  
+            <h3>Verificación Localización en Campo</h3>
+  
+            <mat-button-toggle value="inves_verifica">
+              <span>Investigador</span>
+            </mat-button-toggle>
+  
+            <mat-button-toggle value="resultados_verifica">
+              <span>Resultados</span>
+            </mat-button-toggle>
+  
+  
+          </mat-button-toggle-group>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ 
+  
+  
+    
+    <mat-table *ngIf="group.value && group.value.length" [dataSource]="dataSource" class="mat-elevation-z8">
+  
+      
+      <ng-container matColumnDef="id_cont">
+        <mat-header-cell *matHeaderCellDef> Id Contexto |</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id_cont}} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="proyecto">
+        <th mat-header-cell *matHeaderCellDef> Proyecto | </th>
+        <td mat-cell *matCellDef="let element"> {{element.proyecto}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="investigador">
+        <th mat-header-cell *matHeaderCellDef> Imvestigador | </th>
+        <td mat-cell *matCellDef="let element"> {{element.investigador}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="sector">
+        <th mat-header-cell *matHeaderCellDef> Sector | </th>
+        <td mat-cell *matCellDef="let element"> {{element.sector}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="subsector">
+        <th mat-header-cell *matHeaderCellDef> Sub Sector | </th>
+        <td mat-cell *matCellDef="let element"> {{element.subsector}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="desc_operacion">
+        <th mat-header-cell *matHeaderCellDef> Desc Operación | </th>
+        <td mat-cell *matCellDef="let element"> {{element.desc_operacion}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="cont">
+        <th mat-header-cell *matHeaderCellDef> Contexto | </th>
+        <td mat-cell *matCellDef="let element"> {{element.cont}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="tipo_contexto">
+        <th mat-header-cell *matHeaderCellDef> Tipo Contexto | </th>
+        <td mat-cell *matCellDef="let element"> {{element.tipo_contexto}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="tipo_enterramiento">
+        <th mat-header-cell *matHeaderCellDef> Tipo Enterramiento | </th>
+        <td mat-cell *matCellDef="let element"> {{element.tipo_enterramiento}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="condicion">
+        <th mat-header-cell *matHeaderCellDef> Condición |</th>
+        <td mat-cell *matCellDef="let element"> {{element.condicion}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="patologias">
+        <th mat-header-cell *matHeaderCellDef> Patologías |</th>
+        <td mat-cell *matCellDef="let element"> {{element.patologias}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="valoracion_fecha">
+        <th mat-header-cell *matHeaderCellDef> Valoración Fecha |</th>
+        <td mat-cell *matCellDef="let element"> {{element.valoracion_fecha}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="otras_muestras">
+        <th mat-header-cell *matHeaderCellDef> Otras Muestras |</th>
+        <td mat-cell *matCellDef="let element"> {{element.otras_muestras}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="inves_verifica">
+        <th mat-header-cell *matHeaderCellDef> Investigador |</th>
+        <td mat-cell *matCellDef="let element"> {{element.inves_verifica}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="resultados_verifica">
+        <th mat-header-cell *matHeaderCellDef> Resultados |</th>
+        <td mat-cell *matCellDef="let element"> {{element.resultados_verifica}} </td>
+      </ng-container>
+  
+    
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No hay datos para ese filtro "{{input.value}}"</td>
+      </tr>
+  
+      <mat-header-row *matHeaderRowDef="group.value"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: group.value;"></mat-row>
+  
+    </mat-table>
+  
+    <mat-form-field appearance="standard">
+      <mat-label>Filtro</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ejem. Troyo" #input>
+    </mat-form-field>
+  
+    <mat-paginator [pageSizeOptions]="[3, 10, 20]"
+    showFirstLastButtons 
+    aria-label="Seleccione Páginas">
+  </mat-paginator>
+  
+  
+    <h3>Exportar a Excel</h3>
+    <div class ="container">
+        <button mat-raised-button color="primary" (click)="exportAsXLSX()">Todo
+            <mat-icon>trending_down</mat-icon>
+        </button>
+       &nbsp; 
+        <button mat-raised-button color="accent" (click)="exportAsXLSXFiltered()">Filtrado
+          <mat-icon>find_in_page</mat-icon>
+        </button>
+    </div>
+  

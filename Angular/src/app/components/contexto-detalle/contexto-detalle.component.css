@@ -1,0 +1,19 @@
+
+  .titulo {
+    display:inline;
+}
+
+.descrip-card {
+  max-width: 1260px;
+  margin: 4px
+  }
+
+.rest-card{
+  margin: 4px;
+
+}
+
+.main-card{
+  margin-left: 100px;
+  margin: 4px
+}

@@ -1,7 +1,6 @@
 export class Contexto{
     constructor(
     public _id:string,
-    
     public date: any,
     public image: any,
     public title: String,

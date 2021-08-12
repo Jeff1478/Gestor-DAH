@@ -1,0 +1,210 @@
+<mat-tab-group mat-align-tabs="start">
+
+    <mat-tab label="Reporte Completo">
+        <button data-toggle="tooltip" data-placement="top" title="Imprimir PDF" class="btn btn-outline-info" (click)="exportPdf()">
+            <mat-icon>print</mat-icon>
+            
+        </button>
+
+        <a [routerLink]="['/peliculas/editar',contexto._id]" data-toggle="tooltip" data-placement="top" title="Editar Ficha" class="btn btn-outline-success">
+            <mat-icon>edit</mat-icon>
+            </a> 
+        
+        <a (click)="delete(contexto._id)" data-toggle="tooltip" data-placement="top" title="Borrar Registro" class = "btn btn-outline-danger">
+                <mat-icon>delete</mat-icon>    
+            </a> 
+
+        <a [routerLink]="['/peliculas']" data-toggle="tooltip" data-placement="top" title="Listado Anterior" class = "btn btn-outline-warning">
+                <mat-icon>list</mat-icon>    
+            </a> 
+        
+        <div id="htmlData">
+
+            <div fxLayout="row" fxLayoutAlign="center stretch">
+
+                <mat-card fxFlex ="30" class = "rest-card">
+
+                    <mat-card-title>MNCR, Depto DAH</mat-card-title>
+                    <mat-card-subtitle>Ficha Contexto, Reporte Completo</mat-card-subtitle>
+    
+                <mat-card-content>
+
+                     <div class="image-thumb">
+                            
+                        <img src="{{url + 'get-image/' + contexto.image}}" alt="{{contexto.title}}" *ngIf="contexto.image"/>
+                        <img src="assets/images/default.png" alt="{{contexto.title}}" *ngIf="!contexto.image"/>
+                        <p><b>Id Contexto:</b> {{contexto.id_cont}} <b>Año de Investigación</b> {{contexto.year_inv}}</p>
+                        <p><b>Nombre del proyecto</b> {{contexto.proyecto}} <b>Investigador a cargo del Proyecto</b> {{contexto.investigador}}</p>
+                    </div> 
+                
+                </mat-card-content>
+            
+                </mat-card> 
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="center stretch">
+
+                <mat-card fxFlex ="25" class = "rest-card">
+
+                    
+                    <mat-card-subtitle>Información Contextual</mat-card-subtitle>
+    
+                <mat-card-content>
+
+                     <div align="left">
+                        <p><b>Sector:</b> {{contexto.sector}} <b>Ubicación</b> {{contexto.ubicacion}}</p>
+                        <p><b>Operación</b> {{contexto.operacion}} <b>Sub Operación</b> {{contexto.suboperacion}}</p>
+                        <p><b>Descripción de la Operación</b> {{contexto.desc_operacion}}</p>
+                        <p><b>Contexto</b> {{contexto.cont}}</p>
+                        <p><b>Diágnostico de Contexto</b> {{contexto.diagnostico_contexto}}</p>
+                        <p><b>Tipo de Contexto Excavado</b> {{contexto.tipo_contexto}} <b>Conexión del Contexto</b> {{contexto.otro_contexto}}</p>
+                    </div> 
+                
+                </mat-card-content>
+            
+                </mat-card> 
+
+                <mat-card fxFlex ="25" class = "rest-card">
+
+                    
+                    <mat-card-subtitle>Registro Gráfico</mat-card-subtitle>
+    
+                <mat-card-content>
+
+                     <div align="left">
+                        <p><b>Fotografía</b> {{contexto.foto}} <b>Num° Foto</b> {{contexto.num_foto}}</p>
+                        <p><b>Calidad Foto</b> {{contexto.calidad_foto}} <b>Estado Foto</b> {{contexto.estado_foto}}</p>
+                        <p><b>Planimetría</b> {{contexto.planimetria}} <b>Num° Plano</b> {{contexto.num_lamina}}</p>
+                        <p><b>Calidad Plano</b> {{contexto.calidad_plano}} <b>Estado Plano</b> {{contexto.estado_plano}}</p>
+                        
+                    </div> 
+                
+                </mat-card-content>
+            
+                </mat-card> 
+
+                <mat-card fxFlex ="25" class = "rest-card">
+
+                    
+                    <mat-card-subtitle>Ubicación Espacial</mat-card-subtitle>
+    
+                <mat-card-content>
+
+                     <div align="left">
+                        <p><b>Coordenadas</b> {{contexto.coordenadas}} <b>CRTM05</b> {{contexto.crtm}}</p>
+                        <p><b>Profundidad Excavación</b> {{contexto.profundidad}} <b>Profundidad Datum</b> {{contexto.profundidad_datum}}</p>
+                        <p><b>Ubicación Datum</b> {{contexto.ubicacion_datum}}</p>
+                    </div> 
+                
+                </mat-card-content>
+            
+                </mat-card> 
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="center stretch">
+
+                <mat-card fxFlex ="25" class = "rest-card">
+
+                    
+                    <mat-card-subtitle>Información Antropoesquelética</mat-card-subtitle>
+    
+                <mat-card-content>
+
+                     <div align="left">
+                        <p><b>Existe:</b> {{contexto.existe_antro}} <b>Estado</b> {{contexto.estado_antro}}</p>
+                        <p><b>Tipo Enterramiento</b> {{contexto.tipo_enterramiento}} <b>Forma Enterramiento</b> {{contexto.forma_enterramiento}}</p>
+                        <p><b>Condición</b> {{contexto.condicion}} <b>Sexo</b> {{contexto.sexo}}</p>
+                        <p><b>Edad</b> {{contexto.edad}} <b>Patologías</b> {{contexto.patologias}}</p>
+                        <p><b>Evidencia de otras practicas culturales</b> {{contexto.evidencia}}</p>
+                        
+                    </div> 
+                
+                </mat-card-content>
+            
+                </mat-card> 
+
+                <mat-card fxFlex ="25" class = "rest-card">
+
+                    
+                    <mat-card-subtitle>Fechamiento</mat-card-subtitle>
+    
+                <mat-card-content>
+
+                     <div align="left">
+                        <p><b>Existe</b> {{contexto.fecha_existe}} <b>Técnica</b> {{contexto.tecnica}} <b>Material Fechado</b> {{contexto.material_fechado}}</p>
+                        <p><b>Asociación directa individuo</b> {{contexto.asociacion_indv}} <b>Asociación directa artefacto</b> {{contexto.asociacion_art}}</p>
+                        <p><b>N° Lab</b> {{contexto.num_lab}} <b>Fecha Convencional</b> {{contexto.fecha_conv}} <b>Fecha Calibrada</b> {{contexto.fecha_calb}}</p>
+                        <p><b>Valoración Fecha</b> {{contexto.valoracion_fecha}} <b>Explicación</b> {{contexto.explique_fecha}}</p>
+                        <p><b>Otras muestras para fechamiento</b> {{contexto.otras_muestras}} <b>Estado de las muestras</b> {{contexto.estado_muestras}}</p> 
+                    </div> 
+                
+                </mat-card-content>
+            
+                </mat-card> 
+
+                <mat-card fxFlex ="25" class = "rest-card">
+
+                    
+                    <mat-card-subtitle>Artefactos</mat-card-subtitle>
+    
+                <mat-card-content>
+
+                     <div align="left">
+                        <p><b>Ceramica</b> {{contexto.cera_existe}} <b>Cantidad</b> {{contexto.cera_cant}} <b>Id Artefactos</b> {{contexto.id_artef_cera}}</p>
+                        <p><b>Lítica</b> {{contexto.litica_existe}} <b>Cantidad</b> {{contexto.litica_cant}} <b>Id Artefactos</b> {{contexto.id_litica}}</p>
+                        <p><b>Metal</b> {{contexto.metal_existe}} <b>Cantidad</b> {{contexto.metal_cantidad}} <b>Id Artefactos</b> {{contexto.metal_id}}</p>
+                        <p><b>Madera</b> {{contexto.madera_existe}} <b>Cantidad</b> {{contexto.madera_cantidad}} <b>Id Artefactos</b> {{contexto.madera_id}}</p>
+                        <p><b>Fauna</b> {{contexto.fauna_existe}} <b>Cantidad</b> {{contexto.fauna_cantidad}} <b>Id Artefactos</b> {{contexto.fauna_id}}</p>
+                        <p><b>Otros</b> {{contexto.otros_existe}} <b>Cantidad</b> {{contexto.otros_cantidad}} <b>Id Artefactos</b> {{contexto.otros_id}}</p>   
+                    </div> 
+                
+                </mat-card-content>
+            
+                </mat-card> 
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="center stretch">
+
+                <mat-card fxFlex ="25" class = "rest-card">
+
+                    
+                    <mat-card-subtitle>Verificación Localización en Campo</mat-card-subtitle>
+    
+                <mat-card-content>
+
+                     <div align="left">
+                        <p><b>Se realizó:</b> {{contexto.verifica_si}} <b>Investigador</b> {{contexto.inves_verifica}}</p>
+                        <p><b>Fecha</b> {{contexto.fecha_verifica}} <b>Resultados</b> {{contexto.resultados_verifica}}</p>
+                        
+                    </div> 
+                
+                </mat-card-content>
+            
+                </mat-card> 
+
+                <mat-card fxFlex ="25" class = "rest-card">
+
+                    
+                    <mat-card-subtitle>Otros Datos</mat-card-subtitle>
+    
+                <mat-card-content>
+
+                     <div align="left">
+                        <p><b>Revisor Documental</b> {{contexto.revisor_documental}} <b>Fecha Revisión</b> {{contexto.fecha_revision}} </p>
+                        
+                    </div> 
+                
+                </mat-card-content>
+            
+                </mat-card> 
+
+               
+            </div>
+
+        
+
+        </div>
+
+    </mat-tab>
+
+</mat-tab-group>

@@ -30,11 +30,28 @@ export class ContextoService {
         return this._http.get(this.url+contextos);
     }
 
+    getContexto(contextoId: string):Observable<any>{
+        return this._http.get(this.url+'contexto/'+ contextoId);
+    }
+
     create(contexto: any):Observable<any>{
         let params = JSON.stringify(contexto);
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
 
         return this._http.post(this.url+'save/',params, {headers:headers});
+    }
+
+    update(id: string, contexto: any):Observable<any>{
+        let params = JSON.stringify(contexto);
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this._http.put(this.url+'contexto/'+id, params,{headers: headers});
+    }
+
+    delete(id: any):Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.delete(this.url+'contexto/'+id, {headers: headers});
+
     }
 
 }

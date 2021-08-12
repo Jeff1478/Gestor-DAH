@@ -47,6 +47,8 @@ import { ExporterService } from './services/exporter';
 import { FichaContextoComponent } from './components/ficha-contexto/ficha-contexto.component';
 import { ReportePublicoComponent } from './components/reporte-publico/reporte-publico.component';
 import { ContextoDetalleComponent } from './components/contexto-detalle/contexto-detalle.component';
+import { ContextoEditComponent } from './components/contexto-edit/contexto-edit.component';
+import { ContextoExcelComponent } from './components/contexto-excel/contexto-excel.component';
 
 
 
@@ -79,6 +81,8 @@ import { ContextoDetalleComponent } from './components/contexto-detalle/contexto
     FichaContextoComponent,
     ReportePublicoComponent,
     ContextoDetalleComponent,
+    ContextoEditComponent,
+    ContextoExcelComponent,
    
     
   ],

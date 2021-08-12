@@ -2,24 +2,17 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { ExporterService } from 'src/app/services/exporter';
-import { CeramicService } from 'src/app/services/ceramic.service';
+import { ContextoService } from 'src/app/services/contexto.service';
 import {MatButtonToggle} from '@angular/material/button-toggle';
 
-
-
-
 @Component({
-  selector: 'app-formulario',
-  templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.css'],
-  providers: [CeramicService]
+  selector: 'app-contexto-excel',
+  templateUrl: './contexto-excel.component.html',
+  styleUrls: ['./contexto-excel.component.css'],
+  providers: [ContextoService]
 })
+export class ContextoExcelComponent implements AfterViewInit {
 
-
-export class FormularioComponent implements AfterViewInit {
-
- 
-  // displayedColumns: string[] = ['cod_mon','num_artefacto','proyecto','pro_year','etiqueta','contexto','ubicacion','investigador'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -30,21 +23,19 @@ export class FormularioComponent implements AfterViewInit {
   }
 
 
-  constructor( 
+  constructor(
     private excelService: ExporterService, 
-    private _ceramicService: CeramicService
-    ) { 
-    
-    }
+    private _contextoService: ContextoService
+  ) { }
 
   ngOnInit(){
 
-    this._ceramicService.getCeramics().subscribe(
+    this._contextoService.getContextos().subscribe(
       response => { 
         
-        if(response.ceramics){
+        if(response.contexto){
           
-          this.dataSource = new MatTableDataSource(response.ceramics);
+          this.dataSource = new MatTableDataSource(response.contexto);
           this.dataSource.paginator = this.paginator;
         }
       },
@@ -54,9 +45,6 @@ export class FormularioComponent implements AfterViewInit {
     );
 
   }
-
- 
-  
 
   exportAsXLSX(): void{
     this.excelService.exportToExcel(this.dataSource.data, 'my_export');
@@ -72,8 +60,4 @@ export class FormularioComponent implements AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-
-
 }
-
-

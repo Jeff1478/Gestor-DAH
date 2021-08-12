@@ -16,7 +16,10 @@
             <!-- <a [routerLink]="['/ficha-contexto']" class="btn btn-success">Agregar Ficha</a> -->
             <a [routerLink]="['/ficha-contexto']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
               <mat-icon>add_shopping_cart</mat-icon>    
-          </a> 
+          </a>
+          <a [routerLink]="['/contexto-excel']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">
+            <mat-icon>cloud_download</mat-icon>    
+        </a>  
         </div>
 
         <div *ngIf= "titulo === 'ficha_ceramica'"> 

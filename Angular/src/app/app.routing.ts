@@ -18,6 +18,8 @@ import { SearchComponent } from "./components/search/search.component";
 import { ArticleEditComponent } from "./components/article-edit/article-edit.component";
 import { FichaContextoComponent } from "./components/ficha-contexto/ficha-contexto.component";
 import { ContextoDetalleComponent } from "./components/contexto-detalle/contexto-detalle.component";
+import { ContextoEditComponent } from "./components/contexto-edit/contexto-edit.component";
+import { ContextoExcelComponent } from "./components/contexto-excel/contexto-excel.component";
 
 //Array de rutas 
 const appRoutes: Routes = [
@@ -26,6 +28,7 @@ const appRoutes: Routes = [
     {path: 'ceramica', component : CeramicaComponent},
     {path: 'contexto', component : ContextoComponent},
     {path: 'formulario', component : FormularioComponent},
+    {path: 'contexto-excel', component: ContextoExcelComponent},
     {path: 'pagina-de-pruebas', component : PaginaComponent},
     {path: 'peliculas', component : PeliculasComponent},
     {path: 'pagina', component : PaginaComponent},
@@ -35,6 +38,7 @@ const appRoutes: Routes = [
     {path: 'reporte-publico/ceramic/:id', component: ReportePublicoComponent},
     {path: 'pagina/crear', component: ArticleNewComponent},
     {path: 'pagina/editar/:id', component: ArticleEditComponent},
+    {path: 'peliculas/editar/:id', component: ContextoEditComponent},
     {path: 'buscar/:search', component : SearchComponent},
     {path: '**', component : ErrorComponent}
 ];
