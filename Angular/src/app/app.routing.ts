@@ -20,6 +20,7 @@ import { FichaContextoComponent } from "./components/ficha-contexto/ficha-contex
 import { ContextoDetalleComponent } from "./components/contexto-detalle/contexto-detalle.component";
 import { ContextoEditComponent } from "./components/contexto-edit/contexto-edit.component";
 import { ContextoExcelComponent } from "./components/contexto-excel/contexto-excel.component";
+import { SearchContextoComponent } from "./components/search-contexto/search-contexto.component";
 
 //Array de rutas 
 const appRoutes: Routes = [
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
     {path: 'pagina/editar/:id', component: ArticleEditComponent},
     {path: 'peliculas/editar/:id', component: ContextoEditComponent},
     {path: 'buscar/:search', component : SearchComponent},
+    {path: 'buscarcontexto/:search',component : SearchContextoComponent},
     {path: '**', component : ErrorComponent}
 ];
 

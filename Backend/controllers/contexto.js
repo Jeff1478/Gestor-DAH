@@ -401,8 +401,8 @@ var controller = {
  
          // Find or
          Contexto.find({ "$or": [
-             { "title": { "$regex": searchString, "$options": "i"}},
-             { "content": { "$regex": searchString, "$options": "i"}}
+             { "proyecto": { "$regex": searchString, "$options": "i"}},
+             { "investigador": { "$regex": searchString, "$options": "i"}}
          ]})
          .sort([['date', 'descending']])
          .exec((err, contextos) => {

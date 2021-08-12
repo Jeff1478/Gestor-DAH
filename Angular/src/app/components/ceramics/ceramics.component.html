@@ -13,9 +13,9 @@
             <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
         </div>
 
-        <h2>{{ceramic.cod_mon}}</h2>
-        
-        <p>{{ceramic.etiqueta}}</p>
+        <h3>Id : {{ceramic._id}}</h3>
+        <p>Tipo Pieza : {{ceramic.tipo_pieza}}</p>
+        <p>N° Artefacto : {{ceramic.num_artefacto}}</p>
         <span class="date">
             {{ceramic.date | amLocale: 'es' | amTimeAgo }}
         </span>

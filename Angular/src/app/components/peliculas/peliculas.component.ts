@@ -25,7 +25,7 @@ export class PeliculasComponent implements OnInit {
 
   ngOnInit() {
 
-    this._contextoService.getContextos().subscribe(
+    this._contextoService.getContextos(true).subscribe(
       response => { 
         
         if(response.contexto){

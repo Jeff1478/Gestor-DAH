@@ -412,17 +412,17 @@ var controller = {
         });
     },
 
-
     search: (req, res) => {
-        // Sacar el string a buscar
+
         var searchString = req.params.search;
 
-        // Find or
         Ceramic.find({ "$or": [
-            { "title": { "$regex": searchString, "$options": "i"}},
-            { "content": { "$regex": searchString, "$options": "i"}}
+            
+            { "tipo_pieza": { "$regex": searchString, "$options": "i"}},
+            { "nombre_invest": { "$regex": searchString, "$options": "i"}}
         ]})
         .sort([['date', 'descending']])
+
         .exec((err, ceramics) => {
 
             if(err){
@@ -446,6 +446,8 @@ var controller = {
 
         });
     }
+
+   
 
 }; // end controler
 

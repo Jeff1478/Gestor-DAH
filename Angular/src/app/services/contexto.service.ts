@@ -23,8 +23,9 @@ export class ContextoService {
 
     getContextos(last:any = null):Observable<any>{
         var contextos = 'contextos';
-        
+       
         if(last!= null){
+          
             contextos = 'contextos/true';
         }
         return this._http.get(this.url+contextos);
@@ -32,6 +33,10 @@ export class ContextoService {
 
     getContexto(contextoId: string):Observable<any>{
         return this._http.get(this.url+'contexto/'+ contextoId);
+    }
+
+    search(searchString: string):Observable<any>{
+        return this._http.get(this.url+'search/'+searchString);
     }
 
     create(contexto: any):Observable<any>{

@@ -49,6 +49,7 @@ import { ReportePublicoComponent } from './components/reporte-publico/reporte-pu
 import { ContextoDetalleComponent } from './components/contexto-detalle/contexto-detalle.component';
 import { ContextoEditComponent } from './components/contexto-edit/contexto-edit.component';
 import { ContextoExcelComponent } from './components/contexto-excel/contexto-excel.component';
+import { SearchContextoComponent } from './components/search-contexto/search-contexto.component';
 
 
 
@@ -83,6 +84,7 @@ import { ContextoExcelComponent } from './components/contexto-excel/contexto-exc
     ContextoDetalleComponent,
     ContextoEditComponent,
     ContextoExcelComponent,
+    SearchContextoComponent,
    
     
   ],
