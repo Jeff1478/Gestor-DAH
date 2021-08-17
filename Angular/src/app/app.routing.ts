@@ -25,6 +25,7 @@ import { SearchContextoComponent } from "./components/search-contexto/search-con
 import { PagLitComponent } from "./components/pag-lit/pag-lit.component";
 import { FichaLiticaComponent } from "./components/ficha-litica/ficha-litica.component";
 import { LiticaDetalleComponent } from "./components/litica-detalle/litica-detalle.component";
+import { LiticaExcelComponent } from "./components/litica-excel/litica-excel.component";
 
 //Array de rutas 
 const appRoutes: Routes = [
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
     {path: 'contexto', component : ContextoComponent},
     {path: 'formulario', component : FormularioComponent},
     {path: 'contexto-excel', component: ContextoExcelComponent},
+    {path: 'litica-excel', component: LiticaExcelComponent},
     {path: 'pagina-de-pruebas', component : PaginaComponent},
     {path: 'peliculas', component : PeliculasComponent},
     {path: 'pagina', component : PaginaComponent},
