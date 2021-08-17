@@ -1,0 +1,329 @@
+
+   <mat-tab-group mat-align-tabs="start">
+
+    <mat-tab label="Reporte Completo">
+        <button data-toggle="tooltip" data-placement="top" title="Imprimir PDF" class="btn btn-outline-info" (click)="exportPdf()">
+            <mat-icon>print</mat-icon>
+            
+        </button>
+        <a [routerLink]="['/pag-lit/editar',litico._id]" data-toggle="tooltip" data-placement="top" title="Editar Ficha" class="btn btn-outline-success">
+        <mat-icon>edit</mat-icon>
+        </a> 
+        <a (click)="delete(litico._id)" data-toggle="tooltip" data-placement="top" title="Borrar Registro" class = "btn btn-outline-danger">
+            <mat-icon>delete</mat-icon>    
+        </a> 
+        <a [routerLink]="['/pag-lit']" data-toggle="tooltip" data-placement="top" title="Listado Anterior" class = "btn btn-outline-warning">
+            <mat-icon>list</mat-icon>    
+        </a> 
+
+        <div id="htmlData">
+
+            <div fxLayout="row" fxLayoutAlign="center stretch">
+
+            <mat-card fxFlex ="30" class = "rest-card">
+
+                <mat-card-title>MNCR, Depto DAH</mat-card-title>
+                <mat-card-subtitle>Ficha Litico, Reporte Completo</mat-card-subtitle>
+
+            <mat-card-content>
+
+                <div class="image-thumb">
+                        
+                    <img src="{{url + 'get-image/' + litico.image}}" alt="{{litico.title}}" *ngIf="litico.image"/>
+                    <img src="assets/images/default.png" alt="{{litico.title}}" *ngIf="!litico.image"/>
+            
+                </div>
+            
+
+            </mat-card-content>
+        
+            </mat-card> 
+        </div>
+                <div fxLayout="row" fxLayoutAlign="center stretch">
+
+                    <mat-card fxFlex ="25" class = "rest-card"> 
+
+                        <mat-card-subtitle>Datos Ubicación</mat-card-subtitle>
+
+                        <mat-card-content>
+                            <div align="left">          
+                                <p><b>Cod Monumento:</b> {{litico.cod_mon}} <b>Num Artefacto:</b> {{litico.num_artefacto}} <b>Num Caja:</b>{{litico.num_caja}}</p>
+                                <p><b>Proyecto:</b> {{litico.proyecto}}  <b>Fecha Excavación:</b>  {{litico.fecha_exc | date:'dd/MM/yyyy'}} </p>
+                                <p><b>Investigador:</b> {{litico.investigador}} <b>Año Proyecto:</b> {{litico.pro_year}}</p>
+                                <p><b>Datos Etiqueta:</b> {{litico.etiqueta}} </p>
+                                
+                            </div>
+                        </mat-card-content>
+
+                    </mat-card>
+
+
+                    <mat-card fxFlex ="25" class = "rest-card">
+
+                        <mat-card-subtitle>Asociación Contextual</mat-card-subtitle>
+
+                            <mat-card-content>
+                            <div align="left">  
+                                <p><b>Id Contexto:</b> {{litico.id_contexto}}  <b>Ubicación Relativa:</b> {{litico.ubicacion}}</p>
+                                <p><b>Contexto:</b> {{litico.contexto}}</p>
+                                <p><b>Fotografia:</b> {{litico.foto}} <b>N° Foto:</b> {{litico.num_foto}} <b>Calidad Foto:</b> {{litico.calidad_foto}}</p>
+                                <p><b>Estado Foto:</b> {{litico.estado_foto}} <b>Planimetría:</b>  {{litico.plano}} <b>N° Lámina:</b> {{litico.num_lamina}}</p>
+                                <p><b>Calidad Plano:</b> {{litico.calidad_lamina}} <b>Estado Plano:</b> {{litico.estado_Lamina}}</p>
+                                <p><b>Diagnóstico:</b> {{litico.diagnostico_contexto}} <b>Fechamiento:</b>  {{litico.fechamiento}}</p>
+                            </div>
+                        </mat-card-content>
+
+                    </mat-card>
+
+
+                    <mat-card fxFlex ="25" class = "rest-card">
+
+        
+                        <mat-card-subtitle>Asociación Funcional - Temporal</mat-card-subtitle>
+                            <mat-card-content>
+                            <div align="left">
+                            
+                                <p><b>Uso-Función:</b> {{litico.uso_funcion}} <b>Datos para determinar funcionalidad:</b> {{litico.datos_funcionalidad}}</p>
+                                <p><b>Descripción</b>  {{litico.datos_funcionalidad}}</p>
+                                <p>Referencias {{litico.referencias_funcional}}</p>
+                                <p><b>Período :</b> {{litico.periodo_funcional}} | Fase {{litico.fase_funcional}} | Temporalidad {{litico.temporalidad_funcional}}</p>
+                                <p><b>Procedencia :</b> {{litico.procedencia_funcional}}</p>
+                            </div>
+                            </mat-card-content>
+                    </mat-card>
+
+                   
+                </div>
+           
+
+           
+
+                <div fxLayout="row" fxLayoutAlign="center start">
+        
+                    <mat-card fxFlex ="75" class = "descrip-card"> 
+                
+                        <mat-card-subtitle>Descripción Objeto</mat-card-subtitle>
+                
+                            <mat-card-content>
+
+                        <div align="left">
+                        
+                            <p><b>Tipo Pieza:</b> {{litico.tipo_pieza}}</p>
+                            <p><b>Descripción:</b> {{litico.desc_narrativa}}</p>
+                            <p><b>Materia Prima:</b> {{litico.materia_prima}}</p>
+                            <p><b>Dis No Figurativo:</b> Líneas {{litico.lineas}} | Greca {{litico.greca}} | Secuencia {{litico.elemento_secuencia}} | Otro {{litico.otro_nofig}} </p>             
+                            <p><b>DisFigurativo Zoomorfo:</b> Cabeza {{litico.cab_zoo}} | Saurio {{litico.suario_zoo}} | Felino {{litico.felino_zoo}} | Batracio {{litico.batracio_zoo}} | Ave {{litico.ave_zoo}} | Mono {{litico.primate_zoo}} | Murcielago {{litico.murcielago_zoo}} | Mamífero {{litico.mamifero_zoo}} | Tortuga {{litico.turtle_zoo}} | Reptil {{litico.reptil_zoo}} | Pez {{litico.pez_zoo}} | Armadillo {{litico.armadillo_zoo}}</p>
+                            <p><b>DisFigurativo Zoomorfo:</b> Insecto {{litico.insecto_zoo}} |  Ciervo {{litico.ciervo_zoo}} |  Canino {{litico.canino_zoo}} |  No determinado {{litico.ind_zoo}}</p>
+                            <p><b>Taxonomía Explícita:</b> {{litico.tax_zoo}}</p>
+                            <p><b>Investigador que Identificó:</b> {{litico.inv_zoo}}</p>
+                            <p><b>DisFigurativo Antromorfo:</b> Cabeza {{litico.cab_antro}} | Cabeza con tocado {{litico.cab_tocantro}} | Enmascarado {{litico.masc_antro}} | Atuendo {{litico.atuendo_antro}} | Cara {{litico.cara_antro}} | Sedente {{litico.sedente_antro}}</p>
+                            <p><b>DisFigurativo Antromorfo:</b> Erguida {{litico.erguida_antro}} | Supino {{litico.supino_antro}} | Escena {{litico.escena_antro}}</p>
+                            <p><b>Género:</b> {{litico.genero_antro}} | <b>Anomalía:</b> {{litico.anomalia_antro}}</p>
+                            <p><b>DisFigurativo Indeterminado:</b> Cabeza {{litico.cab_ind}} | Cara {{litico.cara_ind}} | Otro {{litico.otro_ind}}</p>
+                        </div>
+                        </mat-card-content>
+                    </mat-card>
+
+                </div>
+           
+
+            
+
+                <div fxLayout="row" fxLayoutAlign="center start stretch">
+
+                    <mat-card fxFlex ="40" class = "rest-card">
+
+                        <mat-card-subtitle>Estado Conservación</mat-card-subtitle>
+                
+                            <mat-card-content>
+                                <div>      
+                                    <p><b>Estado Conservación:</b> {{litico.estado_conservacion}} <b> Potencial Exhibición:</b> {{litico.potencial}}</p>
+                                    <p><b>Explicación:</b> {{litico.potencial_exp}}</p>
+                                    <p><b>Dimensiones Vitrina:</b> Largo {{litico.largo}} | Ancho: {{litico.ancho}}| Alto: {{litico.alto}} | Peso: {{litico.peso}}</p>
+                                </div>
+                            </mat-card-content>
+                    </mat-card>
+
+                    <mat-card class = "rest-card">
+
+                        <mat-card-subtitle>Investigador y Registro</mat-card-subtitle>
+                
+                            <mat-card-content>
+                                <div>
+                                <p><b>Nombre:</b> {{litico.nombre_invest}}</p>
+                                <p><b>Fecha Análisis:</b> {{litico.fecha_analisis}}</p>
+                                <p><b>Numeración de Fotos:</b> {{litico.fotos_num}}</p>
+                                </div>
+                            </mat-card-content>
+                    </mat-card>
+
+            
+                </div>
+          
+
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Reporte Público">
+        <button data-toggle="tooltip" data-placement="top" title="Imprimir PDF" class="btn btn-outline-info" (click)="exportPdf()">
+            <mat-icon>print</mat-icon>
+         
+        </button>
+        
+        <div id="htmlData" fxLayout="row" fxLayoutAlign="center start"> 
+        
+                    <mat-card fxFlex ="60">
+        
+                        <mat-card-title>MNCR, Depto DAH</mat-card-title>
+                        <mat-card-subtitle>Ficha Cerámica, Reporte Público</mat-card-subtitle>
+        
+                        <div class="image-thumb">
+                                
+                            <img src="{{url + 'get-image/' + litico.image}}" alt="{{litico.title}}" *ngIf="litico.image"/>
+                            <img src="assets/images/default.png" alt="{{litico.title}}" *ngIf="!litico.image"/>
+                    
+                        </div>
+        
+                        <mat-card-content>
+        
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Cod Monumento</th>
+                                    <th scope="col">Contexto</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <td> {{litico.cod_mon}} </td>
+                                    <td> {{litico.contexto}} </td>
+                                </tbody>
+                            </table>
+        
+                            <div style="text-align:justify">
+                                <h4><b>Descripción Narrativa</b></h4>
+                                <p>{{litico.desc_narrativa}}</p>
+                            </div>
+        
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Temporalidad Estimada</th>
+                                    <th scope="col">Procedencia</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <td> {{litico.temporalidad_funcional}} </td>
+                                    <td> {{litico.procedencia_funcional}} </td>
+                                </tbody>
+                            </table>
+                            
+                            
+                            <div>
+                                <h4><b>Dimensiones</b></h4>
+                                <p>Ancho: {{litico.ancho}}, Alto: {{litico.ancho}}, Peso: {{litico.ancho}}</p>
+                            
+                            </div>
+                            
+                        </mat-card-content>
+                    </mat-card>                
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Reporte Catálogo">
+
+        <button data-toggle="tooltip" data-placement="top" title="Imprimir PDF" class="btn btn-outline-info" (click)="exportPdf()">
+            <mat-icon>print</mat-icon>
+          
+        </button>
+
+        <div id="htmlData">
+
+            
+
+                <div fxLayout="row" fxLayoutAlign="center stretch">
+
+                    <mat-card class = "main-card">
+
+                        <mat-card-title>MNCR, Depto DAH</mat-card-title>
+                        <mat-card-subtitle>Ficha Cerámica, Reporte Catálogo</mat-card-subtitle>
+        
+                    <mat-card-content>
+
+                        <div class="image-thumb">
+                                
+                            <img src="{{url + 'get-image/' + litico.image}}" alt="{{litico.title}}" *ngIf="litico.image"/>
+                            <img src="assets/images/default.png" alt="{{litico.title}}" *ngIf="!litico.image"/>
+                    
+                        </div>
+
+                        <div>          
+                            <p><b>Id Artefacto:</b> {{litico.cod_mon}}</p>
+                            <p><b>Año Excavación:</b> {{litico.pro_year}} </p>  
+                        </div>
+
+                    </mat-card-content>
+                    </mat-card>
+
+                    <mat-card fxFlex ="20" class = "rest-card"> 
+                
+                        <mat-card-subtitle>Contexto</mat-card-subtitle>
+                
+                        <mat-card-content>
+                            <div align="left">      
+                                <p><b>Id Contexto:</b> {{litico.id_contexto}}</p>
+                                <p><b>Contexto:</b> {{litico.contexto}}</p>
+                                <p><b>Fechamiento:</b> {{litico.fechamiento}}</p>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+
+                    <mat-card fxFlex ="20" class = "rest-card">
+
+                        <mat-card-subtitle>Temporalidad Estimada</mat-card-subtitle>
+                            <mat-card-content>
+                                <div align="left">      
+                                    <p><b>Temporalidad:</b> {{litico.temporalidad_funcional}}</p>
+                                   
+                                    <p><b>Dimensiones:</b> Largo {{litico.largo}} | Ancho: {{litico.ancho}}| Alto: {{litico.alto}} | Peso: {{litico.peso}}</p>
+                                </div>
+                            </mat-card-content>
+                    </mat-card>
+
+
+                </div>
+         
+
+
+       
+            
+                <div fxLayout="row" fxLayoutAlign="center start">
+
+                    <mat-card fxFlex ="60" class = "descrip-card">
+
+                        <mat-card-subtitle>Descripción Narrativa</mat-card-subtitle>
+                            <mat-card-content>
+                                <div align="left">      
+                                    <p><b>Descripción:</b> {{litico.desc_narrativa}}</p>
+                                    <p><b>Tipo Diseño:</b> {{litico.tipo_pieza}}</p>
+                                   
+                                    
+                                </div>
+                            </mat-card-content>
+                    </mat-card>
+
+                
+                </div>
+         
+
+            
+
+        </div>
+        
+    </mat-tab>
+
+</mat-tab-group>
+
+
+        
+
+   

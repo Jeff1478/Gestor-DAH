@@ -53,6 +53,8 @@ import { SearchContextoComponent } from './components/search-contexto/search-con
 import { PagLitComponent } from './components/pag-lit/pag-lit.component';
 import { LiticoComponent } from './components/litico/litico.component';
 import { FichaLiticaComponent } from './components/ficha-litica/ficha-litica.component';
+import { LiticaDetalleComponent } from './components/litica-detalle/litica-detalle.component';
+import { LiticaEditComponent } from './components/litica-edit/litica-edit.component';
 
 
 
@@ -91,6 +93,8 @@ import { FichaLiticaComponent } from './components/ficha-litica/ficha-litica.com
     PagLitComponent,
     LiticoComponent,
     FichaLiticaComponent,
+    LiticaDetalleComponent,
+    LiticaEditComponent,
    
     
   ],

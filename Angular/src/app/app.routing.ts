@@ -18,11 +18,13 @@ import { SearchComponent } from "./components/search/search.component";
 import { ArticleEditComponent } from "./components/article-edit/article-edit.component";
 import { FichaContextoComponent } from "./components/ficha-contexto/ficha-contexto.component";
 import { ContextoDetalleComponent } from "./components/contexto-detalle/contexto-detalle.component";
+import { LiticaEditComponent } from "./components/litica-edit/litica-edit.component";
 import { ContextoEditComponent } from "./components/contexto-edit/contexto-edit.component";
 import { ContextoExcelComponent } from "./components/contexto-excel/contexto-excel.component";
 import { SearchContextoComponent } from "./components/search-contexto/search-contexto.component";
 import { PagLitComponent } from "./components/pag-lit/pag-lit.component";
 import { FichaLiticaComponent } from "./components/ficha-litica/ficha-litica.component";
+import { LiticaDetalleComponent } from "./components/litica-detalle/litica-detalle.component";
 
 //Array de rutas 
 const appRoutes: Routes = [
@@ -40,10 +42,12 @@ const appRoutes: Routes = [
     {path: 'ficha-litica', component: FichaLiticaComponent},
     {path: 'pagina/ceramic/:id', component: ArticleComponent},
     {path: 'peliculas/contexto/:id', component: ContextoDetalleComponent},
+    {path: 'pag-lit/litico/:id', component: LiticaDetalleComponent},
     {path: 'reporte-publico/ceramic/:id', component: ReportePublicoComponent},
     {path: 'pagina/crear', component: ArticleNewComponent},
     {path: 'pagina/editar/:id', component: ArticleEditComponent},
     {path: 'peliculas/editar/:id', component: ContextoEditComponent},
+    {path: 'pag-lit/editar/:id', component: LiticaEditComponent},
     {path: 'buscar/:search', component : SearchComponent},
     {path: 'buscarcontexto/:search',component : SearchContextoComponent},
     {path: '**', component : ErrorComponent}

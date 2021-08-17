@@ -197,9 +197,9 @@
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
 
-                <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -491,6 +491,213 @@
         
         
                     </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                Asociación Funcional - Temporal
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label for="uso_funcion">Uso-Función</label>
+                                        <select class="form-select" name="uso_funcion" #uso_funcion="ngModel"
+                                            [(ngModel)]="litico.uso_funcion">
+                                            <option selected>Seleccione...</option>
+                                            <option value="Ceremonial">Ceremonial</option>
+                                            <option value="Suntuario">Suntuario</option>
+                                            <option value="Contenedor">Contenedor</option>
+                                            <option value="Procesamiento y preparación de alimentos">Procesamiento y preparación de alimentos</option>
+                                            <option value="Tala y corte de madera">Tala y corte de madera</option>
+                                            <option value="Labranza de la tierra">Labranza de la tierra</option>
+                                            <option value="Manufactura">Manufactura</option>
+                                            <option value="Miniatura">Miniatura</option>
+                                            <option value="Bélica">Bélica</option>
+                                            <option value="Cacería">Cacería</option>
+                                            <option value="Reuso">Reuso</option>
+                                        </select>
+                                    </div>
+        
+                                    <div class="col-md-4">
+                                        <label for="datos_funcionalidad">Datos para determinar funcionalidad</label>
+                                        <select class="form-select" name="datos_funcionalidad" #datos_funcionalidad="ngModel"
+                                            [(ngModel)]="litico.datos_funcionalidad">
+                                            <option selected>Seleccione...</option>
+                                            <option value="Huellas de Uso">Huellas de Uso</option>
+                                            <option value="Residuos">Residuos</option>
+                                            <option value="Marcas de termo alteración">Marcas de termo alteración</option>
+                                            <option value="Probabilidad de residuos mocrofósiles">Probabilidad de residuos mocrofósiles</option>
+                                            <option value="Otro">Otro</option>
+                                        </select>
+                                    </div>
+        
+                                    <div class="col-md-4">
+                                        <label for="datos_func_exp">Descripción Marcas de Uso</label>
+                                        <input type="text" class="form-control" name="datos_func_exp"
+                                            #desc_marcas_uso="ngModel" [(ngModel)]="litico.datos_func_exp">
+                                    </div>
+        
+                                </div>
+        
+                                <div class="row g-3">
+                                    
+        
+                                    <div class="col-md-4">
+                                        <label for="referencias_funcional">Refencias Bibliográfica</label>
+                                        <input type="text" class="form-control" name="referencias_funcional" #referencias_funcional="ngModel"
+                                            [(ngModel)]="litico.referencias_funcional">
+                                    </div>
+        
+                                    <div class="col-md-4">
+                                        <label for="periodo_funcional">Periodo</label>
+                                        <input type="text" class="form-control" name="periodo_funcional"
+                                            #periodo_funcional="ngModel" [(ngModel)]="litico.periodo_funcional">
+                                    </div>
+        
+                                </div>
+        
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label for="fase_funcional">Fase</label>
+                                        <input type="text" class="form-control" name="fase_funcional" #fase_funcional="ngModel"
+                                            [(ngModel)]="litico.fase_funcional">
+                                    </div>
+        
+                                    <div class="col-md-4">
+                                        <label for="temporalidad_funcional">Temporalidad Estimada</label>
+                                        <input type="text" class="form-control" name="temporalidad_funcional"
+                                            #temporalidad_funcional="ngModel" [(ngModel)]="litico.temporalidad_funcional">
+                                    </div>
+        
+                                    <div class="col-md-4">
+                                        <label for="procedencia_liticoa">Procedencia (Región/Subregión)</label>
+                                        <input type="text" class="form-control" name="procedencia_funcional"
+                                            #procedencia_funcional="ngModel" [(ngModel)]="litico.procedencia_funcional">
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                            Estado de Conservación
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="estado_conservacion">Estado de Conservación</label>
+                                    <select class="form-select" name="estado_conservacion" #estado_conservacion="ngModel"
+                                        [(ngModel)]="litico.estado_conservacion">
+                                        <option selected>Seleccione...</option>
+                                        <option value="Optimo">Óptimo</option>
+                                        <option value="Bueno">Bueno</option>
+                                        <option value="Regular">Regular</option>
+                                        <option value="Malo">Malo</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="potencial">Potencial de Exhibición</label>
+                                    <select class="form-select" name="potencial" #potencial="ngModel"
+                                        [(ngModel)]="litico.potencial">
+                                        <option selected>Seleccione...</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+    
+                                <div class="col-md-4">
+                                    <label for="potencial_exp">Explique</label>
+                                    <input type="text" class="form-control" name="potencial_exp" #potencial_exp="ngModel"
+                                        [(ngModel)]="litico.potencial_exp">
+                                </div>
+                            </div>
+    
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="largo">Vitrina Largo(cm)</label>
+                                    <input type="text" class="form-control" name="largo" #largo="ngModel"
+                                        [(ngModel)]="litico.largo">
+                                </div>
+    
+                                <div class="col-md-4">
+                                    <label for="Ancho">Vitrina Ancho(cm)</label>
+                                    <input type="text" class="form-control" name="ancho" #ancho="ngModel"
+                                        [(ngModel)]="litico.ancho">
+                                </div>
+    
+                                <div class="col-md-4">
+                                    <label for="alto">Vitrina Alto(cm)</label>
+                                    <input type="text" class="form-control" name="alto" #alto="ngModel"
+                                        [(ngModel)]="litico.alto">
+                                </div>
+    
+                            </div>
+    
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="peso">Vitrina Peso(gr)</label>
+                                    <input type="text" class="form-control" name="peso" #peso="ngModel"
+                                        [(ngModel)]="litico.peso">
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                            Investigador y Registro
+                        </button>
+                    </h2>
+                    <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="nombre_invest">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre_invest" #nombre_invest="ngModel"
+                                        [(ngModel)]="litico.nombre_invest">
+                                </div>
+    
+                                <div class="col-md-4">
+                                    <label for="fecha_analisis">Fecha Análisis</label>
+                                    <input type="date" class="form-control" name="fecha_analisis" #fecha_analisis="ngModel"
+                                        [(ngModel)]="litico.fecha_analisis">
+                                </div>
+    
+                                <div class="col-md-4">
+                                    <label for="fotos_num">Numeración de las fotos</label>
+                                    <input type="text" class="form-control" name="fotos_num" #fotos_num="ngModel"
+                                        [(ngModel)]="litico.fotos_num">
+                                </div>
+    
+                            </div>
+    
+    
+                        </div>
+                    </div>
+                </div>
                 </div>
 
                 <div class="form-group">

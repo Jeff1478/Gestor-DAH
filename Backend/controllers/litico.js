@@ -148,7 +148,7 @@ var controller = {
         var params = req.body;
 
       
-             litico.findOneAndUpdate({_id: liticoId}, params, {new:true}, (err, liticoUpdated) => {
+             Litico.findOneAndUpdate({_id: liticoId}, params, {new:true}, (err, liticoUpdated) => {
                 if(err){
                     return res.status(500).send({
                         status: 'error',

@@ -251,7 +251,7 @@ var controller = {
  
          //  if(validate_title && validate_content){
               // Find and update
-              contexto.findOneAndUpdate({_id: contextoId}, params, {new:true}, (err, contextoUpdated) => {
+              Contexto.findOneAndUpdate({_id: contextoId}, params, {new:true}, (err, contextoUpdated) => {
                  if(err){
                      return res.status(500).send({
                          status: 'error',
