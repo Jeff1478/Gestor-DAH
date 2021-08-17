@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var LiticoSchema = Schema({
     
     date: { type: Date, default: Date.now },
-    image: String,
+    // image: String,
     title: String,
     content: String,
     cod_mon: String,
@@ -15,7 +15,6 @@ var LiticoSchema = Schema({
     proyecto: String,
     investigador: String,
     pro_year: Number,
-    sector: String,
     etiqueta: String,
     fecha_exc: Date,
     id_contexto: String,
@@ -33,18 +32,7 @@ var LiticoSchema = Schema({
     fechamiento: String,
     tipo_pieza: String,
     desc_narrativa: String,
-    volcanica: String,
-    volc_vesicular: String,
-    volc_fina: String,
-    basalto: String,
-    andesita: String,
-    lutita: String,
-    silicea: String,
-    silicificada: String,
-    ortocuarcita: String,
-    cuarzo: String,
-    jaspe: String,
-    piedra_verdosa: String,
+    materia_prima: String,
     lineas: String,
     greca: String,
     elemento_secuencia: String,
@@ -98,7 +86,7 @@ var LiticoSchema = Schema({
     peso: String,
     nombre_invest: String,
     fecha_analisis: String,
-    fotos_num: String
+    fotos_num: String 
 
 });
 

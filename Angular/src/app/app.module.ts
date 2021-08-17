@@ -50,6 +50,9 @@ import { ContextoDetalleComponent } from './components/contexto-detalle/contexto
 import { ContextoEditComponent } from './components/contexto-edit/contexto-edit.component';
 import { ContextoExcelComponent } from './components/contexto-excel/contexto-excel.component';
 import { SearchContextoComponent } from './components/search-contexto/search-contexto.component';
+import { PagLitComponent } from './components/pag-lit/pag-lit.component';
+import { LiticoComponent } from './components/litico/litico.component';
+import { FichaLiticaComponent } from './components/ficha-litica/ficha-litica.component';
 
 
 
@@ -85,6 +88,9 @@ import { SearchContextoComponent } from './components/search-contexto/search-con
     ContextoEditComponent,
     ContextoExcelComponent,
     SearchContextoComponent,
+    PagLitComponent,
+    LiticoComponent,
+    FichaLiticaComponent,
    
     
   ],

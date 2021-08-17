@@ -21,6 +21,8 @@ import { ContextoDetalleComponent } from "./components/contexto-detalle/contexto
 import { ContextoEditComponent } from "./components/contexto-edit/contexto-edit.component";
 import { ContextoExcelComponent } from "./components/contexto-excel/contexto-excel.component";
 import { SearchContextoComponent } from "./components/search-contexto/search-contexto.component";
+import { PagLitComponent } from "./components/pag-lit/pag-lit.component";
+import { FichaLiticaComponent } from "./components/ficha-litica/ficha-litica.component";
 
 //Array de rutas 
 const appRoutes: Routes = [
@@ -33,7 +35,9 @@ const appRoutes: Routes = [
     {path: 'pagina-de-pruebas', component : PaginaComponent},
     {path: 'peliculas', component : PeliculasComponent},
     {path: 'pagina', component : PaginaComponent},
+    {path: 'pag-lit', component : PagLitComponent},
     {path: 'ficha-contexto', component : FichaContextoComponent},
+    {path: 'ficha-litica', component: FichaLiticaComponent},
     {path: 'pagina/ceramic/:id', component: ArticleComponent},
     {path: 'peliculas/contexto/:id', component: ContextoDetalleComponent},
     {path: 'reporte-publico/ceramic/:id', component: ReportePublicoComponent},
