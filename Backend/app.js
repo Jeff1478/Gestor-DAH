@@ -10,6 +10,7 @@ var app = express();
 var ceramic_routes = require('./routes/ceramic');
 var contexto_routes = require('./routes/contexto');
 var litico_routes = require ('./routes/litico');
+var metalico_routes = require ('./routes/metalico');
 
 // Middlewares
 app.use(bodyParser.urlencoded({extended:false}));
@@ -29,6 +30,7 @@ app.use((req, res, next) => {
 app.use('/api', ceramic_routes);
 app.use('/ap', contexto_routes);
 app.use('/aplit', litico_routes);
+app.use('/apmet', metalico_routes);
 
 
 // Exportar Modulo (fichero actual)

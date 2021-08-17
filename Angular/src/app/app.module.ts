@@ -56,6 +56,8 @@ import { FichaLiticaComponent } from './components/ficha-litica/ficha-litica.com
 import { LiticaDetalleComponent } from './components/litica-detalle/litica-detalle.component';
 import { LiticaEditComponent } from './components/litica-edit/litica-edit.component';
 import { LiticaExcelComponent } from './components/litica-excel/litica-excel.component';
+import { MetalicoComponent } from './components/metalico/metalico.component';
+import { PagMetComponent } from './components/pag-met/pag-met.component';
 
 
 
@@ -97,6 +99,8 @@ import { LiticaExcelComponent } from './components/litica-excel/litica-excel.com
     LiticaDetalleComponent,
     LiticaEditComponent,
     LiticaExcelComponent,
+    MetalicoComponent,
+    PagMetComponent,
    
     
   ],

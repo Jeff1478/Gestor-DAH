@@ -26,6 +26,7 @@ import { PagLitComponent } from "./components/pag-lit/pag-lit.component";
 import { FichaLiticaComponent } from "./components/ficha-litica/ficha-litica.component";
 import { LiticaDetalleComponent } from "./components/litica-detalle/litica-detalle.component";
 import { LiticaExcelComponent } from "./components/litica-excel/litica-excel.component";
+import { PagMetComponent } from "./components/pag-met/pag-met.component";
 
 //Array de rutas 
 const appRoutes: Routes = [
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
     {path: 'peliculas', component : PeliculasComponent},
     {path: 'pagina', component : PaginaComponent},
     {path: 'pag-lit', component : PagLitComponent},
+    {path: 'pag-met', component : PagMetComponent},
     {path: 'ficha-contexto', component : FichaContextoComponent},
     {path: 'ficha-litica', component: FichaLiticaComponent},
     {path: 'pagina/ceramic/:id', component: ArticleComponent},

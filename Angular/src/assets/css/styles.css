@@ -363,6 +363,7 @@ textarea{
 
 .subheader-ceramica{
     text-align: center;
+    color: white;
     background-color: goldenrod;
     font-size: 16px;
     border-bottom: 1px solid #eee;
@@ -387,6 +388,14 @@ textarea{
     padding-bottom: 5px;
 }
 
+.subheader-metalico{
+    text-align: center;
+    color: white;
+    background-color: rgb(55, 207, 62);
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
 .vertical-line{
     width: 1px; /* Line width */
     background-color: black; /* Line color */
