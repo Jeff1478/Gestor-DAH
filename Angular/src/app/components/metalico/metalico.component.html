@@ -16,14 +16,14 @@
         
         <h3>Id : {{metalico._id}}</h3>
         <p>Num Artefacto : {{metalico.num_artefacto}}</p>
-        <p>Contexto : {{metalico.contexto}</p>
+        <p>Contexto : {{metalico.contexto}}</p>
         
         
         <span class="date">
             {{metalico.date | amLocale: 'es' | amTimeAgo }}
         </span>
-        <!-- <a [routerLink]="['/peliculas/contexto', contexto._id]">Leer más</a>
-        <div class="clearfix"></div> -->
+         <a [routerLink]="['/pag-met/metalico', metalico._id]">Leer más</a>
+        <div class="clearfix"></div> 
     </article>
 </div>
 

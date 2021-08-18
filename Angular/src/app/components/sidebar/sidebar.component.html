@@ -55,9 +55,38 @@
         <a [routerLink]="['/litica-excel']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">
           <mat-icon>cloud_download</mat-icon>    
       </a>  
-        
 
-           
+      <div id="search" class="sidebar-item">
+        <h3>Buscador</h3>
+        <p>Investigador ó Proyecto</p>
+        <form #searchForm="ngForm" (ngSubmit)= "goSearchLit()">
+            <input type="text" name="search" [(ngModel)] ="searchString"/>
+              <button class="btn btn-outline-success" type="submit">
+                <mat-icon>search</mat-icon></button>
+        </form>
+      </div> 
+  
+        </div>
+
+        <div *ngIf= "titulo === 'metalico'"> 
+
+          <a [routerLink]="['/ficha-metal']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
+            <mat-icon>add_shopping_cart</mat-icon>    
+        </a>
+         <a [routerLink]="['/metal-excel']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">
+          <mat-icon>cloud_download</mat-icon>    
+      </a>   
+
+      <div id="search" class="sidebar-item">
+        <h3>Buscador</h3>
+        <p>Investigador ó Proyecto</p>
+        <form #searchForm="ngForm" (ngSubmit)= "goSearchMet()">
+            <input type="text" name="search" [(ngModel)] ="searchString"/>
+              <button class="btn btn-outline-success" type="submit">
+                <mat-icon>search</mat-icon></button>
+        </form>
+      </div> 
+  
         </div>
         
     </div>

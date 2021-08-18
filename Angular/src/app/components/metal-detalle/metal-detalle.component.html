@@ -1,0 +1,330 @@
+
+   <mat-tab-group mat-align-tabs="start">
+
+    <mat-tab label="Reporte Completo">
+        <button data-toggle="tooltip" data-placement="top" title="Imprimir PDF" class="btn btn-outline-info" (click)="exportPdf()">
+            <mat-icon>print</mat-icon>
+            
+        </button>
+        <a [routerLink]="['/pag-met/editar',metalico._id]" data-toggle="tooltip" data-placement="top" title="Editar Ficha" class="btn btn-outline-success">
+        <mat-icon>edit</mat-icon>
+        </a> 
+        <a (click)="delete(metalico._id)" data-toggle="tooltip" data-placement="top" title="Borrar Registro" class = "btn btn-outline-danger">
+            <mat-icon>delete</mat-icon>    
+        </a> 
+        <a [routerLink]="['/pag-met']" data-toggle="tooltip" data-placement="top" title="Listado Anterior" class = "btn btn-outline-warning">
+            <mat-icon>list</mat-icon>    
+        </a> 
+
+        <div id="htmlData">
+
+            <div fxLayout="row" fxLayoutAlign="center stretch">
+
+            <mat-card fxFlex ="30" class = "rest-card">
+
+                <mat-card-title>MNCR, Depto DAH</mat-card-title>
+                <mat-card-subtitle>Ficha Metalicos, Reporte Completo</mat-card-subtitle>
+
+            <mat-card-content>
+
+                <div class="image-thumb">
+                        
+                    <img src="{{url + 'get-image/' + metalico.image}}" alt="{{metalico.title}}" *ngIf="metalico.image"/>
+                    <img src="assets/images/default.png" alt="{{metalico.title}}" *ngIf="!metalico.image"/>
+            
+                </div>
+            
+
+            </mat-card-content>
+        
+            </mat-card> 
+        </div>
+                <div fxLayout="row" fxLayoutAlign="center stretch">
+
+                    <mat-card fxFlex ="25" class = "rest-card"> 
+
+                        <mat-card-subtitle>Datos Ubicación</mat-card-subtitle>
+
+                        <mat-card-content>
+                            <div align="left">          
+                                <p><b>Cod Monumento:</b> {{metalico.cod_mon}} <b>Num Artefacto:</b> {{metalico.num_artefacto}} <b>Num Caja:</b>{{metalico.num_caja}}</p>
+                                <p><b>Proyecto:</b> {{metalico.proyecto}}  <b>Fecha Excavación:</b>  {{metalico.fecha_exc | date:'dd/MM/yyyy'}} </p>
+                                <p><b>Investigador:</b> {{metalico.investigador}} <b>Año Proyecto:</b> {{metalico.pro_year}}</p>
+                                <p><b>Datos Etiqueta:</b> {{metalico.etiqueta}} </p>
+                                
+                            </div>
+                        </mat-card-content>
+
+                    </mat-card>
+
+
+                    <mat-card fxFlex ="25" class = "rest-card">
+
+                        <mat-card-subtitle>Asociación Contextual</mat-card-subtitle>
+
+                            <mat-card-content>
+                            <div align="left">  
+                                <p><b>Id Contexto:</b> {{metalico.id_contexto}}  <b>Ubicación Relativa:</b> {{metalico.ubicacion}}</p>
+                                <p><b>Contexto:</b> {{metalico.contexto}}</p>
+                                <p><b>Fotografia:</b> {{metalico.foto}} <b>N° Foto:</b> {{metalico.num_foto}} <b>Calidad Foto:</b> {{metalico.calidad_foto}}</p>
+                                <p><b>Estado Foto:</b> {{metalico.estado_foto}} <b>Planimetría:</b>  {{metalico.plano}} <b>N° Lámina:</b> {{metalico.num_lamina}}</p>
+                                <p><b>Calidad Plano:</b> {{metalico.calidad_lamina}} <b>Estado Plano:</b> {{metalico.estado_Lamina}}</p>
+                                <p><b>Diagnóstico:</b> {{metalico.diagnostico_contexto}} <b>Fechamiento:</b>  {{metalico.fechamiento}}</p>
+                            </div>
+                        </mat-card-content>
+
+                    </mat-card>
+
+
+                    <mat-card fxFlex ="25" class = "rest-card">
+
+        
+                        <mat-card-subtitle>Asociación Funcional - Temporal</mat-card-subtitle>
+                            <mat-card-content>
+                            <div align="left">
+                            
+                                <p><b>Uso-Función:</b> {{metalico.uso_funcion}} <b>Datos para determinar funcionalidad:</b> {{metalico.datos_funcionalidad}}</p>
+                                <p><b>Descripción</b>  {{metalico.datos_funcionalidad}}</p>
+                                <p>Referencias {{metalico.referencias_funcional}}</p>
+                                <p><b>Período :</b> {{metalico.periodo_funcional}} | Fase {{metalico.fase_funcional}} | Temporalidad {{metalico.temporalidad_funcional}}</p>
+                                <p><b>Procedencia :</b> {{metalico.procedencia_funcional}}</p>
+                            </div>
+                            </mat-card-content>
+                    </mat-card>
+
+                   
+                </div>
+           
+
+           
+
+                <div fxLayout="row" fxLayoutAlign="center start">
+        
+                    <mat-card fxFlex ="75" class = "descrip-card"> 
+                
+                        <mat-card-subtitle>Descripción Objeto</mat-card-subtitle>
+                
+                            <mat-card-content>
+
+                        <div align="left">
+                        
+                            <p><b>Tipo Pieza:</b> {{metalico.tipo_pieza}}</p>
+                            <p><b>Descripción:</b> {{metalico.desc_narrativa}}</p>
+                            <p><b>Materia Prima:</b> {{metalico.materia_prima}}</p>
+                            <p><b>Dis No Figurativo:</b> Líneas {{metalico.lineas}} | Greca {{metalico.greca}} | Secuencia {{metalico.elemento_secuencia}} | Otro {{metalico.otro_nofig}} </p>             
+                            <p><b>DisFigurativo Zoomorfo:</b> Cabeza {{metalico.cab_zoo}} | Saurio {{metalico.suario_zoo}} | Felino {{metalico.felino_zoo}} | Batracio {{metalico.batracio_zoo}} | Ave {{metalico.ave_zoo}} | Mono {{metalico.primate_zoo}} | Murcielago {{metalico.murcielago_zoo}} | Mamífero {{metalico.mamifero_zoo}} | Tortuga {{metalico.turtle_zoo}} | Reptil {{metalico.reptil_zoo}} | Pez {{metalico.pez_zoo}} | Armadillo {{metalico.armadillo_zoo}}</p>
+                            <p><b>DisFigurativo Zoomorfo:</b> Insecto {{metalico.insecto_zoo}} |  Ciervo {{metalico.ciervo_zoo}} |  Canino {{metalico.canino_zoo}} |  No determinado {{metalico.ind_zoo}}</p>
+                            <p><b>Taxonomía Explícita:</b> {{metalico.tax_zoo}}</p>
+                            <p><b>Investigador que Identificó:</b> {{metalico.inv_zoo}}</p>
+                            <p><b>DisFigurativo Antromorfo:</b> Cabeza {{metalico.cab_antro}} | Cabeza con tocado {{metalico.cab_tocantro}} | Enmascarado {{metalico.masc_antro}} | Atuendo {{metalico.atuendo_antro}} | Cara {{metalico.cara_antro}} | Sedente {{metalico.sedente_antro}}</p>
+                            <p><b>DisFigurativo Antromorfo:</b> Erguida {{metalico.erguida_antro}} | Supino {{metalico.supino_antro}} | Escena {{metalico.escena_antro}}</p>
+                            <p><b>Género:</b> {{metalico.genero_antro}} | <b>Anomalía:</b> {{metalico.anomalia_antro}}</p>
+                            <p><b>DisFigurativo Indeterminado:</b> Cabeza {{metalico.cab_ind}} | Cara {{metalico.cara_ind}} | Otro {{metalico.otro_ind}}</p>
+                        </div>
+                        </mat-card-content>
+                    </mat-card>
+
+                </div>
+           
+
+            
+
+                <div fxLayout="row" fxLayoutAlign="center start stretch">
+
+                    <mat-card fxFlex ="40" class = "rest-card">
+
+                        <mat-card-subtitle>Estado Conservación</mat-card-subtitle>
+                
+                            <mat-card-content>
+                                <div>      
+                                    <p><b>Estado Conservación:</b> {{metalico.estado_conservacion}} <b> Potencial Exhibición:</b> {{metalico.potencial}}</p>
+                                    <p><b>Explicación:</b> {{metalico.potencial_exp}}</p>
+                                    <p><b>Dimensiones Vitrina:</b> Largo {{metalico.largo}} | Ancho: {{metalico.ancho}}| Alto: {{metalico.alto}} | Peso: {{metalico.peso}}</p>
+                                </div>
+                            </mat-card-content>
+                    </mat-card>
+
+                    <mat-card class = "rest-card">
+
+                        <mat-card-subtitle>Investigador y Registro</mat-card-subtitle>
+                
+                            <mat-card-content>
+                                <div>
+                                <p><b>Nombre:</b> {{metalico.nombre_invest}}</p>
+                                <p><b>Fecha Análisis:</b> {{metalico.fecha_analisis}}</p>
+                                <p><b>Numeración de Fotos:</b> {{metalico.fotos_num}}</p>
+                                </div>
+                            </mat-card-content>
+                    </mat-card>
+
+            
+                </div>
+          
+
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Reporte Público">
+        <button data-toggle="tooltip" data-placement="top" title="Imprimir PDF" class="btn btn-outline-info" (click)="exportPdf()">
+            <mat-icon>print</mat-icon>
+         
+        </button>
+        
+        <div id="htmlData" fxLayout="row" fxLayoutAlign="center start"> 
+        
+                    <mat-card fxFlex ="60">
+        
+                        <mat-card-title>MNCR, Depto DAH</mat-card-title>
+                        <mat-card-subtitle>Ficha Metalicos, Reporte Público</mat-card-subtitle>
+        
+                        <div class="image-thumb">
+                                
+                            <img src="{{url + 'get-image/' + metalico.image}}" alt="{{metalico.title}}" *ngIf="metalico.image"/>
+                            <img src="assets/images/default.png" alt="{{metalico.title}}" *ngIf="!metalico.image"/>
+                    
+                        </div>
+        
+                        <mat-card-content>
+        
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Cod Monumento</th>
+                                    <th scope="col">Contexto</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <td> {{metalico.cod_mon}} </td>
+                                    <td> {{metalico.contexto}} </td>
+                                </tbody>
+                            </table>
+        
+                            <div style="text-align:justify">
+                                <h4><b>Descripción Narrativa</b></h4>
+                                <p>{{metalico.desc_narrativa}}</p>
+                            </div>
+        
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Temporalidad Estimada</th>
+                                    <th scope="col">Procedencia</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <td> {{metalico.temporalidad_funcional}} </td>
+                                    <td> {{metalico.procedencia_funcional}} </td>
+                                </tbody>
+                            </table>
+                            
+                            
+                            <div>
+                                <h4><b>Dimensiones</b></h4>
+                                <p>Ancho: {{metalico.ancho}}, Alto: {{metalico.ancho}}, Peso: {{metalico.ancho}}</p>
+                            
+                            </div>
+                            
+                        </mat-card-content>
+                    </mat-card>                
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Reporte Catálogo">
+
+        <button data-toggle="tooltip" data-placement="top" title="Imprimir PDF" class="btn btn-outline-info" (click)="exportPdf()">
+            <mat-icon>print</mat-icon>
+          
+        </button>
+
+        <div id="htmlData">
+
+            
+
+                <div fxLayout="row" fxLayoutAlign="center stretch">
+
+                    <mat-card class = "main-card">
+
+                        <mat-card-title>MNCR, Depto DAH</mat-card-title>
+                        <mat-card-subtitle>Ficha Metalicos, Reporte Catálogo</mat-card-subtitle>
+        
+                    <mat-card-content>
+
+                        <div class="image-thumb">
+                                
+                            <img src="{{url + 'get-image/' + metalico.image}}" alt="{{metalico.title}}" *ngIf="metalico.image"/>
+                            <img src="assets/images/default.png" alt="{{metalico.title}}" *ngIf="!metalico.image"/>
+                    
+                        </div>
+
+                        <div>          
+                            <p><b>Id Artefacto:</b> {{metalico.cod_mon}}</p>
+                            <p><b>Año Excavación:</b> {{metalico.pro_year}} </p>  
+                        </div>
+
+                    </mat-card-content>
+                    </mat-card>
+
+                    <mat-card fxFlex ="20" class = "rest-card"> 
+                
+                        <mat-card-subtitle>Contexto</mat-card-subtitle>
+                
+                        <mat-card-content>
+                            <div align="left">      
+                                <p><b>Id Contexto:</b> {{metalico.id_contexto}}</p>
+                                <p><b>Contexto:</b> {{metalico.contexto}}</p>
+                                <p><b>Fechamiento:</b> {{metalico.fechamiento}}</p>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+
+                    <mat-card fxFlex ="20" class = "rest-card">
+
+                        <mat-card-subtitle>Temporalidad Estimada</mat-card-subtitle>
+                            <mat-card-content>
+                                <div align="left">      
+                                    <p><b>Temporalidad:</b> {{metalico.temporalidad_funcional}}</p>
+                                   
+                                    <p><b>Dimensiones:</b> Largo {{metalico.largo}} | Ancho: {{metalico.ancho}}| Alto: {{metalico.alto}} | Peso: {{metalico.peso}}</p>
+                                </div>
+                            </mat-card-content>
+                    </mat-card>
+
+
+                </div>
+         
+
+
+       
+            
+                <div fxLayout="row" fxLayoutAlign="center start">
+
+                    <mat-card fxFlex ="60" class = "descrip-card">
+
+                        <mat-card-subtitle>Descripción Narrativa</mat-card-subtitle>
+                            <mat-card-content>
+                                <div align="left">      
+                                    <p><b>Descripción:</b> {{metalico.desc_narrativa}}</p>
+                                    <p><b>Tipo Diseño:</b> {{metalico.tipo_pieza}}</p>
+                                   
+                                    
+                                </div>
+                            </mat-card-content>
+                    </mat-card>
+
+                
+                </div>
+         
+
+            
+
+        </div>
+        
+    </mat-tab>
+
+</mat-tab-group>
+
+
+        
+
+   
+

@@ -58,6 +58,12 @@ import { LiticaEditComponent } from './components/litica-edit/litica-edit.compon
 import { LiticaExcelComponent } from './components/litica-excel/litica-excel.component';
 import { MetalicoComponent } from './components/metalico/metalico.component';
 import { PagMetComponent } from './components/pag-met/pag-met.component';
+import { FichaMetalComponent } from './components/ficha-metal/ficha-metal.component';
+import { MetalDetalleComponent } from './components/metal-detalle/metal-detalle.component';
+import { MetalEditComponent } from './components/metal-edit/metal-edit.component';
+import { MetalExcelComponent } from './components/metal-excel/metal-excel.component';
+import { SearchLiticoComponent } from './components/search-litico/search-litico.component';
+import { SearchMetalicoComponent } from './components/search-metalico/search-metalico.component';
 
 
 
@@ -101,6 +107,12 @@ import { PagMetComponent } from './components/pag-met/pag-met.component';
     LiticaExcelComponent,
     MetalicoComponent,
     PagMetComponent,
+    FichaMetalComponent,
+    MetalDetalleComponent,
+    MetalEditComponent,
+    MetalExcelComponent,
+    SearchLiticoComponent,
+    SearchMetalicoComponent,
    
     
   ],
