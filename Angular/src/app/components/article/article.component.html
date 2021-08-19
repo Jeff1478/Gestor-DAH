@@ -26,12 +26,12 @@
 
                 <mat-card fxFlex ="30" class = "rest-card">
 
-                    <mat-card-title>MNCR, Depto DAH</mat-card-title>
-                    <mat-card-subtitle>Ficha Cerámica, Reporte Completo</mat-card-subtitle>
+                    <!-- <mat-card-title>MNCR, Depto DAH</mat-card-title> -->
+                    <mat-card-title>Cerámica, Reporte Completo</mat-card-title>
     
                 <mat-card-content>
 
-                    <div class="image-thumb">
+                    <div class="image-thumb-repo">
                             
                         <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
                         <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
@@ -51,9 +51,12 @@
 
                             <mat-card-content>
                                 <div align="left">          
-                                    <p><b>Cod Monumento:</b> {{ceramic.cod_mon}} <b>Num Artefacto:</b> {{ceramic.num_artefacto}} <b>Num Caja:</b>{{ceramic.num_caja}}</p>
+                                    <p><b>Cdigo Monumento:</b> {{ceramic.cod_mon}}</p>
+                                    <p><b>N° Artefacto:</b> {{ceramic.num_artefacto}}</p>
+                                    <p><b>N° Caja:</b>{{ceramic.num_caja}}</p>
                                     <p><b>Proyecto:</b> {{ceramic.proyecto}}  <b>Fecha Excavación:</b>  {{ceramic.fecha_exc | date:'dd/MM/yyyy'}} </p>
-                                    <p><b>Investigador:</b> {{ceramic.investigador}} <b>Año Proyecto:</b> {{ceramic.pro_year}}</p>
+                                    <p><b>Investigador:</b> {{ceramic.investigador}}</p>
+                                    <p><b>Año Proyecto:</b> {{ceramic.pro_year}}</p>
                                     <p><b>Datos Etiqueta:</b> {{ceramic.etiqueta}} </p>
                                     
                                 </div>
@@ -68,11 +71,12 @@
 
                                 <mat-card-content>
                                 <div align="left">  
-                                    <p><b>Id Contexto:</b> {{ceramic.id_contexto}}  <b>Ubicación Relativa:</b> {{ceramic.ubicacion}}</p>
+                                    <p><b>Id Contexto:</b> {{ceramic.id_contexto}}  <b>Ubicación:</b> {{ceramic.ubicacion}}</p>
                                     <p><b>Contexto:</b> {{ceramic.contexto}}</p>
                                     <p><b>Fotografia:</b> {{ceramic.foto}} <b>N° Foto:</b> {{ceramic.num_foto}} <b>Calidad Foto:</b> {{ceramic.calidad_foto}}</p>
-                                    <p><b>Estado Foto:</b> {{ceramic.estado_foto}} <b>Planimetría:</b>  {{ceramic.plano}} <b>N° Lámina:</b> {{ceramic.num_lamina}}</p>
-                                    <p><b>Calidad Plano:</b> {{ceramic.calidad_lamina}} <b>Estado Plano:</b> {{ceramic.estado_Lamina}}</p>
+                                    <p><b>Estado Foto:</b> {{ceramic.estado_foto}} </p>
+                                    <p><b>Planimetría:</b> {{ceramic.plano}} <b>N° Lámina:</b> {{ceramic.num_lamina}} <b>Calidad Plano:</b> {{ceramic.calidad_lamina}} </p>
+                                    <p><b>Estado Plano:</b> {{ceramic.estado_Lamina}}</p>
                                     <p><b>Diagnóstico:</b> {{ceramic.diagnostico_contexto}} <b>Fechamiento:</b>  {{ceramic.fechamiento}}</p>
                                 </div>
                             </mat-card-content>
@@ -87,10 +91,13 @@
                                 <mat-card-content>
                                 <div align="left">
                                 
-                                    <p><b>Forma-Función:</b> {{ceramic.forma_funcion}} <b>Marcas uso:</b> {{ceramic.marcas_uso}}</p>
+                                    <p><b>Forma-Función:</b> {{ceramic.forma_funcion}} </p>
+                                    <p><b>Marcas uso:</b> {{ceramic.marcas_uso}}</p>
                                     <p><b>Descripción</b>  {{ceramic.desc_marcas_uso}}</p>
-                                    <p><b>Tipo Cerámico:</b> Grupo {{ceramic.tipo_ceramico_grupo}} | Referencias {{ceramic.ceramico_refz}}</p>
-                                    <p><b>Período :</b> {{ceramic.periodo_ceramica}} | Fase {{ceramic.fase_ceramica}} | Temporalidad {{ceramic.temporalidad_ceramica}}</p>
+                                    <p><b>Tipo Cerámico:</b> Grupo {{ceramic.tipo_ceramico_grupo}}</p>
+                                    <p><b>Referencias</b> {{ceramic.ceramico_refz}}</p>
+                                    <p><b>Período :</b> {{ceramic.periodo_ceramica}} | Fase {{ceramic.fase_ceramica}}</p>
+                                    <p><b>Temporalidad</b> {{ceramic.temporalidad_ceramica}}</p>
                                     <p><b>Procedencia :</b> {{ceramic.procedencia_ceramica}}</p>
                                 </div>
                                 </mat-card-content>
@@ -140,20 +147,20 @@
                             <mat-card-subtitle>Estado Conservación</mat-card-subtitle>
                     
                                 <mat-card-content>
-                                    <div>      
+                                    <div align="left">      
                                         <p><b>Estado Conservación:</b> {{ceramic.estado_conservacion}} <b> Potencial Exhibición:</b> {{ceramic.potencial}}</p>
                                         <p><b>Explicación:</b> {{ceramic.potencial_exp}}</p>
-                                        <p><b>Dimensiones Vitrina:</b> Largo {{ceramic.largo}} | Ancho: {{ceramic.ancho}}| Alto: {{ceramic.alto}} | Peso: {{ceramic.peso}}</p>
+                                        <p><b>Dimensiones Vitrina:</b> Largo {{ceramic.largo}} cm, Ancho: {{ceramic.ancho}} cm, Alto: {{ceramic.alto}} cm, Peso: {{ceramic.peso}} gr</p>
                                     </div>
                                 </mat-card-content>
                         </mat-card>
 
-                        <mat-card class = "rest-card">
+                        <mat-card fxFlex ="30" class = "rest-card">
 
                             <mat-card-subtitle>Investigador y Registro</mat-card-subtitle>
                     
                                 <mat-card-content>
-                                    <div>
+                                    <div align="left">
                                     <p><b>Nombre:</b> {{ceramic.nombre_invest}}</p>
                                     <p><b>Fecha Análisis:</b> {{ceramic.fecha_analisis}}</p>
                                     <p><b>Numeración de Fotos:</b> {{ceramic.fotos_num}}</p>
@@ -189,15 +196,17 @@
                 <mat-icon>print</mat-icon>
              
             </button>
+
+            <div id="htmlData">
             
-            <div id="htmlData" fxLayout="row" fxLayoutAlign="center start"> 
+            <div fxLayout="row" fxLayoutAlign="center start"> 
             
                         <mat-card fxFlex ="60">
             
-                            <mat-card-title>MNCR, Depto DAH</mat-card-title>
-                            <mat-card-subtitle>Ficha Cerámica, Reporte Público</mat-card-subtitle>
+                            <!-- <mat-card-title>MNCR, Depto DAH</mat-card-title> -->
+                            <mat-card-title>Cerámica, Reporte Público</mat-card-title>
             
-                            <div class="image-thumb">
+                            <div class="image-thumb-pub">
                                     
                                 <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
                                 <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
@@ -209,12 +218,12 @@
                                 <table class="table">
                                     <thead>
                                     <tr>
-                                        <th scope="col">Cod Monumento</th>
+                                        <th scope="col">Id Pieza</th>
                                         <th scope="col">Contexto</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <td> {{ceramic.cod_mon}} </td>
+                                        <td> {{ceramic._id}} </td>
                                         <td> {{ceramic.contexto}} </td>
                                     </tbody>
                                 </table>
@@ -240,13 +249,15 @@
                                 
                                 <div>
                                     <h4><b>Dimensiones</b></h4>
-                                    <p>Ancho: {{ceramic.ancho}}, Alto: {{ceramic.ancho}}, Peso: {{ceramic.ancho}}</p>
+                                    <p>Ancho: {{ceramic.ancho}} cm, Alto: {{ceramic.ancho}} cm, Peso: {{ceramic.ancho}} gr</p>
                                 
                                 </div>
                                 
                             </mat-card-content>
                         </mat-card>                
             </div>
+
+        </div>
         </mat-tab>
 
         <mat-tab label="Reporte Catálogo">
@@ -264,12 +275,12 @@
 
                         <mat-card class = "main-card">
 
-                            <mat-card-title>MNCR, Depto DAH</mat-card-title>
-                            <mat-card-subtitle>Ficha Cerámica, Reporte Catálogo</mat-card-subtitle>
+                            <!-- <mat-card-title>MNCR, Depto DAH</mat-card-title> -->
+                            <mat-card-title>Cerámica, Reporte Catálogo</mat-card-title>
             
                         <mat-card-content>
 
-                            <div class="image-thumb">
+                            <div class="image-thumb-pub">
                                     
                                 <img src="{{url + 'get-image/' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>
                                 <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>
@@ -304,7 +315,7 @@
                                     <div align="left">      
                                         <p><b>Temporalidad:</b> {{ceramic.temporalidad_ceramica}}</p>
                                         <p><b>Procedencia:</b> {{ceramic.procedencia_ceramica}}</p>
-                                        <p><b>Dimensiones:</b> Largo {{ceramic.largo}} | Ancho: {{ceramic.ancho}}| Alto: {{ceramic.alto}} | Peso: {{ceramic.peso}}</p>
+                                        <p><b>Dimensiones:</b> Largo {{ceramic.largo}} cm, Ancho: {{ceramic.ancho}} cm, Alto: {{ceramic.alto}} cm, Peso: {{ceramic.peso}} gr</p>
                                     </div>
                                 </mat-card-content>
                         </mat-card>

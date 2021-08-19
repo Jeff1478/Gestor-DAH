@@ -89,6 +89,15 @@ body {
     width: 150px;
 }
 
+.image-thumb-repo img{
+    width: 300px;
+}
+
+.image-thumb-pub img{
+    width: 350px;
+    height: 350px;
+}
+
 #menu{
     width: 70%;
     float:right;

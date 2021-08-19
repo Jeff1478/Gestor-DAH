@@ -6,6 +6,7 @@ import { Ceramic } from 'src/app/models/ceramic';
 import { Global } from 'src/app/services/global';
 
 
+
 @Component({
   selector: 'app-ceramica',
   templateUrl: './ceramica.component.html',
@@ -21,8 +22,19 @@ export class CeramicaComponent implements OnInit {
  
 
   afuConfig = {
+    maxSize: 2,
     uploadAPI: {
       url:Global.url+'upload-image'
+    },
+    replaceTexts: {
+      selectFileBtn: 'Seleccione Archivo',
+      resetBtn: 'Resetear',
+      uploadBtn: 'Subir',
+      dragNDropBox: 'Arrastre y soltar',
+      attachPinBtn: 'Subiendo Archivo...',
+      afterUploadMsg_success: 'Archivo Subido !',
+      afterUploadMsg_error: 'Fallo en el proceso !',
+      sizeLimit: 'Tamaño Máximo'
     }
   };
 

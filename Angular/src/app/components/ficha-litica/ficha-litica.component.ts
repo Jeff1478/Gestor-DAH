@@ -21,8 +21,19 @@ export class FichaLiticaComponent implements OnInit {
   public is_edit: boolean;
  
   afuConfig = {
+    maxSize: 2,
     uploadAPI: {
       url:Globallit.url+'upload-image'
+    },
+    replaceTexts: {
+      selectFileBtn: 'Seleccione Archivo',
+      resetBtn: 'Resetear',
+      uploadBtn: 'Subir',
+      dragNDropBox: 'Arrastre y soltar',
+      attachPinBtn: 'Subiendo Archivo...',
+      afterUploadMsg_success: 'Archivo Subido !',
+      afterUploadMsg_error: 'Fallo en el proceso !',
+      sizeLimit: 'Tamaño Máximo'
     }
   };
 
