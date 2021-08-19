@@ -181,7 +181,7 @@ export class CeramicaComponent implements OnInit {
    imageUpload(data: any){
      
      console.log(data);
- 
+      alert(data);
      // let image_data = JSON.parse(data.response);
  
     
