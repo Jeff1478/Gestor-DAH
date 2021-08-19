@@ -31,6 +31,7 @@ export class Metalico{
         public materia_prima: String,
         public proceso_manufactura: String,
         public grupo_morfologico: String,
+        public otro_morfologico: String,
         public dis_nofig: String,
         public dis_nofig_otro: String,
         public cab_zoo: String,

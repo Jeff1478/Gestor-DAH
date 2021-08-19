@@ -211,49 +211,50 @@
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                 <div class="row g-3">
-                                    <!-- <div class="col-md-4">
-                                        <label for="tipo_pieza">Tipo de Pieza</label>
-                                        <select class="form-select" name="tipo_pieza" #tipo_pieza="ngModel"
-                                            [(ngModel)]="metalico.tipo_pieza">
+                                     <div class="col-md-4">
+                                        <label for="materia_prima">Materia Prima</label>
+                                        <select class="form-select" name="materia_prima" #materia_prima="ngModel"
+                                            [(ngModel)]="metalico.materia_prima">
                                             <option selected>Seleccione...</option>
-                                            <option value="Lapidaria">Lapidaria</option>
-                                            <option value="Escultórica">Escultórica</option>
-                                            <option value="Molienda">Molienda</option>
-                                            <option value="Petrograbado">Petrograbado</option>
-                                            <option value="Hachoide">Hachoide</option>
-                                            <option value="Lasqueado">Lasqueado</option>
-                                            <option value="Lasqueado Especial">Lasqueado Especial</option>
-                                            <option value="Abrasivo">Abrasivo</option>
-                                            <option value="Percusión">Percusión</option>
-                                            <option value="Utilitario">Utilitario</option>
-                                          
+                                            <option value="Oro">Oro</option>
+                                            <option value="Aleación oro-cobre">Aleación Oro-Cobre</option>
+                                            <option value="Cobre">Cobre</option>    
                                         </select>
-                                    </div> -->
-                                   <!--  <div class="col-md-4">
-                                        <label for="desc_narrativa">Descripción Narrativa</label>
-                                        <input type="text" class="form-control" name="desc_narrativa" #desc_narrativa="ngModel"
-                                            [(ngModel)]="metalico.desc_narrativa">
-                                    </div> -->
+                                    </div> 
+                                     <div class="col-md-4">
+                                        <label for="proceso_manufactura">Proceso de Manufactura</label>
+                                        <select class="form-select" name="proceso_manufactura" #tipo_pieza="ngModel"
+                                            [(ngModel)]="metalico.proceso_manufactura">
+                                            <option selected>Seleccione...</option>
+                                            <option value="Fundido con nucleo">Fundido con nucleo</option>
+                                            <option value="Fundido sin nucleo">Fundido sin nucleo</option>
+                                            <option value="Martillado">Martillado</option>    
+                                        </select>
+                                    </div> 
+                                    <div class="col-md-4">
+                                        <label for="grupo_morfologico">Grupo Morfológico</label>
+                                        <select class="form-select" name="grupo_morfologico" #materia_prima="ngModel"
+                                            [(ngModel)]="metalico.grupo_morfologico">
+                                            <option selected>Seleccione...</option>
+                                            <option value="Ave con alas desplegadas">Ave con alas desplegadas</option>
+                                            <option value="Figura Antropomorfa">Figura Antropomorfa</option>
+                                            <option value="Batracio">Batracio</option>
+                                            <option value="Antropozoomorfo">Antropozoomorfo</option>
+                                            <option value="Cascabel">Cascabel</option>
+                                            <option value="Cuenta">Cuenta</option>
+                                            <option value="Disco">Disco</option>
+                                            <option value="Lámina">Lámina</option>
+                                            <option value="Placa con espiral doble">Placa con espiral doble</option>
+                                            
+                                        </select>
+                                    </div>
                                 </div>
+
                                     <div class="row g-3">
-                                        <div class="col-md-4">
-                                            <label for="materia_prima">Materia Prima</label>
-                                            <select class="form-select" name="materia_prima" #materia_prima="ngModel"
-                                                [(ngModel)]="metalico.materia_prima">
-                                                <option selected>Seleccione...</option>
-                                                <option value="Volcánica">Volcánica</option>
-                                                <option value="Volcánica vesicular">Volcánica vesicular</option>
-                                                <option value="Volcánica fina">Volcánica fina</option>
-                                                <option value="Basalto">Basalto</option>
-                                                <option value="Andesita">Andesita</option>
-                                                <option value="Lutita">Lutita</option>
-                                                <option value="Silícea">Silícea</option>
-                                                <option value="Silificada">Silificada</option>
-                                                <option value="Ortocuarcita">Ortocuarcita</option>
-                                                <option value="Cuarzo">Cuarzo</option>
-                                                <option value="Jaspe">Jaspe</option>
-                                                <option value="Piedra Verdosa">Piedra Verdosa</option>
-                                            </select>
+                                        <div class="col-md-8">
+                                            <label for="otro_morfologico">Otro Grupo Morfológico</label>
+                                            <input type="text" class="form-control" name="otro_morfologico" #otro_morfologico="ngModel"
+                                                [(ngModel)]="metalico.otro_morfologico">
                                         </div>
                                     </div>
                                 
@@ -262,30 +263,25 @@
                                 <div class="row g-3">
                                     <label class="fw-bold">Decoración</label>
                                     <label class="fw-bold">Diseño No Figurativo </label>
-        
-                                    <div class="col-md-12">
-                                       <!--  <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="lineas" #lineas [(ngModel)]="metalico.lineas"
-                                            (ngModelChange)="metalico.lineas=$event?'X':''">
-                                            <label class="form-check-label" for="lineas">Líneas</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="greca" #greca [(ngModel)]="metalico.greca"
-                                            (ngModelChange)="metalico.greca=$event?'X':''">
-                                            <label class="form-check-label" for="greca">Greca</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="elemento_secuencia" #elemento_secuencia [(ngModel)]="metalico.elemento_secuencia"
-                                            (ngModelChange)="metalico.elemento_secuencia=$event?'X':''">
-                                            <label class="form-check-label" for="elemento_secuencia">Elemento en secuencia</label>
-                                        </div> -->
-                                        
-                                        <!-- <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="otro_nofig" #otro_nofig [(ngModel)]="metalico.otro_nofig"
-                                            (ngModelChange)="metalico.otro_nofig=$event?'X':''">
-                                            <label class="form-check-label" for="otro_nofig">Otro</label>
-                                        </div> -->
+
+                                    <div class="col-md-4">
+                                        <label for="dis_nofig">Seleccione</label>
+                                        <select class="form-select" name="dis_nofig" #dis_nofig="ngModel"
+                                            [(ngModel)]="metalico.dis_nofig">
+                                            <option selected>Seleccione...</option>
+                                            <option value="Líneas">Líneas</option>
+                                            <option value="Greca">Greca</option>
+                                            <option value="Elemento en secuencia">Elemento en secuencia</option>    
+                                        </select>
+                                    </div> 
+
+                                    <div class="col-md-8">
+                                        <label for="dis_nofig_otro">Otro Diseño No Figurativo</label>
+                                        <input type="text" class="form-control" name="dis_nofig_otro" #dis_nofig_otro="ngModel"
+                                            [(ngModel)]="metalico.dis_nofig_otro">
                                     </div>
+        
+                                   
         
                                     <div class="row g-3">
                                         <label for="figuras" class="fw-bold">Diseños Figurativos Zoomorfos</label>
@@ -374,12 +370,12 @@
                                         </div>
         
                                         <div class="col-md-6">
-                                            <label for="tax_zoo">Taxonomia Explicita</label>
+                                            <label for="tax_zoo">Taxonomia Explicita (referencia)</label>
                                             <input type="text" class="form-control" name="tax_zoo" #tax_zoo="ngModel"
                                                 [(ngModel)]="metalico.tax_zoo">
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="inv_zoo">Investigador</label>
+                                            <label for="inv_zoo">Investigador que realizó la investigación</label>
                                             <input type="text" class="form-control" name="inv_zoo"
                                                 #inv_zoo="ngModel" [(ngModel)]="metalico.inv_zoo">
                                         </div>
@@ -389,55 +385,63 @@
         
                                     <div class="row g-3">
                                         <label for="figuras" class="fw-bold">Diseños Figurativos Antropomorfos</label>
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" name="cab_antro" #cab_antro [(ngModel)]="metalico.cab_antro"
                                                     (ngModelChange)="metalico.cab_antro=$event?'X':''">
                                                     <label class="form-check-label" for="cab_antro">Cabeza</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="cab_tocantro" #cab_tocantro [(ngModel)]="metalico.cab_tocantro"
-                                                    (ngModelChange)="metalico.cab_tocantro=$event?'X':''">
-                                                    <label class="form-check-label" for="cab_tocantro">Cabeza con tocado</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="masc_antro" #masc_antro [(ngModel)]="metalico.masc_antro"
-                                                    (ngModelChange)="metalico.masc_antro=$event?'X':''">
-                                                    <label class="form-check-label" for="masc_antro">Enmascarado</label>
-                                                </div>
-                                               <!--  <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="atuendo_antro" #atuendo_antro [(ngModel)]="metalico.atuendo_antro"
-                                                    (ngModelChange)="metalico.atuendo_antro=$event?'X':''">
-                                                    <label class="form-check-label" for="atuendo_antro">Atuendo</label>
-                                                </div> -->
-                                                <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" name="cara_antro" #cara_antro [(ngModel)]="metalico.cara_antro"
                                                     (ngModelChange)="metalico.cara_antro=$event?'X':''">
                                                     <label class="form-check-label" for="cara_antro">Cara</label>
                                                 </div>
-                                               <!--  <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="sedente_antro" #sedente_antro [(ngModel)]="metalico.sedente_antro"
-                                                    (ngModelChange)="metalico.sedente_antro=$event?'X':''">
-                                                    <label class="form-check-label" for="sedente_antro">Sedente</label>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="cab_tocantro" #cab_tocantro [(ngModel)]="metalico.cab_tocantro"
+                                                    (ngModelChange)="metalico.cab_tocantro=$event?'X':''">
+                                                    <label class="form-check-label" for="cab_tocantro">Con tocado</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="erguida_antro" #erguida_antro [(ngModel)]="metalico.erguida_antro"
-                                                    (ngModelChange)="metalico.erguida_antro=$event?'X':''">
-                                                    <label class="form-check-label" for="erguida_antro">Erguida</label>
-                                                </div> -->
-                                                <!-- <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="supino_antro" #supino_antro [(ngModel)]="metalico.supino_antro"
-                                                    (ngModelChange)="metalico.supino_antro=$event?'X':''">
-                                                    <label class="form-check-label" for="supino_antro">Supino</label>
-                                                </div> -->
+                                                    <input class="form-check-input" type="checkbox" name="maratoc_antro" #maratoc_antro [(ngModel)]="metalico.maratoc_antro"
+                                                    (ngModelChange)="metalico.maratoc_antro=$event?'X':''">
+                                                    <label class="form-check-label" for="maratoc_antro">Maraquero con tocado</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="marorej_antro" #marorej_antro [(ngModel)]="metalico.marorej_antro"
+                                                    (ngModelChange)="metalico.marorej_antro=$event?'X':''">
+                                                    <label class="form-check-label" for="marorej_antro">Maraquero con orejera</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="cabbic_antro" #cabbic_antro [(ngModel)]="metalico.cabbic_antro"
+                                                    (ngModelChange)="metalico.cabbic_antro=$event?'X':''">
+                                                    <label class="form-check-label" for="cabbic_antro">Cabeza bicéfala</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="doble_antro" #doble_antro [(ngModel)]="metalico.doble_antro"
+                                                    (ngModelChange)="metalico.doble_antro=$event?'X':''">
+                                                    <label class="form-check-label" for="doble_antro">Doble</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="multiple_antro" #multiple_antro [(ngModel)]="metalico.multiple_antro"
+                                                    (ngModelChange)="metalico.multiple_antro=$event?'X':''">
+                                                    <label class="form-check-label" for="multiple_antro">Multiple</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="antro_antro" #antro_antro [(ngModel)]="metalico.antro_antro"
+                                                    (ngModelChange)="metalico.antro_antro=$event?'X':''">
+                                                    <label class="form-check-label" for="antro_antro">Antropozoomorfo</label>
+                                                </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" name="escena_antro" #escena_antro [(ngModel)]="metalico.escena_antro"
                                                     (ngModelChange)="metalico.escena_antro=$event?'X':''">
                                                     <label class="form-check-label" for="escena_antro">Escena</label>
                                                 </div>
+
                                     
                                             </div>
-                                            
+
+                                    </div>
+                                    <div class="row g-3">
                                             <div class="col-md-3">
                                                 <label for="genero_antro">Género</label>
                                                 <select class="form-select" name="genero_antro" #genero_antro="ngModel"
@@ -448,22 +452,13 @@
                                                     <option value="No determinado">No determinado</option>
                                                 </select>
                                             </div>
-                                         <!--    <div class="col-md-3">
-                                                <label for="anomalia_antro">Anomalía</label>
-                                                <select class="form-select" name="anomalia_antro" #anomalia_antro="ngModel"
-                                                [(ngModel)]="metalico.anomalia_antro">
-                                                <option selected>Seleccione...</option>
-                                                <option value="Masculino">Anomalía de forma</option>
-                                                <option value="Femenino">Anomalía de tamaño</option>
-                                                <option value="No determinado">Deformación cefálica intensional</option>
-                                                <option value="No determinado">Mutilación dental</option>
-                                            </select>
-                                            </div> -->
                                     </div>
+                                     
+                                   
         
                                     <div class="row g-3">
                                         <label for="figuras" class="fw-bold">Diseños Figurativos Indeterminado</label>
-                                            <div class="col-md-12">
+                                            <div class="col-md-4">
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" name="cab_ind" #cab_ind [(ngModel)]="metalico.cab_ind"
                                                     (ngModelChange)="metalico.cab_ind=$event?'X':''">
@@ -474,13 +469,12 @@
                                                     (ngModelChange)="metalico.cara_ind=$event?'X':''">
                                                     <label class="form-check-label" for="cara_ind">Cara</label>
                                                 </div>
-                                                <div class="col-md-6">
+                                            </div> 
+                                                <div class="col-md-4">
                                                     <label for="otro_ind">Otra</label>
                                                     <input type="text" class="form-control" name="otro_ind" #otro_ind="ngModel"
                                                         [(ngModel)]="metalico.otro_ind">
-                                                </div>
-                                    
-                                            </div>                          
+                                                </div>                         
                                     </div>
         
                                 </div>
@@ -507,7 +501,7 @@
                                 <div class="row g-3">
                                    
         
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <label for="tipologia">Tipología</label>
                                         <input type="text" class="form-control" name="tipologia"
                                             #tipologia="ngModel" [(ngModel)]="metalico.tipologia">
@@ -518,21 +512,24 @@
                                 <div class="row g-3">
                                     
         
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <label for="referencias_funcional">Refencias Bibliográfica</label>
                                         <input type="text" class="form-control" name="referencias_funcional" #referencias_funcional="ngModel"
                                             [(ngModel)]="metalico.referencias_funcional">
                                     </div>
         
+                                    
+        
+                                </div>
+        
+                                <div class="row g-3">
+
                                     <div class="col-md-4">
                                         <label for="periodo_funcional">Periodo</label>
                                         <input type="text" class="form-control" name="periodo_funcional"
                                             #periodo_funcional="ngModel" [(ngModel)]="metalico.periodo_funcional">
                                     </div>
-        
-                                </div>
-        
-                                <div class="row g-3">
+
                                     <div class="col-md-4">
                                         <label for="fase_funcional">Fase</label>
                                         <input type="text" class="form-control" name="fase_funcional" #fase_funcional="ngModel"
@@ -545,7 +542,7 @@
                                             #temporalidad_funcional="ngModel" [(ngModel)]="metalico.temporalidad_funcional">
                                     </div>
         
-                                    <div class="col-md-4">
+                                    <div class="col-md-8">
                                         <label for="procedencia_metalicoa">Procedencia (Región/Subregión)</label>
                                         <input type="text" class="form-control" name="procedencia_funcional"
                                             #procedencia_funcional="ngModel" [(ngModel)]="metalico.procedencia_funcional">

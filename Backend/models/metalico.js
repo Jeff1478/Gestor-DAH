@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var MetalicoSchema = Schema({
     
     date: { type: Date, default: Date.now },
-    // image: String,
+    image: String,
     title: String,
     content: String,
     cod_mon: String,
@@ -36,6 +36,7 @@ var MetalicoSchema = Schema({
     materia_prima: String,
     proceso_manufactura: String,
     grupo_morfologico: String,
+    otro_morfologico: String,
     dis_nofig: String,
     dis_nofig_otro: String,
     cab_zoo: String,

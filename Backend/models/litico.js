@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var LiticoSchema = Schema({
     
     date: { type: Date, default: Date.now },
-    // image: String,
+    image: String,
     title: String,
     content: String,
     cod_mon: String,

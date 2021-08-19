@@ -69,6 +69,7 @@ export class FichaMetalComponent implements OnInit {
     materia_prima: '',
     proceso_manufactura: '',
     grupo_morfologico:'',
+    otro_morfologico:'',
     dis_nofig:'',
     dis_nofig_otro:'',
     cab_zoo: '',
