@@ -21,8 +21,19 @@ export class FichaContextoComponent implements OnInit {
   values = [0, 1, 2, 3];
   calc = "Cementerio";
   afuConfig = {
+    maxSize: 2,
     uploadAPI: {
       url:GlobalC.url+'upload-image'
+    },
+    replaceTexts: {
+      selectFileBtn: 'Seleccione Archivo',
+      resetBtn: 'Resetear',
+      uploadBtn: 'Subir',
+      dragNDropBox: 'Arrastre y soltar',
+      attachPinBtn: 'Subiendo Archivo...',
+      afterUploadMsg_success: 'Archivo Subido !',
+      afterUploadMsg_error: 'Fallo en el proceso !',
+      sizeLimit: 'Tamaño Máximo'
     }
   };
 
