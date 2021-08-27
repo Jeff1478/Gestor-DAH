@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '@auth0/auth0-angular';
+// import { AuthService } from '@auth0/auth0-angular';
 
 
 declare var $: any;
@@ -12,6 +12,6 @@ declare var $: any;
 export class AppComponent {
   title = 'Colecciones DAH';
 
-  constructor(public auth: AuthService) {}
+  /* constructor(public auth: AuthService) {} */
 }
 

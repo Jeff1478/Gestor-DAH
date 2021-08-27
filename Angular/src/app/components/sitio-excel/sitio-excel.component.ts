@@ -2,16 +2,19 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { ExporterService } from 'src/app/services/exporter';
-import { ContextoService } from 'src/app/services/contexto.service';
+import { SitioService } from 'src/app/services/sitio.service';
 import {MatButtonToggle} from '@angular/material/button-toggle';
 
 @Component({
-  selector: 'app-contexto-excel',
-  templateUrl: './contexto-excel.component.html',
-  styleUrls: ['./contexto-excel.component.css'],
-  providers: [ContextoService]
+  selector: 'app-sitio-excel',
+  templateUrl: './sitio-excel.component.html',
+  styleUrls: ['./sitio-excel.component.css'],
+  providers: [SitioService]
 })
-export class ContextoExcelComponent implements AfterViewInit {
+
+
+
+export class SitioExcelComponent implements AfterViewInit {
 
   dataSource!: MatTableDataSource<any>;
 
@@ -25,17 +28,17 @@ export class ContextoExcelComponent implements AfterViewInit {
 
   constructor(
     private excelService: ExporterService, 
-    private _contextoService: ContextoService
+    private _sitioService: SitioService
   ) { }
 
   ngOnInit(){
 
-    this._contextoService.getContextos().subscribe(
+    this._sitioService.getSitios().subscribe(
       response => { 
-      
-        if(response.contexto){
-          
-          this.dataSource = new MatTableDataSource(response.contexto);
+        
+        if(response.sitio){
+          console.log(response.sitio);
+          this.dataSource = new MatTableDataSource(response.sitio);
           this.dataSource.paginator = this.paginator;
         }
       },

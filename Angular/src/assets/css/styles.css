@@ -35,9 +35,26 @@ body {
     border-bottom: 1px solid #ccc;
     border-top: 5px solid rgb(249, 157, 28); 
 }
+
+
+
 .center{
     width: 95%;
     margin: 0px auto;
+}
+
+.dropdown-menu{
+    background-color: rgb(51, 51, 51);
+    text-emphasis-color: white;
+
+}
+
+.dropdown-divider{
+    color: white;
+}
+
+.dropdown-item{
+    color: white;
 }
 
 .clearfix{

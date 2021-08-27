@@ -64,6 +64,7 @@ import { MetalEditComponent } from './components/metal-edit/metal-edit.component
 import { MetalExcelComponent } from './components/metal-excel/metal-excel.component';
 import { SearchLiticoComponent } from './components/search-litico/search-litico.component';
 import { SearchMetalicoComponent } from './components/search-metalico/search-metalico.component';
+import { SitioExcelComponent } from './components/sitio-excel/sitio-excel.component';
 
 
 
@@ -113,6 +114,7 @@ import { SearchMetalicoComponent } from './components/search-metalico/search-met
     MetalExcelComponent,
     SearchLiticoComponent,
     SearchMetalicoComponent,
+    SitioExcelComponent,
    
     
   ],
@@ -136,9 +138,9 @@ import { SearchMetalicoComponent } from './components/search-metalico/search-met
     MatPaginatorModule,
     MatTableModule,
     AngularFileUploaderModule,
-     AuthModule.forRoot({
+      /*  AuthModule.forRoot({
       ...env.auth,
-    }), 
+    }),   */
     BrowserAnimationsModule,
   ],
   providers: [appRoutingProviders, ExporterService],

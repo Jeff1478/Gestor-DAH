@@ -1,10 +1,10 @@
-import packageInfo from '../../auth_config.json';
+// import packageInfo from '../../auth_config.json';
 
 export const environment = {
   production: true,
-  auth: {
+  /*  auth: {
     domain: packageInfo.domain,
     clientId : packageInfo.clientId,
     redirectUri: window.location.origin,
-  },
+  },  */
 };

@@ -33,10 +33,11 @@ import { MetalEditComponent } from "./components/metal-edit/metal-edit.component
 import { MetalExcelComponent } from "./components/metal-excel/metal-excel.component";
 import { SearchLiticoComponent } from "./components/search-litico/search-litico.component";
 import { SearchMetalicoComponent } from "./components/search-metalico/search-metalico.component";
+import { SitioExcelComponent } from "./components/sitio-excel/sitio-excel.component";
 
 //Array de rutas 
 const appRoutes: Routes = [
-    {path: '', component : LandingComponent},
+    {path: '', component : HomeComponent},
     {path: 'home', component : HomeComponent},
     {path: 'ceramica', component : CeramicaComponent},
     {path: 'contexto', component : ContextoComponent},
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     {path: 'contexto-excel', component: ContextoExcelComponent},
     {path: 'litica-excel', component: LiticaExcelComponent},
     {path: 'metal-excel', component: MetalExcelComponent},
+    {path: 'sitio-excel', component: SitioExcelComponent},
     {path: 'pagina-de-pruebas', component : PaginaComponent},
     {path: 'peliculas', component : PeliculasComponent},
     {path: 'pagina', component : PaginaComponent},
