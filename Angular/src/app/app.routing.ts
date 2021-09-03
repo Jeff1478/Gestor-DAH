@@ -4,7 +4,7 @@ import { Routes, RouterModule} from "@angular/router"
 
 //importa componentes a los que les voy a hacer un pagina exclusiva
 import { HomeComponent } from "./components/home/home.component";
-import { LandingComponent } from "./pages/landing/landing.component";
+
 import { CeramicaComponent } from "./components/ceramica/ceramica.component";
 import { ContextoComponent } from "./components/contexto/contexto.component";
 import { FormularioComponent } from "./components/formulario/formulario.component";
@@ -34,40 +34,44 @@ import { MetalExcelComponent } from "./components/metal-excel/metal-excel.compon
 import { SearchLiticoComponent } from "./components/search-litico/search-litico.component";
 import { SearchMetalicoComponent } from "./components/search-metalico/search-metalico.component";
 import { SitioExcelComponent } from "./components/sitio-excel/sitio-excel.component";
+import { LoginComponent } from "./components/login/login.component";
+import { RegistroComponent } from "./components/registro/registro.component";
+import {AuthGuard} from './auth.guard';
 
 //Array de rutas 
 const appRoutes: Routes = [
-    {path: '', component : HomeComponent},
-    {path: 'home', component : HomeComponent},
-    {path: 'ceramica', component : CeramicaComponent},
-    {path: 'contexto', component : ContextoComponent},
-    {path: 'formulario', component : FormularioComponent},
-    {path: 'contexto-excel', component: ContextoExcelComponent},
-    {path: 'litica-excel', component: LiticaExcelComponent},
-    {path: 'metal-excel', component: MetalExcelComponent},
-    {path: 'sitio-excel', component: SitioExcelComponent},
-    {path: 'pagina-de-pruebas', component : PaginaComponent},
-    {path: 'peliculas', component : PeliculasComponent},
-    {path: 'pagina', component : PaginaComponent},
-    {path: 'pag-lit', component : PagLitComponent},
-    {path: 'pag-met', component : PagMetComponent},
-    {path: 'ficha-contexto', component : FichaContextoComponent},
-    {path: 'ficha-litica', component: FichaLiticaComponent},
-    {path: 'ficha-metal', component: FichaMetalComponent},
-    {path: 'pagina/ceramic/:id', component: ArticleComponent},
-    {path: 'peliculas/contexto/:id', component: ContextoDetalleComponent},
-    {path: 'pag-lit/litico/:id', component: LiticaDetalleComponent},
-    {path: 'pag-met/metalico/:id', component: MetalDetalleComponent},
-    {path: 'reporte-publico/ceramic/:id', component: ReportePublicoComponent},
-    {path: 'pagina/crear', component: ArticleNewComponent},
-    {path: 'pagina/editar/:id', component: ArticleEditComponent},
-    {path: 'peliculas/editar/:id', component: ContextoEditComponent},
-    {path: 'pag-lit/editar/:id', component: LiticaEditComponent},
-    {path: 'pag-met/editar/:id', component: MetalEditComponent},
-    {path: 'buscar/:search', component : SearchComponent},
-    {path: 'buscarcontexto/:search',component : SearchContextoComponent},
-    {path: 'buscarlitico/:search', component: SearchLiticoComponent},
-    {path: 'buscarmetalico/:search', component: SearchMetalicoComponent},
+    {path: '', component: LoginComponent},
+    {path: 'registro', component: RegistroComponent},
+    {path: 'home', component : HomeComponent, canActivate: [AuthGuard]},
+    {path: 'ceramica', component : CeramicaComponent, canActivate: [AuthGuard]},
+    {path: 'contexto', component : ContextoComponent, canActivate: [AuthGuard]},
+    {path: 'formulario', component : FormularioComponent, canActivate: [AuthGuard]},
+    {path: 'contexto-excel', component: ContextoExcelComponent, canActivate: [AuthGuard]},
+    {path: 'litica-excel', component: LiticaExcelComponent, canActivate: [AuthGuard]},
+    {path: 'metal-excel', component: MetalExcelComponent, canActivate: [AuthGuard]},
+    {path: 'sitio-excel', component: SitioExcelComponent, canActivate: [AuthGuard]},
+    {path: 'pagina-de-pruebas', component : PaginaComponent, canActivate: [AuthGuard]},
+    {path: 'peliculas', component : PeliculasComponent, canActivate: [AuthGuard]},
+    {path: 'pagina', component : PaginaComponent, canActivate: [AuthGuard]},
+    {path: 'pag-lit', component : PagLitComponent, canActivate: [AuthGuard]},
+    {path: 'pag-met', component : PagMetComponent, canActivate: [AuthGuard]},
+    {path: 'ficha-contexto', component : FichaContextoComponent, canActivate: [AuthGuard]},
+    {path: 'ficha-litica', component: FichaLiticaComponent, canActivate: [AuthGuard]},
+    {path: 'ficha-metal', component: FichaMetalComponent, canActivate: [AuthGuard]},
+    {path: 'pagina/ceramic/:id', component: ArticleComponent, canActivate: [AuthGuard]},
+    {path: 'peliculas/contexto/:id', component: ContextoDetalleComponent, canActivate: [AuthGuard]},
+    {path: 'pag-lit/litico/:id', component: LiticaDetalleComponent, canActivate: [AuthGuard]},
+    {path: 'pag-met/metalico/:id', component: MetalDetalleComponent, canActivate: [AuthGuard]},
+    {path: 'reporte-publico/ceramic/:id', component: ReportePublicoComponent, canActivate: [AuthGuard]},
+    {path: 'pagina/crear', component: ArticleNewComponent, canActivate: [AuthGuard]},
+    {path: 'pagina/editar/:id', component: ArticleEditComponent, canActivate: [AuthGuard]},
+    {path: 'peliculas/editar/:id', component: ContextoEditComponent, canActivate: [AuthGuard]},
+    {path: 'pag-lit/editar/:id', component: LiticaEditComponent, canActivate: [AuthGuard]},
+    {path: 'pag-met/editar/:id', component: MetalEditComponent, canActivate: [AuthGuard]},
+    {path: 'buscar/:search', component : SearchComponent, canActivate: [AuthGuard]},
+    {path: 'buscarcontexto/:search',component : SearchContextoComponent, canActivate: [AuthGuard]},
+    {path: 'buscarlitico/:search', component: SearchLiticoComponent, canActivate: [AuthGuard]},
+    {path: 'buscarmetalico/:search', component: SearchMetalicoComponent, canActivate: [AuthGuard]},
     {path: '**', component : ErrorComponent}
 ];
 

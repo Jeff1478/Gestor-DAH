@@ -28,6 +28,7 @@
     "angular2-moment": "^1.9.0",
     "bootstrap": "^5.0.0-beta3",
     "dom-to-image": "^2.6.0",
+    "ejs-mate": "^3.0.0",
     "file-saver": "^2.0.5",
     "html2canvas": "^1.1.4",
     "jquery": "^3.6.0",

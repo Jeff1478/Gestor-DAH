@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { AuthModule } from '@auth0/auth0-angular';
-import { environment as env } from '../environments/environment';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MomentModule } from 'angular2-moment';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
@@ -65,8 +64,10 @@ import { MetalExcelComponent } from './components/metal-excel/metal-excel.compon
 import { SearchLiticoComponent } from './components/search-litico/search-litico.component';
 import { SearchMetalicoComponent } from './components/search-metalico/search-metalico.component';
 import { SitioExcelComponent } from './components/sitio-excel/sitio-excel.component';
-
-
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import {AuthGuard} from './auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -115,6 +116,8 @@ import { SitioExcelComponent } from './components/sitio-excel/sitio-excel.compon
     SearchLiticoComponent,
     SearchMetalicoComponent,
     SitioExcelComponent,
+    LoginComponent,
+    RegistroComponent,
    
     
   ],
@@ -143,7 +146,7 @@ import { SitioExcelComponent } from './components/sitio-excel/sitio-excel.compon
     }),   */
     BrowserAnimationsModule,
   ],
-  providers: [appRoutingProviders, ExporterService],
+  providers: [appRoutingProviders, ExporterService, AuthGuard, {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true}],
  
   bootstrap: [AppComponent]
 })
