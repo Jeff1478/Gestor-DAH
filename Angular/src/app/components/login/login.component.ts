@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('user', this.user.email);
           this.router.navigate(['/home']);
         },
-        err => console.log(err)
+        err => {console.log(err)
+        Swal.fire('Error', 'Usuario o contraseña incorrectos', 'error')}
       )
   }
 

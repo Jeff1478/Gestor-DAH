@@ -10,8 +10,10 @@ const userSchema = new Schema({
   timestamps: true
 });
 
-userSchema.methods.encryptPassword = (password) => {
-  return bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+userSchema.methods.encryptPassword = password => {
+  const salt = bcrypt.genSaltSync(8);
+  const hash = bcrypt.hashSync(password, salt);
+  return hash;
 };
 
 userSchema.methods.comparePassword= function (password) {

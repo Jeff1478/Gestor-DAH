@@ -26,7 +26,7 @@ export class RegistroComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']);
         },
         err => console.log(err)
       )

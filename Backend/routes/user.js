@@ -14,17 +14,24 @@ var multipart = require('connect-multiparty');
 router.post('/signup', async (req,res) => {
     const {email, password} = req.body;
     const newUser = new User({email,password});
+    newUser.password = await newUser.encryptPassword(password);
     await newUser.save();
     const token = jwt.sign({_id: newUser._id}, 'secretkey');
     res.status(200).json({token});
 }); 
+
+
 router.post('/signin', async (req,res)=> {
     const { email, password} = req.body;
     const user = await User.findOne({email})
     if (!user) return res.status(401).send('Correo no Existe!!');
-    if (user.password !== password) return res.status(401).send('Password Incorrecto!!');
-    const token = jwt.sign({_id: user._id}, 'secretkey');
-    res.status(200).json({token});
+    const match = await user.comparePassword(password);
+    //if (user.password !== password) return res.status(401).send('Password Incorrecto!!');
+    if (match){
+        const token = jwt.sign({_id: user._id}, 'secretkey');
+        res.status(200).json({token});
+    }
+   
 });
 
 router.get('/private', verifyToken, (req, res) => {
