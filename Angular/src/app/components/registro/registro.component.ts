@@ -11,7 +11,8 @@ export class RegistroComponent implements OnInit {
 
   user = {
     email: '',
-    password: ''
+    password: '',
+    nombre: '',
   }
 
   constructor(private authService: AuthService,
@@ -26,6 +27,7 @@ export class RegistroComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
+          localStorage.setItem('user', this.user.nombre);
           this.router.navigate(['/']);
         },
         err => console.log(err)

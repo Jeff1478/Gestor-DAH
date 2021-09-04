@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   user = {
     email: '',
-    password: ''
+    password: '',
+    nombre: ''
   }
 
   

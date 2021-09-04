@@ -15,13 +15,18 @@ export class HomeComponent implements OnInit {
   public ceramics: Ceramic[] = [];
   public usuario: any;
 
+ 
+
   constructor(
     private _ceramicService : CeramicService
   ) {
     this.title = 'Articulo del Mes';
    }
 
+
+
   ngOnInit() {
+   
     this.usuario = localStorage.getItem('user');
     console.log(this.usuario)
     this._ceramicService.getCeramics(true).subscribe(
