@@ -12,8 +12,8 @@ var multipart = require('connect-multiparty');
 
 // Rutas de prueba
 router.post('/signup', async (req,res) => {
-    const {email, password} = req.body;
-    const newUser = new User({email,password});
+    const {email, password, nombre} = req.body;
+    const newUser = new User({email,password,nombre});
     newUser.password = await newUser.encryptPassword(password);
     await newUser.save();
     const token = jwt.sign({_id: newUser._id}, 'secretkey');
@@ -24,12 +24,15 @@ router.post('/signup', async (req,res) => {
 router.post('/signin', async (req,res)=> {
     const { email, password} = req.body;
     const user = await User.findOne({email})
+  
     if (!user) return res.status(401).send('Correo no Existe!!');
+   
     const match = await user.comparePassword(password);
-    //if (user.password !== password) return res.status(401).send('Password Incorrecto!!');
+   // if (user.password !== password) return res.status(401).send('Password Incorrecto!!');
     if (match){
         const token = jwt.sign({_id: user._id}, 'secretkey');
         res.status(200).json({token});
+        
     }
    
 });
@@ -54,6 +57,8 @@ function verifyToken(req,res,next){
     req.userId = payload._id;
     next();
 }
+
+
  
 router.post('/datos-user',UserController.datosUsuario);
 router.get('/test-de-controlador',UserController.test);

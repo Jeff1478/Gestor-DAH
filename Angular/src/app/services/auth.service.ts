@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -32,5 +33,10 @@ export class AuthService {
   getToken() {
     return localStorage.getItem('token');
   }
+
+  search(searchString: any){
+    return this.http.get<any>(this.URL + '/search/' +searchString);
+}
+
 
 }

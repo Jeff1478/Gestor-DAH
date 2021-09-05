@@ -18,13 +18,18 @@ export class LoginComponent implements OnInit {
     nombre: ''
   }
 
+  public searchString!: any;
   
   
   constructor(private authService : AuthService, private router : Router) { }
 
+  
+
   ngOnInit() {
 
   }
+
+  
 
   signIn() {
     this.authService.signInUser(this.user)
@@ -32,20 +37,16 @@ export class LoginComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          localStorage.setItem('user', this.user.email);
+          localStorage.setItem('email', this.user.email);
           this.router.navigate(['/home']);
         },
         err => {console.log(err)
         Swal.fire('Error', 'Usuario o contraseña incorrectos', 'error')}
       )
+      
+      
   }
 
-
-       
-
-   
-  }
-
-
+}
 
    

@@ -99,7 +99,7 @@ var controller = {
 
         // Find or
         Usuario.find({ "$or": [
-            { "user": { "$regex": searchString, "$options": "i"}},
+            { "email": { "$regex": searchString, "$options": "i"}},
             { "password": { "$regex": searchString, "$options": "i"}}
         ]})
         //.sort([['date', 'descending']])
