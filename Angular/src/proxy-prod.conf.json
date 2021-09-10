@@ -1,0 +1,12 @@
+{
+  "/api/*": {
+  "target": "http://181.193.24.142:8090",
+  "secure": false,
+  "logLevel": "debug"
+},
+"/apu/*": {
+  "target": "http://181.193.24.142:8090",
+  "secure": false,
+  "changeOrigin": true
+}
+}

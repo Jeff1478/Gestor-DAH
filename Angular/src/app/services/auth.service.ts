@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
+import { HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -8,16 +9,24 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private URL = 'http://localhost:3900/apu';
+  private URL = 'http://181.193.24.142:3900/apu';
+
   
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { 
+   
+  }
+
+
 
   signUpUser(user: {}) {
     return this.http.post<any>(this.URL + '/signup', user);
   }
 
   signInUser(user: any) {
-    return this.http.post<any>(this.URL + '/signin', user);
+    const headers= new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*');
+    return this.http.post<any>(this.URL + '/signin', user, {'headers':headers});
   }
 
   loggedIn() {

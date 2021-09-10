@@ -1,3 +1,3 @@
 export var Globallit = {
-    url: 'http://localhost:3900/aplit/'
+    url: 'http://181.193.24.142:3900/aplit/'
 };

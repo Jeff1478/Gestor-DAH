@@ -14,23 +14,7 @@ const LocalStrategy = require('passport-local').Strategy;
 
 // Funciones Passport
 
-passport.use(new LocalStrategy(
-    function(username, password, done) {
-        if(username === "admin" && password === "admin"){
-            return done(null, username);
-        } else {
-            return done("unauthorized access", false);
-        }
-    }
-));
 
-passport.serializeUser(function(user, done) {
-    if(user) done(null, user);
-});
-  
-passport.deserializeUser(function(id, done) {
-    done(null, id);
-});
 
 // Ejecutar express (http)
 //var app = express();
@@ -86,6 +70,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'Access-Control-Allow-Private-Network');
     next();
 });
 

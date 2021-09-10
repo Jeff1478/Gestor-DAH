@@ -1,6 +1,12 @@
 {
     "/api/*": {
-      "target": "http://localhost:3900",
-      "pathRewrite": {"^/api" : ""}
+      "target": "http://181.193.24.142:3900",
+      "secure": false,
+      "logLevel": "debug"
+    },
+    "/apu/*": {
+      "target": "http://181.193.24.142:3900",
+      "secure": false,
+      "changeOrigin": true
     }
   }

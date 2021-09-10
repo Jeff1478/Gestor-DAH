@@ -1,3 +1,3 @@
 export var Globals = {
-    url: 'http://localhost:3900/apis/'
+    url: 'http://181.193.24.142:3900/apis/'
 };

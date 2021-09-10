@@ -4,6 +4,7 @@
     <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
   </mat-select>
 </mat-form-field> -->
+<app-header></app-header>
 
 <!-- Button trigger modal -->
 <button mat-raised-button color="primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -392,4 +393,7 @@
       <button mat-raised-button color="accent" (click)="exportAsXLSXFiltered()">Filtrado
         <mat-icon>find_in_page</mat-icon>
       </button>
+
+    
+
   </div>

@@ -6,9 +6,15 @@ var UserController = require('../controllers/user');
 const jwt = require ('jsonwebtoken');
 
 var router = express.Router();
-
+var app = express();
 var multipart = require('connect-multiparty');
-//var md_upload = multipart({ uploadDir: './upload/sitios'});
+
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 // Rutas de prueba
 router.post('/signup', async (req,res) => {

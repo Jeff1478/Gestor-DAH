@@ -1,3 +1,3 @@
 export var GlobalC = {
-    url: 'http://localhost:3900/ap/'
+    url: '181.193.24.142:3900/ap/'
 };
