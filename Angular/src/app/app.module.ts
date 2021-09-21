@@ -68,6 +68,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import {AuthGuard} from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { PagOriComponent } from './components/pag-ori/pag-ori.component';
+import { SitioComponent } from './components/sitio/sitio.component';
+import { SitioDetalleComponent } from './components/sitio-detalle/sitio-detalle.component';
 
 @NgModule({
   declarations: [
@@ -118,6 +121,9 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     SitioExcelComponent,
     LoginComponent,
     RegistroComponent,
+    PagOriComponent,
+    SitioComponent,
+    SitioDetalleComponent,
    
     
   ],

@@ -31,6 +31,10 @@ export class SitioService {
         return this._http.get(this.url+sitios);
     }
 
+    getSitio(sitioId: string):Observable<any>{
+        return this._http.get(this.url+'sitio/'+ sitioId);
+    }
+
    /*  getLitico(liticoId: string):Observable<any>{
         return this._http.get(this.url+'litico/'+ liticoId);
     }

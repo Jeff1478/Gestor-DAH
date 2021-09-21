@@ -1,0 +1,43 @@
+<div class="loading" *ngIf="!sitios">
+    Cargando....
+</div>
+
+<div class="loading" *ngIf="sitios && sitios.length == 0">
+    No hay sitios para mostrar
+</div>
+
+<div id="articles" *ngIf="sitios">
+    
+    <article class= "article-item" *ngFor ="let sitio of sitios">
+
+        <mat-card fxFlex ="50" class = "rest-card">
+
+            <mat-card-subtitle>Id : {{sitio._id}}</mat-card-subtitle>
+        <!-- <div class="image-wrap">
+            <img src="{{url + 'get-image/' + metalico.image}}" alt="{{metalico.title}}" *ngIf="metalico.image"/>
+            <img src="assets/images/default.png" alt="{{metalico.title}}" *ngIf="!metalico.image"/>
+        </div> -->
+
+        <mat-card-content>
+        <div align="left">
+        
+        <p>Num Caso : {{sitio.numero_caso}}</p>
+        <p>Nombre Sitio : {{sitio.nombre_sitio}}</p>
+        <p>Clave Sitio : {{sitio.clave_sitio}}</p>
+        <p>Hallazgo : {{sitio.hallazgo}}</p>
+        <p>Fecha Registro: {{sitio.fecha_registro | date}}</p>
+        <p>Registrador : {{sitio.registrador}}</p>
+        
+        <span class="date">
+            {{sitio.date | amLocale: 'es' | amTimeAgo }}
+        </span>
+          <a [routerLink]="['/pag-ori/sitio', sitio._id]">Leer más</a> 
+        </div>
+    </mat-card-content>
+</mat-card>
+        
+        <div class="clearfix"></div> 
+    </article>
+</div>
+
+

@@ -27,6 +27,7 @@ import { FichaLiticaComponent } from "./components/ficha-litica/ficha-litica.com
 import { LiticaDetalleComponent } from "./components/litica-detalle/litica-detalle.component";
 import { LiticaExcelComponent } from "./components/litica-excel/litica-excel.component";
 import { PagMetComponent } from "./components/pag-met/pag-met.component";
+
 import { FichaMetalComponent } from "./components/ficha-metal/ficha-metal.component";
 import { MetalDetalleComponent } from "./components/metal-detalle/metal-detalle.component";
 import { MetalEditComponent } from "./components/metal-edit/metal-edit.component";
@@ -36,7 +37,9 @@ import { SearchMetalicoComponent } from "./components/search-metalico/search-met
 import { SitioExcelComponent } from "./components/sitio-excel/sitio-excel.component";
 import { LoginComponent } from "./components/login/login.component";
 import { RegistroComponent } from "./components/registro/registro.component";
+import { PagOriComponent } from "./components/pag-ori/pag-ori.component";
 import {AuthGuard} from './auth.guard';
+import { SitioDetalleComponent } from "./components/sitio-detalle/sitio-detalle.component";
 
 //Array de rutas 
 const appRoutes: Routes = [
@@ -55,6 +58,7 @@ const appRoutes: Routes = [
     {path: 'pagina', component : PaginaComponent, canActivate: [AuthGuard]},
     {path: 'pag-lit', component : PagLitComponent, canActivate: [AuthGuard]},
     {path: 'pag-met', component : PagMetComponent, canActivate: [AuthGuard]},
+    {path: 'pag-ori', component : PagOriComponent, canActivate: [AuthGuard]},
     {path: 'ficha-contexto', component : FichaContextoComponent, canActivate: [AuthGuard]},
     {path: 'ficha-litica', component: FichaLiticaComponent, canActivate: [AuthGuard]},
     {path: 'ficha-metal', component: FichaMetalComponent, canActivate: [AuthGuard]},
@@ -62,6 +66,7 @@ const appRoutes: Routes = [
     {path: 'peliculas/contexto/:id', component: ContextoDetalleComponent, canActivate: [AuthGuard]},
     {path: 'pag-lit/litico/:id', component: LiticaDetalleComponent, canActivate: [AuthGuard]},
     {path: 'pag-met/metalico/:id', component: MetalDetalleComponent, canActivate: [AuthGuard]},
+    {path: 'pag-ori/sitio/:id', component: SitioDetalleComponent, canActivate: [AuthGuard]},
     {path: 'reporte-publico/ceramic/:id', component: ReportePublicoComponent, canActivate: [AuthGuard]},
     {path: 'pagina/crear', component: ArticleNewComponent, canActivate: [AuthGuard]},
     {path: 'pagina/editar/:id', component: ArticleEditComponent, canActivate: [AuthGuard]},

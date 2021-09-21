@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-// import { AuthService } from '@auth0/auth0-angular';
 
 
-declare var $: any;
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,5 @@ declare var $: any;
 export class AppComponent {
   title = 'Colecciones DAH';
 
-  /* constructor(public auth: AuthService) {} */
+  
 }
-

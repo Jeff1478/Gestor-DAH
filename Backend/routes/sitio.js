@@ -11,7 +11,7 @@ var md_upload = multipart({ uploadDir: './upload/sitios'});
 // Rutas de prueba
 router.post('/datos-sitio',SitioController.datosSitio);
 router.get('/test-de-controlador',SitioController.test);
-
+router.get('/sitio/:id', SitioController.getSitio);
 router.get('/sitios/:last?', SitioController.getSitios);
 
 

@@ -422,6 +422,16 @@ textarea{
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
 }
+
+.subheader-sitio{
+    text-align: center;
+    color: white;
+    background-color: rgb(30, 91, 131);
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
 .vertical-line{
     width: 1px; /* Line width */
     background-color: black; /* Line color */

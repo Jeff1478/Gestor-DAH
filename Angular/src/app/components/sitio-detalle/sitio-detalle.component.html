@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Datos Generales">
+
+    <div fxLayout="row" fxLayoutAlign="center stretch">
+        <mat-card fxFlex ="30" class = "descrip-card"> 
+                
+            <mat-card-subtitle>Identificación</mat-card-subtitle>
+    
+                <mat-card-content>
+
+                    <div align="left">
+                        <p><b>Nombre Monumento:</b> {{sitio.nombre_sitio}}</p>
+                        <p><b>Clave:</b> {{sitio.clave_sitio}}</p>
+                        <p><b>Código UCR: {{sitio.ucr ? "X": " "}}</b> </p>
+                        <p><b>Clave Antigua:</b> </p>             
+                    </div>
+               </mat-card-content>
+        </mat-card>
+
+        <mat-card fxFlex ="40" class = "rest-card">
+
+            <mat-card-subtitle>Tipo de Proyecto</mat-card-subtitle>
+
+                <mat-card-content>
+                <div align="left">  
+                    <p><b>Estudio Impacto Ambiental: </b> <b>Monitoreo Movimiento Tierras:</b></p>
+                    <p><b>Evaluación: {{sitio.evaluacion ? "X": " "}}</b> <b>Peritaje: </b> </p>
+                    <p><b>Excavación Aislada:</b> <b>Rescate: {{sitio.rescate ? "X": " "}}</b></p>
+                    <p><b>Inspección: {{sitio.inspeccion ? "X": " "}}</b> <b>Trabajo Final Graduación:</b></p>
+                    <p><b>Investigación Regional: {{sitio.regional ? "X": " "}}</b> </p>
+                    <p><b>Investigación SubRegional: {{sitio.subregional ? "X": " "}}</b> </p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center stretch">
+     
+
+        <mat-card fxFlex ="40" class = "rest-card">
+
+            <mat-card-subtitle>Tipo de Monumento</mat-card-subtitle>
+
+                <mat-card-content>
+                <div align="left">  
+                    <p><b>Abrigo, Cueva o Caverna: {{sitio.abrigo_cueva_caverna ? "X": " "}}  </b><b>Habitación: {{sitio.habitacion ? "X": " "}}</b> </p>
+                    <p><b>Arquitectónico: {{sitio.arquitectonico ? "X": " "}} </b><b>Materiales Dispersos:</b> </p>
+                    <p><b>Basurero: {{sitio.basurero ? "X": " "}}</b> <b>Petroglifos: {{sitio.petroglifo ? "X": " "}}</b></p>
+                    <p><b>Camino: {{sitio.camino ? "X": " "}}</b> <b>Salina: {{sitio.salina ? "X": " "}}</b></p>
+                    <p><b>Conchero: {{sitio.conchero ? "X": " "}}</b> <b>Taller Lítico: {{sitio.taller ? "X": " "}}</b> </p>
+                    <p><b>Funerario: {{sitio.funerario ? "X": " "}}</b></p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    </mat-tab>
+
+    <mat-tab label="Registro">Registro</mat-tab>
+    <mat-tab label="Localización">Localización</mat-tab>
+    <mat-tab label="Temporalidad">Temporalidad</mat-tab>
+    <mat-tab label="Trabajo Campo">Trabajo Campo</mat-tab>
+    <mat-tab label="Generalidades">Generalidades</mat-tab>
+    <mat-tab label="Documentación">Documentación</mat-tab>
+    <mat-tab label="Eight">Material Documental</mat-tab>
+  </mat-tab-group>
+  
+  
+  

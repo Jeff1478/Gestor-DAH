@@ -33,7 +33,7 @@ var controller = {
        
 
         if(last || last != undefined){
-            query.limit(5);
+            query.limit(10);
         }
 
         // Find
@@ -59,7 +59,39 @@ var controller = {
             });
 
         });
-    }
+    },
+
+    getSitio: (req, res) => {
+
+        // Recoger el id de la url
+        var sitioId = req.params.id;
+
+        // Comprobar que existe
+        if(!sitioId || sitioId == null){
+            return res.status(404).send({
+                status: 'error',
+                message: 'No existe el sitio !!!'
+            });
+        }
+
+        // Buscar el articulo
+        Sitio.findById(sitioId, (err, sitio) => {
+            
+            if(err || !sitio){
+                return res.status(404).send({
+                    status: 'error',
+                    message: 'No existe el sitio !!!'
+                });
+            }
+
+            // Devolverlo en json
+            return res.status(200).send({
+                status: 'success',
+                sitio
+            });
+
+        });
+    },
 
 }; // end controler
 
