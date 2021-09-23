@@ -6,7 +6,8 @@
     No hay sitios para mostrar
 </div>
 
-<div id="articles" *ngIf="sitios">
+
+<div id="articles" *ngIf="sitios">  
     
     <article class= "article-item" *ngFor ="let sitio of sitios">
 
@@ -34,10 +35,11 @@
           <a [routerLink]="['/pag-ori/sitio', sitio._id]">Leer más</a> 
         </div>
     </mat-card-content>
-</mat-card>
+        </mat-card>
         
         <div class="clearfix"></div> 
     </article>
 </div>
+
 
 

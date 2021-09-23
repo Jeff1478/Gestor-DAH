@@ -75,7 +75,24 @@ body {
     height: 60px;
     margin-top: -9px;
     margin-right: 10px;
-    animation: latir infinite 5s linear;
+    /* animation: latir infinite 5s linear; */
+}
+
+#logoori {
+    width: auto;
+    font-size: 30px;
+    /* float: left; */
+    margin-top: 35px;
+}
+
+#logoori img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 190px;
+    margin-top: -10px;
+    margin-right: 50px;
+    
 }
 
 @keyframes latir {

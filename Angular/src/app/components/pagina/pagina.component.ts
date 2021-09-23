@@ -22,7 +22,7 @@ export class PaginaComponent implements OnInit {
 
   ngOnInit() {
     
-    this._ceramicService.getCeramics().subscribe(
+    this._ceramicService.getCeramics(true).subscribe(
       response => { 
         
         if(response.ceramics){

@@ -12,7 +12,7 @@ export class Ceramic{
         public investigador:string,
         public pro_year:number,
         public etiqueta:string,
-        public fecha_exc:any,
+        public fecha_exc: string,
         public id_contexto:string,
         public contexto:string,
         public ubicacion:string,

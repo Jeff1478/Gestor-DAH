@@ -1,7 +1,14 @@
 <app-header></app-header>
-
+<a [routerLink]="['/pag-ori']" data-toggle="tooltip" data-placement="top" title="Listado Anterior" class = "btn btn-outline-warning">
+    <mat-icon>list</mat-icon>    
+</a> 
 <mat-tab-group mat-align-tabs="center">
-    <mat-tab label="Datos Generales">
+
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">info</mat-icon>
+            Datos Generales
+          </ng-template>
 
     <div fxLayout="row" fxLayoutAlign="center stretch">
         <mat-card fxFlex ="30" class = "descrip-card"> 
@@ -58,13 +65,315 @@
 
     </mat-tab>
 
-    <mat-tab label="Registro">Registro</mat-tab>
-    <mat-tab label="Localización">Localización</mat-tab>
-    <mat-tab label="Temporalidad">Temporalidad</mat-tab>
-    <mat-tab label="Trabajo Campo">Trabajo Campo</mat-tab>
-    <mat-tab label="Generalidades">Generalidades</mat-tab>
-    <mat-tab label="Documentación">Documentación</mat-tab>
-    <mat-tab label="Eight">Material Documental</mat-tab>
+    <mat-tab>
+
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">business_center</mat-icon>
+            Registro
+          </ng-template>
+
+        <div fxLayout="row" fxLayoutAlign="center stretch">
+            <mat-card fxFlex ="40" class = "rest-card">
+                    <mat-card-content>
+                    <div align="left">  
+                        <p><b>Registrador: </b> {{sitio.registrador}}</p>
+                        <hr/>
+                        <p><b>Institución</b></p>
+                       
+                        <p><b>Consultoría: {{sitio.consultoria ? "X": " "}}</b></p>
+                        <p><b>Fundación Anastacio Alfaro, MNCR:</b></p>
+                        <p><b>Instituto Costarricense Electricidad:</b></p>
+                        <p><b>Literatura:</b></p>
+                        <p><b>Museo Nacional de Costa Rica:  {{sitio.mncr ? "X": " "}}</b></p>
+                        <p><b>Parques Nacionales:</b></p>
+                        <p><b>Universidad de Costa Rica:</b></p>
+                        <hr/>
+                        <p><b>Hallazgo:  {{sitio.hallazgo}}</b> </p>
+                        <p><b>Fecha Registro: {{sitio.fecha_registro | date}}</b></p>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </mat-tab>
+    <mat-tab>
+
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">public</mat-icon>
+            Localización
+          </ng-template>
+
+        <div fxLayout="row" fxLayoutAlign="center stretch">
+            <mat-card fxFlex ="30" class = "descrip-card"> 
+                    <mat-card-content>
+                        <div align="left">
+                            <p><b>Territorial: </b></p>
+                            <hr/>
+                            <p><b>Provincia:</b> {{sitio.provincia}}</p>
+                            <p><b>Cantón:</b> {{sitio.canton}}</p>
+                            <p><b>Distrito:</b> {{sitio.distrito}}</p>
+                            <p><b>Hoja Cartográfica:</b> {{sitio.hoja_cartografica}}</p> 
+                            <p><b>Dirección:</b> {{sitio.direccion}}</p>
+                            <p><b>Región Arqueológica:</b> {{sitio.region}}</p>
+                            <p><b>Zona de Vida:</b> {{sitio.zona_vida}}</p>
+                            <p><b>Altitud:</b> {{sitio.altitud}} msnm</p>      
+                            <p><b>Territorio Indígena:</b></p>    
+                        </div>
+                   </mat-card-content>
+            </mat-card>
+    
+            <mat-card fxFlex ="40" class = "rest-card">
+                    <mat-card-content>
+                    <div align="left">  
+                        <p><b>Coordenadas:</b></p>
+                        <hr/>
+                        <p><b>Lambert O-E:</b> {{sitio.lambert_oe}}</p>
+                        <p><b>Lambert N-S:</b> {{sitio.lambert_ns}}</p>
+                        <p><b>CRTM05 N:</b> {{sitio.crtm05_n}}</p>
+                        <p><b>CRTM05 E:</b> {{sitio.crtm05_e}}</p>
+                        <p><b>Latitud:</b> {{sitio.grad_lat}}.{{sitio.min_lat}}.{{sitio.seg_lat}}</p>
+                        <p><b>Longitud:</b> {{sitio.grad_long}}.{{sitio.min_long}}.{{sitio.seg_log}}</p>
+                        <p><b>Localización GPS:  {{sitio.localizacion_gps ? "X": " "}}</b></p>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </mat-tab>
+    <mat-tab>
+
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">today</mat-icon>
+            Temporalidad
+          </ng-template>
+        
+        <div fxLayout="row" fxLayoutAlign="center stretch">
+            <mat-card fxFlex ="30" class = "descrip-card"> 
+                    <mat-card-content>
+                        <div align="left">
+                            <p><b>Composición:</b></p>
+                            <p><b>Período / Fase</b></p>
+                            <hr/>
+                            <p><b>10000 - 8000 aC</b> {{sitio.mil_dos_ocho_mi_ac ? "X": " "}}</p>
+                            <p><b>1350 - 1550 dC</b> {{sitio.mil_tres_cincuenta_mil_quinientos_dc ? "X": " "}}</p>
+                            <p><b>1500 - 500 aC</b> {{sitio.mil_quinientos_quinientos_ac ? "X": " "}}</p> 
+                            <p><b>1550 - 1821 dC</b> {{sitio.mil_quinientos_mil_ochocientos_dc ? "X": " "}}</p>
+                            <p><b>1821 - 1950 dC</b> {{sitio.mil_ochocientos_mil_novecientos_sc ? "X": " "}}</p>
+                            <p><b>300 - 800 dC</b> {{sitio.trecientos_ochocientos_dc ? "X": " "}}</p>
+                            <p><b>4000 - 1500 aC</b> {{sitio.cuatro_mil_mil_quinientos_ac ? "X": " "}}</p>      
+                            <p><b>500 - 300 dC:</b> {{sitio.quinientos_trecientos_dc ? "X": " "}}</p> 
+                            <p><b>800 - 1350 dC:</b> {{sitio.ochocientos_mil_tres_cincuenta_dc ? "X": " "}}</p>  
+                            <p><b>8000 - 4000 aC:</b> {{sitio.ocho_mil_cuatro_mil_ac ? "X": " "}}</p>   
+                        </div>
+                   </mat-card-content>
+            </mat-card>
+    
+            <mat-card fxFlex ="40" class = "rest-card">
+                    <mat-card-content>
+                    <div align="left">  
+                        <p><b>Datación</b></p>
+                        <hr/>
+                        <p><b>Lítica:</b> {{sitio.litica_dat ? "X": " "}}</p>
+                        <p><b>Radio Carbono:</b> {{sitio.radiocarbono_dat ? "X": " "}}</p>
+                        <p><b>Cerámica:</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <hr/>
+                        <p><b>Fechamiento Adiométrico:</b></p>
+                        <p><b>Otros:</b></p>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">filter_hdr</mat-icon>
+            Trabajo Campo
+          </ng-template>
+        <div fxLayout="row" fxLayoutAlign="center stretch">
+            <mat-card fxFlex ="30" class = "descrip-card"> 
+                    <mat-card-content>
+                        <div align="left">
+                            <p><b>Excavación</b> {{sitio.mil_dos_ocho_mi_ac ? "X": " "}}</p>
+                            <p><b>Levantamiento Cartográfico</b> {{sitio.mil_tres_cincuenta_mil_quinientos_dc ? "X": " "}}</p>
+                            <p><b>Recolección de Superficie</b> {{sitio.mil_quinientos_quinientos_ac ? "X": " "}}</p> 
+                            <p><b>Recorrido por Propiedad</b> {{sitio.mil_quinientos_mil_ochocientos_dc ? "X": " "}}</p>
+                            <p><b>Registro Fotográfico</b> {{sitio.mil_ochocientos_mil_novecientos_sc ? "X": " "}}</p>
+                            <p><b>Recolección de Superficie</b></p>
+                            <hr/>
+                            <p><b>Arbitraria</b> {{sitio.arbitratia ? "X": " "}} <b>Probabilistica</b> {{sitio.probabilistico ? "X": " "}}</p>
+                            <p><b>Levantamiento Cartográfico</b> {{sitio.levantamiento_cartografico}}</p>      
+                            <p><b>Excavación</b></p>
+                            <hr/>
+                            <p><b>Cala Estratatigrafica</b> {{sitio.quinientos_trecientos_dc ? "X": " "}}</p> 
+                            <p><b>Horizontal</b> {{sitio.ochocientos_mil_tres_cincuenta_dc ? "X": " "}}</p>  
+                            <p><b>Limpieza de Perfiles</b> {{sitio.ocho_mil_cuatro_mil_ac ? "X": " "}}</p>   
+                            <p><b>Limpieza de Rasgos</b> {{sitio.ocho_mil_cuatro_mil_ac ? "X": " "}}</p>
+                            <p><b>Sondeo</b> {{sitio.ocho_mil_cuatro_mil_ac ? "X": " "}}</p>
+                            <p><b>Trinchera</b> {{sitio.ocho_mil_cuatro_mil_ac ? "X": " "}}</p>
+                            
+                        </div>
+                   </mat-card-content>
+            </mat-card>
+    
+            <mat-card fxFlex ="40" class = "rest-card">
+                    <mat-card-content>
+                    <div align="left">  
+                        <p><b>Materiales Recuperados</b></p>
+                        <hr/>
+                        <p><b>Arcilla Cocida</b> {{sitio.litica_dat ? "X": " "}}</p>
+                        <p><b>Carbón</b> {{sitio.radiocarbono_dat ? "X": " "}} </p>
+                        <p><b>Cerámica</b> {{sitio.ceramica_dat ? "X": " "}} </p>
+                        <p><b>Cobre, Guanina o Pirita</b> {{sitio.ceramica_dat ? "X": " "}} </p>
+                        <p><b>Concha</b> {{sitio.ceramica_dat ? "X": " "}} </p>
+                        <p><b>Esferas</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Estatuaria</b> {{sitio.ceramica_dat ? "X": " "}} </p>
+                        <p><b>Fauna</b> {{sitio.ceramica_dat ? "X": " "}} </p>
+                        <p><b>Flora</b> {{sitio.ceramica_dat ? "X": " "}} </p>
+                        <p><b>Hierro</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Lapidario</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Lítica</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Loza</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Madera o Fibra</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Oro</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Piedra Verde</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Porcelana</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Resina</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Restos Humanos</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Tierra</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Vidrio</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">layers</mat-icon>
+            Generalidades
+          </ng-template>
+        <div fxLayout="row" fxLayoutAlign="center stretch">
+            <mat-card fxFlex ="30" class = "descrip-card"> 
+                    <mat-card-content>
+                        <div align="left">
+                            <p><b>Investigador</b></p>
+                            <p><b>Área Estimada</b> {{sitio.area_estimada}}</p>
+                            <p><b>Profundidad Depósitos</b></p> 
+                            <p><b>Causa Penal</b></p>
+                            <hr/>
+                            <p><b>Estado Conservación</b></p>
+                            <hr/>
+                            <p><b>Arado</b></p>
+                            <p><b>Biodeterioro</b></p>
+                            <p><b>Construcción</b></p>
+                            <p><b>Erosión</b></p>      
+                            <p><b>Huaqueado</b></p>
+                            <p><b>Mecanizado</b></p>
+                            <p><b>Meteorización</b></p> 
+                            <p><b>No Perturbado</b> </p>  
+                            <p><b>Pastoreo</b> </p>   
+                            <p><b>Sembrado</b> </p>
+                            
+                            
+                        </div>
+                   </mat-card-content>
+            </mat-card>
+    
+            <mat-card fxFlex ="40" class = "rest-card">
+                    <mat-card-content>
+                    <div align="left">  
+                        <p><b>Expediente Setena</b></p>
+                        <hr/>
+                        <p><b>Patrimonio Subacuático</b></p>
+                        <hr/>
+                        <p><b>Paisajes Culturales Sumergidos</b> </p>
+                        <p><b>Restos de Barcos y otros medios de transporte</b>  </p>
+                        <p><b>Ruinas de asentamientos humanos y su contexto</b>  </p>
+                        <p><b>Sitios Explotación Marina</b>  </p>
+                        <p><b>Vestigios de Cavernas Sumergidas</b>  </p>
+                        <p><b>Reserva Arqueológica</b> </p>
+                        <p><b>Río Cercano</b> </p>
+                        <p><b>Plano Catastro</b>  </p>
+                        
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">local_library</mat-icon>
+            Documentación
+          </ng-template>
+        <div fxLayout="row" fxLayoutAlign="center stretch">
+            <mat-card fxFlex ="50" class = "descrip-card"> 
+                    <mat-card-content>
+                        <div align="left">
+                            <p><b>Reporte</b></p>
+                            <hr/>
+                            <p><b>Catalogo de Sitios, UCR</b></p>
+                            <p><b>Hoja de Registro</b></p> 
+                            <p><b>Informe</b></p>
+                            <p><b>Monografía</b></p>
+                            <p><b>Publicación</b></p>
+                            <p><b>Tesis</b></p>
+                            <hr/>
+                            <p><b>Bibliografía</b></p>
+                            <hr/>
+                            <p><b>Material Gráfico Asociado</b></p>      
+                            <p><b>Artefactos</b></p>
+                            <p><b>Croquis</b></p>
+                            <p><b>Diarios de Campo</b></p> 
+                            <p><b>Dibujos</b> </p>  
+                            <p><b>Material Fotográfico</b> </p>   
+                            <p><b>Planos</b> </p>
+                            <p><b>Videos</b> </p>
+                            
+                        </div>
+                   </mat-card-content>
+            </mat-card>
+    
+            
+        </div>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">picture_as_pdf</mat-icon>
+            Material Documental
+          </ng-template>
+        <div fxLayout="row" fxLayoutAlign="center stretch">
+            <mat-card fxFlex ="50" class = "descrip-card"> 
+                    <mat-card-content>
+                        <div align="left">
+                            <p><b>Tipo de Información</b></p>
+                            <p><b>Ubicación</b></p>
+                            <p><b>Número</b></p> 
+                           
+                            <hr/>
+                            <p><b>Autor</b></p>
+                            <p><b>Título</b></p>
+                            <p><b>Contenido</b></p>
+                            <p><b>Observaciones</b></p>
+                            <p><b>Web</b></p>
+                            <p><b>Fecha Digitación</b></p>
+                            <hr/>
+                            <p><b>Fot Papel</b>Cantidad</p>
+                            <p><b>Fot Digital</b></p>
+                            <p><b>Diapositivas</b></p>
+                            <p><b>Negativos</b></p>      
+                            <p><b>Croquis</b></p>
+                            <p><b>Planos</b></p>
+                            
+                            <p><b>Programa CD</b> </p>  
+                            
+                            
+                        </div>
+                   </mat-card-content>
+            </mat-card>
+    
+           
+        </div>
+    </mat-tab>
   </mat-tab-group>
   
   
