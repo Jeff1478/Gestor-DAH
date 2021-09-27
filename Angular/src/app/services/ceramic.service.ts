@@ -38,6 +38,10 @@ export class CeramicService {
         return this._http.get(this.url+'search/'+searchString);
     }
 
+    searchComb(searchString2: string):Observable<any>{
+        return this._http.get(this.url+'searchComb/'+searchString2);
+    }
+
     create(ceramic: any):Observable<any>{
         let params = JSON.stringify(ceramic);
         let headers = new HttpHeaders().set('Content-Type', 'application/json');

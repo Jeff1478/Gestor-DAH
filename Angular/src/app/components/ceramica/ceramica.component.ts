@@ -52,7 +52,7 @@ export class CeramicaComponent implements OnInit {
       title:'',
       content:'',
       cod_mon:'',
-      num_artefacto: 0,
+      num_artefacto: '',
       num_caja: 0,
       proyecto:'',
       investigador:'',

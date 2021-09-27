@@ -4,12 +4,12 @@ import { Ceramic } from '../../models/ceramic';
 import { CeramicService } from 'src/app/services/ceramic.service';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'],
+  selector: 'app-search-comb-cera',
+  templateUrl: './search-comb-cera.component.html',
+  styleUrls: ['./search-comb-cera.component.css'],
   providers: [CeramicService]
 })
-export class SearchComponent implements OnInit {
+export class SearchCombCeraComponent implements OnInit {
 
   public ceramics: Ceramic[] = [];
 
@@ -17,14 +17,12 @@ export class SearchComponent implements OnInit {
     private _route: ActivatedRoute,
     private _router: Router,
     private _ceramicService: CeramicService
-  ) {
-
-   }
+  ) { }
 
   ngOnInit(){
     this._route.params.subscribe(params => {
       var search = params['search'];
-      this._ceramicService.search(search).subscribe(
+      this._ceramicService.searchComb(search).subscribe(
         response => {
          if(response.ceramics){
            this.ceramics = response.ceramics;
@@ -42,5 +40,13 @@ export class SearchComponent implements OnInit {
 
     
   }
+  }
 
-}
+
+
+
+
+
+
+
+

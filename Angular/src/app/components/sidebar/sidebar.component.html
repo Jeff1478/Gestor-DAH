@@ -18,7 +18,7 @@
          
      <div id="search" class="sidebar-item">
             <h3>Buscador</h3>
-            <p>Investigador ó Tipo de Pieza</p>
+            <p>Investigador,Tipo de Pieza,Núm Pieza ó Registrador</p>
             <form #searchForm="ngForm" (ngSubmit)= "goSearch()">
                 <input type="text" name="search" [(ngModel)] ="searchString"/>
                   <button class="btn btn-outline-success" type="submit">
@@ -26,6 +26,15 @@
             </form>
       </div> 
        
+      <div id="search" class="sidebar-item">
+        <h3>Buscador Combinado</h3>
+        <p>Registrador y Núm de Pieza</p>
+        <form #searchForm="ngForm" (ngSubmit)= "goSearchComb()">
+            <input type="text" name="search2" [(ngModel)] ="searchString2"/>
+              <button class="btn btn-outline-success" type="submit">
+                <mat-icon>search</mat-icon></button>
+        </form>
+  </div> 
 
           
         </div>

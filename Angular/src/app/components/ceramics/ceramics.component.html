@@ -5,6 +5,7 @@
 
 <div class="loading" *ngIf="ceramics && ceramics.length == 0">
     No hay artefactos para mostrar
+   
 </div>
 
 <div id="articles" *ngIf="ceramics">
@@ -23,4 +24,5 @@
         <a [routerLink]="['/pagina/ceramic', ceramic._id]">Leer más</a>
         <div class="clearfix"></div>
     </article>
+    
 </div>

@@ -40,6 +40,7 @@ import { RegistroComponent } from "./components/registro/registro.component";
 import { PagOriComponent } from "./components/pag-ori/pag-ori.component";
 import {AuthGuard} from './auth.guard';
 import { SitioDetalleComponent } from "./components/sitio-detalle/sitio-detalle.component";
+import { SearchCombCeraComponent } from "./components/search-comb-cera/search-comb-cera.component";
 
 //Array de rutas 
 const appRoutes: Routes = [
@@ -74,6 +75,7 @@ const appRoutes: Routes = [
     {path: 'pag-lit/editar/:id', component: LiticaEditComponent, canActivate: [AuthGuard]},
     {path: 'pag-met/editar/:id', component: MetalEditComponent, canActivate: [AuthGuard]},
     {path: 'buscar/:search', component : SearchComponent, canActivate: [AuthGuard]},
+    {path: 'buscarcombcera/:search', component : SearchCombCeraComponent, canActivate: [AuthGuard]},
     {path: 'buscarcontexto/:search',component : SearchContextoComponent, canActivate: [AuthGuard]},
     {path: 'buscarlitico/:search', component: SearchLiticoComponent, canActivate: [AuthGuard]},
     {path: 'buscarmetalico/:search', component: SearchMetalicoComponent, canActivate: [AuthGuard]},

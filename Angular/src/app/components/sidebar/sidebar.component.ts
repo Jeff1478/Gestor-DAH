@@ -16,6 +16,7 @@ import { MetalicoService } from 'src/app/services/metalico.service';
 export class SidebarComponent implements OnInit {
   
   public searchString!: string;
+  public searchString2!: string;
   @Input() titulo!: string;
 
   constructor(
@@ -32,6 +33,10 @@ export class SidebarComponent implements OnInit {
 
   goSearch(){
     this._router.navigate(['/buscar', this.searchString]);
+  }
+
+  goSearchComb(){
+    this._router.navigate(['/buscarcombcera', this.searchString2]);
   }
 
   goSearchCont(){

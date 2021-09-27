@@ -71,6 +71,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { PagOriComponent } from './components/pag-ori/pag-ori.component';
 import { SitioComponent } from './components/sitio/sitio.component';
 import { SitioDetalleComponent } from './components/sitio-detalle/sitio-detalle.component';
+import { SearchCombCeraComponent } from './components/search-comb-cera/search-comb-cera.component';
 
 @NgModule({
   declarations: [
@@ -124,6 +125,7 @@ import { SitioDetalleComponent } from './components/sitio-detalle/sitio-detalle.
     PagOriComponent,
     SitioComponent,
     SitioDetalleComponent,
+    SearchCombCeraComponent,
    
     
   ],
