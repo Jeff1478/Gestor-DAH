@@ -26,7 +26,7 @@
             </form>
       </div> 
        
-      <div id="search" class="sidebar-item">
+    
         <h3>Buscador Combinado</h3>
         <p>Registrador y Núm de Pieza</p>
         <form #searchForm="ngForm" (ngSubmit)= "goSearchComb()">
@@ -34,7 +34,7 @@
               <button class="btn btn-outline-success" type="submit">
                 <mat-icon>search</mat-icon></button>
         </form>
-  </div> 
+ 
 
           
         </div>
@@ -77,6 +77,16 @@
                 <mat-icon>search</mat-icon></button>
         </form>
       </div> 
+
+     
+        <h3>Buscador Combinado</h3>
+        <p>Registrador y Núm de Pieza</p>
+        <form #searchForm="ngForm" (ngSubmit)= "goSearchCombLit()">
+            <input type="text" name="search3" [(ngModel)] ="searchString3"/>
+              <button class="btn btn-outline-success" type="submit">
+                <mat-icon>search</mat-icon></button>
+        </form>
+  
   
         </div>
 
@@ -98,6 +108,14 @@
                 <mat-icon>search</mat-icon></button>
         </form>
       </div> 
+
+      <h3>Buscador Combinado</h3>
+        <p>Registrador y Núm de Pieza</p>
+        <form #searchForm="ngForm" (ngSubmit)= "goSearchCombMet()">
+            <input type="text" name="search3" [(ngModel)] ="searchString4"/>
+              <button class="btn btn-outline-success" type="submit">
+                <mat-icon>search</mat-icon></button>
+        </form>
   
         </div>
 

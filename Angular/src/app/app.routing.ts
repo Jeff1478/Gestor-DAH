@@ -41,6 +41,8 @@ import { PagOriComponent } from "./components/pag-ori/pag-ori.component";
 import {AuthGuard} from './auth.guard';
 import { SitioDetalleComponent } from "./components/sitio-detalle/sitio-detalle.component";
 import { SearchCombCeraComponent } from "./components/search-comb-cera/search-comb-cera.component";
+import { SearchComblitComponent } from "./components/search-comblit/search-comblit.component";
+import { SearchCombMetComponent } from "./components/search-comb-met/search-comb-met.component";
 
 //Array de rutas 
 const appRoutes: Routes = [
@@ -76,9 +78,12 @@ const appRoutes: Routes = [
     {path: 'pag-met/editar/:id', component: MetalEditComponent, canActivate: [AuthGuard]},
     {path: 'buscar/:search', component : SearchComponent, canActivate: [AuthGuard]},
     {path: 'buscarcombcera/:search', component : SearchCombCeraComponent, canActivate: [AuthGuard]},
+    {path: 'buscarcomblit/:search', component : SearchComblitComponent, canActivate: [AuthGuard]},
+    {path: 'buscarcombmet/:search', component : SearchCombMetComponent, canActivate: [AuthGuard]},
     {path: 'buscarcontexto/:search',component : SearchContextoComponent, canActivate: [AuthGuard]},
     {path: 'buscarlitico/:search', component: SearchLiticoComponent, canActivate: [AuthGuard]},
     {path: 'buscarmetalico/:search', component: SearchMetalicoComponent, canActivate: [AuthGuard]},
+  
     {path: '**', component : ErrorComponent}
 ];
 

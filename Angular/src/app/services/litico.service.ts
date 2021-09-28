@@ -39,6 +39,10 @@ export class LiticoService {
         return this._http.get(this.url+'search/'+searchString);
     }
 
+    searchComb(searchString2: string):Observable<any>{
+        return this._http.get(this.url+'searchCombLit/'+searchString2);
+    }
+
     create(litico: any):Observable<any>{
         let params = JSON.stringify(litico);
         let headers = new HttpHeaders().set('Content-Type', 'application/json');

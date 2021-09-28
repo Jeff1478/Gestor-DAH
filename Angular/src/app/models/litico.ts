@@ -6,7 +6,7 @@ export class Litico{
         public date:any,
         public content:string,
         public cod_mon:string,
-        public num_artefacto:number,
+        public num_artefacto:string,
         public num_caja:number,
         public proyecto:string,
         public investigador:string,

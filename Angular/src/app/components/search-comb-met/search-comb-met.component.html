@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class= "center">
+    <section id="content">
+        <h1 class="subheader-metalico">Artefactos Encontrados: {{metalicos.length}}</h1>
+
+        <a [routerLink]="['/pag-met']" data-toggle="tooltip" data-placement="top" title="Listado Anterior" class = "btn btn-outline-warning">
+            <mat-icon>list</mat-icon>    
+        </a>
+
+        <app-metalico [metalicos]= "metalicos">
+            
+        </app-metalico>
+
+         
+
+    </section>
+    <app-sidebar></app-sidebar>
+</div>
+
+

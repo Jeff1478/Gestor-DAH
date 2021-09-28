@@ -17,6 +17,8 @@ export class SidebarComponent implements OnInit {
   
   public searchString!: string;
   public searchString2!: string;
+  public searchString3!: string;
+  public searchString4!: string;
   @Input() titulo!: string;
 
   constructor(
@@ -47,7 +49,15 @@ export class SidebarComponent implements OnInit {
     this._router.navigate(['/buscarlitico', this.searchString]);
   }
 
+  goSearchCombLit(){
+    this._router.navigate(['/buscarcomblit', this.searchString3]);
+  }
+
   goSearchMet(){
     this._router.navigate(['/buscarmetalico', this.searchString]);
+  }
+
+  goSearchCombMet(){
+    this._router.navigate(['/buscarcombmet', this.searchString4]);
   }
 }

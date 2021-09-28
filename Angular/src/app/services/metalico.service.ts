@@ -39,6 +39,10 @@ export class MetalicoService {
         return this._http.get(this.url+'search/'+searchString);
     }
 
+    searchComb(searchString2: string):Observable<any>{
+        return this._http.get(this.url+'searchCombMet/'+searchString2);
+    }
+
     create(metalico: any):Observable<any>{
         let params = JSON.stringify(metalico);
         let headers = new HttpHeaders().set('Content-Type', 'application/json');

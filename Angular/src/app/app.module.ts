@@ -72,6 +72,8 @@ import { PagOriComponent } from './components/pag-ori/pag-ori.component';
 import { SitioComponent } from './components/sitio/sitio.component';
 import { SitioDetalleComponent } from './components/sitio-detalle/sitio-detalle.component';
 import { SearchCombCeraComponent } from './components/search-comb-cera/search-comb-cera.component';
+import { SearchComblitComponent } from './components/search-comblit/search-comblit.component';
+import { SearchCombMetComponent } from './components/search-comb-met/search-comb-met.component';
 
 @NgModule({
   declarations: [
@@ -126,6 +128,8 @@ import { SearchCombCeraComponent } from './components/search-comb-cera/search-co
     SitioComponent,
     SitioDetalleComponent,
     SearchCombCeraComponent,
+    SearchComblitComponent,
+    SearchCombMetComponent,
    
     
   ],
