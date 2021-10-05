@@ -148,7 +148,7 @@ import { SearchSitioComponent } from './components/search-sitio/search-sitio.com
     NgbModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDNPWGHB26C83jeTiqIGM2kFqnpMAwxCeo'
+      
     }),
     FormsModule,
     MatCardModule,
