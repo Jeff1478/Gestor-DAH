@@ -217,6 +217,9 @@ var controller = {
     },
 
 
+   
+
+
     getCeramic: (req, res) => {
 
         // Recoger el id de la url

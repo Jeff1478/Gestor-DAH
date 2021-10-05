@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import {AgmCoreModule} from '@agm/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -74,6 +74,9 @@ import { SitioDetalleComponent } from './components/sitio-detalle/sitio-detalle.
 import { SearchCombCeraComponent } from './components/search-comb-cera/search-comb-cera.component';
 import { SearchComblitComponent } from './components/search-comblit/search-comblit.component';
 import { SearchCombMetComponent } from './components/search-comb-met/search-comb-met.component';
+import { FichaOrigenesComponent } from './components/ficha-origenes/ficha-origenes.component';
+import { MapaOrigenesComponent } from './components/mapa-origenes/mapa-origenes.component';
+import { SearchSitioComponent } from './components/search-sitio/search-sitio.component';
 
 @NgModule({
   declarations: [
@@ -130,6 +133,9 @@ import { SearchCombMetComponent } from './components/search-comb-met/search-comb
     SearchCombCeraComponent,
     SearchComblitComponent,
     SearchCombMetComponent,
+    FichaOrigenesComponent,
+    MapaOrigenesComponent,
+    SearchSitioComponent,
    
     
   ],
@@ -141,6 +147,9 @@ import { SearchCombMetComponent } from './components/search-comb-met/search-comb
     MatTabsModule,
     NgbModule,
     FlexLayoutModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDNPWGHB26C83jeTiqIGM2kFqnpMAwxCeo'
+    }),
     FormsModule,
     MatCardModule,
     ReactiveFormsModule,

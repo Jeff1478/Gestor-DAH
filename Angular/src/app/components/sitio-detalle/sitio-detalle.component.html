@@ -21,7 +21,7 @@
                         <p><b>Nombre Monumento:</b> {{sitio.nombre_sitio}}</p>
                         <p><b>Clave:</b> {{sitio.clave_sitio}}</p>
                         <p><b>Código UCR: {{sitio.ucr ? "X": " "}}</b> </p>
-                        <p><b>Clave Antigua:</b> </p>             
+                        <p><b>Clave Antigua: {{sitio.clave_antigua}}</b> </p>             
                     </div>
                </mat-card-content>
         </mat-card>
@@ -32,10 +32,14 @@
 
                 <mat-card-content>
                 <div align="left">  
-                    <p><b>Estudio Impacto Ambiental: </b> <b>Monitoreo Movimiento Tierras:</b></p>
-                    <p><b>Evaluación: {{sitio.evaluacion ? "X": " "}}</b> <b>Peritaje: </b> </p>
-                    <p><b>Excavación Aislada:</b> <b>Rescate: {{sitio.rescate ? "X": " "}}</b></p>
-                    <p><b>Inspección: {{sitio.inspeccion ? "X": " "}}</b> <b>Trabajo Final Graduación:</b></p>
+                    <p><b>Estudio Impacto Ambiental: </b></p>
+                    <p><b>Monitoreo Movimiento Tierras: {{sitio.monitoreo_mov_tierras ? "X": " "}}</b></p>
+                    <p><b>Evaluación: {{sitio.evaluacion ? "X": " "}}</b></p>
+                    <p><b>Peritaje: {{sitio.peritaje ? "X": " "}}</b></p>
+                    <p><b>Excavación Aislada: {{sitio.excavacion ? "X": " "}}</b></p>
+                    <p><b>Rescate: {{sitio.rescate ? "X": " "}}</b></p>
+                    <p><b>Inspección: {{sitio.inspeccion ? "X": " "}}</b></p>
+                    <p><b>Trabajo Final Graduación: {{sitio.trabajo_graduacion  ? "X": " "}}</b></p>
                     <p><b>Investigación Regional: {{sitio.regional ? "X": " "}}</b> </p>
                     <p><b>Investigación SubRegional: {{sitio.subregional ? "X": " "}}</b> </p>
                 </div>
@@ -52,11 +56,16 @@
 
                 <mat-card-content>
                 <div align="left">  
-                    <p><b>Abrigo, Cueva o Caverna: {{sitio.abrigo_cueva_caverna ? "X": " "}}  </b><b>Habitación: {{sitio.habitacion ? "X": " "}}</b> </p>
-                    <p><b>Arquitectónico: {{sitio.arquitectonico ? "X": " "}} </b><b>Materiales Dispersos:</b> </p>
-                    <p><b>Basurero: {{sitio.basurero ? "X": " "}}</b> <b>Petroglifos: {{sitio.petroglifo ? "X": " "}}</b></p>
-                    <p><b>Camino: {{sitio.camino ? "X": " "}}</b> <b>Salina: {{sitio.salina ? "X": " "}}</b></p>
-                    <p><b>Conchero: {{sitio.conchero ? "X": " "}}</b> <b>Taller Lítico: {{sitio.taller ? "X": " "}}</b> </p>
+                    <p><b>Abrigo, Cueva o Caverna: {{sitio.abrigo_cueva_caverna ? "X": " "}}</b></p>
+                    <p><b>Habitación: {{sitio.habitacion ? "X": " "}}</b></p> 
+                    <p><b>Arquitectónico: {{sitio.arquitectonico ? "X": " "}}</b></p>
+                    <p><b>Materiales Dispersos: {{sitio.materiales_dispersos ? "X": " "}}</b></p>
+                    <p><b>Basurero: {{sitio.basurero ? "X": " "}}</b></p>
+                    <p><b>Petroglifos: {{sitio.petroglifo ? "X": " "}}</b></p>
+                    <p><b>Camino: {{sitio.camino ? "X": " "}}</b></p>
+                    <p><b>Salina: {{sitio.salina ? "X": " "}}</b></p>
+                    <p><b>Conchero: {{sitio.conchero ? "X": " "}}</b></p>
+                    <p><b>Taller Lítico: {{sitio.taller ? "X": " "}}</b> </p>
                     <p><b>Funerario: {{sitio.funerario ? "X": " "}}</b></p>
                 </div>
             </mat-card-content>
@@ -76,17 +85,16 @@
             <mat-card fxFlex ="40" class = "rest-card">
                     <mat-card-content>
                     <div align="left">  
-                        <p><b>Registrador: </b> {{sitio.registrador}}</p>
+                        <p><b>Registrador:</b>  {{sitio.registrador}}</p>
                         <hr/>
-                        <p><b>Institución</b></p>
-                       
                         <p><b>Consultoría: {{sitio.consultoria ? "X": " "}}</b></p>
-                        <p><b>Fundación Anastacio Alfaro, MNCR:</b></p>
-                        <p><b>Instituto Costarricense Electricidad:</b></p>
+                        <p><b>Fundación Anastacio Alfaro, MNCR: {{sitio.fundacion  ? "X": " "}}</b></p>
+                        
+                        <p><b>Instituto Costarricense Electricidad: {{sitio.ice  ? "X": " "}}</b></p>
                         <p><b>Literatura:</b></p>
                         <p><b>Museo Nacional de Costa Rica:  {{sitio.mncr ? "X": " "}}</b></p>
-                        <p><b>Parques Nacionales:</b></p>
-                        <p><b>Universidad de Costa Rica:</b></p>
+                        <p><b>Parques Nacionales: {{sitio.parques_nacionales ? "X": " "}}</b></p>
+                        <p><b>Universidad de Costa Rica: {{sitio.ucr ? "X": " "}} </b></p>
                         <hr/>
                         <p><b>Hallazgo:  {{sitio.hallazgo}}</b> </p>
                         <p><b>Fecha Registro: {{sitio.fecha_registro | date}}</b></p>
@@ -106,7 +114,7 @@
             <mat-card fxFlex ="30" class = "descrip-card"> 
                     <mat-card-content>
                         <div align="left">
-                            <p><b>Territorial: </b></p>
+                            <p style="color:blue;"><b>Territorial</b></p>
                             <hr/>
                             <p><b>Provincia:</b> {{sitio.provincia}}</p>
                             <p><b>Cantón:</b> {{sitio.canton}}</p>
@@ -116,7 +124,7 @@
                             <p><b>Región Arqueológica:</b> {{sitio.region}}</p>
                             <p><b>Zona de Vida:</b> {{sitio.zona_vida}}</p>
                             <p><b>Altitud:</b> {{sitio.altitud}} msnm</p>      
-                            <p><b>Territorio Indígena:</b></p>    
+                            <p><b>Territorio Indígena:</b> {{sitio.territorio_indigena ? "X": " "}}</p>    
                         </div>
                    </mat-card-content>
             </mat-card>
@@ -124,7 +132,7 @@
             <mat-card fxFlex ="40" class = "rest-card">
                     <mat-card-content>
                     <div align="left">  
-                        <p><b>Coordenadas:</b></p>
+                        <p style="color:blue;"><b>Coordenadas:</b></p>
                         <hr/>
                         <p><b>Lambert O-E:</b> {{sitio.lambert_oe}}</p>
                         <p><b>Lambert N-S:</b> {{sitio.lambert_ns}}</p>
@@ -151,15 +159,15 @@
                     <mat-card-content>
                         <div align="left">
                             <p><b>Composición:</b></p>
-                            <p><b>Período / Fase</b></p>
+                            <p style="color:blue;"><b>Período / Fase</b></p>
                             <hr/>
-                            <p><b>10000 - 8000 aC</b> {{sitio.mil_dos_ocho_mi_ac ? "X": " "}}</p>
-                            <p><b>1350 - 1550 dC</b> {{sitio.mil_tres_cincuenta_mil_quinientos_dc ? "X": " "}}</p>
-                            <p><b>1500 - 500 aC</b> {{sitio.mil_quinientos_quinientos_ac ? "X": " "}}</p> 
-                            <p><b>1550 - 1821 dC</b> {{sitio.mil_quinientos_mil_ochocientos_dc ? "X": " "}}</p>
-                            <p><b>1821 - 1950 dC</b> {{sitio.mil_ochocientos_mil_novecientos_sc ? "X": " "}}</p>
-                            <p><b>300 - 800 dC</b> {{sitio.trecientos_ochocientos_dc ? "X": " "}}</p>
-                            <p><b>4000 - 1500 aC</b> {{sitio.cuatro_mil_mil_quinientos_ac ? "X": " "}}</p>      
+                            <p><b>10000 - 8000 aC : </b> {{sitio.mil_dos_ocho_mi_ac ? "X": " "}}</p>
+                            <p><b>1350 - 1550 dC : </b> {{sitio.mil_tres_cincuenta_mil_quinientos_dc ? "X": " "}}</p>
+                            <p><b>1500 - 500 aC : </b> {{sitio.mil_quinientos_quinientos_ac ? "X": " "}}</p> 
+                            <p><b>1550 - 1821 dC : </b> {{sitio.mil_quinientos_mil_ochocientos_dc ? "X": " "}}</p>
+                            <p><b>1821 - 1950 dC : </b> {{sitio.mil_ochocientos_mil_novecientos_sc ? "X": " "}}</p>
+                            <p><b>300 - 800 dC : </b> {{sitio.trecientos_ochocientos_dc ? "X": " "}}</p>
+                            <p><b>4000 - 1500 aC : </b> {{sitio.cuatro_mil_mil_quinientos_ac ? "X": " "}}</p>      
                             <p><b>500 - 300 dC:</b> {{sitio.quinientos_trecientos_dc ? "X": " "}}</p> 
                             <p><b>800 - 1350 dC:</b> {{sitio.ochocientos_mil_tres_cincuenta_dc ? "X": " "}}</p>  
                             <p><b>8000 - 4000 aC:</b> {{sitio.ocho_mil_cuatro_mil_ac ? "X": " "}}</p>   
@@ -170,14 +178,14 @@
             <mat-card fxFlex ="40" class = "rest-card">
                     <mat-card-content>
                     <div align="left">  
-                        <p><b>Datación</b></p>
+                        <p  style="color:blue;"><b>Datación</b></p>
                         <hr/>
                         <p><b>Lítica:</b> {{sitio.litica_dat ? "X": " "}}</p>
                         <p><b>Radio Carbono:</b> {{sitio.radiocarbono_dat ? "X": " "}}</p>
                         <p><b>Cerámica:</b> {{sitio.ceramica_dat ? "X": " "}}</p>
                         <hr/>
-                        <p><b>Fechamiento Adiométrico:</b></p>
-                        <p><b>Otros:</b></p>
+                        <p><b>Fechamiento Adiométrico:</b> {{sitio.fechamiento_adiometrico}}</p>
+                        <p><b>Otros:</b> {{sitio.otros_da}}</p>
                     </div>
                 </mat-card-content>
             </mat-card>
@@ -193,23 +201,24 @@
             <mat-card fxFlex ="30" class = "descrip-card"> 
                     <mat-card-content>
                         <div align="left">
-                            <p><b>Excavación</b> {{sitio.mil_dos_ocho_mi_ac ? "X": " "}}</p>
-                            <p><b>Levantamiento Cartográfico</b> {{sitio.mil_tres_cincuenta_mil_quinientos_dc ? "X": " "}}</p>
-                            <p><b>Recolección de Superficie</b> {{sitio.mil_quinientos_quinientos_ac ? "X": " "}}</p> 
-                            <p><b>Recorrido por Propiedad</b> {{sitio.mil_quinientos_mil_ochocientos_dc ? "X": " "}}</p>
-                            <p><b>Registro Fotográfico</b> {{sitio.mil_ochocientos_mil_novecientos_sc ? "X": " "}}</p>
-                            <p><b>Recolección de Superficie</b></p>
+                            <p><b>Excavación :</b> {{sitio.excavacion_aislada ? "X": " "}}</p>
+                            <p><b>Levantamiento Cartográfico :</b> {{sitio.lev_cartografico ? "X": " "}}</p>
+                            <p><b>Recolección de Superficie :</b> {{sitio.rec_superficie ? "X": " "}}</p> 
+                            <p><b>Recorrido por Propiedad :</b> {{sitio.recorrido_propiedad ? "X": " "}}</p>
+                            <p><b>Registro Fotográfico :</b> {{sitio.registro_fotografico ? "X": " "}}</p>
+                            
                             <hr/>
-                            <p><b>Arbitraria</b> {{sitio.arbitratia ? "X": " "}} <b>Probabilistica</b> {{sitio.probabilistico ? "X": " "}}</p>
-                            <p><b>Levantamiento Cartográfico</b> {{sitio.levantamiento_cartografico}}</p>      
-                            <p><b>Excavación</b></p>
+                            <p><b>Arbitraria :</b> {{sitio.arbitratia ? "X": " "}} </p>
+                            <p><b>Probabilistica</b> {{sitio.probabilistico ? "X": " "}}</p>
+                            <p><b>Levantamiento Cartográfico :</b> {{sitio.levantamiento_cartografico}}</p>      
+                            
                             <hr/>
-                            <p><b>Cala Estratatigrafica</b> {{sitio.quinientos_trecientos_dc ? "X": " "}}</p> 
-                            <p><b>Horizontal</b> {{sitio.ochocientos_mil_tres_cincuenta_dc ? "X": " "}}</p>  
-                            <p><b>Limpieza de Perfiles</b> {{sitio.ocho_mil_cuatro_mil_ac ? "X": " "}}</p>   
-                            <p><b>Limpieza de Rasgos</b> {{sitio.ocho_mil_cuatro_mil_ac ? "X": " "}}</p>
-                            <p><b>Sondeo</b> {{sitio.ocho_mil_cuatro_mil_ac ? "X": " "}}</p>
-                            <p><b>Trinchera</b> {{sitio.ocho_mil_cuatro_mil_ac ? "X": " "}}</p>
+                            <p><b>Cala Estratatigrafica</b> {{sitio.cala_estratatigrafica ? "X": " "}}</p> 
+                            <p><b>Horizontal</b> {{sitio.horizontal ? "X": " "}}</p>  
+                            <p><b>Limpieza de Perfiles</b> {{sitio.limpieza_perfiles ? "X": " "}}</p>   
+                            <p><b>Limpieza de Rasgos</b> {{sitio.limpieza_razgos ? "X": " "}}</p>
+                            <p><b>Sondeo</b> {{sitio.sondeo ? "X": " "}}</p>
+                            <p><b>Trinchera</b> {{sitio.trinchera ? "X": " "}}</p>
                             
                         </div>
                    </mat-card-content>
@@ -218,29 +227,29 @@
             <mat-card fxFlex ="40" class = "rest-card">
                     <mat-card-content>
                     <div align="left">  
-                        <p><b>Materiales Recuperados</b></p>
+                        <p style="color:blue;"><b>Materiales Recuperados</b></p>
                         <hr/>
-                        <p><b>Arcilla Cocida</b> {{sitio.litica_dat ? "X": " "}}</p>
-                        <p><b>Carbón</b> {{sitio.radiocarbono_dat ? "X": " "}} </p>
-                        <p><b>Cerámica</b> {{sitio.ceramica_dat ? "X": " "}} </p>
-                        <p><b>Cobre, Guanina o Pirita</b> {{sitio.ceramica_dat ? "X": " "}} </p>
-                        <p><b>Concha</b> {{sitio.ceramica_dat ? "X": " "}} </p>
-                        <p><b>Esferas</b> {{sitio.ceramica_dat ? "X": " "}}</p>
-                        <p><b>Estatuaria</b> {{sitio.ceramica_dat ? "X": " "}} </p>
-                        <p><b>Fauna</b> {{sitio.ceramica_dat ? "X": " "}} </p>
-                        <p><b>Flora</b> {{sitio.ceramica_dat ? "X": " "}} </p>
-                        <p><b>Hierro</b> {{sitio.ceramica_dat ? "X": " "}}</p>
-                        <p><b>Lapidario</b> {{sitio.ceramica_dat ? "X": " "}}</p>
-                        <p><b>Lítica</b> {{sitio.ceramica_dat ? "X": " "}}</p>
-                        <p><b>Loza</b> {{sitio.ceramica_dat ? "X": " "}}</p>
-                        <p><b>Madera o Fibra</b> {{sitio.ceramica_dat ? "X": " "}}</p>
-                        <p><b>Oro</b> {{sitio.ceramica_dat ? "X": " "}}</p>
-                        <p><b>Piedra Verde</b> {{sitio.ceramica_dat ? "X": " "}}</p>
-                        <p><b>Porcelana</b> {{sitio.ceramica_dat ? "X": " "}}</p>
-                        <p><b>Resina</b> {{sitio.ceramica_dat ? "X": " "}}</p>
-                        <p><b>Restos Humanos</b> {{sitio.ceramica_dat ? "X": " "}}</p>
-                        <p><b>Tierra</b> {{sitio.ceramica_dat ? "X": " "}}</p>
-                        <p><b>Vidrio</b> {{sitio.ceramica_dat ? "X": " "}}</p>
+                        <p><b>Arcilla Cocida</b> {{sitio.arcilla_cocida ? "X": " "}}</p>
+                        <p><b>Carbón</b> {{sitio.carbon ? "X": " "}} </p>
+                        <p><b>Cerámica</b> {{sitio.ceramica ? "X": " "}} </p>
+                        <p><b>Cobre, Guanina o Pirita</b> {{sitio.cobre ? "X": " "}} </p>
+                        <p><b>Concha</b> {{sitio.concha ? "X": " "}} </p>
+                        <p><b>Esferas</b> {{sitio.esferas ? "X": " "}}</p>
+                        <p><b>Estatuaria</b> {{sitio.estatuaria ? "X": " "}} </p>
+                        <p><b>Fauna</b> {{sitio.fauna ? "X": " "}} </p>
+                        <p><b>Flora</b> {{sitio.flora ? "X": " "}} </p>
+                        <p><b>Hierro</b> {{sitio.hierro ? "X": " "}}</p>
+                        <p><b>Lapidario</b> {{sitio.lapidaria ? "X": " "}}</p>
+                        <p><b>Lítica</b> {{sitio.litica ? "X": " "}}</p>
+                        <p><b>Loza</b> {{sitio.loza ? "X": " "}}</p>
+                        <p><b>Madera o Fibra</b> {{sitio.madera_fibra ? "X": " "}}</p>
+                        <p><b>Oro</b> {{sitio.oro ? "X": " "}}</p>
+                        <p><b>Piedra Verde</b> {{sitio.jade ? "X": " "}}</p>
+                        <p><b>Porcelana</b> {{sitio.porcelana ? "X": " "}}</p>
+                        <p><b>Resina</b> {{sitio.resina ? "X": " "}}</p>
+                        <p><b>Restos Humanos</b> {{sitio.huesos_humanos ? "X": " "}}</p>
+                        <p><b>Tierra</b> {{sitio.tierra ? "X": " "}}</p>
+                        <p><b>Vidrio</b> {{sitio.vidrio ? "X": " "}}</p>
                     </div>
                 </mat-card-content>
             </mat-card>
@@ -256,23 +265,23 @@
             <mat-card fxFlex ="30" class = "descrip-card"> 
                     <mat-card-content>
                         <div align="left">
-                            <p><b>Investigador</b></p>
-                            <p><b>Área Estimada</b> {{sitio.area_estimada}}</p>
-                            <p><b>Profundidad Depósitos</b></p> 
-                            <p><b>Causa Penal</b></p>
+                            <p><b>Investigador :</b>{{sitio.investigador}}</p>
+                            <p><b>Área Estimada :</b> {{sitio.area_estimada}}</p>
+                            <p><b>Profundidad Depósitos : {{sitio.profundidad_depositos}}</b></p> 
+                            <p><b>Causa Penal :</b> {{sitio.causa_penal}}</p>
                             <hr/>
-                            <p><b>Estado Conservación</b></p>
+                            <p  style="color:blue;"><b>Estado Conservación</b></p>
                             <hr/>
-                            <p><b>Arado</b></p>
-                            <p><b>Biodeterioro</b></p>
-                            <p><b>Construcción</b></p>
-                            <p><b>Erosión</b></p>      
-                            <p><b>Huaqueado</b></p>
-                            <p><b>Mecanizado</b></p>
-                            <p><b>Meteorización</b></p> 
-                            <p><b>No Perturbado</b> </p>  
-                            <p><b>Pastoreo</b> </p>   
-                            <p><b>Sembrado</b> </p>
+                            <p><b>Arado :</b> {{sitio.arado ? "X": " "}}</p>
+                            <p><b>Biodeterioro :</b> {{sitio.biodeterioro ? "X": " "}}</p>
+                            <p><b>Construcción :</b> {{sitio.construccion ? "X": " "}}</p>
+                            <p><b>Erosión :</b> {{sitio.erosion ? "X": " "}}</p>      
+                            <p><b>Huaqueado :</b> {{sitio.huaqueado ? "X": " "}}</p>
+                            <p><b>Mecanizado :</b> {{sitio.mecanizado ? "X": " "}}</p>
+                            <p><b>Meteorización :</b> {{sitio.meteorizacion ? "X": " "}}</p> 
+                            <p><b>No Perturbado :</b> {{sitio.no_perturbado ? "X": " "}}</p>  
+                            <p><b>Pastoreo :</b> {{sitio.pastoreo ? "X": " "}}</p>   
+                            <p><b>Sembrado :</b> {{sitio.sembrado ? "X": " "}}</p>
                             
                             
                         </div>
@@ -282,18 +291,18 @@
             <mat-card fxFlex ="40" class = "rest-card">
                     <mat-card-content>
                     <div align="left">  
-                        <p><b>Expediente Setena</b></p>
+                        <p><b>Expediente Setena</b> {{sitio.expediente_setena}}</p>
                         <hr/>
-                        <p><b>Patrimonio Subacuático</b></p>
+                        <p  style="color:blue;"><b>Patrimonio Subacuático</b></p>
                         <hr/>
-                        <p><b>Paisajes Culturales Sumergidos</b> </p>
-                        <p><b>Restos de Barcos y otros medios de transporte</b>  </p>
-                        <p><b>Ruinas de asentamientos humanos y su contexto</b>  </p>
-                        <p><b>Sitios Explotación Marina</b>  </p>
-                        <p><b>Vestigios de Cavernas Sumergidas</b>  </p>
-                        <p><b>Reserva Arqueológica</b> </p>
-                        <p><b>Río Cercano</b> </p>
-                        <p><b>Plano Catastro</b>  </p>
+                        <p><b>Paisajes Culturales Sumergidos</b> {{sitio.paisajes_culturales_sumergidos ? "X": " "}}</p>
+                        <p><b>Restos de Barcos y otros medios de transporte</b> {{sitio.restos_barcos ? "X": " "}} </p>
+                        <p><b>Ruinas de asentamientos humanos y su contexto</b> {{sitio.ruinas_asentamientos ? "X": " "}} </p>
+                        <p><b>Sitios Explotación Marina</b> {{sitio.sitios_marina ? "X": " "}} </p>
+                        <p><b>Vestigios de Cavernas Sumergidas</b>  {{sitio.vestigios_cavernas ? "X": " "}}</p>
+                        <p><b>Reserva Arqueológica</b> {{sitio.reserva_arqueologica ? "X": " "}} m2 </p>
+                        <p><b>Río Cercano</b> {{sitio.rio_cercano}} </p>
+                        <p><b>Plano Catastro</b> {{sitio.plano_catrasto}} </p>
                         
                     </div>
                 </mat-card-content>
@@ -309,25 +318,26 @@
             <mat-card fxFlex ="50" class = "descrip-card"> 
                     <mat-card-content>
                         <div align="left">
-                            <p><b>Reporte</b></p>
+                            <p style="color:blue;"><b>Reporte</b></p>
                             <hr/>
-                            <p><b>Catalogo de Sitios, UCR</b></p>
-                            <p><b>Hoja de Registro</b></p> 
-                            <p><b>Informe</b></p>
-                            <p><b>Monografía</b></p>
-                            <p><b>Publicación</b></p>
-                            <p><b>Tesis</b></p>
+                            <p><b>Catalogo de Sitios, UCR :</b> {{sitio.catalogo_sitios_ucr ? "X": " "}}</p>
+                            <p><b>Hoja de Registro :</b> {{sitio.hoja_registro ? "X": " "}}</p> 
+                            <p><b>Informe :</b> {{sitio.informe ? "X": " "}}</p>
+                            <p><b>Monografía :</b> {{sitio.monografia ? "X": " "}}</p>
+                            <p><b>Publicación :</b> {{sitio.publicacion ? "X": " "}}</p>
+                            <p><b>Tesis :</b> {{sitio.tesis ? "X": " "}}</p>
                             <hr/>
-                            <p><b>Bibliografía</b></p>
+                            <p><b>Bibliografía : {{sitio.bibliografia}}</b></p>
                             <hr/>
-                            <p><b>Material Gráfico Asociado</b></p>      
-                            <p><b>Artefactos</b></p>
-                            <p><b>Croquis</b></p>
-                            <p><b>Diarios de Campo</b></p> 
-                            <p><b>Dibujos</b> </p>  
-                            <p><b>Material Fotográfico</b> </p>   
-                            <p><b>Planos</b> </p>
-                            <p><b>Videos</b> </p>
+                            <p style="color:blue;"><b>Material Gráfico Asociado</b></p>      
+                            <hr/>
+                            <p><b>Artefactos : </b>{{sitio.artefactos ? "X": " "}}</p>
+                            <p><b>Croquis :</b> {{sitio.croquis ? "X": " "}}</p>
+                            <p><b>Diarios de Campo :</b> {{sitio.diarios_campo ? "X": " "}}</p> 
+                            <p><b>Dibujos :</b> {{sitio.dibujos ? "X": " "}}</p>  
+                            <p><b>Material Fotográfico :</b> {{sitio.material_fotografico ? "X": " "}}</p>   
+                            <p><b>Planos :</b> {{sitio.planos ? "X": " "}}</p>
+                            <p><b>Videos :</b> {{sitio.video ? "X": " "}}</p>
                             
                         </div>
                    </mat-card-content>
@@ -336,7 +346,8 @@
             
         </div>
     </mat-tab>
-    <mat-tab>
+
+   <!--  <mat-tab>
         <ng-template mat-tab-label>
             <mat-icon class="example-tab-icon">picture_as_pdf</mat-icon>
             Material Documental
@@ -373,7 +384,8 @@
     
            
         </div>
-    </mat-tab>
+    </mat-tab> -->
+
   </mat-tab-group>
   
   

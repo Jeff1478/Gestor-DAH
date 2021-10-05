@@ -4,7 +4,8 @@ body {
     padding: 0px;
 
     /*FUENTES*/
-    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: Verdana, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -moz-osx-font-smoothing: antialiased;
@@ -33,7 +34,7 @@ body {
     width: 100%;
     background: white;
     border-bottom: 1px solid #ccc;
-    border-top: 5px solid rgb(249, 157, 28); 
+    border-top: 5px solid rgb(233, 160, 50); 
 }
 
 
@@ -369,6 +370,7 @@ textarea{
 
 .article-item .image-wrap img{
     height: 100%;
+    width: 100%;
     text-align: center;
 }
 
@@ -407,7 +409,7 @@ textarea{
 .subheader-ceramica{
     text-align: center;
     color: white;
-    background-color: goldenrod;
+    background-color:rgb(233, 160, 50);
     font-size: 16px;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
@@ -416,7 +418,7 @@ textarea{
 .subheader-contexto{
     text-align: center;
     color: white;
-    background-color: rgb(139, 53, 82);
+    background-color: rgb(195, 55, 55);
     font-size: 16px;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
@@ -425,7 +427,7 @@ textarea{
 .subheader-litico{
     text-align: center;
     color: white;
-    background-color: rgb(107, 53, 139);
+    background-color: rgb(215, 90, 70);
     font-size: 16px;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
@@ -434,7 +436,7 @@ textarea{
 .subheader-metalico{
     text-align: center;
     color: white;
-    background-color: rgb(24, 141, 30);
+    background-color: rgb(0, 140, 70);
     font-size: 16px;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
@@ -443,7 +445,7 @@ textarea{
 .subheader-sitio{
     text-align: center;
     color: white;
-    background-color: rgb(30, 91, 131);
+    background-color: rgb(0, 145, 205);
     font-size: 16px;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;

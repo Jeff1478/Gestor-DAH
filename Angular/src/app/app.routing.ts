@@ -27,7 +27,7 @@ import { FichaLiticaComponent } from "./components/ficha-litica/ficha-litica.com
 import { LiticaDetalleComponent } from "./components/litica-detalle/litica-detalle.component";
 import { LiticaExcelComponent } from "./components/litica-excel/litica-excel.component";
 import { PagMetComponent } from "./components/pag-met/pag-met.component";
-
+import { MapaOrigenesComponent } from "./components/mapa-origenes/mapa-origenes.component";
 import { FichaMetalComponent } from "./components/ficha-metal/ficha-metal.component";
 import { MetalDetalleComponent } from "./components/metal-detalle/metal-detalle.component";
 import { MetalEditComponent } from "./components/metal-edit/metal-edit.component";
@@ -62,6 +62,8 @@ const appRoutes: Routes = [
     {path: 'pag-lit', component : PagLitComponent, canActivate: [AuthGuard]},
     {path: 'pag-met', component : PagMetComponent, canActivate: [AuthGuard]},
     {path: 'pag-ori', component : PagOriComponent, canActivate: [AuthGuard]},
+    {path: 'map-ori', component : MapaOrigenesComponent, canActivate: [AuthGuard]},
+
     {path: 'ficha-contexto', component : FichaContextoComponent, canActivate: [AuthGuard]},
     {path: 'ficha-litica', component: FichaLiticaComponent, canActivate: [AuthGuard]},
     {path: 'ficha-metal', component: FichaMetalComponent, canActivate: [AuthGuard]},

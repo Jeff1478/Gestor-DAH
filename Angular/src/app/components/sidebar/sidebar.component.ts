@@ -4,6 +4,7 @@ import { CeramicService } from 'src/app/services/ceramic.service';
 import { ContextoService } from 'src/app/services/contexto.service';
 import { LiticoService } from 'src/app/services/litico.service';
 import { MetalicoService } from 'src/app/services/metalico.service';
+import { SitioService } from 'src/app/services/sitio.service';
 
 
 
@@ -11,7 +12,7 @@ import { MetalicoService } from 'src/app/services/metalico.service';
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
-  providers: [CeramicService,ContextoService,LiticoService,MetalicoService]
+  providers: [CeramicService,ContextoService,LiticoService,MetalicoService,SitioService]
 })
 export class SidebarComponent implements OnInit {
   
@@ -19,6 +20,7 @@ export class SidebarComponent implements OnInit {
   public searchString2!: string;
   public searchString3!: string;
   public searchString4!: string;
+  public searchString5!: string;
   @Input() titulo!: string;
 
   constructor(
@@ -26,6 +28,7 @@ export class SidebarComponent implements OnInit {
     private _contextoService: ContextoService,
     private _liticoService: LiticoService,
     private _metalicoService: MetalicoService,
+    private _sitioService: SitioService,
     private _router: Router,
     private _route: ActivatedRoute
   ) { }
@@ -47,6 +50,10 @@ export class SidebarComponent implements OnInit {
 
   goSearchLit(){
     this._router.navigate(['/buscarlitico', this.searchString]);
+  }
+
+  goSearchSit(){
+    this._router.navigate(['/buscarsitio', this.searchString]);
   }
 
   goSearchCombLit(){
