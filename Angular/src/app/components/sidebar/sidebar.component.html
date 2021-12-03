@@ -3,7 +3,7 @@
 <aside id="sidebar">
 
     <div id="nav-blog" class="sidebar-item">
-        <h3>Administrador</h3>
+        <h3 *ngIf="administrador == true">Administrador</h3>
         
         <div *ngIf= "titulo === 'ceramica'"> 
             <!-- <a [routerLink]="['/ceramica']" class="btn btn-success">Agregar Ficha</a> -->
@@ -121,43 +121,64 @@
 
         <div *ngIf= "titulo === 'sitio'"> 
 
-         
-          <!-- <a [routerLink]="['/ficha-litica']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
-            <mat-icon>add_shopping_cart</mat-icon>    
-        </a> -->
+        <div *ngIf="administrador == true">
         <a [routerLink]="['/sitio-excel']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">
           <mat-icon>cloud_download</mat-icon>    
       </a>  
-      <a [routerLink]="['/map-ori']" data-toggle="tooltip" data-placement="top" title="Búsqueda en Mapa" class = "btn btn-outline-warning">
-        <mat-icon>add_location</mat-icon>    
-    </a>  
+      <a [routerLink]="['/ficha-origenes']" data-toggle="tooltip" data-placement="top" title="Agregar Monumento" class = "btn btn-outline-warning">
+        <mat-icon>add_shopping_cart</mat-icon>    
+    </a>
+      </div>
 
-     <!--  <div id="search" class="sidebar-item">
-        <h3>Buscador</h3>
-        <p>Investigador ó Proyecto</p>
-        <form #searchForm="ngForm" (ngSubmit)= "goSearchLit()">
-            <input type="text" name="search" [(ngModel)] ="searchString"/>
-              <button class="btn btn-outline-success" type="submit">
-                <mat-icon>search</mat-icon></button>
-        </form>
-      </div>  -->
-
-    
-  
-        </div>
-        
-    </div>
-
-    
-
-    <!-- <div id="search" class="sidebar-item">
-            <h3>Buscador</h3>
-            <p>Digite palabra(s) clave</p>
-            <form #searchForm="ngForm" (ngSubmit)= "goSearch()">
-                <input type="text" name="search" [(ngModel)] ="searchString"/>
-                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+      <div id="search">
+              <hr>        
+              <h3>Buscador Monumentos</h3>
+              <div class="input-group input-group-sm mb3">
+                  <select [(ngModel)]= "selectedProvincia.id" (change)="onSelect($event.target)">
+                      <option value="0">--Seleccione Provincia--</option>
+                      <option *ngFor="let provincia of provincias?.provincias" [value]="provincia.id">{{provincia.title}}</option>     
+                  </select>
+                  <button data-toggle="tooltip" data-placement="top" title="Busca por Provincia" (click)="goSearchP(selectedProvincia.id)" class="btn btn-outline-success">
+                      <mat-icon>search</mat-icon>
+                  </button> 
+              </div>
+              
+               <div class="input-group input-group-sm mb3">
+                  <select [(ngModel)]= "selectedCanton.id" (change)="onSelectCanton($event.target)">
+                      <option value="0">--Seleccione Cantón</option>
+                      <option *ngFor="let canton of cantones" [value]="canton.id">{{canton.title}}</option>
+                  </select>
+                  <button data-toggle="tooltip" data-placement="top" title="Busca por Cantón" (click)="goSearchC(selectedCanton.id)" class="btn btn-outline-success">
+                      <mat-icon>search</mat-icon>
+                  </button> 
+              </div>
+              <br>
+              <div class="input-group input-group-sm mb3">
+              <form #searchForm="ngForm" (ngSubmit)= "goSearchNombre()">
+                <input type="text" placeholder="Nombre o Clave" name="search" [(ngModel)] ="searchStringNomb"/>
             </form>
-    </div> -->
+            <button data-toggle="tooltip" data-placement="top" (click)="goSearchNombre()" class="boton btn-outline-success">
+              <mat-icon>search</mat-icon>
+            </button>
+          </div>
+              <br> 
+           
+            <hr>
+            <div *ngIf="administrador == true || registrado ==true">
+            <h3>Buscador por Mapa</h3>
+            <a [routerLink]="['/map-ori']" data-toggle="tooltip" data-placement="top" title="Google Maps" class = "btn btn-outline-warning">
+              <mat-icon>map</mat-icon>    
+          </a> 
+          </div>
+
+        </div> 
+
+      
+      
+    </div>
+  </div>
+
+
 </aside>
 
 <div class="clearfix"></div>

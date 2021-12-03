@@ -35,8 +35,27 @@ export class SitioService {
         return this._http.get(this.url+'sitio/'+ sitioId);
     }
 
+    create(sitio: any):Observable<any>{
+        let params = JSON.stringify(sitio);
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this._http.post(this.url+'save/',params, {headers:headers});
+    }
+
     search(searchString: string):Observable<any>{
         return this._http.get(this.url+'search/'+searchString);
+    }
+
+    searchCanton(searchString: string):Observable<any>{
+        return this._http.get(this.url+'searchCanton/'+searchString);
+    }
+
+    searchDistrito(searchString: string):Observable<any>{
+        return this._http.get(this.url+'searchDistrito/'+searchString);
+    }
+
+    searchNombre(searchString: string):Observable<any>{
+        return this._http.get(this.url+'searchNombre/'+searchString);
     }
 
 

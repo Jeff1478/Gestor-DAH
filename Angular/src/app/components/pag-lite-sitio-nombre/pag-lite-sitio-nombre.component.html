@@ -1,0 +1,64 @@
+<app-header></app-header>
+<a [routerLink]="['/pag-ori']" data-toggle="tooltip" data-placement="top" title="Regresar" class = "btn btn-outline-warning">
+  <mat-icon>home</mat-icon>    
+</a> 
+
+
+<div class="mat-elevation-z8">
+  <mat-table [dataSource]="listData"  matSort>
+    
+    <ng-container matColumnDef="_id">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header [style.display]="'none'">ID</mat-header-cell>
+      <mat-cell *matCellDef="let element" [style.display]="'none'">{{element._id}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="nombre_sitio">
+      <mat-header-cell class="w-75 th-center" *matHeaderCellDef  mat-sort-header>Nombre Sitio</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.nombre_sitio}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="clave_sitio">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Clave</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.clave_sitio}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="provincia">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Provincia</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.provincia}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="canton">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Cantón</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.canton}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="distrito">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Distrito</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.distrito}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row">
+       
+        <button mat-icon-button (click)="openDialog(row._id)">Leer más
+          <mat-icon>launch</mat-icon>
+          <!-- <a mat-raised-button [routerLink]="['/psg-ori/sitio', row._id]">Leer más</a> -->
+        </button>
+        <!-- <button mat-icon-button color="warn"><mat-icon>delete_outline</mat-icon></button> -->
+      </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="loading">
+      <mat-footer-cell *matFooterCellDef colspan="1">
+        
+      </mat-footer-cell>
+    </ng-container>
+    <ng-container matColumnDef="noData">
+      <mat-footer-cell *matFooterCellDef colspan="1">
+      
+      </mat-footer-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>
+

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { GoogleChartsModule } from 'angular-google-charts';
 import {AgmCoreModule} from '@agm/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
@@ -40,8 +41,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatDialogModule} from '@angular/material/dialog'
 import { ExporterService } from './services/exporter';
 import { FichaContextoComponent } from './components/ficha-contexto/ficha-contexto.component';
 import { ReportePublicoComponent } from './components/reporte-publico/reporte-publico.component';
@@ -77,6 +80,11 @@ import { SearchCombMetComponent } from './components/search-comb-met/search-comb
 import { FichaOrigenesComponent } from './components/ficha-origenes/ficha-origenes.component';
 import { MapaOrigenesComponent } from './components/mapa-origenes/mapa-origenes.component';
 import { SearchSitioComponent } from './components/search-sitio/search-sitio.component';
+import { PoliticasUsoComponent } from './components/politicas-uso/politicas-uso.component';
+import { RegistroOrigenesComponent } from './components/registro-origenes/registro-origenes.component';
+import { PagLiteSitiosComponent } from './components/pag-lite-sitios/pag-lite-sitios.component';
+import { PagDetalleLiteSitioComponent } from './components/pag-detalle-lite-sitio/pag-detalle-lite-sitio.component';
+import { PagLiteSitioNombreComponent } from './components/pag-lite-sitio-nombre/pag-lite-sitio-nombre.component';
 
 @NgModule({
   declarations: [
@@ -136,6 +144,11 @@ import { SearchSitioComponent } from './components/search-sitio/search-sitio.com
     FichaOrigenesComponent,
     MapaOrigenesComponent,
     SearchSitioComponent,
+    PoliticasUsoComponent,
+    RegistroOrigenesComponent,
+    PagLiteSitiosComponent,
+    PagDetalleLiteSitioComponent,
+    PagLiteSitioNombreComponent
    
     
   ],
@@ -160,15 +173,20 @@ import { SearchSitioComponent } from './components/search-sitio/search-sitio.com
     MatIconModule,
     MatInputModule,
     MatPaginatorModule,
+    MatSortModule,
     MatTableModule,
+    MatDialogModule,
     AngularFileUploaderModule,
       /*  AuthModule.forRoot({
       ...env.auth,
     }),   */
     BrowserAnimationsModule,
+    GoogleChartsModule.forRoot()
   ],
   providers: [appRoutingProviders, ExporterService, AuthGuard, {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true}],
  
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
+  entryComponents : [PagDetalleLiteSitioComponent],
 })
 export class AppModule { }

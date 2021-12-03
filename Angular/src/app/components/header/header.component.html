@@ -19,6 +19,7 @@
                     <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]= "['active']">Inicio</a>
                   </li>
 
+                  <div *ngIf="logueado == true && aguacaliente == false">
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                      Proyecto Agua Caliente
@@ -32,12 +33,13 @@
 
                     </ul>
                   </li>
+                </div>
 
-                  
+                  <div *ngIf="logueado == false && aguacaliente == true">
                   <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/pag-ori']" [routerLinkActive]= "['active']">Origenes</a>
                   </li>  
-
+                 </div>
                  
                   
                   </ul>

@@ -10,11 +10,7 @@
 
 export const environment = {
   production: false,
-    /* auth: {
-    domain: packageInfo.domain,
-    clientId : packageInfo.clientId,
-    redirectUri: window.location.origin,
-  },   */
+  googleAnalyticsId: 'G-S9PXJXHKF3'
 };
 
 /*

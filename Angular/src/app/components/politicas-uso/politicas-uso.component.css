@@ -1,0 +1,6 @@
+.btn-outline-success, .btn-outline-success:hover, .btn-outline-success:active, .btn-outline-success:visited {
+    background-color: rgb(233, 160, 50) !important;
+}
+.btn-outline-danger, .btn-outline-danger:hover, .btn-outline-danger:active, .btn-outline-danger:visited {
+    background-color: rgb(195, 55, 55) !important;
+}

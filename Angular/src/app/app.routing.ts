@@ -4,7 +4,7 @@ import { Routes, RouterModule} from "@angular/router"
 
 //importa componentes a los que les voy a hacer un pagina exclusiva
 import { HomeComponent } from "./components/home/home.component";
-
+import { PagLiteSitiosComponent } from "./components/pag-lite-sitios/pag-lite-sitios.component";
 import { CeramicaComponent } from "./components/ceramica/ceramica.component";
 import { ContextoComponent } from "./components/contexto/contexto.component";
 import { FormularioComponent } from "./components/formulario/formulario.component";
@@ -28,6 +28,8 @@ import { LiticaDetalleComponent } from "./components/litica-detalle/litica-detal
 import { LiticaExcelComponent } from "./components/litica-excel/litica-excel.component";
 import { PagMetComponent } from "./components/pag-met/pag-met.component";
 import { MapaOrigenesComponent } from "./components/mapa-origenes/mapa-origenes.component";
+import { PoliticasUsoComponent } from "./components/politicas-uso/politicas-uso.component";
+import { RegistroOrigenesComponent } from "./components/registro-origenes/registro-origenes.component";
 import { FichaMetalComponent } from "./components/ficha-metal/ficha-metal.component";
 import { MetalDetalleComponent } from "./components/metal-detalle/metal-detalle.component";
 import { MetalEditComponent } from "./components/metal-edit/metal-edit.component";
@@ -43,6 +45,9 @@ import { SitioDetalleComponent } from "./components/sitio-detalle/sitio-detalle.
 import { SearchCombCeraComponent } from "./components/search-comb-cera/search-comb-cera.component";
 import { SearchComblitComponent } from "./components/search-comblit/search-comblit.component";
 import { SearchCombMetComponent } from "./components/search-comb-met/search-comb-met.component";
+import { PagDetalleLiteSitioComponent } from "./components/pag-detalle-lite-sitio/pag-detalle-lite-sitio.component";
+import { FichaOrigenesComponent } from "./components/ficha-origenes/ficha-origenes.component";
+import { PagLiteSitioNombreComponent } from "./components/pag-lite-sitio-nombre/pag-lite-sitio-nombre.component";
 
 //Array de rutas 
 const appRoutes: Routes = [
@@ -63,15 +68,20 @@ const appRoutes: Routes = [
     {path: 'pag-met', component : PagMetComponent, canActivate: [AuthGuard]},
     {path: 'pag-ori', component : PagOriComponent, canActivate: [AuthGuard]},
     {path: 'map-ori', component : MapaOrigenesComponent, canActivate: [AuthGuard]},
-
+    {path: 'pag-lite-sitios/:search', component : PagLiteSitiosComponent, canActivate: [AuthGuard]},
+    {path: 'pag-lite-sitio-nombre/:search', component : PagLiteSitioNombreComponent, canActivate: [AuthGuard]},
+    {path: 'politicasUso', component : PoliticasUsoComponent, canActivate: [AuthGuard]},
+    {path: 'registroOrigenes', component : RegistroOrigenesComponent, canActivate: [AuthGuard]},
     {path: 'ficha-contexto', component : FichaContextoComponent, canActivate: [AuthGuard]},
     {path: 'ficha-litica', component: FichaLiticaComponent, canActivate: [AuthGuard]},
     {path: 'ficha-metal', component: FichaMetalComponent, canActivate: [AuthGuard]},
+    {path: 'ficha-origenes', component: FichaOrigenesComponent, canActivate: [AuthGuard]},
     {path: 'pagina/ceramic/:id', component: ArticleComponent, canActivate: [AuthGuard]},
     {path: 'peliculas/contexto/:id', component: ContextoDetalleComponent, canActivate: [AuthGuard]},
     {path: 'pag-lit/litico/:id', component: LiticaDetalleComponent, canActivate: [AuthGuard]},
     {path: 'pag-met/metalico/:id', component: MetalDetalleComponent, canActivate: [AuthGuard]},
     {path: 'pag-ori/sitio/:id', component: SitioDetalleComponent, canActivate: [AuthGuard]},
+    {path: 'pag-ori-det/sitio/:id', component: PagDetalleLiteSitioComponent, canActivate: [AuthGuard]},
     {path: 'reporte-publico/ceramic/:id', component: ReportePublicoComponent, canActivate: [AuthGuard]},
     {path: 'pagina/crear', component: ArticleNewComponent, canActivate: [AuthGuard]},
     {path: 'pagina/editar/:id', component: ArticleEditComponent, canActivate: [AuthGuard]},

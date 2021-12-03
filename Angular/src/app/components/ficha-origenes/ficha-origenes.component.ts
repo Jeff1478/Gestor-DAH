@@ -5,6 +5,7 @@ import { Router, ActivatedRoute, Params} from '@angular/router';
 import { Sitio } from 'src/app/models/sitio';
 import { Globals } from 'src/app/services/globals';
 
+
 @Component({
   selector: 'app-ficha-origenes',
   templateUrl: './ficha-origenes.component.html',
@@ -19,15 +20,17 @@ export class FichaOrigenesComponent implements OnInit {
    is_edit: boolean;
 
   afuConfig = {
+    multiple: true,
     maxSize: 2,
     uploadAPI: {
       url:Globals.url+'upload-image'
     },
+    theme: "dragNDrop",
     replaceTexts: {
       selectFileBtn: 'Seleccione Archivo',
       resetBtn: 'Resetear',
       uploadBtn: 'Subir',
-      dragNDropBox: 'Arrastre y soltar',
+      dragNDropBox: 'Arrastre sus Archivos',
       attachPinBtn: 'Subiendo Archivo...',
       afterUploadMsg_success: 'Archivo Subido !',
       afterUploadMsg_error: 'Fallo en el proceso !',
@@ -231,6 +234,45 @@ export class FichaOrigenesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
+  OnSubmit(){
+
+    this._sitioService.create(this.sitio).subscribe(
+      
+      (      response: { status: string; sitio: Sitio; }) => {
+       if(response.status == 'success'){
+         this.status = 'success';
+         this.sitio = response.sitio;
+      
+ 
+           Swal.fire('Monumento Creado', 'Guardado Correctamente!', 'success')
+       
+        
+         this._router.navigate(['/pag-ori']);
+       }else{
+         this.status = 'error'
+       }
+      },
+      (      error: any) => {
+       console.log(error);
+       this.status = 'error';
+      }
+    );
+   }
+ 
+   imageUpload(data: any){
+     
+     console.log(data);
+ 
+     // let image_data = JSON.parse(data.response);
+ 
+    
+     this.sitio.image=data.body.image;
+     
+   
+     // this.ceramic.image = image_data.image;
+   }
+  }
+
+
 
   

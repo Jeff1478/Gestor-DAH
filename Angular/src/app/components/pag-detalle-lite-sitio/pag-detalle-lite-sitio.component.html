@@ -1,0 +1,35 @@
+<app-header></app-header>
+<a [routerLink]="['/pag-ori']" data-toggle="tooltip" data-placement="top" title="Regresar" class = "btn btn-outline-warning">
+    <mat-icon>home</mat-icon>    
+  </a> 
+  
+  <div fxLayout="row" fxLayoutAlign="center stretch">
+        <mat-card fxFlex ="70" class = "descrip-card"> 
+                
+            <mat-card-title> Nombre Monumento : {{sitio.nombre_sitio}}</mat-card-title>
+    
+                <mat-card-content>
+                    <div align="left">
+                        <h2>Datos Generales</h2>
+                        <br>
+                        <p><b>Registrador:</b> {{sitio.registrador}}</p>
+                        <p><b>Fecha Registro: </b> {{sitio.fecha_registro | date: "dd/MM/yyyy"}}</p> 
+                        <p><b>Localización:</b> {{sitio.provincia}}, {{sitio.canton}}, {{sitio.distrito}}</p>
+                        <p><b>Región: </b> {{sitio.region}}</p>     
+                        <p><b>Hoja Cartográfica: </b> {{sitio.hoja_cartografica}}</p> 
+                        <br>
+                        
+                    </div>
+               </mat-card-content>
+        </mat-card>
+
+     
+    </div>
+
+
+
+
+  
+  
+  
+  

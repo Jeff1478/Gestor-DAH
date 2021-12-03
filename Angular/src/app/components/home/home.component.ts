@@ -36,9 +36,11 @@ export class HomeComponent implements OnInit {
       .subscribe(
         res => {
           if(res.usuarios){
+           
             this.usuario = res.usuarios;
             this.title = JSON.stringify(this.usuario, ['nombre'])
-            this.separado = this.title.substring(12,25)
+            // this.separado = this.title
+            this.separado = this.title.substring(12,50)
             
           }
         },

@@ -1,192 +1,65 @@
 <app-header></app-header>
 <div class="center">
     <p>Cantidad de Sitios Encontrados : <b>{{sitios.length}}</b></p>
+  
     <aside id="sidebar">
-
-        <div id="search" class="sidebar-item">
-            <h3>Buscador</h3>
-            <p>Provincia</p>
-            <form #searchForm="ngForm" (change)="goSearch()">
-                <select class="form-select" name="provincia" #provincia="ngModel" [(ngModel)]="searchString">
-                    <option selected>Seleccione...</option>
-                    <option value="San Jose">San José</option>
-                    <option value="Alajuela">Alajuela</option>
-                    <option value="Cartago">Cartago</option>
-                    <option value="Heredia">Heredia</option>
-                    <option value="Guanacaste">Guanacaste</option>
-                    <option value="Puntarenas">Puntarenas</option>
-                    <option value="Limon">Limón</option>
-                </select>
-                <!-- <button class="btn btn-outline-success" type="submit">
-                    <mat-icon>search</mat-icon>
-                </button> -->
-            </form>
-            <p>Cantón</p>
-            <form #searchForm="ngForm" (change)="goSearch()">
-                <select class="form-select" name="canton" #canton="ngModel" [(ngModel)]="searchString">
-                    <option selected>Seleccione...</option>
-                    <option value="San Jose">San José</option>
-                    <option value="Escazú">Escazú</option>
-                    <option value="Desamparados">Desamparados</option>
-                    <option value="Puriscal">Puriscal</option>
-                    <option value="Tarrazu">Tarrazú</option>
-                    <option value="Aserri">Aserrí</option>
-                    <option value="Mora">Mora</option>
-                    <option value="Goicoechea">Goicoechea</option>
-                    <option value="Santa Ana">Santa Ana</option>
-                    <option value="Alajuelita">Alajuelita</option>
-                    <option value="Coronado">Coronado</option>
-                    <option value="Acosta">Acosta</option>
-                    <option value="Tibas">Tibas</option>
-                    <option value="Moravia">Moravia</option>
-                    <option value="Montes de Oca">Montes de Oca</option>
-                    <option value="Turrubares">Turrubares</option>
-                    <option value="Dota">Dota</option>
-                    <option value="Curridabat">Curridabat</option>
-                    <option value="Perez Zeledon">Perez Zeledón</option>
-                    <option value="Leon Cortes">León Cortes</option>
-                    <option disabled>________________</option>
-                    <option value="Alajuela">Alajuela</option>
-                    <option value="san Ramon">San Ramón</option>
-                    <option value="Grecia">Grecia</option>
-                    <option value="San Mateo">San Mateo</option>
-                    <option value="Atenas">Atenas</option>
-                    <option value="Naranjo">Naranjo</option>
-                    <option value="Palmares">Palmares</option>
-                    <option value="Poas">Poas</option>
-                    <option value="Orotina">Orotina</option>
-                    <option value="San Carlos">San Carlos</option>
-                    <option value="Alfaro Ruiz">Alfaro Ruiz</option>
-                    <option value="Valverde Vega">Valverde Vega</option>
-                    <option value="Upala">Upala</option>
-                    <option value="Los Chiles">Los Chiles</option>
-                    <option value="Guatuso">Guatuso</option>
-                    <option disabled>________________</option>
-                    <option value="Cartago">Central-Cartago</option>
-                    <option value="Paraiso">Paraíso</option>
-                    <option value="La Union">La Unión</option>
-                    <option value="Guatuso">Guatuso</option>
-                    <option value="Jimenez">Jimenez</option>
-                    <option value="Turrialba">Turrialba</option>
-                    <option value="Alvarado">Alvarado</option>
-                    <option value="Oreamuno">Oreamuno</option>
-                    <option value="El Guarco">El Guarco</option>
-                    <option disabled>________________</option>
-                    <option value="Heredia">Heredia-Central</option>
-                    <option value="Barva">Barva</option>
-                    <option value="Santo Domingo">Santo Domingo</option>
-                    <option value="Santa Barbara">Santa Barbara</option>
-                    <option value="San Rafael">San Rafael</option>
-                    <option value="San Isidro">San Isidro</option>
-                    <option value="Belen">Belen</option>
-                    <option value="Flores">Flores</option>
-                    <option value="San Pablo">San Pablo</option>
-                    <option value="Sarapiqui">Sarapiqui</option>
-                    <option disabled>________________</option>
-                    <option value="Liberia">Liberia</option>
-                    <option value="Nicoya">Nicoya</option>
-                    <option value="Santa Cruz">Santa Cruz</option>
-                    <option value="Bagaces">Bagaces</option>
-                    <option value="Carrillo">Carrillo</option>
-                    <option value="Cañas">Cañas</option>
-                    <option value="Abangares">Abangares</option>
-                    <option value="Tilaran">Tilarán</option>
-                    <option value="Nandayure">Nandayure</option>
-                    <option value="La Cruz">La Cruz</option>
-                    <option value="Hojancha">Hojancha</option>
-                    <option disabled>________________</option>
-                    <option value="Puntarenas">Central-Puntarenas</option>
-                    <option value="Esparza">Esparza</option>
-                    <option value="Buenos Aires">Buenos Aires</option>
-                    <option value="Montes de Oro">Montes de Oro</option>
-                    <option value="Osa">Osa</option>
-                    <option value="Aguirre">Aguirre</option>
-                    <option value="Golfito">Golfito</option>
-                    <option value="Coto Brus">Coto Brus</option>
-                    <option value="Parrita">Parrita</option>
-                    <option value="Corredores">Corredores</option>
-                    <option value="Garabito">Garabito</option>
-                    <option disabled>________________</option>
-                    <option value="Limon">Central-Limon</option>
-                    <option value="Pocosi">Pocosi</option>
-                    <option value="Siquirres">Siquirres</option>
-                    <option value="Talamanca">Talamanca</option>
-                    <option value="Matina">Matina</option>
-                    <option value="Guacimo">Guacimo</option>
-                </select>
-
-               <!--  <button class="btn btn-outline-success" type="submit">
-                    <mat-icon>search</mat-icon>
-                </button> -->
-            </form>
-            <p>Distrito</p>
-            <form #searchForm="ngForm" (change)="goSearch()">
-                <select class="form-select" name="distrito" #distrito="ngModel" [(ngModel)]="searchString">
-                    <option selected>Seleccione...</option>
-                    <option value="Carmen">Carmen</option>
-                    <option value="Merced">Merced</option>
-                    <option value="Hospital">Hospital</option>
-                    <option value="Catedral">Catedral</option>
-                    <option value="Zapote">Zapote</option>
-                    <option value="San Francisco De Dos Rios">San Francisco de Dos Rios</option>
-                    <option value="Uruca">Uruca</option>
-                    <option value="Mata Redonda">Mata Redonda</option>
-                    <option value="Pavas">Pavas</option>
-                    <option value="Hatillo">Hatillo</option>
-                    <option value="San Sebastian">San Sebastián</option>
-                    <option value="Escazu">Escazú</option>
-                    <option value="San Antonio">San Antonio</option>
-                    <option value="San Rafael">San Rafael</option>
-                    <option value="Desamparados">Desamparados</option>
-                    <option value="San Miguel">San Miguel</option>
-                    <option value="San Juan de Dios">San Juan de Dios</option>
-                    <option value="San Rafael Arriba">San Rafael Arriba</option>
-                    <option value="San Antonio">San Antonio</option>
-                    <option value="Frailes">Frailes</option>
-                    <option value="Patarra">Patarrá</option>
-                    <option value="San Cristobal">San Cristobal</option>
-                    <option value="Rosario">Rosario</option>
-                    <option value="Damas">Damas</option>
-                    <option value="San Rafael Abajo">San Rafael Abajo</option>
-                    <option value="Gravilias">Gravilias</option>
-                    <option value="Los Guido">Los Guido</option>
-                    <option value="Santiago">Santiago</option>
-                    <option value="Mercedes Sur">Mercedes Sur</option>
-                    <option value="Barbacoas">Barbacoas</option>
-                    <option value="Grifo Alto">Grifo Alto</option>
-                    <option value="San Rafael">San Rafael</option>
-                    <option value="Candelaria">Candelaria</option>
-                    <option value="Desamparaditos">Desamparaditos</option>
-                    <option value="San Antonio">San Antonio</option>
-                    <option value="Chires">Chires</option>
-                    <option value="San Marcos">San Marcos</option>
-                    <option value="San Lorenzo">San Lorenzo</option>
-                    <option value="San Carlos">San Carlos</option>
-                    <option value="Tarbaca">Tarbaca</option>
-                    <option value="Vuelta de Jorco">Vuelta de Jorco</option>
-                    <option value="San Gabriel">San Gabriel</option>
-                    <option value="La Legua">La Legua</option>
-                    <option value="Monterrey">Monterrey</option>
-                    <option value="Salitrillos">Salitrillos</option>
-                    <option disabled>________________</option>
-                   
-                </select>
-
-               <!--  <button class="btn btn-outline-success" type="submit">
-                    <mat-icon>search</mat-icon>
-                </button> -->
-            </form>
+        <div id="search">
             
-        </div>
-    </aside>
+               <p> * Puede buscar en cada uno de los niveles de la División Política de Costa Rica</p>
+               <p> * Además puede buscar por nombre ó clave de Monumento</p>
+               <hr>
+                
+                <div class="input-group input-group-sm mb3">
+                    
+                    <select [(ngModel)]= "selectedProvincia.id" (change)="onSelect($event.target)">
+                        <option value="0">--Seleccione Provincia--</option>
+                        <option *ngFor="let provincia of provincias?.provincias" [value]="provincia.id">{{provincia.title}}</option>
+                        
+                    </select>
+                    <button data-toggle="tooltip" data-placement="top" title="Busca por Provincia" (click)="goSearch(selectedProvincia.id)" class="btn btn-outline-success">
+                        <mat-icon>search</mat-icon>
+                    </button> 
+              </div>
+            <br>
+                <div class="input-group input-group-sm mb3">
+                    <select [(ngModel)]= "selectedCanton.id" (change)="onSelectCanton($event.target)">
+                        <option value="0">--Seleccione Cantón</option>
+                        <option *ngFor="let canton of cantones" [value]="canton.id">{{canton.title}}</option>
+                    </select>
+                    <button data-toggle="tooltip" data-placement="top" title="Busca por Cantón" (click)="goSearchCanton(selectedCanton.id)" class="btn btn-outline-success">
+                        <mat-icon>search</mat-icon>
+                    </button> 
+                </div>
+            <br>
+
+                <div class="input-group input-group-sm mb3">
+                    <select [(ngModel)]= "selectedDistrito.id">
+                        <option value="0">--Seleccione Distrito</option>
+                        <option *ngFor="let distrito of distritos" [value]="distrito.id">{{distrito.title}}</option>
+                    </select>
+                    <button data-toggle="tooltip" data-placement="top" title="Busca por Distrito" (click)="goSearchDistrito(selectedDistrito.id)" class="btn btn-outline-success">
+                        <mat-icon>search</mat-icon>
+                    </button> 
+                </div>
+    </div>
+<br>
+<hr>
+
+
+<div class="input-group input-group-sm mb3">
+    <form #searchForm="ngForm" (ngSubmit)= "goSearchNombre()">
+      <input type="text" placeholder="Nombre o Clave" name="search" [(ngModel)] ="searchNombre"/>
+  </form>
+  <button data-toggle="tooltip" data-placement="top" (click)="goSearchNombre()" class="boton btn-outline-success">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>
+</aside>
+    
 
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeId]="mapTypeId">
-
-        <!-- <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker> -->
         <agm-marker *ngFor="let sitio of sitios" [latitude]="sitio.latitude" [longitude]="sitio.Logitude"
             [agmFitBounds]="true">
-
-
             <agm-info-window>
                 <h3>Nombre:<b>{{sitio.nombre_sitio}}</b></h3>
                 <p>Clave Sitio: {{sitio.clave_sitio}}</p>

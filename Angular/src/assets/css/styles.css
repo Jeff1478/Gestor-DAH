@@ -37,6 +37,21 @@ body {
     border-top: 5px solid rgb(233, 160, 50); 
 }
 
+#disclaimer p {
+    text-align: center;
+    margin: 25px 0 10px 0;
+    color: black;
+    font-size: 15px;
+}
+
+.hide{
+    display: none;
+}
+
+mat-footer-row mat-footer-cell{
+    justify-content: center;
+    font-style: italic;
+}
 
 
 .center{
@@ -263,10 +278,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', end
     border-bottom: 3px solid #eee;
 }
 
-.sidebar-item .btn{
-    margin: 5px auto;
-    /* margin-top: 10px; */
-}
+/* .sidebar-item .btn{
+    margin: 5px auto; 
+    margin-top: 10px;
+} */
 
 .btn{
    /* display: block; */
@@ -445,7 +460,7 @@ textarea{
 .subheader-sitio{
     text-align: center;
     color: white;
-    background-color: rgb(0, 145, 205);
+    background-color: rgb(0, 100, 155);
     font-size: 16px;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;

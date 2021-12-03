@@ -25,13 +25,11 @@
         <p>Num Caso : {{sitio.numero_caso}}</p>
         <p>Nombre Sitio : {{sitio.nombre_sitio}}</p>
         <p>Clave Sitio : {{sitio.clave_sitio}}</p>
-        <p>Hallazgo : {{sitio.hallazgo}}</p>
-        <p>Fecha Registro: {{sitio.fecha_registro | date}}</p>
-        <p>Registrador : {{sitio.registrador}}</p>
         
-        <span class="date">
+        
+       <!--  <span class="date">
             {{sitio.date | amLocale: 'es' | amTimeAgo }}
-        </span>
+        </span> -->
           <a [routerLink]="['/pag-ori/sitio', sitio._id]">Leer más</a> 
         </div>
     </mat-card-content>

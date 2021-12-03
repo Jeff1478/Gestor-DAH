@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class= "center">
+    <section id="content">
+      <h1 class="subheader-sitio">Registro Acceso Origenes</h1>
+      <form style="width: 50%; margin: auto">
+    
+        <mat-card>
+          <h1>Datos Personales</h1>
+    
+          <mat-form-field style="width: 100%">
+            <input matInput placeholder="Nombre y Apellidos" [formControl]="nameFormControl" />
+            <mat-error *ngIf="nameFormControl.hasError('minlength')">
+              Nombre de mínimo 4 caracteres.
+            </mat-error>
+            <mat-error *ngIf="nameFormControl.hasError('required')">
+              Nombre y Apellidos son <strong>requeridos</strong>
+            </mat-error>
+          </mat-form-field>
+    
+          <mat-form-field style="width: 100%">
+            <input matInput placeholder="Correo" [formControl]="emailFormControl" />
+            <mat-error *ngIf="emailFormControl.hasError('email')">
+              Introduzca una dirección válida
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Correo is <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field style="width: 100%">
+            <mat-label>Perfil Requerido</mat-label>
+            <mat-select [formControl]="perfilFormControl">
+              <mat-option value="Investigación Externa">Investigación Externa</mat-option>
+              <mat-option value="Consultoría Arqueológica">Consultoría Arqueológica</mat-option>
+              <mat-option value="Investigación DAH">Investigación DAH</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div *ngIf= "perfilFormControl.value == 'Consultoría Arqueológica'">
+          <mat-form-field style="width: 100%">
+            <input matInput placeholder="Número Consultor Individual SETENA" [formControl]="setenaFormControl" />
+          </mat-form-field>
+        </div>
+    
+          <button mat-raised-button [disabled]="emailFormControl.invalid || nameFormControl.invalid  || loading"
+            color="primary" (click)="register()">
+            {{buttionText}}
+          </button>
+        </mat-card>
+      </form>
+    
+      
+    
+    </section>
+  </div>
+<div class="clearfix"></div>
+
