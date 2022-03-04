@@ -1,3 +1,23 @@
 #map {
     display:inline-block
 }
+
+a:link, a:visited {
+    background-color: white;
+    color: black;
+    border: 2px solid blue;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: blue;
+    color: white;
+  }
+
+  #logoori{
+    float: left;
+    margin-left: 20px;
+  }

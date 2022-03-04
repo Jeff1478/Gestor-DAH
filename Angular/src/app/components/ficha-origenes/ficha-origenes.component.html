@@ -3,7 +3,7 @@
 
 <div class="center">
     <section id="content.contexto">
-        <h1 class="subheader-sitio">Agregar Monumentos</h1>
+        <h1 class="subheader-sitio">{{page_title}}</h1>
         
         <form class="mid-form" #contextoForm="ngForm" (ngSubmit)="OnSubmit()">
 
@@ -39,12 +39,12 @@
                                         [(ngModel)]="sitio.clave_antigua">
                                 </div>
                              
-                                <div class="col-md-3">
+                               <!--  <div class="col-md-3">
                                     <label for="clave_antigua">Clave UCR</label>
                                     <input type="text" class="form-control" name="ucr" #ucr="ngModel"
                                         [(ngModel)]="sitio.ucr">
                                     
-                                </div>
+                                </div> -->
                                 
                             </div>
                             <br>
@@ -195,7 +195,7 @@
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
 
-                            <!-- <form> -->
+                           
                                 <div class="row g-3">
                                     <div class="col-md-12">
                                         <label for="registrador">Registrador</label>
@@ -257,15 +257,16 @@
                             </div>
                             <div class="col-md-12">
                                 <label for="fecha_registro">Fecha Registro</label>
-                                <input type="text" class="form-control" name="fecha_registro" #fecha_registro="ngModel"
+                                <input type="date" class="form-control" name="fecha_registro" #fecha_registro="ngModel"
                                     [(ngModel)]="sitio.fecha_registro">
                             </div>
                         </div>
-                            <!-- </form> -->
+                            
                         </div>
 
-                    </div>
-                </div>
+                    </div> 
+
+                </div>  
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingThree">
@@ -279,7 +280,7 @@
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
 
-                            <!-- <form> -->
+                            
                           
                                 <div class="row g-3">
                                     <div class="col-md-3">
@@ -306,12 +307,125 @@
                                             [(ngModel)]="sitio.hoja_cartografica">
                                     </div>
                                 </div>
+                                
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="direccion">Dirección</label>
+                                        <input type="text" class="form-control" name="direccion" #direccion="ngModel"
+                                            [(ngModel)]="sitio.direccion">
+                                    </div>
+                                </div>
+                                <br>
+                                <hr>
+                                <div class="row g-3">
+                                    <div class="col-md-3">
+                                        <label for="region">Región Arqueológica</label>
+                                        <input type="text" class="form-control" name="region" #region="ngModel"
+                                            [(ngModel)]="sitio.region">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="zona_vida">Zona de Vida</label>
+                                        <input type="text" class="form-control" name="zona_vida" #zona_vida="ngModel"
+                                            [(ngModel)]="sitio.zona_vida">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="altitud">Altitud</label>
+                                        <input type="text" class="form-control" name="altitud" #altitud="ngModel"
+                                            [(ngModel)]="sitio.altitud">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input class="form-check-input" type="checkbox" name="territorio_indigena" #territorio_indigena [(ngModel)]="sitio.territorio_indigena"
+                                            (ngModelChange)="sitio.territorio_indigena=$event? true:false">
+                                            <label class="form-check-label" for="territorio_indigena">Territorio Indigena</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <hr>
+
+                                <div class="row g-3">
+                                    <div class="col-md-3">
+                                        <label for="lambert_oe">Lambert OE</label>
+                                        <input type="text" class="form-control" name="lambert_oe" #lambert_oe="ngModel"
+                                            [(ngModel)]="sitio.lambert_oe">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="lambert_ns">Lambert NS</label>
+                                        <input type="text" class="form-control" name="lambert_ns" #lambert_ns="ngModel"
+                                            [(ngModel)]="sitio.lambert_ns">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="crtm05_n">CRTM05 N</label>
+                                        <input type="text" class="form-control" name="crtm05_n" #crtm05_n="ngModel"
+                                            [(ngModel)]="sitio.crtm05_n">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="crtm05_e">CRTM05 E</label>
+                                        <input type="text" class="form-control" name="crtm05_e" #crtm05_e="ngModel"
+                                            [(ngModel)]="sitio.crtm05_e">
+                                    </div>
+
+                                    <div class="row g-3">
+                                        <h3>Latitud</h3>
+                                        <div class="col-md-3">
+                                            <label for="grad_lat">Grados</label>
+                                            <input type="number" class="form-control" name="grad_lat" #grad_lat="ngModel"
+                                                [(ngModel)]="sitio.grad_lat">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="min_lat">Minutos</label>
+                                            <input type="number" class="form-control" name="min_lat" #min_lat="ngModel"
+                                                [(ngModel)]="sitio.min_lat">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="seg_lat">Segundos</label>
+                                            <input type="number" (change)="cambiarcoordenadas()" class="form-control" name="seg_lat" #seg_lat="ngModel"
+                                                [(ngModel)]="sitio.seg_lat">
+                                        </div>
+                                        <div class="col-md-3">
+                                           <h4>Latitud Decimal : {{sitio.latitude}}</h4> 
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3">
+                                        <h3>Longitud</h3>
+                                        <div class="col-md-3">
+                                            
+                                            <label for="grad_long">Grados</label>
+                                            <input type="number" class="form-control" name="grad_long" #grad_long="ngModel"
+                                                [(ngModel)]="sitio.grad_long">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="min_long">Minutos</label>
+                                            <input type="number" class="form-control" name="min_long" #min_long="ngModel"
+                                                [(ngModel)]="sitio.min_long">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="seg_log">Segundos</label>
+                                            <input type="number" (change)="cambiarcoordenadaslong()" class="form-control" name="seg_log" #seg_log="ngModel"
+                                                [(ngModel)]="sitio.seg_log">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h4>Longitud Decimal : {{sitio.Logitude}}</h4> 
+                                         </div>
+                                    </div>
+
+                                    <div class="row g-3">
+                                        <div class="col-md-3">
+                                            <input class="form-check-input" type="checkbox" name="localizacion_gps" #localizacion_gps [(ngModel)]="sitio.localizacion_gps"
+                                            (ngModelChange)="sitio.localizacion_gps=$event? true:false">
+                                            <label class="form-check-label" for="localizacion_gps">Localización GPS</label>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
                             
-                            <!-- </form> -->
+                           
                         </div>
 
                     </div>
-                </div>
+                </div> 
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingFour">
@@ -325,14 +439,182 @@
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
 
-                            <!-- <form> -->
-                          
+                           
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="composicion_cronologica">Composición</label>
+                                        <input type="text" class="form-control" name="composicion_cronologica" #composicion_cronologica="ngModel"
+                                            [(ngModel)]="sitio.composicion_cronologica">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row g-3">
+                                    <h3>Período</h3>
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="checkbox" name="diezmil_ochomil_ac" #diezmil_ochomil_ac [(ngModel)]="sitio.diezmil_ochomil_ac"
+                                            (ngModelChange)="sitio.diezmil_ochomil_ac=$event? true:false">
+                                            <label class="form-check-label" for="diezmil_ochomil_ac">10.000-8000 aC</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fase_1"></label>
+                                        <input type="text" class="form-control" name="fase_1" #fase_1="ngModel"
+                                            [(ngModel)]="sitio.fase_1">
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="checkbox" name="mil_tres_cincuenta_mil_quinientos_dc" #mil_tres_cincuenta_mil_quinientos_dc [(ngModel)]="sitio.mil_tres_cincuenta_mil_quinientos_dc"
+                                            (ngModelChange)="sitio.mil_tres_cincuenta_mil_quinientos_dc=$event? true:false">
+                                            <label class="form-check-label" for="mil_tres_cincuenta_mil_quinientos_dc">1350- 1550 aC</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fase_2"></label>
+                                        <input type="text" class="form-control" name="fase_2" #fase_2="ngModel"
+                                            [(ngModel)]="sitio.fase_2">
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="checkbox" name="mil_quinientos_quinientos_ac" #mil_quinientos_quinientos_ac [(ngModel)]="sitio.mil_quinientos_quinientos_ac"
+                                            (ngModelChange)="sitio.mil_quinientos_quinientos_ac=$event? true:false">
+                                            <label class="form-check-label" for="mil_quinientos_quinientos_ac">1500 aC- 500 aC</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fase_3"></label>
+                                        <input type="text" class="form-control" name="fase_3" #fase_3="ngModel"
+                                            [(ngModel)]="sitio.fase_3">
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="checkbox" name="mil_quinientos_mil_ochocientos_dc" #mil_quinientos_mil_ochocientos_dc [(ngModel)]="sitio.mil_quinientos_mil_ochocientos_dc"
+                                            (ngModelChange)="sitio.mil_quinientos_mil_ochocientos_dc=$event? true:false">
+                                            <label class="form-check-label" for="mil_quinientos_mil_ochocientos_dc">1550- 1821 dC</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fase_4"></label>
+                                        <input type="text" class="form-control" name="fase_4" #fase_4="ngModel"
+                                            [(ngModel)]="sitio.fase_4">
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="checkbox" name="mil_ochocientos_mil_novecientos_sc" #mil_ochocientos_mil_novecientos_sc [(ngModel)]="sitio.mil_ochocientos_mil_novecientos_sc"
+                                            (ngModelChange)="sitio.mil_ochocientos_mil_novecientos_sc=$event? true:false">
+                                            <label class="form-check-label" for="mil_ochocientos_mil_novecientos_sc">1821- 1950 dC</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fase_5"></label>
+                                        <input type="text" class="form-control" name="fase_5" #fase_5="ngModel"
+                                            [(ngModel)]="sitio.fase_5">
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="checkbox" name="trecientos_ochocientos_dc" #trecientos_ochocientos_dc [(ngModel)]="sitio.trecientos_ochocientos_dc"
+                                            (ngModelChange)="sitio.trecientos_ochocientos_dc=$event? true:false">
+                                            <label class="form-check-label" for="trecientos_ochocientos_dc">300- 800 dC</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fase_6"></label>
+                                        <input type="text" class="form-control" name="fase_6" #fase_6="ngModel"
+                                            [(ngModel)]="sitio.fase_6">
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="checkbox" name="cuatro_mil_mil_quinientos_ac" #cuatro_mil_mil_quinientos_ac [(ngModel)]="sitio.cuatro_mil_mil_quinientos_ac"
+                                            (ngModelChange)="sitio.cuatro_mil_mil_quinientos_ac=$event? true:false">
+                                            <label class="form-check-label" for="cuatro_mil_mil_quinientos_ac">4000- 1500 aC</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fase_7"></label>
+                                        <input type="text" class="form-control" name="fase_7" #fase_7="ngModel"
+                                            [(ngModel)]="sitio.fase_7">
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="checkbox" name="quinientos_trecientos_dc" #quinientos_trecientos_dc [(ngModel)]="sitio.quinientos_trecientos_dc"
+                                            (ngModelChange)="sitio.quinientos_trecientos_dc=$event? true:false">
+                                            <label class="form-check-label" for="quinientos_trecientos_dc">500 aC- 300 dC</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fase_8"></label>
+                                        <input type="text" class="form-control" name="fase_8" #fase_8="ngModel"
+                                            [(ngModel)]="sitio.fase_8">
+                                    </div>
+                                </div>
                             
-                            <!-- </form> -->
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="checkbox" name="ochocientos_mil_tres_cincuenta_dc" #ochocientos_mil_tres_cincuenta_dc [(ngModel)]="sitio.ochocientos_mil_tres_cincuenta_dc"
+                                            (ngModelChange)="sitio.ochocientos_mil_tres_cincuenta_dc=$event? true:false">
+                                            <label class="form-check-label" for="ochocientos_mil_tres_cincuenta_dc">800- 1350 dC</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fase_9"></label>
+                                        <input type="text" class="form-control" name="fase_9" #fase_9="ngModel"
+                                            [(ngModel)]="sitio.fase_9">
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="checkbox" name="ocho_mil_cuatro_mil_ac" #ocho_mil_cuatro_mil_ac [(ngModel)]="sitio.ocho_mil_cuatro_mil_ac"
+                                            (ngModelChange)="sitio.ocho_mil_cuatro_mil_ac=$event? true:false">
+                                            <label class="form-check-label" for="ocho_mil_cuatro_mil_ac">8000- 4000 aC</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fase_10"></label>
+                                        <input type="text" class="form-control" name="fase_10" #fase_10="ngModel"
+                                            [(ngModel)]="sitio.fase_10">
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <h3>Datación</h3>
+
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <input class="form-check-input" type="checkbox" name="litica" #litica [(ngModel)]="sitio.litica"
+                                            (ngModelChange)="sitio.litica=$event? true:false">
+                                            <label class="form-check-label" for="litica">Lítica</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-check-input" type="checkbox" name="radiocarbono_dat" #radiocarbono_dat [(ngModel)]="sitio.radiocarbono_dat"
+                                        (ngModelChange)="sitio.radiocarbono_dat=$event? true:false">
+                                        <label class="form-check-label" for="radiocarbono_dat">RadioCarbono</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-check-input" type="checkbox" name="ceramica_dat" #ceramica_dat [(ngModel)]="sitio.ceramica_dat"
+                                        (ngModelChange)="sitio.ceramica_dat=$event? true:false">
+                                        <label class="form-check-label" for="ceramica_dat">Cerámica</label>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    
+                                    <div class="col-md-6">
+                                        <label for="fechamiento_adiometrico">Fechamiento Adiometrico</label>
+                                        <input type="text" class="form-control" name="fechamiento_adiometrico" #fechamiento_adiometrico="ngModel"
+                                            [(ngModel)]="sitio.fechamiento_adiometrico">
+                                    </div>
+                                </div>
+
+
+                           
                         </div>
 
                     </div>
-                </div>
+                </div> 
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingFive">
@@ -346,16 +628,132 @@
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
 
-                            <!-- <form> -->
-                          
+                           
+                                <div class="row g-3">
+                                    <div class="col-md-3">
+                                        <input class="form-check-input" type="checkbox" name="excavacion" #excavacion [(ngModel)]="sitio.excavacion"
+                                            (ngModelChange)="sitio.excavacion=$event? true:false">
+                                            <label class="form-check-label" for="excavacion">Excavación</label>
+                                    </div>
                             
-                            <!-- </form> -->
+                                   <!--  <div class="col-md-3">
+                                        <input class="form-check-input" type="checkbox" name="levantamiento_cartografico" #levantamiento_cartografico [(ngModel)]="sitio.levantamiento_cartografico"
+                                        (ngModelChange)="sitio.levantamiento_cartografico=$event? true:false">
+                                        <label class="form-check-label" for="levantamiento_cartografico">Lev Cart</label>
+                                    </div> -->
+                                  
+                                    <div class="col-md-3">
+                                        <input class="form-check-input" type="checkbox" name="rec_superficie" #rec_superficie [(ngModel)]="sitio.rec_superficie"
+                                        (ngModelChange)="sitio.rec_superficie=$event? true:false">
+                                        <label class="form-check-label" for="rec_superficie">Rec Superficie</label>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <input class="form-check-input" type="checkbox" name="rec_propiedad" #rec_propiedad [(ngModel)]="sitio.rec_propiedad"
+                                        (ngModelChange)="sitio.rec_propiedad=$event? true:false">
+                                        <label class="form-check-label" for="rec_propiedad">Rec Propiedad</label>
+                                    </div>
+
+                                </div>
+                                <hr>
+                                <br>
+
+                                <h3>Recolección Superficie</h3>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="checkbox" name="arbitratia" #arbitratia [(ngModel)]="sitio.arbitratia"
+                                            (ngModelChange)="sitio.arbitratia=$event? true:false">
+                                            <label class="form-check-label" for="arbitratia">Arbitraria</label>
+                                    </div>
+                            
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="checkbox" name="probabilistico" #probabilistico [(ngModel)]="sitio.probabilistico"
+                                        (ngModelChange)="sitio.probabilistico=$event? true:false">
+                                        <label class="form-check-label" for="probabilistico">Probabilistica</label>
+                                    </div>
+
+                                </div>  
+
+                                <hr>
+                                <br>
+
+                                <h3>Levantamiento Cartográfico</h3>
+                                <div class="col-md-12">
+                                    <label for="levantamiento_cartografico"></label>
+                                    <input type="text" class="form-control" name="levantamiento_cartografico" #levantamiento_cartografico="ngModel"
+                                        [(ngModel)]="sitio.levantamiento_cartografico">
+                                </div>
+                            
+                                <hr>
+                                <br>
+
+                                <h3>Excavación</h3>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input class="form-check-input" type="checkbox" name="cala_estratatigrafica" #cala_estratatigrafica [(ngModel)]="sitio.cala_estratatigrafica"
+                                    (ngModelChange)="sitio.cala_estratatigrafica=$event? true:false">
+                                    <label class="form-check-label" for="cala_estratatigrafica">Cala Estratatigrafica</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-check-input" type="checkbox" name="limpieza_razgos" #limpieza_razgos [(ngModel)]="sitio.limpieza_razgos"
+                                    (ngModelChange)="sitio.limpieza_razgos=$event? true:false">
+                                    <label class="form-check-label" for="limpieza_razgos">Limpieza Razgos</label>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input class="form-check-input" type="checkbox" name="horizontal" #horizontal [(ngModel)]="sitio.horizontal"
+                                    (ngModelChange)="sitio.horizontal=$event? true:false">
+                                    <label class="form-check-label" for="horizontal">Horizontal</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-check-input" type="checkbox" name="sondeo" #sondeo [(ngModel)]="sitio.sondeo"
+                                    (ngModelChange)="sitio.sondeo=$event? true:false">
+                                    <label class="form-check-label" for="sondeo">Sondeo</label>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input class="form-check-input" type="checkbox" name="limpieza_perfiles" #limpieza_perfiles [(ngModel)]="sitio.limpieza_perfiles"
+                                    (ngModelChange)="sitio.limpieza_perfiles=$event? true:false">
+                                    <label class="form-check-label" for="limpieza_perfiles">Limpieza Perfiles</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-check-input" type="checkbox" name="trinchera" #trinchera [(ngModel)]="sitio.trinchera"
+                                    (ngModelChange)="sitio.trinchera=$event? true:false">
+                                    <label class="form-check-label" for="trinchera">Trinchera</label>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <br>
+
+                           
+
+                            <div class="row g-3">
+                              <ng-multiselect-dropdown
+                                [placeholder]="'Materiales Recuperados'"
+                                [settings]="dropdownSettings"
+                                [data]="dropdownList"
+                                [(ngModel)]="selectedItems"
+                                (onSelect)="onItemSelect($event)"
+                                (onSelectAll)="onSelectAll($event)"
+                                [ngModelOptions]="{standalone: true}"
+                              >
+                              </ng-multiselect-dropdown> 
+                            </div> 
+
+                          
                         </div>
 
                     </div>
                 </div>
 
-                <div class="accordion-item">
+                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
@@ -367,37 +765,99 @@
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
 
-                            <!-- <form> -->
-                          
+                           
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                    <label for="investigador">Investigador</label>
+                                        <input type="text" class="form-control" name="investigador" #investigador="ngModel"
+                                            [(ngModel)]="sitio.investigador">
+                                    </div>
+                                    <div class="col-md-6">
+                                            <label for="area_estimada">Área Estimada</label>
+                                            <input type="text" class="form-control" name="area_estimada" #area_estimada="ngModel"
+                                                [(ngModel)]="sitio.area_estimada">
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="row g-3">
+                                    <label for="profundidad_depositos">Profundidad Depósitos</label>
+                                        <input type="text" class="form-control" name="profundidad_depositos" #profundidad_depositos="ngModel"
+                                            [(ngModel)]="sitio.profundidad_depositos">
+                                </div>
+                                <hr>
+
+                                <div class="row g-3">
+                                    <label for="causa_penal">Causa Penal</label>
+                                        <input type="text" class="form-control" name="causa_penal" #causa_penal="ngModel"
+                                            [(ngModel)]="sitio.causa_penal">
+                                </div>
+                                <hr>
                             
-                            <!-- </form> -->
+                                <div class="row g-3">
+                                    <ng-multiselect-dropdown
+                                    [placeholder]="'Estado de Conservación'"
+                                    [settings]="dropdownSettings"
+                                    [data]="dropdownList2"
+                                    [(ngModel)]="selectedItems"
+                                    (onSelect)="onItemSelect2($event)"
+                                    (onSelectAll)="onSelectAll($event)"
+                                  >
+                                  </ng-multiselect-dropdown> 
+                                </div> 
+                                <hr>
+
+                                <div class="row g-3">
+                                    <label for="expediente_setena">Expediente Setena</label>
+                                        <input type="text" class="form-control" name="expediente_setena" #expediente_setena="ngModel"
+                                            [(ngModel)]="sitio.expediente_setena">
+                                </div>
+                                <hr>
+
+                                <div class="row g-3">
+                                   <<ng-multiselect-dropdown
+                                    [placeholder]="'Patrimonio Sub Acuático'"
+                                    [settings]="dropdownSettings"
+                                    [data]="dropdownList3"
+                                    [(ngModel)]="selectedItems"
+                                    (onSelect)="onItemSelect3($event)"
+                                    (onSelectAll)="onSelectAll($event)"
+                                  >
+                                  </ng-multiselect-dropdown>
+                                </div> 
+                                <hr>
+
+                                <div class="row g-3">
+                                    <input class="form-check-input" type="checkbox" name="reserva_arqueologica" #reserva_arqueologica [(ngModel)]="sitio.reserva_arqueologica"
+                                        (ngModelChange)="sitio.reserva_arqueologica=$event? true:false">
+                                        <label class="form-check-label" for="reserva_arqueologica">Reserva Arqueológica</label>
+
+                                   
+                                </div>
+                                <hr>
+
+                                <div class="row g-3">
+                                    <label for="rio_cercano">Río Cercano</label>
+                                        <input type="text" class="form-control" name="rio_cercano" #rio_cercano="ngModel"
+                                            [(ngModel)]="sitio.rio_cercano">
+                                </div>
+                                <hr>
+
+                                <div class="row g-3">
+                                    <label for="plano_catrasto">Plano Catastro</label>
+                                        <input type="text" class="form-control" name="plano_catrasto" #plano_catrasto="ngModel"
+                                            [(ngModel)]="sitio.plano_catrasto">
+                                </div>
+                                <hr>
+
+
                         </div>
 
                     </div>
-                </div>
+                </div> 
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingSeven">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
-                            Documentación
-                        </button>
-                    </h2>
-
-                    <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-
-                            <!-- <form> -->
-                          
-                            
-                            <!-- </form> -->
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="accordion-item">
+                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingEight">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
@@ -409,10 +869,110 @@
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
 
-                            <!-- <form> -->
-                          
                             
-                            <!-- </form> -->
+                          
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                    <label for="nombre_sitio">Nombre Sitio</label>
+                                        <input type="text" class="form-control" name="nombre_sitio" #nombre_sitio="ngModel"
+                                            [(ngModel)]="sitio.nombre_sitio">
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="clave_sitio">Clave Sitio</label>
+                                            <input type="text" class="form-control" name="clave_sitio" #clave_sitio="ngModel"
+                                                [(ngModel)]="sitio.clave_sitio">
+    
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="tipo_informacion">Tipo Información</label>
+                                                <input type="text" class="form-control" name="tipo_informacion" #tipo_informacion="ngModel"
+                                                    [(ngModel)]="sitio.doc_tipo_info">
+        
+                                            </div>
+                                </div>
+                               
+
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                    <label for="doc_ubicacion">Ubicación</label>
+                                        <input type="text" class="form-control" name="doc_ubicacion" #doc_ubicacion="ngModel"
+                                            [(ngModel)]="sitio.doc_ubicacion">
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="doc_numero">Número</label>
+                                            <input type="text" class="form-control" name="doc_numero" #doc_numero="ngModel"
+                                                [(ngModel)]="sitio.doc_numero">
+    
+                                        </div>
+                                </div>
+                                <hr>
+
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                    <label for="doc_autor">Autor</label>
+                                        <input type="text" class="form-control" name="doc_autor" #doc_autor="ngModel"
+                                            [(ngModel)]="sitio.doc_autor">
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="doc_titulo">Título</label>
+                                            <input type="text" class="form-control" name="doc_titulo" #doc_titulo="ngModel"
+                                                [(ngModel)]="sitio.doc_titulo">
+    
+                                        </div>
+                                    <div class="col-md-4">
+                                        <label for="doc_fecha_digita">Fecha</label>
+                                            <input type="date" class="form-control" name="doc_fecha_digita" #doc_fecha_digita="ngModel"
+                                                [(ngModel)]="sitio.doc_fecha_digita">
+    
+                                        </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                    <label for="doc_contenido">Contenido</label>
+                                        <input type="text" class="form-control" name="doc_contenido" #doc_contenido="ngModel"
+                                            [(ngModel)]="sitio.doc_contenido">
+
+                                    </div>
+                                    
+                                </div>
+                                <hr>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                    <label for="doc_observaciones">Observaciones</label>
+                                        <input type="text" class="form-control" name="doc_observaciones" #doc_observaciones="ngModel"
+                                            [(ngModel)]="sitio.doc_observaciones">
+
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="doc_web">Web</label>
+                                            <input type="text" class="form-control" name="doc_web" #doc_web="ngModel"
+                                                [(ngModel)]="sitio.doc_web">
+    
+                                        </div>
+                                    
+                                </div>
+                                <hr>
+
+                                <div class="row g-3">
+                                  <ng-multiselect-dropdown
+                                    [placeholder]="'Descripción Material Gráfico'"
+                                    [settings]="dropdownSettings"
+                                    [data]="dropdownList4"
+                                    [(ngModel)]="selectedItems"
+                                    (onSelect)="onItemSelect4($event)"
+                                    (onSelectAll)="onSelectAll($event)"
+                                  >
+                                  </ng-multiselect-dropdown>
+                                </div> 
+                            
+                    
                         </div>
 
                     </div>
@@ -422,22 +982,35 @@
 
         
 
-                <div class="form-group">
-                    <div class="image-thumb" *ngIf="is_edit">
+               <!--  <div class="form-group">
+                    <h2>Subir Imagen Principal ó PDF</h2>
+                     <div class="image-thumb" *ngIf="is_edit">
                         
                             <img src="{{url + 'get-image/' + sitio.image}}" alt="{{sitio.nombre_sitio}}" *ngIf="sitio.image"/>
-                            <img src="assets/images/default.png" alt="{{sitio.nombre_sitio}}" *ngIf="!sitio.image"/>
+
+                            <img src="assets/images/default.png" alt="{{sitio.nombre_sitio}}" *ngIf="!sitio.image"/>               
                     
-                    </div>
+                    </div> 
                     
+                    
+                   
                     <angular-file-uploader
                         [config]="afuConfig"
                         (ApiResponse)="imageUpload($event)">
                     </angular-file-uploader>
                 
                 </div>
+ -->
+                <div>
+                    <h2>Subir Imágenes</h2>
+                    <input type="file" accept=".png, .jpg, .jpeg" multiple (change)="cargarImagen($event)"/>
+                </div>
 
+                <Hr>
+
+                <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-success"/>
+             </div>
 
         </form>
 

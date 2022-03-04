@@ -7,26 +7,31 @@
             <img src="assets/images/logoORI3.png" class="logoori" alt="Logotipo" />
         </div>
         <div id="disclaimer">
-            <p align="justify">"En la Base ORIGENES están incluidos todos los monumentos arqueológicos registrados
+            <p style="font-size:120%;" text-align="justify;">"En la Base ORIGENES están incluidos todos los monumentos arqueológicos registrados
                 desde 1870 a la fecha. Sin embargo, a falta de una prospección sistematica a nivel
                 nacional, no se excluye la aparición de más monumentos al realizar movimientos de tierra.
                 En razón de lo anterior, se insta a los consultores en arqueología a proceder con
                 el D1, de acuerdo con la normativa de la Secretaría Tecnica Nacional (SETENA)".</p>
-                <a class="nav-link" [routerLink]="['/politicasUso']" [routerLinkActive]= "['active']">Regístrese</a>
+                <div *ngIf="administrador == false">
+                    <p style="font-size:120%;" text-align="justify;"> <strong>Si usted es Arqueólogo, habilítese <a class="nav-link" [routerLink]="['/politicasUso']" [routerLinkActive]= "['active']">aquí...</a></strong></p>
+                </div>
+                
             </div>
 
         <hr>
         
-            <div id="map"><google-chart style="width: 500px; height: 300px;" [title]='mytitle' [type]= "myType" [data]="myData"></google-chart></div>
-            <hr>
-            <div id="map"><google-chart 
-                [type]="chartData.type" 
-                [data]="chartData.data" 
+           <!--  <div id="map">
+                <google-chart style="width: 500px; height: 300px;" [title]='mytitle' [type]= "myType" [data]="myData"></google-chart></div>
+            <hr> -->
+             <div id="map"><google-chart 
+                [title]="chartData.mytitle"
+                [type]="chartData.myType" 
+                [data]="chartData.myData" 
                 [columns]="chartData.columnNames" 
                 [options]="chartData.options" 
                 [width]="chartData.width"
                 [height]="chartData.height">
-                </google-chart></div>
+                </google-chart></div> 
         <!-- <app-sitio [sitios]= "sitios">
             
         </app-sitio> 

@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-
 import { Globallit } from "./globallit";
 
 
 @Injectable()
+
 export class LiticoService {
     [x: string]: any;
 

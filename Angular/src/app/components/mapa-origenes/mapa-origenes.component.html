@@ -1,4 +1,7 @@
 <app-header></app-header>
+<a [routerLink]="['/pag-ori']" data-toggle="tooltip" data-placement="top" title="Regresar" class = "btn btn-outline-warning">
+    <mat-icon>home</mat-icon>    
+  </a> 
 <div class="center">
     <p>Cantidad de Sitios Encontrados : <b>{{sitios.length}}</b></p>
   
@@ -12,7 +15,7 @@
                 <div class="input-group input-group-sm mb3">
                     
                     <select [(ngModel)]= "selectedProvincia.id" (change)="onSelect($event.target)">
-                        <option value="0">--Seleccione Provincia--</option>
+                        <option value="0">--Seleccione Provincia</option>
                         <option *ngFor="let provincia of provincias?.provincias" [value]="provincia.id">{{provincia.title}}</option>
                         
                     </select>
@@ -23,7 +26,7 @@
             <br>
                 <div class="input-group input-group-sm mb3">
                     <select [(ngModel)]= "selectedCanton.id" (change)="onSelectCanton($event.target)">
-                        <option value="0">--Seleccione Cantón</option>
+                        <option value="0">--Seleccione Cantón--</option>
                         <option *ngFor="let canton of cantones" [value]="canton.id">{{canton.title}}</option>
                     </select>
                     <button data-toggle="tooltip" data-placement="top" title="Busca por Cantón" (click)="goSearchCanton(selectedCanton.id)" class="btn btn-outline-success">
@@ -34,7 +37,7 @@
 
                 <div class="input-group input-group-sm mb3">
                     <select [(ngModel)]= "selectedDistrito.id">
-                        <option value="0">--Seleccione Distrito</option>
+                        <option value="0">--Seleccione Distrito--</option>
                         <option *ngFor="let distrito of distritos" [value]="distrito.id">{{distrito.title}}</option>
                     </select>
                     <button data-toggle="tooltip" data-placement="top" title="Busca por Distrito" (click)="goSearchDistrito(selectedDistrito.id)" class="btn btn-outline-success">

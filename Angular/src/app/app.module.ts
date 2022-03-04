@@ -44,6 +44,7 @@ import {MatTableModule} from '@angular/material/table';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog'
 import { ExporterService } from './services/exporter';
 import { FichaContextoComponent } from './components/ficha-contexto/ficha-contexto.component';
@@ -85,6 +86,8 @@ import { RegistroOrigenesComponent } from './components/registro-origenes/regist
 import { PagLiteSitiosComponent } from './components/pag-lite-sitios/pag-lite-sitios.component';
 import { PagDetalleLiteSitioComponent } from './components/pag-detalle-lite-sitio/pag-detalle-lite-sitio.component';
 import { PagLiteSitioNombreComponent } from './components/pag-lite-sitio-nombre/pag-lite-sitio-nombre.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { SitioEditComponent } from './components/sitio-edit/sitio-edit.component';
 
 @NgModule({
   declarations: [
@@ -148,7 +151,8 @@ import { PagLiteSitioNombreComponent } from './components/pag-lite-sitio-nombre/
     RegistroOrigenesComponent,
     PagLiteSitiosComponent,
     PagDetalleLiteSitioComponent,
-    PagLiteSitioNombreComponent
+    PagLiteSitioNombreComponent,
+    SitioEditComponent
    
     
   ],
@@ -156,6 +160,7 @@ import { PagLiteSitioNombreComponent } from './components/pag-lite-sitio-nombre/
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgMultiSelectDropDownModule.forRoot(),
     routing,
     MatTabsModule,
     NgbModule,
@@ -172,6 +177,7 @@ import { PagLiteSitioNombreComponent } from './components/pag-lite-sitio-nombre/
     MatButtonModule,
     MatIconModule,
     MatInputModule,
+    MatTooltipModule,
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,

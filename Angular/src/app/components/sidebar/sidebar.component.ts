@@ -66,10 +66,8 @@ export class SidebarComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.showAll();
-    this.onSelect(this.selectedProvincia.id);
-    this.onSelectCanton(this.selectedCanton.id);
 
+  
     this.authService.search(localStorage.getItem('email'))
     .subscribe(
       res => {
@@ -77,22 +75,28 @@ export class SidebarComponent implements OnInit {
           console.log(res.usuarios)
           this.usuario = res.usuarios;
           this.title = JSON.stringify(this.usuario, ['email'])
-          
-          if (this.title == '[{"email":"jcsanchez@museocostarica.go.cr"}]' || '[{"email":"jeffreytapia@gmail.com"}]'){
-            this.administrador = true;
-                
-          } 
-          if (this.title == '[{"email":"joe@do.com"}]'){
-            this.registrado = true;
-            this.administrador = false;
-            console.log(this.registrado)  
-            console.log(this.administrador)       
-          } 
-          
         }
-      },
+
+        if (this.title == '[{"email":"jcsanchez@museocostarica.go.cr"}]' || this.title =='[{"email":"jeffreytapia@gmail.com"}]'){
+          this.administrador = true;
+          this.registrado = true;
+        } else if (this.title == '[{"email":"bm@kraken.com"}]'){
+        this.administrador = true;
+       
+      } else{
+        this.administrador = false;
+      }},
+
       err => {console.log(err)
+       
       });  
+
+
+      this.showAll();
+      this.onSelect(this.selectedProvincia.id);
+      this.onSelectCanton(this.selectedCanton.id);
+
+      
 
   }
 

@@ -42,6 +42,7 @@ import { RegistroComponent } from "./components/registro/registro.component";
 import { PagOriComponent } from "./components/pag-ori/pag-ori.component";
 import {AuthGuard} from './auth.guard';
 import { SitioDetalleComponent } from "./components/sitio-detalle/sitio-detalle.component";
+import { SitioEditComponent } from "./components/sitio-edit/sitio-edit.component";
 import { SearchCombCeraComponent } from "./components/search-comb-cera/search-comb-cera.component";
 import { SearchComblitComponent } from "./components/search-comblit/search-comblit.component";
 import { SearchCombMetComponent } from "./components/search-comb-met/search-comb-met.component";
@@ -82,6 +83,7 @@ const appRoutes: Routes = [
     {path: 'pag-met/metalico/:id', component: MetalDetalleComponent, canActivate: [AuthGuard]},
     {path: 'pag-ori/sitio/:id', component: SitioDetalleComponent, canActivate: [AuthGuard]},
     {path: 'pag-ori-det/sitio/:id', component: PagDetalleLiteSitioComponent, canActivate: [AuthGuard]},
+    {path: 'sitio-editar/sitio/:id', component: SitioEditComponent, canActivate: [AuthGuard]},
     {path: 'reporte-publico/ceramic/:id', component: ReportePublicoComponent, canActivate: [AuthGuard]},
     {path: 'pagina/crear', component: ArticleNewComponent, canActivate: [AuthGuard]},
     {path: 'pagina/editar/:id', component: ArticleEditComponent, canActivate: [AuthGuard]},

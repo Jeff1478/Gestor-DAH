@@ -7,12 +7,13 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatDialog} from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import Swal from 'sweetalert2';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-pag-lite-sitios',
   templateUrl: './pag-lite-sitios.component.html',
   styleUrls: ['./pag-lite-sitios.component.css'],
-  providers : [SitioService]
+  providers : [SitioService,AuthService]
 })
 export class PagLiteSitiosComponent implements OnInit { 
 
@@ -22,6 +23,10 @@ export class PagLiteSitiosComponent implements OnInit {
   provincia!: string;
   canton!: string;
   region!: string;
+  public administrador!: boolean;
+  public registrado!: boolean;
+  public usuario!: any;
+  public title!: string;
   public sitios: Sitio[] = [];
   
 
@@ -29,7 +34,8 @@ export class PagLiteSitiosComponent implements OnInit {
     private _sitioService: SitioService,
     private _route: ActivatedRoute,
     private _router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public authService : AuthService
   ) { }
 
   listData!: MatTableDataSource<any>;
@@ -86,6 +92,29 @@ export class PagLiteSitiosComponent implements OnInit {
       
     });
 
+    this.authService.search(localStorage.getItem('email'))
+    .subscribe(
+      res => {
+        if(res.usuarios){
+          console.log(res.usuarios)
+          this.usuario = res.usuarios;
+          this.title = JSON.stringify(this.usuario, ['email'])
+        }
+
+        if (this.title == '[{"email":"jcsanchez@museocostarica.go.cr"}]' || this.title =='[{"email":"jeffreytapia@gmail.com"}]'){
+          this.administrador = true;
+          this.registrado = true;
+        } else if (this.title == '[{"email":"bm@kraken.com"}]'){
+        this.administrador = true;
+       
+      } else{
+        this.administrador = false;
+      }},
+
+      err => {console.log(err)
+       
+      });  
+
   }
 
   onSearchClear() {
@@ -99,8 +128,13 @@ export class PagLiteSitiosComponent implements OnInit {
 
   openDialog(selected:any){
     
+    if(this.administrador){
+      this._router.navigate(['/pag-ori/sitio', selected])
+    } else {
+      this._router.navigate(['/pag-ori-det/sitio', selected])
+    }
     // const dialogRef = this.dialog.open(PagDetalleLiteSitioComponent, selected);
-    this._router.navigate(['pag-ori-det/sitio', selected])
+   
   }
 
   }

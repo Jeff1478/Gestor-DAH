@@ -3,9 +3,10 @@
 <aside id="sidebar">
 
     <div id="nav-blog" class="sidebar-item">
-        <h3 *ngIf="administrador == true">Administrador</h3>
+        
         
         <div *ngIf= "titulo === 'ceramica'"> 
+          <h3>Administrador</h3>
             <!-- <a [routerLink]="['/ceramica']" class="btn btn-success">Agregar Ficha</a> -->
             <a [routerLink]="['/ceramica']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
               <mat-icon>add_shopping_cart</mat-icon>    
@@ -39,6 +40,7 @@
           
         </div>
         <div *ngIf= "titulo === 'contexto'"> 
+          <h3>Administrador</h3>
             <!-- <a [routerLink]="['/ficha-contexto']" class="btn btn-success">Agregar Ficha</a> -->
             <a [routerLink]="['/ficha-contexto']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
               <mat-icon>add_shopping_cart</mat-icon>    
@@ -60,7 +62,7 @@
         </div>
 
         <div *ngIf= "titulo === 'litico'"> 
-
+          <h3>Administrador</h3>
           <a [routerLink]="['/ficha-litica']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
             <mat-icon>add_shopping_cart</mat-icon>    
         </a>
@@ -91,7 +93,7 @@
         </div>
 
         <div *ngIf= "titulo === 'metalico'"> 
-
+          <h3>Administrador</h3>
           <a [routerLink]="['/ficha-metal']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
             <mat-icon>add_shopping_cart</mat-icon>    
         </a>
@@ -120,8 +122,9 @@
         </div>
 
         <div *ngIf= "titulo === 'sitio'"> 
+          <h3 *ngIf="registrado == true">Administrador</h3>
 
-        <div *ngIf="administrador == true">
+        <div *ngIf="registrado == true">
         <a [routerLink]="['/sitio-excel']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">
           <mat-icon>cloud_download</mat-icon>    
       </a>  
@@ -145,7 +148,7 @@
               
                <div class="input-group input-group-sm mb3">
                   <select [(ngModel)]= "selectedCanton.id" (change)="onSelectCanton($event.target)">
-                      <option value="0">--Seleccione Cantón</option>
+                      <option value="0">---Seleccione Cantón----</option>
                       <option *ngFor="let canton of cantones" [value]="canton.id">{{canton.title}}</option>
                   </select>
                   <button data-toggle="tooltip" data-placement="top" title="Busca por Cantón" (click)="goSearchC(selectedCanton.id)" class="btn btn-outline-success">
@@ -164,10 +167,10 @@
               <br> 
            
             <hr>
-            <div *ngIf="administrador == true || registrado ==true">
-            <h3>Buscador por Mapa</h3>
+            <div *ngIf="administrador == true">
+            <h3>Búsqueda en Mapa</h3>
             <a [routerLink]="['/map-ori']" data-toggle="tooltip" data-placement="top" title="Google Maps" class = "btn btn-outline-warning">
-              <mat-icon>map</mat-icon>    
+              <img src="assets/images/cr.jpg" width="100" height="100">    
           </a> 
           </div>
 

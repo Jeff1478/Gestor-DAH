@@ -1,7 +1,15 @@
 <app-header></app-header>
-<a [routerLink]="['/map-ori']" data-toggle="tooltip" data-placement="top" title="Listado Anterior" class = "btn btn-outline-warning">
+
+<a [routerLink]="['/pag-ori']" data-toggle="tooltip" data-placement="top" title="Regresar" class = "btn btn-outline-warning">
     <mat-icon>list</mat-icon>    
 </a> 
+
+<div *ngIf="administrador == true">
+<a [routerLink]="['/sitio-editar/sitio',sitio._id]" data-toggle="tooltip" data-placement="top" title="Editar Sitio" class="btn btn-outline-success">
+    <mat-icon>edit</mat-icon>
+    </a> 
+</div>
+
 <mat-tab-group mat-align-tabs="center">
 
     <mat-tab>
@@ -158,7 +166,7 @@
             <mat-card fxFlex ="30" class = "descrip-card"> 
                     <mat-card-content>
                         <div align="left">
-                            <p><b>Composición:</b></p>
+                            <p><b>Composición: {{sitio.composicion_cronologica}}</b></p>
                             <p style="color:blue;"><b>Período / Fase</b></p>
                             <hr/>
                             <p><b>10000 - 8000 aC : </b> {{sitio.mil_dos_ocho_mi_ac ? "X": " "}}</p>
@@ -204,7 +212,7 @@
                             <p><b>Excavación :</b> {{sitio.excavacion_aislada ? "X": " "}}</p>
                             <p><b>Levantamiento Cartográfico :</b> {{sitio.lev_cartografico ? "X": " "}}</p>
                             <p><b>Recolección de Superficie :</b> {{sitio.rec_superficie ? "X": " "}}</p> 
-                            <p><b>Recorrido por Propiedad :</b> {{sitio.recorrido_propiedad ? "X": " "}}</p>
+                            <p><b>Recorrido por Propiedad :</b> {{sitio.rec_propiedad ? "X": " "}}</p>
                             <p><b>Registro Fotográfico :</b> {{sitio.registro_fotografico ? "X": " "}}</p>
                             
                             <hr/>
@@ -250,6 +258,7 @@
                         <p><b>Restos Humanos</b> {{sitio.huesos_humanos ? "X": " "}}</p>
                         <p><b>Tierra</b> {{sitio.tierra ? "X": " "}}</p>
                         <p><b>Vidrio</b> {{sitio.vidrio ? "X": " "}}</p>
+                        <p><b>Materiales Recuperados: </b>{{sitio.materiales_recuperados}}</p>
                     </div>
                 </mat-card-content>
             </mat-card>
@@ -347,44 +356,47 @@
         </div>
     </mat-tab>
 
-   <!--  <mat-tab>
+    <mat-tab>
         <ng-template mat-tab-label>
-            <mat-icon class="example-tab-icon">picture_as_pdf</mat-icon>
-            Material Documental
+            <mat-icon class="example-tab-icon">picture_in_picture</mat-icon>
+            Imágenes Asociadas
           </ng-template>
-        <div fxLayout="row" fxLayoutAlign="center stretch">
-            <mat-card fxFlex ="50" class = "descrip-card"> 
-                    <mat-card-content>
-                        <div align="left">
-                            <p><b>Tipo de Información</b></p>
-                            <p><b>Ubicación</b></p>
-                            <p><b>Número</b></p> 
-                           
-                            <hr/>
-                            <p><b>Autor</b></p>
-                            <p><b>Título</b></p>
-                            <p><b>Contenido</b></p>
-                            <p><b>Observaciones</b></p>
-                            <p><b>Web</b></p>
-                            <p><b>Fecha Digitación</b></p>
-                            <hr/>
-                            <p><b>Fot Papel</b>Cantidad</p>
-                            <p><b>Fot Digital</b></p>
-                            <p><b>Diapositivas</b></p>
-                            <p><b>Negativos</b></p>      
-                            <p><b>Croquis</b></p>
-                            <p><b>Planos</b></p>
-                            
-                            <p><b>Programa CD</b> </p>  
-                            
-                            
-                        </div>
-                   </mat-card-content>
-            </mat-card>
+       <!--  <div fxLayout="row" fxLayoutAlign="center stretch">
+            <div class="image-thumb-repo">                
+                <img src="{{url + 'get-image/' + sitio.image}}" *ngIf="sitio.image"/>
+                <img src="assets/images/default.png" *ngIf="!sitio.image"/>   
+            </div>
+        </div> -->
+
+   
+   <!--  <ul>
+        <span>Material Gráfico Adicional</span>
+        <li *ngFor="let element of resultado.slice(1)">     
+                <a href="{{this.element}}" target="_blank">{{this.element}}</a>
+        </li>
+    </ul> -->
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
     
-           
+          <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
+          <div class="carousel-item" *ngFor="let element of resultado?.slice(1); let i = index" [ngClass]="{'active': i === 0}">
+           <img src={{this.element}} class="w-50" title={{this.sitio.nombre_sitio}} />
+          </div>
         </div>
-    </mat-tab> -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span>Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    
+
+
+</mat-tab>
 
   </mat-tab-group>
   

@@ -52,6 +52,14 @@ export class HeaderComponent implements OnInit {
           this.logueado = true;
           this.aguacaliente = false;
         }
+        else if (this.title == '[{"email":"cruiz@museocostarica.go.cr"}]'){
+          this.logueado = true;
+          this.aguacaliente = false;
+        }
+        else if (this.title == '[{"email":"dmeneses@museocostarica.go.cr"}]'){
+          this.logueado = true;
+          this.aguacaliente = false;
+        }
           else {
             this.aguacaliente = true;
             this.logueado = false;

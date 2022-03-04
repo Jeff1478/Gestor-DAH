@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-
 import { Globals } from "./globals";
 
 
 @Injectable()
+
 export class SitioService {
     [x: string]: any;
 
@@ -17,9 +17,26 @@ export class SitioService {
         this.url =Globals.url;
 
     }
-    pruebas(){
-        return "Soy el servicio de sitios !!"
+    create(sitio: any):Observable<any>{
+        let params = JSON.stringify(sitio);
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this._http.post(this.url+'save/',params, {headers:headers});
     }
+
+    update(id: string, sitio: any):Observable<any>{
+        let params = JSON.stringify(sitio);
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this._http.put(this.url+'sitio/'+id, params,{headers: headers});
+    }
+
+    /* create(sitio: any):Observable<any>{
+        let params = JSON.stringify(sitio);
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this._http.post(this.url+'save/',params, {headers:headers});
+    } */
 
     getSitios(last:any = null):Observable<any>{
         var sitios = 'sitios';
@@ -35,13 +52,7 @@ export class SitioService {
         return this._http.get(this.url+'sitio/'+ sitioId);
     }
 
-    create(sitio: any):Observable<any>{
-        let params = JSON.stringify(sitio);
-        let headers = new HttpHeaders().set('Content-Type', 'application/json');
-
-        return this._http.post(this.url+'save/',params, {headers:headers});
-    }
-
+    
     search(searchString: string):Observable<any>{
         return this._http.get(this.url+'search/'+searchString);
     }
@@ -58,33 +69,4 @@ export class SitioService {
         return this._http.get(this.url+'searchNombre/'+searchString);
     }
 
-
-   /*  getLitico(liticoId: string):Observable<any>{
-        return this._http.get(this.url+'litico/'+ liticoId);
-    }
-
-    search(searchString: string):Observable<any>{
-        return this._http.get(this.url+'search/'+searchString);
-    }
-
-    create(litico: any):Observable<any>{
-        let params = JSON.stringify(litico);
-        let headers = new HttpHeaders().set('Content-Type', 'application/json');
-
-        return this._http.post(this.url+'save/',params, {headers:headers});
-    }
-
-    update(id: string, litico: any):Observable<any>{
-        let params = JSON.stringify(litico);
-        let headers = new HttpHeaders().set('Content-Type', 'application/json');
-
-        return this._http.put(this.url+'litico/'+id, params,{headers: headers});
-    }
-
-    delete(id: any):Observable<any>{
-        let headers = new HttpHeaders().set('Content-Type', 'application/json');
-        return this._http.delete(this.url+'litico/'+id, {headers: headers});
-
-    }
- */
 }
