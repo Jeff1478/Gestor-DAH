@@ -166,7 +166,7 @@ import { SitioEditComponent } from './components/sitio-edit/sitio-edit.component
     NgbModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDNPWGHB26C83jeTiqIGM2kFqnpMAwxCeo'
+      
     }),
     FormsModule,
     MatCardModule,
