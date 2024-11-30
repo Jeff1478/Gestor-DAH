@@ -8,7 +8,7 @@
           <h1>Datos Personales</h1>
     
           <mat-form-field style="width: 100%">
-            <input matInput placeholder="Nombre y Apellidos" [formControl]="nameFormControl" />
+            <input matInput placeholder="Nombre y Apellidos" [formControl]="nameFormControl"/>
             <mat-error *ngIf="nameFormControl.hasError('minlength')">
               Nombre de mínimo 4 caracteres.
             </mat-error>
@@ -18,7 +18,7 @@
           </mat-form-field>
     
           <mat-form-field style="width: 100%">
-            <input matInput placeholder="Correo" [formControl]="emailFormControl" />
+            <input matInput placeholder="Correo" [formControl]="emailFormControl"/>
             <mat-error *ngIf="emailFormControl.hasError('email')">
               Introduzca una dirección válida
             </mat-error>

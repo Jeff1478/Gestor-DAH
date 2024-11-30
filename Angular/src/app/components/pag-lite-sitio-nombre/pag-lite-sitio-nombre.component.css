@@ -1,0 +1,35 @@
+.example-margin {
+    margin: 0 10px;
+  }
+
+  .mat-column-nombre_sitio {
+    padding-left: 16px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .mat-column-clave_sitio {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+
+  .mat-column-provincia {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+
+  .mat-column-canton {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+
+  .mat-column-distrito {
+    padding-left: 16px;
+    font-size: 20px;
+    
+  }
+
+  .mat-column-actions {
+    padding-left: 16px;
+    font-size: 20px;
+  }

@@ -11,6 +11,6 @@ export class RestService {
   }
 
   sendPost(body:FormData):Observable<any>{
-    return this.http.post(`http://181.193.24.142:3900/upload/pdf/`, body)
+    return this.http.post(`http://31.220.97.126:3900/upload/pdf/`, body)
   }
 }

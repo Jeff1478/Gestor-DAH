@@ -1,0 +1,1089 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>GestorDAH Documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">GestorDAH Documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  MetalDetalleComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/metal-detalle/metal-detalle.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../injectables/MetalicoService.html" target="_self" >MetalicoService</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-metal-detalle</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./metal-detalle.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./metal-detalle.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#metalico" >metalico</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#page_title" >page_title</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#url" >url</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                <a href="#exportPdf" >exportPdf</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_metalicoService: <a href="../injectables/MetalicoService.html" target="_self">MetalicoService</a>, _route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, _router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/metal-detalle/metal-detalle.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_metalicoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MetalicoService.html" target="_self" >MetalicoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>delete(id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/components/metal-detalle/metal-detalle.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="exportPdf"></a>
+                    <span class="name">
+                        <span ><b>exportPdf</b></span>
+                        <a href="#exportPdf"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>exportPdf()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/components/metal-detalle/metal-detalle.component.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="113"
+                            class="link-to-prism">src/app/components/metal-detalle/metal-detalle.component.ts:113</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="metalico"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>metalico</b></span>
+                        <a href="#metalico"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Metalico.html" target="_self" >Metalico</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/metal-detalle/metal-detalle.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="page_title"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>page_title</b></span>
+                        <a href="#page_title"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/metal-detalle/metal-detalle.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="url"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>url</b></span>
+                        <a href="#url"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/metal-detalle/metal-detalle.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { MetalicoService } from &#x27;src/app/services/metalico.service&#x27;;
+import { Metalico } from &#x27;src/app/models/metalico&#x27;;
+import { GlobalM } from &#x27;src/app/services/globalmet&#x27;;
+import { Router, ActivatedRoute, Params  } from &#x27;@angular/router&#x27;;
+import domtoimage from &#x27;dom-to-image&#x27;;
+import jsPDF from &#x27;jspdf&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+
+@Component({
+  selector: &#x27;app-metal-detalle&#x27;,
+  templateUrl: &#x27;./metal-detalle.component.html&#x27;,
+  styleUrls: [&#x27;./metal-detalle.component.css&#x27;],
+  providers: [MetalicoService]
+})
+
+
+export class MetalDetalleComponent implements OnInit {
+ 
+  public metalico!: Metalico;
+  public url: string;
+  public page_title!: string;
+
+  constructor(
+    private _metalicoService: MetalicoService,
+    private _route:ActivatedRoute,
+    private _router:Router
+  ) {
+    this.url &#x3D; GlobalM.url
+    this.page_title &#x3D; &#x27;Metalico&#x27;;
+   }
+
+
+   exportPdf() {
+    
+    const div : any &#x3D; document.getElementById(&#x27;htmlData&#x27;);
+    const options &#x3D; { background: &#x27;white&#x27;,  height: 2470, width: 1265 };
+    domtoimage.toPng(div, options).then((dataUrl: any) &#x3D;&gt; {
+      //Initialize JSPDF
+      const doc &#x3D; new jsPDF(&#x27;p&#x27;, &#x27;pt&#x27;, &#x27;a4&#x27;,true);
+      const bufferX &#x3D; 15;
+      const bufferY &#x3D; 15;
+      var width &#x3D; doc.internal.pageSize.getWidth()- 2 * bufferX;;
+     
+     var height &#x3D; (doc.internal.pageSize.getHeight() * width) / width;
+      var height2 &#x3D; height*2-200;
+      
+      doc.addImage(dataUrl, &#x27;PNG&#x27;, 0, 0, width, height2,&#x27;FAST&#x27;);
+      doc.save(this.metalico._id + &#x27;.pdf&#x27;);
+    })
+  }
+
+  delete(id: any) {
+
+    Swal.fire({
+
+      title: &#x27;Esta seguro de Borrar?&#x27;,
+
+      text: &#x27;No podra recuperar el artefacto!&#x27;,
+
+      icon: &#x27;warning&#x27;,
+
+      showCancelButton: true,
+
+      confirmButtonText: &#x27;Si, Borrar!&#x27;,
+
+      cancelButtonText: &#x27;No, Mantener&#x27;
+
+    }).then((result) &#x3D;&gt; {
+
+      if (result.value) {
+
+        this._metalicoService.delete(id).subscribe(
+          response &#x3D;&gt; {
+
+            this._router.navigate([&#x27;/pag-met&#x27;]);
+          },
+          error &#x3D;&gt; {
+            console.log(error);
+            this._router.navigate([&#x27;/pag-met&#x27;]);
+          }
+
+        );
+
+        Swal.fire(
+
+          &#x27;Borrado!&#x27;,
+
+          &#x27;El artefacto ha sido borrado.&#x27;,
+
+          &#x27;success&#x27;
+
+        )
+
+      } else if (result.dismiss &#x3D;&#x3D;&#x3D; Swal.DismissReason.cancel) {
+
+        Swal.fire(
+
+          &#x27;Cancelado&#x27;,
+
+          &#x27;Su Artefacto se mantiene&#x27;,
+
+          &#x27;error&#x27;
+
+        )
+
+      }
+
+    })
+
+  }
+
+   ngOnInit() {
+  
+    this._route.params.subscribe(params &#x3D;&gt; {
+      let id &#x3D; params [&#x27;id&#x27;];
+    
+      this._metalicoService.getMetalico(id).subscribe(
+        response &#x3D;&gt; {
+          if(response.metalico){
+            
+            this.metalico &#x3D; response.metalico;
+
+          }else{
+            this._router.navigate([&#x27;/home&#x27;]);
+          }
+        },
+        error &#x3D;&gt; {
+          console.log(error);
+          this._router.navigate([&#x27;/home&#x27;]);
+        }
+      );
+    });
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">
+   &lt;mat-tab-group mat-align-tabs&#x3D;&quot;start&quot;&gt;
+
+    &lt;mat-tab label&#x3D;&quot;Reporte Completo&quot;&gt;
+        &lt;button data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Imprimir PDF&quot; class&#x3D;&quot;btn btn-outline-info&quot; (click)&#x3D;&quot;exportPdf()&quot;&gt;
+            &lt;mat-icon&gt;print&lt;/mat-icon&gt;
+            
+        &lt;/button&gt;
+        &lt;a [routerLink]&#x3D;&quot;[&#x27;/pag-met/editar&#x27;,metalico._id]&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Editar Ficha&quot; class&#x3D;&quot;btn btn-outline-success&quot;&gt;
+        &lt;mat-icon&gt;edit&lt;/mat-icon&gt;
+        &lt;/a&gt; 
+        &lt;a (click)&#x3D;&quot;delete(metalico._id)&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Borrar Registro&quot; class &#x3D; &quot;btn btn-outline-danger&quot;&gt;
+            &lt;mat-icon&gt;delete&lt;/mat-icon&gt;    
+        &lt;/a&gt; 
+        &lt;a [routerLink]&#x3D;&quot;[&#x27;/pag-met&#x27;]&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Listado Anterior&quot; class &#x3D; &quot;btn btn-outline-warning&quot;&gt;
+            &lt;mat-icon&gt;list&lt;/mat-icon&gt;    
+        &lt;/a&gt; 
+
+        &lt;div id&#x3D;&quot;htmlData&quot;&gt;
+
+            &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center stretch&quot;&gt;
+
+            &lt;mat-card fxFlex &#x3D;&quot;30&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                &lt;mat-card-title&gt;MNCR, Depto DAH&lt;/mat-card-title&gt;
+                &lt;mat-card-subtitle&gt;Ficha Metalicos, Reporte Completo&lt;/mat-card-subtitle&gt;
+
+            &lt;mat-card-content&gt;
+
+                &lt;div class&#x3D;&quot;image-thumb&quot;&gt;
+                        
+                    &lt;img src&#x3D;&quot;{{url + &#x27;get-image/&#x27; + metalico.image}}&quot; alt&#x3D;&quot;{{metalico.title}}&quot; *ngIf&#x3D;&quot;metalico.image&quot;/&gt;
+                    &lt;img src&#x3D;&quot;assets/images/default.png&quot; alt&#x3D;&quot;{{metalico.title}}&quot; *ngIf&#x3D;&quot;!metalico.image&quot;/&gt;
+            
+                &lt;/div&gt;
+            
+
+            &lt;/mat-card-content&gt;
+        
+            &lt;/mat-card&gt; 
+        &lt;/div&gt;
+                &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center stretch&quot;&gt;
+
+                    &lt;mat-card fxFlex &#x3D;&quot;25&quot; class &#x3D; &quot;rest-card&quot;&gt; 
+
+                        &lt;mat-card-subtitle&gt;Datos Ubicación&lt;/mat-card-subtitle&gt;
+
+                        &lt;mat-card-content&gt;
+                            &lt;div align&#x3D;&quot;left&quot;&gt;          
+                                &lt;p&gt;&lt;b&gt;Cod Monumento:&lt;/b&gt; {{metalico.cod_mon}} &lt;b&gt;Num Artefacto:&lt;/b&gt; {{metalico.num_artefacto}} &lt;b&gt;Num Caja:&lt;/b&gt;{{metalico.num_caja}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Proyecto:&lt;/b&gt; {{metalico.proyecto}}  &lt;b&gt;Fecha Excavación:&lt;/b&gt;  {{metalico.fecha_exc | date:&#x27;dd/MM/yyyy&#x27;}} &lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Investigador:&lt;/b&gt; {{metalico.investigador}} &lt;b&gt;Año Proyecto:&lt;/b&gt; {{metalico.pro_year}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Datos Etiqueta:&lt;/b&gt; {{metalico.etiqueta}} &lt;/p&gt;
+                                
+                            &lt;/div&gt;
+                        &lt;/mat-card-content&gt;
+
+                    &lt;/mat-card&gt;
+
+
+                    &lt;mat-card fxFlex &#x3D;&quot;25&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                        &lt;mat-card-subtitle&gt;Asociación Contextual&lt;/mat-card-subtitle&gt;
+
+                            &lt;mat-card-content&gt;
+                            &lt;div align&#x3D;&quot;left&quot;&gt;  
+                                &lt;p&gt;&lt;b&gt;Id Contexto:&lt;/b&gt; {{metalico.id_contexto}}  &lt;b&gt;Ubicación Relativa:&lt;/b&gt; {{metalico.ubicacion}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Contexto:&lt;/b&gt; {{metalico.contexto}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Fotografia:&lt;/b&gt; {{metalico.foto}} &lt;b&gt;N° Foto:&lt;/b&gt; {{metalico.num_foto}} &lt;b&gt;Calidad Foto:&lt;/b&gt; {{metalico.calidad_foto}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Estado Foto:&lt;/b&gt; {{metalico.estado_foto}} &lt;b&gt;Planimetría:&lt;/b&gt;  {{metalico.plano}} &lt;b&gt;N° Lámina:&lt;/b&gt; {{metalico.num_lamina}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Calidad Plano:&lt;/b&gt; {{metalico.calidad_lamina}} &lt;b&gt;Estado Plano:&lt;/b&gt; {{metalico.estado_Lamina}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Diagnóstico:&lt;/b&gt; {{metalico.diagnostico_contexto}} &lt;b&gt;Fechamiento:&lt;/b&gt;  {{metalico.fechamiento}}&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/mat-card-content&gt;
+
+                    &lt;/mat-card&gt;
+
+
+                    &lt;mat-card fxFlex &#x3D;&quot;25&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+        
+                        &lt;mat-card-subtitle&gt;Asociación Funcional - Temporal&lt;/mat-card-subtitle&gt;
+                            &lt;mat-card-content&gt;
+                            &lt;div align&#x3D;&quot;left&quot;&gt;
+                            
+                                
+                                &lt;p&gt;&lt;b&gt;Tipologia&lt;/b&gt;  {{metalico.tipologia}}&lt;/p&gt;
+                                &lt;p&gt;Referencias {{metalico.referencias_funcional}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Período :&lt;/b&gt; {{metalico.periodo_funcional}} | Fase {{metalico.fase_funcional}} | Temporalidad {{metalico.temporalidad_funcional}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Procedencia :&lt;/b&gt; {{metalico.procedencia_funcional}}&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;/mat-card-content&gt;
+                    &lt;/mat-card&gt;
+
+                   
+                &lt;/div&gt;
+           
+
+           
+
+                &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center start&quot;&gt;
+        
+                    &lt;mat-card fxFlex &#x3D;&quot;75&quot; class &#x3D; &quot;descrip-card&quot;&gt; 
+                
+                        &lt;mat-card-subtitle&gt;Descripción Objeto&lt;/mat-card-subtitle&gt;
+                
+                            &lt;mat-card-content&gt;
+
+                        &lt;div align&#x3D;&quot;left&quot;&gt;
+                        
+                            &lt;p&gt;&lt;b&gt;Materia Prima:&lt;/b&gt; {{metalico.materia_prima}}&lt;/p&gt;
+                            &lt;p&gt;&lt;b&gt;Proceso Manufactura:&lt;/b&gt; {{metalico.proceso_manufactura}}&lt;/p&gt;
+                            &lt;p&gt;&lt;b&gt;Grupo Morfológico:&lt;/b&gt; {{metalico.grupo_morfologico}}&lt;/p&gt;
+                            &lt;p&gt;&lt;b&gt;Dis No Figurativo:&lt;/b&gt; {{metalico.dis_nofig}} | Otro {{metalico.dis_nofig_otro}}&lt;/p&gt;             
+                            &lt;p&gt;&lt;b&gt;DisFigurativo Zoomorfo:&lt;/b&gt; Cabeza {{metalico.cab_zoo}} | Saurio {{metalico.suario_zoo}} | Felino {{metalico.felino_zoo}} | Batracio {{metalico.batracio_zoo}} | Ave {{metalico.ave_zoo}} | Mono {{metalico.primate_zoo}} | Murcielago {{metalico.murcielago_zoo}} | Mamífero {{metalico.mamifero_zoo}} | Tortuga {{metalico.turtle_zoo}} | Reptil {{metalico.reptil_zoo}} | Pez {{metalico.pez_zoo}} | Armadillo {{metalico.armadillo_zoo}}&lt;/p&gt;
+                            &lt;p&gt;&lt;b&gt;DisFigurativo Zoomorfo:&lt;/b&gt; Insecto {{metalico.insecto_zoo}} |  Ciervo {{metalico.ciervo_zoo}} |  Canino {{metalico.canino_zoo}} |  No determinado {{metalico.ind_zoo}}&lt;/p&gt;
+                            &lt;p&gt;&lt;b&gt;Taxonomía Explícita:&lt;/b&gt; {{metalico.tax_zoo}}&lt;/p&gt;
+                            &lt;p&gt;&lt;b&gt;Investigador que Identificó:&lt;/b&gt; {{metalico.inv_zoo}}&lt;/p&gt;
+                            &lt;p&gt;&lt;b&gt;DisFigurativo Antromorfo:&lt;/b&gt; Cabeza {{metalico.cab_antro}} | Cabeza con tocado {{metalico.cab_tocantro}} | Cara {{metalico.cara_antro}} | Maraquero con orejera {{metalico.marorej_antro}}&lt;/p&gt;
+                            &lt;p&gt;&lt;b&gt;DisFigurativo Antromorfo:&lt;/b&gt; Cabeza Bicefala {{metalico.cabbic_antro}} | Doble {{metalico.doble_antro}} | Multiple {{metalico.multiple_antro}} | Antropomorfo {{metalico.antro_antro}} | Escena {{metalico.escena_antro}}&lt;/p&gt;
+                            &lt;p&gt;&lt;b&gt;Género:&lt;/b&gt; {{metalico.genero_antro}}&lt;/p&gt;
+                            &lt;p&gt;&lt;b&gt;DisFigurativo Indeterminado:&lt;/b&gt; Cabeza {{metalico.cab_ind}} | Cara {{metalico.cara_ind}} | Otro {{metalico.otro_ind}}&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;/mat-card-content&gt;
+                    &lt;/mat-card&gt;
+
+                &lt;/div&gt;
+           
+
+            
+
+                &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center start stretch&quot;&gt;
+
+                    &lt;mat-card fxFlex &#x3D;&quot;40&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                        &lt;mat-card-subtitle&gt;Estado Conservación&lt;/mat-card-subtitle&gt;
+                
+                            &lt;mat-card-content&gt;
+                                &lt;div&gt;      
+                                    &lt;p&gt;&lt;b&gt;Estado Conservación:&lt;/b&gt; {{metalico.estado_conservacion}} &lt;b&gt; Potencial Exhibición:&lt;/b&gt; {{metalico.potencial}}&lt;/p&gt;
+                                    &lt;p&gt;&lt;b&gt;Explicación:&lt;/b&gt; {{metalico.potencial_exp}}&lt;/p&gt;
+                                    &lt;p&gt;&lt;b&gt;Dimensiones Vitrina:&lt;/b&gt; Largo {{metalico.largo}} | Ancho: {{metalico.ancho}}| Alto: {{metalico.alto}} | Peso: {{metalico.peso}}&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/mat-card-content&gt;
+                    &lt;/mat-card&gt;
+
+                    &lt;mat-card class &#x3D; &quot;rest-card&quot;&gt;
+
+                        &lt;mat-card-subtitle&gt;Investigador y Registro&lt;/mat-card-subtitle&gt;
+                
+                            &lt;mat-card-content&gt;
+                                &lt;div&gt;
+                                &lt;p&gt;&lt;b&gt;Nombre:&lt;/b&gt; {{metalico.nombre_invest}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Fecha Análisis:&lt;/b&gt; {{metalico.fecha_analisis}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Numeración de Fotos:&lt;/b&gt; {{metalico.fotos_num}}&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/mat-card-content&gt;
+                    &lt;/mat-card&gt;
+
+            
+                &lt;/div&gt;
+          
+
+        &lt;/div&gt;
+    &lt;/mat-tab&gt;
+
+    &lt;mat-tab label&#x3D;&quot;Reporte Público&quot;&gt;
+        &lt;button data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Imprimir PDF&quot; class&#x3D;&quot;btn btn-outline-info&quot; (click)&#x3D;&quot;exportPdf()&quot;&gt;
+            &lt;mat-icon&gt;print&lt;/mat-icon&gt;
+         
+        &lt;/button&gt;
+        
+        &lt;div id&#x3D;&quot;htmlData&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center start&quot;&gt; 
+        
+                    &lt;mat-card fxFlex &#x3D;&quot;60&quot;&gt;
+        
+                        &lt;mat-card-title&gt;MNCR, Depto DAH&lt;/mat-card-title&gt;
+                        &lt;mat-card-subtitle&gt;Ficha Metalicos, Reporte Público&lt;/mat-card-subtitle&gt;
+        
+                        &lt;div class&#x3D;&quot;image-thumb&quot;&gt;
+                                
+                            &lt;img src&#x3D;&quot;{{url + &#x27;get-image/&#x27; + metalico.image}}&quot; alt&#x3D;&quot;{{metalico.title}}&quot; *ngIf&#x3D;&quot;metalico.image&quot;/&gt;
+                            &lt;img src&#x3D;&quot;assets/images/default.png&quot; alt&#x3D;&quot;{{metalico.title}}&quot; *ngIf&#x3D;&quot;!metalico.image&quot;/&gt;
+                    
+                        &lt;/div&gt;
+        
+                        &lt;mat-card-content&gt;
+        
+                            &lt;table class&#x3D;&quot;table&quot;&gt;
+                                &lt;thead&gt;
+                                &lt;tr&gt;
+                                    &lt;th scope&#x3D;&quot;col&quot;&gt;Cod Monumento&lt;/th&gt;
+                                    &lt;th scope&#x3D;&quot;col&quot;&gt;Contexto&lt;/th&gt;
+                                &lt;/tr&gt;
+                                &lt;/thead&gt;
+                                &lt;tbody&gt;
+                                    &lt;td&gt; {{metalico.cod_mon}} &lt;/td&gt;
+                                    &lt;td&gt; {{metalico.contexto}} &lt;/td&gt;
+                                &lt;/tbody&gt;
+                            &lt;/table&gt;
+        
+                           &lt;!--  &lt;div style&#x3D;&quot;text-align:justify&quot;&gt;
+                                &lt;h4&gt;&lt;b&gt;Descripción Narrativa&lt;/b&gt;&lt;/h4&gt;
+                                &lt;p&gt;{{metalico.desc_narrativa}}&lt;/p&gt;
+                            &lt;/div&gt; --&gt;
+        
+                            &lt;table class&#x3D;&quot;table&quot;&gt;
+                                &lt;thead&gt;
+                                &lt;tr&gt;
+                                    &lt;th scope&#x3D;&quot;col&quot;&gt;Temporalidad Estimada&lt;/th&gt;
+                                    &lt;th scope&#x3D;&quot;col&quot;&gt;Procedencia&lt;/th&gt;
+                                &lt;/tr&gt;
+                                &lt;/thead&gt;
+                                &lt;tbody&gt;
+                                    &lt;td&gt; {{metalico.temporalidad_funcional}} &lt;/td&gt;
+                                    &lt;td&gt; {{metalico.procedencia_funcional}} &lt;/td&gt;
+                                &lt;/tbody&gt;
+                            &lt;/table&gt;
+                            
+                            
+                            &lt;div&gt;
+                                &lt;h4&gt;&lt;b&gt;Dimensiones&lt;/b&gt;&lt;/h4&gt;
+                                &lt;p&gt;Ancho: {{metalico.ancho}}, Alto: {{metalico.ancho}}, Peso: {{metalico.ancho}}&lt;/p&gt;
+                            
+                            &lt;/div&gt;
+                            
+                        &lt;/mat-card-content&gt;
+                    &lt;/mat-card&gt;                
+        &lt;/div&gt;
+    &lt;/mat-tab&gt;
+
+    &lt;mat-tab label&#x3D;&quot;Reporte Catálogo&quot;&gt;
+
+        &lt;button data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Imprimir PDF&quot; class&#x3D;&quot;btn btn-outline-info&quot; (click)&#x3D;&quot;exportPdf()&quot;&gt;
+            &lt;mat-icon&gt;print&lt;/mat-icon&gt;
+          
+        &lt;/button&gt;
+
+        &lt;div id&#x3D;&quot;htmlData&quot;&gt;
+
+            
+
+                &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center stretch&quot;&gt;
+
+                    &lt;mat-card class &#x3D; &quot;main-card&quot;&gt;
+
+                        &lt;mat-card-title&gt;MNCR, Depto DAH&lt;/mat-card-title&gt;
+                        &lt;mat-card-subtitle&gt;Ficha Metalicos, Reporte Catálogo&lt;/mat-card-subtitle&gt;
+        
+                    &lt;mat-card-content&gt;
+
+                        &lt;div class&#x3D;&quot;image-thumb&quot;&gt;
+                                
+                            &lt;img src&#x3D;&quot;{{url + &#x27;get-image/&#x27; + metalico.image}}&quot; alt&#x3D;&quot;{{metalico.title}}&quot; *ngIf&#x3D;&quot;metalico.image&quot;/&gt;
+                            &lt;img src&#x3D;&quot;assets/images/default.png&quot; alt&#x3D;&quot;{{metalico.title}}&quot; *ngIf&#x3D;&quot;!metalico.image&quot;/&gt;
+                    
+                        &lt;/div&gt;
+
+                        &lt;div&gt;          
+                            &lt;p&gt;&lt;b&gt;Id Artefacto:&lt;/b&gt; {{metalico.cod_mon}}&lt;/p&gt;
+                            &lt;p&gt;&lt;b&gt;Año Excavación:&lt;/b&gt; {{metalico.pro_year}} &lt;/p&gt;  
+                        &lt;/div&gt;
+
+                    &lt;/mat-card-content&gt;
+                    &lt;/mat-card&gt;
+
+                    &lt;mat-card fxFlex &#x3D;&quot;20&quot; class &#x3D; &quot;rest-card&quot;&gt; 
+                
+                        &lt;mat-card-subtitle&gt;Contexto&lt;/mat-card-subtitle&gt;
+                
+                        &lt;mat-card-content&gt;
+                            &lt;div align&#x3D;&quot;left&quot;&gt;      
+                                &lt;p&gt;&lt;b&gt;Id Contexto:&lt;/b&gt; {{metalico.id_contexto}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Contexto:&lt;/b&gt; {{metalico.contexto}}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;Fechamiento:&lt;/b&gt; {{metalico.fechamiento}}&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/mat-card-content&gt;
+                    &lt;/mat-card&gt;
+
+                    &lt;mat-card fxFlex &#x3D;&quot;20&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                        &lt;mat-card-subtitle&gt;Temporalidad Estimada&lt;/mat-card-subtitle&gt;
+                            &lt;mat-card-content&gt;
+                                &lt;div align&#x3D;&quot;left&quot;&gt;      
+                                    &lt;p&gt;&lt;b&gt;Temporalidad:&lt;/b&gt; {{metalico.temporalidad_funcional}}&lt;/p&gt;
+                                   
+                                    &lt;p&gt;&lt;b&gt;Dimensiones:&lt;/b&gt; Largo {{metalico.largo}} | Ancho: {{metalico.ancho}}| Alto: {{metalico.alto}} | Peso: {{metalico.peso}}&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/mat-card-content&gt;
+                    &lt;/mat-card&gt;
+
+
+                &lt;/div&gt;
+         
+
+
+       
+            
+                &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center start&quot;&gt;
+
+                    &lt;mat-card fxFlex &#x3D;&quot;60&quot; class &#x3D; &quot;descrip-card&quot;&gt;
+
+                        &lt;mat-card-subtitle&gt;Descripción Narrativa&lt;/mat-card-subtitle&gt;
+                            &lt;mat-card-content&gt;
+                               &lt;!--  &lt;div align&#x3D;&quot;left&quot;&gt;      
+                                    &lt;p&gt;&lt;b&gt;Descripción:&lt;/b&gt; {{metalico.desc_narrativa}}&lt;/p&gt;
+                                    &lt;p&gt;&lt;b&gt;Tipo Diseño:&lt;/b&gt; {{metalico.tipo_pieza}}&lt;/p&gt;
+                                   
+                                    
+                                &lt;/div&gt; --&gt;
+                            &lt;/mat-card-content&gt;
+                    &lt;/mat-card&gt;
+
+                
+                &lt;/div&gt;
+         
+
+            
+
+        &lt;/div&gt;
+        
+    &lt;/mat-tab&gt;
+
+&lt;/mat-tab-group&gt;
+
+
+        
+
+   
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./metal-detalle.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div>   <mat-tab-group mat-align-tabs="start">    <mat-tab label="Reporte Completo">        <button data-toggle="tooltip" data-placement="top" title="Imprimir PDF" class="btn btn-outline-info" (click)="exportPdf()">            <mat-icon>print</mat-icon>                    </button>        <a [routerLink]="[\'/pag-met/editar\',metalico._id]" data-toggle="tooltip" data-placement="top" title="Editar Ficha" class="btn btn-outline-success">        <mat-icon>edit</mat-icon>        </a>         <a (click)="delete(metalico._id)" data-toggle="tooltip" data-placement="top" title="Borrar Registro" class = "btn btn-outline-danger">            <mat-icon>delete</mat-icon>            </a>         <a [routerLink]="[\'/pag-met\']" data-toggle="tooltip" data-placement="top" title="Listado Anterior" class = "btn btn-outline-warning">            <mat-icon>list</mat-icon>            </a>         <div id="htmlData">            <div fxLayout="row" fxLayoutAlign="center stretch">            <mat-card fxFlex ="30" class = "rest-card">                <mat-card-title>MNCR, Depto DAH</mat-card-title>                <mat-card-subtitle>Ficha Metalicos, Reporte Completo</mat-card-subtitle>            <mat-card-content>                <div class="image-thumb">                                            <img src="{{url + \'get-image/\' + metalico.image}}" alt="{{metalico.title}}" *ngIf="metalico.image"/>                    <img src="assets/images/default.png" alt="{{metalico.title}}" *ngIf="!metalico.image"/>                            </div>                        </mat-card-content>                    </mat-card>         </div>                <div fxLayout="row" fxLayoutAlign="center stretch">                    <mat-card fxFlex ="25" class = "rest-card">                         <mat-card-subtitle>Datos Ubicación</mat-card-subtitle>                        <mat-card-content>                            <div align="left">                                          <p><b>Cod Monumento:</b> {{metalico.cod_mon}} <b>Num Artefacto:</b> {{metalico.num_artefacto}} <b>Num Caja:</b>{{metalico.num_caja}}</p>                                <p><b>Proyecto:</b> {{metalico.proyecto}}  <b>Fecha Excavación:</b>  {{metalico.fecha_exc | date:\'dd/MM/yyyy\'}} </p>                                <p><b>Investigador:</b> {{metalico.investigador}} <b>Año Proyecto:</b> {{metalico.pro_year}}</p>                                <p><b>Datos Etiqueta:</b> {{metalico.etiqueta}} </p>                                                            </div>                        </mat-card-content>                    </mat-card>                    <mat-card fxFlex ="25" class = "rest-card">                        <mat-card-subtitle>Asociación Contextual</mat-card-subtitle>                            <mat-card-content>                            <div align="left">                                  <p><b>Id Contexto:</b> {{metalico.id_contexto}}  <b>Ubicación Relativa:</b> {{metalico.ubicacion}}</p>                                <p><b>Contexto:</b> {{metalico.contexto}}</p>                                <p><b>Fotografia:</b> {{metalico.foto}} <b>N° Foto:</b> {{metalico.num_foto}} <b>Calidad Foto:</b> {{metalico.calidad_foto}}</p>                                <p><b>Estado Foto:</b> {{metalico.estado_foto}} <b>Planimetría:</b>  {{metalico.plano}} <b>N° Lámina:</b> {{metalico.num_lamina}}</p>                                <p><b>Calidad Plano:</b> {{metalico.calidad_lamina}} <b>Estado Plano:</b> {{metalico.estado_Lamina}}</p>                                <p><b>Diagnóstico:</b> {{metalico.diagnostico_contexto}} <b>Fechamiento:</b>  {{metalico.fechamiento}}</p>                            </div>                        </mat-card-content>                    </mat-card>                    <mat-card fxFlex ="25" class = "rest-card">                                <mat-card-subtitle>Asociación Funcional - Temporal</mat-card-subtitle>                            <mat-card-content>                            <div align="left">                                                                                            <p><b>Tipologia</b>  {{metalico.tipologia}}</p>                                <p>Referencias {{metalico.referencias_funcional}}</p>                                <p><b>Período :</b> {{metalico.periodo_funcional}} | Fase {{metalico.fase_funcional}} | Temporalidad {{metalico.temporalidad_funcional}}</p>                                <p><b>Procedencia :</b> {{metalico.procedencia_funcional}}</p>                            </div>                            </mat-card-content>                    </mat-card>                                   </div>                                      <div fxLayout="row" fxLayoutAlign="center start">                            <mat-card fxFlex ="75" class = "descrip-card">                                         <mat-card-subtitle>Descripción Objeto</mat-card-subtitle>                                            <mat-card-content>                        <div align="left">                                                    <p><b>Materia Prima:</b> {{metalico.materia_prima}}</p>                            <p><b>Proceso Manufactura:</b> {{metalico.proceso_manufactura}}</p>                            <p><b>Grupo Morfológico:</b> {{metalico.grupo_morfologico}}</p>                            <p><b>Dis No Figurativo:</b> {{metalico.dis_nofig}} | Otro {{metalico.dis_nofig_otro}}</p>                                         <p><b>DisFigurativo Zoomorfo:</b> Cabeza {{metalico.cab_zoo}} | Saurio {{metalico.suario_zoo}} | Felino {{metalico.felino_zoo}} | Batracio {{metalico.batracio_zoo}} | Ave {{metalico.ave_zoo}} | Mono {{metalico.primate_zoo}} | Murcielago {{metalico.murcielago_zoo}} | Mamífero {{metalico.mamifero_zoo}} | Tortuga {{metalico.turtle_zoo}} | Reptil {{metalico.reptil_zoo}} | Pez {{metalico.pez_zoo}} | Armadillo {{metalico.armadillo_zoo}}</p>                            <p><b>DisFigurativo Zoomorfo:</b> Insecto {{metalico.insecto_zoo}} |  Ciervo {{metalico.ciervo_zoo}} |  Canino {{metalico.canino_zoo}} |  No determinado {{metalico.ind_zoo}}</p>                            <p><b>Taxonomía Explícita:</b> {{metalico.tax_zoo}}</p>                            <p><b>Investigador que Identificó:</b> {{metalico.inv_zoo}}</p>                            <p><b>DisFigurativo Antromorfo:</b> Cabeza {{metalico.cab_antro}} | Cabeza con tocado {{metalico.cab_tocantro}} | Cara {{metalico.cara_antro}} | Maraquero con orejera {{metalico.marorej_antro}}</p>                            <p><b>DisFigurativo Antromorfo:</b> Cabeza Bicefala {{metalico.cabbic_antro}} | Doble {{metalico.doble_antro}} | Multiple {{metalico.multiple_antro}} | Antropomorfo {{metalico.antro_antro}} | Escena {{metalico.escena_antro}}</p>                            <p><b>Género:</b> {{metalico.genero_antro}}</p>                            <p><b>DisFigurativo Indeterminado:</b> Cabeza {{metalico.cab_ind}} | Cara {{metalico.cara_ind}} | Otro {{metalico.otro_ind}}</p>                        </div>                        </mat-card-content>                    </mat-card>                </div>                                       <div fxLayout="row" fxLayoutAlign="center start stretch">                    <mat-card fxFlex ="40" class = "rest-card">                        <mat-card-subtitle>Estado Conservación</mat-card-subtitle>                                            <mat-card-content>                                <div>                                          <p><b>Estado Conservación:</b> {{metalico.estado_conservacion}} <b> Potencial Exhibición:</b> {{metalico.potencial}}</p>                                    <p><b>Explicación:</b> {{metalico.potencial_exp}}</p>                                    <p><b>Dimensiones Vitrina:</b> Largo {{metalico.largo}} | Ancho: {{metalico.ancho}}| Alto: {{metalico.alto}} | Peso: {{metalico.peso}}</p>                                </div>                            </mat-card-content>                    </mat-card>                    <mat-card class = "rest-card">                        <mat-card-subtitle>Investigador y Registro</mat-card-subtitle>                                            <mat-card-content>                                <div>                                <p><b>Nombre:</b> {{metalico.nombre_invest}}</p>                                <p><b>Fecha Análisis:</b> {{metalico.fecha_analisis}}</p>                                <p><b>Numeración de Fotos:</b> {{metalico.fotos_num}}</p>                                </div>                            </mat-card-content>                    </mat-card>                            </div>                  </div>    </mat-tab>    <mat-tab label="Reporte Público">        <button data-toggle="tooltip" data-placement="top" title="Imprimir PDF" class="btn btn-outline-info" (click)="exportPdf()">            <mat-icon>print</mat-icon>                 </button>                <div id="htmlData" fxLayout="row" fxLayoutAlign="center start">                             <mat-card fxFlex ="60">                                <mat-card-title>MNCR, Depto DAH</mat-card-title>                        <mat-card-subtitle>Ficha Metalicos, Reporte Público</mat-card-subtitle>                                <div class="image-thumb">                                                            <img src="{{url + \'get-image/\' + metalico.image}}" alt="{{metalico.title}}" *ngIf="metalico.image"/>                            <img src="assets/images/default.png" alt="{{metalico.title}}" *ngIf="!metalico.image"/>                                            </div>                                <mat-card-content>                                    <table class="table">                                <thead>                                <tr>                                    <th scope="col">Cod Monumento</th>                                    <th scope="col">Contexto</th>                                </tr>                                </thead>                                <tbody>                                    <td> {{metalico.cod_mon}} </td>                                    <td> {{metalico.contexto}} </td>                                </tbody>                            </table>                                   <!--  <div style="text-align:justify">                                <h4><b>Descripción Narrativa</b></h4>                                <p>{{metalico.desc_narrativa}}</p>                            </div> -->                                    <table class="table">                                <thead>                                <tr>                                    <th scope="col">Temporalidad Estimada</th>                                    <th scope="col">Procedencia</th>                                </tr>                                </thead>                                <tbody>                                    <td> {{metalico.temporalidad_funcional}} </td>                                    <td> {{metalico.procedencia_funcional}} </td>                                </tbody>                            </table>                                                                                    <div>                                <h4><b>Dimensiones</b></h4>                                <p>Ancho: {{metalico.ancho}}, Alto: {{metalico.ancho}}, Peso: {{metalico.ancho}}</p>                                                        </div>                                                    </mat-card-content>                    </mat-card>                        </div>    </mat-tab>    <mat-tab label="Reporte Catálogo">        <button data-toggle="tooltip" data-placement="top" title="Imprimir PDF" class="btn btn-outline-info" (click)="exportPdf()">            <mat-icon>print</mat-icon>                  </button>        <div id="htmlData">                            <div fxLayout="row" fxLayoutAlign="center stretch">                    <mat-card class = "main-card">                        <mat-card-title>MNCR, Depto DAH</mat-card-title>                        <mat-card-subtitle>Ficha Metalicos, Reporte Catálogo</mat-card-subtitle>                            <mat-card-content>                        <div class="image-thumb">                                                            <img src="{{url + \'get-image/\' + metalico.image}}" alt="{{metalico.title}}" *ngIf="metalico.image"/>                            <img src="assets/images/default.png" alt="{{metalico.title}}" *ngIf="!metalico.image"/>                                            </div>                        <div>                                      <p><b>Id Artefacto:</b> {{metalico.cod_mon}}</p>                            <p><b>Año Excavación:</b> {{metalico.pro_year}} </p>                          </div>                    </mat-card-content>                    </mat-card>                    <mat-card fxFlex ="20" class = "rest-card">                                         <mat-card-subtitle>Contexto</mat-card-subtitle>                                        <mat-card-content>                            <div align="left">                                      <p><b>Id Contexto:</b> {{metalico.id_contexto}}</p>                                <p><b>Contexto:</b> {{metalico.contexto}}</p>                                <p><b>Fechamiento:</b> {{metalico.fechamiento}}</p>                            </div>                        </mat-card-content>                    </mat-card>                    <mat-card fxFlex ="20" class = "rest-card">                        <mat-card-subtitle>Temporalidad Estimada</mat-card-subtitle>                            <mat-card-content>                                <div align="left">                                          <p><b>Temporalidad:</b> {{metalico.temporalidad_funcional}}</p>                                                                       <p><b>Dimensiones:</b> Largo {{metalico.largo}} | Ancho: {{metalico.ancho}}| Alto: {{metalico.alto}} | Peso: {{metalico.peso}}</p>                                </div>                            </mat-card-content>                    </mat-card>                </div>                                            <div fxLayout="row" fxLayoutAlign="center start">                    <mat-card fxFlex ="60" class = "descrip-card">                        <mat-card-subtitle>Descripción Narrativa</mat-card-subtitle>                            <mat-card-content>                               <!--  <div align="left">                                          <p><b>Descripción:</b> {{metalico.desc_narrativa}}</p>                                    <p><b>Tipo Diseño:</b> {{metalico.tipo_pieza}}</p>                                                                                                       </div> -->                            </mat-card-content>                    </mat-card>                                </div>                             </div>            </mat-tab></mat-tab-group>           </div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleComponent', 'selector': 'app-article'},{'name': 'ArticleEditComponent', 'selector': 'app-article-edit'},{'name': 'ArticleNewComponent', 'selector': 'app-article-new'},{'name': 'AuthenticationButtonComponent', 'selector': 'app-authentication-button'},{'name': 'CeramicaComponent', 'selector': 'app-ceramica'},{'name': 'CeramicsComponent', 'selector': 'app-ceramics'},{'name': 'ContextoComponent', 'selector': 'app-contexto'},{'name': 'ContextoDetalleComponent', 'selector': 'app-contexto-detalle'},{'name': 'ContextoEditComponent', 'selector': 'app-contexto-edit'},{'name': 'ContextoExcelComponent', 'selector': 'app-contexto-excel'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'FichaContextoComponent', 'selector': 'app-ficha-contexto'},{'name': 'FichaLiticaComponent', 'selector': 'app-ficha-litica'},{'name': 'FichaMetalComponent', 'selector': 'app-ficha-metal'},{'name': 'FichaOrigenesComponent', 'selector': 'app-ficha-origenes'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormularioComponent', 'selector': 'app-formulario'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LiticaDetalleComponent', 'selector': 'app-litica-detalle'},{'name': 'LiticaEditComponent', 'selector': 'app-litica-edit'},{'name': 'LiticaExcelComponent', 'selector': 'app-litica-excel'},{'name': 'LiticoComponent', 'selector': 'app-litico'},{'name': 'LoginButtonComponent', 'selector': 'app-login-button'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutButtonComponent', 'selector': 'app-logout-button'},{'name': 'MapaOrigenesComponent', 'selector': 'app-mapa-origenes'},{'name': 'MetalDetalleComponent', 'selector': 'app-metal-detalle'},{'name': 'MetalEditComponent', 'selector': 'app-metal-edit'},{'name': 'MetalExcelComponent', 'selector': 'app-metal-excel'},{'name': 'MetalicoComponent', 'selector': 'app-metalico'},{'name': 'ModalOptionsComponent', 'selector': 'app-modal-options'},{'name': 'PagDetalleLiteSitioComponent', 'selector': 'app-pag-detalle-lite-sitio'},{'name': 'PaginaComponent', 'selector': 'app-pagina'},{'name': 'PagLitComponent', 'selector': 'app-pag-lit'},{'name': 'PagLiteSitioNombreComponent', 'selector': 'app-pag-lite-sitio-nombre'},{'name': 'PagLiteSitiosComponent', 'selector': 'app-pag-lite-sitios'},{'name': 'PagMetComponent', 'selector': 'app-pag-met'},{'name': 'PagOriComponent', 'selector': 'app-pag-ori'},{'name': 'PeliculasComponent', 'selector': 'app-peliculas'},{'name': 'PlasticaComponent', 'selector': 'app-plastica'},{'name': 'PoliticasUsoComponent', 'selector': 'app-politicas-uso'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RegistroOrigenesComponent', 'selector': 'app-registro-origenes'},{'name': 'ReportePublicoComponent', 'selector': 'app-reporte-publico'},{'name': 'SearchCombCeraComponent', 'selector': 'app-search-comb-cera'},{'name': 'SearchComblitComponent', 'selector': 'app-search-comblit'},{'name': 'SearchCombMetComponent', 'selector': 'app-search-comb-met'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SearchContextoComponent', 'selector': 'app-search-contexto'},{'name': 'SearchLiticoComponent', 'selector': 'app-search-litico'},{'name': 'SearchMetalicoComponent', 'selector': 'app-search-metalico'},{'name': 'SearchSitioComponent', 'selector': 'app-search-sitio'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SitioComponent', 'selector': 'app-sitio'},{'name': 'SitioDetalleComponent', 'selector': 'app-sitio-detalle'},{'name': 'SitioEditComponent', 'selector': 'app-sitio-edit'},{'name': 'SitioExcelComponent', 'selector': 'app-sitio-excel'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'TipoDisComponent', 'selector': 'app-tipo-dis'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'MetalDetalleComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MetalDetalleComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

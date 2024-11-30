@@ -1,9 +1,21 @@
 'use strict'
 var User = require('../models/user');
+const nodemailer = require('nodemailer');
+
+var PasswordReset = require('../models/passwordReset');
 var express = require('express');
 var UserController = require('../controllers/user');
+const transporter = nodemailer.createTransport({
+    host: 'smtp.office365.com',
+    port: 587,
+    secure: false, // true for 465, false for other ports
+      auth: {
+        user: "soporteti@museocostarica.go.cr",
+        pass: "Museo2023*"}
+});
 
 const jwt = require ('jsonwebtoken');
+const bcrypt = require('bcrypt-nodejs');
 
 var router = express.Router();
 var app = express();
@@ -22,8 +34,19 @@ router.post('/signup', async (req,res) => {
     const newUser = new User({email,password,nombre});
     newUser.password = await newUser.encryptPassword(password);
     await newUser.save();
-    const token = jwt.sign({_id: newUser._id}, 'secretkey');
+    const token = Math.random().toString(20).substring(2,12);
+    // const token = jwt.sign({_id: newUser._id}, 'secretkey');
+    
     res.status(200).json({token});
+
+    /* await transporter.sendMail({
+        from: 'soporteti@museocostarica.go.cr',
+        to: this.email,
+        subject: 'Registro Usuario Orígenes',
+        html: `<h1>Hola Jeffrey</h1><br>
+        <p>Correo: ${this.email} solicita un acceso como ${user.perfil}</p>
+        <h4>Gracias por su solicitud</h4>` 
+    }) */ 
 }); 
 
 
@@ -36,12 +59,78 @@ router.post('/signin', async (req,res)=> {
     const match = await user.comparePassword(password);
    // if (user.password !== password) return res.status(401).send('Password Incorrecto!!');
     if (match){
-        const token = jwt.sign({_id: user._id}, 'secretkey');
+        const token = Math.random().toString(20).substring(2,12);
+        // const token = jwt.sign({_id: user._id}, 'secretkey');
         res.status(200).json({token});
+
+        await transporter.sendMail({
+            from: 'soporteti@museocostarica.go.cr',
+            to: email,
+            subject: 'Token Acceso Orígenes',
+            html: `Por favor copiar el siguiente Token 
+            <b>${token}</b>
+            y pegarlo en el campo correspondiente en la pantalla de Login para acceder`
+        }) 
+
         
     }
    
 });
+
+router.post('/forgot', async (req,res)=>{
+    const email = req.body.email;
+    const token = Math.random().toString(20).substring(2,12);
+
+    const passwordReset = new PasswordReset({
+        email,
+        token
+    })
+    await passwordReset.save();
+
+    const url = `http://localhost:4200/reset/${token}`;
+
+    await transporter.sendMail({
+        from: 'soporteti@museocostarica.go.cr',
+        to: email,
+        subject: 'Reseteo contraseña Orígenes',
+        html: `Por favor dar click <a href= "${url}">aquí<a> para restablecer su contraseña`
+    })
+
+    res.send({
+        message: 'Check your email!'
+    })
+
+
+});
+
+router.post('/reset', async (req,res)=>{
+    if(req.body.password !== req.body.password_confirm){
+        return res.status(400).send({
+            message: 'Password do not match!'
+        })
+    }
+
+    const passwordReset = await PasswordReset.findOne({token: req.body.token});
+    const {email} = await passwordReset.toJSON();
+    const user = await User.findOne({email});
+
+    if(!user){
+        return res.status(404).send({
+            message: 'User not found!'
+        })
+    }
+
+   
+    const salt = bcrypt.genSaltSync(8);
+    user.password = bcrypt.hashSync(req.body.password, salt);
+
+    user.save();
+
+    res.send({
+        message: 'success'
+    })
+});
+
 
 router.get('/private', verifyToken, (req, res) => {
     return res.status(200).send({

@@ -3,7 +3,7 @@
     <mat-icon>home</mat-icon>    
   </a> 
 <div class="center">
-    <p>Cantidad de Sitios Encontrados : <b>{{sitios.length}}</b></p>
+    <p>Cantidad de Monumentos Encontrados : <b>{{sitios.length}}</b></p>
   
     <aside id="sidebar">
         <div id="search">
@@ -63,11 +63,20 @@
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeId]="mapTypeId">
         <agm-marker *ngFor="let sitio of sitios" [latitude]="sitio.latitude" [longitude]="sitio.Logitude"
             [agmFitBounds]="true">
+            
             <agm-info-window>
                 <h3>Nombre:<b>{{sitio.nombre_sitio}}</b></h3>
-                <p>Clave Sitio: {{sitio.clave_sitio}}</p>
+                <p>Clave: {{sitio.clave_sitio}}</p>
+                
                 <p>Área Estimada: {{sitio.area_estimada}} mts</p>
-                <a [routerLink]="['/pag-ori/sitio', sitio._id]">Leer más</a>
+                <!-- <img src="http://origenes.museocostarica.go.cr/sitios/{{sitio.image}}" alt="Image" width="300" height="250"> <br> -->
+                <a [routerLink]="['/pag-ori/sitio', sitio._id]">Ficha Completa</a>
+                <br>
+                <!-- <a src="http://origenes.museocostarica.go.cr/mapas/Serp/index.html">Polígono</a> 
+                 <a [href]= "'http://origenes.museocostarica.go.cr/mapas/' + sitio.clave_sitio + '/index.html'" target="_blank">Poligono</a> -->
+                <br>
+                <a [href]= "'http://origenes.museocostarica.go.cr/informes/' + sitio.clave_sitio + '/'" target="_blank">Informes</a>
+
             </agm-info-window>
         </agm-marker>
     </agm-map>

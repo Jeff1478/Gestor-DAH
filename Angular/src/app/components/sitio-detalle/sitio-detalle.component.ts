@@ -5,6 +5,7 @@ import { Globals } from 'src/app/services/globals';
 import { Router, ActivatedRoute, Params  } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { CommonModule } from '@angular/common'
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-sitio-detalle',
@@ -19,19 +20,26 @@ export class SitioDetalleComponent implements OnInit {
   public cadena!: string;
   public cadena_result!: string[];
   public separador = ';';
+  public separadorUna = '';
   public administrador!: boolean;
   public registrado!: boolean;
   public usuario!: any;
   public title!: string;
+  public tama!: number;
+  public cadenalinks!: string[];
+  public mostrar!: boolean;
+  public filtered!: String;
 
   constructor(
     private _sitioService: SitioService,
     private _route: ActivatedRoute,
     private _router: Router,
-    public authService : AuthService
+    public authService : AuthService,
+    private sanitizer: DomSanitizer
   ) {
     this.url = Globals.url;
     this.page_title = 'Sitio';
+    this.mostrar = false;
   }
 
   ngOnInit() {
@@ -45,7 +53,7 @@ export class SitioDetalleComponent implements OnInit {
           this.title = JSON.stringify(this.usuario, ['email'])
         }
 
-        if (this.title == '[{"email":"jcsanchez@museocostarica.go.cr"}]' || this.title =='[{"email":"jeffreytapia@gmail.com"}]'){
+        if (this.title == '[{"email":"jcsanchez@museocostarica.go.cr"}]' || this.title =='[{"email":"jtapia@museocostarica.go.cr"}]'){
           this.administrador = true;
          
         } else if (this.title == '[{"email":"bm@kraken.com"}]'){
@@ -53,9 +61,7 @@ export class SitioDetalleComponent implements OnInit {
       } else{
         this.administrador = false;
       }},
-
-      err => {console.log(err)
-       
+      err => {console.log(err) 
       });  
 
 
@@ -66,33 +72,54 @@ export class SitioDetalleComponent implements OnInit {
         (response) => {
           if (response.sitio) {
             this.sitio = response.sitio;
+            
+             
             this.cadena = this.sitio.links;
-            this.dividirCadena(this.cadena, this.separador);
-           
+            //console.log(this.cadena)
+            this.tama = this.cadena?.length;
+            
+            if(this.tama > 0){
+              this.dividirCadena(this.cadena, this.separador);
+             
+              this.mostrar = true
+            }
+
           } else {
             this._router.navigate(['/pag-ori/sitio']);
           }
+
         },
         (error) => {
           console.log(error);
           this._router.navigate(['/home']);
         }
+        
       );
     });
-  }
 
- 
-  resultado!: string[];
-  datos!: string;
+   
 
-  dividirCadena(cadenaADividir: any, separador: any) {
-    var arrayDeCadenas = cadenaADividir.split(separador);
-    for (var i = 1; i < arrayDeCadenas.length; i++) {
-      this.datos = this.datos + '#' + arrayDeCadenas[i];
-    }
-    this.resultado = this.datos.split('#');
     
   }
+
+  public getSantizeUrl(url : string) {
+    return this.sanitizer.bypassSecurityTrustUrl(url);
+}
+ 
+
+resultado!: string[];
+datos!: string;
+
+dividirCadena(cadenaADividir: any, separador: any) {
+  var arrayDeCadenas = cadenaADividir.split(separador);
+  for (var i = 1; i < arrayDeCadenas.length; i++) {
+    this.datos = this.datos + '#' + arrayDeCadenas[i];
+  }
+  this.resultado = this.datos?.split('#');
+  
+}
+
+ 
 }
   
 

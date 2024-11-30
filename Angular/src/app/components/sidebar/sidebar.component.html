@@ -6,6 +6,8 @@
         
         
         <div *ngIf= "titulo === 'ceramica'"> 
+          <img src="assets/images/logoac.jpg" alt="User Icon" />
+          <hr>
           <h3>Administrador</h3>
             <!-- <a [routerLink]="['/ceramica']" class="btn btn-success">Agregar Ficha</a> -->
             <a [routerLink]="['/ceramica']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
@@ -40,6 +42,8 @@
           
         </div>
         <div *ngIf= "titulo === 'contexto'"> 
+          <img src="assets/images/logoac.jpg" alt="User Icon" />
+          <hr>
           <h3>Administrador</h3>
             <!-- <a [routerLink]="['/ficha-contexto']" class="btn btn-success">Agregar Ficha</a> -->
             <a [routerLink]="['/ficha-contexto']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
@@ -62,6 +66,8 @@
         </div>
 
         <div *ngIf= "titulo === 'litico'"> 
+          <img src="assets/images/logoac.jpg" alt="User Icon" />
+          <hr>
           <h3>Administrador</h3>
           <a [routerLink]="['/ficha-litica']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
             <mat-icon>add_shopping_cart</mat-icon>    
@@ -93,6 +99,8 @@
         </div>
 
         <div *ngIf= "titulo === 'metalico'"> 
+          <img src="assets/images/logoac.jpg" alt="User Icon" />
+          <hr>
           <h3>Administrador</h3>
           <a [routerLink]="['/ficha-metal']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
             <mat-icon>add_shopping_cart</mat-icon>    
@@ -122,14 +130,19 @@
         </div>
 
         <div *ngIf= "titulo === 'sitio'"> 
-          <h3 *ngIf="registrado == true">Administrador</h3>
+          
+          <h3 *ngIf="registrado == true" style="color:Tomato; font-weight: bold">Administrador</h3>
+          <h3 *ngIf="administrador == true" style="font-weight: bold">Usuario Arqueólogo</h3>
 
         <div *ngIf="registrado == true">
-        <a [routerLink]="['/sitio-excel']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">
+          <a [routerLink]="['/perfiles']" data-toggle="tooltip" data-placement="top" title="Asignar Perfiles" class = "btn btn-primary">
+            <mat-icon>supervisor_account</mat-icon>    
+        </a>
+        <a [routerLink]="['/sitio-excel']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-secondary">
           <mat-icon>cloud_download</mat-icon>    
       </a>  
-      <a [routerLink]="['/ficha-origenes']" data-toggle="tooltip" data-placement="top" title="Agregar Monumento" class = "btn btn-outline-warning">
-        <mat-icon>add_shopping_cart</mat-icon>    
+      <a [routerLink]="['/ficha-origenes']" data-toggle="tooltip" data-placement="top" title="Agregar Monumento" class = "btn btn-success">
+        <mat-icon>map</mat-icon>    
     </a>
       </div>
 
@@ -167,12 +180,28 @@
               <br> 
            
             <hr>
-            <div *ngIf="administrador == true">
+           <div *ngIf="administrador == true">
             <h3>Búsqueda en Mapa</h3>
             <a [routerLink]="['/map-ori']" data-toggle="tooltip" data-placement="top" title="Google Maps" class = "btn btn-outline-warning">
-              <img src="assets/images/cr.jpg" width="100" height="100">    
+              <img src="assets/images/crlogo.png" width="100" height="100">    
           </a> 
+          </div> 
+
+          <div *ngIf="arqueo == true">
+            <h3>Exportar Datos Excel</h3>
+            <a [routerLink]="['/formulario']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">
+              <mat-icon>cloud_download</mat-icon>    
+          </a>
+            <h3>Búsqueda en Mapa</h3>
+            <a [routerLink]="['/map-ori']" data-toggle="tooltip" data-placement="top" title="Google Maps" class = "btn btn-outline-warning">
+              <img src="assets/images/crlogo.png" width="100" height="100">    
+          </a> 
+          
           </div>
+
+          <div id="logosmall">
+            <img src="assets/images/logoORI3.png" class="logosmall" alt="Logotipo" />
+        </div>
 
         </div> 
 

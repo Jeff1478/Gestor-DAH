@@ -1,4 +1,7 @@
 // importar los modulos del router de angular 
+/**
+ * app.component.ts : componente principal donde se colocan las rutas que genera cada componente
+ */
 import { ModuleWithProviders } from "@angular/core";
 import { Routes, RouterModule} from "@angular/router"
 
@@ -38,8 +41,11 @@ import { SearchLiticoComponent } from "./components/search-litico/search-litico.
 import { SearchMetalicoComponent } from "./components/search-metalico/search-metalico.component";
 import { SitioExcelComponent } from "./components/sitio-excel/sitio-excel.component";
 import { LoginComponent } from "./components/login/login.component";
+import { ForgotComponent } from "./components/forgot/forgot.component";
+import { ResetComponent } from "./components/reset/reset.component";
 import { RegistroComponent } from "./components/registro/registro.component";
 import { PagOriComponent } from "./components/pag-ori/pag-ori.component";
+import { PerfilesComponent } from "./components/perfiles/perfiles.component";
 import {AuthGuard} from './auth.guard';
 import { SitioDetalleComponent } from "./components/sitio-detalle/sitio-detalle.component";
 import { SitioEditComponent } from "./components/sitio-edit/sitio-edit.component";
@@ -54,6 +60,8 @@ import { PagLiteSitioNombreComponent } from "./components/pag-lite-sitio-nombre/
 const appRoutes: Routes = [
     {path: '', component: LoginComponent},
     {path: 'registro', component: RegistroComponent},
+    {path: 'forgot', component: ForgotComponent},
+    {path: 'reset', component: ResetComponent},
     {path: 'home', component : HomeComponent, canActivate: [AuthGuard]},
     {path: 'ceramica', component : CeramicaComponent, canActivate: [AuthGuard]},
     {path: 'contexto', component : ContextoComponent, canActivate: [AuthGuard]},
@@ -65,6 +73,7 @@ const appRoutes: Routes = [
     {path: 'pagina-de-pruebas', component : PaginaComponent, canActivate: [AuthGuard]},
     {path: 'peliculas', component : PeliculasComponent, canActivate: [AuthGuard]},
     {path: 'pagina', component : PaginaComponent, canActivate: [AuthGuard]},
+    {path: 'perfiles', component : PerfilesComponent, canActivate: [AuthGuard]},
     {path: 'pag-lit', component : PagLitComponent, canActivate: [AuthGuard]},
     {path: 'pag-met', component : PagMetComponent, canActivate: [AuthGuard]},
     {path: 'pag-ori', component : PagOriComponent, canActivate: [AuthGuard]},
@@ -102,5 +111,12 @@ const appRoutes: Routes = [
 ];
 
 //Exportar Modulo
+/**
+ * appRoutingProviders : array de rutas
+ */ 
+/**
+ * routing : módulo que se exporta para que lo lea la app
+ */
+
 export const appRoutingProviders: any[] = [];
 export const routing: ModuleWithProviders<any> = RouterModule.forRoot(appRoutes);

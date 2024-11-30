@@ -1,0 +1,984 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>GestorDAH Documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">GestorDAH Documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ContextoDetalleComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/contexto-detalle/contexto-detalle.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../injectables/ContextoService.html" target="_self" >ContextoService</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-contexto-detalle</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./contexto-detalle.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./contexto-detalle.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#contexto" >contexto</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#page_title" >page_title</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#url" >url</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                <a href="#exportPdf" >exportPdf</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_contextoService: <a href="../injectables/ContextoService.html" target="_self">ContextoService</a>, _route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, _router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/contexto-detalle/contexto-detalle.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_contextoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ContextoService.html" target="_self" >ContextoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>delete(id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/components/contexto-detalle/contexto-detalle.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="exportPdf"></a>
+                    <span class="name">
+                        <span ><b>exportPdf</b></span>
+                        <a href="#exportPdf"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>exportPdf()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/components/contexto-detalle/contexto-detalle.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/app/components/contexto-detalle/contexto-detalle.component.ts:111</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="contexto"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>contexto</b></span>
+                        <a href="#contexto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Contexto.html" target="_self" >Contexto</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/contexto-detalle/contexto-detalle.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="page_title"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>page_title</b></span>
+                        <a href="#page_title"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/contexto-detalle/contexto-detalle.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="url"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>url</b></span>
+                        <a href="#url"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/contexto-detalle/contexto-detalle.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ContextoService } from &#x27;src/app/services/contexto.service&#x27;;
+import { Contexto } from &#x27;src/app/models/contexto&#x27;;
+import { GlobalC } from &#x27;src/app/services/globalc&#x27;;
+import { Router, ActivatedRoute, Params  } from &#x27;@angular/router&#x27;;
+import domtoimage from &#x27;dom-to-image&#x27;;
+import jsPDF from &#x27;jspdf&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+
+@Component({
+  selector: &#x27;app-contexto-detalle&#x27;,
+  templateUrl: &#x27;./contexto-detalle.component.html&#x27;,
+  styleUrls: [&#x27;./contexto-detalle.component.css&#x27;],
+  providers: [ContextoService]
+})
+
+export class ContextoDetalleComponent implements OnInit {
+
+  public contexto!: Contexto;
+  public url: string;
+  public page_title!: string;
+
+  constructor(
+    private _contextoService: ContextoService,
+    private _route:ActivatedRoute,
+    private _router:Router
+  ) {
+    this.url &#x3D; GlobalC.url
+    this.page_title &#x3D; &#x27;Contexto&#x27;;
+   }
+
+   exportPdf() {
+    
+    const div : any &#x3D; document.getElementById(&#x27;htmlData&#x27;);
+    const options &#x3D; { background: &#x27;white&#x27;,  height: 2470, width: 1265 };
+    domtoimage.toPng(div, options).then((dataUrl: any) &#x3D;&gt; {
+      //Initialize JSPDF
+      const doc &#x3D; new jsPDF(&#x27;p&#x27;, &#x27;pt&#x27;, &#x27;a4&#x27;,true);
+      const bufferX &#x3D; 15;
+      const bufferY &#x3D; 15;
+      var width &#x3D; doc.internal.pageSize.getWidth()- 2 * bufferX;;
+     
+     var height &#x3D; (doc.internal.pageSize.getHeight() * width) / width;
+      var height2 &#x3D; height*2-200;
+      
+      doc.addImage(dataUrl, &#x27;PNG&#x27;, 0, 0, width, height2,&#x27;FAST&#x27;);
+      doc.save(this.contexto._id + &#x27;.pdf&#x27;);
+    })
+  }
+
+  delete(id: any) {
+
+    Swal.fire({
+
+      title: &#x27;Esta seguro de Borrar?&#x27;,
+
+      text: &#x27;No podra recuperar el artefacto!&#x27;,
+
+      icon: &#x27;warning&#x27;,
+
+      showCancelButton: true,
+
+      confirmButtonText: &#x27;Si, Borrar!&#x27;,
+
+      cancelButtonText: &#x27;No, Mantener&#x27;
+
+    }).then((result) &#x3D;&gt; {
+
+      if (result.value) {
+
+        this._contextoService.delete(id).subscribe(
+          response &#x3D;&gt; {
+
+            this._router.navigate([&#x27;/peliculas&#x27;]);
+          },
+          error &#x3D;&gt; {
+            console.log(error);
+            this._router.navigate([&#x27;/peliculas&#x27;]);
+          }
+
+        );
+
+        Swal.fire(
+
+          &#x27;Borrado!&#x27;,
+
+          &#x27;El artefacto ha sido borrado.&#x27;,
+
+          &#x27;success&#x27;
+
+        )
+
+      } else if (result.dismiss &#x3D;&#x3D;&#x3D; Swal.DismissReason.cancel) {
+
+        Swal.fire(
+
+          &#x27;Cancelado&#x27;,
+
+          &#x27;Su Artefacto se mantiene&#x27;,
+
+          &#x27;error&#x27;
+
+        )
+
+      }
+
+    })
+
+  }
+
+   ngOnInit() {
+  
+    this._route.params.subscribe(params &#x3D;&gt; {
+      let id &#x3D; params [&#x27;id&#x27;];
+    
+      this._contextoService.getContexto(id).subscribe(
+        response &#x3D;&gt; {
+          if(response.contexto){
+            
+            this.contexto &#x3D; response.contexto;
+
+          }else{
+            this._router.navigate([&#x27;/home&#x27;]);
+          }
+        },
+        error &#x3D;&gt; {
+          console.log(error);
+          this._router.navigate([&#x27;/home&#x27;]);
+        }
+      );
+    });
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-tab-group mat-align-tabs&#x3D;&quot;start&quot;&gt;
+
+    &lt;mat-tab label&#x3D;&quot;Reporte Completo&quot;&gt;
+        &lt;button data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Imprimir PDF&quot; class&#x3D;&quot;btn btn-outline-info&quot; (click)&#x3D;&quot;exportPdf()&quot;&gt;
+            &lt;mat-icon&gt;print&lt;/mat-icon&gt;
+            
+        &lt;/button&gt;
+
+        &lt;a [routerLink]&#x3D;&quot;[&#x27;/peliculas/editar&#x27;,contexto._id]&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Editar Ficha&quot; class&#x3D;&quot;btn btn-outline-success&quot;&gt;
+            &lt;mat-icon&gt;edit&lt;/mat-icon&gt;
+            &lt;/a&gt; 
+        
+        &lt;a (click)&#x3D;&quot;delete(contexto._id)&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Borrar Registro&quot; class &#x3D; &quot;btn btn-outline-danger&quot;&gt;
+                &lt;mat-icon&gt;delete&lt;/mat-icon&gt;    
+            &lt;/a&gt; 
+
+        &lt;a [routerLink]&#x3D;&quot;[&#x27;/peliculas&#x27;]&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Listado Anterior&quot; class &#x3D; &quot;btn btn-outline-warning&quot;&gt;
+                &lt;mat-icon&gt;list&lt;/mat-icon&gt;    
+            &lt;/a&gt; 
+        
+        &lt;div id&#x3D;&quot;htmlData&quot;&gt;
+
+            &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center stretch&quot;&gt;
+
+                &lt;mat-card fxFlex &#x3D;&quot;30&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                    &lt;mat-card-title&gt;MNCR, Depto DAH&lt;/mat-card-title&gt;
+                    &lt;mat-card-subtitle&gt;Ficha Contexto, Reporte Completo&lt;/mat-card-subtitle&gt;
+    
+                &lt;mat-card-content&gt;
+
+                     &lt;div class&#x3D;&quot;image-thumb&quot;&gt;
+                            
+                        &lt;img src&#x3D;&quot;{{url + &#x27;get-image/&#x27; + contexto.image}}&quot; alt&#x3D;&quot;{{contexto.title}}&quot; *ngIf&#x3D;&quot;contexto.image&quot;/&gt;
+                        &lt;img src&#x3D;&quot;assets/images/default.png&quot; alt&#x3D;&quot;{{contexto.title}}&quot; *ngIf&#x3D;&quot;!contexto.image&quot;/&gt;
+                        &lt;p&gt;&lt;b&gt;Id Contexto:&lt;/b&gt; {{contexto.id_cont}} &lt;b&gt;Año de Investigación&lt;/b&gt; {{contexto.year_inv}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Nombre del proyecto&lt;/b&gt; {{contexto.proyecto}} &lt;b&gt;Investigador a cargo del Proyecto&lt;/b&gt; {{contexto.investigador}}&lt;/p&gt;
+                    &lt;/div&gt; 
+                
+                &lt;/mat-card-content&gt;
+            
+                &lt;/mat-card&gt; 
+            &lt;/div&gt;
+
+            &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center stretch&quot;&gt;
+
+                &lt;mat-card fxFlex &#x3D;&quot;25&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                    
+                    &lt;mat-card-subtitle&gt;Información Contextual&lt;/mat-card-subtitle&gt;
+    
+                &lt;mat-card-content&gt;
+
+                     &lt;div align&#x3D;&quot;left&quot;&gt;
+                        &lt;p&gt;&lt;b&gt;Sector:&lt;/b&gt; {{contexto.sector}} &lt;b&gt;Ubicación&lt;/b&gt; {{contexto.ubicacion}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Operación&lt;/b&gt; {{contexto.operacion}} &lt;b&gt;Sub Operación&lt;/b&gt; {{contexto.suboperacion}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Descripción de la Operación&lt;/b&gt; {{contexto.desc_operacion}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Contexto&lt;/b&gt; {{contexto.cont}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Diágnostico de Contexto&lt;/b&gt; {{contexto.diagnostico_contexto}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Tipo de Contexto Excavado&lt;/b&gt; {{contexto.tipo_contexto}} &lt;b&gt;Conexión del Contexto&lt;/b&gt; {{contexto.otro_contexto}}&lt;/p&gt;
+                    &lt;/div&gt; 
+                
+                &lt;/mat-card-content&gt;
+            
+                &lt;/mat-card&gt; 
+
+                &lt;mat-card fxFlex &#x3D;&quot;25&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                    
+                    &lt;mat-card-subtitle&gt;Registro Gráfico&lt;/mat-card-subtitle&gt;
+    
+                &lt;mat-card-content&gt;
+
+                     &lt;div align&#x3D;&quot;left&quot;&gt;
+                        &lt;p&gt;&lt;b&gt;Fotografía&lt;/b&gt; {{contexto.foto}} &lt;b&gt;Num° Foto&lt;/b&gt; {{contexto.num_foto}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Calidad Foto&lt;/b&gt; {{contexto.calidad_foto}} &lt;b&gt;Estado Foto&lt;/b&gt; {{contexto.estado_foto}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Planimetría&lt;/b&gt; {{contexto.planimetria}} &lt;b&gt;Num° Plano&lt;/b&gt; {{contexto.num_lamina}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Calidad Plano&lt;/b&gt; {{contexto.calidad_plano}} &lt;b&gt;Estado Plano&lt;/b&gt; {{contexto.estado_plano}}&lt;/p&gt;
+                        
+                    &lt;/div&gt; 
+                
+                &lt;/mat-card-content&gt;
+            
+                &lt;/mat-card&gt; 
+
+                &lt;mat-card fxFlex &#x3D;&quot;25&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                    
+                    &lt;mat-card-subtitle&gt;Ubicación Espacial&lt;/mat-card-subtitle&gt;
+    
+                &lt;mat-card-content&gt;
+
+                     &lt;div align&#x3D;&quot;left&quot;&gt;
+                        &lt;p&gt;&lt;b&gt;Coordenadas&lt;/b&gt; {{contexto.coordenadas}} &lt;b&gt;CRTM05&lt;/b&gt; {{contexto.crtm}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Profundidad Excavación&lt;/b&gt; {{contexto.profundidad}} &lt;b&gt;Profundidad Datum&lt;/b&gt; {{contexto.profundidad_datum}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Ubicación Datum&lt;/b&gt; {{contexto.ubicacion_datum}}&lt;/p&gt;
+                    &lt;/div&gt; 
+                
+                &lt;/mat-card-content&gt;
+            
+                &lt;/mat-card&gt; 
+            &lt;/div&gt;
+
+            &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center stretch&quot;&gt;
+
+                &lt;mat-card fxFlex &#x3D;&quot;25&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                    
+                    &lt;mat-card-subtitle&gt;Información Antropoesquelética&lt;/mat-card-subtitle&gt;
+    
+                &lt;mat-card-content&gt;
+
+                     &lt;div align&#x3D;&quot;left&quot;&gt;
+                        &lt;p&gt;&lt;b&gt;Existe:&lt;/b&gt; {{contexto.existe_antro}} &lt;b&gt;Estado&lt;/b&gt; {{contexto.estado_antro}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Tipo Enterramiento&lt;/b&gt; {{contexto.tipo_enterramiento}} &lt;b&gt;Forma Enterramiento&lt;/b&gt; {{contexto.forma_enterramiento}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Condición&lt;/b&gt; {{contexto.condicion}} &lt;b&gt;Sexo&lt;/b&gt; {{contexto.sexo}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Edad&lt;/b&gt; {{contexto.edad}} &lt;b&gt;Patologías&lt;/b&gt; {{contexto.patologias}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Evidencia de otras practicas culturales&lt;/b&gt; {{contexto.evidencia}}&lt;/p&gt;
+                        
+                    &lt;/div&gt; 
+                
+                &lt;/mat-card-content&gt;
+            
+                &lt;/mat-card&gt; 
+
+                &lt;mat-card fxFlex &#x3D;&quot;25&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                    
+                    &lt;mat-card-subtitle&gt;Fechamiento&lt;/mat-card-subtitle&gt;
+    
+                &lt;mat-card-content&gt;
+
+                     &lt;div align&#x3D;&quot;left&quot;&gt;
+                        &lt;p&gt;&lt;b&gt;Existe&lt;/b&gt; {{contexto.fecha_existe}} &lt;b&gt;Técnica&lt;/b&gt; {{contexto.tecnica}} &lt;b&gt;Material Fechado&lt;/b&gt; {{contexto.material_fechado}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Asociación directa individuo&lt;/b&gt; {{contexto.asociacion_indv}} &lt;b&gt;Asociación directa artefacto&lt;/b&gt; {{contexto.asociacion_art}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;N° Lab&lt;/b&gt; {{contexto.num_lab}} &lt;b&gt;Fecha Convencional&lt;/b&gt; {{contexto.fecha_conv}} &lt;b&gt;Fecha Calibrada&lt;/b&gt; {{contexto.fecha_calb}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Valoración Fecha&lt;/b&gt; {{contexto.valoracion_fecha}} &lt;b&gt;Explicación&lt;/b&gt; {{contexto.explique_fecha}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Otras muestras para fechamiento&lt;/b&gt; {{contexto.otras_muestras}} &lt;b&gt;Estado de las muestras&lt;/b&gt; {{contexto.estado_muestras}}&lt;/p&gt; 
+                    &lt;/div&gt; 
+                
+                &lt;/mat-card-content&gt;
+            
+                &lt;/mat-card&gt; 
+
+                &lt;mat-card fxFlex &#x3D;&quot;25&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                    
+                    &lt;mat-card-subtitle&gt;Artefactos&lt;/mat-card-subtitle&gt;
+    
+                &lt;mat-card-content&gt;
+
+                     &lt;div align&#x3D;&quot;left&quot;&gt;
+                        &lt;p&gt;&lt;b&gt;Ceramica&lt;/b&gt; {{contexto.cera_existe}} &lt;b&gt;Cantidad&lt;/b&gt; {{contexto.cera_cant}} &lt;b&gt;Id Artefactos&lt;/b&gt; {{contexto.id_artef_cera}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Lítica&lt;/b&gt; {{contexto.litica_existe}} &lt;b&gt;Cantidad&lt;/b&gt; {{contexto.litica_cant}} &lt;b&gt;Id Artefactos&lt;/b&gt; {{contexto.id_litica}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Metal&lt;/b&gt; {{contexto.metal_existe}} &lt;b&gt;Cantidad&lt;/b&gt; {{contexto.metal_cantidad}} &lt;b&gt;Id Artefactos&lt;/b&gt; {{contexto.metal_id}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Madera&lt;/b&gt; {{contexto.madera_existe}} &lt;b&gt;Cantidad&lt;/b&gt; {{contexto.madera_cantidad}} &lt;b&gt;Id Artefactos&lt;/b&gt; {{contexto.madera_id}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Fauna&lt;/b&gt; {{contexto.fauna_existe}} &lt;b&gt;Cantidad&lt;/b&gt; {{contexto.fauna_cantidad}} &lt;b&gt;Id Artefactos&lt;/b&gt; {{contexto.fauna_id}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Otros&lt;/b&gt; {{contexto.otros_existe}} &lt;b&gt;Cantidad&lt;/b&gt; {{contexto.otros_cantidad}} &lt;b&gt;Id Artefactos&lt;/b&gt; {{contexto.otros_id}}&lt;/p&gt;   
+                    &lt;/div&gt; 
+                
+                &lt;/mat-card-content&gt;
+            
+                &lt;/mat-card&gt; 
+            &lt;/div&gt;
+
+            &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center stretch&quot;&gt;
+
+                &lt;mat-card fxFlex &#x3D;&quot;25&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                    
+                    &lt;mat-card-subtitle&gt;Verificación Localización en Campo&lt;/mat-card-subtitle&gt;
+    
+                &lt;mat-card-content&gt;
+
+                     &lt;div align&#x3D;&quot;left&quot;&gt;
+                        &lt;p&gt;&lt;b&gt;Se realizó:&lt;/b&gt; {{contexto.verifica_si}} &lt;b&gt;Investigador&lt;/b&gt; {{contexto.inves_verifica}}&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;Fecha&lt;/b&gt; {{contexto.fecha_verifica}} &lt;b&gt;Resultados&lt;/b&gt; {{contexto.resultados_verifica}}&lt;/p&gt;
+                        
+                    &lt;/div&gt; 
+                
+                &lt;/mat-card-content&gt;
+            
+                &lt;/mat-card&gt; 
+
+                &lt;mat-card fxFlex &#x3D;&quot;25&quot; class &#x3D; &quot;rest-card&quot;&gt;
+
+                    
+                    &lt;mat-card-subtitle&gt;Otros Datos&lt;/mat-card-subtitle&gt;
+    
+                &lt;mat-card-content&gt;
+
+                     &lt;div align&#x3D;&quot;left&quot;&gt;
+                        &lt;p&gt;&lt;b&gt;Revisor Documental&lt;/b&gt; {{contexto.revisor_documental}} &lt;b&gt;Fecha Revisión&lt;/b&gt; {{contexto.fecha_revision}} &lt;/p&gt;
+                        
+                    &lt;/div&gt; 
+                
+                &lt;/mat-card-content&gt;
+            
+                &lt;/mat-card&gt; 
+
+               
+            &lt;/div&gt;
+
+        
+
+        &lt;/div&gt;
+
+    &lt;/mat-tab&gt;
+
+&lt;/mat-tab-group&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./contexto-detalle.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+  .titulo {
+    display:inline;
+}
+
+.descrip-card {
+  max-width: 1260px;
+  margin: 4px
+  }
+
+.rest-card{
+  margin: 4px;
+
+}
+
+.main-card{
+  margin-left: 100px;
+  margin: 4px
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-tab-group mat-align-tabs="start">    <mat-tab label="Reporte Completo">        <button data-toggle="tooltip" data-placement="top" title="Imprimir PDF" class="btn btn-outline-info" (click)="exportPdf()">            <mat-icon>print</mat-icon>                    </button>        <a [routerLink]="[\'/peliculas/editar\',contexto._id]" data-toggle="tooltip" data-placement="top" title="Editar Ficha" class="btn btn-outline-success">            <mat-icon>edit</mat-icon>            </a>                 <a (click)="delete(contexto._id)" data-toggle="tooltip" data-placement="top" title="Borrar Registro" class = "btn btn-outline-danger">                <mat-icon>delete</mat-icon>                </a>         <a [routerLink]="[\'/peliculas\']" data-toggle="tooltip" data-placement="top" title="Listado Anterior" class = "btn btn-outline-warning">                <mat-icon>list</mat-icon>                </a>                 <div id="htmlData">            <div fxLayout="row" fxLayoutAlign="center stretch">                <mat-card fxFlex ="30" class = "rest-card">                    <mat-card-title>MNCR, Depto DAH</mat-card-title>                    <mat-card-subtitle>Ficha Contexto, Reporte Completo</mat-card-subtitle>                    <mat-card-content>                     <div class="image-thumb">                                                    <img src="{{url + \'get-image/\' + contexto.image}}" alt="{{contexto.title}}" *ngIf="contexto.image"/>                        <img src="assets/images/default.png" alt="{{contexto.title}}" *ngIf="!contexto.image"/>                        <p><b>Id Contexto:</b> {{contexto.id_cont}} <b>Año de Investigación</b> {{contexto.year_inv}}</p>                        <p><b>Nombre del proyecto</b> {{contexto.proyecto}} <b>Investigador a cargo del Proyecto</b> {{contexto.investigador}}</p>                    </div>                                 </mat-card-content>                            </mat-card>             </div>            <div fxLayout="row" fxLayoutAlign="center stretch">                <mat-card fxFlex ="25" class = "rest-card">                                        <mat-card-subtitle>Información Contextual</mat-card-subtitle>                    <mat-card-content>                     <div align="left">                        <p><b>Sector:</b> {{contexto.sector}} <b>Ubicación</b> {{contexto.ubicacion}}</p>                        <p><b>Operación</b> {{contexto.operacion}} <b>Sub Operación</b> {{contexto.suboperacion}}</p>                        <p><b>Descripción de la Operación</b> {{contexto.desc_operacion}}</p>                        <p><b>Contexto</b> {{contexto.cont}}</p>                        <p><b>Diágnostico de Contexto</b> {{contexto.diagnostico_contexto}}</p>                        <p><b>Tipo de Contexto Excavado</b> {{contexto.tipo_contexto}} <b>Conexión del Contexto</b> {{contexto.otro_contexto}}</p>                    </div>                                 </mat-card-content>                            </mat-card>                 <mat-card fxFlex ="25" class = "rest-card">                                        <mat-card-subtitle>Registro Gráfico</mat-card-subtitle>                    <mat-card-content>                     <div align="left">                        <p><b>Fotografía</b> {{contexto.foto}} <b>Num° Foto</b> {{contexto.num_foto}}</p>                        <p><b>Calidad Foto</b> {{contexto.calidad_foto}} <b>Estado Foto</b> {{contexto.estado_foto}}</p>                        <p><b>Planimetría</b> {{contexto.planimetria}} <b>Num° Plano</b> {{contexto.num_lamina}}</p>                        <p><b>Calidad Plano</b> {{contexto.calidad_plano}} <b>Estado Plano</b> {{contexto.estado_plano}}</p>                                            </div>                                 </mat-card-content>                            </mat-card>                 <mat-card fxFlex ="25" class = "rest-card">                                        <mat-card-subtitle>Ubicación Espacial</mat-card-subtitle>                    <mat-card-content>                     <div align="left">                        <p><b>Coordenadas</b> {{contexto.coordenadas}} <b>CRTM05</b> {{contexto.crtm}}</p>                        <p><b>Profundidad Excavación</b> {{contexto.profundidad}} <b>Profundidad Datum</b> {{contexto.profundidad_datum}}</p>                        <p><b>Ubicación Datum</b> {{contexto.ubicacion_datum}}</p>                    </div>                                 </mat-card-content>                            </mat-card>             </div>            <div fxLayout="row" fxLayoutAlign="center stretch">                <mat-card fxFlex ="25" class = "rest-card">                                        <mat-card-subtitle>Información Antropoesquelética</mat-card-subtitle>                    <mat-card-content>                     <div align="left">                        <p><b>Existe:</b> {{contexto.existe_antro}} <b>Estado</b> {{contexto.estado_antro}}</p>                        <p><b>Tipo Enterramiento</b> {{contexto.tipo_enterramiento}} <b>Forma Enterramiento</b> {{contexto.forma_enterramiento}}</p>                        <p><b>Condición</b> {{contexto.condicion}} <b>Sexo</b> {{contexto.sexo}}</p>                        <p><b>Edad</b> {{contexto.edad}} <b>Patologías</b> {{contexto.patologias}}</p>                        <p><b>Evidencia de otras practicas culturales</b> {{contexto.evidencia}}</p>                                            </div>                                 </mat-card-content>                            </mat-card>                 <mat-card fxFlex ="25" class = "rest-card">                                        <mat-card-subtitle>Fechamiento</mat-card-subtitle>                    <mat-card-content>                     <div align="left">                        <p><b>Existe</b> {{contexto.fecha_existe}} <b>Técnica</b> {{contexto.tecnica}} <b>Material Fechado</b> {{contexto.material_fechado}}</p>                        <p><b>Asociación directa individuo</b> {{contexto.asociacion_indv}} <b>Asociación directa artefacto</b> {{contexto.asociacion_art}}</p>                        <p><b>N° Lab</b> {{contexto.num_lab}} <b>Fecha Convencional</b> {{contexto.fecha_conv}} <b>Fecha Calibrada</b> {{contexto.fecha_calb}}</p>                        <p><b>Valoración Fecha</b> {{contexto.valoracion_fecha}} <b>Explicación</b> {{contexto.explique_fecha}}</p>                        <p><b>Otras muestras para fechamiento</b> {{contexto.otras_muestras}} <b>Estado de las muestras</b> {{contexto.estado_muestras}}</p>                     </div>                                 </mat-card-content>                            </mat-card>                 <mat-card fxFlex ="25" class = "rest-card">                                        <mat-card-subtitle>Artefactos</mat-card-subtitle>                    <mat-card-content>                     <div align="left">                        <p><b>Ceramica</b> {{contexto.cera_existe}} <b>Cantidad</b> {{contexto.cera_cant}} <b>Id Artefactos</b> {{contexto.id_artef_cera}}</p>                        <p><b>Lítica</b> {{contexto.litica_existe}} <b>Cantidad</b> {{contexto.litica_cant}} <b>Id Artefactos</b> {{contexto.id_litica}}</p>                        <p><b>Metal</b> {{contexto.metal_existe}} <b>Cantidad</b> {{contexto.metal_cantidad}} <b>Id Artefactos</b> {{contexto.metal_id}}</p>                        <p><b>Madera</b> {{contexto.madera_existe}} <b>Cantidad</b> {{contexto.madera_cantidad}} <b>Id Artefactos</b> {{contexto.madera_id}}</p>                        <p><b>Fauna</b> {{contexto.fauna_existe}} <b>Cantidad</b> {{contexto.fauna_cantidad}} <b>Id Artefactos</b> {{contexto.fauna_id}}</p>                        <p><b>Otros</b> {{contexto.otros_existe}} <b>Cantidad</b> {{contexto.otros_cantidad}} <b>Id Artefactos</b> {{contexto.otros_id}}</p>                       </div>                                 </mat-card-content>                            </mat-card>             </div>            <div fxLayout="row" fxLayoutAlign="center stretch">                <mat-card fxFlex ="25" class = "rest-card">                                        <mat-card-subtitle>Verificación Localización en Campo</mat-card-subtitle>                    <mat-card-content>                     <div align="left">                        <p><b>Se realizó:</b> {{contexto.verifica_si}} <b>Investigador</b> {{contexto.inves_verifica}}</p>                        <p><b>Fecha</b> {{contexto.fecha_verifica}} <b>Resultados</b> {{contexto.resultados_verifica}}</p>                                            </div>                                 </mat-card-content>                            </mat-card>                 <mat-card fxFlex ="25" class = "rest-card">                                        <mat-card-subtitle>Otros Datos</mat-card-subtitle>                    <mat-card-content>                     <div align="left">                        <p><b>Revisor Documental</b> {{contexto.revisor_documental}} <b>Fecha Revisión</b> {{contexto.fecha_revision}} </p>                                            </div>                                 </mat-card-content>                            </mat-card>                            </div>                </div>    </mat-tab></mat-tab-group></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleComponent', 'selector': 'app-article'},{'name': 'ArticleEditComponent', 'selector': 'app-article-edit'},{'name': 'ArticleNewComponent', 'selector': 'app-article-new'},{'name': 'AuthenticationButtonComponent', 'selector': 'app-authentication-button'},{'name': 'CeramicaComponent', 'selector': 'app-ceramica'},{'name': 'CeramicsComponent', 'selector': 'app-ceramics'},{'name': 'ContextoComponent', 'selector': 'app-contexto'},{'name': 'ContextoDetalleComponent', 'selector': 'app-contexto-detalle'},{'name': 'ContextoEditComponent', 'selector': 'app-contexto-edit'},{'name': 'ContextoExcelComponent', 'selector': 'app-contexto-excel'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'FichaContextoComponent', 'selector': 'app-ficha-contexto'},{'name': 'FichaLiticaComponent', 'selector': 'app-ficha-litica'},{'name': 'FichaMetalComponent', 'selector': 'app-ficha-metal'},{'name': 'FichaOrigenesComponent', 'selector': 'app-ficha-origenes'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormularioComponent', 'selector': 'app-formulario'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LiticaDetalleComponent', 'selector': 'app-litica-detalle'},{'name': 'LiticaEditComponent', 'selector': 'app-litica-edit'},{'name': 'LiticaExcelComponent', 'selector': 'app-litica-excel'},{'name': 'LiticoComponent', 'selector': 'app-litico'},{'name': 'LoginButtonComponent', 'selector': 'app-login-button'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutButtonComponent', 'selector': 'app-logout-button'},{'name': 'MapaOrigenesComponent', 'selector': 'app-mapa-origenes'},{'name': 'MetalDetalleComponent', 'selector': 'app-metal-detalle'},{'name': 'MetalEditComponent', 'selector': 'app-metal-edit'},{'name': 'MetalExcelComponent', 'selector': 'app-metal-excel'},{'name': 'MetalicoComponent', 'selector': 'app-metalico'},{'name': 'ModalOptionsComponent', 'selector': 'app-modal-options'},{'name': 'PagDetalleLiteSitioComponent', 'selector': 'app-pag-detalle-lite-sitio'},{'name': 'PaginaComponent', 'selector': 'app-pagina'},{'name': 'PagLitComponent', 'selector': 'app-pag-lit'},{'name': 'PagLiteSitioNombreComponent', 'selector': 'app-pag-lite-sitio-nombre'},{'name': 'PagLiteSitiosComponent', 'selector': 'app-pag-lite-sitios'},{'name': 'PagMetComponent', 'selector': 'app-pag-met'},{'name': 'PagOriComponent', 'selector': 'app-pag-ori'},{'name': 'PeliculasComponent', 'selector': 'app-peliculas'},{'name': 'PlasticaComponent', 'selector': 'app-plastica'},{'name': 'PoliticasUsoComponent', 'selector': 'app-politicas-uso'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RegistroOrigenesComponent', 'selector': 'app-registro-origenes'},{'name': 'ReportePublicoComponent', 'selector': 'app-reporte-publico'},{'name': 'SearchCombCeraComponent', 'selector': 'app-search-comb-cera'},{'name': 'SearchComblitComponent', 'selector': 'app-search-comblit'},{'name': 'SearchCombMetComponent', 'selector': 'app-search-comb-met'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SearchContextoComponent', 'selector': 'app-search-contexto'},{'name': 'SearchLiticoComponent', 'selector': 'app-search-litico'},{'name': 'SearchMetalicoComponent', 'selector': 'app-search-metalico'},{'name': 'SearchSitioComponent', 'selector': 'app-search-sitio'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SitioComponent', 'selector': 'app-sitio'},{'name': 'SitioDetalleComponent', 'selector': 'app-sitio-detalle'},{'name': 'SitioEditComponent', 'selector': 'app-sitio-edit'},{'name': 'SitioExcelComponent', 'selector': 'app-sitio-excel'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'TipoDisComponent', 'selector': 'app-tipo-dis'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ContextoDetalleComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ContextoDetalleComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

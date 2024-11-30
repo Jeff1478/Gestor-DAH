@@ -1,0 +1,34 @@
+.example-margin {
+    margin: 0 10px;
+  }
+
+  .mat-column-nombre {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+
+  .mat-column-email {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+
+  .mat-column-perfil {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+
+  .mat-column-setena {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+
+  .mat-column-acceso {
+    padding-left: 16px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .mat-column-actions {
+    padding-left: 16px;
+    font-size: 20px;
+  }

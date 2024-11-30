@@ -9,7 +9,16 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class AuthService {
 
-  private URL = 'http://181.193.24.142:3900/apu';
+   // private URL = 'http://181.193.24.142:3900/apu'; Museo
+    private URL = 'http://31.220.97.126:3900/apu';
+
+   //private URL = 'apu';
+    //private URL = '/apu';
+   //private URL = 'https://localhost:3900/apu';
+
+    _isLoggedIn: boolean = false
+
+  
 
   
   constructor(private http: HttpClient, private router: Router) { 
@@ -19,6 +28,7 @@ export class AuthService {
 
 
   signUpUser(user: {}) {
+  
     return this.http.post<any>(this.URL + '/signup', user);
   }
 
@@ -27,6 +37,12 @@ export class AuthService {
     .set('content-type', 'application/json')
     .set('Access-Control-Allow-Origin', '*');
     return this.http.post<any>(this.URL + '/signin', user, {'headers':headers});
+  }
+
+  updateAuthStatus(value: boolean) {
+    this._isLoggedIn = value
+    //this.authSub.next(this._isLoggedIn);
+    localStorage.setItem('isLoggedIn', value ? "true" : "false");
   }
 
   loggedIn() {

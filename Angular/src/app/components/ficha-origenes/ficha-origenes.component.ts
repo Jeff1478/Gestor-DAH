@@ -19,15 +19,21 @@ export class FichaOrigenesComponent implements OnInit {
   dropdownList2: any[] = [];
   dropdownList3: any[] = [];
   dropdownList4: any[] = [];
+  dropdownList5: any[] = [];
+  dropdownList6: any[] = [];
   selectedItems: any[] = [];
   selectedItems2: any[] = [];
   selectedItems3: any[] = [];
   selectedItems4: any[] = [];
+  selectedItems5: any[] = [];
+  selectedItems6: any[] = [];
   img: any[] = [];
   dropdownSettings!: IDropdownSettings;
   dropdownSettings2!: IDropdownSettings;
   dropdownSettings3!: IDropdownSettings;
   dropdownSettings4!: IDropdownSettings;
+  dropdownSettings5!: IDropdownSettings;
+  dropdownSettings6!: IDropdownSettings;
 
   user: any;
   public sitio!: Sitio;
@@ -86,6 +92,7 @@ export class FichaOrigenesComponent implements OnInit {
       trabajo_graduacion: false,
       regional: false,
       subregional: false,
+      tipo_proyecto: '',
       abrigo_cueva_caverna: false,
       arquitectonico: false,
       basurero: false,
@@ -97,6 +104,7 @@ export class FichaOrigenesComponent implements OnInit {
       petroglifo: false,
       salina: false,
       taller: false,
+      tipo_monumento:'',
       registrador: '',
       consultoria: false,
       fundacion: false,
@@ -105,6 +113,7 @@ export class FichaOrigenesComponent implements OnInit {
       mncr: false,
       parques_nacionales: false,
       ucr: false,
+      institucion:'',
       hallazgo: '',
       fecha_registro: '',
       provincia: '',
@@ -117,8 +126,8 @@ export class FichaOrigenesComponent implements OnInit {
       territorio_indigena: false,
       lambert_oe: '',
       lambert_ns: '',
-      crtm05_e: '',
-      crtm05_n: '',
+      CRTM05_E: '',
+      CRTM05_N: '',
       grad_lat: '',
       min_lat: '',
       seg_lat: '',
@@ -159,7 +168,10 @@ export class FichaOrigenesComponent implements OnInit {
       planos: false,
       dibujos: false,
       video: false,
-
+      trabajo_campo:'',
+      recoleccion:'',
+      excava:'',
+      material_grafico:'',
       coordenadas: '',
       google: '',
       id_google: '',
@@ -182,6 +194,7 @@ export class FichaOrigenesComponent implements OnInit {
       mil_tres_cincuenta_mil_quinientos_dc: false,
       mil_quinientos_mil_ochocientos_dc: false,
       mil_ochocientos_mil_novecientos_sc: false,
+      periodo:'',
       lev_cartografico: false,
       rec_superficie: false,
       cala_estratatigrafica: false,
@@ -332,13 +345,40 @@ export class FichaOrigenesComponent implements OnInit {
       { item_id: 6, item_text: 'Planos' },
     ];
 
+    this.dropdownList5 = [
+      { item_id: 1, item_text: 'Impacto Ambiental' },
+      { item_id: 2, item_text: 'Movimimiento Tierras' },
+      { item_id: 3, item_text: 'Evaluación' },
+      { item_id: 4, item_text: 'Peritaje' },
+      { item_id: 5, item_text: 'Excavación Aislada' },
+      { item_id: 6, item_text: 'Rescate' },
+      { item_id: 7, item_text: 'Inspección' },
+      { item_id: 8, item_text: 'Trabajo Graduación' },
+      { item_id: 9, item_text: 'Inv. Regional' },
+      { item_id: 10, item_text: 'Inv. Sub Regional' }
+    ];
+
+    this.dropdownList6 = [
+      { item_id: 1, item_text: 'Abrigo,Cueva,Caverna' },
+      { item_id: 2, item_text: 'Arquitectónico' },
+      { item_id: 3, item_text: 'Basurero' },
+      { item_id: 4, item_text: 'Camino' },
+      { item_id: 5, item_text: 'Conchero' },
+      { item_id: 6, item_text: 'Funerario' },
+      { item_id: 7, item_text: 'Habitación' },
+      { item_id: 8, item_text: 'Materiales Dispersos' },
+      { item_id: 9, item_text: 'Petroglifo' },
+      { item_id: 10, item_text: 'Salina' },
+      { item_id: 11, item_text: 'Taller' },
+    ];
+
     this.dropdownSettings = {
       singleSelection: false,
       idField: 'item_id',
       textField: 'item_text',
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
-      itemsShowLimit: 8,
+      itemsShowLimit: 12,
       allowSearchFilter: true,
     };
 
@@ -348,7 +388,7 @@ export class FichaOrigenesComponent implements OnInit {
       textField: 'item_text',
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
-      itemsShowLimit: 8,
+      itemsShowLimit: 12,
       allowSearchFilter: true,
     };
   }
@@ -358,8 +398,7 @@ export class FichaOrigenesComponent implements OnInit {
       this.sitio.materiales_recuperados + JSON.stringify(item.item_text) + ' ';
   }
   onItemSelect2(item: any) {
-    this.sitio.estado_conservacion =
-      this.sitio.estado_conservacion + JSON.stringify(item.item_text) + ' ';
+   this.sitio.estado_conservacion = JSON.stringify(item.item_text) + ' ';
   }
   onItemSelect3(item: any) {
     this.sitio.patrimonio_acuatico =
@@ -368,6 +407,18 @@ export class FichaOrigenesComponent implements OnInit {
   onItemSelect4(item: any) {
     this.sitio.doc_descripcion_material =
       this.sitio.doc_descripcion_material +
+      JSON.stringify(item.item_text) +
+      ' ';
+  }
+  onItemSelect5(item: any) {
+    this.sitio.tipo_proyecto =
+      this.sitio.tipo_proyecto +
+      JSON.stringify(item.item_text) +
+      ' ';
+  }
+  onItemSelect6(item: any) {
+    this.sitio.tipo_monumento =
+      this.sitio.tipo_monumento +
       JSON.stringify(item.item_text) +
       ' ';
   }
@@ -416,8 +467,10 @@ export class FichaOrigenesComponent implements OnInit {
     let c = Number(this.sitio.seg_log);
     let min = b / 60;
     let seg = c / 3600;
-    let longitud_decimal = (a + min + seg).toFixed(4);
+    let longitud_decimal = (-Math.abs(a) + min + seg).toFixed(4);
+    
     this.sitio.Logitude = Number(longitud_decimal);
+    console.log(this.sitio.Logitude);
   }
  
   imagenes: any[] = [];
@@ -427,18 +480,18 @@ export class FichaOrigenesComponent implements OnInit {
     let nombre = this.sitio.nombre_sitio;
   
     for (let i = 0; i < archivos.length; i++) {
-
       let reader = new FileReader();
       reader.readAsDataURL(archivos[i]);
       reader.onloadend = () => {
         console.log(reader.result);
         this.imagenes.push(reader.result);
         this.storageService.subirImagen(nombre + "_" + Date.now(), reader.result).then(urlImagen => {
-          console.log(urlImagen);
+          
           this.sitio.links = this.sitio.links + ";" + urlImagen;
         });
       }
     }
-  
+
+     
   }
 }

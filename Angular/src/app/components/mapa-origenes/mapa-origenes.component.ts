@@ -13,8 +13,8 @@ import Swal from 'sweetalert2';
 })
 export class MapaOrigenesComponent implements OnInit {
 
-  public lat!: number;
-  public lng!: number;
+  public lat;
+  public lng;
   public zoom!: number;
   public mapTypeId!: any;
   public searchString!: any;
@@ -27,6 +27,7 @@ export class MapaOrigenesComponent implements OnInit {
   provincias: any;
   cantones: any;
   distritos: any;
+  clave: any;
   selectedProvincia: any = {
     id:0, name:''
   };
@@ -44,24 +45,43 @@ export class MapaOrigenesComponent implements OnInit {
     private _route: ActivatedRoute,
     private dataService: DataService
   ) { 
-    this.lat = 40;
-    this.lng = -3;
-    this.zoom = 6;
+    this.lat = 9.954144929210663;
+    this.lng = -84.04138360587075;
+    this.zoom = 8;
     this.mapTypeId = 'hybrid';
     
   }
 
   ngOnInit(): void {
 
-    navigator.geolocation.getCurrentPosition(position=>{
+    /* navigator.geolocation.getCurrentPosition(position=>{
       this.lat = position.coords.latitude;
       this.lng = position.coords.longitude;
       this.zoom = 7
-    })
+    }) */
+    this.getLocation();
 
     this.showAll();
     this.onSelect(this.selectedProvincia.id);
     this.onSelectCanton(this.selectedCanton.id);
+  }
+
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        if (position) {
+          console.log("Latitude: " + position.coords.latitude +
+            "Longitude: " + position.coords.longitude);
+          this.lat = position.coords.latitude;
+          this.lng = position.coords.longitude;
+          console.log(this.lat);
+          console.log(this.lng);
+        }
+      },
+        (error) => console.log(error));
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
   }
 
    
@@ -193,7 +213,7 @@ goSearchCanton(canton_id : any) {
     this.cant = '^Alajuelita$'
   }
   else if (canton_id == 11){
-    this.cant = '^Coronado$'
+    this.cant = '^Vazquez de Coronado$'
   }
   else if (canton_id == 12){
     this.cant = '^Acosta$'

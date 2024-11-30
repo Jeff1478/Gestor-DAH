@@ -8,6 +8,7 @@ import { SitioService } from 'src/app/services/sitio.service';
 import { DataService} from 'src/app/services/data.service';
 import { Sitio } from '../../models/sitio';
 import { AuthService } from 'src/app/services/auth.service';
+import { RegistroService } from 'src/app/services/registro.service';
 import Swal from 'sweetalert2';
 
 
@@ -15,7 +16,7 @@ import Swal from 'sweetalert2';
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
-  providers: [CeramicService,ContextoService,LiticoService,MetalicoService,SitioService,AuthService]
+  providers: [CeramicService,ContextoService,LiticoService,MetalicoService,SitioService,AuthService, RegistroService]
 })
 export class SidebarComponent implements OnInit {
   
@@ -27,8 +28,12 @@ export class SidebarComponent implements OnInit {
   public searchStringNomb!: string;
   public administrador: boolean;
   public registrado: boolean;
+  public arqueo: boolean;
   public usuario!: any;
+  public user!: any;
+  public registro!: any;
   public title: string;
+  public acceso!: string;
   public searchSitio!: string;
   public sitios: Sitio[] = [];
   prov:any;
@@ -57,47 +62,76 @@ export class SidebarComponent implements OnInit {
     private _router: Router,
     private _route: ActivatedRoute,
     private dataService: DataService,
-    public authService : AuthService
+    public authService : AuthService,
+    public _registroService: RegistroService
   ) {
     this.administrador = false;
     this.registrado = false;
+    this.arqueo = false;
     this.usuario = '';
     this.title = '';
+    this.user = '';
    }
 
   ngOnInit(): void {
 
-  
     this.authService.search(localStorage.getItem('email'))
     .subscribe(
       res => {
         if(res.usuarios){
-          console.log(res.usuarios)
+          //console.log(res.usuarios)
           this.usuario = res.usuarios;
           this.title = JSON.stringify(this.usuario, ['email'])
+          //console.log(this.title)
+         this.searchPerfil(localStorage.getItem('email'));
+          
+
         }
 
-        if (this.title == '[{"email":"jcsanchez@museocostarica.go.cr"}]' || this.title =='[{"email":"jeffreytapia@gmail.com"}]'){
-          this.administrador = true;
+        if (this.title == '[{"email":"jbrenes@museocostarica.go.cr"}]' || this.title =='[{"email":"jtapia@museocostarica.go.cr"}]'){
+          // this.administrador = true;
           this.registrado = true;
-        } else if (this.title == '[{"email":"bm@kraken.com"}]'){
-        this.administrador = true;
+          //this.arqueo = true
+        } 
+     /*    else if (this.title == '[{"email":"jtapia@museocostarica.go.cr"}]'){
+        this.administrador = true;*/
        
-      } else{
+       else{
         this.administrador = false;
-      }},
+      } 
+    
 
       err => {console.log(err)
        
-      });  
-
-
+  }});  
+     
+      
       this.showAll();
       this.onSelect(this.selectedProvincia.id);
       this.onSelectCanton(this.selectedCanton.id);
 
-      
+  }
 
+  searchPerfil(searstring:any){
+    this._registroService.search(searstring).subscribe(
+      response => {
+       if(response.registro){
+
+        this.user = response.registro
+        console.log(this.user)
+        this.acceso = JSON.stringify(this.user, ['acceso'])
+
+           if(this.acceso == '[{"acceso":true}]'){
+            this.arqueo = true;
+          } 
+         
+        
+      }},
+
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   goSearch(){
@@ -231,7 +265,7 @@ export class SidebarComponent implements OnInit {
       this.cant = '^Alajuelita$'
     }
     else if (canton_id == 11){
-      this.cant = '^Coronado$'
+      this.cant = '^Vazquez de Coronado$'
     }
     else if (canton_id == 12){
       this.cant = '^Acosta$'
@@ -490,7 +524,7 @@ goSearchCanton(canton_id : any) {
     this.cant = '^Alajuelita$'
   }
   else if (canton_id == 11){
-    this.cant = '^Coronado$'
+    this.cant = '^Vazquez de Coronado$'
   }
   else if (canton_id == 12){
     this.cant = '^Acosta$'

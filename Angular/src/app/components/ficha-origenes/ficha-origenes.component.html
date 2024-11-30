@@ -48,11 +48,24 @@
                                 
                             </div>
                             <br>
-                            <h4>Tipo de Proyecto</h4>
+                            <!-- <h4>Tipo de Proyecto</h4> -->
                             <hr>
                             <div class="row g-3">
+
+                                <ng-multiselect-dropdown
+                                [placeholder]="'Tipo Proyecto'"
+                                [settings]="dropdownSettings"
+                                [data]="dropdownList5"
+                                [(ngModel)]="selectedItems5"
+                                [ngModelOptions]="{standalone: true}"
+                                (onSelect)="onItemSelect5($event)"
+                                (onSelectAll)="onSelectAll($event)"
+                              >
+                              </ng-multiselect-dropdown> 
+                              <input type="text" class="form-control" name="tipo_proyecto" #tipo_proyecto="ngModel"
+                              [(ngModel)]="sitio.tipo_proyecto">
                                
-                                <div class="col-md-3">
+                               <!--  <div class="col-md-3">
                                     <input class="form-check-input" type="checkbox" name="estudio_impacto_ambiental" #estudio_impacto_ambiental [(ngModel)]="sitio.estudio_impacto_ambiental"
                                     (ngModelChange)="sitio.estudio_impacto_ambiental=$event? true:false">
                                     <label class="form-check-label" for="estudio_impacto_ambiental">Impacto Ambiental</label>
@@ -108,14 +121,29 @@
                                     <input class="form-check-input" type="checkbox" name="subregional" #peritaje [(ngModel)]="sitio.subregional"
                                     (ngModelChange)="sitio.subregional=$event? true:false">
                                     <label class="form-check-label" for="subregional">Inv. Subregional</label>
-                                </div>
+                                </div> -->
                             </div>
 
                             <br>
-                            <h4>Tipo de Monumento</h4>
+                            <!-- <h4>Tipo de Monumento</h4> -->
                             <hr>
                             <div class="row g-3">
-                                <div class="col-md-3">
+
+                                <ng-multiselect-dropdown
+                                [placeholder]="'Tipo Monumento'"
+                                [settings]="dropdownSettings"
+                                [data]="dropdownList6"
+                                [(ngModel)]="selectedItems6"
+                                [ngModelOptions]="{standalone: true}"
+                                (onSelect)="onItemSelect6($event)"
+                                (onSelectAll)="onSelectAll($event)"
+                              >
+                              </ng-multiselect-dropdown> 
+                              <input type="text" class="form-control" name="tipo_monumento" #tipo_monumento="ngModel"
+                              [(ngModel)]="sitio.tipo_monumento">
+
+
+                           <!--      <div class="col-md-3">
                                     <input class="form-check-input" type="checkbox" name="abrigo_cueva_caverna" #peritaje [(ngModel)]="sitio.abrigo_cueva_caverna"
                                     (ngModelChange)="sitio.abrigo_cueva_caverna=$event? true:false">
                                     <label class="form-check-label" for="abrigo_cueva_caverna">Abrigo, Cueva o Caverna</label>
@@ -175,7 +203,7 @@
                                     <input class="form-check-input" type="checkbox" name="taller" #peritaje [(ngModel)]="sitio.taller"
                                     (ngModelChange)="sitio.taller=$event? true:false">
                                     <label class="form-check-label" for="taller">Taller</label>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- </form> -->
                         </div>
@@ -354,14 +382,14 @@
                                             [(ngModel)]="sitio.lambert_ns">
                                     </div>
                                     <div class="col-md-3">
-                                        <label for="crtm05_n">CRTM05 N</label>
-                                        <input type="text" class="form-control" name="crtm05_n" #crtm05_n="ngModel"
-                                            [(ngModel)]="sitio.crtm05_n">
+                                        <label for="CRTM05_N">CRTM05 N</label>
+                                        <input type="text" class="form-control" name="CRTM05_N" #crtm05_n="ngModel"
+                                            [(ngModel)]="sitio.CRTM05_N">
                                     </div>
                                     <div class="col-md-3">
-                                        <label for="crtm05_e">CRTM05 E</label>
-                                        <input type="text" class="form-control" name="crtm05_e" #crtm05_e="ngModel"
-                                            [(ngModel)]="sitio.crtm05_e">
+                                        <label for="CRTM05_E">CRTM05 E</label>
+                                        <input type="text" class="form-control" name="CRTM05_E" #crtm05_e="ngModel"
+                                            [(ngModel)]="sitio.CRTM05_E">
                                     </div>
 
                                     <div class="row g-3">
@@ -600,10 +628,12 @@
                                     </div>
                                 </div>
 
+                                <hr>
+
                                 <div class="row g-3">
                                     
                                     <div class="col-md-6">
-                                        <label for="fechamiento_adiometrico">Fechamiento Adiometrico</label>
+                                        <label for="fechamiento_adiometrico">Fechamiento Radiometrico</label>
                                         <input type="text" class="form-control" name="fechamiento_adiometrico" #fechamiento_adiometrico="ngModel"
                                             [(ngModel)]="sitio.fechamiento_adiometrico">
                                     </div>
@@ -740,6 +770,7 @@
                                 [settings]="dropdownSettings"
                                 [data]="dropdownList"
                                 [(ngModel)]="selectedItems"
+                                [ngModelOptions]="{standalone: true}"
                                 (onSelect)="onItemSelect($event)"
                                 (onSelectAll)="onSelectAll($event)"
                                 [ngModelOptions]="{standalone: true}"
@@ -801,10 +832,13 @@
                                     [settings]="dropdownSettings"
                                     [data]="dropdownList2"
                                     [(ngModel)]="selectedItems"
+                                    [ngModelOptions]="{standalone: true}"
                                     (onSelect)="onItemSelect2($event)"
                                     (onSelectAll)="onSelectAll($event)"
                                   >
                                   </ng-multiselect-dropdown> 
+                                  <input type="text" class="form-control" name="estado_conservacion" #estado_conservacion="ngModel"
+                                  [(ngModel)]="sitio.estado_conservacion">
                                 </div> 
                                 <hr>
 
@@ -821,6 +855,7 @@
                                     [settings]="dropdownSettings"
                                     [data]="dropdownList3"
                                     [(ngModel)]="selectedItems"
+                                    [ngModelOptions]="{standalone: true}"
                                     (onSelect)="onItemSelect3($event)"
                                     (onSelectAll)="onSelectAll($event)"
                                   >
@@ -966,12 +1001,23 @@
                                     [settings]="dropdownSettings"
                                     [data]="dropdownList4"
                                     [(ngModel)]="selectedItems"
+                                    [ngModelOptions]="{standalone: true}"
                                     (onSelect)="onItemSelect4($event)"
                                     (onSelectAll)="onSelectAll($event)"
                                   >
                                   </ng-multiselect-dropdown>
+                                  <hr>
+
                                 </div> 
                             
+                                <div class="col-md-12">
+                                    <label for="doc_contenido">Links Asociados</label>
+                                    <textarea class="form-control" rows="3" name="links" #doc_contenido="ngModel"
+                                    [(ngModel)]="sitio.links"></textarea>
+                                        <!-- <input type="text" class="form-control" name="links" #doc_contenido="ngModel"
+                                            [(ngModel)]="sitio.links"> -->
+
+                                    </div>
                     
                         </div>
 
@@ -982,7 +1028,7 @@
 
         
 
-               <!--  <div class="form-group">
+                 <div class="form-group">
                     <h2>Subir Imagen Principal ó PDF</h2>
                      <div class="image-thumb" *ngIf="is_edit">
                         
@@ -1000,9 +1046,9 @@
                     </angular-file-uploader>
                 
                 </div>
- -->
+ 
                 <div>
-                    <h2>Subir Imágenes</h2>
+                    <h2>Subir Varias Imágenes</h2>
                     <input type="file" accept=".png, .jpg, .jpeg" multiple (change)="cargarImagen($event)"/>
                 </div>
 

@@ -52,7 +52,7 @@ const auth = () => {
 
 app.get("/", (req, res) => {
     res.send(
-      "<h1 style='text-align: center'>Wellcome to FunOfHeuristic <br><br>😃👻😃👻😃👻😃👻😃</h1>"
+      "<h1 style='text-align: center'>Wellcome Jeffrey T <br><br>😃👻😃👻😃👻😃👻😃</h1>"
     );
   });
   
@@ -68,17 +68,17 @@ app.get("/", (req, res) => {
   async function sendMail(user, callback) {
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
+      host: "smtp.office365.com",
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: "jtapia@museocostarica.go.cr",
-        pass: "sbqzgshffxriqbma"
+        user: "soporteti@museocostarica.go.cr",
+        pass: "Museo2023*"
       }
     });
   
     let mailOptions = {
-      from: '"Administrador Origenes"<jtapia@museocostarica.go.cr>', // sender address
+      from: '"Administrador Origenes"<soporteti@museocostarica.go.cr>', // sender address
       to: [user.email, "jtapia@museocostarica.go.cr"], // list of receivers
       subject: "Solicitud de Acceso a Origenes", // Subject line
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -341,9 +341,7 @@ app.get("/", (req, res) => {
       </div>
       </body>
       </html>`
-      /* html: `<h1>Hola ${user.name}</h1><br>
-      <p>Correo: ${user.email} solicita un acceso como ${user.perfil}</p>
-      <h4>Gracias por su solicitud</h4>` */
+      
     };
   
     // send mail with defined transport object
@@ -369,6 +367,7 @@ app.get('/getData', isLoggedIn, (req, res) => {
     res.json("data is")
 })
 
+//CORS ACTUALIZADO
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');

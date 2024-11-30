@@ -5,7 +5,7 @@
 </a> 
 
 <div *ngIf="administrador == true">
-<a [routerLink]="['/sitio-editar/sitio',sitio._id]" data-toggle="tooltip" data-placement="top" title="Editar Sitio" class="btn btn-outline-success">
+<a *ngIf="sitio" [routerLink]="['/sitio-editar/sitio',sitio._id]" data-toggle="tooltip" data-placement="top" title="Editar Sitio" class="btn btn-outline-success">
     <mat-icon>edit</mat-icon>
     </a> 
 </div>
@@ -25,7 +25,7 @@
     
                 <mat-card-content>
 
-                    <div align="left">
+                    <div *ngIf="sitio" align="left">
                         <p><b>Nombre Monumento:</b> {{sitio.nombre_sitio}}</p>
                         <p><b>Clave:</b> {{sitio.clave_sitio}}</p>
                         <p><b>Código UCR: {{sitio.ucr ? "X": " "}}</b> </p>
@@ -39,17 +39,18 @@
             <mat-card-subtitle>Tipo de Proyecto</mat-card-subtitle>
 
                 <mat-card-content>
-                <div align="left">  
-                    <p><b>Estudio Impacto Ambiental: </b></p>
+                <div *ngIf="sitio" align="left">  
+                    <!-- <p><b>Estudio Impacto Ambiental: </b></p>
                     <p><b>Monitoreo Movimiento Tierras: {{sitio.monitoreo_mov_tierras ? "X": " "}}</b></p>
                     <p><b>Evaluación: {{sitio.evaluacion ? "X": " "}}</b></p>
                     <p><b>Peritaje: {{sitio.peritaje ? "X": " "}}</b></p>
-                    <p><b>Excavación Aislada: {{sitio.excavacion ? "X": " "}}</b></p>
+                    <p><b>Excavación Aislada: {{sitio.excavacion_aislada ? "X": " "}}</b></p>
                     <p><b>Rescate: {{sitio.rescate ? "X": " "}}</b></p>
                     <p><b>Inspección: {{sitio.inspeccion ? "X": " "}}</b></p>
                     <p><b>Trabajo Final Graduación: {{sitio.trabajo_graduacion  ? "X": " "}}</b></p>
                     <p><b>Investigación Regional: {{sitio.regional ? "X": " "}}</b> </p>
-                    <p><b>Investigación SubRegional: {{sitio.subregional ? "X": " "}}</b> </p>
+                    <p><b>Investigación SubRegional: {{sitio.subregional ? "X": " "}}</b> </p> -->
+                    <p><b>Tipo Proyecto:</b> {{sitio.tipo_proyecto}} </p>
                 </div>
             </mat-card-content>
         </mat-card>
@@ -63,8 +64,8 @@
             <mat-card-subtitle>Tipo de Monumento</mat-card-subtitle>
 
                 <mat-card-content>
-                <div align="left">  
-                    <p><b>Abrigo, Cueva o Caverna: {{sitio.abrigo_cueva_caverna ? "X": " "}}</b></p>
+                <div *ngIf="sitio" align="left">  
+                   <!--  <p><b>Abrigo, Cueva o Caverna: {{sitio.abrigo_cueva_caverna ? "X": " "}}</b></p>
                     <p><b>Habitación: {{sitio.habitacion ? "X": " "}}</b></p> 
                     <p><b>Arquitectónico: {{sitio.arquitectonico ? "X": " "}}</b></p>
                     <p><b>Materiales Dispersos: {{sitio.materiales_dispersos ? "X": " "}}</b></p>
@@ -74,7 +75,8 @@
                     <p><b>Salina: {{sitio.salina ? "X": " "}}</b></p>
                     <p><b>Conchero: {{sitio.conchero ? "X": " "}}</b></p>
                     <p><b>Taller Lítico: {{sitio.taller ? "X": " "}}</b> </p>
-                    <p><b>Funerario: {{sitio.funerario ? "X": " "}}</b></p>
+                    <p><b>Funerario: {{sitio.funerario ? "X": " "}}</b></p> -->
+                    <p><b>Tipo Monumento:</b> {{sitio.tipo_monumento}} </p>
                 </div>
             </mat-card-content>
         </mat-card>
@@ -92,17 +94,18 @@
         <div fxLayout="row" fxLayoutAlign="center stretch">
             <mat-card fxFlex ="40" class = "rest-card">
                     <mat-card-content>
-                    <div align="left">  
+                    <div *ngIf="sitio" align="left">  
                         <p><b>Registrador:</b>  {{sitio.registrador}}</p>
                         <hr/>
-                        <p><b>Consultoría: {{sitio.consultoria ? "X": " "}}</b></p>
+                       <!--  <p><b>Consultoría: {{sitio.consultoria ? "X": " "}}</b></p>
                         <p><b>Fundación Anastacio Alfaro, MNCR: {{sitio.fundacion  ? "X": " "}}</b></p>
                         
                         <p><b>Instituto Costarricense Electricidad: {{sitio.ice  ? "X": " "}}</b></p>
                         <p><b>Literatura:</b></p>
-                        <p><b>Museo Nacional de Costa Rica:  {{sitio.mncr ? "X": " "}}</b></p>
+                        <p><b>Museo Nacional de Costa Rica: {{sitio.mncr ? "X": " "}}</b></p>
                         <p><b>Parques Nacionales: {{sitio.parques_nacionales ? "X": " "}}</b></p>
-                        <p><b>Universidad de Costa Rica: {{sitio.ucr ? "X": " "}} </b></p>
+                        <p><b>Universidad de Costa Rica: {{sitio.ucr ? "X": " "}} </b></p> -->
+                        <p><b>Institución:</b> {{sitio.institucion}}</p>
                         <hr/>
                         <p><b>Hallazgo:  {{sitio.hallazgo}}</b> </p>
                         <p><b>Fecha Registro: {{sitio.fecha_registro | date}}</b></p>
@@ -111,6 +114,7 @@
             </mat-card>
         </div>
     </mat-tab>
+
     <mat-tab>
 
         <ng-template mat-tab-label>
@@ -121,7 +125,7 @@
         <div fxLayout="row" fxLayoutAlign="center stretch">
             <mat-card fxFlex ="30" class = "descrip-card"> 
                     <mat-card-content>
-                        <div align="left">
+                        <div *ngIf="sitio" align="left">
                             <p style="color:blue;"><b>Territorial</b></p>
                             <hr/>
                             <p><b>Provincia:</b> {{sitio.provincia}}</p>
@@ -139,13 +143,13 @@
     
             <mat-card fxFlex ="40" class = "rest-card">
                     <mat-card-content>
-                    <div align="left">  
+                    <div *ngIf="sitio" align="left">  
                         <p style="color:blue;"><b>Coordenadas:</b></p>
                         <hr/>
                         <p><b>Lambert O-E:</b> {{sitio.lambert_oe}}</p>
                         <p><b>Lambert N-S:</b> {{sitio.lambert_ns}}</p>
-                        <p><b>CRTM05 N:</b> {{sitio.crtm05_n}}</p>
-                        <p><b>CRTM05 E:</b> {{sitio.crtm05_e}}</p>
+                        <p><b>CRTM05 N:</b> {{sitio.CRTM05_N}}</p>
+                        <p><b>CRTM05 E:</b> {{sitio.CRTM05_E}}</p>
                         <p><b>Latitud:</b> {{sitio.grad_lat}}.{{sitio.min_lat}}.{{sitio.seg_lat}}</p>
                         <p><b>Longitud:</b> {{sitio.grad_long}}.{{sitio.min_long}}.{{sitio.seg_log}}</p>
                         <p><b>Localización GPS:  {{sitio.localizacion_gps ? "X": " "}}</b></p>
@@ -155,6 +159,7 @@
         </div>
 
     </mat-tab>
+
     <mat-tab>
 
         <ng-template mat-tab-label>
@@ -165,34 +170,40 @@
         <div fxLayout="row" fxLayoutAlign="center stretch">
             <mat-card fxFlex ="30" class = "descrip-card"> 
                     <mat-card-content>
-                        <div align="left">
-                            <p><b>Composición: {{sitio.composicion_cronologica}}</b></p>
+                        <div *ngIf="sitio" align="left">
+                            <p><b>Composición: </b> {{sitio.composicion_cronologica}}</p>
                             <p style="color:blue;"><b>Período / Fase</b></p>
                             <hr/>
-                            <p><b>10000 - 8000 aC : </b> {{sitio.mil_dos_ocho_mi_ac ? "X": " "}}</p>
-                            <p><b>1350 - 1550 dC : </b> {{sitio.mil_tres_cincuenta_mil_quinientos_dc ? "X": " "}}</p>
-                            <p><b>1500 - 500 aC : </b> {{sitio.mil_quinientos_quinientos_ac ? "X": " "}}</p> 
-                            <p><b>1550 - 1821 dC : </b> {{sitio.mil_quinientos_mil_ochocientos_dc ? "X": " "}}</p>
-                            <p><b>1821 - 1950 dC : </b> {{sitio.mil_ochocientos_mil_novecientos_sc ? "X": " "}}</p>
+                      <!--       <p><b>10000 - 8000 aC : </b> {{sitio.mil_dos_ocho_mi_ac ? "X": " "}}</p>
+                            <p><b>8000 - 4000 aC:</b> {{sitio.ocho_mil_cuatro_mil_ac ? "X": " "}}</p>
+                            <p><b>4000 - 1500 aC : </b> {{sitio.cuatro_mil_mil_quinientos_ac ? "X": " "}}</p>
+                            <p><b>1500 - 500 aC : </b> {{sitio.mil_quinientos_quinientos_ac ? "X": " "}}</p>
+                            <p><b>500 - 300 dC:</b> {{sitio.quinientos_trecientos_dc ? "X": " "}}</p>
                             <p><b>300 - 800 dC : </b> {{sitio.trecientos_ochocientos_dc ? "X": " "}}</p>
-                            <p><b>4000 - 1500 aC : </b> {{sitio.cuatro_mil_mil_quinientos_ac ? "X": " "}}</p>      
-                            <p><b>500 - 300 dC:</b> {{sitio.quinientos_trecientos_dc ? "X": " "}}</p> 
-                            <p><b>800 - 1350 dC:</b> {{sitio.ochocientos_mil_tres_cincuenta_dc ? "X": " "}}</p>  
-                            <p><b>8000 - 4000 aC:</b> {{sitio.ocho_mil_cuatro_mil_ac ? "X": " "}}</p>   
+                            <p><b>800 - 1350 dC:</b> {{sitio.ochocientos_mil_tres_cincuenta_dc ? "X": " "}}</p> 
+                            <p><b>1350 - 1550 dC : </b> {{sitio.mil_tres_cincuenta_mil_quinientos_dc ? "X": " "}}</p>
+                            <p><b>1550 - 1821 dC : </b> {{sitio.mil_quinientos_mil_ochocientos_dc ? "X": " "}}</p>
+                            <p><b>1821 - 1950 dC : </b> {{sitio.mil_ochocientos_mil_novecientos_sc ? "X": " "}}</p> -->
+                            <p><b>Periodo : </b> {{sitio.periodo}}</p>
+                            
+                                  
+                            
+                             
+                               
                         </div>
                    </mat-card-content>
             </mat-card>
     
             <mat-card fxFlex ="40" class = "rest-card">
                     <mat-card-content>
-                    <div align="left">  
+                    <div *ngIf="sitio" align="left">  
                         <p  style="color:blue;"><b>Datación</b></p>
                         <hr/>
                         <p><b>Lítica:</b> {{sitio.litica_dat ? "X": " "}}</p>
                         <p><b>Radio Carbono:</b> {{sitio.radiocarbono_dat ? "X": " "}}</p>
                         <p><b>Cerámica:</b> {{sitio.ceramica_dat ? "X": " "}}</p>
                         <hr/>
-                        <p><b>Fechamiento Adiométrico:</b> {{sitio.fechamiento_adiometrico}}</p>
+                        <p><b>Fechamiento Radiométrico:</b> {{sitio.fechamiento_adiometrico}}</p>
                         <p><b>Otros:</b> {{sitio.otros_da}}</p>
                     </div>
                 </mat-card-content>
@@ -200,6 +211,7 @@
         </div>
 
     </mat-tab>
+
     <mat-tab>
         <ng-template mat-tab-label>
             <mat-icon class="example-tab-icon">filter_hdr</mat-icon>
@@ -208,25 +220,28 @@
         <div fxLayout="row" fxLayoutAlign="center stretch">
             <mat-card fxFlex ="30" class = "descrip-card"> 
                     <mat-card-content>
-                        <div align="left">
-                            <p><b>Excavación :</b> {{sitio.excavacion_aislada ? "X": " "}}</p>
+                        <div *ngIf="sitio" align="left">
+                           <!--  <p><b>Excavación :</b> {{sitio.excavacion_aislada ? "X": " "}}</p>
                             <p><b>Levantamiento Cartográfico :</b> {{sitio.lev_cartografico ? "X": " "}}</p>
                             <p><b>Recolección de Superficie :</b> {{sitio.rec_superficie ? "X": " "}}</p> 
                             <p><b>Recorrido por Propiedad :</b> {{sitio.rec_propiedad ? "X": " "}}</p>
-                            <p><b>Registro Fotográfico :</b> {{sitio.registro_fotografico ? "X": " "}}</p>
+                            <p><b>Registro Fotográfico :</b> {{sitio.registro_fotografico ? "X": " "}}</p> -->
+                            <p><b>Trabajo de Campo :</b> {{sitio.trabajo_campo}}</p>
                             
                             <hr/>
-                            <p><b>Arbitraria :</b> {{sitio.arbitratia ? "X": " "}} </p>
-                            <p><b>Probabilistica</b> {{sitio.probabilistico ? "X": " "}}</p>
+                            <p><b>Recolección :</b> {{sitio.recoleccion}}</p>
+                            <!-- <p><b>Arbitraria :</b> {{sitio.arbitratia ? "X": " "}} </p>
+                            <p><b>Probabilistica</b> {{sitio.probabilistico ? "X": " "}}</p> -->
                             <p><b>Levantamiento Cartográfico :</b> {{sitio.levantamiento_cartografico}}</p>      
                             
                             <hr/>
-                            <p><b>Cala Estratatigrafica</b> {{sitio.cala_estratatigrafica ? "X": " "}}</p> 
+                            <p><b>Excavación :</b> {{sitio.excava}}</p>
+                           <!--  <p><b>Cala Estratatigrafica</b> {{sitio.cala_estratatigrafica ? "X": " "}}</p> 
                             <p><b>Horizontal</b> {{sitio.horizontal ? "X": " "}}</p>  
                             <p><b>Limpieza de Perfiles</b> {{sitio.limpieza_perfiles ? "X": " "}}</p>   
                             <p><b>Limpieza de Rasgos</b> {{sitio.limpieza_razgos ? "X": " "}}</p>
                             <p><b>Sondeo</b> {{sitio.sondeo ? "X": " "}}</p>
-                            <p><b>Trinchera</b> {{sitio.trinchera ? "X": " "}}</p>
+                            <p><b>Trinchera</b> {{sitio.trinchera ? "X": " "}}</p> -->
                             
                         </div>
                    </mat-card-content>
@@ -234,10 +249,10 @@
     
             <mat-card fxFlex ="40" class = "rest-card">
                     <mat-card-content>
-                    <div align="left">  
-                        <p style="color:blue;"><b>Materiales Recuperados</b></p>
-                        <hr/>
-                        <p><b>Arcilla Cocida</b> {{sitio.arcilla_cocida ? "X": " "}}</p>
+                    <div *ngIf="sitio" align="left">  
+                        <!-- <p style="color:blue;"><b>Materiales Recuperados</b></p>
+                        <hr/> -->
+                        <!-- <p><b>Arcilla Cocida</b> {{sitio.arcilla_cocida ? "X": " "}}</p>
                         <p><b>Carbón</b> {{sitio.carbon ? "X": " "}} </p>
                         <p><b>Cerámica</b> {{sitio.ceramica ? "X": " "}} </p>
                         <p><b>Cobre, Guanina o Pirita</b> {{sitio.cobre ? "X": " "}} </p>
@@ -257,7 +272,7 @@
                         <p><b>Resina</b> {{sitio.resina ? "X": " "}}</p>
                         <p><b>Restos Humanos</b> {{sitio.huesos_humanos ? "X": " "}}</p>
                         <p><b>Tierra</b> {{sitio.tierra ? "X": " "}}</p>
-                        <p><b>Vidrio</b> {{sitio.vidrio ? "X": " "}}</p>
+                        <p><b>Vidrio</b> {{sitio.vidrio ? "X": " "}}</p> -->
                         <p><b>Materiales Recuperados: </b>{{sitio.materiales_recuperados}}</p>
                     </div>
                 </mat-card-content>
@@ -265,6 +280,7 @@
         </div>
 
     </mat-tab>
+
     <mat-tab>
         <ng-template mat-tab-label>
             <mat-icon class="example-tab-icon">layers</mat-icon>
@@ -273,15 +289,15 @@
         <div fxLayout="row" fxLayoutAlign="center stretch">
             <mat-card fxFlex ="30" class = "descrip-card"> 
                     <mat-card-content>
-                        <div align="left">
+                        <div *ngIf="sitio" align="left">
                             <p><b>Investigador :</b>{{sitio.investigador}}</p>
                             <p><b>Área Estimada :</b> {{sitio.area_estimada}}</p>
                             <p><b>Profundidad Depósitos : {{sitio.profundidad_depositos}}</b></p> 
                             <p><b>Causa Penal :</b> {{sitio.causa_penal}}</p>
                             <hr/>
-                            <p  style="color:blue;"><b>Estado Conservación</b></p>
-                            <hr/>
-                            <p><b>Arado :</b> {{sitio.arado ? "X": " "}}</p>
+                            <!-- <p  style="color:blue;"><b>Estado Conservación</b></p> -->
+                          
+                           <!--  <p><b>Arado :</b> {{sitio.arado ? "X": " "}}</p>
                             <p><b>Biodeterioro :</b> {{sitio.biodeterioro ? "X": " "}}</p>
                             <p><b>Construcción :</b> {{sitio.construccion ? "X": " "}}</p>
                             <p><b>Erosión :</b> {{sitio.erosion ? "X": " "}}</p>      
@@ -290,8 +306,8 @@
                             <p><b>Meteorización :</b> {{sitio.meteorizacion ? "X": " "}}</p> 
                             <p><b>No Perturbado :</b> {{sitio.no_perturbado ? "X": " "}}</p>  
                             <p><b>Pastoreo :</b> {{sitio.pastoreo ? "X": " "}}</p>   
-                            <p><b>Sembrado :</b> {{sitio.sembrado ? "X": " "}}</p>
-                            
+                            <p><b>Sembrado :</b> {{sitio.sembrado ? "X": " "}}</p> -->
+                            <p><b>Estado de Conservación:</b> {{sitio.estado_conservacion}}</p>
                             
                         </div>
                    </mat-card-content>
@@ -299,17 +315,20 @@
     
             <mat-card fxFlex ="40" class = "rest-card">
                     <mat-card-content>
-                    <div align="left">  
+                    <div *ngIf="sitio" align="left">  
                         <p><b>Expediente Setena</b> {{sitio.expediente_setena}}</p>
                         <hr/>
-                        <p  style="color:blue;"><b>Patrimonio Subacuático</b></p>
-                        <hr/>
-                        <p><b>Paisajes Culturales Sumergidos</b> {{sitio.paisajes_culturales_sumergidos ? "X": " "}}</p>
+                        <!-- <p  style="color:blue;"><b>Patrimonio Subacuático</b></p> -->
+                       
+                        <p><b>Patrimonio Subacuático:</b> {{sitio.patrimonio_acuatico}}</p>
+
+                       <!--  <p><b>Paisajes Culturales Sumergidos</b> {{sitio.paisajes_culturales_sumergidos ? "X": " "}}</p>
                         <p><b>Restos de Barcos y otros medios de transporte</b> {{sitio.restos_barcos ? "X": " "}} </p>
                         <p><b>Ruinas de asentamientos humanos y su contexto</b> {{sitio.ruinas_asentamientos ? "X": " "}} </p>
                         <p><b>Sitios Explotación Marina</b> {{sitio.sitios_marina ? "X": " "}} </p>
-                        <p><b>Vestigios de Cavernas Sumergidas</b>  {{sitio.vestigios_cavernas ? "X": " "}}</p>
-                        <p><b>Reserva Arqueológica</b> {{sitio.reserva_arqueologica ? "X": " "}} m2 </p>
+                        <p><b>Vestigios de Cavernas Sumergidas</b>  {{sitio.vestigios_cavernas ? "X": " "}}</p> -->
+                        <hr/>
+                        <p><b>Reserva Arqueológica</b> {{sitio.reserva_arqueologica ? "X": " "}}</p>
                         <p><b>Río Cercano</b> {{sitio.rio_cercano}} </p>
                         <p><b>Plano Catastro</b> {{sitio.plano_catrasto}} </p>
                         
@@ -318,7 +337,8 @@
             </mat-card>
         </div>
     </mat-tab>
-    <mat-tab>
+
+  <!--  <mat-tab>
         <ng-template mat-tab-label>
             <mat-icon class="example-tab-icon">local_library</mat-icon>
             Documentación
@@ -326,27 +346,28 @@
         <div fxLayout="row" fxLayoutAlign="center stretch">
             <mat-card fxFlex ="50" class = "descrip-card"> 
                     <mat-card-content>
-                        <div align="left">
-                            <p style="color:blue;"><b>Reporte</b></p>
+                        <div *ngIf="sitio" align="left">
+                           
                             <hr/>
-                            <p><b>Catalogo de Sitios, UCR :</b> {{sitio.catalogo_sitios_ucr ? "X": " "}}</p>
+                            <p><b>Reportes: </b>{{sitio.reportes}}</p>
+                             <p><b>Catalogo de Sitios, UCR :</b> {{sitio.catalogo_sitios_ucr ? "X": " "}}</p>
                             <p><b>Hoja de Registro :</b> {{sitio.hoja_registro ? "X": " "}}</p> 
                             <p><b>Informe :</b> {{sitio.informe ? "X": " "}}</p>
                             <p><b>Monografía :</b> {{sitio.monografia ? "X": " "}}</p>
                             <p><b>Publicación :</b> {{sitio.publicacion ? "X": " "}}</p>
-                            <p><b>Tesis :</b> {{sitio.tesis ? "X": " "}}</p>
+                            <p><b>Tesis :</b> {{sitio.tesis ? "X": " "}}</p> 
                             <hr/>
                             <p><b>Bibliografía : {{sitio.bibliografia}}</b></p>
                             <hr/>
-                            <p style="color:blue;"><b>Material Gráfico Asociado</b></p>      
+                            <p><b>Material Gráfico: </b>{{sitio.material_grafico}}</p>   
                             <hr/>
-                            <p><b>Artefactos : </b>{{sitio.artefactos ? "X": " "}}</p>
+                          <p><b>Artefactos : </b>{{sitio.artefactos ? "X": " "}}</p>
                             <p><b>Croquis :</b> {{sitio.croquis ? "X": " "}}</p>
                             <p><b>Diarios de Campo :</b> {{sitio.diarios_campo ? "X": " "}}</p> 
                             <p><b>Dibujos :</b> {{sitio.dibujos ? "X": " "}}</p>  
                             <p><b>Material Fotográfico :</b> {{sitio.material_fotografico ? "X": " "}}</p>   
                             <p><b>Planos :</b> {{sitio.planos ? "X": " "}}</p>
-                            <p><b>Videos :</b> {{sitio.video ? "X": " "}}</p>
+                            <p><b>Videos :</b> {{sitio.video ? "X": " "}}</p> 
                             
                         </div>
                    </mat-card-content>
@@ -354,49 +375,42 @@
     
             
         </div>
-    </mat-tab>
+    </mat-tab>-->
 
-    <mat-tab>
+<!--     <mat-tab>
         <ng-template mat-tab-label>
             <mat-icon class="example-tab-icon">picture_in_picture</mat-icon>
             Imágenes Asociadas
           </ng-template>
-       <!--  <div fxLayout="row" fxLayoutAlign="center stretch">
-            <div class="image-thumb-repo">                
-                <img src="{{url + 'get-image/' + sitio.image}}" *ngIf="sitio.image"/>
-                <img src="assets/images/default.png" *ngIf="!sitio.image"/>   
-            </div>
-        </div> -->
 
-   
-   <!--  <ul>
-        <span>Material Gráfico Adicional</span>
-        <li *ngFor="let element of resultado.slice(1)">     
-                <a href="{{this.element}}" target="_blank">{{this.element}}</a>
-        </li>
-    </ul> -->
+           <p *ngIf="sitio"><b>links :</b> {{resultado}}</p>  
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+     <div *ngIf="mostrar == true" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-    
-          <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
-          <div class="carousel-item" *ngFor="let element of resultado?.slice(1); let i = index" [ngClass]="{'active': i === 0}">
-           <img src={{this.element}} class="w-50" title={{this.sitio.nombre_sitio}} />
-          </div>
+             <div class="carousel-item" *ngFor="let element of resultado?.slice(1) let i = index" [ngClass]="{'active': i === 0}">
+            <img src={{this.element}} class="w-50" title={{this.sitio.nombre_sitio}} /> 
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span>Previous</span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span>Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
         </button>
-      </div>
+     </div> 
+
+     <div *ngIf="mostrar == false" fxLayout="row" fxLayoutAlign="center stretch">
+        <div class="image-thumb-repo">                
+            <img src="{{url + 'get-image/' + sitio?.image}}" *ngIf="sitio?.image"/>
+            <img src="assets/images/default.png" *ngIf="!sitio?.image"/>   
+        </div>
+    </div>
     
 
 
-</mat-tab>
+</mat-tab> -->
 
   </mat-tab-group>
   

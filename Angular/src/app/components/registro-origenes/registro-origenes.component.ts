@@ -20,11 +20,11 @@ export class RegistroOrigenesComponent implements OnInit {
   buttionText = "Enviar";
   public registro!: Registro;
   public status!: String;
+  public correo!: any;
 
-  emailFormControl = new FormControl("", [
-    Validators.required,
-    Validators.email
-  ]);
+  
+
+  emailFormControl = new FormControl({ value: localStorage.getItem('email'), disabled: true});
 
   nameFormControl = new FormControl("", [
     Validators.required,
@@ -37,6 +37,7 @@ export class RegistroOrigenesComponent implements OnInit {
   ]);
 
   setenaFormControl = new FormControl;
+  
 
   constructor(public http: HttpService, private _router: Router, private _registroService: RegistroService) { }
 
@@ -45,12 +46,13 @@ export class RegistroOrigenesComponent implements OnInit {
   suscripciones: any[] = [];
 
   ngOnInit(){
+    //alert(localStorage.getItem('nombre'))
     for (let item in Suscripcion) {
       if (isNaN(Number(item))) {
         this.suscripciones.push({ text: item, value: Suscripcion[item] });
       }
     }
-    console.log(this.http.test);
+   
   }
 
 
@@ -58,24 +60,24 @@ export class RegistroOrigenesComponent implements OnInit {
     
     let user = {
       name: this.nameFormControl.value,
-      email: this.emailFormControl.value,
+      email: localStorage.getItem('email'),
       perfil: this.perfilFormControl.value,
       setena: this.setenaFormControl.value
     }
 
     
 
-    this.http.sendEmail("http://181.193.24.142:3900/sendmail", user).subscribe(
+    this.http.sendEmail("http://31.220.97.126:3900/sendmail", user).subscribe(
       data => {
         let res:any = data; 
-        console.log(
+        /* console.log(
           `👏 > 👏 > 👏 > 👏 ${user.name} is successfully register and mail has been sent and the message id is ${res.messageId}`
-        );
+        ); */
         Swal.fire(
 
-          'Registro Usuario',
+          'Registro Orígenes',
   
-          'Correo Enviado con Éxito',
+          'Su correo fué enviado y pronto recibirá una respuesta a su solicitud',
   
           'success'
         )
@@ -95,7 +97,7 @@ export class RegistroOrigenesComponent implements OnInit {
 
     let reg = {
       name: this.nameFormControl.value,
-      email: this.emailFormControl.value,
+      email: localStorage.getItem('email'),
       perfil: this.perfilFormControl.value,
       setena: this.setenaFormControl.value
     }

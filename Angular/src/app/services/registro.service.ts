@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Registro } from "../models/registro";
 import { Globalr } from "./globalr";
 
 
@@ -34,8 +33,6 @@ export class RegistroService {
         return this._http.get(this.url+'registro/'+ registroId);
     }
 
-    
-
     create(registro: any):Observable<any>{
         let params = JSON.stringify(registro);
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
@@ -50,5 +47,13 @@ export class RegistroService {
         return this._http.put(this.url+'registro/'+id, params,{headers: headers});
     }
 
+    search(searchString: string):Observable<any>{
+        return this._http.get(this.url+'search/'+searchString);
+    }
     
+    delete(id: any):Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.delete(this.url+'registro/'+id, {headers: headers});
+
+    }
 }

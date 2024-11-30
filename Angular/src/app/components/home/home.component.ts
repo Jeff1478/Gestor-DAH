@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CeramicService } from 'src/app/services/ceramic.service';
 import { Ceramic } from 'src/app/models/ceramic';
 import {AuthService} from 'src/app/services/auth.service';
+import { DatePipe, NumberFormatStyle } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
   public ceramics: Ceramic[] = [];
   public usuario: string;
   public separado: string;
+  public today!: number;
   
  
 
@@ -31,6 +33,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
+    this.today = Date.now();
     
     this.authService.search(localStorage.getItem('email'))
       .subscribe(
@@ -38,9 +41,9 @@ export class HomeComponent implements OnInit {
           if(res.usuarios){
            
             this.usuario = res.usuarios;
-            this.title = JSON.stringify(this.usuario, ['nombre'])
+            this.title = JSON.stringify(this.usuario, ['email'])
             // this.separado = this.title
-            this.separado = this.title.substring(12,50)
+            this.separado = this.title.substring(11,50)
             
           }
         },

@@ -1,0 +1,19 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active">Digite su contraseña</h2>
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="assets/images/registration.jpg" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form [formGroup]="form" (submit)="submit()">
+       
+        <input formControlName="password" type="password" class="form-control" name="password" placeholder="Nueva Contraseña" required autofocus>
+        <input formControlName="password_confirm" type="password" class="form-control" name="password" placeholder="Confirme Contraseña" required autofocus>
+        <input type="submit" class="fadeIn fourth" value="Enviar">
+      </form>    
+  
+    </div>
+  </div>

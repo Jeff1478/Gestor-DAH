@@ -2,7 +2,8 @@
     <div class="center">
         <!-- LOGO -->
         <div id="logo">
-            <img src="assets/images/logoMNCR.svg" class="app-logo" alt="Logotipo" />
+            <!-- <img src="assets/images/logoMNCR.svg" class="app-logo" alt="Logotipo" /> -->
+            <img src="assets/images/logomncr.jpg" class="app-logo" alt="Logotipo" />
         </div>
         
         <!-- MENU -->
@@ -15,38 +16,70 @@
               
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
                   <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]= "['active']">Inicio</a>
+                    <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">Inicio</a>
                   </li>
-
+                
                   <div *ngIf="logueado == true && aguacaliente == false">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Proyecto Agua Caliente
-                    </a>
-
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="nav-link" [routerLink]="['/pagina']" [routerLinkActive]= "['active']">Cerámica</a></li>
-                      <li><a class="nav-link" [routerLink]="['/peliculas']" [routerLinkActive]= "['active']">Contexto</a></li>
-                      <li><a class="nav-link" [routerLink]="['/pag-lit']" [routerLinkActive]= "['active']">Litico</a></li>
-                      <li><a class="nav-link" [routerLink]="['/pag-met']" [routerLinkActive]= "['active']">Metálicos</a></li>
-
-                    </ul>
-                  </li>
-                </div>
-
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Proyecto Agua Caliente
+                      </a>
+                
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="nav-link" [routerLink]="['/pagina']" [routerLinkActive]="['active']">Cerámica</a></li>
+                        <li><a class="nav-link" [routerLink]="['/peliculas']" [routerLinkActive]="['active']">Contexto</a></li>
+                        <li><a class="nav-link" [routerLink]="['/pag-lit']" [routerLinkActive]="['active']">Litico</a></li>
+                        <li><a class="nav-link" [routerLink]="['/pag-met']" [routerLinkActive]="['active']">Metálicos</a></li>
+                
+                      </ul>
+                    </li>
+                  </div>
+                
                   <div *ngIf="logueado == false && aguacaliente == true">
-                  <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/pag-ori']" [routerLinkActive]= "['active']">Origenes</a>
-                  </li>  
-                 </div>
-                 
-                  
-                  </ul>
+                    <li class="nav-item">
+                      <a class="nav-link" [routerLink]="['/pag-ori']" [routerLinkActive]="['active']">Origenes</a>
+                    </li>
+                  </div>
+
+                  <!-- Super Usuario -->
+
+                  <div *ngIf="logueado == true && aguacaliente == true">
+
+                    <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/pag-ori']" [routerLinkActive]="['active']">Origenes</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Agua Caliente</a>
+                        <div class="dropdown-menu">
+                          <a class="nav-link" [routerLink]="['/pagina']" [routerLinkActive]="['active']">Cerámica</a>
+                          <a class="nav-link" [routerLink]="['/peliculas']" [routerLinkActive]="['active']">Contexto</a>
+                          <a class="nav-link" [routerLink]="['/pag-lit']" [routerLinkActive]="['active']">Litico</a>
+                          <a class="nav-link" [routerLink]="['/pag-met']" [routerLinkActive]="['active']">Metálicos</a>
+                         <!--  <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Otra Colección</a>-->
+                        </div> 
+                      </li>
+                      <!-- <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/home']">Colecciones DPPC</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" [routerLink]="['/home']">Deshabilitado</a>
+                      </li> -->
+                    </ul>
+
+
+                  </div>
+                
+                </ul>
 
                   <ul class= "navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="nav-link" style="cursor: pointer;" (click)="authService.logout()"><mat-icon matTooltip="Salir" matTooltipPosition="above">account_circle</mat-icon>
+                      <a class="nav-link" style="cursor: pointer;" (click)="authService.logout()">
+                         <mat-icon matTooltip="Salir" matTooltipPosition="above">account_circle</mat-icon> 
                        </a> 
                     </li>
                   </ul>

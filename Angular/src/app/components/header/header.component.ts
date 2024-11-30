@@ -35,31 +35,38 @@ export class HeaderComponent implements OnInit {
         if(res.usuarios){
           this.usuario = res.usuarios;
           this.title = JSON.stringify(this.usuario, ['email'])
+          //console.log(this.title);
           
-          if (this.title == '[{"email":"informatica@museocostarica.go.cr"}]'){
+          if (this.title == '[{"email":"jtapia@museocostarica.go.cr"}]'){
             this.logueado = true;
-            this.aguacaliente = false;
+            this.aguacaliente = true;
             
           } else if (this.title == '[{"email":"gmongem@museocostarica.go.cr"}]'){
             this.logueado = true;
-            this.aguacaliente = false;
+            this.aguacaliente = true;
           }
-         else if (this.title == '[{"email":"jbrenes@museocostarica.go.cr"}]'){
+
+        /*  else if (this.title == '[{"email":"jeffreytapia@gmail.com"}]'){
           this.logueado = true;
           this.aguacaliente = false;
-        }
+        }  */
+
+     /*     else if (this.title == '[{"email":"jbrenes@museocostarica.go.cr"}]'){
+          this.logueado = true;
+          this.aguacaliente = false;
+        } */
         else if (this.title == '[{"email":"lsanchez@museocostarica.go.cr"}]'){
           this.logueado = true;
-          this.aguacaliente = false;
+          this.aguacaliente = true;
         }
         else if (this.title == '[{"email":"cruiz@museocostarica.go.cr"}]'){
           this.logueado = true;
           this.aguacaliente = false;
         }
-        else if (this.title == '[{"email":"dmeneses@museocostarica.go.cr"}]'){
+     /*    else if (this.title == '[{"email":"mrojass@museocostarica.go.cr"}]'){
           this.logueado = true;
           this.aguacaliente = false;
-        }
+        } */
           else {
             this.aguacaliente = true;
             this.logueado = false;

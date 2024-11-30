@@ -2,19 +2,24 @@
 <div class= "center">
     
     <section id="content">
-        <!-- <h1 class="subheader-sitio">Origenes</h1> -->
-        <div id="logoori">
+
+    <!--     <div id="logoori">
             <img src="assets/images/logoORI3.png" class="logoori" alt="Logotipo" />
-        </div>
+        </div> -->
+        <!-- <h1 class="subheader-sitio">Origenes</h1> -->
+        
         <div id="disclaimer">
-            <p style="font-size:120%;" text-align="justify;">"En la Base ORIGENES están incluidos todos los monumentos arqueológicos registrados
-                desde 1870 a la fecha. Sin embargo, a falta de una prospección sistematica a nivel
-                nacional, no se excluye la aparición de más monumentos al realizar movimientos de tierra.
-                En razón de lo anterior, se insta a los consultores en arqueología a proceder con
-                el D1, de acuerdo con la normativa de la Secretaría Tecnica Nacional (SETENA)".</p>
-                <div *ngIf="administrador == false">
-                    <p style="font-size:120%;" text-align="justify;"> <strong>Si usted es Arqueólogo, habilítese <a class="nav-link" [routerLink]="['/politicasUso']" [routerLinkActive]= "['active']">aquí...</a></strong></p>
-                </div>
+            <p style="font-size:140%;" text-align="justify;">En la Base ORIGENES están incluidos todos los monumentos arqueológicos registrados
+                desde 1870 a la fecha. Sin embargo, no se excluye el hallazgo de más monumentos al realizar movimientos de tierra,
+                pues en este momento no se cuenta con una prospección sistemática a nivel nacional.
+                Se insta a los consultores en arqueología a proceder con el estudio D1, de acuerdo con la normativa de la Secretaría Tecnica Nacional -SETENA-.</p>
+                
+                 <div *ngIf="administrador == false">
+                    <p style="font-size:120%;" text-align="justify;"> <strong>Si usted es Profesional en Arqueología, habilítese <a class="nav-link" [routerLink]="['/politicasUso']" [routerLinkActive]= "['active']">aquí...</a></strong></p>
+                </div> 
+               <!--  <div *ngIf="arqueo == false">
+                    <p style="font-size:120%;" text-align="justify;"> <strong>Si usted es Profesional en Arqueología, habilítese <a class="nav-link" [routerLink]="['/politicasUso']" [routerLinkActive]= "['active']">aquí...</a></strong></p>
+                </div> -->
                 
             </div>
 
@@ -31,7 +36,10 @@
                 [options]="chartData.options" 
                 [width]="chartData.width"
                 [height]="chartData.height">
-                </google-chart></div> 
+                </google-chart>
+                </div> 
+
+                
         <!-- <app-sitio [sitios]= "sitios">
             
         </app-sitio> 

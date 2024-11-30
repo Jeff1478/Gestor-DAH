@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -25,9 +26,10 @@ export class RegistroComponent implements OnInit {
     this.authService.signUpUser(this.user)
       .subscribe(
         res => {
-          console.log(res);
+          // console.log(res);
           localStorage.setItem('token', res.token);
           localStorage.setItem('user', this.user.nombre);
+          Swal.fire('Atención', 'Usuario Creado', 'success');
           this.router.navigate(['/']);
         },
         err => console.log(err)

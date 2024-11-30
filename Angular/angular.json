@@ -17,13 +17,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/gestordah",
+            "outputPath": "dist/gestormncr",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
+              "src/logogestor2.ico",
               "src/assets"
             ],
             "styles": [
@@ -46,8 +46,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "5mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "6mb",
+                  "maximumError": "6mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -79,6 +79,7 @@
           "options": {
             "browserTarget": "Angular:build"
             
+            
         },
           "configurations": {
             "production": {
@@ -105,7 +106,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
+              "src/logogestor2.ico",
               "src/assets"
             ],
             "styles": [
@@ -118,5 +119,8 @@
       }
     }
   },
-  "defaultProject": "Angular"
+  
+  "cli": {
+    "analytics": false
+  }
 }

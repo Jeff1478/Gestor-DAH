@@ -19,17 +19,23 @@ export class SitioEditComponent implements OnInit {
   dropdownList2: any[] = [];
   dropdownList3: any[] = [];
   dropdownList4: any[] = [];
+  dropdownList5: any[] = [];
+  dropdownList6: any[] = [];
   selectedItems: any[] = [];
   selectedItems2: any[] = [];
   selectedItems3: any[] = [];
   selectedItems4: any[] = [];
+  selectedItems5: any[] = [];
+  selectedItems6: any[] = [];
   dropdownSettings!: IDropdownSettings;
   dropdownSettings2!: IDropdownSettings;
   dropdownSettings3!: IDropdownSettings;
   dropdownSettings4!: IDropdownSettings;
+  dropdownSettings5!: IDropdownSettings;
+  dropdownSettings6!: IDropdownSettings;
 
   user: any;
-  public sitio!: Sitio;
+  public sitio: Sitio;
   public status!: string;
   public url: string;
   public is_edit: boolean;
@@ -70,223 +76,234 @@ export class SitioEditComponent implements OnInit {
     this.page_title = 'Editar Sitio';
     this.url = Globals.url;
 
-    this.sitio = {
-      _id: '',
-      date: '',
-      image: '',
-      numero_caso: '',
-      nombre_sitio: '',
-      clave_sitio: '',
-      clave_antigua: '',
-      estudio_impacto_ambiental: false,
-      monitoreo_mov_tierras: false,
-      evaluacion: false,
-      peritaje: false,
-      excavacion_aislada: false,
-      rescate: false,
-      inspeccion: false,
-      trabajo_graduacion: false,
-      regional: false,
-      subregional: false,
-      abrigo_cueva_caverna: false,
-      arquitectonico: false,
-      basurero: false,
-      camino: false,
-      conchero: false,
-      funerario: false,
-      habitacion: false,
-      materiales_dispersos: false,
-      petroglifo: false,
-      salina: false,
-      taller: false,
-      registrador: '',
-      consultoria: false,
-      fundacion: false,
-      ice: false,
-      literatura: false,
-      mncr: false,
-      parques_nacionales: false,
-      ucr: false,
-      hallazgo: '',
-      fecha_registro: '',
-      provincia: '',
-      canton: '',
-      distrito: '',
-      hoja_cartografica: '',
-      region: '',
-      zona_vida: '',
-      altitud: '',
-      territorio_indigena: false,
-      lambert_oe: '',
-      lambert_ns: '',
-      crtm05_e: '',
-      crtm05_n: '',
-      grad_lat: '',
-      min_lat: '',
-      seg_lat: '',
-      grad_long: '',
-      min_long: '',
-      seg_log: '',
-      localizacion_gps: false,
-      latitude: 0,
-      Logitude: 0,
-      patrimonio_acuatico: '',
-      excavacion: false,
-      arbitratia: false,
-      probabilistico: false,
-      horizontal: false,
-      sondeo: false,
-      trinchera: false,
-      ceramica: false,
-      litica: false,
-      tierra: false,
-      carbon: false,
-      fauna: false,
-      flora: false,
-      oro: false,
-      jade: false,
-      cobre: false,
-      vidrio: false,
-      porcelana: false,
-      hierro: false,
-      lapidaria: false,
-      esferas: false,
-      pisos: false,
-      tesis: false,
-      monografia: false,
-      publicacion: false,
-      titulo: '',
-      artefactos: false,
-      croquis: false,
-      planos: false,
-      dibujos: false,
-      video: false,
-      coordenadas: '',
-      google: '',
-      id_google: '',
-      coordenadas_google: '',
-      num_consecutivo: '',
-      reportes: '',
-      direccion: '',
-      huaqueado: false,
-      sembrado: false,
-      area_estimada: '',
-      mil_dos_ocho_mi_ac: false,
-      diezmil_ochomil_ac: false,
-      coordenada_convert: '',
-      ocho_mil_cuatro_mil_ac: false,
-      cuatro_mil_mil_quinientos_ac: false,
-      mil_quinientos_quinientos_ac: false,
-      quinientos_trecientos_dc: false,
-      trecientos_ochocientos_dc: false,
-      ochocientos_mil_tres_cincuenta_dc: false,
-      mil_tres_cincuenta_mil_quinientos_dc: false,
-      mil_quinientos_mil_ochocientos_dc: false,
-      mil_ochocientos_mil_novecientos_sc: false,
-      lev_cartografico: false,
-      rec_superficie: false,
-      cala_estratatigrafica: false,
-      limpieza_perfiles: false,
-      limpieza_razgos: false,
-      huesos_humanos: false,
-      madera_fibra: false,
-      arcilla_cocida: false,
-      litica_dat: false,
-      ceramica_dat: false,
-      radiocarbono_dat: false,
-      hoja_registro: false,
-      material_fotografico: false,
-      id_google_comillas: '',
-      diarios_campo: false,
-      documento_kml: '',
-      nombre_sitio_google: '',
-      rio_cercano: '',
-      levantamiento_cartografico: '',
-      fase_9: '',
-      arado: false,
-      bibliografia: '',
-      biodeterioro: false,
-      catalogo_sitios_ucr: false,
-      causa_penal: '',
-      composicion_cronologica: '',
-      concha: false,
-      construccion: false,
-      erosion: false,
-      estado_conservacion: '',
-      estatuaria: false,
-      expediente_setena: '',
-      fase_1: '',
-      fase_2: '',
-      fase_3: '',
-      fase_4: '',
-      fase_5: '',
-      fase_6: '',
-      fase_7: '',
-      fase_8: '',
-      fase_10: '',
-      fecha_digitacion: '',
-      investigador: '',
-      loza: false,
-      mecanizado: false,
-      meteorizacion: false,
-      materiales_recuperados: '',
-      no_perturbado: false,
-      otra: '',
-      otro: '',
-      otro_m: '',
-      otro_r: '',
-      otro_rec_superficie: '',
-      otr_tc: '',
-      otro_tipo_proyecto: '',
-      otro_ts: '',
-      otros: '',
-      otros_da: '',
-      paisajes_culturales_sumergidos: false,
-      pastoreo: false,
-      registro_numero: '',
-      plano_catrasto: '',
-      profundidad_depositos: '',
-      rec_propiedad: false,
-      registro_fotografico: false,
-      reserva_arqueologica: false,
-      resina: false,
-      restos_barcos: false,
-      ruinas_asentamientos: false,
-      vestigios_cavernas: false,
-      fechamiento_adiometrico: '',
-      sitios_marina: false,
-      informe: false,
-      doc_tipo_info: '',
-      doc_ubicacion: '',
-      doc_autor: '',
-      doc_titulo: '',
-      doc_numero: '',
-      doc_contenido: '',
-      doc_observaciones: '',
-      doc_web: '',
-      doc_fecha_digita: '',
-      doc_descripcion_material: '',
-      doc_cantidad: 0,
-      links: ''
-    };
+    this.sitio = new Sitio(
+      '',
+'',
+'',
+'',
+'',
+'',
+'',
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+'',
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+'',
+'',
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+'',
+false,
+false,
+false,
+false,
+false,
+0,
+0,
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+false,
+false,
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+false,
+'',
+'',
+false,
+'',
+false,
+false,
+false,
+false,
+'',
+false,
+false,
+false,
+false,
+false,
+false,
+'',
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+'',
+false,
+'',
+'',
+'',
+'',
+'',
+'',
+false,
+'',
+false,
+false,
+'',
+'',
+'',
+'',
+'',
+'',
+false,
+false,
+false,
+false,
+false,
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+false,
+false,
+false,
+false,
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+false,
+false,
+false,
+'',
+'',
+'',
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+false,
+'',
+false,
+false,
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+0
+
+      
+    );
   }
 
-  getFile($event: any): void {
+ /*  getFile($event: any): void {
     //TODO esto captura el archivo!
     const [file] = $event.target.files;
     this.fileTmp = {
       fileRaw: file,
       fileName: file.name,
     };
-  }
-
+  } */
+/* 
   sendFile(): void {
     const body = new FormData();
     body.append('myFile', this.fileTmp.fileRaw, this.fileTmp.fileName);
     body.append('email', 'test@test.com');
 
     this.restService.sendPost(body).subscribe((res) => console.log(res));
-  }
+  } */
+
   ngOnInit() {
     this.getArticle();
 
@@ -350,13 +367,40 @@ export class SitioEditComponent implements OnInit {
       { item_id: 6, item_text: 'Planos' },
     ];
 
+    this.dropdownList5 = [
+      { item_id: 1, item_text: 'Impacto Ambiental' },
+      { item_id: 2, item_text: 'Movimimiento Tierras' },
+      { item_id: 3, item_text: 'Evaluación' },
+      { item_id: 4, item_text: 'Peritaje' },
+      { item_id: 5, item_text: 'Excavación Aislada' },
+      { item_id: 6, item_text: 'Rescate' },
+      { item_id: 7, item_text: 'Inspección' },
+      { item_id: 8, item_text: 'Trabajo Graduación' },
+      { item_id: 9, item_text: 'Inv. Regional' },
+      { item_id: 10, item_text: 'Inv. Sub Regional' }
+    ];
+
+    this.dropdownList6 = [
+      { item_id: 1, item_text: 'Abrigo,Cueva,Caverna' },
+      { item_id: 2, item_text: 'Arquitectónico' },
+      { item_id: 3, item_text: 'Basurero' },
+      { item_id: 4, item_text: 'Camino' },
+      { item_id: 5, item_text: 'Conchero' },
+      { item_id: 6, item_text: 'Funerario' },
+      { item_id: 7, item_text: 'Habitación' },
+      { item_id: 8, item_text: 'Materiales Dispersos' },
+      { item_id: 9, item_text: 'Petroglifo' },
+      { item_id: 10, item_text: 'Salina' },
+      { item_id: 11, item_text: 'Taller' },
+    ];
+
     this.dropdownSettings = {
       singleSelection: false,
       idField: 'item_id',
       textField: 'item_text',
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
-      itemsShowLimit: 8,
+      itemsShowLimit: 12,
       allowSearchFilter: true,
     };
 
@@ -366,7 +410,7 @@ export class SitioEditComponent implements OnInit {
       textField: 'item_text',
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
-      itemsShowLimit: 8,
+      itemsShowLimit: 12,
       allowSearchFilter: true,
     };
   }
@@ -392,6 +436,18 @@ export class SitioEditComponent implements OnInit {
       ' ';
     console.log(this.sitio.doc_descripcion_material);
   }
+  onItemSelect5(item: any) {
+    this.sitio.tipo_proyecto =
+      this.sitio.tipo_proyecto +
+      JSON.stringify(item.item_text) +
+      ' ';
+  }
+  onItemSelect6(item: any) {
+    this.sitio.tipo_monumento =
+      this.sitio.tipo_monumento +
+      JSON.stringify(item.item_text) +
+      ' ';
+  }
 
   onSelectAll(items: any) {
     console.log(items);
@@ -399,11 +455,11 @@ export class SitioEditComponent implements OnInit {
 
   OnSubmit() {
     this._sitioService.update(this.sitio._id, this.sitio).subscribe(
-      (response) => {
+      response => {
         if (response.status == 'success') {
-          this.status = 'success';
+          // this.status = 'success';
           this.sitio = response.sitioUpdated;
-
+         
           Swal.fire('Sitio Editado', 'Cambios Aplicados!', 'success');
 
           this._router.navigate(['/pag-ori']);
@@ -426,7 +482,7 @@ export class SitioEditComponent implements OnInit {
   getArticle() {
     this._route.params.subscribe((params) => {
       let id = params['id'];
-      console.log(id);
+      
       this._sitioService.getSitio(id).subscribe(
         (response) => {
           if (response.sitio) {

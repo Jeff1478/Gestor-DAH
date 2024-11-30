@@ -47,6 +47,14 @@
             <mat-button-toggle value="registrador">
               <span>Registrador</span>
             </mat-button-toggle>
+
+            <mat-button-toggle value="CRTM05_E">
+              <span>Coordenadas CRTM05 E</span>
+            </mat-button-toggle>
+
+            <mat-button-toggle value="CRTM05_N">
+              <span>Coordenadas CRTM05 N</span>
+            </mat-button-toggle>
   
             
   
@@ -97,6 +105,16 @@
       <ng-container matColumnDef="registrador">
         <th mat-header-cell *matHeaderCellDef> Registrador | </th>
         <td mat-cell *matCellDef="let element"> {{element.registrador}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="CRTM05_E">
+        <th mat-header-cell *matHeaderCellDef> CRTM05 E | </th>
+        <td mat-cell *matCellDef="let element"> {{element.CRTM05_E}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="CRTM05_N">
+        <th mat-header-cell *matHeaderCellDef> CRTM05 N | </th>
+        <td mat-cell *matCellDef="let element"> {{element.CRTM05_N}} </td>
       </ng-container>
   
       

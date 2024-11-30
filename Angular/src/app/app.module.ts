@@ -74,6 +74,7 @@ import {AuthGuard} from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { PagOriComponent } from './components/pag-ori/pag-ori.component';
 import { SitioComponent } from './components/sitio/sitio.component';
+
 import { SitioDetalleComponent } from './components/sitio-detalle/sitio-detalle.component';
 import { SearchCombCeraComponent } from './components/search-comb-cera/search-comb-cera.component';
 import { SearchComblitComponent } from './components/search-comblit/search-comblit.component';
@@ -88,6 +89,12 @@ import { PagDetalleLiteSitioComponent } from './components/pag-detalle-lite-siti
 import { PagLiteSitioNombreComponent } from './components/pag-lite-sitio-nombre/pag-lite-sitio-nombre.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { SitioEditComponent } from './components/sitio-edit/sitio-edit.component';
+import { ForgotComponent } from './components/forgot/forgot.component';
+import { ResetComponent } from './components/reset/reset.component';
+import { PerfilesComponent } from './components/perfiles/perfiles.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { PopupOrigenesComponent } from './components/popup-origenes/popup-origenes.component';
+import { PopupPerfilComponent } from './components/popup-perfil/popup-perfil.component';
 
 @NgModule({
   declarations: [
@@ -152,7 +159,12 @@ import { SitioEditComponent } from './components/sitio-edit/sitio-edit.component
     PagLiteSitiosComponent,
     PagDetalleLiteSitioComponent,
     PagLiteSitioNombreComponent,
-    SitioEditComponent
+    SitioEditComponent,
+    ForgotComponent,
+    ResetComponent,
+    PerfilesComponent,
+    PopupOrigenesComponent,
+    PopupPerfilComponent
    
     
   ],
@@ -166,7 +178,7 @@ import { SitioEditComponent } from './components/sitio-edit/sitio-edit.component
     NgbModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
-      
+      apiKey: 'AIzaSyAV-I1NNfBoKoqykoOTsCipzR1wM5gRm3A'  
     }),
     FormsModule,
     MatCardModule,
@@ -177,6 +189,7 @@ import { SitioEditComponent } from './components/sitio-edit/sitio-edit.component
     MatButtonModule,
     MatIconModule,
     MatInputModule,
+    MatCheckboxModule,
     MatTooltipModule,
     MatPaginatorModule,
     MatSortModule,
@@ -193,6 +206,6 @@ import { SitioEditComponent } from './components/sitio-edit/sitio-edit.component
  
   bootstrap: [AppComponent],
 
-  entryComponents : [PagDetalleLiteSitioComponent],
+  entryComponents : [PagDetalleLiteSitioComponent,PopupOrigenesComponent],
 })
 export class AppModule { }

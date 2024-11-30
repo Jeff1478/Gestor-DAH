@@ -8,12 +8,13 @@ import {MatDialog} from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import Swal from 'sweetalert2';
 import { AuthService } from 'src/app/services/auth.service';
+import { RegistroService } from 'src/app/services/registro.service';
 
 @Component({
   selector: 'app-pag-lite-sitios',
   templateUrl: './pag-lite-sitios.component.html',
   styleUrls: ['./pag-lite-sitios.component.css'],
-  providers : [SitioService,AuthService]
+  providers : [SitioService,AuthService,RegistroService]
 })
 export class PagLiteSitiosComponent implements OnInit { 
 
@@ -27,6 +28,9 @@ export class PagLiteSitiosComponent implements OnInit {
   public registrado!: boolean;
   public usuario!: any;
   public title!: string;
+  public arqueo: boolean;
+  public user!: any;
+  public acceso!: string;
   public sitios: Sitio[] = [];
   
 
@@ -35,8 +39,12 @@ export class PagLiteSitiosComponent implements OnInit {
     private _route: ActivatedRoute,
     private _router: Router,
     public dialog: MatDialog,
-    public authService : AuthService
-  ) { }
+    public authService : AuthService,
+    public _registroService: RegistroService
+  ) { 
+    this.arqueo = false;
+    this.user = '';
+  }
 
   listData!: MatTableDataSource<any>;
   displayedColumns: string[] = ['_id', 'nombre_sitio', 'clave_sitio', 'provincia', 'canton', 'distrito', 'actions'];
@@ -99,9 +107,10 @@ export class PagLiteSitiosComponent implements OnInit {
           console.log(res.usuarios)
           this.usuario = res.usuarios;
           this.title = JSON.stringify(this.usuario, ['email'])
+          this.searchPerfil(localStorage.getItem('email'));
         }
 
-        if (this.title == '[{"email":"jcsanchez@museocostarica.go.cr"}]' || this.title =='[{"email":"jeffreytapia@gmail.com"}]'){
+        if (this.title == '[{"email":"jcsanchez@museocostarica.go.cr"}]' || this.title =='[{"email":"jtapia@museocostarica.go.cr"}]'){
           this.administrador = true;
           this.registrado = true;
         } else if (this.title == '[{"email":"bm@kraken.com"}]'){
@@ -115,6 +124,32 @@ export class PagLiteSitiosComponent implements OnInit {
        
       });  
 
+      
+      
+
+  }
+
+
+  searchPerfil(searstring:any){
+    this._registroService.search(searstring).subscribe(
+      response => {
+       if(response.registro){
+
+        this.user = response.registro
+        console.log(this.user)
+        this.acceso = JSON.stringify(this.user, ['acceso'])
+
+           if(this.acceso == '[{"acceso":true}]'){
+            this.arqueo = true;
+          } 
+         
+        
+      }},
+
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   onSearchClear() {
@@ -128,7 +163,7 @@ export class PagLiteSitiosComponent implements OnInit {
 
   openDialog(selected:any){
     
-    if(this.administrador){
+    if(this.arqueo){
       this._router.navigate(['/pag-ori/sitio', selected])
     } else {
       this._router.navigate(['/pag-ori-det/sitio', selected])
