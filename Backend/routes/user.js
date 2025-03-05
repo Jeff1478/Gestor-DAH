@@ -38,15 +38,6 @@ router.post('/signup', async (req,res) => {
     // const token = jwt.sign({_id: newUser._id}, 'secretkey');
     
     res.status(200).json({token});
-
-    /* await transporter.sendMail({
-        from: 'soporteti@museocostarica.go.cr',
-        to: this.email,
-        subject: 'Registro Usuario Orígenes',
-        html: `<h1>Hola Jeffrey</h1><br>
-        <p>Correo: ${this.email} solicita un acceso como ${user.perfil}</p>
-        <h4>Gracias por su solicitud</h4>` 
-    }) */ 
 }); 
 
 
@@ -92,7 +83,7 @@ router.post('/forgot', async (req,res)=>{
     await transporter.sendMail({
         from: 'soporteti@museocostarica.go.cr',
         to: email,
-        subject: 'Reseteo contraseña Orígenes',
+        subject: 'Reseteo contraseña Origenes',
         html: `Por favor dar click <a href= "${url}">aquí<a> para restablecer su contraseña`
     })
 
@@ -156,6 +147,7 @@ function verifyToken(req,res,next){
 
  
 router.post('/datos-user',UserController.datosUsuario);
+router.post('/signin',UserController.signin);
 router.get('/test-de-controlador',UserController.test);
 router.get('/usuario/:id', UserController.getUsuario);
 router.get('/search/:search', UserController.search);

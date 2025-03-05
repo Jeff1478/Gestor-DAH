@@ -91,6 +91,7 @@ export class SidebarComponent implements OnInit {
         if (this.title == '[{"email":"jbrenes@museocostarica.go.cr"}]' || this.title =='[{"email":"jtapia@museocostarica.go.cr"}]'){
           // this.administrador = true;
           this.registrado = true;
+          console.log(this.registrado)
           //this.arqueo = true
         } 
      /*    else if (this.title == '[{"email":"jtapia@museocostarica.go.cr"}]'){

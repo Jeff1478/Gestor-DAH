@@ -21,6 +21,7 @@ export class RegistroOrigenesComponent implements OnInit {
   public registro!: Registro;
   public status!: String;
   public correo!: any;
+  public acceso!: boolean
 
   
 
@@ -46,6 +47,7 @@ export class RegistroOrigenesComponent implements OnInit {
   suscripciones: any[] = [];
 
   ngOnInit(){
+    this.acceso = false;
     //alert(localStorage.getItem('nombre'))
     for (let item in Suscripcion) {
       if (isNaN(Number(item))) {
@@ -67,7 +69,7 @@ export class RegistroOrigenesComponent implements OnInit {
 
     
 
-    this.http.sendEmail("http://31.220.97.126:3900/sendmail", user).subscribe(
+    this.http.sendEmail("https://origenes.museocostarica.go.cr:3900/sendmail", user).subscribe(
       data => {
         let res:any = data; 
         /* console.log(
@@ -96,10 +98,11 @@ export class RegistroOrigenesComponent implements OnInit {
   Registro(){
 
     let reg = {
-      name: this.nameFormControl.value,
+      nombre: this.nameFormControl.value,
       email: localStorage.getItem('email'),
       perfil: this.perfilFormControl.value,
-      setena: this.setenaFormControl.value
+      setena: this.setenaFormControl.value,
+      acceso: this.acceso
     }
 
     this._registroService.create(reg).subscribe(

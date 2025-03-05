@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute,Router} from '@angular/router';
 import Swal from 'sweetalert2';
 import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-forgot',
@@ -13,13 +14,6 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ForgotComponent implements OnInit {
   form!: FormGroup;
-  user = {
-    email: '',
-    password: '',
-    nombre: '',
-    token:''
-  }
-
   tfaFlag: boolean = true
   logFlag: boolean = false
   token:any 
@@ -35,28 +29,17 @@ export class ForgotComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
+     this.form = this.formBuilder.group({
       
-      email: '',
-      password: '',
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      token: ['']
   
-    });
-
-    
-    
+    }); 
   }
 
-  submit(): void {
-   
-     this.http.post('http://31.220.97.126:3900/apu/forgot', this.form.getRawValue())
-   
-    .subscribe(() => this.router.navigate(['/']));
-    Swal.fire('Atención', 'Contraseña Actualizada', 'success')
-    
-    }
-
     signIn() {
-      this.authService.signInUser(this.user)
+      this.authService.signInUser(this.form.value)
         .subscribe(
           res => {
             console.log(res);
@@ -68,33 +51,70 @@ export class ForgotComponent implements OnInit {
               Swal.fire('Atención', 'Se le envió a su correo el Token de acceso, copielo y peguelo en la casilla correspondiente', 'success')
             } 
             localStorage.setItem('token', res.token);
-            localStorage.setItem('email', this.user.email);
+            localStorage.setItem('email', this.form.value.email);
                 
-            //this.router.navigate(['/home']);
+      
           },
           err => {console.log(err)
           Swal.fire('Error', 'Usuario o contraseña incorrectos', 'error')}
         )
     }
   
-    signInTFA() {
-   
-            this.token=localStorage.getItem('token')
-            //console.log(this.token)
-            this.tfaFlag = true;
-            this.logFlag = false;
-           
-            if (this.token == this.user.token) {
 
-              this.http.post('http://31.220.97.126:3900/apu/forgot', this.form.getRawValue())
-   
-              .subscribe(() => this.router.navigate(['/']));
-              Swal.fire('Atención', 'Contraseña Actualizada', 'success')
-              //this.authService.updateAuthStatus(true);
-              this.router.navigate(['/home']);
-            }     
-            //this.router.navigate(['/home']);
-          }
+    nuevacontra() {
+      this.authService.nuevacontra(this.form.value)
+        .subscribe(
+          res => {
+            console.log(res);
+            this.token=res
+            this.tfaFlag = false;
+            this.logFlag = true;
+            if (this.logFlag == true) {
+              
+              Swal.fire('Atención', 'Se le envió a su correo el Token de acceso, copielo y peguelo en la casilla correspondiente', 'success')
+            } 
+            const { token, userId } = res;
+            localStorage.setItem('token', token);
+            localStorage.setItem('userId', userId);
+            console.log('Token y User ID guardados en localStorage');
+                
+            
+          },
+          err => {console.log(err)
+          Swal.fire('Error', 'Usuario o contraseña incorrectos', 'error')}
+        )
+    }
+    
+          async signInTFA() {
+            this.token = localStorage.getItem('token');
+            const id = localStorage.getItem('userId');
+            
+            console.log("Token:", this.token);
+            console.log("User ID:", id);
+            
+            if (this.token === this.form.value.token) {
+                //console.log("Form Value:", this.form.value)
+                const formData = this.form.getRawValue();
+                
+                
+
+                console.log("Form Data:", formData);
+        
+                this.http.put(`https://origenes.museocostarica.go.cr:3900/apu/update/${id}`, formData)
+                    .subscribe(
+                        response => {
+                            Swal.fire('Atención', 'Contraseña Actualizada', 'success');
+                            this.router.navigate(['/home']);
+                        },
+                        error => {
+                            console.error("Error al actualizar la contraseña:", error);
+                            Swal.fire('Error', 'No se pudo actualizar la contraseña', 'error');
+                        }
+                    );
+            } else {
+                Swal.fire('Error', 'Token inválido', 'error');
+            }
+        }
     
   }
 

@@ -61,7 +61,7 @@
     
 
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeId]="mapTypeId">
-        <agm-marker *ngFor="let sitio of sitios" [latitude]="sitio.latitude" [longitude]="sitio.Logitude"
+        <agm-marker *ngFor="let sitio of sitios" [latitude]="sitio.latitude" [longitude]="sitio.longitude"
             [agmFitBounds]="true">
             
             <agm-info-window>

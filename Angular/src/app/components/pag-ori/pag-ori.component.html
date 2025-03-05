@@ -14,12 +14,12 @@
                 pues en este momento no se cuenta con una prospección sistemática a nivel nacional.
                 Se insta a los consultores en arqueología a proceder con el estudio D1, de acuerdo con la normativa de la Secretaría Tecnica Nacional -SETENA-.</p>
                 
-                 <div *ngIf="administrador == false">
+                 <div *ngIf="administrador == false && registrado == false" >
                     <p style="font-size:120%;" text-align="justify;"> <strong>Si usted es Profesional en Arqueología, habilítese <a class="nav-link" [routerLink]="['/politicasUso']" [routerLinkActive]= "['active']">aquí...</a></strong></p>
                 </div> 
-               <!--  <div *ngIf="arqueo == false">
-                    <p style="font-size:120%;" text-align="justify;"> <strong>Si usted es Profesional en Arqueología, habilítese <a class="nav-link" [routerLink]="['/politicasUso']" [routerLinkActive]= "['active']">aquí...</a></strong></p>
-                </div> -->
+                 <div *ngIf="registrado == true">
+                    <p style="font-size:120%;" text-align="justify;"> <strong>Su solicitud de acceso ampliado está en estudio</strong></p>
+                </div> 
                 
             </div>
 

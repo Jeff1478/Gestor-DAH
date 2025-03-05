@@ -8,24 +8,29 @@
       </div>
   
       <!-- Login Form -->
-       <form (submit)="signIn()">
+       <!-- <form (submit)="nuevacontra()">
         <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email" required autofocus>
         <input type="password" type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Nueva Contraseña" required>
         <input type="text" id="token" class="form-control" *ngIf="this.logFlag" name="token" autocomplete="off"
         #token="ngModel" [(ngModel)]="user.token" placeholder="Token de Autenticación"
         title="Ingrese el Token que recibió en el correo registrado" required>
         <input type="submit" class="fadeIn fourth" *ngIf="this.tfaFlag" value="Validar">
+      </form> 
         <form (submit)="signInTFA()">
           <input type="submit" class="fadeIn fourth" *ngIf="this.logFlag" value="Cambiar Contraseña">
+        </form> -->
+        <form [formGroup]="form" (ngSubmit)="nuevacontra()">
+          <input type="text" formControlName="email" class="form-control" placeholder="Email" required autofocus>
+          <input type="password" formControlName="password" class="form-control" placeholder="Nueva Contraseña" required>
+          <input type="submit" class="fadeIn fourth" *ngIf="tfaFlag" value="Validar">
         </form>
         
-      </form> 
-      <!-- form [formGroup]="form" (submit)="submit()">
-
-        <input formControlName="email" type="text" class="form-control" name="email" placeholder="Email" required autofocus>
-        <input formControlName="password" type="password" class="form-control" name="password" placeholder="Nueva Contraseña" required autofocus>
-        <input type="submit" class="fadeIn fourth" value="Cambiar Contraseña">
-      </form>   -->
+        <form [formGroup]="form" (ngSubmit)="signInTFA()">
+          <input type="text" formControlName="token" class="form-control" *ngIf="logFlag" placeholder="Token de Autenticación" required>
+          <input type="submit" class="fadeIn fourth" *ngIf="logFlag" value="Cambiar Contraseña">
+        </form>
+      
+      
   
     </div>
   </div>

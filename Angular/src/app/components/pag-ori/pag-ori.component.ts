@@ -118,6 +118,9 @@ export class PagOriComponent implements OnInit {
            if(this.acceso == '[{"acceso":true}]'){
             this.administrador = true;
           } 
+          if(this.acceso == '[{"acceso":false}]'){
+            this.registrado = true;
+          } 
         
       }},
 

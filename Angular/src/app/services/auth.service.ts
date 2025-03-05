@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
 import { HttpHeaders } from '@angular/common/http';
-
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,8 @@ import { HttpHeaders } from '@angular/common/http';
 export class AuthService {
 
    // private URL = 'http://181.193.24.142:3900/apu'; Museo
-    private URL = 'http://31.220.97.126:3900/apu';
-
+   // private URL = 'http://31.220.97.126:3900/apu';
+    private URL = 'https://origenes.museocostarica.go.cr:3900/apu';
    //private URL = 'apu';
     //private URL = '/apu';
    //private URL = 'https://localhost:3900/apu';
@@ -28,7 +28,6 @@ export class AuthService {
 
 
   signUpUser(user: {}) {
-  
     return this.http.post<any>(this.URL + '/signup', user);
   }
 
@@ -38,6 +37,27 @@ export class AuthService {
     .set('Access-Control-Allow-Origin', '*');
     return this.http.post<any>(this.URL + '/signin', user, {'headers':headers});
   }
+
+  nuevacontra(user: any) {
+    const headers= new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*');
+    return this.http.post<any>(this.URL + '/nuevacontra', user, {'headers':headers});
+  }
+
+  updateUser(id: string,user: any) {
+    const headers= new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*');
+    return this.http.post<any>(this.URL + '/update'+id, user, {'headers':headers});
+  }
+
+   update(id: string, ceramic: any):Observable<any>{
+          let params = JSON.stringify(ceramic);
+          let headers = new HttpHeaders().set('Content-Type', 'application/json');
+  
+          return this.http.put(this.URL+'update/'+id, params,{headers: headers});
+      }
 
   updateAuthStatus(value: boolean) {
     this._isLoggedIn = value

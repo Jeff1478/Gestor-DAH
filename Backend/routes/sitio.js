@@ -13,6 +13,8 @@ router.post('/datos-sitio',SitioController.datosSitio);
 router.get('/test-de-controlador',SitioController.test);
 router.get('/sitio/:id', SitioController.getSitio);
 router.get('/sitios/:last?', SitioController.getSitios);
-
+router.get('/search/:search', SitioController.search);
+router.get('/searchCanton/:search', SitioController.searchCanton);
+router.get('/searchDistrito/:search', SitioController.searchDistrito);
 
 module.exports = router;

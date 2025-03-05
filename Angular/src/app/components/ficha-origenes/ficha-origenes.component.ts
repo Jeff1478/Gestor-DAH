@@ -137,6 +137,7 @@ export class FichaOrigenesComponent implements OnInit {
       localizacion_gps: false,
       latitude: 0,
       Logitude: 0,
+      longitude: 0,
       patrimonio_acuatico: '',
       excavacion: false,
       arbitratia: false,

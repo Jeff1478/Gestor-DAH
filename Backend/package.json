@@ -12,14 +12,15 @@
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.3",
     "connect-flash": "^0.1.1",
     "connect-multiparty": "^2.2.0",
     "cors": "^2.8.5",
     "ejs-mate": "^3.0.0",
-    "express": "^4.17.1",
+    "express": "^4.21.2",
     "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
+    "mogoose": "^0.0.1-security",
     "mongoose": "^5.13.0",
     "morgan": "^1.10.0",
     "nodemailer": "^6.7.2",
@@ -28,7 +29,7 @@
     "passport-local": "^1.0.0",
     "qrcode": "^1.5.0",
     "speakeasy": "^2.0.0",
-    "validator": "^13.6.0"
+    "validator": "^13.12.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

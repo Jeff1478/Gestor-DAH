@@ -79,6 +79,7 @@ export class Sitio{
         public video: Boolean,
         public latitude: number,
         public Logitude: number,
+        public longitude: number,
         public coordenadas: String,
         public google: String,
         public id_google: String,

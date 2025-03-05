@@ -37,7 +37,7 @@ export class RegistroService {
         let params = JSON.stringify(registro);
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-        return this._http.post(this.url+'save/',params, {headers:headers});
+        return this._http.post(this.url+'regis/',params, {headers:headers});
     }
 
     update(id: string, registro: any):Observable<any>{

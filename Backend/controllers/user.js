@@ -1,9 +1,16 @@
 'use strict'
-
+const nodemailer = require('nodemailer');
 var validator = require('validator');
 var fs = require('fs');
 var path = require('path');
-
+const transporter = nodemailer.createTransport({
+    host: 'smtp.office365.com',
+    port: 587,
+    secure: false, // true for 465, false for other ports
+      auth: {
+        user: "soporteti@museocostarica.go.cr",
+        pass: "Museo2023*"}
+});
 var Usuario = require('../models/user');
 
 var controller = {
@@ -23,6 +30,33 @@ var controller = {
         return res.status(200).send({
             message: 'Soy la accion de mi controlador de Usuario'
         });
+    },
+
+    signin: async (req,res) => {
+        const { email, password} = req.body;
+        const user = await User.findOne({email})
+      
+        if (!user) return res.status(401).send('Correo no Existe!!');
+       
+        const match = await user.comparePassword(password);
+       // if (user.password !== password) return res.status(401).send('Password Incorrecto!!');
+        if (match){
+            const token = Math.random().toString(20).substring(2,12);
+            // const token = jwt.sign({_id: user._id}, 'secretkey');
+            res.status(200).json({token});
+    
+            await transporter.sendMail({
+                from: 'soporteti@museocostarica.go.cr',
+                to: email,
+                subject: 'Token Acceso Orígenes',
+                html: `Por favor copiar el siguiente Token 
+                <b>${token}</b>
+                y pegarlo en el campo correspondiente en la pantalla de Login para acceder`
+            }) 
+    
+            
+        }
+       
     },
 
     getUsuarios: (req, res) => {

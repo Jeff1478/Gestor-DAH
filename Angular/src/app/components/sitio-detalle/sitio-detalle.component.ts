@@ -53,7 +53,7 @@ export class SitioDetalleComponent implements OnInit {
           this.title = JSON.stringify(this.usuario, ['email'])
         }
 
-        if (this.title == '[{"email":"jcsanchez@museocostarica.go.cr"}]' || this.title =='[{"email":"jtapia@museocostarica.go.cr"}]'){
+        if (this.title == '[{"email":"jbrenes@museocostarica.go.cr"}]' || this.title =='[{"email":"jtapia@museocostarica.go.cr"}]'){
           this.administrador = true;
          
         } else if (this.title == '[{"email":"bm@kraken.com"}]'){

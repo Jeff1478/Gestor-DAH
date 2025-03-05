@@ -93,6 +93,118 @@ var controller = {
         });
     },
 
+    search: (req, res) => {
+    
+            var searchString = req.params.search;
+    
+            Sitio.find({ "$or": [
+                
+                { "provincia": { "$regex": searchString, "$options": "i"}},
+                { "canton": { "$regex": searchString, "$options": "i"}}
+                
+            ]})
+            .sort([['date', 'descending']])
+    
+            .exec((err, sitio) => {
+    
+                if(err){
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error en la petición !!!'
+                    });
+                }
+                
+                if(!sitio || sitio.length <= 0){
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No hay artefactos que coincidan con tu busqueda !!!'
+                    });
+                }
+    
+                return res.status(200).send({
+                    status: 'success',
+                    sitio
+                });
+    
+            });
+        },
+
+
+        searchCanton: (req, res) => {
+    
+            var searchString = req.params.search;
+    
+            Sitio.find({ "$or":[
+                
+                
+                { "canton": { "$regex": searchString, "$options": "i"}},
+                { "provincia": { "$regex": searchString, "$options": "i"}},
+                
+            ]})
+            .sort([['date', 'descending']])
+    
+            .exec((err, sitio) => {
+    
+                if(err){
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error en la petición !!!'
+                    });
+                }
+                
+                if(!sitio || sitio.length <= 0){
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No hay artefactos que coincidan con tu busqueda !!!'
+                    });
+                }
+    
+                return res.status(200).send({
+                    status: 'success',
+                    sitio
+                });
+    
+            });
+        },
+    
+        searchDistrito: (req, res) => {
+    
+            var searchString = req.params.search;
+    
+            Sitio.find({ "$or":[
+                
+                
+                { "canton": { "$regex": searchString, "$options": "i"}},
+                { "distrito": { "$regex": searchString, "$options": "i"}},
+                
+            ]})
+            .sort([['date', 'descending']])
+    
+            .exec((err, sitio) => {
+    
+                if(err){
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error en la petición !!!'
+                    });
+                }
+                
+                if(!sitio || sitio.length <= 0){
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No hay artefactos que coincidan con tu busqueda !!!'
+                    });
+                }
+    
+                return res.status(200).send({
+                    status: 'success',
+                    sitio
+                });
+    
+            });
+        }
+    
+
 }; // end controler
 
 module.exports = controller;

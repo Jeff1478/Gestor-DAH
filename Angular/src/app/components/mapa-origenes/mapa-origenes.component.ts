@@ -1929,7 +1929,7 @@ goSearchDistrito(distrito_id: any) {
     response => {
       if (response.sitio) {
         this.sitios = response.sitio;
-
+        console.log(response.sitio)
       } else {
         this.sitios = [];
       }

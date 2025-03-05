@@ -27,7 +27,7 @@ var litico_routes = require ('./routes/litico');
 var metalico_routes = require ('./routes/metalico');
 var sitio_routes = require ('./routes/sitio');
 var user_routes = require ('./routes/user');
-
+var registro_routes = require ('./routes/registro');
 // Middlewares
 app.use(session({ secret: 'anything', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
@@ -52,7 +52,7 @@ const auth = () => {
 
 app.get("/", (req, res) => {
     res.send(
-      "<h1 style='text-align: center'>Wellcome Jeffrey T <br><br>😃👻😃👻😃👻😃👻😃</h1>"
+      "<h1 style='text-align: center'>Jeffrey TI MN <br><br>😃👻😃👻😃👻😃👻😃</h1>"
     );
   });
   
@@ -73,7 +73,7 @@ app.get("/", (req, res) => {
       secure: false, // true for 465, false for other ports
       auth: {
         user: "soporteti@museocostarica.go.cr",
-        pass: "Museo2023*"
+        pass: "Museocr2023*"
       }
     });
   
@@ -341,7 +341,9 @@ app.get("/", (req, res) => {
       </div>
       </body>
       </html>`
-      
+      /* html: `<h1>Hola ${user.name}</h1><br>
+      <p>Correo: ${user.email} solicita un acceso como ${user.perfil}</p>
+      <h4>Gracias por su solicitud</h4>` */
     };
   
     // send mail with defined transport object
@@ -385,7 +387,7 @@ app.use('/aplit', litico_routes);
 app.use('/apmet', metalico_routes);
 app.use('/apis', sitio_routes);
 app.use('/apu', user_routes);
-
+app.use('/apip', registro_routes);
 
 // Exportar Modulo (fichero actual)
 module.exports = app;
