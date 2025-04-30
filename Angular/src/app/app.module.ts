@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {AgmCoreModule} from '@agm/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
@@ -95,6 +96,10 @@ import { PerfilesComponent } from './components/perfiles/perfiles.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { PopupOrigenesComponent } from './components/popup-origenes/popup-origenes.component';
 import { PopupPerfilComponent } from './components/popup-perfil/popup-perfil.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardEstadisticasComponent } from './components/dashboard-estadisticas/dashboard-estadisticas.component';
+
+
 
 @NgModule({
   declarations: [
@@ -164,7 +169,10 @@ import { PopupPerfilComponent } from './components/popup-perfil/popup-perfil.com
     ResetComponent,
     PerfilesComponent,
     PopupOrigenesComponent,
-    PopupPerfilComponent
+    PopupPerfilComponent,
+    DashboardComponent,
+    DashboardEstadisticasComponent
+    
    
     
   ],
@@ -183,6 +191,7 @@ import { PopupPerfilComponent } from './components/popup-perfil/popup-perfil.com
     FormsModule,
     MatCardModule,
     ReactiveFormsModule,
+    NgxChartsModule,
     MatSelectModule,
     MomentModule,
     MatButtonToggleModule,

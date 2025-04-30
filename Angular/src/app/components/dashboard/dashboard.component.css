@@ -1,0 +1,70 @@
+.parallax-bg {
+  /* Imagen */
+  background-image: url('/assets/images/fachada_museo.jpg'); /* Asegúrate de copiarla ahí */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Dimensiones */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Superposición oscura opcional */
+  position: relative;
+}
+.parallax-bg::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* oscurece para mejorar contraste */
+  z-index: 1;
+}
+
+.dashboard-content {
+  color: white;
+  z-index: 2;
+  text-align: center;
+}
+
+.dashboard-content h1,
+.dashboard-content p {
+  color: #000; /* negro */
+  text-shadow: none;
+  -webkit-text-stroke: 0; /* elimina bordes blancos */
+}
+
+.dashboard-content {
+  background-color: rgba(255, 255, 255, 0.6); /* fondo blanco semitransparente */
+  padding: 20px 40px;
+  border-radius: 12px;
+  color: #000;
+}
+
+
+
+
+.dashboard-content button {
+  background-color: #c9a000; /* dorado oscuro o amarillo mostaza */
+  color: #000;
+  border: none;
+  padding: 12px 28px;
+  font-weight: bold;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  margin: 20px auto;
+  display: block; /* centra en horizontal */
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 3;
+}
+
+.dashboard-content button:hover {
+  background-color: #b38f00; /* tono un poco más oscuro al pasar el mouse */
+}
+
+

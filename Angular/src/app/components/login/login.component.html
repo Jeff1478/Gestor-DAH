@@ -1,19 +1,21 @@
 
-  <div class="wrapper fadeInDown">
+<!-- 
+ 
+
   <div id="formContent">
-    <!-- Tabs Titles -->
+    
     <h2 class="active"> Acceso </h2>
-    <!-- <button mat-raised-button (click)="openDialog()"></button> -->
+    
     <h2 class="inactive underlineHover" mat-raised-button (click)="openDialog()">Registro </h2> 
-    <!-- <h2 class="inactive underlineHover" [routerLink]="['/registro']" [routerLinkActive]= "['active']">Registro </h2>  -->
+    
    
-    <!-- Icon -->
+
     <div class="fadeIn first">
       <img src="assets/images/logogestor2.png" alt="User Icon" />
     </div>
 <br>
    <div>
-    <!-- Login Form -->
+
     <form (submit)="signIn()">
       <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email" required autofocus>
       <input type="password" type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Password" required>
@@ -27,10 +29,54 @@
       
     </form>
   </div>
-    <!-- Remind Passowrd -->
+
     <div class="mb-3">
       <a routerLink="/forgot">Olvidó su contraseña?</a>
     </div>
   
   </div>
+</div> -->
+
+<div class="login-container">
+  <mat-card class="login-card">
+
+    <div class="tabs-header">
+      <h2 class="active-tab">Acceso</h2>
+      <h2 class="inactive-tab" (click)="openDialog()">Registro</h2>
+    </div>
+
+    <div class="logo-container">
+      <img src="assets/images/logogestor2.png" alt="Logo Gestor" />
+    </div>
+
+    <form (submit)="signIn()" #loginForm="ngForm">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="user.email" name="email" required type="email" placeholder="ejemplo@correo.com" />
+        <mat-icon matPrefix>email</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [(ngModel)]="user.password" name="password" required type="password" />
+        <mat-icon matPrefix>lock</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="logFlag" appearance="outline" class="full-width">
+        <mat-label>Token de Autenticación</mat-label>
+        <input matInput [(ngModel)]="user.token" name="token" type="text" placeholder="Token enviado al correo" required />
+        <mat-icon matPrefix>vpn_key</mat-icon>
+      </mat-form-field>
+
+      <div class="action-btn">
+        <button mat-raised-button color="primary" type="submit" *ngIf="tfaFlag">Log In</button>
+        <button mat-raised-button color="accent" type="submit" *ngIf="logFlag" (click)="signInTFA()">Log In con Token</button>
+      </div>
+    </form>
+
+    <div class="forgot-password">
+      <a routerLink="/forgot">¿Olvidó su contraseña?</a>
+    </div>
+
+  </mat-card>
 </div>

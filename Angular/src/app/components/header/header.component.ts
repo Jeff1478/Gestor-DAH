@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
     this.aguacaliente = false;
    }
 
-  ngOnInit(){
+/*   ngOnInit(){
 
     this.authService.search(localStorage.getItem('email'))
     .subscribe(
@@ -46,15 +46,6 @@ export class HeaderComponent implements OnInit {
             this.aguacaliente = true;
           }
 
-        /*  else if (this.title == '[{"email":"jeffreytapia@gmail.com"}]'){
-          this.logueado = true;
-          this.aguacaliente = false;
-        }  */
-
-     /*     else if (this.title == '[{"email":"jbrenes@museocostarica.go.cr"}]'){
-          this.logueado = true;
-          this.aguacaliente = false;
-        } */
         else if (this.title == '[{"email":"lsanchez@museocostarica.go.cr"}]'){
           this.logueado = true;
           this.aguacaliente = true;
@@ -63,10 +54,7 @@ export class HeaderComponent implements OnInit {
           this.logueado = true;
           this.aguacaliente = false;
         }
-     /*    else if (this.title == '[{"email":"mrojass@museocostarica.go.cr"}]'){
-          this.logueado = true;
-          this.aguacaliente = false;
-        } */
+
           else {
             this.aguacaliente = true;
             this.logueado = false;
@@ -77,8 +65,42 @@ export class HeaderComponent implements OnInit {
       err => {console.log(err)
       });  
    
-  }
+  } */
 
+      ngOnInit() {
+        const email = localStorage.getItem('email');
+      
+        this.authService.search(email).subscribe(
+          res => {
+            if (res.usuarios && res.usuarios.length > 0) {
+              this.usuario = res.usuarios[0]; // asumimos que solo retorna uno
+              const correo = this.usuario.email;
+      
+              this.logueado = true;
+      
+              // Usuarios especiales con acceso a Agua Caliente
+              const accesoAgua = [
+                'jtapia@museocostarica.go.cr',
+                'gmongem@museocostarica.go.cr',
+                'lsanchez@museocostarica.go.cr'
+              ];
+      
+              this.aguacaliente = accesoAgua.includes(correo);
+      
+            } else {
+              // No se encontró usuario válido
+              this.logueado = false;
+              this.aguacaliente = false;
+            }
+          },
+          err => {
+            console.error('Error al buscar usuario:', err);
+            this.logueado = false;
+            this.aguacaliente = false;
+          }
+        );
+      }
+      
   goSearch(){
     this._router.navigate(['/buscar', this.searchString]);
   }

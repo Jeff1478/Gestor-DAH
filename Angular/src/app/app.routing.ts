@@ -7,6 +7,8 @@ import { Routes, RouterModule} from "@angular/router"
 
 //importa componentes a los que les voy a hacer un pagina exclusiva
 import { HomeComponent } from "./components/home/home.component";
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { DashboardEstadisticasComponent } from "./components/dashboard-estadisticas/dashboard-estadisticas.component";
 import { PagLiteSitiosComponent } from "./components/pag-lite-sitios/pag-lite-sitios.component";
 import { CeramicaComponent } from "./components/ceramica/ceramica.component";
 import { ContextoComponent } from "./components/contexto/contexto.component";
@@ -58,7 +60,11 @@ import { PagLiteSitioNombreComponent } from "./components/pag-lite-sitio-nombre/
 
 //Array de rutas 
 const appRoutes: Routes = [
-    {path: '', component: LoginComponent},
+    { path: '', redirectTo: 'login', pathMatch: 'full' }, // <- ahora redirige al login
+{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+{ path: 'dashboard-estadisticas', component: DashboardEstadisticasComponent, canActivate: [AuthGuard] },
+{ path: 'login', component: LoginComponent },
+    // {path: '', component: LoginComponent},
     {path: 'registro', component: RegistroComponent},
     {path: 'forgot', component: ForgotComponent},
     {path: 'reset', component: ResetComponent},
@@ -78,7 +84,7 @@ const appRoutes: Routes = [
     {path: 'pag-met', component : PagMetComponent, canActivate: [AuthGuard]},
     {path: 'pag-ori', component : PagOriComponent, canActivate: [AuthGuard]},
     {path: 'map-ori', component : MapaOrigenesComponent, canActivate: [AuthGuard]},
-    {path: 'pag-lite-sitios/:search', component : PagLiteSitiosComponent, canActivate: [AuthGuard]},
+    {path: 'pag-lite-sitios', component : PagLiteSitiosComponent, canActivate: [AuthGuard]},
     {path: 'pag-lite-sitio-nombre/:search', component : PagLiteSitioNombreComponent, canActivate: [AuthGuard]},
     {path: 'politicasUso', component : PoliticasUsoComponent, canActivate: [AuthGuard]},
     {path: 'registroOrigenes', component : RegistroOrigenesComponent, canActivate: [AuthGuard]},

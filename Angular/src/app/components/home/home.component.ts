@@ -51,9 +51,7 @@ export class HomeComponent implements OnInit {
         });  
   
 
-    
-    
-   
+  
 
     this._ceramicService.getCeramics(true).subscribe(
       response => { 

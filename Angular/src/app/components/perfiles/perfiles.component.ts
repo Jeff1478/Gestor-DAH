@@ -9,6 +9,7 @@ import { MatSort } from '@angular/material/sort';
 import Swal from 'sweetalert2';
 import { AuthService } from 'src/app/services/auth.service';
 import {SelectionModel} from '@angular/cdk/collections';
+import { HttpService } from "src/app/services/http.service";
 
 
 @Component({
@@ -32,7 +33,8 @@ export class PerfilesComponent implements OnInit {
     private _route: ActivatedRoute,
     private _router: Router,
     public dialog: MatDialog,
-    public authService : AuthService
+    public authService : AuthService,
+    public http: HttpService
   ) { 
     this.registro = {
       _id: '',
@@ -89,7 +91,7 @@ export class PerfilesComponent implements OnInit {
    
   }
 
-selectRow($event: any, dataSource: any) {
+/* selectRow($event: any, dataSource: any) {
   const acceso = true
   this.registro.acceso = acceso;
   this.registro._id = dataSource._id
@@ -119,7 +121,58 @@ selectRow($event: any, dataSource: any) {
       );
      // console.log(dataSource._id);
     }
-  }
+  } */
+
+    selectRow($event: any, dataSource: any) {
+      const acceso = true;
+      this.registro.acceso = acceso;
+      this.registro._id = dataSource._id;
+      this.registro.date = new Date();
+      this.registro.nombre = dataSource.nombre;
+      this.registro.correo = dataSource.email;
+      this.registro.perfil = dataSource.perfil;
+      this.registro.setena = dataSource.setena;
+    
+      if ($event.checked) {
+        this._registroService.update(dataSource._id, this.registro).subscribe(
+          (response) => {
+            if (response.status === 'success') {
+              this.status = 'success';
+              this.registro = response.registroUpdated;
+    
+              // ✅ Enviar correo de aprobación
+              const aprobado = {
+                nombre: dataSource.nombre,
+                email: dataSource.email,
+                perfil: dataSource.perfil,
+                setena: dataSource.setena
+              };
+    
+              this.http.sendApprovalEmail("https://origenes.museocostarica.go.cr:3900/sendApprovalMail", aprobado)
+                .subscribe(
+                  (res) => {
+                    Swal.fire('Perfil Editado', 'Cambios aplicados y correo enviado', 'success');
+                  },
+                  (err) => {
+                    console.error("Error al enviar correo de aprobación:", err);
+                    Swal.fire('Perfil Editado', 'Cambios aplicados, pero no se pudo enviar el correo', 'warning');
+                  }
+                );
+    
+              this.traerPerfiles();
+    
+            } else {
+              this.status = 'error';
+            }
+          },
+          (error) => {
+            console.log(error);
+            this.status = 'error';
+          }
+        );
+      }
+    }
+      
 
   isAllSelected() {
     const numSelected = this.selection.selected.length;
@@ -198,5 +251,31 @@ selectRow($event: any, dataSource: any) {
 
   }
 
+
+  deny(user:any) {
+      
+      this.http.sendRejectionEmail("https://origenes.museocostarica.go.cr:3900/sendRejectionMail", user).subscribe(
+        data => {
+          let res:any = data; 
+          /* console.log(
+            `👏 > 👏 > 👏 > 👏 ${user.name} is successfully register and mail has been sent and the message id is ${res.messageId}`
+          ); */
+          Swal.fire(
+  
+            'Registro Orígenes',
+    
+            'Correo fué enviado, el usuario fué denegado',
+    
+            'success'
+          )
+          
+        },
+        err => {
+          console.log(err);
+        }
+      );
+  
+  
+    }
 
   }

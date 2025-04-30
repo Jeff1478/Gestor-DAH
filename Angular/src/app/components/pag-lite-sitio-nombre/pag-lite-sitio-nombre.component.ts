@@ -133,13 +133,13 @@ export class PagLiteSitioNombreComponent implements OnInit {
 
 
   openDialog(selected:any){
-    
-    if(this.arqueo){
-      this._router.navigate(['/pag-ori/sitio', selected])
+    let url = '';
+    if (this.arqueo) {
+      url = `/pag-ori/sitio/${selected}`;
     } else {
-      this._router.navigate(['/pag-ori-det/sitio', selected])
+      url = `/pag-ori-det/sitio/${selected}`;
     }
-  
+    window.open(url, '_blank');
     // const dialogRef = this.dialog.open(PagDetalleLiteSitioComponent, selected);
     
   }

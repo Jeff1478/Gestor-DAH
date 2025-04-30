@@ -69,4 +69,9 @@ export class SitioService {
         return this._http.get(this.url+'searchNombre/'+searchString);
     }
 
+    buscarSitios(filtros: any): Observable<any> {
+        return this._http.post(`${this.url}buscar`, filtros);
+      }
+      
+
 }

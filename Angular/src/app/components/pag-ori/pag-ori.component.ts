@@ -26,7 +26,7 @@ export class PagOriComponent implements OnInit {
   public user!: any;
   public acceso!: any;
   
-  chartData = {
+/*   chartData = {
 
     myType : ChartType.PieChart,
   mytitle : "Distribución de Monumentos por Provincia",
@@ -45,8 +45,24 @@ export class PagOriComponent implements OnInit {
   },
   width : 600,
   height : 400    
-};
+}; */
   
+datosProvincias = [
+  { name: 'San José', value: 591 },
+  { name: 'Alajuela', value: 567 },
+  { name: 'Cartago', value: 520 },
+  { name: 'Heredia', value: 201 },
+  { name: 'Guanacaste', value: 1255 },
+  { name: 'Puntarenas', value: 1658 },
+  { name: 'Limón', value: 306 }
+];
+
+view: [number, number] = [700, 400];
+
+colorScheme = {
+  domain: ['#1E88E5', '#F4511E', '#00ACC1', '#E53935', '#43A047', '#FB8C00', '#8E24AA']
+};
+
   
   
 

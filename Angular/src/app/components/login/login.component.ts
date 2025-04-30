@@ -60,8 +60,8 @@ export class LoginComponent implements OnInit {
             Swal.fire('Atención', 'Se le envió a su correo el Token de acceso, copielo y peguelo en la casilla correspondiente', 'success')
           } 
           localStorage.setItem('token', res.token);
-          localStorage.setItem('email', this.user.email);
-              
+          localStorage.setItem('email', res.email);
+          localStorage.setItem('nombre', res.nombre);    
           //this.router.navigate(['/home']);
         },
         err => {console.log(err)
@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit {
          
           if (this.token == this.user.token) {
             //this.authService.updateAuthStatus(true);
-            this.router.navigate(['/home']);
+            this.router.navigate(['/dashboard']);
           }     
           //this.router.navigate(['/home']);
         }

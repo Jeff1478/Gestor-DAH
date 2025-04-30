@@ -1,4 +1,4 @@
-.example-margin {
+/* .example-margin {
     margin: 0 10px;
   }
 
@@ -31,4 +31,44 @@
   .mat-column-actions {
     padding-left: 16px;
     font-size: 20px;
+  } */
+
+  .titulo-tabla {
+    text-align: center;
+    color: #3f51b5;
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 600;
   }
+  
+  .tabla-container {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-top: 20px;
+  }
+  
+  .tabla-container mat-header-cell, 
+  .tabla-container mat-cell {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+  
+  .badge-aprobado {
+    background-color: #4caf50;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .badge-pendiente {
+    background-color: #f44336;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  

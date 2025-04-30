@@ -3,6 +3,7 @@ import { Sitio } from '../../models/sitio';
 import { SitioService } from 'src/app/services/sitio.service';
 import { Router, ActivatedRoute, Params} from '@angular/router';
 import { DataService} from 'src/app/services/data.service';
+import { ExporterService } from 'src/app/services/exporter';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -43,7 +44,8 @@ export class MapaOrigenesComponent implements OnInit {
   constructor(
     private _sitioService: SitioService,
     private _route: ActivatedRoute,
-    private dataService: DataService
+    private dataService: DataService,
+    private excelService: ExporterService,
   ) { 
     this.lat = 9.954144929210663;
     this.lng = -84.04138360587075;
@@ -51,6 +53,25 @@ export class MapaOrigenesComponent implements OnInit {
     this.mapTypeId = 'hybrid';
     
   }
+
+  onZoomChange(nuevoZoom: number) {
+    this.zoom = nuevoZoom;
+    console.log("Nivel de Zoom Actual:", this.zoom);
+}
+
+getMarkerLabel(nombre: string | null | undefined): any {
+  if (!nombre) return ''; // Si es null o undefined, devuelve una cadena vacía
+  
+  if (this.zoom > 10) {
+      return {
+          text: nombre,
+          color: 'white',
+          fontSize: '14px',
+          fontWeight: 'bold'
+      };
+  }
+  return ''; // Si el zoom es menor, no se muestra el label
+}
 
   ngOnInit(): void {
 
@@ -94,6 +115,14 @@ export class MapaOrigenesComponent implements OnInit {
     )
   }
 
+  exportAsXLSX(): void{
+    this.excelService.exportToExcel(this.sitios, 'my_export');
+  }
+
+  exportAsXLSXFiltered(): void{
+    this.excelService.exportToExcel(this.sitios, 'my_export');
+  }
+
   onSelect(provincia_id:any){
     this.dataService.getAll().subscribe((res:any)=>{
       
@@ -118,7 +147,7 @@ export class MapaOrigenesComponent implements OnInit {
   goSearch(provincia_id: any) {
 
     if(provincia_id == 1){
-      this.prov = 'San Jose'
+      this.prov = 'San José'
     }
     else if (provincia_id == 2){
       this.prov = 'Alajuela'
@@ -136,7 +165,7 @@ export class MapaOrigenesComponent implements OnInit {
       this.prov = 'Puntarenas'
     }
     else if (provincia_id == 7){
-      this.prov = 'Limon'
+      this.prov = 'Limón'
     }
 
     var search = this.prov
@@ -186,7 +215,7 @@ goSearchCanton(canton_id : any) {
     this.cant = '^San Jose$'
   }
   else if (canton_id == 2){
-    this.cant = '^Escazu$'
+    this.cant = '^Escazú$'
   }
   else if (canton_id == 3){
     this.cant = '^Desamparados$'
@@ -455,7 +484,7 @@ goSearchDistrito(distrito_id: any) {
 
 
   if(distrito_id == 1){
-    this.dist = 'San Jose|San Jose|Carmen'
+    this.dist = 'San José|San José|Carmen'
   }
   else if (distrito_id == 2){
     this.dist = 'San Jose|San Jose|Merced'

@@ -1,0 +1,22 @@
+
+<div class="parallax-bg">
+<div class="dashboard-container">
+    <div class="overlay"></div>
+  
+    <div class="dashboard-content text-center text-white">
+      <h1 class="fw-bold mb-3">Bienvenido, {{ usuario?.nombre }}</h1>
+      <p class="mb-4">{{ fechaHoraActual }}</p>
+  
+      <button [routerLink]="['/pag-ori']">
+        <mat-icon>travel_explore</mat-icon> Explorar Orígenes
+      </button>
+        <!-- <a class="btn btn-secondary btn-lg" [routerLink]="['/estadisticas']">
+          <mat-icon>bar_chart</mat-icon> Ver Estadísticas
+        </a>
+        <a class="btn btn-outline-light btn-lg" [routerLink]="['/buscar']">
+          <mat-icon>search</mat-icon> Buscar Sitios
+        </a> -->
+      
+    </div>
+  </div>
+</div> 

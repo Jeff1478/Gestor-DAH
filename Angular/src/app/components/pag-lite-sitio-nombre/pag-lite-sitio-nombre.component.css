@@ -1,35 +1,14 @@
-.example-margin {
-    margin: 0 10px;
-  }
+.row-hover:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
 
-  .mat-column-nombre_sitio {
-    padding-left: 16px;
-    font-size: 20px;
-    font-weight: bold;
-  }
+.custom-table .mat-header-cell {
+  font-weight: bold;
+  font-size: 15px;
+}
 
-  .mat-column-clave_sitio {
-    padding-left: 16px;
-    font-size: 20px;
-  }
-
-  .mat-column-provincia {
-    padding-left: 16px;
-    font-size: 20px;
-  }
-
-  .mat-column-canton {
-    padding-left: 16px;
-    font-size: 20px;
-  }
-
-  .mat-column-distrito {
-    padding-left: 16px;
-    font-size: 20px;
-    
-  }
-
-  .mat-column-actions {
-    padding-left: 16px;
-    font-size: 20px;
-  }
+.custom-table .mat-cell {
+  font-size: 14px;
+  padding: 12px 10px;
+}

@@ -21,8 +21,7 @@ export class PagLiteSitiosComponent implements OnInit {
   // dataSource!: MatTableDataSource<any>;
   nombre_sitio!: string;
   clave_sitio!: string;
-  provincia!: string;
-  canton!: string;
+  
   region!: string;
   public administrador!: boolean;
   public registrado!: boolean;
@@ -31,7 +30,12 @@ export class PagLiteSitiosComponent implements OnInit {
   public arqueo: boolean;
   public user!: any;
   public acceso!: string;
-  public sitios: Sitio[] = [];
+  
+
+  provincia: string = '';
+  canton: string = '';
+  distrito: string = '';
+  sitios: any[] = [];
   
 
   constructor(
@@ -53,82 +57,61 @@ export class PagLiteSitiosComponent implements OnInit {
   searchKey!: string;
 
   ngOnInit() {
-    
-    this._route.params.subscribe(params => {
-    var search = params['search'];     
-
-    if (search == '^San Jose$' || '^Alajuela$' || '^Cartago$' || '^Heredia$' || '^Guanacaste$' || '^Puntarenas$' || '^Limon$') {
-      this._sitioService.search(search).subscribe(
-        response => {
-         if(response.sitio){
-           this.sitios = response.sitio;
-           this.listData = new MatTableDataSource(response.sitio);
-           this.listData.sort = this.sort;
-           this.listData.paginator = this.paginator;
-         }else{
-          this.sitios = [];
-          
-         }
-        },
-        error => {
-          console.log(error);
-          this.sitios = [];
-         
+    this._route.queryParams.subscribe(params => {
+      // Si hay filtros en la URL, los usamos y los guardamos
+      if (params['provincia'] || params['canton'] || params['distrito']) {
+        const filtros = {
+          provincia: params['provincia'] || '',
+          canton: params['canton'] || '',
+          distrito: params['distrito'] || ''
+        };
+  
+        this.provincia = filtros.provincia;
+        this.canton = filtros.canton;
+        this.distrito = filtros.distrito;
+  
+        localStorage.setItem('filtrosBusqueda', JSON.stringify(filtros));
+        this.buscarSitios(filtros);
+      } else {
+        // Si no hay en la URL, tratamos de leerlos del localStorage
+        const guardados = localStorage.getItem('filtrosBusqueda');
+        if (guardados) {
+          const filtros = JSON.parse(guardados);
+          this.provincia = filtros.provincia;
+          this.canton = filtros.canton;
+          this.distrito = filtros.distrito;
+  
+          // Opcionalmente podrías actualizar la URL:
+          this._router.navigate([], {
+            relativeTo: this._route,
+            queryParams: filtros
+          });
+  
+          this.buscarSitios(filtros);
         }
-      );
-    } 
-      this._sitioService.searchCanton(search).subscribe(
-        response => {
-         if(response.sitio){
-           this.sitios = response.sitio;
-           this.listData = new MatTableDataSource(response.sitio);
-           this.listData.sort = this.sort;
-           this.listData.paginator = this.paginator;
-         }else{
-          this.sitios = [];
-         
-         }
-        },
-        error => {
-          console.log(error);
-          this.sitios = [];
-          Swal.fire('Búsqueda Sitios', 'No hay Resultados en esa área!', 'error')
-          this._router.navigate(['/pag-ori']);
-        }
-      );
-    
-      
+      }
     });
-
-    this.authService.search(localStorage.getItem('email'))
-    .subscribe(
-      res => {
-        if(res.usuarios){
-          console.log(res.usuarios)
-          this.usuario = res.usuarios;
-          this.title = JSON.stringify(this.usuario, ['email'])
-          this.searchPerfil(localStorage.getItem('email'));
-        }
-
-        if (this.title == '[{"email":"jcsanchez@museocostarica.go.cr"}]' || this.title =='[{"email":"jtapia@museocostarica.go.cr"}]'){
-          this.administrador = true;
-          this.registrado = true;
-        } else if (this.title == '[{"email":"bm@kraken.com"}]'){
-        this.administrador = true;
-       
-      } else{
-        this.administrador = false;
-      }},
-
-      err => {console.log(err)
-       
-      });  
-
-      
-      
-
   }
 
+  buscarSitios(filtros: { provincia: string, canton: string, distrito: string }) {
+    this._sitioService.buscarSitios(filtros).subscribe(
+      res => {
+        if (res.sitio) {
+          this.sitios = res.sitio;
+          this.listData = new MatTableDataSource(res.sitio);
+          this.listData.sort = this.sort;
+          this.listData.paginator = this.paginator;
+        } else {
+          this.sitios = [];
+        }
+      },
+      error => {
+        console.error("Error al buscar sitios:", error);
+        this.sitios = [];
+      }
+    );
+  }
+  
 
   searchPerfil(searstring:any){
     this._registroService.search(searstring).subscribe(
@@ -161,16 +144,16 @@ export class PagLiteSitiosComponent implements OnInit {
     this.listData.filter = this.searchKey.trim().toLowerCase();
   }
 
-  openDialog(selected:any){
-    
-    if(this.arqueo){
-      this._router.navigate(['/pag-ori/sitio', selected])
+
+
+  openDialog(selected: any) {
+    if (this.arqueo) {
+      this._router.navigate(['/pag-ori/sitio', selected]);
     } else {
-      this._router.navigate(['/pag-ori-det/sitio', selected])
+      this._router.navigate(['/pag-ori-det/sitio', selected]);
     }
-    // const dialogRef = this.dialog.open(PagDetalleLiteSitioComponent, selected);
-   
   }
+  
 
   }
 

@@ -83,5 +83,14 @@ export class AuthService {
     return this.http.get<any>(this.URL + '/search/' +searchString);
 }
 
+getIngresosEstadisticas() {
+  return this.http.get<any[]>(this.URL+'/estadisticas/ingresos');
+}
+
+getIngresosPorUsuario() {
+  return this.http.get<any[]>(this.URL+'/estadisticas/ingresos-por-usuario');
+}
+
+
 
 }

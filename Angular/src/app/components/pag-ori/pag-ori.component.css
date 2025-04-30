@@ -1,4 +1,4 @@
-#map {
+/* #map {
     display:inline-block
 }
 
@@ -20,4 +20,107 @@ a:link, a:visited {
   #logoori{
     float: left;
     margin-left: 20px;
+  } */
+
+  .inicio-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
   }
+  
+  .intro-box {
+    background-color: #f8f9fa;
+    border-left: 5px solid #3f51b5;
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .intro-titulo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3f51b5;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .intro-texto {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  
+  .aviso-acceso {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+  
+  .estado-solicitud {
+    background-color: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+  
+  .enlace-politica {
+    color: #3f51b5;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .grafico-container {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .grafico-titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #444;
+  }
+
+  .admin-titulo {
+  color: #3f51b5;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.admin-botones {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.busqueda {
+  margin-top: 20px;
+}
+
+.busqueda h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.busqueda form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+  

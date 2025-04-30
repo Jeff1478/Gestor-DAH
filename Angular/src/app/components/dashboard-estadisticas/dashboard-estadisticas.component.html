@@ -1,0 +1,74 @@
+<div style="text-align: right; width: 100%; margin-bottom: 10px;">
+    <button mat-stroked-button color="accent" routerLink="/pag-ori">
+      <mat-icon>arrow_back</mat-icon>
+      Volver al inicio
+    </button>
+  </div>
+  
+  <h1 style="text-align: center; margin-top: 10px;">
+    Estadísticas de Ingreso al Sistema
+  </h1>
+  <p style="text-align: center; color: gray; margin-top: -5px;">
+    Registro mensual y por usuario de accesos al sistema Orígenes
+  </p>
+  
+  <!-- CONTENEDOR PARA EXPORTACIÓN -->
+  <div id="pdf-section"
+     style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 20px; padding: 20px; background: white;">
+
+  
+    <!-- SOLO GRÁFICO -->
+    <div id="grafico-ingresos" style="display: flex; justify-content: center; margin-bottom: 20px;">
+      <mat-card style="width: 600px;">
+        <mat-card-title>
+          <mat-icon>bar_chart</mat-icon> Ingresos por Mes
+        </mat-card-title>
+        <ngx-charts-bar-vertical
+          [results]="ingresosPorMes"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="false"
+          [showDataLabel]="true"
+          [animations]="true"
+          [xAxisLabel]="'Mes'"
+          [yAxisLabel]="'Ingresos'"
+          [barPadding]="70">
+        </ngx-charts-bar-vertical>
+      </mat-card>
+    </div>
+  
+    <!-- RESTO DEL CONTENIDO -->
+    <div id="contenido-resto" style="display: flex; justify-content: center;">
+      <mat-card style="width: 600px;">
+        <mat-card-title>
+          <mat-icon>supervisor_account</mat-icon> Accesos por Usuario
+          <button mat-raised-button color="primary" (click)="exportarPDF()">
+            <mat-icon>download</mat-icon> Exportar PDF
+          </button>
+        </mat-card-title>
+  
+        <table mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="usuario">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Usuario</th>
+            <td mat-cell *matCellDef="let row">{{ row._id }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="nombre_usuario">
+            <th mat-header-cell *matHeaderCellDef>Nombre</th>
+            <td mat-cell *matCellDef="let row">{{ row.nombre_usuario }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef>Total Ingresos</th>
+            <td mat-cell *matCellDef="let row">{{ row.total }}</td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-card>
+    </div>
+  
+  </div>
+  
+

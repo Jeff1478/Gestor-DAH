@@ -8,18 +8,28 @@
         <div *ngIf= "titulo === 'ceramica'"> 
           <img src="assets/images/logoac.jpg" alt="User Icon" />
           <hr>
-          <h3>Administrador</h3>
-            <!-- <a [routerLink]="['/ceramica']" class="btn btn-success">Agregar Ficha</a> -->
+
+          <h3 class="admin-titulo">Administrador</h3>
+
+          <div class="admin-botones">
+            <button mat-icon-button matTooltip="Agregar Ficha" [routerLink]="['/ceramica']" color="primary">
+              <mat-icon>note_add</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Exportar a Excel" [routerLink]="['/formulario']" color="accent">
+              <mat-icon>file_download</mat-icon>
+            </button>
+          </div>
+
+        <!--    
             <a [routerLink]="['/ceramica']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
               <mat-icon>add_shopping_cart</mat-icon>    
           </a> 
-            <!-- <a [routerLink]="['/formulario']" class= "btn btn-info">Exportar Excel</a> -->
             <a [routerLink]="['/formulario']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">
               <mat-icon>cloud_download</mat-icon>    
-          </a>
+          </a> -->
 
          
-     <div id="search" class="sidebar-item">
+   <!--   <div id="search" class="sidebar-item">
             <h3>Buscador</h3>
             <p>Investigador,Tipo de Pieza,Núm Pieza ó Registrador</p>
             <form #searchForm="ngForm" (ngSubmit)= "goSearch()">
@@ -28,23 +38,35 @@
                     <mat-icon>search</mat-icon></button>
             </form>
       </div> 
-       
-    
-        <h3>Buscador Combinado</h3>
-        <p>Registrador y Núm de Pieza</p>
-        <form #searchForm="ngForm" (ngSubmit)= "goSearchComb()">
-            <input type="text" name="search2" [(ngModel)] ="searchString2"/>
-              <button class="btn btn-outline-success" type="submit">
-                <mat-icon>search</mat-icon></button>
-        </form>
- 
-
-          
+        -->
+        <div class="busqueda">
+          <h4>Buscador</h4>
+          <p>Investigador, Tipo de Pieza, Núm Pieza o Registrador</p>
+          <form (ngSubmit)="goSearch()">
+            <input type="text" [(ngModel)]="searchString" name="search" placeholder="Buscar..." />
+            <button mat-icon-button type="submit" color="primary">
+              <mat-icon>search</mat-icon>
+            </button>
+          </form>
         </div>
+
+
+        <div class="busqueda">
+          <h4>Buscador Combinado</h4>
+          <p>Registrador y Núm de Pieza</p>
+          <form (ngSubmit)="goSearchComb()">
+            <input type="text" [(ngModel)]="searchString2" name="search2" placeholder="Buscar..." />
+            <button mat-icon-button type="submit" color="primary">
+              <mat-icon>search</mat-icon>
+            </button>
+          </form>
+        </div>
+
+      </div>
         <div *ngIf= "titulo === 'contexto'"> 
           <img src="assets/images/logoac.jpg" alt="User Icon" />
           <hr>
-          <h3>Administrador</h3>
+          <h3 class="admin-titulo">Administrador</h3>
             <!-- <a [routerLink]="['/ficha-contexto']" class="btn btn-success">Agregar Ficha</a> -->
             <a [routerLink]="['/ficha-contexto']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
               <mat-icon>add_shopping_cart</mat-icon>    
@@ -68,7 +90,7 @@
         <div *ngIf= "titulo === 'litico'"> 
           <img src="assets/images/logoac.jpg" alt="User Icon" />
           <hr>
-          <h3>Administrador</h3>
+          <h3 class="admin-titulo">Administrador</h3>
           <a [routerLink]="['/ficha-litica']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
             <mat-icon>add_shopping_cart</mat-icon>    
         </a>
@@ -101,7 +123,7 @@
         <div *ngIf= "titulo === 'metalico'"> 
           <img src="assets/images/logoac.jpg" alt="User Icon" />
           <hr>
-          <h3>Administrador</h3>
+          <h3 class="admin-titulo">Administrador</h3>
           <a [routerLink]="['/ficha-metal']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
             <mat-icon>add_shopping_cart</mat-icon>    
         </a>
@@ -130,52 +152,122 @@
         </div>
 
         <div *ngIf= "titulo === 'sitio'"> 
-          
-          <h3 *ngIf="registrado == true" style="color:Tomato; font-weight: bold">Administrador</h3>
+          <h3 *ngIf="registrado == true" class="admin-titulo text-danger">Administrador</h3>
+          <h3 *ngIf="administrador == true" class="admin-titulo">Usuario Arqueólogo</h3>
+
+          <div class="admin-botones" *ngIf="registrado == true">
+            <button mat-icon-button matTooltip="Asignar Perfiles" [routerLink]="['/perfiles']" color="primary">
+            <mat-icon>supervisor_account</mat-icon>
+          </button>
+
+          <button mat-icon-button matTooltip="Agregar Monumento" [routerLink]="['/ficha-origenes']" color="accent">
+          <mat-icon>map</mat-icon>
+          </button>
+
+          <button mat-icon-button matTooltip="Estadísticas de Ingreso" [routerLink]="['/dashboard-estadisticas']" color="accent">
+            <mat-icon>bar_chart</mat-icon>
+            </button>
+          </div>
+       
+          <!-- <h3 *ngIf="registrado == true" style="color:Tomato; font-weight: bold">Administrador</h3>
           <h3 *ngIf="administrador == true" style="font-weight: bold">Usuario Arqueólogo</h3>
 
         <div *ngIf="registrado == true">
           <a [routerLink]="['/perfiles']" data-toggle="tooltip" data-placement="top" title="Asignar Perfiles" class = "btn btn-primary">
             <mat-icon>supervisor_account</mat-icon>    
         </a>
-        <a [routerLink]="['/sitio-excel']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-secondary">
-          <mat-icon>cloud_download</mat-icon>    
-      </a>  
+        
       <a [routerLink]="['/ficha-origenes']" data-toggle="tooltip" data-placement="top" title="Agregar Monumento" class = "btn btn-success">
         <mat-icon>map</mat-icon>    
-    </a>
-      </div>
+    </a> -->
+ 
 
       <div id="search">
               <hr>        
               <h3>Buscador Monumentos</h3>
-              <div class="input-group input-group-sm mb3">
+ <!--              <div class="busqueda-fila">
                   <select [(ngModel)]= "selectedProvincia.id" (change)="onSelect($event.target)">
                       <option value="0">--Seleccione Provincia--</option>
                       <option *ngFor="let provincia of provincias?.provincias" [value]="provincia.id">{{provincia.title}}</option>     
                   </select>
-                  <button data-toggle="tooltip" data-placement="top" title="Busca por Provincia" (click)="goSearchP(selectedProvincia.id)" class="btn btn-outline-success">
+                  
+                  <button mat-icon-button matTooltip="Buscar Provincia" (click)="goSearchP(selectedProvincia.id)">
                       <mat-icon>search</mat-icon>
                   </button> 
               </div>
               
-               <div class="input-group input-group-sm mb3">
+               <div class="busqueda-fila">
                   <select [(ngModel)]= "selectedCanton.id" (change)="onSelectCanton($event.target)">
                       <option value="0">---Seleccione Cantón----</option>
                       <option *ngFor="let canton of cantones" [value]="canton.id">{{canton.title}}</option>
                   </select>
-                  <button data-toggle="tooltip" data-placement="top" title="Busca por Cantón" (click)="goSearchC(selectedCanton.id)" class="btn btn-outline-success">
+                 
+                    <button mat-icon-button matTooltip="Buscar Cantón" (click)="goSearchC(selectedCanton.id)">
                       <mat-icon>search</mat-icon>
                   </button> 
               </div>
+              
+
+              <div class="busqueda-fila">
+                  <select [(ngModel)]= "selectedDistrito.id">
+                      <option value="0">--Seleccione Distrito--</option>
+                      <option *ngFor="let distrito of distritos" [value]="distrito.id">{{distrito.title}}</option>
+                  </select>
+                  <button mat-icon-button matTooltip="Buscar Distrito" (click)="goSearchDistrito(selectedDistrito.id)">
+                  
+                      <mat-icon>search</mat-icon>
+                  </button> 
+              </div> -->
+
+<!-- PROVINCIA -->
+<div class="busqueda-fila">
+  <select [(ngModel)]="selectedProvincia" (change)="onSelect($event)">
+    <option [ngValue]="null">--Seleccione Provincia--</option>
+    <option *ngFor="let provincia of provincias" [ngValue]="provincia">
+      {{ provincia.title }}
+    </option>
+  </select>
+</div>
+
+<!-- CANTÓN -->
+<div class="busqueda-fila">
+  <select [(ngModel)]="selectedCanton" (change)="onSelectCanton($event)">
+    <option [ngValue]="null">--Seleccione Cantón--</option>
+    <option *ngFor="let canton of cantones" [ngValue]="canton">
+      {{ canton.title }}
+    </option>
+  </select>
+</div>
+
+<!-- DISTRITO -->
+<div class="busqueda-fila">
+  <select [(ngModel)]="selectedDistrito">
+    <option [ngValue]="null">--Seleccione Distrito--</option>
+    <option *ngFor="let distrito of distritos" [ngValue]="distrito">
+      {{ distrito.title }}
+    </option>
+  </select>
+</div>
+
+<!-- BOTÓN DE BÚSQUEDA -->
+<div class="busqueda-fila mt-2">
+  <button class="btn btn-primary" (click)="buscarSitios()">
+    <mat-icon>search</mat-icon> Buscar
+  </button>
+</div>
+
               <br>
-              <div class="input-group input-group-sm mb3">
-              <form #searchForm="ngForm" (ngSubmit)= "goSearchNombre()">
+              <div class="busqueda-fila">
+                <input type="text" placeholder="Nombre o Clave" name="search" [(ngModel)]="searchStringNomb" />
+                <button mat-icon-button matTooltip="Buscar por Nombre o Clave" (click)="goSearchNombre()">
+                <mat-icon>search</mat-icon>
+                </button>
+              <!-- <form #searchForm="ngForm" (ngSubmit)= "goSearchNombre()">
                 <input type="text" placeholder="Nombre o Clave" name="search" [(ngModel)] ="searchStringNomb"/>
             </form>
             <button data-toggle="tooltip" data-placement="top" (click)="goSearchNombre()" class="boton btn-outline-success">
               <mat-icon>search</mat-icon>
-            </button>
+            </button> -->
           </div>
               <br> 
            
@@ -187,11 +279,8 @@
           </a> 
           </div> 
 
-          <div *ngIf="arqueo == true">
-            <h3>Exportar Datos Excel</h3>
-            <a [routerLink]="['/formulario']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">
-              <mat-icon>cloud_download</mat-icon>    
-          </a>
+           <div *ngIf="arqueo == true">
+           
             <h3>Búsqueda en Mapa</h3>
             <a [routerLink]="['/map-ori']" data-toggle="tooltip" data-placement="top" title="Google Maps" class = "btn btn-outline-warning">
               <img src="assets/images/crlogo.png" width="100" height="100">    

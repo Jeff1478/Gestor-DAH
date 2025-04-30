@@ -14,3 +14,40 @@
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
 }
+
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+}
+
+.titulo-seccion {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #3f51b5;
+}
+
+.acciones-admin a {
+  margin-left: 1rem;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.card-info {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.full-width {
+  flex: 1 1 100%;
+}

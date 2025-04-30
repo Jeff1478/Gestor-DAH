@@ -19,4 +19,12 @@ export class HttpService {
   sendEmail(url: any, data: any) {
     return this.http.post(url, data);
   }
+
+  sendRejectionEmail(url: any, data: any) {
+    return this.http.post(url, data);
+  }
+
+  sendApprovalEmail(url: any, data: any) {
+    return this.http.post(url, data);
+  }
 }

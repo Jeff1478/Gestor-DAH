@@ -1,4 +1,7 @@
 <app-header></app-header>
+
+<h3 class="busqueda-titulo">Búsqueda de Monumentos</h3>
+
 <a [routerLink]="['/pag-ori']" data-toggle="tooltip" data-placement="top" title="Regresar" class = "btn btn-outline-warning">
     <mat-icon>home</mat-icon>    
   </a> 
@@ -8,61 +11,84 @@
     <aside id="sidebar">
         <div id="search">
             
-               <p> * Puede buscar en cada uno de los niveles de la División Política de Costa Rica</p>
-               <p> * Además puede buscar por nombre ó clave de Monumento</p>
+            <div class="instrucciones-busqueda">
+                <mat-icon class="icono-info">info</mat-icon>
+                <p><strong>Puede buscar en cada uno de los niveles de la División Política de Costa Rica</strong></p>
+                <p><strong>Además puede buscar por nombre o clave del Monumento</strong></p>
+              </div>
+               
                <hr>
                 
-                <div class="input-group input-group-sm mb3">
+                <div class="busqueda-fila">
                     
                     <select [(ngModel)]= "selectedProvincia.id" (change)="onSelect($event.target)">
                         <option value="0">--Seleccione Provincia</option>
                         <option *ngFor="let provincia of provincias?.provincias" [value]="provincia.id">{{provincia.title}}</option>
                         
                     </select>
-                    <button data-toggle="tooltip" data-placement="top" title="Busca por Provincia" (click)="goSearch(selectedProvincia.id)" class="btn btn-outline-success">
-                        <mat-icon>search</mat-icon>
+                    <!-- <button data-toggle="tooltip" data-placement="top" title="Busca por Provincia" (click)="goSearch(selectedProvincia.id)" class="btn btn-outline-success"> -->
+                        <button mat-icon-button matTooltip="Buscar Provincia" (click)="goSearch(selectedProvincia.id)">
+                            <mat-icon>search</mat-icon>
                     </button> 
+                    
               </div>
             <br>
-                <div class="input-group input-group-sm mb3">
+                <div class="busqueda-fila">
                     <select [(ngModel)]= "selectedCanton.id" (change)="onSelectCanton($event.target)">
                         <option value="0">--Seleccione Cantón--</option>
                         <option *ngFor="let canton of cantones" [value]="canton.id">{{canton.title}}</option>
                     </select>
-                    <button data-toggle="tooltip" data-placement="top" title="Busca por Cantón" (click)="goSearchCanton(selectedCanton.id)" class="btn btn-outline-success">
+                    <button mat-icon-button matTooltip="Busca por Cantón" (click)="goSearchCanton(selectedCanton.id)">
                         <mat-icon>search</mat-icon>
                     </button> 
+                    
                 </div>
             <br>
 
-                <div class="input-group input-group-sm mb3">
+                <div class="busqueda-fila">
                     <select [(ngModel)]= "selectedDistrito.id">
                         <option value="0">--Seleccione Distrito--</option>
                         <option *ngFor="let distrito of distritos" [value]="distrito.id">{{distrito.title}}</option>
                     </select>
-                    <button data-toggle="tooltip" data-placement="top" title="Busca por Distrito" (click)="goSearchDistrito(selectedDistrito.id)" class="btn btn-outline-success">
+                    <button mat-icon-button matTooltip="Busca por Distrito" (click)="goSearchDistrito(selectedDistrito.id)">
                         <mat-icon>search</mat-icon>
-                    </button> 
-                </div>
+                    </button>
+                    
+                </div>           
     </div>
 <br>
-<hr>
-
-
-<div class="input-group input-group-sm mb3">
+<div class="busqueda-fila">
     <form #searchForm="ngForm" (ngSubmit)= "goSearchNombre()">
       <input type="text" placeholder="Nombre o Clave" name="search" [(ngModel)] ="searchNombre"/>
   </form>
-  <button data-toggle="tooltip" data-placement="top" (click)="goSearchNombre()" class="boton btn-outline-success">
+  <button mat-icon-button matTooltip="Buscar" (click)="goSearchNombre()">
     <mat-icon>search</mat-icon>
   </button>
 </div>
+<br>
+                <p>Total Monumentos Encontrados : <b>{{sitios.length}}</b></p>
+<hr>
+<h3>Exportar Búsqueda a Excel</h3>
+ <div class ="container">
+ <!--   <button mat-raised-button color="primary" (click)="exportAsXLSX()">Todo
+        <mat-icon>trending_down</mat-icon>
+    </button>
+   &nbsp;  -->
+    <button mat-raised-button color="primary" (click)="exportAsXLSXFiltered()">
+        Exportar a Excel <mat-icon>file_download</mat-icon>
+    </button>
+</div>
+
+
+<hr>
+
 </aside>
     
-
-    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeId]="mapTypeId">
+<div class="map-container">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeId]="mapTypeId" (zoomChange)="onZoomChange($event)">
         <agm-marker *ngFor="let sitio of sitios" [latitude]="sitio.latitude" [longitude]="sitio.longitude"
-            [agmFitBounds]="true">
+        [label]="zoom > 10 && sitio.nombre_sitio ? { text: sitio.nombre_sitio.toString(), color: 'white', fontSize: '14px', fontWeight: 'bold' } : ''"
+        [agmFitBounds]="true">
             
             <agm-info-window>
                 <h3>Nombre:<b>{{sitio.nombre_sitio}}</b></h3>
@@ -80,5 +106,5 @@
             </agm-info-window>
         </agm-marker>
     </agm-map>
-    
+</div>   
 </div>
