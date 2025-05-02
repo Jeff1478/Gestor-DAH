@@ -1,19 +1,9 @@
 <app-header></app-header>
 
-<!-- <a [routerLink]="['/pag-ori']" data-toggle="tooltip" data-placement="top" title="Regresar" class = "btn btn-outline-warning">
-    <mat-icon>list</mat-icon>    
-</a> 
-
-<div *ngIf="administrador == true">
-<a *ngIf="sitio" [routerLink]="['/sitio-editar/sitio',sitio._id]" data-toggle="tooltip" data-placement="top" title="Editar Sitio" class="btn btn-outline-success">
-    <mat-icon>edit</mat-icon>
-    </a> 
-</div> -->
-
 <div class="header-bar">
-    <a [routerLink]="['/pag-ori']" mat-icon-button matTooltip="Regresar a la lista">
-      <mat-icon color="warn">list</mat-icon>
-    </a>
+    <button class="btn btn-outline-secondary" (click)="volver()">
+        ← Volver a resultados
+      </button>
   
     <span class="titulo-seccion">Ficha Detallada del Monumento</span>
   

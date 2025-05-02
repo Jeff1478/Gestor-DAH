@@ -2,7 +2,7 @@
 	"provincias": [
 		{
 			"id": 1,
-			"title": "San Jose"
+			"title": "San José"
         },
         {
             "id": 2,
@@ -26,7 +26,7 @@
         },
         {
             "id": 7,
-			"title": "Limon"
+			"title": "Limón"
         }
 
     ],
@@ -127,7 +127,7 @@
                     },
                     {
                         "id": 19,
-                        "title": "Perez Zeledón",
+                        "title": "Pérez Zeledón",
                         "provincia_id": 1
                     },
                     {

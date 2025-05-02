@@ -29,6 +29,7 @@ export class SitioDetalleComponent implements OnInit {
   public cadenalinks!: string[];
   public mostrar!: boolean;
   public filtered!: String;
+  public filtrosBusqueda: any = {};
 
   constructor(
     private _sitioService: SitioService,
@@ -64,6 +65,13 @@ export class SitioDetalleComponent implements OnInit {
       err => {console.log(err) 
       });  
 
+      this._route.queryParams.subscribe(params => {
+        this.filtrosBusqueda = {
+          provincia: params['provincia'] || '',
+          canton: params['canton'] || '',
+          distrito: params['distrito'] || ''
+        };
+      });
 
     this._route.params.subscribe((params) => {
       let id = params['id'];
@@ -117,6 +125,12 @@ dividirCadena(cadenaADividir: any, separador: any) {
   }
   this.resultado = this.datos?.split('#');
   
+}
+
+volver(): void {
+  this._router.navigate(['/pag-lite-sitios'], {
+    queryParams: this.filtrosBusqueda
+  });
 }
 
  

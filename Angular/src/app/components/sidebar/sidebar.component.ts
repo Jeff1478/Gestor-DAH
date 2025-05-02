@@ -81,8 +81,6 @@ export class SidebarComponent implements OnInit {
           this.title = JSON.stringify(this.usuario, ['email'])
           //console.log(this.title)
          this.searchPerfil(localStorage.getItem('email'));
-          
-
         }
 
         if (this.title == '[{"email":"jbrenes@museocostarica.go.cr"}]' || this.title =='[{"email":"jtapia@museocostarica.go.cr"}]'){
@@ -117,27 +115,24 @@ export class SidebarComponent implements OnInit {
 
   }
 
-  searchPerfil(searstring:any){
+  searchPerfil(searstring: any) {
     this._registroService.search(searstring).subscribe(
       response => {
-       if(response.registro){
-
-        this.user = response.registro
-        console.log(this.user)
-        this.acceso = JSON.stringify(this.user, ['acceso'])
-
-           if(this.acceso == '[{"acceso":true}]'){
-            this.arqueo = true;
-          } 
-         
-        
-      }},
-
+        if (response.registro) {
+          this.user = response.registro;
+          console.log("Usuario encontrado en Registro:", this.user);
+  
+          // Acceso directo a la propiedad "acceso"
+          this.arqueo = !!this.user.acceso; // convierte a booleano
+          console.log("Acceso ampliado:", this.arqueo);
+        }
+      },
       err => {
-        console.log(err);
+        console.error("Error al buscar en Registro:", err);
       }
     );
   }
+  
 
   goSearch(){
     this._router.navigate(['/buscar', this.searchString]);

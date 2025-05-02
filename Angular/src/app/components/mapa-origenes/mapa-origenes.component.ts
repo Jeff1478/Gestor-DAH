@@ -44,6 +44,7 @@ export class MapaOrigenesComponent implements OnInit {
   constructor(
     private _sitioService: SitioService,
     private _route: ActivatedRoute,
+    private _router: Router,
     private dataService: DataService,
     private excelService: ExporterService,
   ) { 
@@ -82,9 +83,20 @@ getMarkerLabel(nombre: string | null | undefined): any {
     }) */
     this.getLocation();
 
-    this.showAll();
+  /*   this.showAll();
     this.onSelect(this.selectedProvincia.id);
-    this.onSelectCanton(this.selectedCanton.id);
+    this.onSelectCanton(this.selectedCanton.id); */
+
+    this.dataService.getAll().subscribe((res: any) => {
+      this.provincias = res.provincias;
+      this.cantones = [];
+      this.distritos = [];
+  
+      // Solo si hay una provincia seleccionada se ejecuta el filtro
+      if (this.selectedProvincia) {
+        this.onSelect(this.selectedProvincia);
+      }
+    });
   }
 
   getLocation() {
@@ -123,7 +135,7 @@ getMarkerLabel(nombre: string | null | undefined): any {
     this.excelService.exportToExcel(this.sitios, 'my_export');
   }
 
-  onSelect(provincia_id:any){
+/*   onSelect(provincia_id:any){
     this.dataService.getAll().subscribe((res:any)=>{
       
       this.cantones = res['cantones'].filter(
@@ -133,16 +145,16 @@ getMarkerLabel(nombre: string | null | undefined): any {
      
     
     })
-  }
+  } */
 
-  onSelectCanton(canton_id:any){
+ /*  onSelectCanton(canton_id:any){
     this.dataService.getAll().subscribe((res:any)=>{
       this.distritos = res['distritos'].filter(
         (res:any)=> res.canton_id == canton_id!.value
       ),
       console.log(this.distritos);
     })
-  }
+  } */
   
   goSearch(provincia_id: any) {
 
@@ -1980,6 +1992,74 @@ goSearchDistrito(distrito_id: any) {
     }
   );
 }
+
+ onSelect(event: Event): void {
+    const selected = (event.target as HTMLSelectElement).value;
+    const provinciaId = this.selectedProvincia?.id;
+  
+    this.dataService.getAll().subscribe((res: any) => {
+      this.cantones = res.cantones.filter((c: any) => c.provincia_id == provinciaId);
+      this.selectedCanton = null;
+      this.distritos = [];
+    });
+  }
+
+
+    onSelectCanton(event: Event): void {
+      const cantonId = this.selectedCanton?.id;
+    
+      this.dataService.getAll().subscribe((res: any) => {
+        this.distritos = res.distritos.filter((d: any) => d.canton_id == cantonId);
+        this.selectedDistrito = null;
+      });
+    }
+
+    buscarSitios(): void {
+      const provincia = this.selectedProvincia?.title || "";
+      const canton = this.selectedCanton?.title || "";
+      const distrito = this.selectedDistrito?.title || "";
+    
+      const payload = { provincia, canton, distrito };
+      console.log("Payload enviado:", payload);
+      
+      
+      this._sitioService.buscarSitios(payload).subscribe(
+        (res: any) => {
+          if (!res.sitio || res.sitio.length === 0) {
+            Swal.fire({
+              icon: 'info',
+              title: 'Sin resultados',
+              text: 'No se encontraron sitios con los criterios seleccionados.'
+            });
+            this.sitios = [];
+            return;
+          }
+    
+          this.sitios = res.sitio;
+          
+    
+          // Centrar en el primer resultado
+          const primerSitio = this.sitios[0];
+          if (primerSitio.latitude && primerSitio.longitude) {
+            this.lat = primerSitio.latitude;
+            this.lng = primerSitio.longitude;
+            //this.zoom = 10;
+          }
+              // Limpiar los selects después de búsqueda exitosa
+    this.selectedProvincia = null;
+    this.selectedCanton = null;
+    this.selectedDistrito = null;
+    this.searchNombre = ''; 
+    this.lat = 9.7489; // Centro de CR
+    this.lng = -83.7534;
+    this.zoom = 8// si usás un input para nombre o clave
+        },
+        (error) => {
+          console.error("Error al buscar sitios:", error);
+        }
+      );
+    }
+
 
 
 }

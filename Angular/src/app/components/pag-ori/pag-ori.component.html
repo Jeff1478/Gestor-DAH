@@ -54,7 +54,7 @@
       <p class="intro-texto">
         En la base ORÍGENES están incluidos todos los monumentos arqueológicos registrados desde 1870 a la fecha.
         Sin embargo, no se excluye el hallazgo de más monumentos al realizar movimientos de tierra, pues en este momento no se cuenta con una prospección sistemática a nivel nacional.
-        Se insta a los consultores en arqueología a proceder con el estudio D1, de acuerdo con la normativa de la Secretaría Técnica Nacional <strong>SETENA</strong>.
+        Se insta a los consultores en arqueología a proceder con el estudio D1, de acuerdo con la normativa de la Secretaría Técnica Nacional Ambiental <strong>SETENA</strong>.
       </p>
 
       <div *ngIf="administrador == false && registrado == false" class="aviso-acceso">
@@ -62,9 +62,9 @@
         <a class="enlace-politica" [routerLink]="['/politicasUso']" [routerLinkActive]="['active']">aquí...</a></p>
       </div>
 
-      <div *ngIf="registrado == true" class="estado-solicitud">
+   <!--    <div *ngIf="registrado == true" class="estado-solicitud">
         <p><strong>Su solicitud de acceso ampliado está en estudio</strong></p>
-      </div>
+      </div> -->
     </div>
 
     <hr>
@@ -82,7 +82,8 @@
           [explodeSlices]="false"
           [gradient]="true"
           [animations]="true"
-          [legendPosition]="'right'">
+          [legendPosition]="'right'"
+          [legendTitle]="''">
         </ngx-charts-pie-chart>
       </div>
       

@@ -57,6 +57,13 @@ export class PagLiteSitiosComponent implements OnInit {
   searchKey!: string;
 
   ngOnInit() {
+
+    const correoUsuario = localStorage.getItem('email');
+    console.log("Correo del usuario:", correoUsuario);
+  if (correoUsuario) {
+    this.searchPerfil(correoUsuario); // 👈 Buscar perfil apenas carga
+  }
+
     this._route.queryParams.subscribe(params => {
       // Si hay filtros en la URL, los usamos y los guardamos
       if (params['provincia'] || params['canton'] || params['distrito']) {
@@ -113,7 +120,7 @@ export class PagLiteSitiosComponent implements OnInit {
   }
   
 
-  searchPerfil(searstring:any){
+ /*  searchPerfil(searstring:any){
     this._registroService.search(searstring).subscribe(
       response => {
        if(response.registro){
@@ -133,7 +140,23 @@ export class PagLiteSitiosComponent implements OnInit {
         console.log(err);
       }
     );
-  }
+  } */
+
+    searchPerfil(searstring: any) {
+      this._registroService.search(searstring).subscribe(
+        response => {
+          if (response.registro) {
+            this.user = response.registro; // ✅ ya es un objeto, no un array
+            this.arqueo = !!this.user.acceso; // ✅ acceso booleano
+            console.log("Acceso ampliado:", this.arqueo);
+          }
+        },
+        err => {
+          console.error("Error al obtener perfil:", err);
+        }
+      );
+    }
+  
 
   onSearchClear() {
     this.searchKey = "";

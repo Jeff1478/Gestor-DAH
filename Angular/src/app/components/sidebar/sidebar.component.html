@@ -20,25 +20,6 @@
             </button>
           </div>
 
-        <!--    
-            <a [routerLink]="['/ceramica']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">
-              <mat-icon>add_shopping_cart</mat-icon>    
-          </a> 
-            <a [routerLink]="['/formulario']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">
-              <mat-icon>cloud_download</mat-icon>    
-          </a> -->
-
-         
-   <!--   <div id="search" class="sidebar-item">
-            <h3>Buscador</h3>
-            <p>Investigador,Tipo de Pieza,Núm Pieza ó Registrador</p>
-            <form #searchForm="ngForm" (ngSubmit)= "goSearch()">
-                <input type="text" name="search" [(ngModel)] ="searchString"/>
-                  <button class="btn btn-outline-success" type="submit">
-                    <mat-icon>search</mat-icon></button>
-            </form>
-      </div> 
-        -->
         <div class="busqueda">
           <h4>Buscador</h4>
           <p>Investigador, Tipo de Pieza, Núm Pieza o Registrador</p>
@@ -169,55 +150,13 @@
             </button>
           </div>
        
-          <!-- <h3 *ngIf="registrado == true" style="color:Tomato; font-weight: bold">Administrador</h3>
-          <h3 *ngIf="administrador == true" style="font-weight: bold">Usuario Arqueólogo</h3>
-
-        <div *ngIf="registrado == true">
-          <a [routerLink]="['/perfiles']" data-toggle="tooltip" data-placement="top" title="Asignar Perfiles" class = "btn btn-primary">
-            <mat-icon>supervisor_account</mat-icon>    
-        </a>
-        
-      <a [routerLink]="['/ficha-origenes']" data-toggle="tooltip" data-placement="top" title="Agregar Monumento" class = "btn btn-success">
-        <mat-icon>map</mat-icon>    
-    </a> -->
+      
  
 
       <div id="search">
               <hr>        
               <h3>Buscador Monumentos</h3>
- <!--              <div class="busqueda-fila">
-                  <select [(ngModel)]= "selectedProvincia.id" (change)="onSelect($event.target)">
-                      <option value="0">--Seleccione Provincia--</option>
-                      <option *ngFor="let provincia of provincias?.provincias" [value]="provincia.id">{{provincia.title}}</option>     
-                  </select>
-                  
-                  <button mat-icon-button matTooltip="Buscar Provincia" (click)="goSearchP(selectedProvincia.id)">
-                      <mat-icon>search</mat-icon>
-                  </button> 
-              </div>
-              
-               <div class="busqueda-fila">
-                  <select [(ngModel)]= "selectedCanton.id" (change)="onSelectCanton($event.target)">
-                      <option value="0">---Seleccione Cantón----</option>
-                      <option *ngFor="let canton of cantones" [value]="canton.id">{{canton.title}}</option>
-                  </select>
-                 
-                    <button mat-icon-button matTooltip="Buscar Cantón" (click)="goSearchC(selectedCanton.id)">
-                      <mat-icon>search</mat-icon>
-                  </button> 
-              </div>
-              
-
-              <div class="busqueda-fila">
-                  <select [(ngModel)]= "selectedDistrito.id">
-                      <option value="0">--Seleccione Distrito--</option>
-                      <option *ngFor="let distrito of distritos" [value]="distrito.id">{{distrito.title}}</option>
-                  </select>
-                  <button mat-icon-button matTooltip="Buscar Distrito" (click)="goSearchDistrito(selectedDistrito.id)">
-                  
-                      <mat-icon>search</mat-icon>
-                  </button> 
-              </div> -->
+ 
 
 <!-- PROVINCIA -->
 <div class="busqueda-fila">
@@ -262,12 +201,7 @@
                 <button mat-icon-button matTooltip="Buscar por Nombre o Clave" (click)="goSearchNombre()">
                 <mat-icon>search</mat-icon>
                 </button>
-              <!-- <form #searchForm="ngForm" (ngSubmit)= "goSearchNombre()">
-                <input type="text" placeholder="Nombre o Clave" name="search" [(ngModel)] ="searchStringNomb"/>
-            </form>
-            <button data-toggle="tooltip" data-placement="top" (click)="goSearchNombre()" class="boton btn-outline-success">
-              <mat-icon>search</mat-icon>
-            </button> -->
+            
           </div>
               <br> 
            

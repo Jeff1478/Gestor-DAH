@@ -19,14 +19,14 @@
                
                <hr>
                 
-                <div class="busqueda-fila">
+                <!-- <div class="busqueda-fila">
                     
                     <select [(ngModel)]= "selectedProvincia.id" (change)="onSelect($event.target)">
                         <option value="0">--Seleccione Provincia</option>
                         <option *ngFor="let provincia of provincias?.provincias" [value]="provincia.id">{{provincia.title}}</option>
                         
                     </select>
-                    <!-- <button data-toggle="tooltip" data-placement="top" title="Busca por Provincia" (click)="goSearch(selectedProvincia.id)" class="btn btn-outline-success"> -->
+                    
                         <button mat-icon-button matTooltip="Buscar Provincia" (click)="goSearch(selectedProvincia.id)">
                             <mat-icon>search</mat-icon>
                     </button> 
@@ -53,8 +53,43 @@
                     <button mat-icon-button matTooltip="Busca por Distrito" (click)="goSearchDistrito(selectedDistrito.id)">
                         <mat-icon>search</mat-icon>
                     </button>
-                    
-                </div>           
+                </div> -->  
+            <!-- PROVINCIA -->
+<div class="busqueda-fila">
+    <select [(ngModel)]="selectedProvincia" (change)="onSelect($event)">
+      <option [ngValue]="null">--Seleccione Provincia--</option>
+      <option *ngFor="let provincia of provincias" [ngValue]="provincia">
+        {{ provincia.title }}
+      </option>
+    </select>
+  </div>
+  
+  <!-- CANTÓN -->
+  <div class="busqueda-fila">
+    <select [(ngModel)]="selectedCanton" (change)="onSelectCanton($event)">
+      <option [ngValue]="null">--Seleccione Cantón--</option>
+      <option *ngFor="let canton of cantones" [ngValue]="canton">
+        {{ canton.title }}
+      </option>
+    </select>
+  </div>
+  
+  <!-- DISTRITO -->
+  <div class="busqueda-fila">
+    <select [(ngModel)]="selectedDistrito">
+      <option [ngValue]="null">--Seleccione Distrito--</option>
+      <option *ngFor="let distrito of distritos" [ngValue]="distrito">
+        {{ distrito.title }}
+      </option>
+    </select>
+  </div>
+  
+  <!-- BOTÓN DE BÚSQUEDA -->
+  <div class="busqueda-fila mt-2">
+    <button class="btn btn-primary" (click)="buscarSitios()">
+      <mat-icon>search</mat-icon> Buscar
+    </button>
+  </div>         
     </div>
 <br>
 <div class="busqueda-fila">
