@@ -7,6 +7,9 @@
       "jasmine"
     ]
   },
+  "exclude": [
+    "**/*.spec.ts"
+  ],
   "files": [
     "src/test.ts",
     "src/polyfills.ts"

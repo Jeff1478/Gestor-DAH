@@ -35,6 +35,7 @@ export class PagLiteSitiosComponent implements OnInit {
   provincia: string = '';
   canton: string = '';
   distrito: string = '';
+  nombre: string = '';
   sitios: any[] = [];
   
 
@@ -57,48 +58,82 @@ export class PagLiteSitiosComponent implements OnInit {
   searchKey!: string;
 
   ngOnInit() {
-
     const correoUsuario = localStorage.getItem('email');
     console.log("Correo del usuario:", correoUsuario);
-  if (correoUsuario) {
-    this.searchPerfil(correoUsuario); // 👈 Buscar perfil apenas carga
-  }
-
+    if (correoUsuario) {
+      this.searchPerfil(correoUsuario);
+    }
+  
     this._route.queryParams.subscribe(params => {
-      // Si hay filtros en la URL, los usamos y los guardamos
-      if (params['provincia'] || params['canton'] || params['distrito']) {
+      const nombre = params['nombre'];
+      const provincia = params['provincia'];
+      const canton = params['canton'];
+      const distrito = params['distrito'];
+  
+      if (nombre) {
+        // Buscar por nombre si se especifica en los query params
+        localStorage.setItem('filtrosBusqueda', JSON.stringify({ nombre }));
+        this.buscarPorNombre(nombre);
+      } else if (provincia || canton || distrito) {
         const filtros = {
-          provincia: params['provincia'] || '',
-          canton: params['canton'] || '',
-          distrito: params['distrito'] || ''
+          provincia: provincia || '',
+          canton: canton || '',
+          distrito: distrito || ''
         };
   
         this.provincia = filtros.provincia;
         this.canton = filtros.canton;
         this.distrito = filtros.distrito;
+        
   
         localStorage.setItem('filtrosBusqueda', JSON.stringify(filtros));
         this.buscarSitios(filtros);
       } else {
-        // Si no hay en la URL, tratamos de leerlos del localStorage
+        // Intentar cargar filtros guardados si no hay query params
         const guardados = localStorage.getItem('filtrosBusqueda');
         if (guardados) {
           const filtros = JSON.parse(guardados);
-          this.provincia = filtros.provincia;
-          this.canton = filtros.canton;
-          this.distrito = filtros.distrito;
-  
-          // Opcionalmente podrías actualizar la URL:
+
           this._router.navigate([], {
-            relativeTo: this._route,
-            queryParams: filtros
-          });
-  
-          this.buscarSitios(filtros);
+          relativeTo: this._route,
+          queryParams: filtros
+        });   
+
+        if (filtros.nombre) {
+            this.buscarPorNombre(filtros.nombre);
+        } else {
+            this.provincia = filtros.provincia || '';
+            this.canton = filtros.canton || '';
+            this.distrito = filtros.distrito || '';
+            this.buscarSitios(filtros);
         }
+    }
       }
     });
   }
+
+  buscarPorNombre(nombre: string): void {
+    this._sitioService.searchNombre(nombre).subscribe(
+      (res: any) => {
+        this.sitios = res.sitio;
+        this.listData = new MatTableDataSource(this.sitios); // ✅ aquí es donde faltaba
+        this.listData.sort = this.sort; // opcional si querés usar ordenamiento
+        this.listData.paginator = this.paginator; // opcional si usás paginación
+        console.log("✔️ Sitios encontrados por nombre:", this.sitios);
+      },
+      (error) => {
+        console.error("❌ Error al buscar por nombre:", error);
+        Swal.fire({
+          icon: 'info',
+          title: 'Sin resultados',
+          text: 'No se encontraron sitios con ese nombre o clave.'
+        });
+      }
+    );
+  }
+  
+  
+  
 
   buscarSitios(filtros: { provincia: string, canton: string, distrito: string }) {
     this._sitioService.buscarSitios(filtros).subscribe(
@@ -119,29 +154,6 @@ export class PagLiteSitiosComponent implements OnInit {
     );
   }
   
-
- /*  searchPerfil(searstring:any){
-    this._registroService.search(searstring).subscribe(
-      response => {
-       if(response.registro){
-
-        this.user = response.registro
-        console.log(this.user)
-        this.acceso = JSON.stringify(this.user, ['acceso'])
-
-           if(this.acceso == '[{"acceso":true}]'){
-            this.arqueo = true;
-          } 
-         
-        
-      }},
-
-      err => {
-        console.log(err);
-      }
-    );
-  } */
-
     searchPerfil(searstring: any) {
       this._registroService.search(searstring).subscribe(
         response => {
@@ -166,8 +178,6 @@ export class PagLiteSitiosComponent implements OnInit {
   applyFilter() {
     this.listData.filter = this.searchKey.trim().toLowerCase();
   }
-
-
 
   openDialog(selected: any) {
     if (this.arqueo) {

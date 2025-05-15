@@ -1,0 +1,1820 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gestordah documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">gestordah documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ArticleEditComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/article-edit/article-edit.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../injectables/CeramicService.html" target="_self" >CeramicService</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-article-edit</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./article-edit.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>../ceramica/ceramica.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#afuConfig" >afuConfig</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ceramic" >ceramic</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#is_edit" >is_edit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#page_title" >page_title</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#status" >status</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#url" >url</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#user" >user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getArticle" >getArticle</a>
+                            </li>
+                            <li>
+                                <a href="#imageUpload" >imageUpload</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#OnSubmit" >OnSubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_route: ActivatedRoute, _router: Router, _ceramicService: <a href="../injectables/CeramicService.html" target="_self">CeramicService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/article-edit/article-edit.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_ceramicService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CeramicService.html" target="_self" >CeramicService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getArticle"></a>
+                    <span class="name">
+                        <span ><b>getArticle</b></span>
+                        <a href="#getArticle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getArticle()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="84"
+                                    class="link-to-prism">src/app/components/article-edit/article-edit.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imageUpload"></a>
+                    <span class="name">
+                        <span ><b>imageUpload</b></span>
+                        <a href="#imageUpload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>imageUpload(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/components/article-edit/article-edit.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/app/components/article-edit/article-edit.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OnSubmit"></a>
+                    <span class="name">
+                        <span ><b>OnSubmit</b></span>
+                        <a href="#OnSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>OnSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="48"
+                                    class="link-to-prism">src/app/components/article-edit/article-edit.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afuConfig"></a>
+                    <span class="name">
+                        <span ><b>afuConfig</b></span>
+                        <a href="#afuConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    uploadAPI: {
+      url:Global.url+&#x27;upload-image&#x27;
+    }
+}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/article-edit/article-edit.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ceramic"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>ceramic</b></span>
+                        <a href="#ceramic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Ceramic.html" target="_self" >Ceramic</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/article-edit/article-edit.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="is_edit"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>is_edit</b></span>
+                        <a href="#is_edit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/article-edit/article-edit.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="page_title"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>page_title</b></span>
+                        <a href="#page_title"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/article-edit/article-edit.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="status"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>status</b></span>
+                        <a href="#status"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/article-edit/article-edit.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="url"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>url</b></span>
+                        <a href="#url"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/article-edit/article-edit.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/article-edit/article-edit.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Ceramic } from &#x27;src/app/models/ceramic&#x27;;
+import { Router, ActivatedRoute, Params} from &#x27;@angular/router&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+import { CeramicService } from &#x27;src/app/services/ceramic.service&#x27;;
+import { Global } from &#x27;src/app/services/global&#x27;;
+
+@Component({
+  selector: &#x27;app-article-edit&#x27;,
+  templateUrl: &#x27;../ceramica/ceramica.component.html&#x27;,
+  styleUrls: [&#x27;./article-edit.component.css&#x27;],
+  providers: [CeramicService]
+})
+export class ArticleEditComponent implements OnInit {
+  public ceramic: Ceramic;
+  public status!: string;
+  public user:any;
+  public is_edit: boolean;
+  public page_title: string;
+  public url: string;
+
+  afuConfig &#x3D; {
+    uploadAPI: {
+      url:Global.url+&#x27;upload-image&#x27;
+    }
+};
+
+  
+
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _ceramicService: CeramicService
+  ) {
+    this.ceramic &#x3D; new Ceramic( &#x27;&#x27;, &#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,0,&#x27;&#x27;,&#x27;&#x27;,0,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,
+    &#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,
+    &#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;);
+    this.is_edit &#x3D; true;
+    this.page_title &#x3D; &#x27;Editar Articulo&#x27;;
+    this.url &#x3D; Global.url;
+      
+   }
+
+  ngOnInit() {
+    this.getArticle();
+  }
+
+  OnSubmit(){
+    
+    this._ceramicService.update(this.ceramic._id, this.ceramic).subscribe(
+      response &#x3D;&gt; {
+       if(response.status &#x3D;&#x3D; &#x27;success&#x27;){
+         this.status &#x3D; &#x27;success&#x27;;
+         this.ceramic &#x3D; response.ceramicUpdated; 
+         
+         Swal.fire(&#x27;Artefacto Editado&#x27;, &#x27;Cambios Aplicados!&#x27;, &#x27;success&#x27;)
+
+         this._router.navigate([&#x27;/pagina&#x27;]);
+        //  this._router.navigate([&#x27;/pagina/ceramic&#x27;, this.ceramic._id]);
+       }else{
+         this.status &#x3D; &#x27;error&#x27;
+       }
+      },
+      error &#x3D;&gt; {
+       console.log(error);
+       this.status &#x3D; &#x27;error&#x27;;
+      }
+    );
+   }
+
+  imageUpload(data: any){
+    
+    console.log(data);
+
+    // let image_data &#x3D; JSON.parse(data.response);
+
+   
+    this.ceramic.image&#x3D;data.body.image;
+    
+  
+    // this.ceramic.image &#x3D; image_data.image;
+  }
+
+  getArticle() {
+    this._route.params.subscribe(params &#x3D;&gt; {
+      let id &#x3D; params [&#x27;id&#x27;];
+
+      this._ceramicService.getCeramic(id).subscribe(
+        response &#x3D;&gt; {
+          if(response.ceramic){
+            this.ceramic &#x3D; response.ceramic;
+          }else{
+            this._router.navigate([&#x27;/home&#x27;]);
+          }
+        },
+        error &#x3D;&gt; {
+          console.log(error);
+          this._router.navigate([&#x27;/home&#x27;]);
+        }
+      );
+    });
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-header&gt;&lt;/app-header&gt;
+&lt;div class&#x3D;&quot;center&quot;&gt;
+    &lt;section id&#x3D;&quot;content.ceramic&quot;&gt;
+
+        &lt;h1 class&#x3D;&quot;subheader-ceramica&quot;&gt;FICHA DE ANÁLISIS ARTEFACTUAL PARA CERÁMICA &lt;/h1&gt;
+        
+        &lt;form class&#x3D;&quot;mid-form&quot; #ceramicForm&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;OnSubmit()&quot;&gt;
+
+            &lt;div class&#x3D;&quot;accordion accordion-flush&quot; id&#x3D;&quot;accordionFlushExample&quot;&gt;
+
+                &lt;div class&#x3D;&quot;accordion-item&quot;&gt;
+                    &lt;h2 class&#x3D;&quot;accordion-header&quot; id&#x3D;&quot;flush-headingOne&quot;&gt;
+                        &lt;button class&#x3D;&quot;accordion-button collapsed&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot;
+                            data-bs-target&#x3D;&quot;#flush-collapseOne&quot; aria-expanded&#x3D;&quot;false&quot; aria-controls&#x3D;&quot;flush-collapseOne&quot;&gt;
+                            Ubicacion del Artefacto
+                        &lt;/button&gt;
+                    &lt;/h2&gt;
+
+                    &lt;div id&#x3D;&quot;flush-collapseOne&quot; class&#x3D;&quot;accordion-collapse collapse&quot; aria-labelledby&#x3D;&quot;flush-headingOne&quot;
+                        data-bs-parent&#x3D;&quot;#accordionFlushExample&quot;&gt;
+                        &lt;div class&#x3D;&quot;accordion-body&quot;&gt;
+
+                            &lt;!-- &lt;form&gt; --&gt;
+                            &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                                &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                    &lt;label for&#x3D;&quot;cod_mon&quot;&gt;Cod Monumento&lt;/label&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;cod_mon&quot; #cod_mon&#x3D;&quot;ngModel&quot;
+                                        [(ngModel)]&#x3D;&quot;ceramic.cod_mon&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                    &lt;label for&#x3D;&quot;num_artefacto&quot;&gt;Num Artefacto&lt;/label&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;num_artefacto&quot;
+                                        #num_artefacto&#x3D;&quot;ngModel&quot; [(ngModel)]&#x3D;&quot;ceramic.num_artefacto&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                    &lt;label for&#x3D;&quot;num_caja&quot;&gt;Num Caja DPPC&lt;/label&gt;
+                                    &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;num_caja&quot; #num_caja&#x3D;&quot;ngModel&quot;
+                                        [(ngModel)]&#x3D;&quot;ceramic.num_caja&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                    &lt;label for&#x3D;&quot;proyecto&quot;&gt;Proyecto&lt;/label&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;proyecto&quot; #proyecto&#x3D;&quot;ngModel&quot;
+                                        [(ngModel)]&#x3D;&quot;ceramic.proyecto&quot;&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                                &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                    &lt;label for&#x3D;&quot;investigador&quot;&gt;Investigador&lt;/label&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;investigador&quot; #investigador&#x3D;&quot;ngModel&quot;
+                                        [(ngModel)]&#x3D;&quot;ceramic.investigador&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                    &lt;label for&#x3D;&quot;pro_year&quot;&gt;Año Proyecto&lt;/label&gt;
+                                    &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;pro_year&quot; #pro_year&#x3D;&quot;ngModel&quot;
+                                        [(ngModel)]&#x3D;&quot;ceramic.pro_year&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                    &lt;label for&#x3D;&quot;etiqueta&quot;&gt;Datos Etiqueta&lt;/label&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;etiqueta&quot; #etiqueta&#x3D;&quot;ngModel&quot;
+                                        [(ngModel)]&#x3D;&quot;ceramic.etiqueta&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                    &lt;label for&#x3D;&quot;fecha_exc&quot;&gt;Fecha Excavación&lt;/label&gt;
+                                    &lt;input type&#x3D;&quot;date&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;fecha_exc&quot; #fecha_exc&#x3D;&quot;ngModel&quot;
+                                        [(ngModel)]&#x3D;&quot;ceramic.fecha_exc&quot;&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;!-- &lt;/form&gt; --&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;accordion accordion-flush&quot; id&#x3D;&quot;accordionFlushExample&quot;&gt;
+            &lt;div class&#x3D;&quot;accordion-item&quot;&gt;
+                &lt;h2 class&#x3D;&quot;accordion-header&quot; id&#x3D;&quot;flush-headingTwo&quot;&gt;
+                    &lt;button class&#x3D;&quot;accordion-button collapsed&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot;
+                        data-bs-target&#x3D;&quot;#flush-collapseTwo&quot; aria-expanded&#x3D;&quot;false&quot; aria-controls&#x3D;&quot;flush-collapseTwo&quot;&gt;
+                        Asociación Contextual
+                    &lt;/button&gt;
+                &lt;/h2&gt;
+                &lt;div id&#x3D;&quot;flush-collapseTwo&quot; class&#x3D;&quot;accordion-collapse collapse&quot; aria-labelledby&#x3D;&quot;flush-headingTwo&quot;
+                    data-bs-parent&#x3D;&quot;#accordionFlushExample&quot;&gt;
+                    &lt;div class&#x3D;&quot;accordion-body&quot;&gt;
+
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;id_contexto&quot;&gt;Id Contexto&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;id_contexto&quot; #id_contexto&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.id_contexto&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;contexto&quot;&gt;Contexto&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;contexto&quot; #contexto&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.contexto&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;ubicacion&quot;&gt;Ub Rel Artefacto&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;ubicacion&quot; #ubicacion&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.ubicacion&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;foto&quot;&gt;Fotografia&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;foto&quot; #foto&#x3D;&quot;ngModel&quot; [(ngModel)]&#x3D;&quot;ceramic.foto&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Si&quot;&gt;Si&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;No&quot;&gt;No&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;num_foto&quot;&gt;Num Foto&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;num_foto&quot; #num_foto&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.num_foto&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;calidad_foto&quot;&gt;Calidad&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;calidad_foto&quot; #calidad_foto&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.calidad_foto&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Buena&quot;&gt;Buena&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Regular&quot;&gt;Regular&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Mala&quot;&gt;Mala&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;estado_foto&quot;&gt;Estado Foto&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;estado_foto&quot; #estado_foto&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.estado_foto&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Buena&quot;&gt;Buena&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Regular&quot;&gt;Regular&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Mala&quot;&gt;Mala&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;plano&quot;&gt;Planimetría&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;plano&quot; #plano&#x3D;&quot;ngModel&quot; [(ngModel)]&#x3D;&quot;ceramic.plano&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Si&quot;&gt;Si&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;No&quot;&gt;No&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;num_lamina&quot;&gt;Num Lamina&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;num_lamina&quot; #num_lamina&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.num_lamina&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;calidad_lamina&quot;&gt;Calidad Lámina&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;calidad_lamina&quot; #calidad_lamina&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.calidad_lamina&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Buena&quot;&gt;Buena&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Regular&quot;&gt;Regular&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Mala&quot;&gt;Mala&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;estado_Lamina&quot;&gt;Estado Lamina&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;estado_Lamina&quot; #estado_Lamina&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.estado_Lamina&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Buena&quot;&gt;Buena&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Regular&quot;&gt;Regular&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Mala&quot;&gt;Mala&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;diagnostico_contexto&quot;&gt;Diagnóstico Contexto&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;diagnostico_contexto&quot; #diagnostico_contexto&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.diagnostico_contexto&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Definido&quot;&gt;Definido&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Indefinido&quot;&gt;Indefinido&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Divago&quot;&gt;Divago&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;fechamiento&quot;&gt;Fechamiento&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;fechamiento&quot; #fechamiento&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.fechamiento&quot;&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;accordion accordion-flush&quot; id&#x3D;&quot;accordionFlushExample&quot;&gt;
+            &lt;div class&#x3D;&quot;accordion-item&quot;&gt;
+                &lt;h2 class&#x3D;&quot;accordion-header&quot; id&#x3D;&quot;flush-headingThree&quot;&gt;
+                    &lt;button class&#x3D;&quot;accordion-button collapsed&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot;
+                        data-bs-target&#x3D;&quot;#flush-collapseThree&quot; aria-expanded&#x3D;&quot;false&quot; aria-controls&#x3D;&quot;flush-collapseThree&quot;&gt;
+                        Descripción del Artefacto
+                    &lt;/button&gt;
+                &lt;/h2&gt;
+                &lt;div id&#x3D;&quot;flush-collapseThree&quot; class&#x3D;&quot;accordion-collapse collapse&quot; aria-labelledby&#x3D;&quot;flush-headingThree&quot;
+                    data-bs-parent&#x3D;&quot;#accordionFlushExample&quot;&gt;
+                    &lt;div class&#x3D;&quot;accordion-body&quot;&gt;
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;tipo_pieza&quot;&gt;Tipo de Pieza&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;tipo_pieza&quot; #tipo_pieza&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.tipo_pieza&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Olla&quot;&gt;Olla&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Tecomate&quot;&gt;Tecomate&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Taza&quot;&gt;Taza&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Plato&quot;&gt;Plato&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Vaso&quot;&gt;Vaso&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Jarrón&quot;&gt;Jarrón&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Salvilla&quot;&gt;Salvilla&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Botella&quot;&gt;Botella&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Vasija Efigie&quot;&gt;Vasija Efigie&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Volante de Uso&quot;&gt;Volante de Uso&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Sello&quot;&gt;Sello&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Sonajero&quot;&gt;Sonajero&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Maraca&quot;&gt;Maraca&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Orejera&quot;&gt;Orejera&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Figurilla&quot;&gt;Figurilla&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Colgante&quot;&gt;Colgante&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Aro&quot;&gt;Aro&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Rodela&quot;&gt;Rodela&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Aerófono&quot;&gt;Aerófono&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Cuenta&quot;&gt;Cuenta&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Apédice Modificado&quot;&gt;Apédice Modificado&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Máscara&quot;&gt;Máscara&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Otro&quot;&gt;Otro&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;desc_narrativa&quot;&gt;Descripción Narrativa&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;desc_narrativa&quot; #desc_narrativa&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.desc_narrativa&quot;&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                                &lt;label class&#x3D;&quot;fw-bold&quot;&gt;Apendices: &lt;/label&gt;
+                                &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; #apendices [(ngModel)]&#x3D;&quot;ceramic.apendices&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.apendices&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;apendices&quot;&gt;No presenta&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;soporte&quot;  #soporte [(ngModel)]&#x3D;&quot;ceramic.soporte&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.soporte&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;soporte&quot;&gt;Soportes&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;ped_base&quot;  #ped_base [(ngModel)]&#x3D;&quot;ceramic.ped_base&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.ped_base&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;Pedestal-Base&quot;&gt;Pedestal Base&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;asa&quot;  #asa [(ngModel)]&#x3D;&quot;ceramic.asa&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.asa&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;asa&quot;&gt;Asa&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;vtdero&quot;  #vtdero [(ngModel)]&#x3D;&quot;ceramic.vtdero&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.vtdero&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;Vertedero&quot;&gt;Vertedero&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;otro_soporte&quot; #otro_spt [(ngModel)]&#x3D;&quot;ceramic.otro_soporte&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.otro_soporte&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;otro_soporte&quot;&gt;Otro&lt;/label&gt;
+                                    &lt;/div&gt;
+    
+                                    &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                        &lt;label for&#x3D;&quot;desc_apendice&quot;&gt;Descripción Apéndice&lt;/label&gt;
+                                        &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;desc_apendice&quot; #desc_apendice&#x3D;&quot;ngModel&quot;
+                                            [(ngModel)]&#x3D;&quot;ceramic.desc_apendice&quot;&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+    
+
+                            
+
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;acabado_superficie&quot;&gt;Acabado de Superficie&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;acabado_superficie&quot; #acabado_superficie&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.acabado_superficie&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Completamente engobada y pulida&quot;&gt;Completamente engobada y pulida&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Engobe y pulido en zonas&quot;&gt;Engobe y pulido en zonas&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Solo pulido&quot;&gt;Solo pulido&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Sin Engobe&quot;&gt;Sin Engobe&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Ahumado Intencional&quot;&gt;Ahumado Intencional&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Acabado muy Tosco&quot;&gt;Acabado muy Tosco&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Bruñido&quot;&gt;Bruñido&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;estilo_decorativo&quot;&gt;Pintura&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;estilo_decorativo&quot; #estilo_decorativo&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.estilo_decorativo&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Bricroma&quot;&gt;Bricroma&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Policroma&quot;&gt;Policroma&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;color_pintura&quot;&gt;Color de la pintura&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;color_pintura&quot; #color_pintura&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.color_pintura&quot;&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                        
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;label class&#x3D;&quot;fw-bold&quot;&gt;Incisos: &lt;/label&gt;
+                            &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                                
+
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;pre_coc&quot; [(ngModel)]&#x3D;&quot;ceramic.pre_coc&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.pre_coc&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;pre_coccion&quot;&gt;Pre Cocción&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;post_coc&quot; #post_coc [(ngModel)]&#x3D;&quot;ceramic.post_coc&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.post_coc&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;post_cocción&quot;&gt;Post Cocción&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;esgraf&quot; #esgraf [(ngModel)]&#x3D;&quot;ceramic.esgraf&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.esgraf&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;esgrafiados&quot;&gt;Esgrafiados&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;ptdo&quot; #ptdo [(ngModel)]&#x3D;&quot;ceramic.ptdo&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.ptdo&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;ptdo&quot;&gt;Punteado&lt;/label&gt;
+                                &lt;/div&gt;
+
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;label class&#x3D;&quot;fw-bold&quot;&gt;Aplicación Plástica &lt;/label&gt;
+                            &lt;label class&#x3D;&quot;fw-bold&quot;&gt;Pastillajes &lt;/label&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;tira_apl&quot; #tira_apl [(ngModel)]&#x3D;&quot;ceramic.tira_apl&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.tira_apl&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;tira_aplicada&quot;&gt;Tira Aplicada&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;ptll&quot; #ptll [(ngModel)]&#x3D;&quot;ceramic.ptll&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.ptll&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;pastilla&quot;&gt;Pastilla o pelotilla&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;zna&quot; #zna [(ngModel)]&#x3D;&quot;ceramic.zna&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.zna&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;zonas&quot;&gt;Pintura sobre superficie natural&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;rndo&quot; #rndo [(ngModel)]&#x3D;&quot;ceramic.rndo&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.rndo&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;ranurado&quot;&gt;Ranurado&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                                &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;acnlo&quot; #acnlo [(ngModel)]&#x3D;&quot;ceramic.acnlo&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.acnlo&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;acanalado&quot;&gt;Acanalado&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;hddo&quot; #hddo [(ngModel)]&#x3D;&quot;ceramic.hddo&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.hddo&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;hendidos&quot;&gt;Hendidos o Pellizcado&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;ptdopt&quot; #ptdo [(ngModel)]&#x3D;&quot;ceramic.ptdopt&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.ptdopt&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;ptdopt&quot;&gt;Punteado&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;mdl&quot; #mdl [(ngModel)]&#x3D;&quot;ceramic.mdl&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.mdl&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;moldeadas&quot;&gt;Figuras Moldeadas&lt;/label&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;label class&#x3D;&quot;fw-bold&quot;&gt;Tipo de Diseño &lt;/label&gt;
+                            &lt;label class&#x3D;&quot;fw-bold&quot;&gt;Diseño No Figurativo &lt;/label&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;vertical&quot; #vertical [(ngModel)]&#x3D;&quot;ceramic.vertical&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.vertical&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;vertical&quot;&gt;Vertical&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;Horizontal&quot; #horizontal [(ngModel)]&#x3D;&quot;ceramic.horizontal&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.horizontal&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;Horizotal&quot;&gt;Horizotal&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;zig_zag&quot; #zig_zag [(ngModel)]&#x3D;&quot;ceramic.zig_zag&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.zig_zag&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;zig_zag&quot;&gt;Zig-Zag&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;panel&quot; #panel [(ngModel)]&#x3D;&quot;ceramic.panel&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.panel&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;panel&quot;&gt;Panel&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;aisld&quot; #aisld [(ngModel)]&#x3D;&quot;ceramic.aisld&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.aisld&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;Aislados&quot;&gt;Aislados&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;str&quot; #str [(ngModel)]&#x3D;&quot;ceramic.str&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.str&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;saturacion&quot;&gt;Saturación Completa&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;otro_nofig&quot; #otro_nofig [(ngModel)]&#x3D;&quot;ceramic.otro_nofig&quot;
+                                    (ngModelChange)&#x3D;&quot;ceramic.otro_nofig&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;otro_nofig&quot;&gt;Otro&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;figuras&quot; class&#x3D;&quot;fw-bold&quot;&gt;Diseños Figurativos Zoomorfos&lt;/label&gt;
+                                &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;head&quot; #head [(ngModel)]&#x3D;&quot;ceramic.head&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.head&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;cabeza&quot;&gt;Cabeza&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;suario&quot; #saurio [(ngModel)]&#x3D;&quot;ceramic.suario&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.suario&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;suario&quot;&gt;Saurio&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;felino&quot; #felino [(ngModel)]&#x3D;&quot;ceramic.felino&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.felino&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;felino&quot;&gt;Felino&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;batracio&quot; #batracio [(ngModel)]&#x3D;&quot;ceramic.batracio&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.batracio&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;batracio&quot;&gt;Batracio&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;ave&quot; #ave [(ngModel)]&#x3D;&quot;ceramic.ave&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.ave&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;ave&quot;&gt;Ave&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;primate&quot; #primate [(ngModel)]&#x3D;&quot;ceramic.primate&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.primate&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;primate&quot;&gt;Primate&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;murcielago&quot; #murcielago [(ngModel)]&#x3D;&quot;ceramic.murcielago&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.murcielago&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;murcielago&quot;&gt;Murcielago&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;mamifero&quot; #mamifero [(ngModel)]&#x3D;&quot;ceramic.mamifero&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.mamifero&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;mamifero&quot;&gt;Mamifero&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;turtle&quot; #turtle [(ngModel)]&#x3D;&quot;ceramic.turtle&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.turtle&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;turtle&quot;&gt;Tortuga&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;reptil&quot; #reptil [(ngModel)]&#x3D;&quot;ceramic.reptil&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.reptil&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;reptil&quot;&gt;Reptil&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;pez&quot; #pez [(ngModel)]&#x3D;&quot;ceramic.pez&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.pez&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;pez&quot;&gt;Pez&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;indt&quot; #indt [(ngModel)]&#x3D;&quot;ceramic.indt&quot;
+                                        (ngModelChange)&#x3D;&quot;ceramic.indt&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;indt&quot;&gt;Indeterminado&lt;/label&gt;
+                                    &lt;/div&gt;
+
+                                &lt;/div&gt;
+
+                                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                    &lt;label for&#x3D;&quot;desc_narrativa&quot;&gt;Taxonomia Explicita&lt;/label&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;txn_expl&quot; #txm_expl&#x3D;&quot;ngModel&quot;
+                                        [(ngModel)]&#x3D;&quot;ceramic.txn_expl&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                    &lt;label for&#x3D;&quot;desc_narrativa&quot;&gt;Investigador&lt;/label&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;investigador_zoo&quot;
+                                        #investigador_zoo&#x3D;&quot;ngModel&quot; [(ngModel)]&#x3D;&quot;ceramic.investigador_zoo&quot;&gt;
+                                &lt;/div&gt;
+
+
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;figuras&quot; class&#x3D;&quot;fw-bold&quot;&gt;Diseños Figurativos Antropomorfos&lt;/label&gt;
+                                    &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                                        &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                            &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;cabeza_nofig&quot; #cabeza_nofig [(ngModel)]&#x3D;&quot;ceramic.cabeza_nofig&quot;
+                                            (ngModelChange)&#x3D;&quot;ceramic.cabeza_nofig&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                            &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;cabeza_nofig&quot;&gt;Cabeza&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                            &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;sau_nofig&quot; #sau_nofig [(ngModel)]&#x3D;&quot;ceramic.sau_nofig&quot;
+                                            (ngModelChange)&#x3D;&quot;ceramic.sau_nofig&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                            &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;sau_nofig&quot;&gt;Cara&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                            &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;feli_nofig&quot; #fel_nofig [(ngModel)]&#x3D;&quot;ceramic.feli_nofig&quot;
+                                            (ngModelChange)&#x3D;&quot;ceramic.feli_nofig&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                            &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;feli_nofig&quot;&gt;Cabeza Hocico&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                            &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;bat_nofig&quot; #bat_nofig [(ngModel)]&#x3D;&quot;ceramic.bat_nofig&quot;
+                                            (ngModelChange)&#x3D;&quot;ceramic.bat_nofig&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                            &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;bat_nofig&quot;&gt;Sedente&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                            &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;erguida_nofig&quot; #eguida_nofig [(ngModel)]&#x3D;&quot;ceramic.erguida_nofig&quot;
+                                            (ngModelChange)&#x3D;&quot;ceramic.erguida_nofig&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                            &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;erguida_nofig&quot;&gt;Erguida&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                            &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;prim_nofig&quot; #prim_nofig [(ngModel)]&#x3D;&quot;ceramic.prim_nofig&quot;
+                                            (ngModelChange)&#x3D;&quot;ceramic.prim_nofig&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                            &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;prim_nofig&quot;&gt;Escena&lt;/label&gt;
+                                        &lt;/div&gt;
+                            
+                                    &lt;/div&gt;                          
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;figuras&quot; class&#x3D;&quot;fw-bold&quot;&gt;Diseños Figurativos Indeterminado&lt;/label&gt;
+                                    &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                                        &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                            &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;cabfigint&quot; #cabfigint [(ngModel)]&#x3D;&quot;ceramic.cabfigint&quot;
+                                            (ngModelChange)&#x3D;&quot;ceramic.cabfigint&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                            &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;cabfigint&quot;&gt;Cabeza&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                            &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;cabhoc&quot; #cabhoc [(ngModel)]&#x3D;&quot;ceramic.cabhoc&quot;
+                                            (ngModelChange)&#x3D;&quot;ceramic.cabhoc&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                            &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;saurio&quot;&gt;Cabeza Hocico&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                            &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;garra&quot; #garra [(ngModel)]&#x3D;&quot;ceramic.garra&quot;
+                                            (ngModelChange)&#x3D;&quot;ceramic.garra&#x3D;$event?&#x27;X&#x27;:&#x27;&#x27;&quot;&gt;
+                                            &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;garra&quot;&gt;Garra&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                            &lt;label for&#x3D;&quot;desc_narrativa&quot;&gt;Otra&lt;/label&gt;
+                                            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;otfigind&quot; #otfigind&#x3D;&quot;ngModel&quot;
+                                                [(ngModel)]&#x3D;&quot;ceramic.otfigind&quot;&gt;
+                                        &lt;/div&gt;
+                            
+                                    &lt;/div&gt;                          
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+
+            &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;accordion accordion-flush&quot; id&#x3D;&quot;accordionFlushExample&quot;&gt;
+            &lt;div class&#x3D;&quot;accordion-item&quot;&gt;
+                &lt;h2 class&#x3D;&quot;accordion-header&quot; id&#x3D;&quot;flush-headingFour&quot;&gt;
+                    &lt;button class&#x3D;&quot;accordion-button collapsed&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot;
+                        data-bs-target&#x3D;&quot;#flush-collapseFour&quot; aria-expanded&#x3D;&quot;false&quot; aria-controls&#x3D;&quot;flush-collapseFour&quot;&gt;
+                        Asociación Funcional, Tipologica, Regional y Temporal
+                    &lt;/button&gt;
+                &lt;/h2&gt;
+                &lt;div id&#x3D;&quot;flush-collapseFour&quot; class&#x3D;&quot;accordion-collapse collapse&quot; aria-labelledby&#x3D;&quot;flush-headingFour&quot;
+                    data-bs-parent&#x3D;&quot;#accordionFlushExample&quot;&gt;
+                    &lt;div class&#x3D;&quot;accordion-body&quot;&gt;
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;forma_funcion&quot;&gt;Forma-Función&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;forma_funcion&quot; #forma_funcion&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.forma_funcion&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Cocción&quot;&gt;Cocción&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Almacenaje&quot;&gt;Almacenaje&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Servicio&quot;&gt;Servicio&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Transporte&quot;&gt;Transporte&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Utilitario en General&quot;&gt;Utilitario en General&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Suntuario&quot;&gt;Suntuario&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;marcas_uso&quot;&gt;Marcas de Uso&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;marcas_uso&quot; #marcas_uso&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.marcas_uso&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Huellas de Uso&quot;&gt;Huellas de Uso&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Restos de Hollín&quot;&gt;Restos de Hollín&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Restos de Alimentos&quot;&gt;Restos de Alimentos&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Marcas de termoalteración&quot;&gt;Marcas de termoalteración&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Ahumado&quot;&gt;Ahumado&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Otro&quot;&gt;Otro&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;desc_marcas_uso&quot;&gt;Descripción Marcas de Uso&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;desc_marcas_uso&quot;
+                                    #desc_marcas_uso&#x3D;&quot;ngModel&quot; [(ngModel)]&#x3D;&quot;ceramic.desc_marcas_uso&quot;&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;tipo_ceramico_grupo&quot;&gt;Tipo Cerámico/Grupo&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;tipo_ceramico_grupo&quot;
+                                    #tipo_ceramico_grupo&#x3D;&quot;ngModel&quot; [(ngModel)]&#x3D;&quot;ceramic.tipo_ceramico_grupo&quot;&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;ceramico_refz&quot;&gt;Refencias Bibliográfica&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;ceramico_refz&quot; #ceramico_ref2&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.ceramico_refz&quot;&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;periodo_ceramica&quot;&gt;Periodo&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;periodo_ceramica&quot;
+                                    #periodo_ceramica&#x3D;&quot;ngModel&quot; [(ngModel)]&#x3D;&quot;ceramic.periodo_ceramica&quot;&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;fase_ceramica&quot;&gt;Fase&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;fase_ceramica&quot; #fase_ceramica&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.fase_ceramica&quot;&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;temporalidad_ceramica&quot;&gt;Temporalidad Estimada&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;temporalidad_ceramica&quot;
+                                    #temporalidad_ceramica&#x3D;&quot;ngModel&quot; [(ngModel)]&#x3D;&quot;ceramic.temporalidad_ceramica&quot;&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;procedencia_ceramica&quot;&gt;Procedencia (Región/Subregión)&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;procedencia_ceramica&quot;
+                                    #procedencia_ceramica&#x3D;&quot;ngModel&quot; [(ngModel)]&#x3D;&quot;ceramic.procedencia_ceramica&quot;&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;accordion accordion-flush&quot; id&#x3D;&quot;accordionFlushExample&quot;&gt;
+            &lt;div class&#x3D;&quot;accordion-item&quot;&gt;
+                &lt;h2 class&#x3D;&quot;accordion-header&quot; id&#x3D;&quot;flush-headingFive&quot;&gt;
+                    &lt;button class&#x3D;&quot;accordion-button collapsed&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot;
+                        data-bs-target&#x3D;&quot;#flush-collapseFive&quot; aria-expanded&#x3D;&quot;false&quot; aria-controls&#x3D;&quot;flush-collapseFive&quot;&gt;
+                        Estado de Conservación
+                    &lt;/button&gt;
+                &lt;/h2&gt;
+                &lt;div id&#x3D;&quot;flush-collapseFive&quot; class&#x3D;&quot;accordion-collapse collapse&quot; aria-labelledby&#x3D;&quot;flush-headingFive&quot;
+                    data-bs-parent&#x3D;&quot;#accordionFlushExample&quot;&gt;
+                    &lt;div class&#x3D;&quot;accordion-body&quot;&gt;
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;estado_conservacion&quot;&gt;Estado de Conservación&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;estado_conservacion&quot; #estado_conservacion&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.estado_conservacion&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Optimo&quot;&gt;Óptimo&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Bueno&quot;&gt;Bueno&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Regular&quot;&gt;Regular&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Malo&quot;&gt;Malo&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;potencial&quot;&gt;Potencial de Exhibición&lt;/label&gt;
+                                &lt;select class&#x3D;&quot;form-select&quot; name&#x3D;&quot;potencial&quot; #potencial&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.potencial&quot;&gt;
+                                    &lt;option selected&gt;Seleccione...&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;Si&quot;&gt;Si&lt;/option&gt;
+                                    &lt;option value&#x3D;&quot;No&quot;&gt;No&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;potencial_exp&quot;&gt;Explique&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;potencial_exp&quot; #potencial_exp&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.potencial_exp&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;largo&quot;&gt;Vitrina Largo(cm)&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;largo&quot; #largo&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.largo&quot;&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;Ancho&quot;&gt;Vitrina Ancho(cm)&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;ancho&quot; #ancho&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.ancho&quot;&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;alto&quot;&gt;Vitrina Alto(cm)&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;alto&quot; #alto&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.alto&quot;&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;peso&quot;&gt;Vitrina Peso(gr)&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;peso&quot; #peso&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.peso&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;accordion accordion-flush&quot; id&#x3D;&quot;accordionFlushExample&quot;&gt;
+            &lt;div class&#x3D;&quot;accordion-item&quot;&gt;
+                &lt;h2 class&#x3D;&quot;accordion-header&quot; id&#x3D;&quot;flush-headingSix&quot;&gt;
+                    &lt;button class&#x3D;&quot;accordion-button collapsed&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot;
+                        data-bs-target&#x3D;&quot;#flush-collapseSix&quot; aria-expanded&#x3D;&quot;false&quot; aria-controls&#x3D;&quot;flush-collapseSix&quot;&gt;
+                        Investigador y Registro
+                    &lt;/button&gt;
+                &lt;/h2&gt;
+                &lt;div id&#x3D;&quot;flush-collapseSix&quot; class&#x3D;&quot;accordion-collapse collapse&quot; aria-labelledby&#x3D;&quot;flush-headingSix&quot;
+                    data-bs-parent&#x3D;&quot;#accordionFlushExample&quot;&gt;
+                    &lt;div class&#x3D;&quot;accordion-body&quot;&gt;
+                        &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;nombre_invest&quot;&gt;Nombre&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;nombre_invest&quot; #nombre_invest&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.nombre_invest&quot;&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;fecha_analisis&quot;&gt;Fecha Análisis&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;date&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;fecha_analisis&quot; #fecha_analisis&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.fecha_analisis&quot;&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                                &lt;label for&#x3D;&quot;fotos_num&quot;&gt;Numeración de las fotos&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;fotos_num&quot; #fotos_num&#x3D;&quot;ngModel&quot;
+                                    [(ngModel)]&#x3D;&quot;ceramic.fotos_num&quot;&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+
+
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+
+                &lt;div class&#x3D;&quot;image-thumb&quot; *ngIf&#x3D;&quot;is_edit&quot;&gt;
+                    
+                        &lt;img src&#x3D;&quot;{{url + &#x27;get-image/&#x27; + ceramic.image}}&quot; alt&#x3D;&quot;{{ceramic.title}}&quot; *ngIf&#x3D;&quot;ceramic.image&quot;/&gt;
+                        &lt;img src&#x3D;&quot;assets/images/default.png&quot; alt&#x3D;&quot;{{ceramic.title}}&quot; *ngIf&#x3D;&quot;!ceramic.image&quot;/&gt;
+                   
+                &lt;/div&gt;
+                
+                &lt;angular-file-uploader
+                    [config]&#x3D;&quot;afuConfig&quot;
+                    (ApiResponse)&#x3D;&quot;imageUpload($event)&quot;
+                &gt;
+    
+                &lt;/angular-file-uploader&gt;
+            &lt;/div&gt;
+&lt;!-- 
+            &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;enviar&quot; class&#x3D;&quot;btn btn-success&quot;&gt; --&gt;
+            &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Guardar&quot; class&#x3D;&quot;btn btn-success&quot;/&gt;
+
+        &lt;/form&gt;
+
+       
+
+        &lt;!-- JavaScript Bundle with Popper --&gt;
+        &lt;script src&#x3D;&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js&quot;
+            integrity&#x3D;&quot;sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM&quot;
+            crossorigin&#x3D;&quot;anonymous&quot;&gt;&lt;/script&gt;
+
+    &lt;/section&gt;
+
+    &lt;div class&#x3D;&quot;clearfix&quot;&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./article-edit.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-header></app-header><div class="center">    <section id="content.ceramic">        <h1 class="subheader-ceramica">FICHA DE ANÁLISIS ARTEFACTUAL PARA CERÁMICA </h1>                <form class="mid-form" #ceramicForm="ngForm" (ngSubmit)="OnSubmit()">            <div class="accordion accordion-flush" id="accordionFlushExample">                <div class="accordion-item">                    <h2 class="accordion-header" id="flush-headingOne">                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                            Ubicacion del Artefacto                        </button>                    </h2>                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"                        data-bs-parent="#accordionFlushExample">                        <div class="accordion-body">                            <!-- <form> -->                            <div class="row g-3">                                <div class="col-md-3">                                    <label for="cod_mon">Cod Monumento</label>                                    <input type="text" class="form-control" name="cod_mon" #cod_mon="ngModel"                                        [(ngModel)]="ceramic.cod_mon">                                </div>                                <div class="col-md-3">                                    <label for="num_artefacto">Num Artefacto</label>                                    <input type="text" class="form-control" name="num_artefacto"                                        #num_artefacto="ngModel" [(ngModel)]="ceramic.num_artefacto">                                </div>                                <div class="col-md-3">                                    <label for="num_caja">Num Caja DPPC</label>                                    <input type="number" class="form-control" name="num_caja" #num_caja="ngModel"                                        [(ngModel)]="ceramic.num_caja">                                </div>                                <div class="col-md-3">                                    <label for="proyecto">Proyecto</label>                                    <input type="text" class="form-control" name="proyecto" #proyecto="ngModel"                                        [(ngModel)]="ceramic.proyecto">                                </div>                            </div>                            <div class="row g-3">                                <div class="col-md-3">                                    <label for="investigador">Investigador</label>                                    <input type="text" class="form-control" name="investigador" #investigador="ngModel"                                        [(ngModel)]="ceramic.investigador">                                </div>                                <div class="col-md-3">                                    <label for="pro_year">Año Proyecto</label>                                    <input type="number" class="form-control" name="pro_year" #pro_year="ngModel"                                        [(ngModel)]="ceramic.pro_year">                                </div>                                <div class="col-md-3">                                    <label for="etiqueta">Datos Etiqueta</label>                                    <input type="text" class="form-control" name="etiqueta" #etiqueta="ngModel"                                        [(ngModel)]="ceramic.etiqueta">                                </div>                                <div class="col-md-3">                                    <label for="fecha_exc">Fecha Excavación</label>                                    <input type="date" class="form-control" name="fecha_exc" #fecha_exc="ngModel"                                        [(ngModel)]="ceramic.fecha_exc">                                </div>                            </div>                            <!-- </form> -->                        </div>                    </div>                </div>            </div>            <div class="accordion accordion-flush" id="accordionFlushExample">            <div class="accordion-item">                <h2 class="accordion-header" id="flush-headingTwo">                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">                        Asociación Contextual                    </button>                </h2>                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"                    data-bs-parent="#accordionFlushExample">                    <div class="accordion-body">                        <div class="row g-3">                            <div class="col-md-3">                                <label for="id_contexto">Id Contexto</label>                                <input type="text" class="form-control" name="id_contexto" #id_contexto="ngModel"                                    [(ngModel)]="ceramic.id_contexto">                            </div>                            <div class="col-md-3">                                <label for="contexto">Contexto</label>                                <input type="text" class="form-control" name="contexto" #contexto="ngModel"                                    [(ngModel)]="ceramic.contexto">                            </div>                            <div class="col-md-3">                                <label for="ubicacion">Ub Rel Artefacto</label>                                <input type="text" class="form-control" name="ubicacion" #ubicacion="ngModel"                                    [(ngModel)]="ceramic.ubicacion">                            </div>                            <div class="col-md-3">                                <label for="foto">Fotografia</label>                                <select class="form-select" name="foto" #foto="ngModel" [(ngModel)]="ceramic.foto">                                    <option selected>Seleccione...</option>                                    <option value="Si">Si</option>                                    <option value="No">No</option>                                </select>                            </div>                        </div>                        <div class="row g-3">                            <div class="col-md-3">                                <label for="num_foto">Num Foto</label>                                <input type="number" class="form-control" name="num_foto" #num_foto="ngModel"                                    [(ngModel)]="ceramic.num_foto">                            </div>                            <div class="col-md-3">                                <label for="calidad_foto">Calidad</label>                                <select class="form-select" name="calidad_foto" #calidad_foto="ngModel"                                    [(ngModel)]="ceramic.calidad_foto">                                    <option selected>Seleccione...</option>                                    <option value="Buena">Buena</option>                                    <option value="Regular">Regular</option>                                    <option value="Mala">Mala</option>                                </select>                            </div>                            <div class="col-md-3">                                <label for="estado_foto">Estado Foto</label>                                <select class="form-select" name="estado_foto" #estado_foto="ngModel"                                    [(ngModel)]="ceramic.estado_foto">                                    <option selected>Seleccione...</option>                                    <option value="Buena">Buena</option>                                    <option value="Regular">Regular</option>                                    <option value="Mala">Mala</option>                                </select>                            </div>                            <div class="col-md-3">                                <label for="plano">Planimetría</label>                                <select class="form-select" name="plano" #plano="ngModel" [(ngModel)]="ceramic.plano">                                    <option selected>Seleccione...</option>                                    <option value="Si">Si</option>                                    <option value="No">No</option>                                </select>                            </div>                        </div>                        <div class="row g-3">                            <div class="col-md-3">                                <label for="num_lamina">Num Lamina</label>                                <input type="number" class="form-control" name="num_lamina" #num_lamina="ngModel"                                    [(ngModel)]="ceramic.num_lamina">                            </div>                            <div class="col-md-3">                                <label for="calidad_lamina">Calidad Lámina</label>                                <select class="form-select" name="calidad_lamina" #calidad_lamina="ngModel"                                    [(ngModel)]="ceramic.calidad_lamina">                                    <option selected>Seleccione...</option>                                    <option value="Buena">Buena</option>                                    <option value="Regular">Regular</option>                                    <option value="Mala">Mala</option>                                </select>                            </div>                            <div class="col-md-3">                                <label for="estado_Lamina">Estado Lamina</label>                                <select class="form-select" name="estado_Lamina" #estado_Lamina="ngModel"                                    [(ngModel)]="ceramic.estado_Lamina">                                    <option selected>Seleccione...</option>                                    <option value="Buena">Buena</option>                                    <option value="Regular">Regular</option>                                    <option value="Mala">Mala</option>                                </select>                            </div>                            <div class="col-md-3">                                <label for="diagnostico_contexto">Diagnóstico Contexto</label>                                <select class="form-select" name="diagnostico_contexto" #diagnostico_contexto="ngModel"                                    [(ngModel)]="ceramic.diagnostico_contexto">                                    <option selected>Seleccione...</option>                                    <option value="Definido">Definido</option>                                    <option value="Indefinido">Indefinido</option>                                    <option value="Divago">Divago</option>                                </select>                            </div>                        </div>                        <div class="row g-3">                            <div class="col-md-3">                                <label for="fechamiento">Fechamiento</label>                                <input type="text" class="form-control" name="fechamiento" #fechamiento="ngModel"                                    [(ngModel)]="ceramic.fechamiento">                            </div>                        </div>                    </div>                </div>            </div>            </div>            <div class="accordion accordion-flush" id="accordionFlushExample">            <div class="accordion-item">                <h2 class="accordion-header" id="flush-headingThree">                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">                        Descripción del Artefacto                    </button>                </h2>                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"                    data-bs-parent="#accordionFlushExample">                    <div class="accordion-body">                        <div class="row g-3">                            <div class="col-md-4">                                <label for="tipo_pieza">Tipo de Pieza</label>                                <select class="form-select" name="tipo_pieza" #tipo_pieza="ngModel"                                    [(ngModel)]="ceramic.tipo_pieza">                                    <option selected>Seleccione...</option>                                    <option value="Olla">Olla</option>                                    <option value="Tecomate">Tecomate</option>                                    <option value="Taza">Taza</option>                                    <option value="Plato">Plato</option>                                    <option value="Vaso">Vaso</option>                                    <option value="Jarrón">Jarrón</option>                                    <option value="Salvilla">Salvilla</option>                                    <option value="Botella">Botella</option>                                    <option value="Vasija Efigie">Vasija Efigie</option>                                    <option value="Volante de Uso">Volante de Uso</option>                                    <option value="Sello">Sello</option>                                    <option value="Sonajero">Sonajero</option>                                    <option value="Maraca">Maraca</option>                                    <option value="Orejera">Orejera</option>                                    <option value="Figurilla">Figurilla</option>                                    <option value="Colgante">Colgante</option>                                    <option value="Aro">Aro</option>                                    <option value="Rodela">Rodela</option>                                    <option value="Aerófono">Aerófono</option>                                    <option value="Cuenta">Cuenta</option>                                    <option value="Apédice Modificado">Apédice Modificado</option>                                    <option value="Máscara">Máscara</option>                                    <option value="Otro">Otro</option>                                </select>                            </div>                            <div class="col-md-4">                                <label for="desc_narrativa">Descripción Narrativa</label>                                <input type="text" class="form-control" name="desc_narrativa" #desc_narrativa="ngModel"                                    [(ngModel)]="ceramic.desc_narrativa">                            </div>                            <div class="row g-3">                                <label class="fw-bold">Apendices: </label>                                <div class="col-md-12">                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" #apendices [(ngModel)]="ceramic.apendices"                                        (ngModelChange)="ceramic.apendices=$event?\'X\':\'\'">                                        <label class="form-check-label" for="apendices">No presenta</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="soporte"  #soporte [(ngModel)]="ceramic.soporte"                                        (ngModelChange)="ceramic.soporte=$event?\'X\':\'\'">                                        <label class="form-check-label" for="soporte">Soportes</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="ped_base"  #ped_base [(ngModel)]="ceramic.ped_base"                                        (ngModelChange)="ceramic.ped_base=$event?\'X\':\'\'">                                        <label class="form-check-label" for="Pedestal-Base">Pedestal Base</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="asa"  #asa [(ngModel)]="ceramic.asa"                                        (ngModelChange)="ceramic.asa=$event?\'X\':\'\'">                                        <label class="form-check-label" for="asa">Asa</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="vtdero"  #vtdero [(ngModel)]="ceramic.vtdero"                                        (ngModelChange)="ceramic.vtdero=$event?\'X\':\'\'">                                        <label class="form-check-label" for="Vertedero">Vertedero</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="otro_soporte" #otro_spt [(ngModel)]="ceramic.otro_soporte"                                        (ngModelChange)="ceramic.otro_soporte=$event?\'X\':\'\'">                                        <label class="form-check-label" for="otro_soporte">Otro</label>                                    </div>                                        <div class="col-md-4">                                        <label for="desc_apendice">Descripción Apéndice</label>                                        <input type="text" class="form-control" name="desc_apendice" #desc_apendice="ngModel"                                            [(ngModel)]="ceramic.desc_apendice">                                    </div>                                </div>                            </div>                                                        </div>                        <div class="row g-3">                            <div class="col-md-4">                                <label for="acabado_superficie">Acabado de Superficie</label>                                <select class="form-select" name="acabado_superficie" #acabado_superficie="ngModel"                                    [(ngModel)]="ceramic.acabado_superficie">                                    <option selected>Seleccione...</option>                                    <option value="Completamente engobada y pulida">Completamente engobada y pulida</option>                                    <option value="Engobe y pulido en zonas">Engobe y pulido en zonas</option>                                    <option value="Solo pulido">Solo pulido</option>                                    <option value="Sin Engobe">Sin Engobe</option>                                    <option value="Ahumado Intencional">Ahumado Intencional</option>                                    <option value="Acabado muy Tosco">Acabado muy Tosco</option>                                    <option value="Bruñido">Bruñido</option>                                </select>                            </div>                            <div class="col-md-4">                                <label for="estilo_decorativo">Pintura</label>                                <select class="form-select" name="estilo_decorativo" #estilo_decorativo="ngModel"                                    [(ngModel)]="ceramic.estilo_decorativo">                                    <option selected>Seleccione...</option>                                    <option value="Bricroma">Bricroma</option>                                    <option value="Policroma">Policroma</option>                                </select>                            </div>                            <div class="col-md-4">                                <label for="color_pintura">Color de la pintura</label>                                <input type="text" class="form-control" name="color_pintura" #color_pintura="ngModel"                                    [(ngModel)]="ceramic.color_pintura">                            </div>                        </div>                                                <div class="row g-3">                            <label class="fw-bold">Incisos: </label>                            <div class="col-md-12">                                                                <div class="form-check form-check-inline">                                                                        <input class="form-check-input" type="checkbox" name="pre_coc" [(ngModel)]="ceramic.pre_coc"                                    (ngModelChange)="ceramic.pre_coc=$event?\'X\':\'\'">                                    <label class="form-check-label" for="pre_coccion">Pre Cocción</label>                                </div>                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="post_coc" #post_coc [(ngModel)]="ceramic.post_coc"                                    (ngModelChange)="ceramic.post_coc=$event?\'X\':\'\'">                                    <label class="form-check-label" for="post_cocción">Post Cocción</label>                                </div>                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="esgraf" #esgraf [(ngModel)]="ceramic.esgraf"                                    (ngModelChange)="ceramic.esgraf=$event?\'X\':\'\'">                                    <label class="form-check-label" for="esgrafiados">Esgrafiados</label>                                </div>                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="ptdo" #ptdo [(ngModel)]="ceramic.ptdo"                                    (ngModelChange)="ceramic.ptdo=$event?\'X\':\'\'">                                    <label class="form-check-label" for="ptdo">Punteado</label>                                </div>                            </div>                        </div>                        <div class="row g-3">                            <label class="fw-bold">Aplicación Plástica </label>                            <label class="fw-bold">Pastillajes </label>                            <div class="col-md-12">                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="tira_apl" #tira_apl [(ngModel)]="ceramic.tira_apl"                                    (ngModelChange)="ceramic.tira_apl=$event?\'X\':\'\'">                                    <label class="form-check-label" for="tira_aplicada">Tira Aplicada</label>                                </div>                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="ptll" #ptll [(ngModel)]="ceramic.ptll"                                    (ngModelChange)="ceramic.ptll=$event?\'X\':\'\'">                                    <label class="form-check-label" for="pastilla">Pastilla o pelotilla</label>                                </div>                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="zna" #zna [(ngModel)]="ceramic.zna"                                    (ngModelChange)="ceramic.zna=$event?\'X\':\'\'">                                    <label class="form-check-label" for="zonas">Pintura sobre superficie natural</label>                                </div>                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="rndo" #rndo [(ngModel)]="ceramic.rndo"                                    (ngModelChange)="ceramic.rndo=$event?\'X\':\'\'">                                    <label class="form-check-label" for="ranurado">Ranurado</label>                                </div>                            </div>                            <div class="row g-3">                                <div class="col-md-12">                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="acnlo" #acnlo [(ngModel)]="ceramic.acnlo"                                        (ngModelChange)="ceramic.acnlo=$event?\'X\':\'\'">                                        <label class="form-check-label" for="acanalado">Acanalado</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="hddo" #hddo [(ngModel)]="ceramic.hddo"                                        (ngModelChange)="ceramic.hddo=$event?\'X\':\'\'">                                        <label class="form-check-label" for="hendidos">Hendidos o Pellizcado</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="ptdopt" #ptdo [(ngModel)]="ceramic.ptdopt"                                        (ngModelChange)="ceramic.ptdopt=$event?\'X\':\'\'">                                        <label class="form-check-label" for="ptdopt">Punteado</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="mdl" #mdl [(ngModel)]="ceramic.mdl"                                        (ngModelChange)="ceramic.mdl=$event?\'X\':\'\'">                                        <label class="form-check-label" for="moldeadas">Figuras Moldeadas</label>                                    </div>                                </div>                            </div>                        </div>                        <div class="row g-3">                            <label class="fw-bold">Tipo de Diseño </label>                            <label class="fw-bold">Diseño No Figurativo </label>                            <div class="col-md-12">                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="vertical" #vertical [(ngModel)]="ceramic.vertical"                                    (ngModelChange)="ceramic.vertical=$event?\'X\':\'\'">                                    <label class="form-check-label" for="vertical">Vertical</label>                                </div>                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="Horizontal" #horizontal [(ngModel)]="ceramic.horizontal"                                    (ngModelChange)="ceramic.horizontal=$event?\'X\':\'\'">                                    <label class="form-check-label" for="Horizotal">Horizotal</label>                                </div>                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="zig_zag" #zig_zag [(ngModel)]="ceramic.zig_zag"                                    (ngModelChange)="ceramic.zig_zag=$event?\'X\':\'\'">                                    <label class="form-check-label" for="zig_zag">Zig-Zag</label>                                </div>                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="panel" #panel [(ngModel)]="ceramic.panel"                                    (ngModelChange)="ceramic.panel=$event?\'X\':\'\'">                                    <label class="form-check-label" for="panel">Panel</label>                                </div>                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="aisld" #aisld [(ngModel)]="ceramic.aisld"                                    (ngModelChange)="ceramic.aisld=$event?\'X\':\'\'">                                    <label class="form-check-label" for="Aislados">Aislados</label>                                </div>                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="str" #str [(ngModel)]="ceramic.str"                                    (ngModelChange)="ceramic.str=$event?\'X\':\'\'">                                    <label class="form-check-label" for="saturacion">Saturación Completa</label>                                </div>                                <div class="form-check form-check-inline">                                    <input class="form-check-input" type="checkbox" name="otro_nofig" #otro_nofig [(ngModel)]="ceramic.otro_nofig"                                    (ngModelChange)="ceramic.otro_nofig=$event?\'X\':\'\'">                                    <label class="form-check-label" for="otro_nofig">Otro</label>                                </div>                            </div>                            <div class="row g-3">                                <label for="figuras" class="fw-bold">Diseños Figurativos Zoomorfos</label>                                <div class="col-md-12">                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="head" #head [(ngModel)]="ceramic.head"                                        (ngModelChange)="ceramic.head=$event?\'X\':\'\'">                                        <label class="form-check-label" for="cabeza">Cabeza</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="suario" #saurio [(ngModel)]="ceramic.suario"                                        (ngModelChange)="ceramic.suario=$event?\'X\':\'\'">                                        <label class="form-check-label" for="suario">Saurio</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="felino" #felino [(ngModel)]="ceramic.felino"                                        (ngModelChange)="ceramic.felino=$event?\'X\':\'\'">                                        <label class="form-check-label" for="felino">Felino</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="batracio" #batracio [(ngModel)]="ceramic.batracio"                                        (ngModelChange)="ceramic.batracio=$event?\'X\':\'\'">                                        <label class="form-check-label" for="batracio">Batracio</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="ave" #ave [(ngModel)]="ceramic.ave"                                        (ngModelChange)="ceramic.ave=$event?\'X\':\'\'">                                        <label class="form-check-label" for="ave">Ave</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="primate" #primate [(ngModel)]="ceramic.primate"                                        (ngModelChange)="ceramic.primate=$event?\'X\':\'\'">                                        <label class="form-check-label" for="primate">Primate</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="murcielago" #murcielago [(ngModel)]="ceramic.murcielago"                                        (ngModelChange)="ceramic.murcielago=$event?\'X\':\'\'">                                        <label class="form-check-label" for="murcielago">Murcielago</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="mamifero" #mamifero [(ngModel)]="ceramic.mamifero"                                        (ngModelChange)="ceramic.mamifero=$event?\'X\':\'\'">                                        <label class="form-check-label" for="mamifero">Mamifero</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="turtle" #turtle [(ngModel)]="ceramic.turtle"                                        (ngModelChange)="ceramic.turtle=$event?\'X\':\'\'">                                        <label class="form-check-label" for="turtle">Tortuga</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="reptil" #reptil [(ngModel)]="ceramic.reptil"                                        (ngModelChange)="ceramic.reptil=$event?\'X\':\'\'">                                        <label class="form-check-label" for="reptil">Reptil</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="pez" #pez [(ngModel)]="ceramic.pez"                                        (ngModelChange)="ceramic.pez=$event?\'X\':\'\'">                                        <label class="form-check-label" for="pez">Pez</label>                                    </div>                                    <div class="form-check form-check-inline">                                        <input class="form-check-input" type="checkbox" name="indt" #indt [(ngModel)]="ceramic.indt"                                        (ngModelChange)="ceramic.indt=$event?\'X\':\'\'">                                        <label class="form-check-label" for="indt">Indeterminado</label>                                    </div>                                </div>                                <div class="col-md-6">                                    <label for="desc_narrativa">Taxonomia Explicita</label>                                    <input type="text" class="form-control" name="txn_expl" #txm_expl="ngModel"                                        [(ngModel)]="ceramic.txn_expl">                                </div>                                <div class="col-md-6">                                    <label for="desc_narrativa">Investigador</label>                                    <input type="text" class="form-control" name="investigador_zoo"                                        #investigador_zoo="ngModel" [(ngModel)]="ceramic.investigador_zoo">                                </div>                            </div>                            <div class="row g-3">                                <label for="figuras" class="fw-bold">Diseños Figurativos Antropomorfos</label>                                    <div class="col-md-12">                                        <div class="form-check form-check-inline">                                            <input class="form-check-input" type="checkbox" name="cabeza_nofig" #cabeza_nofig [(ngModel)]="ceramic.cabeza_nofig"                                            (ngModelChange)="ceramic.cabeza_nofig=$event?\'X\':\'\'">                                            <label class="form-check-label" for="cabeza_nofig">Cabeza</label>                                        </div>                                        <div class="form-check form-check-inline">                                            <input class="form-check-input" type="checkbox" name="sau_nofig" #sau_nofig [(ngModel)]="ceramic.sau_nofig"                                            (ngModelChange)="ceramic.sau_nofig=$event?\'X\':\'\'">                                            <label class="form-check-label" for="sau_nofig">Cara</label>                                        </div>                                        <div class="form-check form-check-inline">                                            <input class="form-check-input" type="checkbox" name="feli_nofig" #fel_nofig [(ngModel)]="ceramic.feli_nofig"                                            (ngModelChange)="ceramic.feli_nofig=$event?\'X\':\'\'">                                            <label class="form-check-label" for="feli_nofig">Cabeza Hocico</label>                                        </div>                                        <div class="form-check form-check-inline">                                            <input class="form-check-input" type="checkbox" name="bat_nofig" #bat_nofig [(ngModel)]="ceramic.bat_nofig"                                            (ngModelChange)="ceramic.bat_nofig=$event?\'X\':\'\'">                                            <label class="form-check-label" for="bat_nofig">Sedente</label>                                        </div>                                        <div class="form-check form-check-inline">                                            <input class="form-check-input" type="checkbox" name="erguida_nofig" #eguida_nofig [(ngModel)]="ceramic.erguida_nofig"                                            (ngModelChange)="ceramic.erguida_nofig=$event?\'X\':\'\'">                                            <label class="form-check-label" for="erguida_nofig">Erguida</label>                                        </div>                                        <div class="form-check form-check-inline">                                            <input class="form-check-input" type="checkbox" name="prim_nofig" #prim_nofig [(ngModel)]="ceramic.prim_nofig"                                            (ngModelChange)="ceramic.prim_nofig=$event?\'X\':\'\'">                                            <label class="form-check-label" for="prim_nofig">Escena</label>                                        </div>                                                                </div>                                                      </div>                            <div class="row g-3">                                <label for="figuras" class="fw-bold">Diseños Figurativos Indeterminado</label>                                    <div class="col-md-12">                                        <div class="form-check form-check-inline">                                            <input class="form-check-input" type="checkbox" name="cabfigint" #cabfigint [(ngModel)]="ceramic.cabfigint"                                            (ngModelChange)="ceramic.cabfigint=$event?\'X\':\'\'">                                            <label class="form-check-label" for="cabfigint">Cabeza</label>                                        </div>                                        <div class="form-check form-check-inline">                                            <input class="form-check-input" type="checkbox" name="cabhoc" #cabhoc [(ngModel)]="ceramic.cabhoc"                                            (ngModelChange)="ceramic.cabhoc=$event?\'X\':\'\'">                                            <label class="form-check-label" for="saurio">Cabeza Hocico</label>                                        </div>                                        <div class="form-check form-check-inline">                                            <input class="form-check-input" type="checkbox" name="garra" #garra [(ngModel)]="ceramic.garra"                                            (ngModelChange)="ceramic.garra=$event?\'X\':\'\'">                                            <label class="form-check-label" for="garra">Garra</label>                                        </div>                                        <div class="col-md-6">                                            <label for="desc_narrativa">Otra</label>                                            <input type="text" class="form-control" name="otfigind" #otfigind="ngModel"                                                [(ngModel)]="ceramic.otfigind">                                        </div>                                                                </div>                                                      </div>                        </div>                    </div>                </div>            </div>            </div>            <div class="accordion accordion-flush" id="accordionFlushExample">            <div class="accordion-item">                <h2 class="accordion-header" id="flush-headingFour">                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">                        Asociación Funcional, Tipologica, Regional y Temporal                    </button>                </h2>                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"                    data-bs-parent="#accordionFlushExample">                    <div class="accordion-body">                        <div class="row g-3">                            <div class="col-md-4">                                <label for="forma_funcion">Forma-Función</label>                                <select class="form-select" name="forma_funcion" #forma_funcion="ngModel"                                    [(ngModel)]="ceramic.forma_funcion">                                    <option selected>Seleccione...</option>                                    <option value="Cocción">Cocción</option>                                    <option value="Almacenaje">Almacenaje</option>                                    <option value="Servicio">Servicio</option>                                    <option value="Transporte">Transporte</option>                                    <option value="Utilitario en General">Utilitario en General</option>                                    <option value="Suntuario">Suntuario</option>                                </select>                            </div>                            <div class="col-md-4">                                <label for="marcas_uso">Marcas de Uso</label>                                <select class="form-select" name="marcas_uso" #marcas_uso="ngModel"                                    [(ngModel)]="ceramic.marcas_uso">                                    <option selected>Seleccione...</option>                                    <option value="Huellas de Uso">Huellas de Uso</option>                                    <option value="Restos de Hollín">Restos de Hollín</option>                                    <option value="Restos de Alimentos">Restos de Alimentos</option>                                    <option value="Marcas de termoalteración">Marcas de termoalteración</option>                                    <option value="Ahumado">Ahumado</option>                                    <option value="Otro">Otro</option>                                </select>                            </div>                            <div class="col-md-4">                                <label for="desc_marcas_uso">Descripción Marcas de Uso</label>                                <input type="text" class="form-control" name="desc_marcas_uso"                                    #desc_marcas_uso="ngModel" [(ngModel)]="ceramic.desc_marcas_uso">                            </div>                        </div>                        <div class="row g-3">                            <div class="col-md-4">                                <label for="tipo_ceramico_grupo">Tipo Cerámico/Grupo</label>                                <input type="text" class="form-control" name="tipo_ceramico_grupo"                                    #tipo_ceramico_grupo="ngModel" [(ngModel)]="ceramic.tipo_ceramico_grupo">                            </div>                            <div class="col-md-4">                                <label for="ceramico_refz">Refencias Bibliográfica</label>                                <input type="text" class="form-control" name="ceramico_refz" #ceramico_ref2="ngModel"                                    [(ngModel)]="ceramic.ceramico_refz">                            </div>                            <div class="col-md-4">                                <label for="periodo_ceramica">Periodo</label>                                <input type="text" class="form-control" name="periodo_ceramica"                                    #periodo_ceramica="ngModel" [(ngModel)]="ceramic.periodo_ceramica">                            </div>                        </div>                        <div class="row g-3">                            <div class="col-md-4">                                <label for="fase_ceramica">Fase</label>                                <input type="text" class="form-control" name="fase_ceramica" #fase_ceramica="ngModel"                                    [(ngModel)]="ceramic.fase_ceramica">                            </div>                            <div class="col-md-4">                                <label for="temporalidad_ceramica">Temporalidad Estimada</label>                                <input type="text" class="form-control" name="temporalidad_ceramica"                                    #temporalidad_ceramica="ngModel" [(ngModel)]="ceramic.temporalidad_ceramica">                            </div>                            <div class="col-md-4">                                <label for="procedencia_ceramica">Procedencia (Región/Subregión)</label>                                <input type="text" class="form-control" name="procedencia_ceramica"                                    #procedencia_ceramica="ngModel" [(ngModel)]="ceramic.procedencia_ceramica">                            </div>                        </div>                    </div>                </div>            </div>            </div>            <div class="accordion accordion-flush" id="accordionFlushExample">            <div class="accordion-item">                <h2 class="accordion-header" id="flush-headingFive">                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"                        data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">                        Estado de Conservación                    </button>                </h2>                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"                    data-bs-parent="#accordionFlushExample">                    <div class="accordion-body">                        <div class="row g-3">                            <div class="col-md-4">                                <label for="estado_conservacion">Estado de Conservación</label>                                <select class="form-select" name="estado_conservacion" #estado_conservacion="ngModel"                                    [(ngModel)]="ceramic.estado_conservacion">                                    <option selected>Seleccione...</option>                                    <option value="Optimo">Óptimo</option>                                    <option value="Bueno">Bueno</option>                                    <option value="Regular">Regular</option>                                    <option value="Malo">Malo</option>                                </select>                            </div>                            <div class="col-md-4">                                <label for="potencial">Potencial de Exhibición</label>                                <select class="form-select" name="potencial" #potencial="ngModel"                                    [(ngModel)]="ceramic.potencial">                                    <option selected>Seleccione...</option>                                    <option value="Si">Si</option>                                    <option value="No">No</option>                                </select>                            </div>                            <div class="col-md-4">                                <label for="potencial_exp">Explique</label>                                <input type="text" class="form-control" name="potencial_exp" #potencial_exp="ngModel"                                    [(ngModel)]="ceramic.potencial_exp">                            </div>                        </div>                        <div class="row g-3">                            <div class="col-md-4">                                <label for="largo">Vitrina Largo(cm)</label>                                <input type="text" class="form-control" name="largo" #largo="ngModel"                                    [(ngModel)]="ceramic.largo">                            </div>                            <div class="col-md-4">                                <label for="Ancho">Vitrina Ancho(cm)</label>                                <input type="text" class="form-control" name="ancho" #ancho="ngModel"                                    [(ngModel)]="ceramic.ancho">                            </div>                            <div class="col-md-4">                                <label for="alto">Vitrina Alto(cm)</label>                                <input type="text" class="form-control" name="alto" #alto="ngModel"                                    [(ngModel)]="ceramic.alto">                            </div>                        </div>                        <div class="row g-3">                            <div class="col-md-4">                                <label for="peso">Vitrina Peso(gr)</label>                                <input type="text" class="form-control" name="peso" #peso="ngModel"                                    [(ngModel)]="ceramic.peso">                            </div>                        </div>                    </div>                </div>            </div>            </div>            <div class="accordion accordion-flush" id="accordionFlushExample">            <div class="accordion-item">                <h2 class="accordion-header" id="flush-headingSix">                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"                        data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">                        Investigador y Registro                    </button>                </h2>                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"                    data-bs-parent="#accordionFlushExample">                    <div class="accordion-body">                        <div class="row g-3">                            <div class="col-md-4">                                <label for="nombre_invest">Nombre</label>                                <input type="text" class="form-control" name="nombre_invest" #nombre_invest="ngModel"                                    [(ngModel)]="ceramic.nombre_invest">                            </div>                            <div class="col-md-4">                                <label for="fecha_analisis">Fecha Análisis</label>                                <input type="date" class="form-control" name="fecha_analisis" #fecha_analisis="ngModel"                                    [(ngModel)]="ceramic.fecha_analisis">                            </div>                            <div class="col-md-4">                                <label for="fotos_num">Numeración de las fotos</label>                                <input type="text" class="form-control" name="fotos_num" #fotos_num="ngModel"                                    [(ngModel)]="ceramic.fotos_num">                            </div>                        </div>                    </div>                </div>            </div>            </div>            <div class="form-group">                <div class="image-thumb" *ngIf="is_edit">                                            <img src="{{url + \'get-image/\' + ceramic.image}}" alt="{{ceramic.title}}" *ngIf="ceramic.image"/>                        <img src="assets/images/default.png" alt="{{ceramic.title}}" *ngIf="!ceramic.image"/>                                   </div>                                <angular-file-uploader                    [config]="afuConfig"                    (ApiResponse)="imageUpload($event)"                >                    </angular-file-uploader>            </div><!--             <input type="submit" value="enviar" class="btn btn-success"> -->            <input type="submit" value="Guardar" class="btn btn-success"/>        </form>               <!-- JavaScript Bundle with Popper -->        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"            crossorigin="anonymous"></script>    </section>    <div class="clearfix"></div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleComponent', 'selector': 'app-article'},{'name': 'ArticleEditComponent', 'selector': 'app-article-edit'},{'name': 'ArticleNewComponent', 'selector': 'app-article-new'},{'name': 'AuthenticationButtonComponent', 'selector': 'app-authentication-button'},{'name': 'CeramicaComponent', 'selector': 'app-ceramica'},{'name': 'CeramicsComponent', 'selector': 'app-ceramics'},{'name': 'ContextoComponent', 'selector': 'app-contexto'},{'name': 'ContextoDetalleComponent', 'selector': 'app-contexto-detalle'},{'name': 'ContextoEditComponent', 'selector': 'app-contexto-edit'},{'name': 'ContextoExcelComponent', 'selector': 'app-contexto-excel'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashboardEstadisticasComponent', 'selector': 'app-dashboard-estadisticas'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'FichaContextoComponent', 'selector': 'app-ficha-contexto'},{'name': 'FichaLiticaComponent', 'selector': 'app-ficha-litica'},{'name': 'FichaMetalComponent', 'selector': 'app-ficha-metal'},{'name': 'FichaOrigenesComponent', 'selector': 'app-ficha-origenes'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotComponent', 'selector': 'app-forgot'},{'name': 'FormularioComponent', 'selector': 'app-formulario'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LiticaDetalleComponent', 'selector': 'app-litica-detalle'},{'name': 'LiticaEditComponent', 'selector': 'app-litica-edit'},{'name': 'LiticaExcelComponent', 'selector': 'app-litica-excel'},{'name': 'LiticoComponent', 'selector': 'app-litico'},{'name': 'LoginButtonComponent', 'selector': 'app-login-button'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutButtonComponent', 'selector': 'app-logout-button'},{'name': 'MapaOrigenesComponent', 'selector': 'app-mapa-origenes'},{'name': 'MetalDetalleComponent', 'selector': 'app-metal-detalle'},{'name': 'MetalEditComponent', 'selector': 'app-metal-edit'},{'name': 'MetalExcelComponent', 'selector': 'app-metal-excel'},{'name': 'MetalicoComponent', 'selector': 'app-metalico'},{'name': 'ModalOptionsComponent', 'selector': 'app-modal-options'},{'name': 'PagDetalleLiteSitioComponent', 'selector': 'app-pag-detalle-lite-sitio'},{'name': 'PaginaComponent', 'selector': 'app-pagina'},{'name': 'PagLitComponent', 'selector': 'app-pag-lit'},{'name': 'PagLiteSitioNombreComponent', 'selector': 'app-pag-lite-sitio-nombre'},{'name': 'PagLiteSitiosComponent', 'selector': 'app-pag-lite-sitios'},{'name': 'PagMetComponent', 'selector': 'app-pag-met'},{'name': 'PagOriComponent', 'selector': 'app-pag-ori'},{'name': 'PeliculasComponent', 'selector': 'app-peliculas'},{'name': 'PerfilesComponent', 'selector': 'app-perfiles'},{'name': 'PlasticaComponent', 'selector': 'app-plastica'},{'name': 'PoliticasUsoComponent', 'selector': 'app-politicas-uso'},{'name': 'PopupOrigenesComponent', 'selector': 'app-popup-origenes'},{'name': 'PopupPerfilComponent', 'selector': 'app-popup-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RegistroOrigenesComponent', 'selector': 'app-registro-origenes'},{'name': 'ReportePublicoComponent', 'selector': 'app-reporte-publico'},{'name': 'ResetComponent', 'selector': 'app-reset'},{'name': 'SearchCombCeraComponent', 'selector': 'app-search-comb-cera'},{'name': 'SearchComblitComponent', 'selector': 'app-search-comblit'},{'name': 'SearchCombMetComponent', 'selector': 'app-search-comb-met'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SearchContextoComponent', 'selector': 'app-search-contexto'},{'name': 'SearchLiticoComponent', 'selector': 'app-search-litico'},{'name': 'SearchMetalicoComponent', 'selector': 'app-search-metalico'},{'name': 'SearchSitioComponent', 'selector': 'app-search-sitio'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SitioComponent', 'selector': 'app-sitio'},{'name': 'SitioDetalleComponent', 'selector': 'app-sitio-detalle'},{'name': 'SitioEditComponent', 'selector': 'app-sitio-edit'},{'name': 'SitioExcelComponent', 'selector': 'app-sitio-excel'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'TipoDisComponent', 'selector': 'app-tipo-dis'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ArticleEditComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ArticleEditComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

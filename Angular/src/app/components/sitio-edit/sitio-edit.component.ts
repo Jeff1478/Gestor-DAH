@@ -15,12 +15,27 @@ import { StorageService } from 'src/app/services/storage.service';
   providers: [SitioService, RestService],
 })
 export class SitioEditComponent implements OnInit {
+  periodos = [
+    { campo: 'diezmil_ochomil_ac', fase: 'fase_1', etiqueta: '10.000-8.000 a.C' },
+    { campo: 'ocho_mil_cuatro_mil_ac', fase: 'fase_10', etiqueta: '8.000-4.000 a.C' },
+    { campo: 'cuatro_mil_mil_quinientos_ac', fase: 'fase_7', etiqueta: '4.000-1.500 a.C' },
+    { campo: 'mil_quinientos_quinientos_ac', fase: 'fase_3', etiqueta: '1.500-500 a.C' },
+    { campo: 'quinientos_trecientos_dc', fase: 'fase_8', etiqueta: '500 a.C - 300 d.C' },
+    { campo: 'trescientos_ochocientos_dc', fase: 'fase_6', etiqueta: '300-800 d.C' },
+    { campo: 'ochocientos_mil_tres_cincuenta_dc', fase: 'fase_9', etiqueta: '800-1350 d.C' },
+    { campo: 'mil_tres_cincuenta_mil_quinientos_dc', fase: 'fase_2', etiqueta: '1350-1550 d.C' },
+    { campo: 'mil_quinientos_mil_ochocientos_dc', fase: 'fase_4', etiqueta: '1550-1821 d.C' },
+    { campo: 'mil_ochocientos_mil_novecientos_sc', fase: 'fase_5', etiqueta: '1821-1950 d.C' }
+  ];
   dropdownList: any[] = [];
   dropdownList2: any[] = [];
   dropdownList3: any[] = [];
   dropdownList4: any[] = [];
   dropdownList5: any[] = [];
   dropdownList6: any[] = [];
+  materialesDisponibles: any[] = [];
+  patrimonioOpciones: any[] = [];
+  estadosConservacion: any[] = [];
   selectedItems: any[] = [];
   selectedItems2: any[] = [];
   selectedItems3: any[] = [];
@@ -84,6 +99,7 @@ export class SitioEditComponent implements OnInit {
 '',
 '',
 '',
+'',
 false,
 false,
 false,
@@ -184,7 +200,7 @@ false,
 false,
 false,
 false,
-'',
+0,
 false,
 false,
 false,
@@ -209,7 +225,7 @@ false,
 false,
 '',
 '',
-'',
+0,
 '',
 '',
 '',
@@ -288,22 +304,7 @@ false,
     );
   }
 
- /*  getFile($event: any): void {
-    //TODO esto captura el archivo!
-    const [file] = $event.target.files;
-    this.fileTmp = {
-      fileRaw: file,
-      fileName: file.name,
-    };
-  } */
-/* 
-  sendFile(): void {
-    const body = new FormData();
-    body.append('myFile', this.fileTmp.fileRaw, this.fileTmp.fileName);
-    body.append('email', 'test@test.com');
 
-    this.restService.sendPost(body).subscribe((res) => console.log(res));
-  } */
 
   ngOnInit() {
     this.getArticle();
@@ -540,4 +541,8 @@ false,
     }
   
   }
+
+  volverInicio() {
+  this._router.navigate(['/home']); // Reemplaza '/home' por tu ruta real
+}
 }

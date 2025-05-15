@@ -40,7 +40,7 @@ import { MetalDetalleComponent } from "./components/metal-detalle/metal-detalle.
 import { MetalEditComponent } from "./components/metal-edit/metal-edit.component";
 import { MetalExcelComponent } from "./components/metal-excel/metal-excel.component";
 import { SearchLiticoComponent } from "./components/search-litico/search-litico.component";
-import { SearchMetalicoComponent } from "./components/search-metalico/search-metalico.component";
+
 import { SitioExcelComponent } from "./components/sitio-excel/sitio-excel.component";
 import { LoginComponent } from "./components/login/login.component";
 import { ForgotComponent } from "./components/forgot/forgot.component";
@@ -111,7 +111,7 @@ const appRoutes: Routes = [
     {path: 'buscarcombmet/:search', component : SearchCombMetComponent, canActivate: [AuthGuard]},
     {path: 'buscarcontexto/:search',component : SearchContextoComponent, canActivate: [AuthGuard]},
     {path: 'buscarlitico/:search', component: SearchLiticoComponent, canActivate: [AuthGuard]},
-    {path: 'buscarmetalico/:search', component: SearchMetalicoComponent, canActivate: [AuthGuard]},
+ 
   
     {path: '**', component : ErrorComponent}
 ];

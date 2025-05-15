@@ -4,8 +4,16 @@ import { SitioService } from 'src/app/services/sitio.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Sitio } from 'src/app/models/sitio';
 import { Globals } from 'src/app/services/globals';
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { IDropdownSettings,NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { StorageService } from 'src/app/services/storage.service';
+// Importaciones para actualizar la pantalla
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -27,6 +35,10 @@ export class FichaOrigenesComponent implements OnInit {
   selectedItems4: any[] = [];
   selectedItems5: any[] = [];
   selectedItems6: any[] = [];
+  periodos: any[] = [];
+  materialesDisponibles: any[] = [];
+  estadosConservacion: any[] = [];
+  patrimonioOpciones: any[] = [];
   img: any[] = [];
   dropdownSettings!: IDropdownSettings;
   dropdownSettings2!: IDropdownSettings;
@@ -34,6 +46,8 @@ export class FichaOrigenesComponent implements OnInit {
   dropdownSettings4!: IDropdownSettings;
   dropdownSettings5!: IDropdownSettings;
   dropdownSettings6!: IDropdownSettings;
+  
+  
 
   user: any;
   public sitio!: Sitio;
@@ -81,6 +95,7 @@ export class FichaOrigenesComponent implements OnInit {
       numero_caso: '',
       nombre_sitio: '',
       clave_sitio: '',
+      cod_ucr: '',
       clave_antigua: '',
       estudio_impacto_ambiental: false,
       monitoreo_mov_tierras: false,
@@ -126,8 +141,8 @@ export class FichaOrigenesComponent implements OnInit {
       territorio_indigena: false,
       lambert_oe: '',
       lambert_ns: '',
-      CRTM05_E: '',
-      CRTM05_N: '',
+      crtm05_e: 0,
+      crtm05_n: 0,
       grad_lat: '',
       min_lat: '',
       seg_lat: '',
@@ -190,7 +205,7 @@ export class FichaOrigenesComponent implements OnInit {
       cuatro_mil_mil_quinientos_ac: false,
       mil_quinientos_quinientos_ac: false,
       quinientos_trecientos_dc: false,
-      trecientos_ochocientos_dc: false,
+      trescientos_ochocientos_dc: false,
       ochocientos_mil_tres_cincuenta_dc: false,
       mil_tres_cincuenta_mil_quinientos_dc: false,
       mil_quinientos_mil_ochocientos_dc: false,
@@ -286,6 +301,21 @@ export class FichaOrigenesComponent implements OnInit {
 
   
   ngOnInit() {
+    this.periodos = [
+  { campo: 'diezmil_ochomil_ac', fase: 'fase_1', etiqueta: '10.000-8.000 a.C' },
+  { campo: 'ocho_mil_cuatro_mil_ac', fase: 'fase_10', etiqueta: '8.000-4.000 a.C' },
+  { campo: 'cuatro_mil_mil_quinientos_ac', fase: 'fase_7', etiqueta: '4.000-1.500 a.C' },
+  { campo: 'mil_quinientos_quinientos_ac', fase: 'fase_3', etiqueta: '1.500-500 a.C' },
+  { campo: 'quinientos_trecientos_dc', fase: 'fase_8', etiqueta: '500 a.C - 300 d.C' },
+  { campo: 'trescientos_ochocientos_dc', fase: 'fase_6', etiqueta: '300-800 d.C' },
+  { campo: 'ochocientos_mil_tres_cincuenta_dc', fase: 'fase_9', etiqueta: '800-1350 d.C' },
+  { campo: 'mil_tres_cincuenta_mil_quinientos_dc', fase: 'fase_2', etiqueta: '1350-1550 d.C' },
+  { campo: 'mil_quinientos_mil_ochocientos_dc', fase: 'fase_4', etiqueta: '1550-1821 d.C' },
+  { campo: 'mil_ochocientos_mil_novecientos_sc', fase: 'fase_5', etiqueta: '1821-1950 d.C' },
+];
+this.estadosConservacion = ['Bueno', 'Regular', 'Dañado', 'Inaccesible'];
+this.patrimonioOpciones = ['Restos de embarcaciones','Sitios Sumergidos','Artefactos dispersos'];
+this.materialesDisponibles  = ['Arcilla Cocida', 'Cerámica', 'Concha', 'Esferas', 'Estatuaria', 'Fauna', 'Flora', 'Hierro', 'Lapidaria', 'Litica', 'Loza', 'Madera o Fibra', 'Oro', 'Piedra Verde', 'Porcelana', 'Resina', 'Restos Humanos', 'Tierra', 'Vidrio'];
     this.dropdownList = [
       { item_id: 1, item_text: 'Arcilla Cocida' },
       { item_id: 2, item_text: 'Carbón' },
@@ -380,7 +410,7 @@ export class FichaOrigenesComponent implements OnInit {
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
       itemsShowLimit: 12,
-      allowSearchFilter: true,
+      allowSearchFilter: true
     };
 
     this.dropdownSettings3 = {
@@ -393,6 +423,8 @@ export class FichaOrigenesComponent implements OnInit {
       allowSearchFilter: true,
     };
   }
+
+
 
   onItemSelect(item: any) {
     this.sitio.materiales_recuperados =
@@ -495,4 +527,11 @@ export class FichaOrigenesComponent implements OnInit {
 
      
   }
+
+
+
+volverInicio() {
+  this._router.navigate(['/pag-ori']); // Reemplaza '/home' por tu ruta real
+}
+
 }

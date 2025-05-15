@@ -1,0 +1,1791 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gestordah documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">gestordah documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  PagLiteSitiosComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../injectables/SitioService.html" target="_self" >SitioService</a></code>
+                                <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                <code><a href="../injectables/RegistroService.html" target="_self" >RegistroService</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-pag-lite-sitios</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./pag-lite-sitios.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./pag-lite-sitios.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_registroService" >_registroService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#acceso" >acceso</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#administrador" >administrador</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#arqueo" >arqueo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#authService" >authService</a>
+                            </li>
+                            <li>
+                                <a href="#canton" >canton</a>
+                            </li>
+                            <li>
+                                <a href="#clave_sitio" >clave_sitio</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog" >dialog</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#distrito" >distrito</a>
+                            </li>
+                            <li>
+                                <a href="#listData" >listData</a>
+                            </li>
+                            <li>
+                                <a href="#nombre_sitio" >nombre_sitio</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#paginator" >paginator</a>
+                            </li>
+                            <li>
+                                <a href="#provincia" >provincia</a>
+                            </li>
+                            <li>
+                                <a href="#region" >region</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#registrado" >registrado</a>
+                            </li>
+                            <li>
+                                <a href="#searchKey" >searchKey</a>
+                            </li>
+                            <li>
+                                <a href="#sitios" >sitios</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#sort" >sort</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#title" >title</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#user" >user</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#usuario" >usuario</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#applyFilter" >applyFilter</a>
+                            </li>
+                            <li>
+                                <a href="#buscarSitios" >buscarSitios</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSearchClear" >onSearchClear</a>
+                            </li>
+                            <li>
+                                <a href="#openDialog" >openDialog</a>
+                            </li>
+                            <li>
+                                <a href="#searchPerfil" >searchPerfil</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_sitioService: <a href="../injectables/SitioService.html" target="_self">SitioService</a>, _route: ActivatedRoute, _router: Router, dialog: MatDialog, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, _registroService: <a href="../injectables/RegistroService.html" target="_self">RegistroService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_sitioService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SitioService.html" target="_self" >SitioService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_registroService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RegistroService.html" target="_self" >RegistroService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyFilter"></a>
+                    <span class="name">
+                        <span ><b>applyFilter</b></span>
+                        <a href="#applyFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>applyFilter()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="166"
+                                    class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:166</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buscarSitios"></a>
+                    <span class="name">
+                        <span ><b>buscarSitios</b></span>
+                        <a href="#buscarSitios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>buscarSitios(filtros: literal type)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>filtros</td>
+                                            <td>
+                                                        <code>literal type</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSearchClear"></a>
+                    <span class="name">
+                        <span ><b>onSearchClear</b></span>
+                        <a href="#onSearchClear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSearchClear()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="161"
+                                    class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:161</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openDialog"></a>
+                    <span class="name">
+                        <span ><b>openDialog</b></span>
+                        <a href="#openDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openDialog(selected: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="172"
+                                    class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:172</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>selected</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchPerfil"></a>
+                    <span class="name">
+                        <span ><b>searchPerfil</b></span>
+                        <a href="#searchPerfil"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchPerfil(searstring: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="145"
+                                    class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:145</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>searstring</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_registroService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_registroService</b></span>
+                        <a href="#_registroService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/RegistroService.html" target="_self" >RegistroService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="acceso"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>acceso</b></span>
+                        <a href="#acceso"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="administrador"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>administrador</b></span>
+                        <a href="#administrador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arqueo"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>arqueo</b></span>
+                        <a href="#arqueo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="authService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>authService</b></span>
+                        <a href="#authService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="canton"></a>
+                    <span class="name">
+                        <span ><b>canton</b></span>
+                        <a href="#canton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clave_sitio"></a>
+                    <span class="name">
+                        <span ><b>clave_sitio</b></span>
+                        <a href="#clave_sitio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dialog"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>dialog</b></span>
+                        <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatDialog</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;_id&#x27;, &#x27;nombre_sitio&#x27;, &#x27;clave_sitio&#x27;, &#x27;provincia&#x27;, &#x27;canton&#x27;, &#x27;distrito&#x27;, &#x27;actions&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="distrito"></a>
+                    <span class="name">
+                        <span ><b>distrito</b></span>
+                        <a href="#distrito"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listData"></a>
+                    <span class="name">
+                        <span ><b>listData</b></span>
+                        <a href="#listData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatTableDataSource&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nombre_sitio"></a>
+                    <span class="name">
+                        <span ><b>nombre_sitio</b></span>
+                        <a href="#nombre_sitio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paginator"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>paginator</b></span>
+                        <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatPaginator</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatPaginator)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="provincia"></a>
+                    <span class="name">
+                        <span ><b>provincia</b></span>
+                        <a href="#provincia"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="region"></a>
+                    <span class="name">
+                        <span ><b>region</b></span>
+                        <a href="#region"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registrado"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>registrado</b></span>
+                        <a href="#registrado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchKey"></a>
+                    <span class="name">
+                        <span ><b>searchKey</b></span>
+                        <a href="#searchKey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sitios"></a>
+                    <span class="name">
+                        <span ><b>sitios</b></span>
+                        <a href="#sitios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sort"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>sort</b></span>
+                        <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatSort</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatSort)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="title"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>title</b></span>
+                        <a href="#title"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuario"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>usuario</b></span>
+                        <a href="#usuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/pag-lite-sitios/pag-lite-sitios.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild} from &#x27;@angular/core&#x27;;
+import { Sitio } from &#x27;../../models/sitio&#x27;;
+import { SitioService } from &#x27;src/app/services/sitio.service&#x27;;
+import {ActivatedRoute, Router} from &#x27;@angular/router&#x27;;
+import {MatTableDataSource} from &#x27;@angular/material/table&#x27;;
+import {MatPaginator} from &#x27;@angular/material/paginator&#x27;;
+import {MatDialog} from &#x27;@angular/material/dialog&#x27;;
+import { MatSort } from &#x27;@angular/material/sort&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
+import { RegistroService } from &#x27;src/app/services/registro.service&#x27;;
+
+@Component({
+  selector: &#x27;app-pag-lite-sitios&#x27;,
+  templateUrl: &#x27;./pag-lite-sitios.component.html&#x27;,
+  styleUrls: [&#x27;./pag-lite-sitios.component.css&#x27;],
+  providers : [SitioService,AuthService,RegistroService]
+})
+export class PagLiteSitiosComponent implements OnInit { 
+
+  // dataSource!: MatTableDataSource&lt;any&gt;;
+  nombre_sitio!: string;
+  clave_sitio!: string;
+  
+  region!: string;
+  public administrador!: boolean;
+  public registrado!: boolean;
+  public usuario!: any;
+  public title!: string;
+  public arqueo: boolean;
+  public user!: any;
+  public acceso!: string;
+  
+
+  provincia: string &#x3D; &#x27;&#x27;;
+  canton: string &#x3D; &#x27;&#x27;;
+  distrito: string &#x3D; &#x27;&#x27;;
+  sitios: any[] &#x3D; [];
+  
+
+  constructor(
+    private _sitioService: SitioService,
+    private _route: ActivatedRoute,
+    private _router: Router,
+    public dialog: MatDialog,
+    public authService : AuthService,
+    public _registroService: RegistroService
+  ) { 
+    this.arqueo &#x3D; false;
+    this.user &#x3D; &#x27;&#x27;;
+  }
+
+  listData!: MatTableDataSource&lt;any&gt;;
+  displayedColumns: string[] &#x3D; [&#x27;_id&#x27;, &#x27;nombre_sitio&#x27;, &#x27;clave_sitio&#x27;, &#x27;provincia&#x27;, &#x27;canton&#x27;, &#x27;distrito&#x27;, &#x27;actions&#x27;];
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  searchKey!: string;
+
+  ngOnInit() {
+
+    const correoUsuario &#x3D; localStorage.getItem(&#x27;email&#x27;);
+    console.log(&quot;Correo del usuario:&quot;, correoUsuario);
+  if (correoUsuario) {
+    this.searchPerfil(correoUsuario); // 👈 Buscar perfil apenas carga
+  }
+
+    this._route.queryParams.subscribe(params &#x3D;&gt; {
+      // Si hay filtros en la URL, los usamos y los guardamos
+      if (params[&#x27;provincia&#x27;] || params[&#x27;canton&#x27;] || params[&#x27;distrito&#x27;]) {
+        const filtros &#x3D; {
+          provincia: params[&#x27;provincia&#x27;] || &#x27;&#x27;,
+          canton: params[&#x27;canton&#x27;] || &#x27;&#x27;,
+          distrito: params[&#x27;distrito&#x27;] || &#x27;&#x27;
+        };
+  
+        this.provincia &#x3D; filtros.provincia;
+        this.canton &#x3D; filtros.canton;
+        this.distrito &#x3D; filtros.distrito;
+  
+        localStorage.setItem(&#x27;filtrosBusqueda&#x27;, JSON.stringify(filtros));
+        this.buscarSitios(filtros);
+      } else {
+        // Si no hay en la URL, tratamos de leerlos del localStorage
+        const guardados &#x3D; localStorage.getItem(&#x27;filtrosBusqueda&#x27;);
+        if (guardados) {
+          const filtros &#x3D; JSON.parse(guardados);
+          this.provincia &#x3D; filtros.provincia;
+          this.canton &#x3D; filtros.canton;
+          this.distrito &#x3D; filtros.distrito;
+  
+          // Opcionalmente podrías actualizar la URL:
+          this._router.navigate([], {
+            relativeTo: this._route,
+            queryParams: filtros
+          });
+  
+          this.buscarSitios(filtros);
+        }
+      }
+    });
+  }
+
+  buscarSitios(filtros: { provincia: string, canton: string, distrito: string }) {
+    this._sitioService.buscarSitios(filtros).subscribe(
+      res &#x3D;&gt; {
+        if (res.sitio) {
+          this.sitios &#x3D; res.sitio;
+          this.listData &#x3D; new MatTableDataSource(res.sitio);
+          this.listData.sort &#x3D; this.sort;
+          this.listData.paginator &#x3D; this.paginator;
+        } else {
+          this.sitios &#x3D; [];
+        }
+      },
+      error &#x3D;&gt; {
+        console.error(&quot;Error al buscar sitios:&quot;, error);
+        this.sitios &#x3D; [];
+      }
+    );
+  }
+  
+
+ /*  searchPerfil(searstring:any){
+    this._registroService.search(searstring).subscribe(
+      response &#x3D;&gt; {
+       if(response.registro){
+
+        this.user &#x3D; response.registro
+        console.log(this.user)
+        this.acceso &#x3D; JSON.stringify(this.user, [&#x27;acceso&#x27;])
+
+           if(this.acceso &#x3D;&#x3D; &#x27;[{&quot;acceso&quot;:true}]&#x27;){
+            this.arqueo &#x3D; true;
+          } 
+         
+        
+      }},
+
+      err &#x3D;&gt; {
+        console.log(err);
+      }
+    );
+  } */
+
+    searchPerfil(searstring: any) {
+      this._registroService.search(searstring).subscribe(
+        response &#x3D;&gt; {
+          if (response.registro) {
+            this.user &#x3D; response.registro; // ✅ ya es un objeto, no un array
+            this.arqueo &#x3D; !!this.user.acceso; // ✅ acceso booleano
+            console.log(&quot;Acceso ampliado:&quot;, this.arqueo);
+          }
+        },
+        err &#x3D;&gt; {
+          console.error(&quot;Error al obtener perfil:&quot;, err);
+        }
+      );
+    }
+  
+
+  onSearchClear() {
+    this.searchKey &#x3D; &quot;&quot;;
+    this.applyFilter();
+  }
+
+  applyFilter() {
+    this.listData.filter &#x3D; this.searchKey.trim().toLowerCase();
+  }
+
+
+
+  openDialog(selected: any) {
+    if (this.arqueo) {
+      this._router.navigate([&#x27;/pag-ori/sitio&#x27;, selected]);
+    } else {
+      this._router.navigate([&#x27;/pag-ori-det/sitio&#x27;, selected]);
+    }
+  }
+  
+
+  }
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+
+ &lt;app-header&gt;&lt;/app-header&gt;
+
+ &lt;div class&#x3D;&quot;home-button-container&quot;&gt;
+  &lt;a [routerLink]&#x3D;&quot;[&#x27;/pag-ori&#x27;]&quot; mat-icon-button matTooltip&#x3D;&quot;Volver al inicio&quot; class&#x3D;&quot;btn-home&quot;&gt;
+    &lt;mat-icon&gt;home&lt;/mat-icon&gt;
+  &lt;/a&gt;
+  
+  &lt;mat-form-field class&#x3D;&quot;search-form-field&quot; floatLabel&#x3D;&quot;never&quot;&gt;
+    &lt;input matInput [(ngModel)]&#x3D;&quot;searchKey&quot; placeholder&#x3D;&quot;Buscar...&quot; autocomplete&#x3D;&quot;off&quot; (keyup)&#x3D;&quot;applyFilter()&quot;&gt;
+    &lt;button mat-button matSuffix mat-icon-button aria-label&#x3D;&quot;Clear&quot; *ngIf&#x3D;&quot;searchKey&quot; (click)&#x3D;&quot;onSearchClear()&quot;&gt;
+      &lt;mat-icon&gt;close&lt;/mat-icon&gt;
+    &lt;/button&gt;
+  &lt;/mat-form-field&gt;
+&lt;/div&gt;
+
+&lt;!-- Tarjetas de resultados --&gt;
+&lt;div class&#x3D;&quot;tarjetas-container&quot; *ngIf&#x3D;&quot;listData&quot;&gt;
+  &lt;mat-card *ngFor&#x3D;&quot;let element of listData.filteredData&quot; class&#x3D;&quot;tarjeta-sitio&quot;&gt;
+    &lt;mat-card-title&gt;{{ element.nombre_sitio }}&lt;/mat-card-title&gt;
+    &lt;mat-card-subtitle&gt;Clave: {{ element.clave_sitio }}&lt;/mat-card-subtitle&gt;
+
+    &lt;mat-card-content&gt;
+      &lt;p&gt;&lt;mat-icon&gt;place&lt;/mat-icon&gt; Provincia: &lt;strong&gt;{{ element.provincia }}&lt;/strong&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;mat-icon&gt;domain&lt;/mat-icon&gt; Cantón: &lt;strong&gt;{{ element.canton }}&lt;/strong&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;mat-icon&gt;location_city&lt;/mat-icon&gt; Distrito: &lt;strong&gt;{{ element.distrito }}&lt;/strong&gt;&lt;/p&gt;
+    &lt;/mat-card-content&gt;
+
+     &lt;mat-card-actions&gt;
+      &lt;button mat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;openDialog(element._id)&quot;&gt;
+        Leer más &lt;mat-icon&gt;launch&lt;/mat-icon&gt;
+      &lt;/button&gt;
+    &lt;/mat-card-actions&gt; 
+  &lt;/mat-card&gt;
+&lt;/div&gt;
+
+&lt;!-- Paginador solo si hay datos cargados --&gt;
+&lt;mat-paginator *ngIf&#x3D;&quot;listData&quot;
+  [pageSizeOptions]&#x3D;&quot;[5, 10, 25, 100]&quot;
+  [pageSize]&#x3D;&quot;25&quot;
+  showFirstLastButtons&gt;
+&lt;/mat-paginator&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./pag-lite-sitios.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.tarjetas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 2rem 0;
+  }
+  
+  .tarjeta-sitio {
+    padding: 1rem;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .search-form-field {
+    flex: 1;
+  }
+  
+  .home-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .btn-home {
+    background-color: #ffc107; /* color ámbar */
+    color: #000;
+    border-radius: 50%;
+    padding: 0.6rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .btn-home:hover {
+    transform: scale(1.1);
+    background-color: #ffca28;
+  }
+  </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div> <app-header></app-header> <div class="home-button-container">  <a [routerLink]="[\'/pag-ori\']" mat-icon-button matTooltip="Volver al inicio" class="btn-home">    <mat-icon>home</mat-icon>  </a>    <mat-form-field class="search-form-field" floatLabel="never">    <input matInput [(ngModel)]="searchKey" placeholder="Buscar..." autocomplete="off" (keyup)="applyFilter()">    <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">      <mat-icon>close</mat-icon>    </button>  </mat-form-field></div><!-- Tarjetas de resultados --><div class="tarjetas-container" *ngIf="listData">  <mat-card *ngFor="let element of listData.filteredData" class="tarjeta-sitio">    <mat-card-title>{{ element.nombre_sitio }}</mat-card-title>    <mat-card-subtitle>Clave: {{ element.clave_sitio }}</mat-card-subtitle>    <mat-card-content>      <p><mat-icon>place</mat-icon> Provincia: <strong>{{ element.provincia }}</strong></p>      <p><mat-icon>domain</mat-icon> Cantón: <strong>{{ element.canton }}</strong></p>      <p><mat-icon>location_city</mat-icon> Distrito: <strong>{{ element.distrito }}</strong></p>    </mat-card-content>     <mat-card-actions>      <button mat-button color="primary" (click)="openDialog(element._id)">        Leer más <mat-icon>launch</mat-icon>      </button>    </mat-card-actions>   </mat-card></div><!-- Paginador solo si hay datos cargados --><mat-paginator *ngIf="listData"  [pageSizeOptions]="[5, 10, 25, 100]"  [pageSize]="25"  showFirstLastButtons></mat-paginator></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleComponent', 'selector': 'app-article'},{'name': 'ArticleEditComponent', 'selector': 'app-article-edit'},{'name': 'ArticleNewComponent', 'selector': 'app-article-new'},{'name': 'AuthenticationButtonComponent', 'selector': 'app-authentication-button'},{'name': 'CeramicaComponent', 'selector': 'app-ceramica'},{'name': 'CeramicsComponent', 'selector': 'app-ceramics'},{'name': 'ContextoComponent', 'selector': 'app-contexto'},{'name': 'ContextoDetalleComponent', 'selector': 'app-contexto-detalle'},{'name': 'ContextoEditComponent', 'selector': 'app-contexto-edit'},{'name': 'ContextoExcelComponent', 'selector': 'app-contexto-excel'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashboardEstadisticasComponent', 'selector': 'app-dashboard-estadisticas'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'FichaContextoComponent', 'selector': 'app-ficha-contexto'},{'name': 'FichaLiticaComponent', 'selector': 'app-ficha-litica'},{'name': 'FichaMetalComponent', 'selector': 'app-ficha-metal'},{'name': 'FichaOrigenesComponent', 'selector': 'app-ficha-origenes'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotComponent', 'selector': 'app-forgot'},{'name': 'FormularioComponent', 'selector': 'app-formulario'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LiticaDetalleComponent', 'selector': 'app-litica-detalle'},{'name': 'LiticaEditComponent', 'selector': 'app-litica-edit'},{'name': 'LiticaExcelComponent', 'selector': 'app-litica-excel'},{'name': 'LiticoComponent', 'selector': 'app-litico'},{'name': 'LoginButtonComponent', 'selector': 'app-login-button'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutButtonComponent', 'selector': 'app-logout-button'},{'name': 'MapaOrigenesComponent', 'selector': 'app-mapa-origenes'},{'name': 'MetalDetalleComponent', 'selector': 'app-metal-detalle'},{'name': 'MetalEditComponent', 'selector': 'app-metal-edit'},{'name': 'MetalExcelComponent', 'selector': 'app-metal-excel'},{'name': 'MetalicoComponent', 'selector': 'app-metalico'},{'name': 'ModalOptionsComponent', 'selector': 'app-modal-options'},{'name': 'PagDetalleLiteSitioComponent', 'selector': 'app-pag-detalle-lite-sitio'},{'name': 'PaginaComponent', 'selector': 'app-pagina'},{'name': 'PagLitComponent', 'selector': 'app-pag-lit'},{'name': 'PagLiteSitioNombreComponent', 'selector': 'app-pag-lite-sitio-nombre'},{'name': 'PagLiteSitiosComponent', 'selector': 'app-pag-lite-sitios'},{'name': 'PagMetComponent', 'selector': 'app-pag-met'},{'name': 'PagOriComponent', 'selector': 'app-pag-ori'},{'name': 'PeliculasComponent', 'selector': 'app-peliculas'},{'name': 'PerfilesComponent', 'selector': 'app-perfiles'},{'name': 'PlasticaComponent', 'selector': 'app-plastica'},{'name': 'PoliticasUsoComponent', 'selector': 'app-politicas-uso'},{'name': 'PopupOrigenesComponent', 'selector': 'app-popup-origenes'},{'name': 'PopupPerfilComponent', 'selector': 'app-popup-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RegistroOrigenesComponent', 'selector': 'app-registro-origenes'},{'name': 'ReportePublicoComponent', 'selector': 'app-reporte-publico'},{'name': 'ResetComponent', 'selector': 'app-reset'},{'name': 'SearchCombCeraComponent', 'selector': 'app-search-comb-cera'},{'name': 'SearchComblitComponent', 'selector': 'app-search-comblit'},{'name': 'SearchCombMetComponent', 'selector': 'app-search-comb-met'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SearchContextoComponent', 'selector': 'app-search-contexto'},{'name': 'SearchLiticoComponent', 'selector': 'app-search-litico'},{'name': 'SearchMetalicoComponent', 'selector': 'app-search-metalico'},{'name': 'SearchSitioComponent', 'selector': 'app-search-sitio'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SitioComponent', 'selector': 'app-sitio'},{'name': 'SitioDetalleComponent', 'selector': 'app-sitio-detalle'},{'name': 'SitioEditComponent', 'selector': 'app-sitio-edit'},{'name': 'SitioExcelComponent', 'selector': 'app-sitio-excel'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'TipoDisComponent', 'selector': 'app-tipo-dis'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PagLiteSitiosComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PagLiteSitiosComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

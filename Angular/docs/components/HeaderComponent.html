@@ -1,0 +1,999 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gestordah documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">gestordah documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HeaderComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/header/header.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-header</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./header.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./header.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#aguacaliente" >aguacaliente</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#authService" >authService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#logueado" >logueado</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchString" >searchString</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#separado" >separado</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#title" >title</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#usuario" >usuario</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#goSearch" >goSearch</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_router: Router, _route: ActivatedRoute, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/header/header.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goSearch"></a>
+                    <span class="name">
+                        <span ><b>goSearch</b></span>
+                        <a href="#goSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goSearch()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="104"
+                                    class="link-to-prism">src/app/components/header/header.component.ts:104</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="70"
+                                    class="link-to-prism">src/app/components/header/header.component.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="aguacaliente"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>aguacaliente</b></span>
+                        <a href="#aguacaliente"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/header/header.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="authService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>authService</b></span>
+                        <a href="#authService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/header/header.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logueado"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>logueado</b></span>
+                        <a href="#logueado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/header/header.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchString"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>searchString</b></span>
+                        <a href="#searchString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/header/header.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="separado"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>separado</b></span>
+                        <a href="#separado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/header/header.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="title"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>title</b></span>
+                        <a href="#title"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/header/header.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuario"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>usuario</b></span>
+                        <a href="#usuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/header/header.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router, ActivatedRoute, Params } from &#x27;@angular/router&#x27;;
+import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
+@Component({
+  selector: &#x27;app-header&#x27;,
+  templateUrl: &#x27;./header.component.html&#x27;,
+  styleUrls: [&#x27;./header.component.css&#x27;]
+})
+export class HeaderComponent implements OnInit {
+
+  public searchString!: string;
+  public usuario!: any;
+  public title: string;
+  public logueado: boolean;
+  public aguacaliente: boolean;
+  public separado: string;
+
+  constructor(
+    private _router: Router,
+    private _route: ActivatedRoute,
+    public authService : AuthService
+  ) {
+    this.title &#x3D; &#x27;&#x27;;
+    this.usuario &#x3D; &#x27;&#x27;;
+    this.separado &#x3D; &#x27;&#x27;;
+    this.logueado &#x3D; false;
+    this.aguacaliente &#x3D; false;
+   }
+
+/*   ngOnInit(){
+
+    this.authService.search(localStorage.getItem(&#x27;email&#x27;))
+    .subscribe(
+      res &#x3D;&gt; {
+        if(res.usuarios){
+          this.usuario &#x3D; res.usuarios;
+          this.title &#x3D; JSON.stringify(this.usuario, [&#x27;email&#x27;])
+          //console.log(this.title);
+          
+          if (this.title &#x3D;&#x3D; &#x27;[{&quot;email&quot;:&quot;jtapia@museocostarica.go.cr&quot;}]&#x27;){
+            this.logueado &#x3D; true;
+            this.aguacaliente &#x3D; true;
+            
+          } else if (this.title &#x3D;&#x3D; &#x27;[{&quot;email&quot;:&quot;gmongem@museocostarica.go.cr&quot;}]&#x27;){
+            this.logueado &#x3D; true;
+            this.aguacaliente &#x3D; true;
+          }
+
+        else if (this.title &#x3D;&#x3D; &#x27;[{&quot;email&quot;:&quot;lsanchez@museocostarica.go.cr&quot;}]&#x27;){
+          this.logueado &#x3D; true;
+          this.aguacaliente &#x3D; true;
+        }
+        else if (this.title &#x3D;&#x3D; &#x27;[{&quot;email&quot;:&quot;cruiz@museocostarica.go.cr&quot;}]&#x27;){
+          this.logueado &#x3D; true;
+          this.aguacaliente &#x3D; false;
+        }
+
+          else {
+            this.aguacaliente &#x3D; true;
+            this.logueado &#x3D; false;
+            
+          }
+        }
+      },
+      err &#x3D;&gt; {console.log(err)
+      });  
+   
+  } */
+
+      ngOnInit() {
+        const email &#x3D; localStorage.getItem(&#x27;email&#x27;);
+      
+        this.authService.search(email).subscribe(
+          res &#x3D;&gt; {
+            if (res.usuarios &amp;&amp; res.usuarios.length &gt; 0) {
+              this.usuario &#x3D; res.usuarios[0]; // asumimos que solo retorna uno
+              const correo &#x3D; this.usuario.email;
+      
+              this.logueado &#x3D; true;
+      
+              // Usuarios especiales con acceso a Agua Caliente
+              const accesoAgua &#x3D; [
+                &#x27;jtapia@museocostarica.go.cr&#x27;,
+                &#x27;gmongem@museocostarica.go.cr&#x27;,
+                &#x27;lsanchez@museocostarica.go.cr&#x27;
+              ];
+      
+              this.aguacaliente &#x3D; accesoAgua.includes(correo);
+      
+            } else {
+              // No se encontró usuario válido
+              this.logueado &#x3D; false;
+              this.aguacaliente &#x3D; false;
+            }
+          },
+          err &#x3D;&gt; {
+            console.error(&#x27;Error al buscar usuario:&#x27;, err);
+            this.logueado &#x3D; false;
+            this.aguacaliente &#x3D; false;
+          }
+        );
+      }
+      
+  goSearch(){
+    this._router.navigate([&#x27;/buscar&#x27;, this.searchString]);
+  }
+ 
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+
+
+&lt;header class&#x3D;&quot;shadow-sm bg-white&quot;&gt;
+  &lt;nav class&#x3D;&quot;navbar navbar-expand-lg navbar-dark bg-dark px-4&quot;&gt;
+    &lt;!-- Logo --&gt;
+    &lt;a class&#x3D;&quot;navbar-brand d-flex align-items-center&quot; [routerLink]&#x3D;&quot;[&#x27;/home&#x27;]&quot;&gt;
+      &lt;img src&#x3D;&quot;assets/images/logomncr.jpg&quot; alt&#x3D;&quot;Logo MNCR&quot; height&#x3D;&quot;40&quot; class&#x3D;&quot;me-2 rounded shadow-sm&quot; /&gt;
+      
+    &lt;/a&gt;
+
+    &lt;!-- Toggler para responsive --&gt;
+    &lt;button class&#x3D;&quot;navbar-toggler&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot; data-bs-target&#x3D;&quot;#mainNavbar&quot; aria-controls&#x3D;&quot;mainNavbar&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
+      &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+
+    &lt;!-- Menú principal --&gt;
+    &lt;div class&#x3D;&quot;collapse navbar-collapse&quot; id&#x3D;&quot;mainNavbar&quot;&gt;
+      &lt;ul class&#x3D;&quot;navbar-nav me-auto mb-2 mb-lg-0&quot;&gt;
+
+        &lt;!-- Inicio --&gt;
+        &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+          &lt;a class&#x3D;&quot;nav-link&quot; [routerLink]&#x3D;&quot;[&#x27;/dashboard&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Inicio&lt;/a&gt;
+        &lt;/li&gt;
+
+        &lt;!-- Proyecto Agua Caliente --&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;logueado &amp;&amp; !aguacaliente&quot;&gt;
+          &lt;!-- &lt;li class&#x3D;&quot;nav-item dropdown&quot;&gt;
+            &lt;a class&#x3D;&quot;nav-link dropdown-toggle&quot; role&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;dropdown&quot;&gt;
+              Proyecto Agua Caliente
+            &lt;/a&gt;
+            &lt;ul class&#x3D;&quot;dropdown-menu&quot;&gt;
+              &lt;li&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; [routerLink]&#x3D;&quot;[&#x27;/pagina&#x27;]&quot;&gt;Cerámica&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; [routerLink]&#x3D;&quot;[&#x27;/peliculas&#x27;]&quot;&gt;Contexto&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; [routerLink]&#x3D;&quot;[&#x27;/pag-lit&#x27;]&quot;&gt;Lítico&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; [routerLink]&#x3D;&quot;[&#x27;/pag-met&#x27;]&quot;&gt;Metálicos&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt; --&gt;
+          &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+            &lt;a class&#x3D;&quot;nav-link&quot; [routerLink]&#x3D;&quot;[&#x27;/pag-ori&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Orígenes&lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ng-container&gt;
+
+        &lt;!-- Superusuario --&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;logueado &amp;&amp; aguacaliente&quot;&gt;
+          &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+            &lt;a class&#x3D;&quot;nav-link&quot; [routerLink]&#x3D;&quot;[&#x27;/pag-ori&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Orígenes&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class&#x3D;&quot;nav-item dropdown&quot;&gt;
+            &lt;a class&#x3D;&quot;nav-link dropdown-toggle&quot; role&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;dropdown&quot;&gt;
+              Agua Caliente
+            &lt;/a&gt;
+            &lt;ul class&#x3D;&quot;dropdown-menu&quot;&gt;
+              &lt;li&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; [routerLink]&#x3D;&quot;[&#x27;/pagina&#x27;]&quot;&gt;Cerámica&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; [routerLink]&#x3D;&quot;[&#x27;/peliculas&#x27;]&quot;&gt;Contexto&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; [routerLink]&#x3D;&quot;[&#x27;/pag-lit&#x27;]&quot;&gt;Lítico&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; [routerLink]&#x3D;&quot;[&#x27;/pag-met&#x27;]&quot;&gt;Metálicos&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ng-container&gt;
+
+      &lt;/ul&gt;
+
+      &lt;!-- Salir --&gt;
+      &lt;ul class&#x3D;&quot;navbar-nav ms-auto&quot;&gt;
+        &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+          &lt;a class&#x3D;&quot;nav-link&quot; (click)&#x3D;&quot;authService.logout()&quot; matTooltip&#x3D;&quot;Cerrar sesión&quot;&gt;
+            &lt;mat-icon&gt;logout&lt;/mat-icon&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./header.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* Estilos generales del header */
+header {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  font-family: &#x27;Segoe UI&#x27;, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Logo */
+.app-logo {
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar dark moderna */
+.navbar-dark.bg-dark {
+  background-color: #1f2937 !important; /* Gris oscuro sobrio */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Texto activo y efecto hover */
+.navbar-nav .nav-link {
+  color: #e5e7eb !important;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: #facc15 !important; /* Amarillo institucional */
+  text-decoration: underline;
+}
+
+/* Dropdown con estilo moderno */
+.dropdown-menu {
+  background-color: #2d3748;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu .dropdown-item {
+  color: #e5e7eb;
+  padding: 8px 16px;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #4b5563;
+  color: #facc15;
+}
+
+/* Icono de logout */
+.navbar-nav .nav-link mat-icon {
+  vertical-align: middle;
+  color: #f87171; /* Rojo suave */
+  transition: transform 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover mat-icon {
+  transform: scale(1.2);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .navbar-brand span {
+    font-size: 1rem;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><header class="shadow-sm bg-white">  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">    <!-- Logo -->    <a class="navbar-brand d-flex align-items-center" [routerLink]="[\'/home\']">      <img src="assets/images/logomncr.jpg" alt="Logo MNCR" height="40" class="me-2 rounded shadow-sm" />          </a>    <!-- Toggler para responsive -->    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">      <span class="navbar-toggler-icon"></span>    </button>    <!-- Menú principal -->    <div class="collapse navbar-collapse" id="mainNavbar">      <ul class="navbar-nav me-auto mb-2 mb-lg-0">        <!-- Inicio -->        <li class="nav-item">          <a class="nav-link" [routerLink]="[\'/dashboard\']" routerLinkActive="active">Inicio</a>        </li>        <!-- Proyecto Agua Caliente -->        <ng-container *ngIf="logueado && !aguacaliente">          <!-- <li class="nav-item dropdown">            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">              Proyecto Agua Caliente            </a>            <ul class="dropdown-menu">              <li><a class="dropdown-item" [routerLink]="[\'/pagina\']">Cerámica</a></li>              <li><a class="dropdown-item" [routerLink]="[\'/peliculas\']">Contexto</a></li>              <li><a class="dropdown-item" [routerLink]="[\'/pag-lit\']">Lítico</a></li>              <li><a class="dropdown-item" [routerLink]="[\'/pag-met\']">Metálicos</a></li>            </ul>          </li> -->          <li class="nav-item">            <a class="nav-link" [routerLink]="[\'/pag-ori\']" routerLinkActive="active">Orígenes</a>          </li>        </ng-container>        <!-- Superusuario -->        <ng-container *ngIf="logueado && aguacaliente">          <li class="nav-item">            <a class="nav-link" [routerLink]="[\'/pag-ori\']" routerLinkActive="active">Orígenes</a>          </li>          <li class="nav-item dropdown">            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">              Agua Caliente            </a>            <ul class="dropdown-menu">              <li><a class="dropdown-item" [routerLink]="[\'/pagina\']">Cerámica</a></li>              <li><a class="dropdown-item" [routerLink]="[\'/peliculas\']">Contexto</a></li>              <li><a class="dropdown-item" [routerLink]="[\'/pag-lit\']">Lítico</a></li>              <li><a class="dropdown-item" [routerLink]="[\'/pag-met\']">Metálicos</a></li>            </ul>          </li>        </ng-container>      </ul>      <!-- Salir -->      <ul class="navbar-nav ms-auto">        <li class="nav-item">          <a class="nav-link" (click)="authService.logout()" matTooltip="Cerrar sesión">            <mat-icon>logout</mat-icon>          </a>        </li>      </ul>    </div>  </nav></header></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleComponent', 'selector': 'app-article'},{'name': 'ArticleEditComponent', 'selector': 'app-article-edit'},{'name': 'ArticleNewComponent', 'selector': 'app-article-new'},{'name': 'AuthenticationButtonComponent', 'selector': 'app-authentication-button'},{'name': 'CeramicaComponent', 'selector': 'app-ceramica'},{'name': 'CeramicsComponent', 'selector': 'app-ceramics'},{'name': 'ContextoComponent', 'selector': 'app-contexto'},{'name': 'ContextoDetalleComponent', 'selector': 'app-contexto-detalle'},{'name': 'ContextoEditComponent', 'selector': 'app-contexto-edit'},{'name': 'ContextoExcelComponent', 'selector': 'app-contexto-excel'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashboardEstadisticasComponent', 'selector': 'app-dashboard-estadisticas'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'FichaContextoComponent', 'selector': 'app-ficha-contexto'},{'name': 'FichaLiticaComponent', 'selector': 'app-ficha-litica'},{'name': 'FichaMetalComponent', 'selector': 'app-ficha-metal'},{'name': 'FichaOrigenesComponent', 'selector': 'app-ficha-origenes'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotComponent', 'selector': 'app-forgot'},{'name': 'FormularioComponent', 'selector': 'app-formulario'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LiticaDetalleComponent', 'selector': 'app-litica-detalle'},{'name': 'LiticaEditComponent', 'selector': 'app-litica-edit'},{'name': 'LiticaExcelComponent', 'selector': 'app-litica-excel'},{'name': 'LiticoComponent', 'selector': 'app-litico'},{'name': 'LoginButtonComponent', 'selector': 'app-login-button'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutButtonComponent', 'selector': 'app-logout-button'},{'name': 'MapaOrigenesComponent', 'selector': 'app-mapa-origenes'},{'name': 'MetalDetalleComponent', 'selector': 'app-metal-detalle'},{'name': 'MetalEditComponent', 'selector': 'app-metal-edit'},{'name': 'MetalExcelComponent', 'selector': 'app-metal-excel'},{'name': 'MetalicoComponent', 'selector': 'app-metalico'},{'name': 'ModalOptionsComponent', 'selector': 'app-modal-options'},{'name': 'PagDetalleLiteSitioComponent', 'selector': 'app-pag-detalle-lite-sitio'},{'name': 'PaginaComponent', 'selector': 'app-pagina'},{'name': 'PagLitComponent', 'selector': 'app-pag-lit'},{'name': 'PagLiteSitioNombreComponent', 'selector': 'app-pag-lite-sitio-nombre'},{'name': 'PagLiteSitiosComponent', 'selector': 'app-pag-lite-sitios'},{'name': 'PagMetComponent', 'selector': 'app-pag-met'},{'name': 'PagOriComponent', 'selector': 'app-pag-ori'},{'name': 'PeliculasComponent', 'selector': 'app-peliculas'},{'name': 'PerfilesComponent', 'selector': 'app-perfiles'},{'name': 'PlasticaComponent', 'selector': 'app-plastica'},{'name': 'PoliticasUsoComponent', 'selector': 'app-politicas-uso'},{'name': 'PopupOrigenesComponent', 'selector': 'app-popup-origenes'},{'name': 'PopupPerfilComponent', 'selector': 'app-popup-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RegistroOrigenesComponent', 'selector': 'app-registro-origenes'},{'name': 'ReportePublicoComponent', 'selector': 'app-reporte-publico'},{'name': 'ResetComponent', 'selector': 'app-reset'},{'name': 'SearchCombCeraComponent', 'selector': 'app-search-comb-cera'},{'name': 'SearchComblitComponent', 'selector': 'app-search-comblit'},{'name': 'SearchCombMetComponent', 'selector': 'app-search-comb-met'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SearchContextoComponent', 'selector': 'app-search-contexto'},{'name': 'SearchLiticoComponent', 'selector': 'app-search-litico'},{'name': 'SearchMetalicoComponent', 'selector': 'app-search-metalico'},{'name': 'SearchSitioComponent', 'selector': 'app-search-sitio'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SitioComponent', 'selector': 'app-sitio'},{'name': 'SitioDetalleComponent', 'selector': 'app-sitio-detalle'},{'name': 'SitioEditComponent', 'selector': 'app-sitio-edit'},{'name': 'SitioExcelComponent', 'selector': 'app-sitio-excel'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'TipoDisComponent', 'selector': 'app-tipo-dis'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HeaderComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

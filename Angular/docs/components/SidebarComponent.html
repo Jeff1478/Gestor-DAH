@@ -1,0 +1,2703 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gestordah documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">gestordah documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SidebarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/sidebar/sidebar.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../injectables/CeramicService.html" target="_self" >CeramicService</a></code>
+                                <code><a href="../injectables/ContextoService.html" target="_self" >ContextoService</a></code>
+                                <code><a href="../injectables/LiticoService.html" target="_self" >LiticoService</a></code>
+                                <code><a href="../injectables/MetalicoService.html" target="_self" >MetalicoService</a></code>
+                                <code><a href="../injectables/SitioService.html" target="_self" >SitioService</a></code>
+                                <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                <code><a href="../injectables/RegistroService.html" target="_self" >RegistroService</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-sidebar</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./sidebar.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./sidebar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_registroService" >_registroService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#acceso" >acceso</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#administrador" >administrador</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#arqueo" >arqueo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#authService" >authService</a>
+                            </li>
+                            <li>
+                                <a href="#cant" >cant</a>
+                            </li>
+                            <li>
+                                <a href="#cantones" >cantones</a>
+                            </li>
+                            <li>
+                                <a href="#dist" >dist</a>
+                            </li>
+                            <li>
+                                <a href="#distritos" >distritos</a>
+                            </li>
+                            <li>
+                                <a href="#prov" >prov</a>
+                            </li>
+                            <li>
+                                <a href="#provincias" >provincias</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#registrado" >registrado</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#registro" >registro</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchSitio" >searchSitio</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchString" >searchString</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchString2" >searchString2</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchString3" >searchString3</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchString4" >searchString4</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchString5" >searchString5</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchStringNomb" >searchStringNomb</a>
+                            </li>
+                            <li>
+                                <a href="#selectedCanton" >selectedCanton</a>
+                            </li>
+                            <li>
+                                <a href="#selectedDistrito" >selectedDistrito</a>
+                            </li>
+                            <li>
+                                <a href="#selectedProvincia" >selectedProvincia</a>
+                            </li>
+                            <li>
+                                <a href="#sitios" >sitios</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#title" >title</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#user" >user</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#usuario" >usuario</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#buscarSitios" >buscarSitios</a>
+                            </li>
+                            <li>
+                                <a href="#goSearch" >goSearch</a>
+                            </li>
+                            <li>
+                                <a href="#goSearchComb" >goSearchComb</a>
+                            </li>
+                            <li>
+                                <a href="#goSearchCombLit" >goSearchCombLit</a>
+                            </li>
+                            <li>
+                                <a href="#goSearchCombMet" >goSearchCombMet</a>
+                            </li>
+                            <li>
+                                <a href="#goSearchCont" >goSearchCont</a>
+                            </li>
+                            <li>
+                                <a href="#goSearchLit" >goSearchLit</a>
+                            </li>
+                            <li>
+                                <a href="#goSearchMet" >goSearchMet</a>
+                            </li>
+                            <li>
+                                <a href="#goSearchNombre" >goSearchNombre</a>
+                            </li>
+                            <li>
+                                <a href="#goSearchSit" >goSearchSit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSelect" >onSelect</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectCanton" >onSelectCanton</a>
+                            </li>
+                            <li>
+                                <a href="#searchPerfil" >searchPerfil</a>
+                            </li>
+                            <li>
+                                <a href="#showAll" >showAll</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#titulo" >titulo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_ceramicService: <a href="../injectables/CeramicService.html" target="_self">CeramicService</a>, _contextoService: <a href="../injectables/ContextoService.html" target="_self">ContextoService</a>, _liticoService: <a href="../injectables/LiticoService.html" target="_self">LiticoService</a>, _metalicoService: <a href="../injectables/MetalicoService.html" target="_self">MetalicoService</a>, _sitioService: <a href="../injectables/SitioService.html" target="_self">SitioService</a>, _router: Router, _route: ActivatedRoute, dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, _registroService: <a href="../injectables/RegistroService.html" target="_self">RegistroService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_ceramicService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CeramicService.html" target="_self" >CeramicService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_contextoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ContextoService.html" target="_self" >ContextoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_liticoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LiticoService.html" target="_self" >LiticoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_metalicoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MetalicoService.html" target="_self" >MetalicoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_sitioService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SitioService.html" target="_self" >SitioService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_registroService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RegistroService.html" target="_self" >RegistroService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="titulo"></a>
+                        <b>titulo</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:51</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buscarSitios"></a>
+                    <span class="name">
+                        <span ><b>buscarSitios</b></span>
+                        <a href="#buscarSitios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>buscarSitios()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="206"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:206</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goSearch"></a>
+                    <span class="name">
+                        <span ><b>goSearch</b></span>
+                        <a href="#goSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goSearch()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="137"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:137</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goSearchComb"></a>
+                    <span class="name">
+                        <span ><b>goSearchComb</b></span>
+                        <a href="#goSearchComb"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goSearchComb()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="141"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:141</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goSearchCombLit"></a>
+                    <span class="name">
+                        <span ><b>goSearchCombLit</b></span>
+                        <a href="#goSearchCombLit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goSearchCombLit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="157"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:157</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goSearchCombMet"></a>
+                    <span class="name">
+                        <span ><b>goSearchCombMet</b></span>
+                        <a href="#goSearchCombMet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goSearchCombMet()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="165"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:165</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goSearchCont"></a>
+                    <span class="name">
+                        <span ><b>goSearchCont</b></span>
+                        <a href="#goSearchCont"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goSearchCont()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="145"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:145</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goSearchLit"></a>
+                    <span class="name">
+                        <span ><b>goSearchLit</b></span>
+                        <a href="#goSearchLit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goSearchLit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="149"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:149</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goSearchMet"></a>
+                    <span class="name">
+                        <span ><b>goSearchMet</b></span>
+                        <a href="#goSearchMet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goSearchMet()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="161"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:161</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goSearchNombre"></a>
+                    <span class="name">
+                        <span ><b>goSearchNombre</b></span>
+                        <a href="#goSearchNombre"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goSearchNombre()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="169"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:169</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goSearchSit"></a>
+                    <span class="name">
+                        <span ><b>goSearchSit</b></span>
+                        <a href="#goSearchSit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goSearchSit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="153"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:153</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="73"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelect"></a>
+                    <span class="name">
+                        <span ><b>onSelect</b></span>
+                        <a href="#onSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelect(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="185"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:185</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectCanton"></a>
+                    <span class="name">
+                        <span ><b>onSelectCanton</b></span>
+                        <a href="#onSelectCanton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectCanton(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="197"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:197</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchPerfil"></a>
+                    <span class="name">
+                        <span ><b>searchPerfil</b></span>
+                        <a href="#searchPerfil"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchPerfil(searstring: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>searstring</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showAll"></a>
+                    <span class="name">
+                        <span ><b>showAll</b></span>
+                        <a href="#showAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showAll()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="173"
+                                    class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:173</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_registroService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_registroService</b></span>
+                        <a href="#_registroService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/RegistroService.html" target="_self" >RegistroService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="acceso"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>acceso</b></span>
+                        <a href="#acceso"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="administrador"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>administrador</b></span>
+                        <a href="#administrador"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arqueo"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>arqueo</b></span>
+                        <a href="#arqueo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="authService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>authService</b></span>
+                        <a href="#authService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cant"></a>
+                    <span class="name">
+                        <span ><b>cant</b></span>
+                        <a href="#cant"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cantones"></a>
+                    <span class="name">
+                        <span ><b>cantones</b></span>
+                        <a href="#cantones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dist"></a>
+                    <span class="name">
+                        <span ><b>dist</b></span>
+                        <a href="#dist"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="distritos"></a>
+                    <span class="name">
+                        <span ><b>distritos</b></span>
+                        <a href="#distritos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prov"></a>
+                    <span class="name">
+                        <span ><b>prov</b></span>
+                        <a href="#prov"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="provincias"></a>
+                    <span class="name">
+                        <span ><b>provincias</b></span>
+                        <a href="#provincias"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registrado"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>registrado</b></span>
+                        <a href="#registrado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registro"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>registro</b></span>
+                        <a href="#registro"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchSitio"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>searchSitio</b></span>
+                        <a href="#searchSitio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchString"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>searchString</b></span>
+                        <a href="#searchString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchString2"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>searchString2</b></span>
+                        <a href="#searchString2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchString3"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>searchString3</b></span>
+                        <a href="#searchString3"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchString4"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>searchString4</b></span>
+                        <a href="#searchString4"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchString5"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>searchString5</b></span>
+                        <a href="#searchString5"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchStringNomb"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>searchStringNomb</b></span>
+                        <a href="#searchStringNomb"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedCanton"></a>
+                    <span class="name">
+                        <span ><b>selectedCanton</b></span>
+                        <a href="#selectedCanton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedDistrito"></a>
+                    <span class="name">
+                        <span ><b>selectedDistrito</b></span>
+                        <a href="#selectedDistrito"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedProvincia"></a>
+                    <span class="name">
+                        <span ><b>selectedProvincia</b></span>
+                        <a href="#selectedProvincia"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sitios"></a>
+                    <span class="name">
+                        <span ><b>sitios</b></span>
+                        <a href="#sitios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="title"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>title</b></span>
+                        <a href="#title"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuario"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>usuario</b></span>
+                        <a href="#usuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/components/sidebar/sidebar.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
+import { Router, ActivatedRoute, Params } from &#x27;@angular/router&#x27;;
+import { CeramicService } from &#x27;src/app/services/ceramic.service&#x27;;
+import { ContextoService } from &#x27;src/app/services/contexto.service&#x27;;
+import { LiticoService } from &#x27;src/app/services/litico.service&#x27;;
+import { MetalicoService } from &#x27;src/app/services/metalico.service&#x27;;
+import { SitioService } from &#x27;src/app/services/sitio.service&#x27;;
+import { DataService} from &#x27;src/app/services/data.service&#x27;;
+import { Sitio } from &#x27;../../models/sitio&#x27;;
+import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
+import { RegistroService } from &#x27;src/app/services/registro.service&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+
+
+@Component({
+  selector: &#x27;app-sidebar&#x27;,
+  templateUrl: &#x27;./sidebar.component.html&#x27;,
+  styleUrls: [&#x27;./sidebar.component.css&#x27;],
+  providers: [CeramicService,ContextoService,LiticoService,MetalicoService,SitioService,AuthService, RegistroService]
+})
+export class SidebarComponent implements OnInit {
+  
+  public searchString!: string;
+  public searchString2!: string;
+  public searchString3!: string;
+  public searchString4!: string;
+  public searchString5!: string;
+  public searchStringNomb!: string;
+  public administrador: boolean;
+  public registrado: boolean;
+  public arqueo: boolean;
+  public usuario!: any;
+  public user!: any;
+  public registro!: any;
+  public title: string;
+  public acceso!: string;
+  public searchSitio!: string;
+  // public sitios: Sitio[] &#x3D; [];
+  prov:any;
+  cant:any;
+  dist:any;
+  provincias: any;
+  cantones: any;
+  distritos: any;
+
+  selectedProvincia: any &#x3D; null;
+  selectedCanton: any &#x3D; null;
+  selectedDistrito: any &#x3D; null;
+  sitios: any[] &#x3D; [];
+
+  @Input() titulo!: string;
+
+  constructor(
+    private _ceramicService: CeramicService,
+    private _contextoService: ContextoService,
+    private _liticoService: LiticoService,
+    private _metalicoService: MetalicoService,
+    private _sitioService: SitioService,
+    private _router: Router,
+    private _route: ActivatedRoute,
+    private dataService: DataService,
+    public authService : AuthService,
+    public _registroService: RegistroService
+  ) {
+    this.administrador &#x3D; false;
+    this.registrado &#x3D; false;
+    this.arqueo &#x3D; false;
+    this.usuario &#x3D; &#x27;&#x27;;
+    this.title &#x3D; &#x27;&#x27;;
+    this.user &#x3D; &#x27;&#x27;;
+   }
+
+  ngOnInit(): void {
+
+    this.authService.search(localStorage.getItem(&#x27;email&#x27;))
+    .subscribe(
+      res &#x3D;&gt; {
+        if(res.usuarios){
+          //console.log(res.usuarios)
+          this.usuario &#x3D; res.usuarios;
+          this.title &#x3D; JSON.stringify(this.usuario, [&#x27;email&#x27;])
+          //console.log(this.title)
+         this.searchPerfil(localStorage.getItem(&#x27;email&#x27;));
+        }
+
+        if (this.title &#x3D;&#x3D; &#x27;[{&quot;email&quot;:&quot;jbrenes@museocostarica.go.cr&quot;}]&#x27; || this.title &#x3D;&#x3D;&#x27;[{&quot;email&quot;:&quot;jtapia@museocostarica.go.cr&quot;}]&#x27;){
+          // this.administrador &#x3D; true;
+          this.registrado &#x3D; true;
+          console.log(this.registrado)
+          //this.arqueo &#x3D; true
+        } 
+     /*    else if (this.title &#x3D;&#x3D; &#x27;[{&quot;email&quot;:&quot;jtapia@museocostarica.go.cr&quot;}]&#x27;){
+        this.administrador &#x3D; true;*/
+       
+       else{
+        this.administrador &#x3D; false;
+      } 
+    
+
+      err &#x3D;&gt; {console.log(err)
+       
+  }});  
+     
+
+      this.dataService.getAll().subscribe((res: any) &#x3D;&gt; {
+        this.provincias &#x3D; res.provincias;
+        this.cantones &#x3D; [];
+        this.distritos &#x3D; [];
+    
+        // Solo si hay una provincia seleccionada se ejecuta el filtro
+        if (this.selectedProvincia) {
+          this.onSelect(this.selectedProvincia);
+        }
+      });
+
+  }
+
+  searchPerfil(searstring: any) {
+    this._registroService.search(searstring).subscribe(
+      response &#x3D;&gt; {
+        if (response.registro) {
+          this.user &#x3D; response.registro;
+          console.log(&quot;Usuario encontrado en Registro:&quot;, this.user);
+  
+          // Acceso directo a la propiedad &quot;acceso&quot;
+          this.arqueo &#x3D; !!this.user.acceso; // convierte a booleano
+          console.log(&quot;Acceso ampliado:&quot;, this.arqueo);
+        }
+      },
+      err &#x3D;&gt; {
+        console.error(&quot;Error al buscar en Registro:&quot;, err);
+      }
+    );
+  }
+  
+
+  goSearch(){
+    this._router.navigate([&#x27;/buscar&#x27;, this.searchString]);
+  }
+
+  goSearchComb(){
+    this._router.navigate([&#x27;/buscarcombcera&#x27;, this.searchString2]);
+  }
+
+  goSearchCont(){
+    this._router.navigate([&#x27;/buscarcontexto&#x27;, this.searchString]);
+  }
+
+  goSearchLit(){
+    this._router.navigate([&#x27;/buscarlitico&#x27;, this.searchString]);
+  }
+
+  goSearchSit(){
+    this._router.navigate([&#x27;/buscarsitio&#x27;, this.searchString]);
+  }
+
+  goSearchCombLit(){
+    this._router.navigate([&#x27;/buscarcomblit&#x27;, this.searchString3]);
+  }
+
+  goSearchMet(){
+    this._router.navigate([&#x27;/buscarmetalico&#x27;, this.searchString]);
+  }
+
+  goSearchCombMet(){
+    this._router.navigate([&#x27;/buscarcombmet&#x27;, this.searchString4]);
+  }
+
+  goSearchNombre(){
+    this._router.navigate([&#x27;/pag-lite-sitio-nombre&#x27;, this.searchStringNomb]);
+  }
+
+  showAll(){
+    this.dataService.getAll().subscribe(
+      (data:any)&#x3D;&gt;{
+        this.provincias &#x3D; data,
+        console.log(this.provincias)
+      }
+    )
+  }
+
+
+
+
+  onSelect(event: Event): void {
+    const selected &#x3D; (event.target as HTMLSelectElement).value;
+    const provinciaId &#x3D; this.selectedProvincia?.id;
+  
+    this.dataService.getAll().subscribe((res: any) &#x3D;&gt; {
+      this.cantones &#x3D; res.cantones.filter((c: any) &#x3D;&gt; c.provincia_id &#x3D;&#x3D; provinciaId);
+      this.selectedCanton &#x3D; null;
+      this.distritos &#x3D; [];
+    });
+  }
+
+
+    onSelectCanton(event: Event): void {
+      const cantonId &#x3D; this.selectedCanton?.id;
+    
+      this.dataService.getAll().subscribe((res: any) &#x3D;&gt; {
+        this.distritos &#x3D; res.distritos.filter((d: any) &#x3D;&gt; d.canton_id &#x3D;&#x3D; cantonId);
+        this.selectedDistrito &#x3D; null;
+      });
+    }
+
+    buscarSitios(): void {
+      console.log(&quot;Botón de búsqueda presionado&quot;);
+    
+      const provincia &#x3D; this.selectedProvincia?.title || &quot;&quot;;
+      const canton &#x3D; this.selectedCanton?.title || &quot;&quot;;
+      const distrito &#x3D; this.selectedDistrito?.title || &quot;&quot;;
+    
+      const payload &#x3D; { provincia, canton, distrito };
+      console.log(&quot;Payload a enviar:&quot;, payload);
+    
+      this._sitioService.buscarSitios(payload).subscribe(
+        (res: any) &#x3D;&gt; {
+          console.log(&quot;Sitios encontrados:&quot;, res.sitio);
+        // Redirige usando queryParams
+      this._router.navigate([&#x27;/pag-lite-sitios&#x27;], {
+        queryParams: { provincia, canton, distrito }
+      });
+    },
+        (error) &#x3D;&gt; {
+          console.error(&quot;Error en la búsqueda:&quot;, error);
+          if (error.status &#x3D;&#x3D;&#x3D; 404) {
+            Swal.fire({
+              icon: &#x27;info&#x27;,
+              title: &#x27;Sin resultados&#x27;,
+              text: &#x27;No se encontraron sitios con los criterios seleccionados.&#x27;
+            });
+          }else {
+            Swal.fire({
+              icon: &#x27;error&#x27;,
+              title: &#x27;Error en la búsqueda&#x27;,
+              text: &#x27;Ocurrió un error inesperado al consultar los datos.&#x27;
+            });
+          }
+        }
+      );
+    }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+
+&lt;aside id&#x3D;&quot;sidebar&quot;&gt;
+
+    &lt;div id&#x3D;&quot;nav-blog&quot; class&#x3D;&quot;sidebar-item&quot;&gt;
+        
+        
+        &lt;div *ngIf&#x3D; &quot;titulo &#x3D;&#x3D;&#x3D; &#x27;ceramica&#x27;&quot;&gt; 
+          &lt;img src&#x3D;&quot;assets/images/logoac.jpg&quot; alt&#x3D;&quot;User Icon&quot; /&gt;
+          &lt;hr&gt;
+
+          &lt;h3 class&#x3D;&quot;admin-titulo&quot;&gt;Administrador&lt;/h3&gt;
+
+          &lt;div class&#x3D;&quot;admin-botones&quot;&gt;
+            &lt;button mat-icon-button matTooltip&#x3D;&quot;Agregar Ficha&quot; [routerLink]&#x3D;&quot;[&#x27;/ceramica&#x27;]&quot; color&#x3D;&quot;primary&quot;&gt;
+              &lt;mat-icon&gt;note_add&lt;/mat-icon&gt;
+            &lt;/button&gt;
+            &lt;button mat-icon-button matTooltip&#x3D;&quot;Exportar a Excel&quot; [routerLink]&#x3D;&quot;[&#x27;/formulario&#x27;]&quot; color&#x3D;&quot;accent&quot;&gt;
+              &lt;mat-icon&gt;file_download&lt;/mat-icon&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;busqueda&quot;&gt;
+          &lt;h4&gt;Buscador&lt;/h4&gt;
+          &lt;p&gt;Investigador, Tipo de Pieza, Núm Pieza o Registrador&lt;/p&gt;
+          &lt;form (ngSubmit)&#x3D;&quot;goSearch()&quot;&gt;
+            &lt;input type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;searchString&quot; name&#x3D;&quot;search&quot; placeholder&#x3D;&quot;Buscar...&quot; /&gt;
+            &lt;button mat-icon-button type&#x3D;&quot;submit&quot; color&#x3D;&quot;primary&quot;&gt;
+              &lt;mat-icon&gt;search&lt;/mat-icon&gt;
+            &lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+
+
+        &lt;div class&#x3D;&quot;busqueda&quot;&gt;
+          &lt;h4&gt;Buscador Combinado&lt;/h4&gt;
+          &lt;p&gt;Registrador y Núm de Pieza&lt;/p&gt;
+          &lt;form (ngSubmit)&#x3D;&quot;goSearchComb()&quot;&gt;
+            &lt;input type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;searchString2&quot; name&#x3D;&quot;search2&quot; placeholder&#x3D;&quot;Buscar...&quot; /&gt;
+            &lt;button mat-icon-button type&#x3D;&quot;submit&quot; color&#x3D;&quot;primary&quot;&gt;
+              &lt;mat-icon&gt;search&lt;/mat-icon&gt;
+            &lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+        &lt;div *ngIf&#x3D; &quot;titulo &#x3D;&#x3D;&#x3D; &#x27;contexto&#x27;&quot;&gt; 
+          &lt;img src&#x3D;&quot;assets/images/logoac.jpg&quot; alt&#x3D;&quot;User Icon&quot; /&gt;
+          &lt;hr&gt;
+          &lt;h3 class&#x3D;&quot;admin-titulo&quot;&gt;Administrador&lt;/h3&gt;
+            &lt;!-- &lt;a [routerLink]&#x3D;&quot;[&#x27;/ficha-contexto&#x27;]&quot; class&#x3D;&quot;btn btn-success&quot;&gt;Agregar Ficha&lt;/a&gt; --&gt;
+            &lt;a [routerLink]&#x3D;&quot;[&#x27;/ficha-contexto&#x27;]&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Agregar Ficha&quot; class &#x3D; &quot;btn btn-outline-warning&quot;&gt;
+              &lt;mat-icon&gt;add_shopping_cart&lt;/mat-icon&gt;    
+          &lt;/a&gt;
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;/contexto-excel&#x27;]&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Exportar Excel&quot; class &#x3D; &quot;btn btn-outline-success&quot;&gt;
+            &lt;mat-icon&gt;cloud_download&lt;/mat-icon&gt;    
+        &lt;/a&gt;  
+
+        &lt;div id&#x3D;&quot;search&quot; class&#x3D;&quot;sidebar-item&quot;&gt;
+          &lt;h3&gt;Buscador&lt;/h3&gt;
+          &lt;p&gt;Investigador ó Proyecto&lt;/p&gt;
+          &lt;form #searchForm&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D; &quot;goSearchCont()&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;search&quot; [(ngModel)] &#x3D;&quot;searchString&quot;/&gt;
+                &lt;button class&#x3D;&quot;btn btn-outline-success&quot; type&#x3D;&quot;submit&quot;&gt;
+                  &lt;mat-icon&gt;search&lt;/mat-icon&gt;&lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/div&gt; 
+
+        &lt;/div&gt;
+
+        &lt;div *ngIf&#x3D; &quot;titulo &#x3D;&#x3D;&#x3D; &#x27;litico&#x27;&quot;&gt; 
+          &lt;img src&#x3D;&quot;assets/images/logoac.jpg&quot; alt&#x3D;&quot;User Icon&quot; /&gt;
+          &lt;hr&gt;
+          &lt;h3 class&#x3D;&quot;admin-titulo&quot;&gt;Administrador&lt;/h3&gt;
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;/ficha-litica&#x27;]&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Agregar Ficha&quot; class &#x3D; &quot;btn btn-outline-warning&quot;&gt;
+            &lt;mat-icon&gt;add_shopping_cart&lt;/mat-icon&gt;    
+        &lt;/a&gt;
+        &lt;a [routerLink]&#x3D;&quot;[&#x27;/litica-excel&#x27;]&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Exportar Excel&quot; class &#x3D; &quot;btn btn-outline-success&quot;&gt;
+          &lt;mat-icon&gt;cloud_download&lt;/mat-icon&gt;    
+      &lt;/a&gt;  
+
+      &lt;div id&#x3D;&quot;search&quot; class&#x3D;&quot;sidebar-item&quot;&gt;
+        &lt;h3&gt;Buscador&lt;/h3&gt;
+        &lt;p&gt;Investigador ó Proyecto&lt;/p&gt;
+        &lt;form #searchForm&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D; &quot;goSearchLit()&quot;&gt;
+            &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;search&quot; [(ngModel)] &#x3D;&quot;searchString&quot;/&gt;
+              &lt;button class&#x3D;&quot;btn btn-outline-success&quot; type&#x3D;&quot;submit&quot;&gt;
+                &lt;mat-icon&gt;search&lt;/mat-icon&gt;&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt; 
+
+     
+        &lt;h3&gt;Buscador Combinado&lt;/h3&gt;
+        &lt;p&gt;Registrador y Núm de Pieza&lt;/p&gt;
+        &lt;form #searchForm&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D; &quot;goSearchCombLit()&quot;&gt;
+            &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;search3&quot; [(ngModel)] &#x3D;&quot;searchString3&quot;/&gt;
+              &lt;button class&#x3D;&quot;btn btn-outline-success&quot; type&#x3D;&quot;submit&quot;&gt;
+                &lt;mat-icon&gt;search&lt;/mat-icon&gt;&lt;/button&gt;
+        &lt;/form&gt;
+  
+  
+        &lt;/div&gt;
+
+        &lt;div *ngIf&#x3D; &quot;titulo &#x3D;&#x3D;&#x3D; &#x27;metalico&#x27;&quot;&gt; 
+          &lt;img src&#x3D;&quot;assets/images/logoac.jpg&quot; alt&#x3D;&quot;User Icon&quot; /&gt;
+          &lt;hr&gt;
+          &lt;h3 class&#x3D;&quot;admin-titulo&quot;&gt;Administrador&lt;/h3&gt;
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;/ficha-metal&#x27;]&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Agregar Ficha&quot; class &#x3D; &quot;btn btn-outline-warning&quot;&gt;
+            &lt;mat-icon&gt;add_shopping_cart&lt;/mat-icon&gt;    
+        &lt;/a&gt;
+         &lt;a [routerLink]&#x3D;&quot;[&#x27;/metal-excel&#x27;]&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Exportar Excel&quot; class &#x3D; &quot;btn btn-outline-success&quot;&gt;
+          &lt;mat-icon&gt;cloud_download&lt;/mat-icon&gt;    
+      &lt;/a&gt;   
+
+      &lt;div id&#x3D;&quot;search&quot; class&#x3D;&quot;sidebar-item&quot;&gt;
+        &lt;h3&gt;Buscador&lt;/h3&gt;
+        &lt;p&gt;Investigador ó Proyecto&lt;/p&gt;
+        &lt;form #searchForm&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D; &quot;goSearchMet()&quot;&gt;
+            &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;search&quot; [(ngModel)] &#x3D;&quot;searchString&quot;/&gt;
+              &lt;button class&#x3D;&quot;btn btn-outline-success&quot; type&#x3D;&quot;submit&quot;&gt;
+                &lt;mat-icon&gt;search&lt;/mat-icon&gt;&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt; 
+
+      &lt;h3&gt;Buscador Combinado&lt;/h3&gt;
+        &lt;p&gt;Registrador y Núm de Pieza&lt;/p&gt;
+        &lt;form #searchForm&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D; &quot;goSearchCombMet()&quot;&gt;
+            &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;search3&quot; [(ngModel)] &#x3D;&quot;searchString4&quot;/&gt;
+              &lt;button class&#x3D;&quot;btn btn-outline-success&quot; type&#x3D;&quot;submit&quot;&gt;
+                &lt;mat-icon&gt;search&lt;/mat-icon&gt;&lt;/button&gt;
+        &lt;/form&gt;
+  
+        &lt;/div&gt;
+
+        &lt;div *ngIf&#x3D; &quot;titulo &#x3D;&#x3D;&#x3D; &#x27;sitio&#x27;&quot;&gt; 
+          &lt;h3 *ngIf&#x3D;&quot;registrado &#x3D;&#x3D; true&quot; class&#x3D;&quot;admin-titulo text-danger&quot;&gt;Administrador&lt;/h3&gt;
+          &lt;h3 *ngIf&#x3D;&quot;administrador &#x3D;&#x3D; true&quot; class&#x3D;&quot;admin-titulo&quot;&gt;Usuario Arqueólogo&lt;/h3&gt;
+
+          &lt;div class&#x3D;&quot;admin-botones&quot; *ngIf&#x3D;&quot;registrado &#x3D;&#x3D; true&quot;&gt;
+            &lt;button mat-icon-button matTooltip&#x3D;&quot;Asignar Perfiles&quot; [routerLink]&#x3D;&quot;[&#x27;/perfiles&#x27;]&quot; color&#x3D;&quot;primary&quot;&gt;
+            &lt;mat-icon&gt;supervisor_account&lt;/mat-icon&gt;
+          &lt;/button&gt;
+
+          &lt;button mat-icon-button matTooltip&#x3D;&quot;Agregar Monumento&quot; [routerLink]&#x3D;&quot;[&#x27;/ficha-origenes&#x27;]&quot; color&#x3D;&quot;accent&quot;&gt;
+          &lt;mat-icon&gt;map&lt;/mat-icon&gt;
+          &lt;/button&gt;
+
+          &lt;button mat-icon-button matTooltip&#x3D;&quot;Estadísticas de Ingreso&quot; [routerLink]&#x3D;&quot;[&#x27;/dashboard-estadisticas&#x27;]&quot; color&#x3D;&quot;accent&quot;&gt;
+            &lt;mat-icon&gt;bar_chart&lt;/mat-icon&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+       
+      
+ 
+
+      &lt;div id&#x3D;&quot;search&quot;&gt;
+              &lt;hr&gt;        
+              &lt;h3&gt;Buscador Monumentos&lt;/h3&gt;
+ 
+
+&lt;!-- PROVINCIA --&gt;
+&lt;div class&#x3D;&quot;busqueda-fila&quot;&gt;
+  &lt;select [(ngModel)]&#x3D;&quot;selectedProvincia&quot; (change)&#x3D;&quot;onSelect($event)&quot;&gt;
+    &lt;option [ngValue]&#x3D;&quot;null&quot;&gt;--Seleccione Provincia--&lt;/option&gt;
+    &lt;option *ngFor&#x3D;&quot;let provincia of provincias&quot; [ngValue]&#x3D;&quot;provincia&quot;&gt;
+      {{ provincia.title }}
+    &lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;!-- CANTÓN --&gt;
+&lt;div class&#x3D;&quot;busqueda-fila&quot;&gt;
+  &lt;select [(ngModel)]&#x3D;&quot;selectedCanton&quot; (change)&#x3D;&quot;onSelectCanton($event)&quot;&gt;
+    &lt;option [ngValue]&#x3D;&quot;null&quot;&gt;--Seleccione Cantón--&lt;/option&gt;
+    &lt;option *ngFor&#x3D;&quot;let canton of cantones&quot; [ngValue]&#x3D;&quot;canton&quot;&gt;
+      {{ canton.title }}
+    &lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;!-- DISTRITO --&gt;
+&lt;div class&#x3D;&quot;busqueda-fila&quot;&gt;
+  &lt;select [(ngModel)]&#x3D;&quot;selectedDistrito&quot;&gt;
+    &lt;option [ngValue]&#x3D;&quot;null&quot;&gt;--Seleccione Distrito--&lt;/option&gt;
+    &lt;option *ngFor&#x3D;&quot;let distrito of distritos&quot; [ngValue]&#x3D;&quot;distrito&quot;&gt;
+      {{ distrito.title }}
+    &lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;!-- BOTÓN DE BÚSQUEDA --&gt;
+&lt;div class&#x3D;&quot;busqueda-fila mt-2&quot;&gt;
+  &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;buscarSitios()&quot;&gt;
+    &lt;mat-icon&gt;search&lt;/mat-icon&gt; Buscar
+  &lt;/button&gt;
+&lt;/div&gt;
+
+              &lt;br&gt;
+              &lt;div class&#x3D;&quot;busqueda-fila&quot;&gt;
+                &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Nombre o Clave&quot; name&#x3D;&quot;search&quot; [(ngModel)]&#x3D;&quot;searchStringNomb&quot; /&gt;
+                &lt;button mat-icon-button matTooltip&#x3D;&quot;Buscar por Nombre o Clave&quot; (click)&#x3D;&quot;goSearchNombre()&quot;&gt;
+                &lt;mat-icon&gt;search&lt;/mat-icon&gt;
+                &lt;/button&gt;
+            
+          &lt;/div&gt;
+              &lt;br&gt; 
+           
+            &lt;hr&gt;
+           &lt;div *ngIf&#x3D;&quot;administrador &#x3D;&#x3D; true&quot;&gt;
+            &lt;h3&gt;Búsqueda en Mapa&lt;/h3&gt;
+            &lt;a [routerLink]&#x3D;&quot;[&#x27;/map-ori&#x27;]&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Google Maps&quot; class &#x3D; &quot;btn btn-outline-warning&quot;&gt;
+              &lt;img src&#x3D;&quot;assets/images/crlogo.png&quot; width&#x3D;&quot;100&quot; height&#x3D;&quot;100&quot;&gt;    
+          &lt;/a&gt; 
+          &lt;/div&gt; 
+
+           &lt;div *ngIf&#x3D;&quot;arqueo &#x3D;&#x3D; true&quot;&gt;
+           
+            &lt;h3&gt;Búsqueda en Mapa&lt;/h3&gt;
+            &lt;a [routerLink]&#x3D;&quot;[&#x27;/map-ori&#x27;]&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;top&quot; title&#x3D;&quot;Google Maps&quot; class &#x3D; &quot;btn btn-outline-warning&quot;&gt;
+              &lt;img src&#x3D;&quot;assets/images/crlogo.png&quot; width&#x3D;&quot;100&quot; height&#x3D;&quot;100&quot;&gt;    
+          &lt;/a&gt; 
+          
+          &lt;/div&gt;
+
+          &lt;div id&#x3D;&quot;logosmall&quot;&gt;
+            &lt;img src&#x3D;&quot;assets/images/logoORI3.png&quot; class&#x3D;&quot;logosmall&quot; alt&#x3D;&quot;Logotipo&quot; /&gt;
+        &lt;/div&gt;
+
+        &lt;/div&gt; 
+
+      
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;/aside&gt;
+
+&lt;div class&#x3D;&quot;clearfix&quot;&gt;&lt;/div&gt;
+
+
+                </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./sidebar.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* .boton{
+    font-size:10px;
+    border-style: solid;
+    border:1px solid black;
+    width:42px;
+    height:26px;
+   } */
+
+   .admin-titulo {
+    color: #3f51b5;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .admin-botones {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .busqueda {
+    margin-top: 20px;
+  }
+  
+  .busqueda h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .busqueda form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+  }
+  
+  input[type&#x3D;&quot;text&quot;] {
+    flex: 1;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  /* Fondo del sidebar con tono más oscuro */
+aside#sidebar {
+    background-color: #f4f4f4; /* Cambialo a #e0e0e0 o #d9d9d9 para más oscuridad */
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+
+
+  /* Título del bloque Administrador */
+#nav-blog h3 {
+    color: #d63a3a; 
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  /* Íconos centrados con espacio uniforme */
+  .admin-icon-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.8rem 0;
+  }
+  
+  /* Búsqueda visual más clara y consistente */
+  aside#sidebar select,
+  aside#sidebar input[type&#x3D;&quot;text&quot;] {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Mapa e ícono final alineados al centro */
+  aside#sidebar .map-logo,
+  aside#sidebar #logosmall {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .busqueda-fila {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .busqueda-fila select {
+    flex: 1;
+    max-width: 200px;
+    padding: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .busqueda-fila button {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .busqueda-fila mat-icon {
+    font-size: 20px;
+  }
+  
+  
+  
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><aside id="sidebar">    <div id="nav-blog" class="sidebar-item">                        <div *ngIf= "titulo === \'ceramica\'">           <img src="assets/images/logoac.jpg" alt="User Icon" />          <hr>          <h3 class="admin-titulo">Administrador</h3>          <div class="admin-botones">            <button mat-icon-button matTooltip="Agregar Ficha" [routerLink]="[\'/ceramica\']" color="primary">              <mat-icon>note_add</mat-icon>            </button>            <button mat-icon-button matTooltip="Exportar a Excel" [routerLink]="[\'/formulario\']" color="accent">              <mat-icon>file_download</mat-icon>            </button>          </div>        <div class="busqueda">          <h4>Buscador</h4>          <p>Investigador, Tipo de Pieza, Núm Pieza o Registrador</p>          <form (ngSubmit)="goSearch()">            <input type="text" [(ngModel)]="searchString" name="search" placeholder="Buscar..." />            <button mat-icon-button type="submit" color="primary">              <mat-icon>search</mat-icon>            </button>          </form>        </div>        <div class="busqueda">          <h4>Buscador Combinado</h4>          <p>Registrador y Núm de Pieza</p>          <form (ngSubmit)="goSearchComb()">            <input type="text" [(ngModel)]="searchString2" name="search2" placeholder="Buscar..." />            <button mat-icon-button type="submit" color="primary">              <mat-icon>search</mat-icon>            </button>          </form>        </div>      </div>        <div *ngIf= "titulo === \'contexto\'">           <img src="assets/images/logoac.jpg" alt="User Icon" />          <hr>          <h3 class="admin-titulo">Administrador</h3>            <!-- <a [routerLink]="[\'/ficha-contexto\']" class="btn btn-success">Agregar Ficha</a> -->            <a [routerLink]="[\'/ficha-contexto\']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">              <mat-icon>add_shopping_cart</mat-icon>              </a>          <a [routerLink]="[\'/contexto-excel\']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">            <mat-icon>cloud_download</mat-icon>            </a>          <div id="search" class="sidebar-item">          <h3>Buscador</h3>          <p>Investigador ó Proyecto</p>          <form #searchForm="ngForm" (ngSubmit)= "goSearchCont()">              <input type="text" name="search" [(ngModel)] ="searchString"/>                <button class="btn btn-outline-success" type="submit">                  <mat-icon>search</mat-icon></button>          </form>        </div>         </div>        <div *ngIf= "titulo === \'litico\'">           <img src="assets/images/logoac.jpg" alt="User Icon" />          <hr>          <h3 class="admin-titulo">Administrador</h3>          <a [routerLink]="[\'/ficha-litica\']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">            <mat-icon>add_shopping_cart</mat-icon>            </a>        <a [routerLink]="[\'/litica-excel\']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">          <mat-icon>cloud_download</mat-icon>          </a>        <div id="search" class="sidebar-item">        <h3>Buscador</h3>        <p>Investigador ó Proyecto</p>        <form #searchForm="ngForm" (ngSubmit)= "goSearchLit()">            <input type="text" name="search" [(ngModel)] ="searchString"/>              <button class="btn btn-outline-success" type="submit">                <mat-icon>search</mat-icon></button>        </form>      </div>              <h3>Buscador Combinado</h3>        <p>Registrador y Núm de Pieza</p>        <form #searchForm="ngForm" (ngSubmit)= "goSearchCombLit()">            <input type="text" name="search3" [(ngModel)] ="searchString3"/>              <button class="btn btn-outline-success" type="submit">                <mat-icon>search</mat-icon></button>        </form>            </div>        <div *ngIf= "titulo === \'metalico\'">           <img src="assets/images/logoac.jpg" alt="User Icon" />          <hr>          <h3 class="admin-titulo">Administrador</h3>          <a [routerLink]="[\'/ficha-metal\']" data-toggle="tooltip" data-placement="top" title="Agregar Ficha" class = "btn btn-outline-warning">            <mat-icon>add_shopping_cart</mat-icon>            </a>         <a [routerLink]="[\'/metal-excel\']" data-toggle="tooltip" data-placement="top" title="Exportar Excel" class = "btn btn-outline-success">          <mat-icon>cloud_download</mat-icon>          </a>         <div id="search" class="sidebar-item">        <h3>Buscador</h3>        <p>Investigador ó Proyecto</p>        <form #searchForm="ngForm" (ngSubmit)= "goSearchMet()">            <input type="text" name="search" [(ngModel)] ="searchString"/>              <button class="btn btn-outline-success" type="submit">                <mat-icon>search</mat-icon></button>        </form>      </div>       <h3>Buscador Combinado</h3>        <p>Registrador y Núm de Pieza</p>        <form #searchForm="ngForm" (ngSubmit)= "goSearchCombMet()">            <input type="text" name="search3" [(ngModel)] ="searchString4"/>              <button class="btn btn-outline-success" type="submit">                <mat-icon>search</mat-icon></button>        </form>          </div>        <div *ngIf= "titulo === \'sitio\'">           <h3 *ngIf="registrado == true" class="admin-titulo text-danger">Administrador</h3>          <h3 *ngIf="administrador == true" class="admin-titulo">Usuario Arqueólogo</h3>          <div class="admin-botones" *ngIf="registrado == true">            <button mat-icon-button matTooltip="Asignar Perfiles" [routerLink]="[\'/perfiles\']" color="primary">            <mat-icon>supervisor_account</mat-icon>          </button>          <button mat-icon-button matTooltip="Agregar Monumento" [routerLink]="[\'/ficha-origenes\']" color="accent">          <mat-icon>map</mat-icon>          </button>          <button mat-icon-button matTooltip="Estadísticas de Ingreso" [routerLink]="[\'/dashboard-estadisticas\']" color="accent">            <mat-icon>bar_chart</mat-icon>            </button>          </div>                    <div id="search">              <hr>                      <h3>Buscador Monumentos</h3> <!-- PROVINCIA --><div class="busqueda-fila">  <select [(ngModel)]="selectedProvincia" (change)="onSelect($event)">    <option [ngValue]="null">--Seleccione Provincia--</option>    <option *ngFor="let provincia of provincias" [ngValue]="provincia">      {{ provincia.title }}    </option>  </select></div><!-- CANTÓN --><div class="busqueda-fila">  <select [(ngModel)]="selectedCanton" (change)="onSelectCanton($event)">    <option [ngValue]="null">--Seleccione Cantón--</option>    <option *ngFor="let canton of cantones" [ngValue]="canton">      {{ canton.title }}    </option>  </select></div><!-- DISTRITO --><div class="busqueda-fila">  <select [(ngModel)]="selectedDistrito">    <option [ngValue]="null">--Seleccione Distrito--</option>    <option *ngFor="let distrito of distritos" [ngValue]="distrito">      {{ distrito.title }}    </option>  </select></div><!-- BOTÓN DE BÚSQUEDA --><div class="busqueda-fila mt-2">  <button class="btn btn-primary" (click)="buscarSitios()">    <mat-icon>search</mat-icon> Buscar  </button></div>              <br>              <div class="busqueda-fila">                <input type="text" placeholder="Nombre o Clave" name="search" [(ngModel)]="searchStringNomb" />                <button mat-icon-button matTooltip="Buscar por Nombre o Clave" (click)="goSearchNombre()">                <mat-icon>search</mat-icon>                </button>                      </div>              <br>                        <hr>           <div *ngIf="administrador == true">            <h3>Búsqueda en Mapa</h3>            <a [routerLink]="[\'/map-ori\']" data-toggle="tooltip" data-placement="top" title="Google Maps" class = "btn btn-outline-warning">              <img src="assets/images/crlogo.png" width="100" height="100">              </a>           </div>            <div *ngIf="arqueo == true">                       <h3>Búsqueda en Mapa</h3>            <a [routerLink]="[\'/map-ori\']" data-toggle="tooltip" data-placement="top" title="Google Maps" class = "btn btn-outline-warning">              <img src="assets/images/crlogo.png" width="100" height="100">              </a>                     </div>          <div id="logosmall">            <img src="assets/images/logoORI3.png" class="logosmall" alt="Logotipo" />        </div>        </div>                 </div>  </div></aside><div class="clearfix"></div>                </div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleComponent', 'selector': 'app-article'},{'name': 'ArticleEditComponent', 'selector': 'app-article-edit'},{'name': 'ArticleNewComponent', 'selector': 'app-article-new'},{'name': 'AuthenticationButtonComponent', 'selector': 'app-authentication-button'},{'name': 'CeramicaComponent', 'selector': 'app-ceramica'},{'name': 'CeramicsComponent', 'selector': 'app-ceramics'},{'name': 'ContextoComponent', 'selector': 'app-contexto'},{'name': 'ContextoDetalleComponent', 'selector': 'app-contexto-detalle'},{'name': 'ContextoEditComponent', 'selector': 'app-contexto-edit'},{'name': 'ContextoExcelComponent', 'selector': 'app-contexto-excel'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashboardEstadisticasComponent', 'selector': 'app-dashboard-estadisticas'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'FichaContextoComponent', 'selector': 'app-ficha-contexto'},{'name': 'FichaLiticaComponent', 'selector': 'app-ficha-litica'},{'name': 'FichaMetalComponent', 'selector': 'app-ficha-metal'},{'name': 'FichaOrigenesComponent', 'selector': 'app-ficha-origenes'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotComponent', 'selector': 'app-forgot'},{'name': 'FormularioComponent', 'selector': 'app-formulario'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LiticaDetalleComponent', 'selector': 'app-litica-detalle'},{'name': 'LiticaEditComponent', 'selector': 'app-litica-edit'},{'name': 'LiticaExcelComponent', 'selector': 'app-litica-excel'},{'name': 'LiticoComponent', 'selector': 'app-litico'},{'name': 'LoginButtonComponent', 'selector': 'app-login-button'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutButtonComponent', 'selector': 'app-logout-button'},{'name': 'MapaOrigenesComponent', 'selector': 'app-mapa-origenes'},{'name': 'MetalDetalleComponent', 'selector': 'app-metal-detalle'},{'name': 'MetalEditComponent', 'selector': 'app-metal-edit'},{'name': 'MetalExcelComponent', 'selector': 'app-metal-excel'},{'name': 'MetalicoComponent', 'selector': 'app-metalico'},{'name': 'ModalOptionsComponent', 'selector': 'app-modal-options'},{'name': 'PagDetalleLiteSitioComponent', 'selector': 'app-pag-detalle-lite-sitio'},{'name': 'PaginaComponent', 'selector': 'app-pagina'},{'name': 'PagLitComponent', 'selector': 'app-pag-lit'},{'name': 'PagLiteSitioNombreComponent', 'selector': 'app-pag-lite-sitio-nombre'},{'name': 'PagLiteSitiosComponent', 'selector': 'app-pag-lite-sitios'},{'name': 'PagMetComponent', 'selector': 'app-pag-met'},{'name': 'PagOriComponent', 'selector': 'app-pag-ori'},{'name': 'PeliculasComponent', 'selector': 'app-peliculas'},{'name': 'PerfilesComponent', 'selector': 'app-perfiles'},{'name': 'PlasticaComponent', 'selector': 'app-plastica'},{'name': 'PoliticasUsoComponent', 'selector': 'app-politicas-uso'},{'name': 'PopupOrigenesComponent', 'selector': 'app-popup-origenes'},{'name': 'PopupPerfilComponent', 'selector': 'app-popup-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RegistroOrigenesComponent', 'selector': 'app-registro-origenes'},{'name': 'ReportePublicoComponent', 'selector': 'app-reporte-publico'},{'name': 'ResetComponent', 'selector': 'app-reset'},{'name': 'SearchCombCeraComponent', 'selector': 'app-search-comb-cera'},{'name': 'SearchComblitComponent', 'selector': 'app-search-comblit'},{'name': 'SearchCombMetComponent', 'selector': 'app-search-comb-met'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SearchContextoComponent', 'selector': 'app-search-contexto'},{'name': 'SearchLiticoComponent', 'selector': 'app-search-litico'},{'name': 'SearchMetalicoComponent', 'selector': 'app-search-metalico'},{'name': 'SearchSitioComponent', 'selector': 'app-search-sitio'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SitioComponent', 'selector': 'app-sitio'},{'name': 'SitioDetalleComponent', 'selector': 'app-sitio-detalle'},{'name': 'SitioEditComponent', 'selector': 'app-sitio-edit'},{'name': 'SitioExcelComponent', 'selector': 'app-sitio-excel'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'TipoDisComponent', 'selector': 'app-tipo-dis'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SidebarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SidebarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

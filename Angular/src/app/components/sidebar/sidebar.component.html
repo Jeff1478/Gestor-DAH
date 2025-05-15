@@ -198,11 +198,12 @@
               <br>
               <div class="busqueda-fila">
                 <input type="text" placeholder="Nombre o Clave" name="search" [(ngModel)]="searchStringNomb" />
-                <button mat-icon-button matTooltip="Buscar por Nombre o Clave" (click)="goSearchNombre()">
-                <mat-icon>search</mat-icon>
+               </div>
+               <div class="busqueda-fila mt-2">
+               <button class="btn btn-primary" (click)="goSearchNombre()">
+                <mat-icon>search</mat-icon> Buscar por Nombre
                 </button>
-            
-          </div>
+              </div>
               <br> 
            
             <hr>

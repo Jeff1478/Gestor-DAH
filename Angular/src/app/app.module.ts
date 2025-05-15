@@ -67,7 +67,6 @@ import { MetalDetalleComponent } from './components/metal-detalle/metal-detalle.
 import { MetalEditComponent } from './components/metal-edit/metal-edit.component';
 import { MetalExcelComponent } from './components/metal-excel/metal-excel.component';
 import { SearchLiticoComponent } from './components/search-litico/search-litico.component';
-import { SearchMetalicoComponent } from './components/search-metalico/search-metalico.component';
 import { SitioExcelComponent } from './components/sitio-excel/sitio-excel.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
@@ -75,7 +74,7 @@ import {AuthGuard} from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { PagOriComponent } from './components/pag-ori/pag-ori.component';
 import { SitioComponent } from './components/sitio/sitio.component';
-
+import { MatExpansionModule } from '@angular/material/expansion';
 import { SitioDetalleComponent } from './components/sitio-detalle/sitio-detalle.component';
 import { SearchCombCeraComponent } from './components/search-comb-cera/search-comb-cera.component';
 import { SearchComblitComponent } from './components/search-comblit/search-comblit.component';
@@ -98,6 +97,9 @@ import { PopupOrigenesComponent } from './components/popup-origenes/popup-origen
 import { PopupPerfilComponent } from './components/popup-perfil/popup-perfil.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardEstadisticasComponent } from './components/dashboard-estadisticas/dashboard-estadisticas.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -146,7 +148,6 @@ import { DashboardEstadisticasComponent } from './components/dashboard-estadisti
     MetalEditComponent,
     MetalExcelComponent,
     SearchLiticoComponent,
-    SearchMetalicoComponent,
     SitioExcelComponent,
     LoginComponent,
     RegistroComponent,
@@ -173,8 +174,6 @@ import { DashboardEstadisticasComponent } from './components/dashboard-estadisti
     DashboardComponent,
     DashboardEstadisticasComponent
     
-   
-    
   ],
   
   imports: [
@@ -191,14 +190,19 @@ import { DashboardEstadisticasComponent } from './components/dashboard-estadisti
     FormsModule,
     MatCardModule,
     ReactiveFormsModule,
+    MatExpansionModule,
     NgxChartsModule,
     MatSelectModule,
     MomentModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatButtonToggleModule,
     MatButtonModule,
     MatIconModule,
     MatInputModule,
     MatCheckboxModule,
+    MatDividerModule,
     MatTooltipModule,
     MatPaginatorModule,
     MatSortModule,

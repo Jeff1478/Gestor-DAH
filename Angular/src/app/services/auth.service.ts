@@ -91,6 +91,9 @@ getIngresosPorUsuario() {
   return this.http.get<any[]>(this.URL+'/estadisticas/ingresos-por-usuario');
 }
 
+isAuthenticated(): boolean {
+  return !!this.getToken(); // o tu lógica de sesión
+}
 
 
 }

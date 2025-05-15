@@ -166,9 +166,15 @@ export class SidebarComponent implements OnInit {
     this._router.navigate(['/buscarcombmet', this.searchString4]);
   }
 
-  goSearchNombre(){
-    this._router.navigate(['/pag-lite-sitio-nombre', this.searchStringNomb]);
+  goSearchNombre() {
+    const nombre = this.searchStringNomb?.trim();
+    if (nombre) {
+      this._router.navigate(['/pag-lite-sitios'], {
+        queryParams: { nombre }
+      });
+    }
   }
+  
 
   showAll(){
     this.dataService.getAll().subscribe(

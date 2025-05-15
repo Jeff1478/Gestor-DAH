@@ -1,0 +1,1127 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gestordah documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">gestordah documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  RegistroOrigenesComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/registro-origenes/registro-origenes.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../injectables/RegistroService.html" target="_self" >RegistroService</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-registro-origenes</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./registro-origenes.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./registro-origenes.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#acceso" >acceso</a>
+                            </li>
+                            <li>
+                                <a href="#buttionText" >buttionText</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#correo" >correo</a>
+                            </li>
+                            <li>
+                                <a href="#emailFormControl" >emailFormControl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#http" >http</a>
+                            </li>
+                            <li>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
+                                <a href="#nameFormControl" >nameFormControl</a>
+                            </li>
+                            <li>
+                                <a href="#perfilFormControl" >perfilFormControl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#registro" >registro</a>
+                            </li>
+                            <li>
+                                <a href="#setenaFormControl" >setenaFormControl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#status" >status</a>
+                            </li>
+                            <li>
+                                <a href="#suscripciones" >suscripciones</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#register" >register</a>
+                            </li>
+                            <li>
+                                <a href="#Registro" >Registro</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="../injectables/HttpService.html" target="_self">HttpService</a>, _router: Router, _registroService: <a href="../injectables/RegistroService.html" target="_self">RegistroService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HttpService.html" target="_self" >HttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_registroService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RegistroService.html" target="_self" >RegistroService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="49"
+                                    class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="register"></a>
+                    <span class="name">
+                        <span ><b>register</b></span>
+                        <a href="#register"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>register()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Registro"></a>
+                    <span class="name">
+                        <span ><b>Registro</b></span>
+                        <a href="#Registro"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>Registro()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="98"
+                                    class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="acceso"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>acceso</b></span>
+                        <a href="#acceso"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buttionText"></a>
+                    <span class="name">
+                        <span ><b>buttionText</b></span>
+                        <a href="#buttionText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;Enviar&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="correo"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>correo</b></span>
+                        <a href="#correo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emailFormControl"></a>
+                    <span class="name">
+                        <span ><b>emailFormControl</b></span>
+                        <a href="#emailFormControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl({ value: localStorage.getItem(&#x27;email&#x27;), disabled: true})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="http"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>http</b></span>
+                        <a href="#http"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/HttpService.html" target="_self" >HttpService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nameFormControl"></a>
+                    <span class="name">
+                        <span ><b>nameFormControl</b></span>
+                        <a href="#nameFormControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(&quot;&quot;, [
+    Validators.required,
+    Validators.minLength(4)
+  ])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="perfilFormControl"></a>
+                    <span class="name">
+                        <span ><b>perfilFormControl</b></span>
+                        <a href="#perfilFormControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(&quot;&quot;, [
+    Validators.required,
+    
+  ])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registro"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>registro</b></span>
+                        <a href="#registro"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Registro.html" target="_self" >Registro</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setenaFormControl"></a>
+                    <span class="name">
+                        <span ><b>setenaFormControl</b></span>
+                        <a href="#setenaFormControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="status"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>status</b></span>
+                        <a href="#status"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="suscripciones"></a>
+                    <span class="name">
+                        <span ><b>suscripciones</b></span>
+                        <a href="#suscripciones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/components/registro-origenes/registro-origenes.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormControl, Validators } from &#x27;@angular/forms&#x27;;
+import { Suscripcion } from &#x27;src/app/models/suscripcion&#x27;;
+import { HttpService } from &quot;src/app/services/http.service&quot;;
+import { Router, ActivatedRoute, Params } from &#x27;@angular/router&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+import { RegistroService } from &#x27;src/app/services/registro.service&#x27;;
+import { Registro } from &#x27;src/app/models/registro&#x27;;
+
+
+@Component({
+  selector: &#x27;app-registro-origenes&#x27;,
+  templateUrl: &#x27;./registro-origenes.component.html&#x27;,
+  styleUrls: [&#x27;./registro-origenes.component.css&#x27;],
+  providers: [RegistroService]
+})
+export class RegistroOrigenesComponent implements OnInit {
+  
+  loading &#x3D; false;
+  buttionText &#x3D; &quot;Enviar&quot;;
+  public registro!: Registro;
+  public status!: String;
+  public correo!: any;
+  public acceso!: boolean
+
+  
+
+  emailFormControl &#x3D; new FormControl({ value: localStorage.getItem(&#x27;email&#x27;), disabled: true});
+
+  nameFormControl &#x3D; new FormControl(&quot;&quot;, [
+    Validators.required,
+    Validators.minLength(4)
+  ]);
+
+  perfilFormControl &#x3D; new FormControl(&quot;&quot;, [
+    Validators.required,
+    
+  ]);
+
+  setenaFormControl &#x3D; new FormControl;
+  
+
+  constructor(public http: HttpService, private _router: Router, private _registroService: RegistroService) { }
+
+  
+
+  suscripciones: any[] &#x3D; [];
+
+  ngOnInit(){
+    this.acceso &#x3D; false;
+    //alert(localStorage.getItem(&#x27;nombre&#x27;))
+    for (let item in Suscripcion) {
+      if (isNaN(Number(item))) {
+        this.suscripciones.push({ text: item, value: Suscripcion[item] });
+      }
+    }
+   
+  }
+
+
+  register() {
+    
+    let user &#x3D; {
+      name: this.nameFormControl.value,
+      email: localStorage.getItem(&#x27;email&#x27;),
+      perfil: this.perfilFormControl.value,
+      setena: this.setenaFormControl.value
+    }
+
+    
+
+    this.http.sendEmail(&quot;https://origenes.museocostarica.go.cr:3900/sendmail&quot;, user).subscribe(
+      data &#x3D;&gt; {
+        let res:any &#x3D; data; 
+        /* console.log(
+          &#x60;👏 &gt; 👏 &gt; 👏 &gt; 👏 ${user.name} is successfully register and mail has been sent and the message id is ${res.messageId}&#x60;
+        ); */
+        Swal.fire(
+
+          &#x27;Registro Orígenes&#x27;,
+  
+          &#x27;Su correo fué enviado y pronto recibirá una respuesta a su solicitud&#x27;,
+  
+          &#x27;success&#x27;
+        )
+        this.Registro();
+        this._router.navigate([&#x27;/pag-ori&#x27;]);
+      },
+      err &#x3D;&gt; {
+        console.log(err);
+      }
+    );
+
+
+  }
+
+
+  Registro(){
+
+    let reg &#x3D; {
+      nombre: this.nameFormControl.value,
+      email: localStorage.getItem(&#x27;email&#x27;),
+      perfil: this.perfilFormControl.value,
+      setena: this.setenaFormControl.value,
+      acceso: this.acceso
+    }
+
+    this._registroService.create(reg).subscribe(
+      
+      response &#x3D;&gt; {
+       if(response.status &#x3D;&#x3D; &#x27;success&#x27;){
+         this.status &#x3D; &#x27;success&#x27;;
+         this.registro &#x3D; response.registro;
+         
+       }else{
+         this.status &#x3D; &#x27;error&#x27;
+       }
+      },
+      error &#x3D;&gt; {
+       console.log(error);
+       this.status &#x3D; &#x27;error&#x27;;
+      }
+    );
+   }
+ 
+   
+  
+
+}
+  
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-header&gt;&lt;/app-header&gt;
+&lt;div class&#x3D; &quot;center&quot;&gt;
+    &lt;section id&#x3D;&quot;content&quot;&gt;
+      &lt;h1 class&#x3D;&quot;subheader-sitio&quot;&gt;Registro Acceso Origenes&lt;/h1&gt;
+      &lt;form style&#x3D;&quot;width: 50%; margin: auto&quot;&gt;
+    
+        &lt;mat-card&gt;
+          &lt;h1&gt;Datos Personales&lt;/h1&gt;
+    
+          &lt;mat-form-field style&#x3D;&quot;width: 100%&quot;&gt;
+            &lt;input matInput placeholder&#x3D;&quot;Nombre y Apellidos&quot; [formControl]&#x3D;&quot;nameFormControl&quot;/&gt;
+            &lt;mat-error *ngIf&#x3D;&quot;nameFormControl.hasError(&#x27;minlength&#x27;)&quot;&gt;
+              Nombre de mínimo 4 caracteres.
+            &lt;/mat-error&gt;
+            &lt;mat-error *ngIf&#x3D;&quot;nameFormControl.hasError(&#x27;required&#x27;)&quot;&gt;
+              Nombre y Apellidos son &lt;strong&gt;requeridos&lt;/strong&gt;
+            &lt;/mat-error&gt;
+          &lt;/mat-form-field&gt;
+    
+          &lt;mat-form-field style&#x3D;&quot;width: 100%&quot;&gt;
+            &lt;input matInput placeholder&#x3D;&quot;Correo&quot; [formControl]&#x3D;&quot;emailFormControl&quot;/&gt;
+            &lt;mat-error *ngIf&#x3D;&quot;emailFormControl.hasError(&#x27;email&#x27;)&quot;&gt;
+              Introduzca una dirección válida
+            &lt;/mat-error&gt;
+            &lt;mat-error *ngIf&#x3D;&quot;emailFormControl.hasError(&#x27;required&#x27;)&quot;&gt;
+              Correo is &lt;strong&gt;requerido&lt;/strong&gt;
+            &lt;/mat-error&gt;
+          &lt;/mat-form-field&gt;
+
+          &lt;mat-form-field style&#x3D;&quot;width: 100%&quot;&gt;
+            &lt;mat-label&gt;Perfil Requerido&lt;/mat-label&gt;
+            &lt;mat-select [formControl]&#x3D;&quot;perfilFormControl&quot;&gt;
+              &lt;mat-option value&#x3D;&quot;Investigación Externa&quot;&gt;Investigación Externa&lt;/mat-option&gt;
+              &lt;mat-option value&#x3D;&quot;Consultoría Arqueológica&quot;&gt;Consultoría Arqueológica&lt;/mat-option&gt;
+              &lt;mat-option value&#x3D;&quot;Investigación DAH&quot;&gt;Investigación DAH&lt;/mat-option&gt;
+            &lt;/mat-select&gt;
+          &lt;/mat-form-field&gt;
+
+          &lt;div *ngIf&#x3D; &quot;perfilFormControl.value &#x3D;&#x3D; &#x27;Consultoría Arqueológica&#x27;&quot;&gt;
+          &lt;mat-form-field style&#x3D;&quot;width: 100%&quot;&gt;
+            &lt;input matInput placeholder&#x3D;&quot;Número Consultor Individual SETENA&quot; [formControl]&#x3D;&quot;setenaFormControl&quot; /&gt;
+          &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+    
+          &lt;button mat-raised-button [disabled]&#x3D;&quot;emailFormControl.invalid || nameFormControl.invalid  || loading&quot;
+            color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;register()&quot;&gt;
+            {{buttionText}}
+          &lt;/button&gt;
+        &lt;/mat-card&gt;
+      &lt;/form&gt;
+    
+      
+    
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;div class&#x3D;&quot;clearfix&quot;&gt;&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./registro-origenes.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-header></app-header><div class= "center">    <section id="content">      <h1 class="subheader-sitio">Registro Acceso Origenes</h1>      <form style="width: 50%; margin: auto">            <mat-card>          <h1>Datos Personales</h1>              <mat-form-field style="width: 100%">            <input matInput placeholder="Nombre y Apellidos" [formControl]="nameFormControl"/>            <mat-error *ngIf="nameFormControl.hasError(\'minlength\')">              Nombre de mínimo 4 caracteres.            </mat-error>            <mat-error *ngIf="nameFormControl.hasError(\'required\')">              Nombre y Apellidos son <strong>requeridos</strong>            </mat-error>          </mat-form-field>              <mat-form-field style="width: 100%">            <input matInput placeholder="Correo" [formControl]="emailFormControl"/>            <mat-error *ngIf="emailFormControl.hasError(\'email\')">              Introduzca una dirección válida            </mat-error>            <mat-error *ngIf="emailFormControl.hasError(\'required\')">              Correo is <strong>requerido</strong>            </mat-error>          </mat-form-field>          <mat-form-field style="width: 100%">            <mat-label>Perfil Requerido</mat-label>            <mat-select [formControl]="perfilFormControl">              <mat-option value="Investigación Externa">Investigación Externa</mat-option>              <mat-option value="Consultoría Arqueológica">Consultoría Arqueológica</mat-option>              <mat-option value="Investigación DAH">Investigación DAH</mat-option>            </mat-select>          </mat-form-field>          <div *ngIf= "perfilFormControl.value == \'Consultoría Arqueológica\'">          <mat-form-field style="width: 100%">            <input matInput placeholder="Número Consultor Individual SETENA" [formControl]="setenaFormControl" />          </mat-form-field>        </div>              <button mat-raised-button [disabled]="emailFormControl.invalid || nameFormControl.invalid  || loading"            color="primary" (click)="register()">            {{buttionText}}          </button>        </mat-card>      </form>                  </section>  </div><div class="clearfix"></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleComponent', 'selector': 'app-article'},{'name': 'ArticleEditComponent', 'selector': 'app-article-edit'},{'name': 'ArticleNewComponent', 'selector': 'app-article-new'},{'name': 'AuthenticationButtonComponent', 'selector': 'app-authentication-button'},{'name': 'CeramicaComponent', 'selector': 'app-ceramica'},{'name': 'CeramicsComponent', 'selector': 'app-ceramics'},{'name': 'ContextoComponent', 'selector': 'app-contexto'},{'name': 'ContextoDetalleComponent', 'selector': 'app-contexto-detalle'},{'name': 'ContextoEditComponent', 'selector': 'app-contexto-edit'},{'name': 'ContextoExcelComponent', 'selector': 'app-contexto-excel'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashboardEstadisticasComponent', 'selector': 'app-dashboard-estadisticas'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'FichaContextoComponent', 'selector': 'app-ficha-contexto'},{'name': 'FichaLiticaComponent', 'selector': 'app-ficha-litica'},{'name': 'FichaMetalComponent', 'selector': 'app-ficha-metal'},{'name': 'FichaOrigenesComponent', 'selector': 'app-ficha-origenes'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotComponent', 'selector': 'app-forgot'},{'name': 'FormularioComponent', 'selector': 'app-formulario'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LiticaDetalleComponent', 'selector': 'app-litica-detalle'},{'name': 'LiticaEditComponent', 'selector': 'app-litica-edit'},{'name': 'LiticaExcelComponent', 'selector': 'app-litica-excel'},{'name': 'LiticoComponent', 'selector': 'app-litico'},{'name': 'LoginButtonComponent', 'selector': 'app-login-button'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutButtonComponent', 'selector': 'app-logout-button'},{'name': 'MapaOrigenesComponent', 'selector': 'app-mapa-origenes'},{'name': 'MetalDetalleComponent', 'selector': 'app-metal-detalle'},{'name': 'MetalEditComponent', 'selector': 'app-metal-edit'},{'name': 'MetalExcelComponent', 'selector': 'app-metal-excel'},{'name': 'MetalicoComponent', 'selector': 'app-metalico'},{'name': 'ModalOptionsComponent', 'selector': 'app-modal-options'},{'name': 'PagDetalleLiteSitioComponent', 'selector': 'app-pag-detalle-lite-sitio'},{'name': 'PaginaComponent', 'selector': 'app-pagina'},{'name': 'PagLitComponent', 'selector': 'app-pag-lit'},{'name': 'PagLiteSitioNombreComponent', 'selector': 'app-pag-lite-sitio-nombre'},{'name': 'PagLiteSitiosComponent', 'selector': 'app-pag-lite-sitios'},{'name': 'PagMetComponent', 'selector': 'app-pag-met'},{'name': 'PagOriComponent', 'selector': 'app-pag-ori'},{'name': 'PeliculasComponent', 'selector': 'app-peliculas'},{'name': 'PerfilesComponent', 'selector': 'app-perfiles'},{'name': 'PlasticaComponent', 'selector': 'app-plastica'},{'name': 'PoliticasUsoComponent', 'selector': 'app-politicas-uso'},{'name': 'PopupOrigenesComponent', 'selector': 'app-popup-origenes'},{'name': 'PopupPerfilComponent', 'selector': 'app-popup-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RegistroOrigenesComponent', 'selector': 'app-registro-origenes'},{'name': 'ReportePublicoComponent', 'selector': 'app-reporte-publico'},{'name': 'ResetComponent', 'selector': 'app-reset'},{'name': 'SearchCombCeraComponent', 'selector': 'app-search-comb-cera'},{'name': 'SearchComblitComponent', 'selector': 'app-search-comblit'},{'name': 'SearchCombMetComponent', 'selector': 'app-search-comb-met'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SearchContextoComponent', 'selector': 'app-search-contexto'},{'name': 'SearchLiticoComponent', 'selector': 'app-search-litico'},{'name': 'SearchMetalicoComponent', 'selector': 'app-search-metalico'},{'name': 'SearchSitioComponent', 'selector': 'app-search-sitio'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SitioComponent', 'selector': 'app-sitio'},{'name': 'SitioDetalleComponent', 'selector': 'app-sitio-detalle'},{'name': 'SitioEditComponent', 'selector': 'app-sitio-edit'},{'name': 'SitioExcelComponent', 'selector': 'app-sitio-excel'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'TipoDisComponent', 'selector': 'app-tipo-dis'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'RegistroOrigenesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RegistroOrigenesComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

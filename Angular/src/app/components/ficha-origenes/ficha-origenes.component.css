@@ -1,0 +1,22 @@
+mat-card {
+    margin-bottom: 24px;
+  }
+  mat-card::before,
+  mat-card::after {
+    display: none !important;
+  }
+
+  ::ng-deep .mat-expansion-panel-body {
+  overflow: visible !important;
+  z-index: 1;
+  position: relative;
+}
+::ng-deep ng-multiselect-dropdown {
+  z-index: 1000;
+}
+.boton-flotante {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1000;
+}

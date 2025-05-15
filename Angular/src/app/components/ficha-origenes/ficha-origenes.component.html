@@ -1,7 +1,8 @@
 <app-header></app-header>
 
+<!-- <div class="center">
 
-<div class="center">
+
     <section id="content.contexto">
         <h1 class="subheader-sitio">{{page_title}}</h1>
         
@@ -21,7 +22,7 @@
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
 
-                            <!-- <form> -->
+                            
                             <div class="row g-3">
                                 <div class="col-md-3">
                                     <label for="nom_mon">Nombre Monumento</label>
@@ -39,16 +40,16 @@
                                         [(ngModel)]="sitio.clave_antigua">
                                 </div>
                              
-                               <!--  <div class="col-md-3">
+                                 <div class="col-md-3">
                                     <label for="clave_antigua">Clave UCR</label>
-                                    <input type="text" class="form-control" name="ucr" #ucr="ngModel"
-                                        [(ngModel)]="sitio.ucr">
+                                    <input type="text" class="form-control" name="cod_ucr" #ucr="ngModel"
+                                        [(ngModel)]="sitio.cod_ucr">
                                     
-                                </div> -->
+                                </div> 
                                 
                             </div>
                             <br>
-                            <!-- <h4>Tipo de Proyecto</h4> -->
+                          
                             <hr>
                             <div class="row g-3">
 
@@ -65,67 +66,11 @@
                               <input type="text" class="form-control" name="tipo_proyecto" #tipo_proyecto="ngModel"
                               [(ngModel)]="sitio.tipo_proyecto">
                                
-                               <!--  <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="estudio_impacto_ambiental" #estudio_impacto_ambiental [(ngModel)]="sitio.estudio_impacto_ambiental"
-                                    (ngModelChange)="sitio.estudio_impacto_ambiental=$event? true:false">
-                                    <label class="form-check-label" for="estudio_impacto_ambiental">Impacto Ambiental</label>
-                                </div>
-                                <div class="col-md-3">
-                                    
-                                    <input class="form-check-input" type="checkbox" name="monitoreo_mov_tierras" #monitoreo_mov_tierras [(ngModel)]="sitio.monitoreo_mov_tierras"
-                                    (ngModelChange)="sitio.monitoreo_mov_tierras=$event? true:false">
-                                    <label class="form-check-label" for="monitoreo_mov_tierras">Movimiento Tierras</label>
-                                </div>
-                                <div class="col-md-3">
-                                   
-                                    <input class="form-check-input" type="checkbox" name="evaluacion" #evaluacion [(ngModel)]="sitio.evaluacion"
-                                    (ngModelChange)="sitio.evaluacion=$event? true:false">
-                                <label class="form-check-label" for="evaluacion">Evaluación</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="peritaje" #peritaje [(ngModel)]="sitio.peritaje"
-                                    (ngModelChange)="sitio.peritaje=$event? true:false">
-                                    <label class="form-check-label" for="peritaje">Peritaje</label>
-                                </div>
-                            </div>
-                            <div class = "row g-3">
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="excavacion_aislada" #peritaje [(ngModel)]="sitio.excavacion_aislada"
-                                    (ngModelChange)="sitio.excavacion_aislada=$event? true:false">
-                                    <label class="form-check-label" for="excavacion_aislada">Excavación Aislada</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="rescate" #peritaje [(ngModel)]="sitio.rescate"
-                                    (ngModelChange)="sitio.rescate=$event? true:false">
-                                    <label class="form-check-label" for="rescate">Rescate</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="inspeccion" #peritaje [(ngModel)]="sitio.inspeccion"
-                                    (ngModelChange)="sitio.inspeccion=$event? true:false">
-                                    <label class="form-check-label" for="inspeccion">Inspección</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="trabajo_graduacion" #peritaje [(ngModel)]="sitio.trabajo_graduacion"
-                                    (ngModelChange)="sitio.trabajo_graduacion=$event? true:false">
-                                    <label class="form-check-label" for="trabajo_graduacion">Trabajo Graduación</label>
-                                </div>
-                            </div>
-
-                            <div class = "row g-3">
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="regional" #peritaje [(ngModel)]="sitio.regional"
-                                    (ngModelChange)="sitio.regional=$event? true:false">
-                                    <label class="form-check-label" for="regional">Inv. Regional</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="subregional" #peritaje [(ngModel)]="sitio.subregional"
-                                    (ngModelChange)="sitio.subregional=$event? true:false">
-                                    <label class="form-check-label" for="subregional">Inv. Subregional</label>
-                                </div> -->
+                              
                             </div>
 
                             <br>
-                            <!-- <h4>Tipo de Monumento</h4> -->
+                       
                             <hr>
                             <div class="row g-3">
 
@@ -143,69 +88,9 @@
                               [(ngModel)]="sitio.tipo_monumento">
 
 
-                           <!--      <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="abrigo_cueva_caverna" #peritaje [(ngModel)]="sitio.abrigo_cueva_caverna"
-                                    (ngModelChange)="sitio.abrigo_cueva_caverna=$event? true:false">
-                                    <label class="form-check-label" for="abrigo_cueva_caverna">Abrigo, Cueva o Caverna</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="arquitectonico" #peritaje [(ngModel)]="sitio.arquitectonico"
-                                    (ngModelChange)="sitio.arquitectonico=$event? true:false">
-                                    <label class="form-check-label" for="arquitectonico">Arquitectónico</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="basurero" #peritaje [(ngModel)]="sitio.basurero"
-                                    (ngModelChange)="sitio.basurero=$event? true:false">
-                                    <label class="form-check-label" for="basurero">Basurero</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="camino" #peritaje [(ngModel)]="sitio.camino"
-                                    (ngModelChange)="sitio.camino=$event? true:false">
-                                    <label class="form-check-label" for="camino">Camino</label>
-                                </div>
+                           
                             </div>
-                            <div class="row g-3">
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="conchero" #peritaje [(ngModel)]="sitio.conchero"
-                                    (ngModelChange)="sitio.conchero=$event? true:false">
-                                    <label class="form-check-label" for="conchero">Conchero</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="funerario" #peritaje [(ngModel)]="sitio.funerario"
-                                    (ngModelChange)="sitio.funerario=$event? true:false">
-                                    <label class="form-check-label" for="funerario">Funerario</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="habitacion" #peritaje [(ngModel)]="sitio.habitacion"
-                                    (ngModelChange)="sitio.habitacion=$event? true:false">
-                                    <label class="form-check-label" for="habitacion">Habitacion</label>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="materiales_dispersos" #peritaje [(ngModel)]="sitio.materiales_dispersos"
-                                    (ngModelChange)="sitio.materiales_dispersos=$event? true:false">
-                                    <label class="form-check-label" for="materiales_dispersos">Materiales Dispersos</label>
-                                </div>
-                            </div>
-
-                            <div class="row g-3">
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="patroglifo" #peritaje [(ngModel)]="sitio.petroglifo"
-                                    (ngModelChange)="sitio.petroglifo=$event? true:false">
-                                    <label class="form-check-label" for="petroglifo">Petroglifo</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="salina" #peritaje [(ngModel)]="sitio.salina"
-                                    (ngModelChange)="sitio.salina=$event? true:false">
-                                    <label class="form-check-label" for="salina">Salina</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-check-input" type="checkbox" name="taller" #peritaje [(ngModel)]="sitio.taller"
-                                    (ngModelChange)="sitio.taller=$event? true:false">
-                                    <label class="form-check-label" for="taller">Taller</label>
-                                </div> -->
-                            </div>
-                            <!-- </form> -->
+                            
                         </div>
 
                     </div>
@@ -382,14 +267,14 @@
                                             [(ngModel)]="sitio.lambert_ns">
                                     </div>
                                     <div class="col-md-3">
-                                        <label for="CRTM05_N">CRTM05 N</label>
-                                        <input type="text" class="form-control" name="CRTM05_N" #crtm05_n="ngModel"
-                                            [(ngModel)]="sitio.CRTM05_N">
+                                        <label for="crtm05_n">CRTM05 N</label>
+                                        <input type="text" class="form-control" name="crtm05_n" #crtm05_n="ngModel"
+                                            [(ngModel)]="sitio.crtm05_n">
                                     </div>
                                     <div class="col-md-3">
-                                        <label for="CRTM05_E">CRTM05 E</label>
-                                        <input type="text" class="form-control" name="CRTM05_E" #crtm05_e="ngModel"
-                                            [(ngModel)]="sitio.CRTM05_E">
+                                        <label for="crtm05_e">CRTM05 E</label>
+                                        <input type="text" class="form-control" name="crtm05_e" #crtm05_e="ngModel"
+                                            [(ngModel)]="sitio.crtm05_e">
                                     </div>
 
                                     <div class="row g-3">
@@ -543,9 +428,9 @@
 
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <input class="form-check-input" type="checkbox" name="trecientos_ochocientos_dc" #trecientos_ochocientos_dc [(ngModel)]="sitio.trecientos_ochocientos_dc"
-                                            (ngModelChange)="sitio.trecientos_ochocientos_dc=$event? true:false">
-                                            <label class="form-check-label" for="trecientos_ochocientos_dc">300- 800 dC</label>
+                                        <input class="form-check-input" type="checkbox" name="trescientos_ochocientos_dc" #trecientos_ochocientos_dc [(ngModel)]="sitio.trescientos_ochocientos_dc"
+                                            (ngModelChange)="sitio.trescientos_ochocientos_dc=$event? true:false">
+                                            <label class="form-check-label" for="trescientos_ochocientos_dc">300- 800 dC</label>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="fase_6"></label>
@@ -666,11 +551,7 @@
                                             <label class="form-check-label" for="excavacion">Excavación</label>
                                     </div>
                             
-                                   <!--  <div class="col-md-3">
-                                        <input class="form-check-input" type="checkbox" name="levantamiento_cartografico" #levantamiento_cartografico [(ngModel)]="sitio.levantamiento_cartografico"
-                                        (ngModelChange)="sitio.levantamiento_cartografico=$event? true:false">
-                                        <label class="form-check-label" for="levantamiento_cartografico">Lev Cart</label>
-                                    </div> -->
+                                   
                                   
                                     <div class="col-md-3">
                                         <input class="form-check-input" type="checkbox" name="rec_superficie" #rec_superficie [(ngModel)]="sitio.rec_superficie"
@@ -850,7 +731,7 @@
                                 <hr>
 
                                 <div class="row g-3">
-                                   <<ng-multiselect-dropdown
+                                   <ng-multiselect-dropdown
                                     [placeholder]="'Patrimonio Sub Acuático'"
                                     [settings]="dropdownSettings"
                                     [data]="dropdownList3"
@@ -1014,8 +895,7 @@
                                     <label for="doc_contenido">Links Asociados</label>
                                     <textarea class="form-control" rows="3" name="links" #doc_contenido="ngModel"
                                     [(ngModel)]="sitio.links"></textarea>
-                                        <!-- <input type="text" class="form-control" name="links" #doc_contenido="ngModel"
-                                            [(ngModel)]="sitio.links"> -->
+                                        
 
                                     </div>
                     
@@ -1061,7 +941,7 @@
         </form>
 
 
-            <!-- JavaScript Bundle with Popper -->
+           
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
@@ -1070,6 +950,435 @@
 
     <div class="clearfix"></div>
 
-</div>
+</div> -->
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Datos Generales
+      </mat-panel-title>
+      <p class="text-muted">Ingrese aquí la información básica del sitio arqueológico.</p>
+
+    </mat-expansion-panel-header>
+
+    <mat-card>
+      <mat-card-content>
+        <div fxLayout="row wrap" fxLayoutGap="16px">
+
+          <!-- Nombre Monumento -->
+          <mat-form-field fxFlex="24" appearance="outline">
+            <mat-label>Nombre del Monumento</mat-label>
+            <input matInput [(ngModel)]="sitio.nombre_sitio" name="nombre_sitio">
+            <mat-icon matSuffix>location_on</mat-icon>
+          </mat-form-field>
+
+          <!-- Clave -->
+          <mat-form-field fxFlex="24" appearance="outline">
+            <mat-label>Clave</mat-label>
+            <input matInput [(ngModel)]="sitio.clave_sitio" name="clave_sitio">
+          </mat-form-field>
+
+          <!-- Clave Antigua -->
+          <mat-form-field fxFlex="24" appearance="outline">
+            <mat-label>Clave Antigua</mat-label>
+            <input matInput [(ngModel)]="sitio.clave_antigua" name="clave_antigua">
+          </mat-form-field>
+
+          <!-- Clave UCR -->
+          <mat-form-field fxFlex="24" appearance="outline">
+            <mat-label>Clave UCR</mat-label>
+            <input matInput [(ngModel)]="sitio.cod_ucr" name="cod_ucr">
+          </mat-form-field>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-expansion-panel>
+
+
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Registro</mat-panel-title>
+    </mat-expansion-panel-header>
+  
+    <mat-card>
+      <mat-card-content>
+  
+        <!-- Registrador -->
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label>Registrador</mat-label>
+          <input matInput [(ngModel)]="sitio.registrador" name="registrador">
+        </mat-form-field>
+  
+        
+        <!-- Institución -->
+        <p><strong>Institución del Registrador</strong></p>
+  
+        <div fxLayout="row wrap" fxLayoutGap="16px">
+          <mat-checkbox [(ngModel)]="sitio.consultoria" name="consultoria">Consultoría</mat-checkbox>
+          <mat-checkbox [(ngModel)]="sitio.fundacion" name="fundacion">Anastasio Alfaro</mat-checkbox>
+          <mat-checkbox [(ngModel)]="sitio.ice" name="ice">ICE</mat-checkbox>
+          <mat-checkbox [(ngModel)]="sitio.literatura" name="literatura">Literatura</mat-checkbox>
+          <mat-checkbox [(ngModel)]="sitio.mncr" name="mncr">MNCR</mat-checkbox>
+          <mat-checkbox [(ngModel)]="sitio.parques_nacionales" name="parques_nacionales">Parques Nacionales</mat-checkbox>
+          <mat-checkbox [(ngModel)]="sitio.ucr" name="ucr">UCR</mat-checkbox>
+        </div>
+  
+        
+  
+        <!-- Hallazgo -->
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label>Hallazgo</mat-label>
+          <input matInput [(ngModel)]="sitio.hallazgo" name="hallazgo">
+        </mat-form-field>
+  
+        <!-- Fecha Registro -->
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label>Fecha de Registro</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="sitio.fecha_registro" name="fecha_registro">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+      </mat-card-content>
+    </mat-card>
+  </mat-expansion-panel>
+  
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Localización</mat-panel-title>
+    </mat-expansion-panel-header>
+  
+    <mat-card>
+      <mat-card-content>
+        <!-- UBICACIÓN ADMINISTRATIVA -->
+        <h4>Ubicación Administrativa</h4>
+        <div fxLayout="row wrap" fxLayoutGap="16px">
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>Provincia</mat-label>
+            <input matInput [(ngModel)]="sitio.provincia" name="provincia">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>Cantón</mat-label>
+            <input matInput [(ngModel)]="sitio.canton" name="canton">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>Distrito</mat-label>
+            <input matInput [(ngModel)]="sitio.distrito" name="distrito">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>Hoja Cartográfica</mat-label>
+            <input matInput [(ngModel)]="sitio.hoja_cartografica" name="hoja_cartografica">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Dirección</mat-label>
+            <input matInput [(ngModel)]="sitio.direccion" name="direccion">
+          </mat-form-field>
+        </div>
+  
+        <mat-divider class="my-4"></mat-divider>
+  
+        <!-- ENTORNO AMBIENTAL -->
+        <h4>Entorno Ambiental</h4>
+        <div fxLayout="row wrap" fxLayoutGap="16px">
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>Región Arqueológica</mat-label>
+            <input matInput [(ngModel)]="sitio.region" name="region">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>Zona de Vida</mat-label>
+            <input matInput [(ngModel)]="sitio.zona_vida" name="zona_vida">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" fxFlex="20">
+            <mat-label>Altitud</mat-label>
+            <input matInput type="number" [(ngModel)]="sitio.altitud" name="altitud">
+          </mat-form-field>
+  
+          <mat-checkbox [(ngModel)]="sitio.territorio_indigena" name="territorio_indigena">
+            Territorio indígena
+          </mat-checkbox>
+        </div>
+  
+        <mat-divider class="my-4"></mat-divider>
+  
+        <!-- COORDENADAS -->
+        <h4>Coordenadas</h4>
+        <div fxLayout="row wrap" fxLayoutGap="16px">
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>Lambert OE</mat-label>
+            <input matInput [(ngModel)]="sitio.lambert_oe" name="lambert_oe">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>Lambert NS</mat-label>
+            <input matInput [(ngModel)]="sitio.lambert_ns" name="lambert_ns">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>CRTM05 N</mat-label>
+            <input matInput type="number" [(ngModel)]="sitio.crtm05_n" name="crtm05_n">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>CRTM05 E</mat-label>
+            <input matInput type="number" [(ngModel)]="sitio.crtm05_e" name="crtm05_e">
+          </mat-form-field>
+        </div>
+  
+        <h4>Latitud / Longitud (Grados, Minutos, Segundos)</h4>
+        <div fxLayout="row wrap" fxLayoutGap="16px">
+          <mat-form-field fxFlex="20" appearance="outline">
+            <mat-label>Grados Latitud</mat-label>
+            <input matInput type="number" [(ngModel)]="sitio.grad_lat" name="grad_lat">
+          </mat-form-field>
+  
+          <mat-form-field fxFlex="20" appearance="outline">
+            <mat-label>Minutos</mat-label>
+            <input matInput type="number" [(ngModel)]="sitio.min_lat" name="min_lat">
+          </mat-form-field>
+  
+          <mat-form-field fxFlex="20" appearance="outline">
+            <mat-label>Segundos</mat-label>
+            <input matInput type="number" [(ngModel)]="sitio.seg_lat" name="seg_lat" (change)="cambiarcoordenadas()">
+          </mat-form-field>
+  
+          <mat-form-field fxFlex="30" appearance="outline" disabled>
+            <mat-label>Latitud Decimal</mat-label>
+            <input matInput [value]="sitio.latitude">
+          </mat-form-field>
+        </div>
+  
+        <div fxLayout="row wrap" fxLayoutGap="16px">
+          <mat-form-field fxFlex="20" appearance="outline">
+            <mat-label>Grados Longitud</mat-label>
+            <input matInput type="number" [(ngModel)]="sitio.grad_long" name="grad_long">
+          </mat-form-field>
+  
+          <mat-form-field fxFlex="20" appearance="outline">
+            <mat-label>Minutos</mat-label>
+            <input matInput type="number" [(ngModel)]="sitio.min_long" name="min_long">
+          </mat-form-field>
+  
+          <mat-form-field fxFlex="20" appearance="outline">
+            <mat-label>Segundos</mat-label>
+            <input matInput type="number" [(ngModel)]="sitio.seg_log" name="seg_log" (change)="cambiarcoordenadaslong()">
+          </mat-form-field>
+  
+          <mat-form-field fxFlex="30" appearance="outline" disabled>
+            <mat-label>Longitud Decimal</mat-label>
+            <input matInput [value]="sitio.Logitude">
+          </mat-form-field>
+        </div>
+  
+        <!-- GPS Checkbox -->
+        <mat-checkbox [(ngModel)]="sitio.localizacion_gps" name="localizacion_gps">
+          Localización GPS
+        </mat-checkbox>
+      </mat-card-content>
+    </mat-card>
+  </mat-expansion-panel>
+  
+
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Temporalidad
+    </mat-panel-title>
+    <mat-panel-description>
+      Seleccione el periodo y detalle la fase cronológica
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <!-- Composición Cronológica + Técnicas de Datación alineadas -->
+  <div fxLayout="row" fxLayoutGap="3rem" fxLayoutAlign="space-between start" class="seccion-form" style="margin-bottom: 1rem;">
+
+    <!-- Columna 1: Composición y Períodos -->
+    <div fxFlex="50">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Composición Cronológica</mat-label>
+        <input matInput [(ngModel)]="sitio.composicion_cronologica" name="composicion_cronologica">
+      </mat-form-field>
+
+      <h3 class="seccion-titulo">Períodos Cronológicos</h3>
+      <div fxLayout="column" fxLayoutGap="1rem">
+        <div fxLayout="row" fxLayoutAlign="start center" *ngFor="let periodo of periodos">
+          <mat-checkbox [(ngModel)]="sitio[periodo.campo]" [name]="periodo.campo">
+            {{periodo.etiqueta}}
+          </mat-checkbox>
+
+          <mat-form-field appearance="fill" *ngIf="sitio[periodo.campo]" style="margin-left: 1rem; width: 200px;">
+            <mat-label>Fase</mat-label>
+            <input matInput [(ngModel)]="sitio[periodo.fase]" [name]="periodo.fase">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna 2: Técnicas -->
+    <div fxFlex="40">
+      <h3 class="seccion-titulo">Técnicas de Datación</h3>
+      <div fxLayout="column" fxLayoutGap="0.5rem">
+        <mat-checkbox [(ngModel)]="sitio.litica" name="litica">Lítica</mat-checkbox>
+        <mat-checkbox [(ngModel)]="sitio.radiocarbono_dat" name="radiocarbono_dat">Radiocarbono</mat-checkbox>
+        <mat-checkbox [(ngModel)]="sitio.ceramica_dat" name="ceramica_dat">Cerámica</mat-checkbox>
+      </div>
+
+      <div style="margin-top: 1rem;">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Fechamiento Radiométrico</mat-label>
+          <input matInput [(ngModel)]="sitio.fechamiento_adiometrico" name="fechamiento_adiometrico">
+        </mat-form-field>
+      </div>
+    </div>
+
+  </div>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Trabajo de Campo
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <!-- Grupo de trabajo de campo -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+    <mat-checkbox [(ngModel)]="sitio.excavacion">Excavación</mat-checkbox>
+    <mat-checkbox [(ngModel)]="sitio.rec_superficie">Rec Superficie</mat-checkbox>
+    <mat-checkbox [(ngModel)]="sitio.rec_propiedad">Rec Propiedad</mat-checkbox>
+  </div>
+
+  <mat-divider></mat-divider>
+  <h3 class="text-lg font-semibold px-4 mt-4">Recolección Superficie</h3>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+    <mat-checkbox [(ngModel)]="sitio.arbitratia">Arbitraria</mat-checkbox>
+    <mat-checkbox [(ngModel)]="sitio.probabilistico">Probabilística</mat-checkbox>
+  </div>
+
+  <mat-divider></mat-divider>
+  <h3 class="text-lg font-semibold px-4 mt-4">Levantamiento Cartográfico</h3>
+
+  <div class="p-4">
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>Levantamiento Cartográfico</mat-label>
+      <input matInput [(ngModel)]="sitio.levantamiento_cartografico">
+    </mat-form-field>
+  </div>
+
+  <mat-divider></mat-divider>
+  <h3 class="text-lg font-semibold px-4 mt-4">Excavación</h3>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+    <mat-checkbox [(ngModel)]="sitio.cala_estratatigrafica">Cala Estratatigráfica</mat-checkbox>
+    <mat-checkbox [(ngModel)]="sitio.limpieza_razgos">Limpieza Rasgos</mat-checkbox>
+    <mat-checkbox [(ngModel)]="sitio.horizontal">Horizontal</mat-checkbox>
+    <mat-checkbox [(ngModel)]="sitio.sondeo">Sondeo</mat-checkbox>
+    <mat-checkbox [(ngModel)]="sitio.limpieza_perfiles">Limpieza Perfiles</mat-checkbox>
+    <mat-checkbox [(ngModel)]="sitio.trinchera">Trinchera</mat-checkbox>
+  </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-form-field appearance="outline" class="w-full">
+  <mat-label>Materiales Recuperados</mat-label>
+  <mat-select [(ngModel)]="sitio.materiales_recuperados" multiple>
+    <mat-option *ngFor="let material of materialesDisponibles" [value]="material">
+      {{ material }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+  
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>Generalidades</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <!-- Investigador -->
+    <mat-form-field appearance="outline">
+      <mat-label>Investigador</mat-label>
+      <input matInput [(ngModel)]="sitio.investigador" name="investigador">
+    </mat-form-field>
+
+    <!-- Área estimada -->
+    <mat-form-field appearance="outline">
+      <mat-label>Área Estimada</mat-label>
+      <input matInput [(ngModel)]="sitio.area_estimada" name="area_estimada">
+    </mat-form-field>
+
+    <!-- Profundidad depósitos -->
+    <mat-form-field appearance="outline" class="md:col-span-2">
+      <mat-label>Profundidad Depósitos</mat-label>
+      <input matInput [(ngModel)]="sitio.profundidad_depositos" name="profundidad_depositos">
+    </mat-form-field>
+
+    <!-- Causa penal -->
+    <mat-form-field appearance="outline" class="md:col-span-2">
+      <mat-label>Causa Penal</mat-label>
+      <input matInput [(ngModel)]="sitio.causa_penal" name="causa_penal">
+    </mat-form-field>
+
+    <!-- Estado de conservación -->
+    <mat-form-field appearance="outline" class="md:col-span-2">
+      <mat-label>Estado de Conservación</mat-label>
+      <mat-select [(ngModel)]="sitio.estado_conservacion" multiple>
+        <mat-option *ngFor="let estado of estadosConservacion" [value]="estado">
+          {{ estado }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Expediente SETENA -->
+    <mat-form-field appearance="outline" class="md:col-span-2">
+      <mat-label>Expediente SETENA</mat-label>
+      <input matInput [(ngModel)]="sitio.expediente_setena" name="expediente_setena">
+    </mat-form-field>
+
+    <!-- Patrimonio Subacuático -->
+    <mat-form-field appearance="outline" class="md:col-span-2">
+      <mat-label>Patrimonio Subacuático</mat-label>
+      <mat-select [(ngModel)]="sitio.patrimonio_acuatico" multiple>
+        <mat-option *ngFor="let item of patrimonioOpciones" [value]="item">
+          {{ item }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Reserva arqueológica -->
+    <mat-checkbox [(ngModel)]="sitio.reserva_arqueologica" name="reserva_arqueologica">
+      Reserva Arqueológica
+    </mat-checkbox>
+
+    <!-- Río cercano -->
+    <mat-form-field appearance="outline">
+      <mat-label>Río Cercano</mat-label>
+      <input matInput [(ngModel)]="sitio.rio_cercano" name="rio_cercano">
+    </mat-form-field>
+
+    <!-- Plano Catastro -->
+    <mat-form-field appearance="outline">
+      <mat-label>Plano Catastro</mat-label>
+      <input matInput [(ngModel)]="sitio.plano_catrasto" name="plano_catrasto">
+    </mat-form-field>
+
+  </div>
+</mat-expansion-panel>
+
+<button mat-fab color="primary" class="boton-flotante" (click)="volverInicio()" matTooltip="Regresar al inicio">
+  <mat-icon>home</mat-icon>
+</button>
+</mat-accordion>
 
 
